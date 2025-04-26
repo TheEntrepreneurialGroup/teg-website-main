@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0F2C59;
+  --color-primary-light: #3A5AA9;
+  --color-primary-dark: #091c3a;
+  --color-secondary: #E5E5E5;
+  --color-secondary-light: #F5F5F5;
+  --color-secondary-dark: #C4C4C4;
+  --color-accent: #B8860B;
+  --color-accent-light: #DAA520;
+  --color-accent-dark: #8B6914;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-body leading-relaxed text-gray-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading leading-tight text-primary font-bold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply my-4;
+  }
+
+  a {
+    @apply text-primary-light hover:text-primary transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-md font-semibold transition-all duration-300 inline-block;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent-dark;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8;
+  }
+
+  .section {
+    @apply py-12 md:py-20;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+  }
+}
