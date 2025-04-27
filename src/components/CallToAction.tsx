@@ -21,7 +21,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   return (
     <section className={`py-16 ${isLight ? 'bg-secondary-light' : 'bg-primary'}`}>
       <div className="container-custom">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto">
           <motion.h2 
             className={`text-3xl md:text-4xl font-bold mb-4 ${isLight ? 'text-primary' : 'text-white'}`}
             initial={{ opacity: 0, y: 20 }}

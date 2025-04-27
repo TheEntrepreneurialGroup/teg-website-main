@@ -7,9 +7,9 @@ interface SectionTitleProps {
   centered?: boolean;
 }
 
-const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle, centered = false }) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle }) => {
   return (
-    <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
+    <div className={`mb-12`}>
       <motion.h2 
         className="mb-4"
         initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle, centered =
       
       {subtitle && (
         <motion.p 
-          className="text-gray-600 max-w-3xl mx-auto text-lg"
+          className="text-gray-600 max-w-3xl text-lg"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 interface StatCardProps {
   value: string;
@@ -9,8 +9,8 @@ interface StatCardProps {
 
 const StatCard: React.FC<StatCardProps> = ({ value, label, delay = 0 }) => {
   return (
-    <motion.div 
-      className="text-center p-6"
+    <motion.div
+      className="xl:pr-6 w-full sm:w-auto"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
