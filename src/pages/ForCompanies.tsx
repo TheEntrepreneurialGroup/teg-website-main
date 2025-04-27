@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Users, Building, Briefcase, Trophy, 
+  Users, Building, Briefcase, 
   Calendar, MapPin, GraduationCap, UserPlus
 } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
@@ -14,11 +13,12 @@ const ForCompanies: React.FC = () => {
   return (
     <div>
       <HeroSection 
-        title="Corporate Partnership Excellence"
-        subtitle="Partner with TEG to access a pipeline of elite talent, participate in executive forums, and help shape the next generation of corporate leaders."
+        title="We Develop Your Next Executive Talent. With Certainty."
+        subtitle="Finding a leadership-ready hire who is also a long-term cultural fit, can be a challenge. With TEG it is certainty: track records of ownership, responsibility, performance at the highest level and multiple talent-touchpoints ensure that you will find your right fit.
+        Partner with TEG to access a 39 year running, proven pipeline of exceptional talent."
         buttonText="Become a Partner"
         buttonLink="#partnerships"
-        backgroundImage="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        backgroundImage="/get_forward.jpg"
       />
       
       <section className="section">
