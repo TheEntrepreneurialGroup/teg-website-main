@@ -13,7 +13,7 @@ const Home: React.FC = () => {
     <div>
       <HeroSection 
         title="Forging Tomorrow's Executives Since 1984"
-        subtitle="The Entrepreneurial Group is a prestigious student-run organization founded by 11 leading companies to prepare tomorrow's corporate leaders."
+        subtitle="The Entrepreneurial Group (TEG) is forming the next leaders of Germany's economy. Founders and Executives. Developing ambitious students to established entrepreneurs since 1986."
         buttonText="Discover Our Mission"
         buttonLink="#about"
         backgroundImage="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
