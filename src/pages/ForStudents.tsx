@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Trophy, Briefcase, Users, Award, 
+  Trophy, Briefcase, Users, 
   GraduationCap, TrendingUp, Target, Clock
 } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
@@ -15,18 +14,18 @@ const ForStudents: React.FC = () => {
   return (
     <div>
       <HeroSection 
-        title="Become a Future Executive"
-        subtitle="Join an elite community of high-potential students prepared for executive leadership through hands-on experience, mentorship, and corporate networking."
+        title="Become a Leader. Shape the Future of Business."
+        subtitle="Join a community of capped to 50 high-potential students preparing for top-level executive leadership through real responsibility, hands-on experience and mentorship. 39 years of alumni success prove what you can achieve."
         buttonText="Apply Now"
         buttonLink="#apply"
-        backgroundImage="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        backgroundImage="/invite.png"
       />
       
       <section className="section">
         <div className="container-custom">
           <SectionTitle 
-            title="Why Join TEG?" 
-            subtitle="The Entrepreneurial Group offers a unique opportunity for ambitious students to develop executive skills through real responsibility and corporate mentorship."
+            title="TEG is not for everyone. 10+ hours workload per week. Real responsibility. Executive accountability." 
+            subtitle="If you think that’s too much, we are not your path."
             centered
           />
           
