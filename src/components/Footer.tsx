@@ -11,13 +11,13 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} The Entrepreneurial Group. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-          <a href="https://linkedin.com" className="text-white hover:text-secondary-light transition-colors duration-300" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/teg-ev/posts/?feedView=all" className="text-white hover:text-secondary-light transition-colors duration-300" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="https://facebook.com" className="text-white hover:text-secondary-light transition-colors duration-300" aria-label="Facebook">
+              {/* <a href="https://facebook.com" className="text-white hover:text-secondary-light transition-colors duration-300" aria-label="Facebook">
                 <Facebook size={20} />
-              </a>
-              <a href="https://instagram.com" className="text-white hover:text-secondary-light transition-colors duration-300" aria-label="Instagram">
+              </a> */}
+              <a href="https://www.instagram.com/tegmunich/" className="text-white hover:text-secondary-light transition-colors duration-300" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
           </div>
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
             <Link to="/privacy-policy" className="text-secondary-light text-sm hover:text-white transition-colors duration-300">
               Contact
             </Link>
-            <Link to="/privacy-policy" className="text-secondary-light text-sm hover:text-white transition-colors duration-300">
+            <Link to="/imprint" className="text-secondary-light text-sm hover:text-white transition-colors duration-300">
               Imprint
             </Link>
             <Link to="/privacy-policy" className="text-secondary-light text-sm hover:text-white transition-colors duration-300">

@@ -2,20 +2,34 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Users, Building, Briefcase, 
-  Calendar, MapPin, GraduationCap, UserPlus
-} from 'lucide-react';
+  Calendar, Mail, Linkedin, // <-- Added Mail and Linkedin
+  GraduationCap, UserPlus 
+} from 'lucide-react'; 
+
+// --- Component Imports ---
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
 import FeatureCard from '../components/FeatureCard';
 import CallToAction from '../components/CallToAction';
+import ImageCard from '../components/ImageCard'; 
 
 const ForCompanies: React.FC = () => {
+  // --- Placeholder Data (Replace with actual info) ---
+  const contactPerson = {
+    name: "Jonathan Doe", // Replace with actual name
+    title: "Director of Partnerships",
+    imageUrl: "/jonathan.jpg",
+    email: "jonathan.doe@teg-group.com", // Replace with actual email
+    linkedinUrl: "https://www.linkedin.com/in/jonathandoe/", // Replace with actual LinkedIn URL
+  };
+  // --- End Placeholder Data ---
+
   return (
     <div>
+      {/* ... (HeroSection, First Feature Section, Partnerships Section remain the same) ... */}
       <HeroSection 
         title="We Develop Your Next Executive Talent. With Certainty."
-        subtitle="Finding a leadership-ready hire who is also a long-term cultural fit, can be a challenge. With TEG it is certainty: track records of ownership, responsibility, performance at the highest level and multiple talent-touchpoints ensure that you will find your right fit.
-        Partner with TEG to access a 39 year running, proven pipeline of exceptional talent."
+        subtitle="Finding a leadership-ready hire who is also a long-term cultural fit, can be a challenge. With TEG it is certainty: Track records of ownership, responsibility, performance at the highest level and multiple talent-touchpoints ensure that you will find your right fit. Partner with TEG to access a 39 year running, proven pipeline of exceptional talent."
         buttonText="Become a Partner"
         buttonLink="#partnerships"
         backgroundImage="/get_forward.jpg"
@@ -24,27 +38,28 @@ const ForCompanies: React.FC = () => {
       <section className="section">
         <div className="container-custom">
           <SectionTitle 
-            title="Partnership Benefits" 
+            title="Partner with TEG to gain access to the current generation of top talent" 
             subtitle="Partnering with TEG offers companies unique opportunities to engage with high-potential future executives and participate in an exclusive network of corporate excellence."
             centered
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {/* FeatureCards remain the same */}
             <FeatureCard 
-              title="Elite Talent Access"
-              description="Gain privileged access to a carefully selected pool of exceptional students who are being prepared specifically for executive roles."
+              title="Right Characteristics"
+              description="We only looks for members who have the characteristics to become a top-level executive. We are looking for the best of the best."
               icon={<UserPlus size={40} />}
               delay={0.1}
             />
             <FeatureCard 
-              title="Executive Network"
-              description="Join an exclusive network of corporate partners for leadership summits, strategic forums, and collaborative opportunities."
+              title="Preparation"
+              description="Task Forces, Founders Associate program, and the TEG Academy prepare our members for the challenges of top-level executive positions."
               icon={<Building size={40} />}
               delay={0.2}
             />
             <FeatureCard 
-              title="Legacy Development"
-              description="Shape future corporate leaders through mentorship, project sponsorship, and strategic guidance."
+              title="Identification"
+              description="Our team is inspired by major corporations and ready to take on leadership roles within them."
               icon={<GraduationCap size={40} />}
               delay={0.3}
             />
@@ -53,321 +68,123 @@ const ForCompanies: React.FC = () => {
       </section>
       
       <section id="partnerships" className="py-20 bg-secondary-light">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <SectionTitle 
-                title="Partnership Opportunities" 
-                subtitle="TEG offers multiple levels of corporate partnership, each providing different degrees of engagement and access to our network of future executives."
-              />
-              
-              <div className="space-y-6 mb-8">
-                <motion.div
-                  className="card p-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                >
-                  <h4 className="font-semibold text-xl text-primary mb-2">Founding Partner</h4>
-                  <p className="text-gray-600 mb-4">Join our exclusive circle of founding partners with maximum visibility and engagement opportunities.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-accent mr-2"></div>
-                      <span>Executive mentorship program placement</span>
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-accent mr-2"></div>
-                      <span>Strategic advisory board position</span>
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-accent mr-2"></div>
-                      <span>Priority access to all TEG events and talent</span>
-                    </li>
-                  </ul>
-                </motion.div>
-                
-                <motion.div
-                  className="card p-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  <h4 className="font-semibold text-xl text-primary mb-2">Executive Partner</h4>
-                  <p className="text-gray-600 mb-4">Extensive access to TEG talent and programs with significant brand visibility.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-accent mr-2"></div>
-                      <span>Sponsored executive projects</span>
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-accent mr-2"></div>
-                      <span>On-campus recruitment events</span>
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-accent mr-2"></div>
-                      <span>Featured partner at TEG leadership forums</span>
-                    </li>
-                  </ul>
-                </motion.div>
-                
-                <motion.div
-                  className="card p-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                >
-                  <h4 className="font-semibold text-xl text-primary mb-2">Associate Partner</h4>
-                  <p className="text-gray-600 mb-4">Introductory partnership level with focused engagement opportunities.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-accent mr-2"></div>
-                      <span>Access to TEG talent database</span>
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-accent mr-2"></div>
-                      <span>Participation in annual corporate event</span>
-                    </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-accent mr-2"></div>
-                      <span>Promotional opportunities through TEG channels</span>
-                    </li>
-                  </ul>
-                </motion.div>
-              </div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <a href="mailto:partnerships@teg-group.com" className="btn btn-primary">
-                  Inquire About Partnership
-                </a>
-              </motion.div>
-            </div>
-            
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <img 
-                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-                alt="Corporate partnership" 
-                className="rounded-lg shadow-xl"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-accent text-white p-4 rounded-lg shadow-lg">
-                <p className="font-heading font-bold">Executive Access</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-      
-      <section id="events" className="section">
-        <div className="container-custom">
-          <SectionTitle 
-            title="Executive Events" 
-            subtitle="TEG hosts exclusive events throughout the year, bringing together corporate partners, future leaders, and industry experts for networking and knowledge sharing."
-            centered
+        <div className="container-custom flex flex-col items-center justify-center text-center">
+          {/* CallToAction and Partnership Opportunities Section remain the same */}
+          <CallToAction 
+            title="Develop Tomorrow's Executive Talent"
+            description="Partner with TEG to gain privileged access to an elite pipeline of future corporate leaders and join our exclusive network of industry-leading companies."
+            buttonText="Become a Partner"
+            buttonLink="mailto:partnerships@teg-group.com" // Or link to the contact section: "#contact"
+            variant="light"
           />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <motion.div 
-              className="card overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className="relative h-48">
-                <img 
-                  src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-                  alt="Leadership Summit" 
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <div className="flex items-center mb-2">
-                    <Calendar size={16} className="mr-2" />
-                    <span className="text-sm">October 15-16, 2025</span>
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin size={16} className="mr-2" />
-                    <span className="text-sm">Berlin, Germany</span>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">Annual Leadership Summit</h3>
-                <p className="text-gray-600 mb-4">Our flagship event bringing together C-suite executives, thought leaders, and selected TEG members for two days of intensive leadership discourse and networking.</p>
-                <a href="#contact" className="text-primary font-semibold hover:text-primary-light transition-colors duration-300 inline-flex items-center">
-                  Learn More
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                </a>
-              </div>
+
+          <SectionTitle 
+            title="Partnership Opportunities" 
+            subtitle="Why does partnering with us work?"
+          />
+
+          <div className="space-y-6 mb-8 w-full max-w-4xl text-left"> {/* Added text-left for cards */}
+            <motion.div className="card p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+              <h4 className="font-semibold text-xl text-primary mb-2">Student-Run, Business-Minded</h4>
+              <p className="text-gray-600 mb-4">
+                TEG operates like a real company, complete with its own office and monthly financial targets. Our members manage operations autonomously, gaining hands-on experience in entrepreneurship and business leadership.
+              </p>
             </motion.div>
-            
-            <motion.div 
-              className="card overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="relative h-48">
-                <img 
-                  src="https://images.pexels.com/photos/2977565/pexels-photo-2977565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-                  alt="Executive Forum" 
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <div className="flex items-center mb-2">
-                    <Calendar size={16} className="mr-2" />
-                    <span className="text-sm">Quarterly</span>
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin size={16} className="mr-2" />
-                    <span className="text-sm">Frankfurt, Germany</span>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">Executive Roundtable Series</h3>
-                <p className="text-gray-600 mb-4">Quarterly invitation-only forums where corporate partners and TEG executives discuss emerging leadership challenges and strategic business trends.</p>
-                <a href="#contact" className="text-primary font-semibold hover:text-primary-light transition-colors duration-300 inline-flex items-center">
-                  Learn More
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                </a>
-              </div>
+            {/* Other motion.div cards */}
+            <motion.div className="card p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+              <h4 className="font-semibold text-xl text-primary mb-2">Engage with Future Leaders</h4>
+              <p className="text-gray-600 mb-4">
+                Get to know our members through curated company visits, networking panels, and speaker sessions. Build real connections before hiring.
+              </p>
             </motion.div>
-            
-            <motion.div 
-              className="card overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <div className="relative h-48">
-                <img 
-                  src="https://images.pexels.com/photos/7642029/pexels-photo-7642029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-                  alt="Talent Showcase" 
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <div className="flex items-center mb-2">
-                    <Calendar size={16} className="mr-2" />
-                    <span className="text-sm">May 20, 2025</span>
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin size={16} className="mr-2" />
-                    <span className="text-sm">Munich, Germany</span>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">Executive Talent Showcase</h3>
-                <p className="text-gray-600 mb-4">An exclusive event where top TEG members present strategic projects and solutions to corporate partners, demonstrating their executive readiness.</p>
-                <a href="#contact" className="text-primary font-semibold hover:text-primary-light transition-colors duration-300 inline-flex items-center">
-                  Learn More
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                </a>
-              </div>
+            <motion.div className="card p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+              <h4 className="font-semibold text-xl text-primary mb-2">6-Month Leadership Internships</h4>
+              <p className="text-gray-600 mb-4">
+                Host TEG interns for intensive placements directly under C-level or director mentorship. Our talents are trained to think like leaders.
+              </p>
+            </motion.div>
+            <motion.div className="card p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+              <h4 className="font-semibold text-xl text-primary mb-2">Hire & Retain Young Leaders</h4>
+              <p className="text-gray-600 mb-4">
+                Looking to integrate emerging leadership talent into your company? TEG supports you through onboarding and leadership development consulting.
+              </p>
             </motion.div>
           </div>
         </div>
       </section>
-      
+
+      {/* ====== Modified Contact Section ====== */}
       <section id="contact" className="py-20 bg-primary text-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <SectionTitle 
-                title="Contact Our Corporate Team" 
-                subtitle="Interested in learning more about partnership opportunities with TEG? Our dedicated corporate relations team is ready to assist you."
-              />
-              
-              <ul className="space-y-4 mb-8">
-                <motion.li 
-                  className="flex items-start"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                >
-                  <Users className="text-accent mr-3 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <h4 className="font-semibold text-white">Partnership Inquiries</h4>
-                    <p className="text-secondary-light">partnerships@teg-group.com</p>
-                  </div>
-                </motion.li>
-                
-                <motion.li 
-                  className="flex items-start"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  <Calendar className="text-accent mr-3 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <h4 className="font-semibold text-white">Event Coordination</h4>
-                    <p className="text-secondary-light">events@teg-group.com</p>
-                  </div>
-                </motion.li>
-                
-                <motion.li 
-                  className="flex items-start"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                >
-                  <Briefcase className="text-accent mr-3 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <h4 className="font-semibold text-white">Talent Recruitment</h4>
-                    <p className="text-secondary-light">talent@teg-group.com</p>
-                  </div>
-                </motion.li>
-              </ul>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <a href="mailto:partnerships@teg-group.com" className="btn btn-accent">
-                  Contact Us Today
-                </a>
-              </motion.div>
-            </div>
+          
+          {/* Section Title (as per wireframe) */}
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+            For further Information contact us
+          </h2>
+
+          {/* Grid for Image Card + Contact Form */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start"> {/* Changed items-center to items-start */}
             
+            {/* --- Left Column: Image Card + Info Block --- */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              {/* Use ImageCard for the picture only, remove caption prop */}
+              <ImageCard 
+                imageUrl="/jonathan.jpg"
+                altText={`Picture of ${contactPerson.name}`} 
+                // No caption needed here, we'll add the info block below
+                // Adjust ImageCard internal styling if needed (e.g., object-cover)
+              />
+              {/* Info Block below the Image Card */}
+              <div className="bg-gray-700 text-white p-4 mt-0 rounded-b-lg shadow-md text-center"> {/* Match bg color, text color */}
+                <h4 className="font-semibold text-lg mb-2">{contactPerson.title}</h4>
+                <div className="flex justify-center space-x-4">
+                  <a 
+                    href={`mailto:${contactPerson.email}`} 
+                    className="text-accent hover:text-white transition-colors duration-300 flex items-center space-x-1"
+                    aria-label={`Email ${contactPerson.name}`}
+                  >
+                    <Mail size={18} /> 
+                    <span>Email</span>
+                  </a>
+                  <a 
+                    href={contactPerson.linkedinUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-accent hover:text-white transition-colors duration-300 flex items-center space-x-1"
+                    aria-label={`${contactPerson.name}'s LinkedIn Profile`}
+                  >
+                    <Linkedin size={18} />
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* --- Right Column: Contact Form (remains mostly the same) --- */}
             <motion.div
               className="bg-white p-8 rounded-lg shadow-lg"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 20 }} // Changed x direction
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.2 }} // Slightly delayed
             >
               <h3 className="text-primary text-2xl font-semibold mb-6">Request Information</h3>
               <form>
-                <div className="mb-4">
+                {/* Form fields remain the same */}
+                 <div className="mb-4">
                   <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Full Name</label>
                   <input 
                     type="text" 
                     id="name" 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    name="name" // Added name attribute
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" // Added text color
                     placeholder="John Smith"
+                    required // Added required
                   />
                 </div>
                 
@@ -376,7 +193,8 @@ const ForCompanies: React.FC = () => {
                   <input 
                     type="text" 
                     id="company" 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    name="company" // Added name attribute
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" // Added text color
                     placeholder="Your Company"
                   />
                 </div>
@@ -386,8 +204,10 @@ const ForCompanies: React.FC = () => {
                   <input 
                     type="email" 
                     id="email" 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    name="email" // Added name attribute
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" // Added text color
                     placeholder="john@example.com"
+                    required // Added required
                   />
                 </div>
                 
@@ -395,31 +215,28 @@ const ForCompanies: React.FC = () => {
                   <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message</label>
                   <textarea 
                     id="message" 
+                    name="message" // Added name attribute
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" // Added text color
                     placeholder="Tell us how we can help..."
+                    required // Added required
                   ></textarea>
                 </div>
                 
                 <button 
                   type="submit"
-                  className="btn btn-primary w-full"
+                  className="btn btn-primary w-full" // Your existing button style
                 >
                   Submit Request
                 </button>
               </form>
             </motion.div>
-          </div>
-        </div>
+
+          </div> {/* End Grid */}
+        </div> {/* End Container */}
       </section>
-      
-      <CallToAction 
-        title="Develop Tomorrow's Executive Talent"
-        description="Partner with TEG to gain privileged access to an elite pipeline of future corporate leaders and join our exclusive network of industry-leading companies."
-        buttonText="Become a Partner"
-        buttonLink="mailto:partnerships@teg-group.com"
-        variant="light"
-      />
+      {/* ====== End Modified Contact Section ====== */}
+
     </div>
   );
 };
