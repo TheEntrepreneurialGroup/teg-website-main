@@ -73,8 +73,8 @@ export const Home: React.FC = () => {
               delay={0.3}
             />
             <FeatureCard
-              title="Corporate DNA"
-              description="Built with corporate principles at our core, even with our size capped at 50 active members, we embody and understand the professional standards and expectations of global industry leaders."
+              title="Corporate Leaning Entrepreneurs"
+              description="Every initiative has their own narrative: we romanticize large, properly organized companies with impressive histories the same way we are proud of our own legacy and all the great things TEGs previous decision-makers achieved. Our executive-potentials prepare to take over huge responsibility and continue greatness others laid down before, our founders build businesses solving problems for corporations in our Ecosystem."
               icon={<Building size={40} />}
               delay={0.1}
             />
