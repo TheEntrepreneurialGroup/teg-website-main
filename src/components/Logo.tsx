@@ -1,11 +1,10 @@
 import React from 'react';
-import { Briefcase } from 'lucide-react';
 
 const Logo: React.FC = () => {
   return (
     <div className="relative">
-      <div className="bg-primary p-2 rounded-md">
-        <Briefcase className="text-white" size={20} />
+      <div className="bg-transparent p-2 rounded-md">
+        <img src="/teg-logo.png" alt="TEG Logo" className="h-16 w-auto" />
       </div>
     </div>
   );
