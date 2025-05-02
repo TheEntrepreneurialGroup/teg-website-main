@@ -1,25 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Trophy, Briefcase, Users, 
-  GraduationCap, TrendingUp, Mail, Linkedin,
+  Trophy, Briefcase, 
+  TrendingUp, Mail, Linkedin,
   CheckCircle // Added for list items
 } from 'lucide-react'; // Added CheckCircle
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
 import FeatureCard from '../components/FeatureCard';
-// TestimonialCard import removed as it wasn't used
 import CallToAction from '../components/CallToAction';
-import ImageCard from '../components/ImageCard';
 
 const ForStudents: React.FC = () => {
-  // Contact person data (ensure path is correct relative to public folder)
   const contactPerson = {
-    name: "Jonathan Doe", // Replace with actual name
+    name: "Felix Enke", 
     title: "Director of Partnerships",
     imageUrl: "/felix.png", 
-    email: "jonathan.doe@teg-group.com", // Replace with actual email
-    linkedinUrl: "https://www.linkedin.com/in/jonathandoe/", // Replace with actual LinkedIn URL
+    email: "info@teg-ev.de", 
+    linkedinUrl: "https://www.linkedin.com/in/felix-enke/", 
   };
 
   // Data for the new Benefits/Requirements lists
@@ -85,54 +82,12 @@ const ForStudents: React.FC = () => {
         </div>
       </section>
       
-      {/* --- Leadership Program Section --- */}
-      <section id="leadership" className="py-20 bg-secondary-light">
-        {/* Content remains the same */}
-         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <SectionTitle 
-                title="Our Leadership Program" 
-                subtitle="TEG operates as a microcosm of the corporate world, with a structured hierarchy and clear advancement path based on performance and leadership potential."
-              />
-              <div className="space-y-6 mb-8">
-                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
-                   <h4 className="font-semibold text-xl text-primary mb-2">Phase 1: Selection & Onboarding</h4>
-                   <p className="text-gray-600">A rigorous selection process identifies high-potential candidates, followed by intensive training in corporate principles and leadership fundamentals.</p>
-                 </motion.div>
-                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
-                   <h4 className="font-semibold text-xl text-primary mb-2">Phase 2: Project Leadership</h4>
-                   <p className="text-gray-600">Members lead increasingly complex projects with real budgets, stakeholder management, and measurable outcomes.</p>
-                 </motion.div>
-                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
-                   <h4 className="font-semibold text-xl text-primary mb-2">Phase 3: Executive Development</h4>
-                   <p className="text-gray-600">Top performers advance to executive council positions, managing teams, strategy, and direct corporate partnerships.</p>
-                 </motion.div>
-              </div>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }}>
-                 <a href="#apply" className="btn btn-primary"> {/* Link to the new apply section ID */}
-                   Learn How to Apply
-                 </a>
-              </motion.div>
-            </div>
-            <motion.div className="relative" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Leadership development" className="rounded-lg shadow-xl"/>
-              <div className="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-lg">
-                 <p className="font-heading font-bold">Growth Path</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
       
-      {/* ====== NEW Benefits & Requirements Section (Replaces Mentorship) ====== */}
-      <section id="expectations" className="section bg-white"> {/* Changed background to white */}
+
+      <section id="expectations" className="section bg-white"> 
         <div className="container-custom">
-          {/* Optional Title for the whole section */}
-          {/* <SectionTitle title="What to Expect" centered subtitle="A summary of benefits and commitments" /> */}
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-0"> {/* Removed mt-12 if no SectionTitle */}
-            
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-0"> 
             {/* --- Benefits Column --- */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -202,58 +157,63 @@ const ForStudents: React.FC = () => {
         </div>
       </section>
       
-      {/* --- Contact Section --- */}
-      <section id="contact" className="py-20 bg-primary text-white">
-         {/* Content remains the same */}
-         <div className="container-custom">
-           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-             For further Information contact us
-           </h2>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
-             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
-                <ImageCard imageUrl={contactPerson.imageUrl} altText={`Picture of ${contactPerson.name}`} />
-                <div className="bg-gray-700 text-white p-4 mt-0 rounded-b-lg shadow-md text-center">
-                  <h4 className="font-semibold text-lg mb-2">{contactPerson.title}</h4>
-                  <div className="flex justify-center space-x-4">
-                    <a href={`mailto:${contactPerson.email}`} className="text-accent hover:text-white transition-colors duration-300 flex items-center space-x-1" aria-label={`Email ${contactPerson.name}`}>
-                      <Mail size={18} /> <span>Email</span>
-                    </a>
-                    <a href={contactPerson.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white transition-colors duration-300 flex items-center space-x-1" aria-label={`${contactPerson.name}'s LinkedIn Profile`}>
-                      <Linkedin size={18} /> <span>LinkedIn</span>
-                    </a>
-                  </div>
-                </div>
-             </motion.div>
-             <motion.div className="bg-white p-8 rounded-lg shadow-lg" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
-                <h3 className="text-primary text-2xl font-semibold mb-6">Request Information</h3>
-                <form>
-                  {/* Form fields */}
-                  <div className="mb-4">
-                     <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Full Name</label>
-                     <input type="text" id="name" name="name" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" placeholder="John Smith" required />
-                  </div>
-                  <div className="mb-4">
-                     <label htmlFor="company" className="block text-gray-700 font-medium mb-2">Company</label>
-                     <input type="text" id="company" name="company" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" placeholder="Your Company"/>
-                  </div>
-                  <div className="mb-4">
-                     <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email Address</label>
-                     <input type="email" id="email" name="email" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" placeholder="john@example.com" required />
-                  </div>
-                  <div className="mb-6">
-                     <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message</label>
-                     <textarea id="message" name="message" rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" placeholder="Tell us how we can help..." required ></textarea>
-                  </div>
-                  <button type="submit" className="btn btn-primary w-full"> Submit Request </button>
-                </form>
-             </motion.div>
-           </div>
-         </div>
+      <section id="contact" className="py-20 bg-primary text-white">    
+        <div className="container mx-auto px-4 max-w-6xl">
+        {/* Section Title */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+          For further Information contact us
+        </h2>
+        
+        {/* Card Container - Centered */}
+        <div className="flex justify-center">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-2xl">
+            {/* Top Section with Name */}
+            <div className="flex items-center p-6 gap-4">
+              {/* Circular Image */}
+              <div className="w-80 h-80 overflow-hidden rounded-full border-2 border-gray-200 mb-4">
+                <img 
+                  src="/felix.png" 
+                  alt="Felix Enke" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Name and Address */}
+              <div className="flex-1">
+                <h2 className="text-gray-700 text-xl md:text-2xl font-medium"> Director of People & Culture </h2>
+                <h4 className="text-gray-700 text-xl md:text-2xl font-medium">
+                  {contactPerson.name} 
+                </h4>
+              </div>
+            </div>
+            
+            {/* Divider Line */}
+            <div className="border-t border-gray-200"></div>
+            
+            {/* Contact Information */}
+            <div className="grid grid-cols-2 divide-x divide-gray-200">
+              <div className="p-4 flex items-center gap-2 text-gray-700">
+                <a href="https://www.linkedin.com/in/felix-enke/" className="flex items-center gap-2 text-primary hover:text-primary-dark">
+                <Linkedin size={20} />
+                <span> LinkedIn </span>
+                </a>
+              </div>
+              <div className="p-4 flex items-center gap-2 text-gray-700">
+              <a href="mailto:info@teg-ev.de" className="flex items-center gap-2 text-primary hover:text-primary-dark">
+                <Mail size={20} />
+                <span>Email</span>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
       </section>
-      
-
+  
     </div>
   );
 };
 
 export default ForStudents;
+
+

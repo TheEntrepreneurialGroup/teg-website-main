@@ -1,32 +1,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Users, Building, Briefcase, 
-  Calendar, Mail, Linkedin, // <-- Added Mail and Linkedin
+  Building, 
+  Mail, Linkedin, 
   GraduationCap, UserPlus 
 } from 'lucide-react'; 
 
-// --- Component Imports ---
+
 import HeroSection from '../components/HeroSection';
 import SectionTitle from '../components/SectionTitle';
 import FeatureCard from '../components/FeatureCard';
 import CallToAction from '../components/CallToAction';
-import ImageCard from '../components/ImageCard'; 
 
 const ForCompanies: React.FC = () => {
-  // --- Placeholder Data (Replace with actual info) ---
   const contactPerson = {
-    name: "Jonathan Doe", // Replace with actual name
+    name: "Jonathan Babelotzky", 
     title: "Director of Partnerships",
     imageUrl: "/jonathan.jpg",
-    email: "jonathan.doe@teg-group.com", // Replace with actual email
-    linkedinUrl: "https://www.linkedin.com/in/jonathandoe/", // Replace with actual LinkedIn URL
+    email: "info@teg-ev.de", 
+    linkedinUrl: "https://www.linkedin.com/in/jonathan-babelotzky/", 
   };
-  // --- End Placeholder Data ---
 
   return (
     <div>
-      {/* ... (HeroSection, First Feature Section, Partnerships Section remain the same) ... */}
       <HeroSection 
         title="We Develop Your Next Executive Talent. With Certainty."
         subtitle="Finding a leadership-ready hire who is also a long-term cultural fit, can be a challenge. With TEG it is certainty: Track records of ownership, responsibility, performance at the highest level and multiple talent-touchpoints ensure that you will find your right fit. Partner with TEG to access a 39 year running, proven pipeline of exceptional talent."
@@ -44,7 +40,6 @@ const ForCompanies: React.FC = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {/* FeatureCards remain the same */}
             <FeatureCard 
               title="Right Characteristics"
               description="We only looks for members who have the characteristics to become a top-level executive. We are looking for the best of the best."
@@ -69,12 +64,11 @@ const ForCompanies: React.FC = () => {
       
       <section id="partnerships" className="py-20 bg-secondary-light">
         <div className="container-custom flex flex-col items-center justify-center text-center">
-          {/* CallToAction and Partnership Opportunities Section remain the same */}
           <CallToAction 
             title="Develop Tomorrow's Executive Talent"
             description="Partner with TEG to gain privileged access to an elite pipeline of future corporate leaders and join our exclusive network of industry-leading companies."
             buttonText="Become a Partner"
-            buttonLink="mailto:partnerships@teg-group.com" // Or link to the contact section: "#contact"
+            buttonLink="mailto:partnerships@teg-group.com" 
             variant="light"
           />
 
@@ -83,7 +77,7 @@ const ForCompanies: React.FC = () => {
             subtitle="Why does partnering with us work?"
           />
 
-          <div className="space-y-6 mb-8 w-full max-w-4xl text-left"> {/* Added text-left for cards */}
+          <div className="space-y-6 mb-8 w-full max-w-4xl text-left"> 
             <motion.div className="card p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
               <h4 className="font-semibold text-xl text-primary mb-2">Student-Run, Business-Minded</h4>
               <p className="text-gray-600 mb-4">
@@ -113,129 +107,60 @@ const ForCompanies: React.FC = () => {
         </div>
       </section>
 
-      {/* ====== Modified Contact Section ====== */}
-      <section id="contact" className="py-20 bg-primary text-white">
-        <div className="container-custom">
-          
-          {/* Section Title (as per wireframe) */}
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-            For further Information contact us
-          </h2>
 
-          {/* Grid for Image Card + Contact Form */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start"> {/* Changed items-center to items-start */}
-            
-            {/* --- Left Column: Image Card + Info Block --- */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              {/* Use ImageCard for the picture only, remove caption prop */}
-              <ImageCard 
-                imageUrl="/jonathan.jpg"
-                altText={`Picture of ${contactPerson.name}`} 
-                // No caption needed here, we'll add the info block below
-                // Adjust ImageCard internal styling if needed (e.g., object-cover)
-              />
-              {/* Info Block below the Image Card */}
-              <div className="bg-gray-700 text-white p-4 mt-0 rounded-b-lg shadow-md text-center"> {/* Match bg color, text color */}
-                <h4 className="font-semibold text-lg mb-2">{contactPerson.title}</h4>
-                <div className="flex justify-center space-x-4">
-                  <a 
-                    href={`mailto:${contactPerson.email}`} 
-                    className="text-accent hover:text-white transition-colors duration-300 flex items-center space-x-1"
-                    aria-label={`Email ${contactPerson.name}`}
-                  >
-                    <Mail size={18} /> 
-                    <span>Email</span>
-                  </a>
-                  <a 
-                    href={contactPerson.linkedinUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-accent hover:text-white transition-colors duration-300 flex items-center space-x-1"
-                    aria-label={`${contactPerson.name}'s LinkedIn Profile`}
-                  >
-                    <Linkedin size={18} />
-                    <span>LinkedIn</span>
-                  </a>
-                </div>
+      <section id="contact" className="py-20 bg-primary text-white">    
+        <div className="container mx-auto px-4 max-w-6xl">
+        {/* Section Title */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+          For further Information contact us
+        </h2>
+        
+        {/* Card Container - Centered */}
+        <div className="flex justify-center">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-2xl">
+            {/* Top Section with Name */}
+            <div className="flex items-center p-6 gap-4">
+              {/* Circular Image */}
+              <div className="w-80 h-80 overflow-hidden rounded-full border-2 border-gray-200 mb-4">
+                <img 
+                  src="/jonathan.jpg" 
+                  alt="Jonathan Babelotzky" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-            </motion.div>
+              
+              {/* Name and Address */}
+              <div className="flex-1">
+                <h2 className="text-gray-700 text-xl md:text-2xl font-medium"> Director of Partnerships </h2>
+                <h4 className="text-gray-700 text-xl md:text-2xl font-medium">
+                  {contactPerson.name} 
+                </h4>
+              </div>
+            </div>
             
-            {/* --- Right Column: Contact Form (remains mostly the same) --- */}
-            <motion.div
-              className="bg-white p-8 rounded-lg shadow-lg"
-              initial={{ opacity: 0, x: 20 }} // Changed x direction
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }} // Slightly delayed
-            >
-              <h3 className="text-primary text-2xl font-semibold mb-6">Request Information</h3>
-              <form>
-                {/* Form fields remain the same */}
-                 <div className="mb-4">
-                  <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Full Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name" // Added name attribute
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" // Added text color
-                    placeholder="John Smith"
-                    required // Added required
-                  />
-                </div>
-                
-                <div className="mb-4">
-                  <label htmlFor="company" className="block text-gray-700 font-medium mb-2">Company</label>
-                  <input 
-                    type="text" 
-                    id="company" 
-                    name="company" // Added name attribute
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" // Added text color
-                    placeholder="Your Company"
-                  />
-                </div>
-                
-                <div className="mb-4">
-                  <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email Address</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" // Added name attribute
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" // Added text color
-                    placeholder="john@example.com"
-                    required // Added required
-                  />
-                </div>
-                
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message</label>
-                  <textarea 
-                    id="message" 
-                    name="message" // Added name attribute
-                    rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-800" // Added text color
-                    placeholder="Tell us how we can help..."
-                    required // Added required
-                  ></textarea>
-                </div>
-                
-                <button 
-                  type="submit"
-                  className="btn btn-primary w-full" // Your existing button style
-                >
-                  Submit Request
-                </button>
-              </form>
-            </motion.div>
-
-          </div> {/* End Grid */}
-        </div> {/* End Container */}
+            {/* Divider Line */}
+            <div className="border-t border-gray-200"></div>
+            
+            {/* Contact Information */}
+            <div className="grid grid-cols-2 divide-x divide-gray-200">
+              <div className="p-4 flex items-center gap-2 text-gray-700">
+                <a href="https://www.linkedin.com/in/jonathan-babelotzky/" className="flex items-center gap-2 text-primary hover:text-primary-dark">
+                <Linkedin size={20} />
+                <span> LinkedIn </span>
+                </a>
+              </div>
+              <div className="p-4 flex items-center gap-2 text-gray-700">
+              <a href="mailto:info@teg-ev.de" className="flex items-center gap-2 text-primary hover:text-primary-dark">
+                <Mail size={20} />
+                <span>Email</span>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
       </section>
-      {/* ====== End Modified Contact Section ====== */}
+
 
     </div>
   );
