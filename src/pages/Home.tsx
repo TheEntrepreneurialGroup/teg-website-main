@@ -1,5 +1,5 @@
 import React from "react";
-import { Building, Briefcase, TrendingUp } from "lucide-react";
+import { Building, TrendingUp } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 import FeatureCard from "../components/FeatureCard";
 import StatCard from "../components/StatCard";
@@ -90,12 +90,14 @@ export const Home: React.FC = () => {
             description="Collaborate with us to shape the next generation of leaders. Discover how your company can benefit from being integrated into the ecosystem of TEG and get access to a 39 years running, proven pipeline of exceptional talent."
             buttonText="TEG for Companies"
             buttonLink="/for-companies"
+            isSection = {false}
           />
           <CallToAction
             title="Apply to join TEG as a Student"
             description="Join a community of capped to 50 high-potential students preparing for top-level executive leadership through real responsibility, hands-on experience and mentorship. 39 years of alumni success prove what you can achieve."
             buttonText="TEG for Students"
             buttonLink="/for-students"
+            isSection = {false}
           />
         </div>
       </section>
