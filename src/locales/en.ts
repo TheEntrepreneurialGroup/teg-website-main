@@ -1,4 +1,53 @@
 const en = {
+  // Home Page Texts
+  "home.hero.title":
+    "Founded by Germany’s Top Corporations and Visionary Students, to Forge Tomorrow’s Decision-Makers. Since 1986.",
+  "home.hero.subtitle":
+    "The Entrepreneurial Group (TEG) forms the next leaders of Germany’s economy. We develop exceptional students into entrepreneurs: founders, executives, business leaders.",
+  "home.hero.buttonText1": "TEG for Companies",
+  "home.hero.buttonLink1": "/for-companies",
+  "home.hero.buttonText2": "TEG for Students",
+  "home.hero.buttonLink2": "/for-students",
+
+  "home.alumni.title": "Our Alumni: 39 Years of Impact Through Excellence",
+  "home.alumni.stat1.value": "300+ Alumni",
+  "home.alumni.stat1.label":
+    "Our Alumni build the backbone of Germany's economy. No matter if in executive positions, middle management, or team-level leadership.",
+  "home.alumni.stat2.value": "41",
+  "home.alumni.stat2.label": "Corporate Executives",
+  "home.alumni.stat3.value": "40",
+  "home.alumni.stat3.label": "SMB Executives",
+  "home.alumni.stat4.value": "15",
+  "home.alumni.stat4.label": "Business Founders",
+
+  "home.legacy.title": "Our Legacy",
+  "home.legacy.subtitle":
+    "Founded by 11 of Germany's Top Corporations and Four Exceptional Students. Proven Across Four Decades.",
+  "home.legacy.image1.caption": "11 Companies that co-founded TEG",
+  "home.legacy.image2.caption": "The 4 founders who started TEG in late 1986.",
+  "home.legacy.image3.caption":
+    'Newspaper article of Donaukurier "11 Companies founded new student initiative" shortly after the completion of the legal registration of TEGs "Board of Trustees" in January 1988.',
+  "home.legacy.feature1.title": "Proven Track Record",
+  "home.legacy.feature1.description":
+    "With 39 years of success, our alumni consistently rise to executive positions in leading companies across Germany and beyond – or founded thriving companies of their own.",
+  "home.legacy.feature2.title": "Corporate Leaning Entrepreneurs",
+  "home.legacy.feature2.description":
+    "Every initiative has their own narrative: we romanticize large, properly organized companies with impressive histories the same way we are proud of our own legacy and all the great things TEGs previous decision-makers achieved. Our executive-potentials prepare to take over huge responsibility and continue greatness others laid down before, our founders build businesses solving problems for corporations in our Ecosystem.",
+
+  "home.callToAction1.title": "Partner with TEG as Company",
+  "home.callToAction1.description":
+    "Collaborate with us to shape the next generation of leaders. Discover how your company can benefit from being integrated into the ecosystem of TEG and get access to a 39 years running, proven pipeline of exceptional talent.",
+  "home.callToAction1.buttonText": "TEG for Companies",
+  "home.callToAction1.buttonLink": "/for-companies",
+
+  "home.callToAction2.title": "Apply to join TEG as a Student",
+  "home.callToAction2.description":
+    "Join a community of capped to 50 high-potential students preparing for top-level executive leadership through real responsibility, hands-on experience and mentorship. 39 years of alumni success prove what you can achieve.",
+  "home.callToAction2.buttonText": "TEG for Students",
+    "home.callToAction2.buttonLink": "/for-students",
+  
+    // Company Page Texts
+
   "company.hero.title":
     "We Develop Your Next Executive Talent. With Certainty.",
   "company.hero.subtitle":
@@ -101,53 +150,6 @@ const en = {
   "student.contact.linkedin": "LinkedIn",
   "student.contact.directorTitle": "Director of People & Culture",
   "student.contact.directorName": "Felix Enke",
-
-  // Home Page Texts
-  "home.hero.title":
-    "Founded by Germany’s Top Corporations and Visionary Students, to Forge Tomorrow’s Decision-Makers. Since 1986.",
-  "home.hero.subtitle":
-    "The Entrepreneurial Group (TEG) forms the next leaders of Germany’s economy. We develop exceptional students into entrepreneurs: founders, executives, business leaders.",
-  "home.hero.buttonText1": "TEG for Companies",
-  "home.hero.buttonLink1": "/for-companies",
-  "home.hero.buttonText2": "TEG for Students",
-  "home.hero.buttonLink2": "/for-students",
-
-  "home.alumni.title": "Our Alumni: 39 Years of Impact Through Excellence",
-  "home.alumni.stat1.value": "300+ Alumni",
-  "home.alumni.stat1.label":
-    "Our Alumni build the backbone of Germany's economy. No matter if in executive positions, middle management, or team-level leadership.",
-  "home.alumni.stat2.value": "41",
-  "home.alumni.stat2.label": "Corporate Executives",
-  "home.alumni.stat3.value": "40",
-  "home.alumni.stat3.label": "SMB Executives",
-  "home.alumni.stat4.value": "15",
-  "home.alumni.stat4.label": "Business Founders",
-
-  "home.legacy.title": "Our Legacy",
-  "home.legacy.subtitle":
-    "Founded by 11 of Germany's Top Corporations and Four Exceptional Students. Proven Across Four Decades.",
-  "home.legacy.image1.caption": "11 Companies that co-founded TEG",
-  "home.legacy.image2.caption": "The 4 founders who started TEG in late 1986.",
-  "home.legacy.image3.caption":
-    'Newspaper article of Donaukurier "11 Companies founded new student initiative" shortly after the completion of the legal registration of TEGs "Board of Trustees" in January 1988.',
-  "home.legacy.feature1.title": "Proven Track Record",
-  "home.legacy.feature1.description":
-    "With 39 years of success, our alumni consistently rise to executive positions in leading companies across Germany and beyond – or founded thriving companies of their own.",
-  "home.legacy.feature2.title": "Corporate Leaning Entrepreneurs",
-  "home.legacy.feature2.description":
-    "Every initiative has their own narrative: we romanticize large, properly organized companies with impressive histories the same way we are proud of our own legacy and all the great things TEGs previous decision-makers achieved. Our executive-potentials prepare to take over huge responsibility and continue greatness others laid down before, our founders build businesses solving problems for corporations in our Ecosystem.",
-
-  "home.callToAction1.title": "Partner with TEG as Company",
-  "home.callToAction1.description":
-    "Collaborate with us to shape the next generation of leaders. Discover how your company can benefit from being integrated into the ecosystem of TEG and get access to a 39 years running, proven pipeline of exceptional talent.",
-  "home.callToAction1.buttonText": "TEG for Companies",
-  "home.callToAction1.buttonLink": "/for-companies",
-
-  "home.callToAction2.title": "Apply to join TEG as a Student",
-  "home.callToAction2.description":
-    "Join a community of capped to 50 high-potential students preparing for top-level executive leadership through real responsibility, hands-on experience and mentorship. 39 years of alumni success prove what you can achieve.",
-  "home.callToAction2.buttonText": "TEG for Students",
-  "home.callToAction2.buttonLink": "/for-students",
 };
 
 export default en;
