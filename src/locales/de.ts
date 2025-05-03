@@ -1,4 +1,53 @@
 const de = {
+  // Home Page Texts
+  "home.hero.title":
+    "Gegründet von Deutschlands führenden Unternehmen und visionären Studentierenden, zur Förderung der Entscheider von morgen. Seit 1986.",
+  "home.hero.subtitle":
+    "Die Entrepreneurial Group (TEG) formt die nächsten Führungspersönlichkeiten der deutschen Wirtschaft. Wir entwickeln außergewöhnliche Talente zu Unternehmern: Gründer:innen, Führungskräfte und Business Leader.",
+  "home.hero.buttonText1": "TEG für Unternehmen",
+  "home.hero.buttonLink1": "/for-companies",
+  "home.hero.buttonText2": "TEG für Studierende",
+  "home.hero.buttonLink2": "/for-students",
+
+  "home.alumni.title": "Unsere Alumni: 39 Jahre Exzellenz mit Wirkung",
+  "home.alumni.stat1.value": "300+ Alumni",
+  "home.alumni.stat1.label":
+    "Unsere Alumni bilden das Rückgrat der deutschen Wirtschaft. Egal ob in Führungspositionen, im mittleren Management oder in der Teamleitung.",
+  "home.alumni.stat2.value": "41",
+  "home.alumni.stat2.label": "Unternehmensführer",
+  "home.alumni.stat3.value": "40",
+  "home.alumni.stat3.label": "KMU-Führungskräfte",
+  "home.alumni.stat4.value": "15",
+  "home.alumni.stat4.label": "Unternehmensgründer",
+
+  "home.legacy.title": "Unser Vermächtnis",
+  "home.legacy.subtitle":
+    "Gegründet von 11 der führenden deutschen Unternehmen und vier außergewöhnlichen Studierenden. Bewährt über vier Jahrzehnte.",
+  "home.legacy.image1.caption": "11 Unternehmen, die TEG mitbegründet haben",
+  "home.legacy.image2.caption":
+    "Die 4 Gründer, die TEG Ende 1986 ins Leben gerufen haben.",
+  "home.legacy.image3.caption":
+    'Zeitungsartikel des Donaukuriers: "11 Unternehmen gründen neue Studenteninitiative" kurz nach der rechtlichen Registrierung des TEG-Kuratoriums im Januar 1988.',
+  "home.legacy.feature1.title": "Bewährte Erfolgsbilanz",
+  "home.legacy.feature1.description":
+    "Mit 39 Jahren Erfolg steigen unsere Alumni konsequent in Führungspositionen führender Unternehmen in Deutschland und darüber hinaus auf – oder gründen florierende Unternehmen.",
+  "home.legacy.feature2.title": "Unternehmer mit Fokus auf Unternehmen",
+  "home.legacy.feature2.description":
+    "Jede Initiative hat ihre eigene Geschichte: Wir bewundern große, gut organisierte Unternehmen mit beeindruckender Geschichte genauso wie wir stolz auf unser eigenes Vermächtnis und die großartigen Leistungen früherer TEG-Entscheidungsträger sind. Unsere Führungspotenziale bereiten sich darauf vor, große Verantwortung zu übernehmen und die Größe fortzusetzen, die andere vor ihnen geschaffen haben. Unsere Gründer bauen Unternehmen, die Probleme für Unternehmen in unserem Ökosystem lösen.",
+
+  "home.callToAction1.title": "Werden Sie Partner von TEG als Unternehmen",
+  "home.callToAction1.description":
+    "Arbeiten Sie mit uns zusammen, um die nächste Generation von Führungskräften zu formen. Entdecken Sie, wie Ihr Unternehmen von der Integration in das TEG-Ökosystem profitieren und Zugang zu einer 39 Jahre bewährten Pipeline außergewöhnlicher Talente erhalten kann.",
+  "home.callToAction1.buttonText": "TEG für Unternehmen",
+  "home.callToAction1.buttonLink": "/for-companies",
+
+  "home.callToAction2.title": "Bewerben Sie sich bei TEG als Studierender",
+  "home.callToAction2.description":
+    "Treten Sie einer Gemeinschaft von maximal 50 hochqualifizierten Studierenden bei, die sich durch echte Verantwortung, praktische Erfahrung und Mentoring auf Führungspositionen vorbereiten. 39 Jahre Alumni-Erfolg beweisen, was Sie erreichen können.",
+  "home.callToAction2.buttonText": "TEG für Studierende",
+  "home.callToAction2.buttonLink": "/for-students",
+
+    // Company Page Texts
   "company.hero.title":
     "Wir entwickeln Ihre nächsten Führungstalente. Mit Sicherheit.",
   "company.hero.subtitle":
@@ -107,53 +156,7 @@ const de = {
   "student.contact.directorTitle": "Direktor für People & Culture",
   "student.contact.directorName": "Felix Enke",
 
-  // Home Page Texts
-  "home.hero.title":
-    "Gegründet von Deutschlands Top-Unternehmen und visionären Studierenden, um die Entscheidungsträger von morgen zu formen. Seit 1986.",
-  "home.hero.subtitle":
-    "Die Entrepreneurial Group (TEG) bildet die nächsten Führungskräfte der deutschen Wirtschaft aus. Wir entwickeln außergewöhnliche Studierende zu Unternehmern: Gründer, Führungskräfte, Wirtschaftsführer.",
-  "home.hero.buttonText1": "TEG für Unternehmen",
-  "home.hero.buttonLink1": "/for-companies",
-  "home.hero.buttonText2": "TEG für Studierende",
-  "home.hero.buttonLink2": "/for-students",
 
-  "home.alumni.title": "Unsere Alumni: 39 Jahre Exzellenz mit Wirkung",
-  "home.alumni.stat1.value": "300+ Alumni",
-  "home.alumni.stat1.label":
-    "Unsere Alumni bilden das Rückgrat der deutschen Wirtschaft. Egal ob in Führungspositionen, im mittleren Management oder in der Teamleitung.",
-  "home.alumni.stat2.value": "41",
-  "home.alumni.stat2.label": "Unternehmensführer",
-  "home.alumni.stat3.value": "40",
-  "home.alumni.stat3.label": "KMU-Führungskräfte",
-  "home.alumni.stat4.value": "15",
-  "home.alumni.stat4.label": "Unternehmensgründer",
-
-  "home.legacy.title": "Unser Vermächtnis",
-  "home.legacy.subtitle":
-    "Gegründet von 11 der führenden deutschen Unternehmen und vier außergewöhnlichen Studierenden. Bewährt über vier Jahrzehnte.",
-  "home.legacy.image1.caption": "11 Unternehmen, die TEG mitbegründet haben",
-  "home.legacy.image2.caption":
-    "Die 4 Gründer, die TEG Ende 1986 ins Leben gerufen haben.",
-  "home.legacy.image3.caption":
-    'Zeitungsartikel des Donaukuriers: "11 Unternehmen gründen neue Studenteninitiative" kurz nach der rechtlichen Registrierung des TEG-Kuratoriums im Januar 1988.',
-  "home.legacy.feature1.title": "Bewährte Erfolgsbilanz",
-  "home.legacy.feature1.description":
-    "Mit 39 Jahren Erfolg steigen unsere Alumni konsequent in Führungspositionen führender Unternehmen in Deutschland und darüber hinaus auf – oder gründen florierende Unternehmen.",
-  "home.legacy.feature2.title": "Unternehmer mit Fokus auf Unternehmen",
-  "home.legacy.feature2.description":
-    "Jede Initiative hat ihre eigene Geschichte: Wir bewundern große, gut organisierte Unternehmen mit beeindruckender Geschichte genauso wie wir stolz auf unser eigenes Vermächtnis und die großartigen Leistungen früherer TEG-Entscheidungsträger sind. Unsere Führungspotenziale bereiten sich darauf vor, große Verantwortung zu übernehmen und die Größe fortzusetzen, die andere vor ihnen geschaffen haben. Unsere Gründer bauen Unternehmen, die Probleme für Unternehmen in unserem Ökosystem lösen.",
-
-  "home.callToAction1.title": "Werden Sie Partner von TEG als Unternehmen",
-  "home.callToAction1.description":
-    "Arbeiten Sie mit uns zusammen, um die nächste Generation von Führungskräften zu formen. Entdecken Sie, wie Ihr Unternehmen von der Integration in das TEG-Ökosystem profitieren und Zugang zu einer 39 Jahre bewährten Pipeline außergewöhnlicher Talente erhalten kann.",
-  "home.callToAction1.buttonText": "TEG für Unternehmen",
-  "home.callToAction1.buttonLink": "/for-companies",
-
-  "home.callToAction2.title": "Bewerben Sie sich bei TEG als Studierender",
-  "home.callToAction2.description":
-    "Treten Sie einer Gemeinschaft von maximal 50 hochqualifizierten Studierenden bei, die sich durch echte Verantwortung, praktische Erfahrung und Mentoring auf Führungspositionen vorbereiten. 39 Jahre Alumni-Erfolg beweisen, was Sie erreichen können.",
-  "home.callToAction2.buttonText": "TEG für Studierende",
-  "home.callToAction2.buttonLink": "/for-students",
 };
 
 export default de;
