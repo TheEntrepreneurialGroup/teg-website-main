@@ -28,6 +28,49 @@ const de = {
   "company.contact.linkedin": "LinkedIn",
   "company.contact.directorTitle": "Direktor für Partnerschaften",
   "company.contact.directorName": "Jonathan Babelotzky",
+
+  // Student Page Texts
+  "student.hero.title": "Werde ein Leader. Gestalte die Zukunft der Wirtschaft.",
+  "student.hero.subtitle": "Tritt einer Gemeinschaft von maximal 50 hochqualifizierten Studierenden bei, die sich durch echte Verantwortung, praktische Erfahrung und Mentoring auf Führungspositionen vorbereiten. 39 Jahre Alumni-Erfolg beweisen, was du erreichen kannst.",
+  "student.hero.buttonText": "Jetzt bewerben",
+  "student.hero.buttonLink": "#apply",
+
+  "student.intro.title": "TEG ist nicht für jeden. 10+ Stunden Arbeitsaufwand pro Woche. Echte Verantwortung. Führung auf höchstem Niveau.",
+  "student.intro.subtitle": "Wenn du denkst, das ist zu viel, ist TEG nicht der richtige Weg für dich.",
+
+  "student.features.meritBased.title": "Leistungsbasierter Aufstieg",
+  "student.features.meritBased.description": "Steige durch eine strukturierte interne Karriereleiter auf, basierend auf nachgewiesener Leistung und Führungsfähigkeit.",
+  "student.features.corporateImmersion.title": "Eintauchen in die Unternehmenswelt",
+  "student.features.corporateImmersion.description": "Arbeite direkt mit Führungskräften unserer Partnerunternehmen zusammen und gewinne Einblicke in die Unternehmensführung.",
+  "student.features.leadershipDevelopment.title": "Führungsentwicklung",
+  "student.features.leadershipDevelopment.description": "Entwickle und verfeinere wesentliche Führungsfähigkeiten durch praktische Projekte und Führungsherausforderungen.",
+
+  "student.benefits.title": "Vorteile für Studierende",
+  "student.benefits.list.1": "Exklusive Gemeinschaft hochqualifizierter Gleichgesinnter (maximal 50).",
+  "student.benefits.list.2": "Zugang zu einem eigenen Büro für Zusammenarbeit.",
+  "student.benefits.list.3": "Beschleunigter Karriereweg durch praktische Erfahrung.",
+  "student.benefits.list.4": "Direkter Kontakt und Mentoring durch Unternehmensführungskräfte.",
+  "student.benefits.list.5": "Möglichkeiten, Projekte zu leiten und unternehmerische Fähigkeiten zu entwickeln.",
+  "student.benefits.list.6": "Bewährte Erfolgsbilanz (39 Jahre) von Alumni-Erfolgen.",
+
+  "student.requirements.title": "Anforderungen für Studierende",
+  "student.requirements.list.1": "Engagement von 10+ Stunden pro Woche.",
+  "student.requirements.list.2": "Aktive Teilnahme an Task Forces und TEG-Aktivitäten.",
+  "student.requirements.list.3": "Bereitschaft, echte Verantwortung und Rechenschaftspflicht zu übernehmen.",
+  "student.requirements.list.4": "Ambition für Führungspositionen auf höchstem Niveau.",
+  "student.requirements.list.5": "Proaktive Beiträge zum Erfolg der Gruppe.",
+  "student.requirements.list.6": "Hohe akademische Leistungen und starke Arbeitsmoral.",
+
+  "student.callToAction.title": "Bereit, deine Karriere als Führungskraft zu starten?",
+  "student.callToAction.description": "Übernimm Verantwortung. Tritt TEG bei und erlange die Fähigkeiten, das Netzwerk und die Erfahrung, die du benötigst, um die Führungskraft von morgen zu werden.",
+  "student.callToAction.buttonText": "Jetzt bewerben",
+  "student.callToAction.buttonLink": "https://tally.so/r/wMM9zp",
+
+  "student.contact.title": "Für weitere Informationen kontaktieren Sie uns",
+  "student.contact.email": "E-Mail",
+  "student.contact.linkedin": "LinkedIn",
+  "student.contact.directorTitle": "Direktor für People & Culture",
+  "student.contact.directorName": "Felix Enke",
 };
 
 export default de;
