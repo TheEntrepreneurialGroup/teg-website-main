@@ -21,7 +21,7 @@ function App() {
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout switchLanguage={switchLanguage} />}>
           <Route index element={<Home />} />
           <Route path="for-students" element={<ForStudents />} />
           <Route path="for-companies" element={<ForCompanies />} />
