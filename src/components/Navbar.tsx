@@ -6,9 +6,10 @@ import { motion } from "framer-motion";
 
 interface NavbarProps {
   scrolled: boolean;
+  switchLanguage: (lang: "en" | "de") => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
+const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -31,44 +32,67 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-            <NavLink
+          <NavLink
             to="/"
             className={({ isActive }) =>
               `font-semibold relative ${
-              scrolled || isActive ? "text-white" : "text-white"
+                scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
-              isActive ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white" : ""
+                isActive
+                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
+                  : ""
               }`
             }
             end
-            >
+          >
             About Us
-            </NavLink>
-            <NavLink
+          </NavLink>
+          <NavLink
             to="/for-companies"
             className={({ isActive }) =>
               `font-semibold relative ${
-              scrolled || isActive ? "text-white" : "text-white"
+                scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
-              isActive ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white" : ""
+                isActive
+                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
+                  : ""
               }`
             }
-            >
+          >
             TEG for Companies
-            </NavLink>
-            <NavLink
+          </NavLink>
+          <NavLink
             to="/for-students"
             className={({ isActive }) =>
               `font-semibold relative ${
-              scrolled || isActive ? "text-white" : "text-white"
+                scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
-              isActive ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white" : ""
+                isActive
+                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
+                  : ""
               }`
             }
-            >
+          >
             TEG for Students
-            </NavLink>
+          </NavLink>
         </nav>
+
+        {/* Language Switcher */}
+        <div className="hidden md:flex items-center space-x-4">
+          <button
+            onClick={() => switchLanguage("en")}
+            className="font-semibold text-white hover:text-primary-light transition-colors duration-300"
+          >
+            EN
+          </button>
+          <span className="text-white">|</span>
+          <button
+            onClick={() => switchLanguage("de")}
+            className="font-semibold text-white hover:text-primary-light transition-colors duration-300"
+          >
+            DE
+          </button>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
