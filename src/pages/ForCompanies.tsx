@@ -174,21 +174,27 @@ const ForCompanies: React.FC = () => {
 
       <section id="contact" className="py-20 bg-primary text-white">
         <div className="container mx-auto px-4 max-w-6xl">
+          {/* Section Title */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
             {intl.formatMessage({ id: "company.contact.title" })}
           </h2>
 
+          {/* Card Container - Centered */}
           <div className="flex justify-center">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-2xl">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl">
+              {/* Top Section with Name */}
               <div className="flex items-center p-6 gap-4">
-                <div className="w-80 h-80 overflow-hidden rounded-full border-2 border-gray-200 mb-4">
+                {/* Rectangular Image */}
+                <div className="w-32 h-42 overflow-hidden border-2 border-gray-200 rounded-lg flex-shrink-0">
                   <img
                     src={contactPerson.imageUrl}
                     alt={contactPerson.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="flex-1">
+
+                {/* Name and Address */}
+                <div className="flex-1 min-w-0">
                   <h2 className="text-gray-700 text-xl md:text-2xl font-medium">
                     {contactPerson.title}
                   </h2>
@@ -197,7 +203,11 @@ const ForCompanies: React.FC = () => {
                   </h4>
                 </div>
               </div>
+
+              {/* Divider Line */}
               <div className="border-t border-gray-200"></div>
+
+              {/* Contact Information */}
               <div className="grid grid-cols-2 divide-x divide-gray-200">
                 <div className="p-4 flex items-center gap-2 text-gray-700">
                   <a
