@@ -51,7 +51,7 @@ const en = {
   "company.hero.title":
     "We Develop Your Next Executive Talent. With Certainty.",
   "company.hero.subtitle":
-    "Finding a leadership-ready hire who is also a long-term cultural fit, can be a challenge. With TEG it is certainty: Track records of ownership, responsibility, performance at the highest level and multiple talent-touchpoints ensure that you will find your right fit. Partner with TEG to access a 39 year running, proven pipeline of exceptional talent.",
+    "Partner with TEG to access a 39 year running, proven pipeline of exceptional talent.",
   "company.hero.buttonText": "Become a Partner",
   "company.sectionTitle.partnerships.title":
     "Partner with TEG to gain access to the current generation of top talent",

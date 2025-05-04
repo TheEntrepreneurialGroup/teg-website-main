@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Building,
   Mail,
   Linkedin,
-  GraduationCap,
-  UserPlus,
+  UserSearch,
+  Hammer,
+  ListChecks,
+  Quote,
 } from "lucide-react";
 import { useIntl } from "react-intl";
 
@@ -55,7 +56,7 @@ const ForCompanies: React.FC = () => {
               description={intl.formatMessage({
                 id: "company.features.rightCharacteristics.description",
               })}
-              icon={<UserPlus size={40} />}
+              icon={<UserSearch size={40} />}
               delay={0.1}
             />
             <FeatureCard
@@ -65,7 +66,7 @@ const ForCompanies: React.FC = () => {
               description={intl.formatMessage({
                 id: "company.features.preparation.description",
               })}
-              icon={<Building size={40} />}
+              icon={<Hammer size={40} />}
               delay={0.2}
             />
             <FeatureCard
@@ -75,27 +76,27 @@ const ForCompanies: React.FC = () => {
               description={intl.formatMessage({
                 id: "company.features.identification.description",
               })}
-              icon={<GraduationCap size={40} />}
+              icon={<ListChecks size={40} />}
               delay={0.3}
             />
           </div>
         </div>
       </section>
 
-      <section id="partnerships" className="py-20 bg-secondary-light">
-        <div className="container-custom flex flex-col items-center justify-center text-center">
-          <CallToAction
-            title={intl.formatMessage({ id: "company.callToAction.title" })}
-            description={intl.formatMessage({
-              id: "company.callToAction.description",
-            })}
-            buttonText={intl.formatMessage({
-              id: "company.callToAction.buttonText",
-            })}
-            buttonLink="mailto:partnerships@teg-group.com"
-            variant="light"
-          />
+      <CallToAction
+        title={intl.formatMessage({ id: "company.callToAction.title" })}
+        description={intl.formatMessage({
+          id: "company.callToAction.description",
+        })}
+        buttonText={intl.formatMessage({
+          id: "company.callToAction.buttonText",
+        })}
+        buttonLink="mailto:partnerships@teg-group.com"
+        variant="light"
+      />
 
+      <section id="partnerships" className="py-20 bg-secondary-light">
+        <div className="container-custom">
           <SectionTitle
             title={intl.formatMessage({
               id: "company.sectionTitle.opportunities.title",
@@ -175,17 +176,16 @@ const ForCompanies: React.FC = () => {
       <section id="contact" className="py-20 bg-primary text-white">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Section Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">
             {intl.formatMessage({ id: "company.contact.title" })}
           </h2>
 
           {/* Card Container - Centered */}
-          <div className="flex justify-center">
+          <div className="flex ">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl">
-              {/* Top Section with Name */}
-              <div className="flex items-center p-6 gap-4">
+              <div className="flex flex-col md:flex-row items-center p-6 gap-4">
                 {/* Rectangular Image */}
-                <div className="w-32 h-42 overflow-hidden border-2 border-gray-200 rounded-lg flex-shrink-0">
+                <div className="w-full md:w-64 h-84 overflow-hidden border-2 border-gray-200 rounded-lg flex-shrink-0">
                   <img
                     src={contactPerson.imageUrl}
                     alt={contactPerson.name}
@@ -193,14 +193,26 @@ const ForCompanies: React.FC = () => {
                   />
                 </div>
 
-                {/* Name and Address */}
-                <div className="flex-1 min-w-0">
-                  <h2 className="text-gray-700 text-xl md:text-2xl font-medium">
-                    {contactPerson.title}
-                  </h2>
-                  <h4 className="text-gray-700 text-xl md:text-2xl font-medium">
+                {/* Greeting, Name and Title vertically stacked */}
+                <div className="flex-1 mt-4 md:mt-0 md:text-left">
+                  <div className="text-gray-700">
+                    <Quote size={20} className="block mb-2" />
+                    <h2 className="text-3xl md:text-4xl font-bold">
+                      {intl.formatMessage({
+                        id: "company.contact.greeting",
+                        defaultMessage: "greeting",
+                      })}
+                    </h2>
+                    <div className="flex justify-end mt-2">
+                      <Quote size={20} />
+                    </div>
+                  </div>
+                  <p className="text-gray-700 text-xl md:text-2xl font-medium mt-4">
                     {contactPerson.name}
-                  </h4>
+                  </p>
+                  <p className="text-gray-700 text-xl md:text-2xl font-medium">
+                    {contactPerson.title}
+                  </p>
                 </div>
               </div>
 
@@ -208,8 +220,8 @@ const ForCompanies: React.FC = () => {
               <div className="border-t border-gray-200"></div>
 
               {/* Contact Information */}
-              <div className="grid grid-cols-2 divide-x divide-gray-200">
-                <div className="p-4 flex items-center gap-2 text-gray-700">
+              <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-gray-200">
+                <div className="p-4 flex items-center gap-2 text-gray-700 justify-center">
                   <a
                     href={contactPerson.linkedinUrl}
                     className="flex items-center gap-2 text-primary hover:text-primary-dark"
@@ -220,7 +232,7 @@ const ForCompanies: React.FC = () => {
                     </span>
                   </a>
                 </div>
-                <div className="p-4 flex items-center gap-2 text-gray-700">
+                <div className="p-4 flex items-center gap-2 text-gray-700 justify-center">
                   <a
                     href={`mailto:${contactPerson.email}`}
                     className="flex items-center gap-2 text-primary hover:text-primary-dark"
