@@ -91,7 +91,7 @@ const ForCompanies: React.FC = () => {
         buttonText={intl.formatMessage({
           id: "company.callToAction.buttonText",
         })}
-        buttonLink="mailto:partnerships@teg-group.com"
+        buttonLink={`mailto:${contactPerson.email}`}
         variant="light"
       />
 
