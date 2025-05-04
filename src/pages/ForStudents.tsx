@@ -1,17 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Trophy,
-  Briefcase,
-  TrendingUp,
   Mail,
   Linkedin,
-  CheckCircle, // Added for list items
-} from "lucide-react"; // Added CheckCircle
+  ArrowDown,
+} from "lucide-react"; 
 import { useIntl } from "react-intl";
 import HeroSection from "../components/HeroSection";
-import SectionTitle from "../components/SectionTitle";
-import FeatureCard from "../components/FeatureCard";
 import CallToAction from "../components/CallToAction";
 
 const ForStudents: React.FC = () => {
@@ -20,28 +15,29 @@ const ForStudents: React.FC = () => {
   const contactPerson = {
     name: intl.formatMessage({ id: "student.contact.directorName" }),
     title: intl.formatMessage({ id: "student.contact.directorTitle" }),
-    imageUrl: "/felix.png",
+    imageUrl: "/felix.jpg",
     email: "info@teg-ev.de",
     linkedinUrl: "https://www.linkedin.com/in/felix-enke/",
   };
 
-  const studentBenefits = [
-    intl.formatMessage({ id: "student.benefits.list.1" }),
-    intl.formatMessage({ id: "student.benefits.list.2" }),
-    intl.formatMessage({ id: "student.benefits.list.3" }),
-    intl.formatMessage({ id: "student.benefits.list.4" }),
-    intl.formatMessage({ id: "student.benefits.list.5" }),
-    intl.formatMessage({ id: "student.benefits.list.6" }),
-  ];
 
-  const studentRequirements = [
-    intl.formatMessage({ id: "student.requirements.list.1" }),
-    intl.formatMessage({ id: "student.requirements.list.2" }),
-    intl.formatMessage({ id: "student.requirements.list.3" }),
-    intl.formatMessage({ id: "student.requirements.list.4" }),
-    intl.formatMessage({ id: "student.requirements.list.5" }),
-    intl.formatMessage({ id: "student.requirements.list.6" }),
-  ];
+  const sectionVariant = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay }
+    })
+  };
+
+  const boxVariant = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, delay }
+    })
+  };
 
   return (
     <div>
@@ -53,142 +49,326 @@ const ForStudents: React.FC = () => {
         buttonLink={intl.formatMessage({ id: "student.hero.buttonLink" })}
         backgroundImage="/invite.png"
       />
-
-      {/* --- Intro Section (Warning/Disclaimer) --- */}
-      <section className="section">
+        {/* --- Intro Section --- */}
+        <section className="py-16 md:py-20 bg-white"> 
         <div className="container-custom">
-          <SectionTitle
-            title={intl.formatMessage({ id: "student.intro.title" })}
-            subtitle={intl.formatMessage({ id: "student.intro.subtitle" })}
-            centered
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {/* Feature cards remain the same */}
-            <FeatureCard
-              title={intl.formatMessage({
-                id: "student.features.meritBased.title",
-              })}
-              description={intl.formatMessage({
-                id: "student.features.meritBased.description",
-              })}
-              icon={<TrendingUp size={40} />}
-              delay={0.1}
-            />
-            <FeatureCard
-              title={intl.formatMessage({
-                id: "student.features.corporateImmersion.title",
-              })}
-              description={intl.formatMessage({
-                id: "student.features.corporateImmersion.description",
-              })}
-              icon={<Briefcase size={40} />}
-              delay={0.2}
-            />
-            <FeatureCard
-              title={intl.formatMessage({
-                id: "student.features.leadershipDevelopment.title",
-              })}
-              description={intl.formatMessage({
-                id: "student.features.leadershipDevelopment.description",
-              })}
-              icon={<Trophy size={40} />}
-              delay={0.3}
-            />
+          <div className="max-w-3xl mx-auto text-center"> 
+
+            
+            <p className="text-xl md:text-2xl font-semibold text-primary mb-6"> 
+              {intl.formatMessage({ id: "student.intro.title" })}
+            </p>
+
+            {/* Subsequent lines - standard text styling */}
+            <p className="text-base md:text-lg text-gray-700 mb-4"> 
+              {intl.formatMessage({ id: "student.intro.line.1" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-700 mb-4"> 
+              {intl.formatMessage({ id: "student.intro.line.2" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-700"> 
+              {intl.formatMessage({ id: "student.intro.line.3" })}
+            </p>
+
           </div>
         </div>
       </section>
 
-      <section id="expectations" className="section bg-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-0">
-            {/* --- Benefits Column --- */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="card p-6 bg-secondary-light rounded-lg" // Added card styling
-            >
-              <h3 className="text-xl font-semibold text-primary mb-4">
-                {intl.formatMessage({ id: "student.benefits.title" })}
-              </h3>
-              <ul className="space-y-3 text-gray-700">
-                {studentBenefits.map((benefit, index) => (
-                  <motion.li
-                    key={index}
-                    className="flex items-start"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }} // Staggered delay
-                  >
-                    <CheckCircle
-                      className="text-accent mr-2 mt-1 flex-shrink-0"
-                      size={18}
-                    />
-                    <span>{benefit}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
+        {/* --- HOW IT WORKS SECTION --- */}
+      <section className="py-16 md:py-24 bg-gray-50"> 
+        <div className="container-custom max-w-5xl mx-auto px-4"> 
 
-            {/* --- Requirements Column --- */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }} // Slightly later delay
-              className="card p-6 bg-secondary-light rounded-lg" // Added card styling
+          {/* Main Title */}
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-center text-primary mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariant}
+          >
+            {intl.formatMessage({ id: "student.howItWorks.mainTitle" })}
+          </motion.h2>
+
+          {/* --- Step 1 --- */}
+          <motion.div
+            className="mb-12 text-center md:text-left" // Center text on small, left on medium+
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariant}
+            custom={0.1} // Stagger delay
+          >
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+              {intl.formatMessage({ id: "student.howItWorks.step1.title" })}
+            </h3>
+            <p className="text-base md:text-lg text-gray-600 mb-3 max-w-3xl mx-auto md:mx-0"> {/* Limit width */}
+              {intl.formatMessage({ id: "student.howItWorks.step1.desc1" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto md:mx-0"> {/* Limit width */}
+              {intl.formatMessage({ id: "student.howItWorks.step1.desc2" })}
+            </p>
+          </motion.div>
+
+          {/* Arrow Separator */}
+          <motion.div
+             className="flex justify-center my-8 text-gray-400"
+             initial={{opacity: 0}} whileInView={{opacity: 1}} viewport={{ once: true }} transition={{delay: 0.3}}
+          >
+            <ArrowDown size={28} strokeWidth={1.5} />
+          </motion.div>
+
+          {/* --- Step 2 --- */}
+          <motion.div
+            className="mb-12 text-center md:text-left"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }} // Trigger slightly earlier
+            variants={sectionVariant}
+            custom={0.2}
+          >
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+              {intl.formatMessage({ id: "student.howItWorks.step2.title" })}
+            </h3>
+            <p className="text-base md:text-lg text-gray-600 mb-8 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step2.desc1" })}
+            </p>
+            {/* Nested Boxes */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-8">
+              {/* Box 1 */}
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.3}>
+                <p className="text-gray-700 text-base leading-relaxed">
+                  {intl.formatMessage({ id: "student.howItWorks.step2.box1" })}
+                </p>
+              </motion.div>
+              {/* Box 2 */}
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.4}>
+                <p className="text-gray-700 text-base leading-relaxed">
+                  {intl.formatMessage({ id: "student.howItWorks.step2.box2" })}
+                </p>
+              </motion.div>
+              {/* Box 3 */}
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.5}>
+                <p className="text-gray-700 text-base leading-relaxed">
+                  {intl.formatMessage({ id: "student.howItWorks.step2.box3" })}
+                </p>
+              </motion.div>
+            </div>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step2.desc2" })}
+            </p>
+          </motion.div>
+
+          {/* Arrow Separator */}
+          <motion.div
+             className="flex justify-center my-8 text-gray-400"
+             initial={{opacity: 0}} whileInView={{opacity: 1}} viewport={{ once: true }} transition={{delay: 0.3}}
+          >
+            <ArrowDown size={28} strokeWidth={1.5} />
+          </motion.div>
+
+          {/* --- Step 3 --- */}
+          <motion.div
+            className="mb-12 text-center md:text-left"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }} // Trigger even earlier if long
+            variants={sectionVariant}
+            custom={0.2}
+          >
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+              {intl.formatMessage({ id: "student.howItWorks.step3.title" })}
+            </h3>
+            <p className="text-base md:text-lg text-gray-600 mb-3 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step3.desc1" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-600 mb-3 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step3.desc2" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-600 mb-10 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step3.desc3" })}
+            </p>
+
+            {/* Sub-Section 1 */}
+            
+            <h4 className="text-lg font-medium text-gray-700 mb-5 mt-6 md:mt-0"> {/* No top margin on md+ */}
+              {intl.formatMessage({ id: "student.howItWorks.step3.sub1.title" })}
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-10">
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.3}>
+                <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box1.title" })}</h5>
+                <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box1.desc" })}</p>
+              </motion.div>
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.4}>
+                 <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box2.title" })}</h5>
+                 <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box2.desc" })}</p>
+              </motion.div>
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.5}>
+                 <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box3.title" })}</h5>
+                 <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box3.desc" })}</p>
+              </motion.div>
+            </div>
+
+            {/* Sub-Section 2 */}
+             <h4 className="text-lg font-medium text-gray-700 mb-5">
+               {intl.formatMessage({ id: "student.howItWorks.step3.sub2.title" })}
+             </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-10">
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.3}>
+                <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub2.box1.title" })}</h5>
+                <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub2.box1.desc" })}</p>
+              </motion.div>
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.4}>
+                <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub2.box2.title" })}</h5>
+                <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub2.box2.desc" })}</p>
+              </motion.div>
+            </div>
+
+            {/* Sub-Section 3 */}
+             <h4 className="text-lg font-medium text-gray-700 mb-5">
+               {intl.formatMessage({ id: "student.howItWorks.step3.sub3.title" })}
+             </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.3}>
+                <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub3.box1.title" })}</h5>
+                <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub3.box1.desc" })}</p>
+              </motion.div>
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.4}>
+                <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub3.box2.title" })}</h5>
+                <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub3.box2.desc" })}</p>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Arrow Separator */}
+          <motion.div
+             className="flex justify-center my-8 text-gray-400"
+             initial={{opacity: 0}} whileInView={{opacity: 1}} viewport={{ once: true }} transition={{delay: 0.3}}
+          >
+             <ArrowDown size={28} strokeWidth={1.5} />
+          </motion.div>
+
+          {/* --- Step 4 --- */}
+          <motion.div
+            className="text-center md:text-left"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariant}
+            custom={0.2}
+          >
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+              {intl.formatMessage({ id: "student.howItWorks.step4.title" })}
+            </h3>
+            <p className="text-base md:text-lg text-gray-600 mb-3 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step4.desc1" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-600 mb-3 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step4.desc2" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step4.desc3" })}
+            </p>
+          </motion.div>
+          <p>
+          {intl.formatMessage({ id: "student.howItWorks.lastline" })}
+          </p>
+
+          {/* Arrow Separator */}
+          <motion.div
+             className="flex justify-center my-8 text-gray-400"
+             initial={{opacity: 0}} whileInView={{opacity: 1}} viewport={{ once: true }} transition={{delay: 0.3}}
+          >
+          <ArrowDown size={28} strokeWidth={1.5} />
+          </motion.div>
+
+          <motion.div
+            className="flex justify-center mb-16 md:mb-20"
+             initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={sectionVariant}
+            custom={0.3}
+          >
+            <a 
+              href={intl.formatMessage({ id: "student.hero.buttonLink" })} 
+              className="inline-block bg-accent hover:bg-accent-dark text-white font-semibold px-8 py-3 rounded-md shadow-md transition duration-200"
             >
-              <h3 className="text-xl font-semibold text-primary mb-4">
-                {intl.formatMessage({ id: "student.requirements.title" })}
-              </h3>
-              <ul className="space-y-3 text-gray-700">
-                {studentRequirements.map((req, index) => (
-                  <motion.li
-                    key={index}
-                    className="flex items-start"
-                    initial={{ opacity: 0, x: 10 }} // Animate from right
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }} // Staggered delay
-                  >
-                    <CheckCircle
-                      className="text-primary mr-2 mt-1 flex-shrink-0"
-                      size={18}
-                    />{" "}
-                    {/* Different icon color? */}
-                    <span>{req}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
+              {intl.formatMessage({ id: "student.applySection.applyButton" })}
+            </a>
+          </motion.div>
+
+
         </div>
       </section>
-      {/* ====== End NEW Section ====== */}
+      {/* --- END HOW IT WORKS SECTION --- */}
 
-      <section id="apply" className="py-16 md:py-20 bg-secondary-light">
-        {" "}
-        {/* Added ID for linking */}
-        <div className="ontainer-custom flex flex-col items-center justify-center text-center">
-          {" "}
-          {/* Centering container */}
+
+       {/* --- APPLICATION INFO  --- */}
+       <section className="py-16 md:py-24 bg-white"> {/* White background */}
+        <div className="container-custom max-w-5xl mx-auto px-4">
+
+          {/* Benefits vs Requirements Boxes */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-24">
+            {/* Left Box: Benefits */}
+            <motion.div
+              className="bg-gray-100 p-6 md:p-8 rounded-lg shadow-sm"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={boxVariant} // Use the box animation variant
+              custom={0.2}
+            >
+              <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">
+                {intl.formatMessage({ id: "student.applySection.benefits.title" })}
+              </h3>
+              <ul className="list-none space-y-3">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <li key={i} className="text-base text-gray-700 leading-relaxed">
+                    {intl.formatMessage({ id: `student.applySection.benefits.list.${i}` })}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Right Box: Requirements */}
+             <motion.div
+              className="bg-gray-100 p-6 md:p-8 rounded-lg shadow-sm"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={boxVariant}
+              custom={0.3} // Slightly later delay
+            >
+              <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">
+                 {intl.formatMessage({ id: "student.applySection.requirements.title" })}
+              </h3>
+              <ul className="list-none space-y-3">
+                 {[1, 2, 3, 4, 5].map((i) => (
+                  <li key={i} className="text-base text-gray-700 leading-relaxed">
+                    {intl.formatMessage({ id: `student.applySection.requirements.list.${i}` })}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-base text-gray-700 italic mt-6">
+                 {intl.formatMessage({ id: "student.applySection.requirements.extraLine" })}
+              </p>
+            </motion.div>
+          </div>
           <CallToAction
-            title={intl.formatMessage({ id: "student.callToAction.title" })}
+            title={intl.formatMessage({ id: "student.callToAction1.title" })}
             description={intl.formatMessage({
-              id: "student.callToAction.description",
+              id: "student.callToAction1.description",
             })}
             buttonText={intl.formatMessage({
-              id: "student.callToAction.buttonText",
+              id: "student.callToAction1.buttonText",
             })}
             buttonLink={intl.formatMessage({
-              id: "student.callToAction.buttonLink",
+              id: "student.callToAction1.buttonLink",
             })}
-            variant="light"
+            isSection={false}
           />
-        </div>
-      </section>
+          </div>
+        </section>
 
       <section id="contact" className="py-20 bg-primary text-white">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -199,11 +379,11 @@ const ForStudents: React.FC = () => {
 
           {/* Card Container - Centered */}
           <div className="flex justify-center">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-2xl">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl">
               {/* Top Section with Name */}
               <div className="flex items-center p-6 gap-4">
-                {/* Circular Image */}
-                <div className="w-80 h-80 overflow-hidden rounded-full border-2 border-gray-200 mb-4">
+                {/* Rectangular Image */}
+                <div className="w-32 h-42 overflow-hidden border-2 border-gray-200 rounded-lg flex-shrink-0">
                   <img
                     src={contactPerson.imageUrl}
                     alt={contactPerson.name}
@@ -212,7 +392,7 @@ const ForStudents: React.FC = () => {
                 </div>
 
                 {/* Name and Address */}
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <h2 className="text-gray-700 text-xl md:text-2xl font-medium">
                     {contactPerson.title}
                   </h2>

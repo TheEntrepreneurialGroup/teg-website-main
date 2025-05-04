@@ -22,9 +22,9 @@ const Footer: React.FC = () => {
               </a>
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy-policy" className="text-secondary-light text-sm hover:text-white transition-colors duration-300">
+            <a href="mailto:info@teg-ev.de" className="text-secondary-light text-sm hover:text-white transition-colors duration-300">
               Contact
-            </Link>
+            </a>
             <Link to="/imprint" className="text-secondary-light text-sm hover:text-white transition-colors duration-300">
               Imprint
             </Link>
