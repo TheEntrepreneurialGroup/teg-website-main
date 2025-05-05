@@ -36,8 +36,8 @@ export default {
         }
       },
       fontFamily: {
-        heading: ['Playfair Display', 'serif'],
-        body: ['Helvetica Neue', 'Arial', 'sans-serif']
+        heading: ['Montserrat', 'serif'],
+        body: ['Montserrat', 'Arial', 'sans-serif']
       },
       spacing: {
         '1': '8px',

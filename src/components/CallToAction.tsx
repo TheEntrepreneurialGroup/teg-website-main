@@ -65,7 +65,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
     return (
       <section className={`py-16 ${isLight ? 'bg-secondary-light' : 'bg-primary'} ${className}`}>
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl">
             {content}
           </div>
         </div>
