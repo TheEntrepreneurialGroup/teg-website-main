@@ -36,8 +36,9 @@ export default {
         }
       },
       fontFamily: {
-        heading: ['Montserrat', 'serif'],
-        body: ['Montserrat', 'Arial', 'sans-serif']
+        sans: ['Montserrat', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
+        body: ['Montserrat', 'sans-serif']
       },
       spacing: {
         '1': '8px',

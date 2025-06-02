@@ -105,7 +105,7 @@ The website supports multiple languages. To add or modify translations:
 
 ## 📫 Contact
 
-For questions or support, please contact the project maintainers or open an issue in the repository.
+For questions or support, please contact the website taskforce on whatsapp or open an issue in the repository.
 
 ## 📄 License
 
