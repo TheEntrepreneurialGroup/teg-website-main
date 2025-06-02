@@ -38,7 +38,7 @@ Thank you for your interest in contributing to our website! This document provid
    git checkout -b feature/issue-number-brief-description
    ```
 
-2. Make your changes following our [Code Style Guidelines](#code-style-guidelines)
+2. Make your changes following our Code Style Guidelines.
 
 3. Commit your changes with clear commit messages:
    ```bash
