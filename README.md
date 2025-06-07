@@ -22,12 +22,14 @@ Welcome to the TEG Student Club website repository! This is the official website
 ### Installation
 
 1. Clone the repository:
+
    ```bash
-   git clone [repository-url]
-   cd teg-website
+   git clone https://github.com/TheEntrepreneurialGroup/teg-website-main.git
+   cd teg-website-main
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    # or
@@ -62,11 +64,13 @@ We welcome contributions from all club members! Here's how you can help:
 ### Development Workflow
 
 1. Create a new branch for your feature/fix:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
 2. Make your changes and commit them:
+
    ```bash
    git commit -m "Description of your changes"
    ```
@@ -113,4 +117,4 @@ This project is private and intended for TEG Student Club use only.
 
 ---
 
-Happy coding! 🎉 
+Happy coding! 🎉

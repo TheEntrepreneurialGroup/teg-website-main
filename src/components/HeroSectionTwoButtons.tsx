@@ -25,9 +25,10 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
     <div
       className="relative h-screen lg:h-[96vh] min-h-[600px] flex items-center justify-start overflow-hidden"
       style={{
-      backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.8), rgba(15, 44, 89, 0.9)), url(${backgroundImage})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
+        marginTop: "2rem",
+        backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.8), rgba(15, 44, 89, 0.9)), url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-primary/80"></div>
