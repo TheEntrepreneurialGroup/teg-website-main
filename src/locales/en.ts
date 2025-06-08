@@ -118,7 +118,7 @@ const en = {
     "Founded in 1986 by BMW, Roland Berger, BCG, KPMG, Siemens, and more, TEG is now one of the most renowned talent incubators in the German-speaking world.",
 
   "student.howItWorks.mainTitle": "How we make you into such a person",
-  "student.howItWorks.step1.title": "You become part of TEG",
+  "student.howItWorks.step1.title": "You become a part of TEG",
   "student.howItWorks.step1.desc1":
     "At the TEG office, you meet like-minded individuals who want more and are ready to deliver.",
   "student.howItWorks.step1.desc2":
