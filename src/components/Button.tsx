@@ -14,6 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => (
   <motion.a
+    //can override the parameters
     href={href}
     className={className}
     initial={{ opacity: 0, y: 20 }}
