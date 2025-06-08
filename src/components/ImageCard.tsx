@@ -28,8 +28,8 @@ const ImageCard: React.FC<ImageCardProps> = ({ imageUrl, altText, caption, delay
                 />
         
         {caption && (
-                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-                    <p className="text-white font-bold drop-shadow-[0_0_3px_rgba(0,0,0,0.8)]">{caption}</p>
+                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/70 via-70% to-black/0">
+                    <p className="text-lg leading-6 text-white font-bold drop-shadow-[0_0_4px_rgba(0,0,0,0.8)]">{caption}</p>
                  </div>
             )}
         </motion.div>
