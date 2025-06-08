@@ -72,6 +72,7 @@ export const Home: React.FC = () => {
               imageUrl="/founders.png"
               altText="Corporate Partners"
               caption={intl.formatMessage({ id: "home.legacy.image2.caption" })}
+              fullscreenOnExpand={false}
             />
             <ImageCard
               imageUrl="/kuratorium.jpg"
