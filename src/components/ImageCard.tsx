@@ -21,7 +21,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ imageUrl, altText, caption, delay
             transition={{ duration: 0.6, delay }}
         >
            
-                <img 
+               <img 
                     src={imageUrl} 
                     alt={altText} 
                     className="w-full h-full object-cover" 
