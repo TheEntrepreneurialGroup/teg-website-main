@@ -20,7 +20,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     <div
       className="relative h-screen min-h-[600px] flex items-center justify-start overflow-hidden"
       style={{
-      backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.4), rgba(15, 44, 89, 0.5)), url(${backgroundImage})`,
+      backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.4), rgba(15, 44, 89, 0.4)), url(${backgroundImage})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       }}

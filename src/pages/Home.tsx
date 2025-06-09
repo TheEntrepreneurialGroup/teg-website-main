@@ -20,7 +20,7 @@ export const Home: React.FC = () => {
         buttonLink1={intl.formatMessage({ id: "home.hero.buttonLink1" })}
         buttonText2={intl.formatMessage({ id: "home.hero.buttonText2" })}
         buttonLink2={intl.formatMessage({ id: "home.hero.buttonLink2" })}
-        backgroundImage="/meeting.png"
+        backgroundImage="/sigma.jpeg"
       />
 
       <section className="py-20 bg-secondary-light">
