@@ -200,11 +200,8 @@ const ForStudents: React.FC = () => {
               </div>
             </div>
             {/* Image Section */}
-            <div className="flex-shrink-0 w-full md:w-[340px] flex items-center justify-center">
-              {/* Replace the src below with your office image URL when available */}
-              <div className="w-full h-64 md:h-72 bg-gray-100 rounded-xl flex items-center justify-center">
-                <span className="text-gray-400 text-base italic">Office image coming soon</span>
-              </div>
+            <div className="flex-1 flex items-center justify-center">
+                <img src="/welcome-to-teg.jpeg" alt="Office" className="w-full h-full object-cover rounded-lg" />
             </div>
           </div>
 
@@ -224,7 +221,8 @@ const ForStudents: React.FC = () => {
                 </li>
               </ul>
             }
-            image={undefined} // Add image URL here when available
+            image={"/crowd.jpeg"}
+            imageOnLeft={true}
           />
 
           {/* Sub-Section 2 */}
@@ -240,7 +238,8 @@ const ForStudents: React.FC = () => {
                 </li>
               </ul>
             }
-            image={undefined} // Add image URL here when available
+            image={"/teg-talk.JPG"}
+            imageOnLeft={false}
           />
 
           {/* Sub-Section 3 */}
@@ -256,7 +255,8 @@ const ForStudents: React.FC = () => {
                 </li>
               </ul>
             }
-            image={undefined} // Add image URL here when available
+            image={"/mentoring.jpeg"}
+            imageOnLeft={true}
           />
 
           {/* Arrow Separator */}
