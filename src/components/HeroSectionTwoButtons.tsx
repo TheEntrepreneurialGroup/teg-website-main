@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
+import { NavLink } from "react-router-dom";
+import { handleGAButtonClick } from "../utils/analytics";
 
 interface HeroSectionTwoButtonsProps {
   title: string;

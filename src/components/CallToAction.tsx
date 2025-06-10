@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
+import { handleGAButtonClick } from "../utils/analytics";
 
 interface CallToActionProps {
   title: string;
@@ -26,7 +27,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   const content = (
     <>
       <motion.h2
-        className={`text-3xl md:text-4xl font-bold mb-4 text-left ${
+        className={`text-3xl md:text-4xl font-bold mb-4 ${
           isLight ? "text-primary" : "text-white"
         }`}
         initial={{ opacity: 0, y: 20 }}
@@ -38,7 +39,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
       </motion.h2>
 
       <motion.p
-        className={`text-lg text-left ${
+        className={`text-lg mb-8 ${
           isLight ? "text-gray-600" : "text-secondary-light"
         }`}
         initial={{ opacity: 0, y: 20 }}
@@ -49,7 +50,22 @@ const CallToAction: React.FC<CallToActionProps> = ({
         {description}
       </motion.p>
 
-      <Button href={buttonLink}>{buttonText}</Button>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <a
+          href={buttonLink}
+          className={`inline-block px-6 py-3 rounded ${
+            isLight ? "bg-primary text-white" : "bg-accent text-primary"
+          } font-medium`}
+          onClick={() => handleGAButtonClick(buttonText, "CallToAction")}
+        >
+          {buttonText}
+        </a>
+      </motion.div>
     </>
   );
 
@@ -62,7 +78,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
         } ${className}`}
       >
         <div className="container-custom">
-          <div className="max-w-full">{content}</div>
+          <div className="max-w-3xl">{content}</div>
         </div>
       </section>
     );
@@ -75,7 +91,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
         isLight ? "bg-secondary-light" : "bg-primary"
       } ${className}`}
     >
-      <div className="text-left">{content}</div>
+      {content}
     </div>
   );
 };
