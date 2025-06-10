@@ -59,7 +59,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
           className={`inline-block px-6 py-3 rounded ${
             isLight ? 'bg-primary text-white' : 'bg-accent text-primary'
           } font-medium`}
-          onClick={() => handleGAButtonClick}
+          onClick={() => handleGAButtonClick(buttonText, 'CallToAction')}
         >
           {buttonText}
         </a>

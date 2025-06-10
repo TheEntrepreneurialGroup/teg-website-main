@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                   : ''
               }`
             }
-            onClick={() => handleGAButtonClick('Navbar: About Us')}
+            onClick={() => handleGAButtonClick('About Us', 'Navbar')}
             end
           >
             About Us
@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                   : ''
               }`
             }
-            onClick={() => handleGAButtonClick('Navbar: TEG for Companies')}
+            onClick={() => handleGAButtonClick('TEG for Companies', 'Navbar')}
           >
             TEG for Companies
           </NavLink>
@@ -75,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                   : ''
               }`
             }
-            onClick={() => handleGAButtonClick('Navbar: TEG for Students')}
+            onClick={() => handleGAButtonClick('TEG for Students', 'Navbar')}
           >
             TEG for Students
           </NavLink>
@@ -126,7 +126,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                     isActive ? 'text-primary' : 'text-gray-800'
                   } hover:text-primary transition-colors duration-300`
                 }
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleGAButtonClick('About us', 'Navbar');
+                }}
                 end
               >
                 About Us
@@ -138,7 +141,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                     isActive ? 'text-primary' : 'text-gray-800'
                   } hover:text-primary transition-colors duration-300`
                 }
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleGAButtonClick('TEG for Companies', 'Navbar');
+                }}
               >
                 TEG for Companies
               </NavLink>
@@ -149,7 +155,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                     isActive ? 'text-primary' : 'text-gray-800'
                   } hover:text-primary transition-colors duration-300`
                 }
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleGAButtonClick('TEG for Students', 'Navbar');
+                }}
               >
                 TEG for Students
               </NavLink>

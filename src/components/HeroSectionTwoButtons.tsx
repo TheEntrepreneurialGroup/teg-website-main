@@ -62,7 +62,9 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             <NavLink
               to={buttonLink1}
               className="btn btn-primary border border-white"
-              onClick={() => handleGAButtonClick(buttonText1)}
+              onClick={() =>
+                handleGAButtonClick(buttonText1, 'HeroSectionTwoButton')
+              }
             >
               {buttonText1}
             </NavLink>
@@ -71,7 +73,9 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             <NavLink
               to={buttonLink2}
               className="btn btn-primary border border-white"
-              onClick={() => handleGAButtonClick(buttonText2)}
+              onClick={() =>
+                handleGAButtonClick(buttonText2, 'HeroSectionTwoButton')
+              }
             >
               {buttonText2}
             </NavLink>

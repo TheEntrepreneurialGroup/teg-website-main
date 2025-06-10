@@ -56,7 +56,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <a
               href={buttonLink}
               className="btn btn-accent"
-              onClick={() => handleGAButtonClick(buttonText)}
+              onClick={() => handleGAButtonClick(buttonText, 'HeroSection')}
             >
               {buttonText}
             </a>
