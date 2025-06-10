@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import Logo from "./Logo";
-import { motion } from "framer-motion";
+import React, { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import Logo from './Logo';
+import { motion } from 'framer-motion';
+import { handleGAButtonClick } from '../utils/analytics';
 
 interface NavbarProps {
   scrolled: boolean;
-  switchLanguage: (lang: "en" | "de") => void;
+  switchLanguage: (lang: 'en' | 'de') => void;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
@@ -19,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-primary-dark shadow-md py-1" : "bg-primary-dark py-2"
+        scrolled ? 'bg-primary-dark shadow-md py-1' : 'bg-primary-dark py-2'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -36,13 +37,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
             to="/"
             className={({ isActive }) =>
               `font-semibold relative ${
-                scrolled || isActive ? "text-white" : "text-white"
+                scrolled || isActive ? 'text-white' : 'text-white'
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
                   ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
-                  : ""
+                  : ''
               }`
             }
+            onClick={() => handleGAButtonClick('Navbar: About Us')}
             end
           >
             About Us
@@ -51,13 +53,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
             to="/for-companies"
             className={({ isActive }) =>
               `font-semibold relative ${
-                scrolled || isActive ? "text-white" : "text-white"
+                scrolled || isActive ? 'text-white' : 'text-white'
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
                   ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
-                  : ""
+                  : ''
               }`
             }
+            onClick={() => handleGAButtonClick('Navbar: TEG for Companies')}
           >
             TEG for Companies
           </NavLink>
@@ -65,13 +68,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
             to="/for-students"
             className={({ isActive }) =>
               `font-semibold relative ${
-                scrolled || isActive ? "text-white" : "text-white"
+                scrolled || isActive ? 'text-white' : 'text-white'
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
                   ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
-                  : ""
+                  : ''
               }`
             }
+            onClick={() => handleGAButtonClick('Navbar: TEG for Students')}
           >
             TEG for Students
           </NavLink>
@@ -80,14 +84,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
         {/* Language Switcher */}
         <div className="hidden md:flex items-center space-x-4">
           <button
-            onClick={() => switchLanguage("en")}
+            onClick={() => switchLanguage('en')}
             className="font-semibold text-white hover:text-primary-light transition-colors duration-300"
           >
             EN
           </button>
           <span className="text-white">|</span>
           <button
-            onClick={() => switchLanguage("de")}
+            onClick={() => switchLanguage('de')}
             className="font-semibold text-white hover:text-primary-light transition-colors duration-300"
           >
             DE
@@ -97,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
         {/* Mobile Menu Button */}
         <button
           className={`md:hidden ${
-            mobileMenuOpen ? "text-black" : "text-white"
+            mobileMenuOpen ? 'text-black' : 'text-white'
           } z-50`}
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
@@ -119,7 +123,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 to="/"
                 className={({ isActive }) =>
                   `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
+                    isActive ? 'text-primary' : 'text-gray-800'
                   } hover:text-primary transition-colors duration-300`
                 }
                 onClick={() => setMobileMenuOpen(false)}
@@ -131,7 +135,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 to="/for-companies"
                 className={({ isActive }) =>
                   `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
+                    isActive ? 'text-primary' : 'text-gray-800'
                   } hover:text-primary transition-colors duration-300`
                 }
                 onClick={() => setMobileMenuOpen(false)}
@@ -142,7 +146,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 to="/for-students"
                 className={({ isActive }) =>
                   `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
+                    isActive ? 'text-primary' : 'text-gray-800'
                   } hover:text-primary transition-colors duration-300`
                 }
                 onClick={() => setMobileMenuOpen(false)}
