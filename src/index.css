@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+>>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,11 +25,19 @@
   }
   
   body {
+<<<<<<< HEAD
     @apply font-body leading-relaxed text-gray-800;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading leading-tight text-primary font-bold;
+=======
+    @apply font-['Montserrat'] leading-relaxed text-gray-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Montserrat'] leading-tight text-primary font-bold;
+>>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
   }
 
   h1 {
