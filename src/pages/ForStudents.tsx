@@ -4,14 +4,20 @@ import {
   Mail,
   Linkedin,
   ArrowDown,
+<<<<<<< HEAD
   Target,
   Info,
   ListChecks,
+=======
+>>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
 } from "lucide-react"; 
 import { useIntl } from "react-intl";
 import HeroSection from "../components/HeroSection";
 import CallToAction from "../components/CallToAction";
+<<<<<<< HEAD
 import HowItWorksSubsection from "../components/HowItWorksSubsection";
+=======
+>>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
 
 const ForStudents: React.FC = () => {
   const intl = useIntl();
@@ -54,6 +60,7 @@ const ForStudents: React.FC = () => {
         backgroundImage="/invite.png"
       />
         {/* --- Intro Section --- */}
+<<<<<<< HEAD
         <section className="py-16 md:py-20 bg-primary">
           <div className="container-custom flex justify-center">
             <div className="w-full max-w-5xl p-12 md:p-16 flex flex-col gap-10">
@@ -92,6 +99,39 @@ const ForStudents: React.FC = () => {
           {/* Main Title */}
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-left text-primary mb-16 ml-0 md:ml-8 lg:ml-12"
+=======
+        <section className="py-16 md:py-20 bg-white"> 
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center"> 
+
+            
+            <p className="text-xl md:text-2xl font-semibold text-primary mb-6"> 
+              {intl.formatMessage({ id: "student.intro.title" })}
+            </p>
+
+            {/* Subsequent lines - standard text styling */}
+            <p className="text-base md:text-lg text-gray-700 mb-4"> 
+              {intl.formatMessage({ id: "student.intro.line.1" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-700 mb-4"> 
+              {intl.formatMessage({ id: "student.intro.line.2" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-700"> 
+              {intl.formatMessage({ id: "student.intro.line.3" })}
+            </p>
+
+          </div>
+        </div>
+      </section>
+
+        {/* --- HOW IT WORKS SECTION --- */}
+      <section className="py-16 md:py-24 bg-gray-50"> 
+        <div className="container-custom max-w-5xl mx-auto px-4"> 
+
+          {/* Main Title */}
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-center text-primary mb-16"
+>>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -102,11 +142,16 @@ const ForStudents: React.FC = () => {
 
           {/* --- Step 1 --- */}
           <motion.div
+<<<<<<< HEAD
             className="mb-12 flex flex-col md:flex-row items-start bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12 gap-8 md:gap-14 max-w-5xl ml-0 md:ml-8 lg:ml-12"
+=======
+            className="mb-12 text-center md:text-left" // Center text on small, left on medium+
+>>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={sectionVariant}
+<<<<<<< HEAD
             custom={0.1}
           >
             {/* Icon */}
@@ -125,6 +170,19 @@ const ForStudents: React.FC = () => {
                 {intl.formatMessage({ id: "student.howItWorks.step1.desc2" })}
               </p>
             </div>
+=======
+            custom={0.1} // Stagger delay
+          >
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+              {intl.formatMessage({ id: "student.howItWorks.step1.title" })}
+            </h3>
+            <p className="text-base md:text-lg text-gray-600 mb-3 max-w-3xl mx-auto md:mx-0"> {/* Limit width */}
+              {intl.formatMessage({ id: "student.howItWorks.step1.desc1" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto md:mx-0"> {/* Limit width */}
+              {intl.formatMessage({ id: "student.howItWorks.step1.desc2" })}
+            </p>
+>>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
           </motion.div>
 
           {/* Arrow Separator */}
@@ -137,6 +195,7 @@ const ForStudents: React.FC = () => {
 
           {/* --- Step 2 --- */}
           <motion.div
+<<<<<<< HEAD
             className="mb-12 bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12 max-w-5xl ml-0 md:ml-8 lg:ml-12"
             initial="hidden"
             whileInView="visible"
@@ -174,6 +233,43 @@ const ForStudents: React.FC = () => {
             </ul>
             {/* Description below list */}
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-left">
+=======
+            className="mb-12 text-center md:text-left"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }} // Trigger slightly earlier
+            variants={sectionVariant}
+            custom={0.2}
+          >
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+              {intl.formatMessage({ id: "student.howItWorks.step2.title" })}
+            </h3>
+            <p className="text-base md:text-lg text-gray-600 mb-8 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step2.desc1" })}
+            </p>
+            {/* Nested Boxes */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-8">
+              {/* Box 1 */}
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.3}>
+                <p className="text-gray-700 text-base leading-relaxed">
+                  {intl.formatMessage({ id: "student.howItWorks.step2.box1" })}
+                </p>
+              </motion.div>
+              {/* Box 2 */}
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.4}>
+                <p className="text-gray-700 text-base leading-relaxed">
+                  {intl.formatMessage({ id: "student.howItWorks.step2.box2" })}
+                </p>
+              </motion.div>
+              {/* Box 3 */}
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.5}>
+                <p className="text-gray-700 text-base leading-relaxed">
+                  {intl.formatMessage({ id: "student.howItWorks.step2.box3" })}
+                </p>
+              </motion.div>
+            </div>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto md:mx-0">
+>>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
               {intl.formatMessage({ id: "student.howItWorks.step2.desc2" })}
             </p>
           </motion.div>
@@ -187,6 +283,7 @@ const ForStudents: React.FC = () => {
           </motion.div>
 
           {/* --- Step 3 --- */}
+<<<<<<< HEAD
           <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-16 py-10 md:py-16 mb-4">
             {/* Text Section */}
             <div className="flex-1 min-w-0 flex flex-col justify-center md:justify-start">
@@ -258,6 +355,79 @@ const ForStudents: React.FC = () => {
             image={"/mentoring.jpeg"}
             imageOnLeft={true}
           />
+=======
+          <motion.div
+            className="mb-12 text-center md:text-left"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }} // Trigger even earlier if long
+            variants={sectionVariant}
+            custom={0.2}
+          >
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+              {intl.formatMessage({ id: "student.howItWorks.step3.title" })}
+            </h3>
+            <p className="text-base md:text-lg text-gray-600 mb-3 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step3.desc1" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-600 mb-3 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step3.desc2" })}
+            </p>
+            <p className="text-base md:text-lg text-gray-600 mb-10 max-w-3xl mx-auto md:mx-0">
+              {intl.formatMessage({ id: "student.howItWorks.step3.desc3" })}
+            </p>
+
+            {/* Sub-Section 1 */}
+            
+            <h4 className="text-lg font-medium text-gray-700 mb-5 mt-6 md:mt-0"> {/* No top margin on md+ */}
+              {intl.formatMessage({ id: "student.howItWorks.step3.sub1.title" })}
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-10">
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.3}>
+                <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box1.title" })}</h5>
+                <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box1.desc" })}</p>
+              </motion.div>
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.4}>
+                 <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box2.title" })}</h5>
+                 <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box2.desc" })}</p>
+              </motion.div>
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.5}>
+                 <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box3.title" })}</h5>
+                 <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box3.desc" })}</p>
+              </motion.div>
+            </div>
+
+            {/* Sub-Section 2 */}
+             <h4 className="text-lg font-medium text-gray-700 mb-5">
+               {intl.formatMessage({ id: "student.howItWorks.step3.sub2.title" })}
+             </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-10">
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.3}>
+                <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub2.box1.title" })}</h5>
+                <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub2.box1.desc" })}</p>
+              </motion.div>
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.4}>
+                <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub2.box2.title" })}</h5>
+                <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub2.box2.desc" })}</p>
+              </motion.div>
+            </div>
+
+            {/* Sub-Section 3 */}
+             <h4 className="text-lg font-medium text-gray-700 mb-5">
+               {intl.formatMessage({ id: "student.howItWorks.step3.sub3.title" })}
+             </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.3}>
+                <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub3.box1.title" })}</h5>
+                <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub3.box1.desc" })}</p>
+              </motion.div>
+              <motion.div className="bg-white p-5 rounded-lg shadow-md" variants={boxVariant} custom={0.4}>
+                <h5 className="font-semibold text-gray-800 mb-2">{intl.formatMessage({ id: "student.howItWorks.step3.sub3.box2.title" })}</h5>
+                <p className="text-gray-600 text-sm leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step3.sub3.box2.desc" })}</p>
+              </motion.div>
+            </div>
+          </motion.div>
+>>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
 
           {/* Arrow Separator */}
           <motion.div
