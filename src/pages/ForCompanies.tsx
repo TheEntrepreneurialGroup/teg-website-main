@@ -33,7 +33,7 @@ const ForCompanies: React.FC = () => {
         subtitle={intl.formatMessage({ id: "company.hero.subtitle" })}
         buttonText={intl.formatMessage({ id: "company.hero.buttonText" })}
         buttonLink="#partnerships"
-        backgroundImage="/get_forward.jpg"
+        backgroundImage="/get_forward2.jpg"
       />
 
       <section className="section">
