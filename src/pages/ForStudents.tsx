@@ -4,20 +4,10 @@ import {
   Mail,
   Linkedin,
   ArrowDown,
-<<<<<<< HEAD
-  Target,
-  Info,
-  ListChecks,
-=======
->>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
 } from "lucide-react"; 
 import { useIntl } from "react-intl";
 import HeroSection from "../components/HeroSection";
 import CallToAction from "../components/CallToAction";
-<<<<<<< HEAD
-import HowItWorksSubsection from "../components/HowItWorksSubsection";
-=======
->>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
 
 const ForStudents: React.FC = () => {
   const intl = useIntl();
@@ -60,46 +50,6 @@ const ForStudents: React.FC = () => {
         backgroundImage="/invite.png"
       />
         {/* --- Intro Section --- */}
-<<<<<<< HEAD
-        <section className="py-16 md:py-20 bg-primary">
-          <div className="container-custom flex justify-center">
-            <div className="w-full max-w-5xl p-12 md:p-16 flex flex-col gap-10">
-              {/* Title Row with Icon */}
-              <div className="flex items-center gap-6 mb-6">
-                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white/10 rounded-lg">
-                  <Info size={40} className="text-white mx-auto my-auto" />
-                </div>
-                <p className="text-3xl md:text-5xl font-bold text-white text-left leading-tight">
-                  {intl.formatMessage({ id: "student.intro.title" })}
-                </p>
-              </div>
-              {/* List of sub-points */}
-              <ul className="space-y-7">
-                <li className="flex items-start gap-4">
-                  <span className="mt-1"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff" fillOpacity="0.15"/><path d="M7 13l3 3 7-7" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-                  <span className="text-2xl md:text-3xl text-white leading-relaxed font-medium">{intl.formatMessage({ id: "student.intro.line.1" })}</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="mt-1"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff" fillOpacity="0.15"/><path d="M7 13l3 3 7-7" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-                  <span className="text-2xl md:text-3xl text-white leading-relaxed font-medium">{intl.formatMessage({ id: "student.intro.line.2" })}</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="mt-1"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fff" fillOpacity="0.15"/><path d="M7 13l3 3 7-7" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-                  <span className="text-2xl md:text-3xl text-white leading-relaxed font-medium">{intl.formatMessage({ id: "student.intro.line.3" })}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* --- HOW IT WORKS SECTION --- */}
-      <section className="py-16 md:py-24 bg-gray-50"> 
-        <div className="container-custom max-w-7xl mx-auto px-4"> 
-
-          {/* Main Title */}
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-left text-primary mb-16 ml-0 md:ml-8 lg:ml-12"
-=======
         <section className="py-16 md:py-20 bg-white"> 
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center"> 
@@ -131,7 +81,6 @@ const ForStudents: React.FC = () => {
           {/* Main Title */}
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-primary mb-16"
->>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -142,35 +91,11 @@ const ForStudents: React.FC = () => {
 
           {/* --- Step 1 --- */}
           <motion.div
-<<<<<<< HEAD
-            className="mb-12 flex flex-col md:flex-row items-start bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12 gap-8 md:gap-14 max-w-5xl ml-0 md:ml-8 lg:ml-12"
-=======
             className="mb-12 text-center md:text-left" // Center text on small, left on medium+
->>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={sectionVariant}
-<<<<<<< HEAD
-            custom={0.1}
-          >
-            {/* Icon */}
-            <div className="flex-shrink-0 flex items-start justify-center w-16 h-16 bg-primary/10 rounded-lg">
-              <Target size={36} className="text-primary mx-auto my-auto" />
-            </div>
-            {/* Text Content */}
-            <div className="flex-1 min-w-0">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-5 text-gray-800 flex items-center">
-                {intl.formatMessage({ id: "student.howItWorks.step1.title" })}
-              </h3>
-              <p className="text-lg md:text-xl text-gray-700 mb-4 leading-relaxed">
-                {intl.formatMessage({ id: "student.howItWorks.step1.desc1" })}
-              </p>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                {intl.formatMessage({ id: "student.howItWorks.step1.desc2" })}
-              </p>
-            </div>
-=======
             custom={0.1} // Stagger delay
           >
             <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
@@ -182,7 +107,6 @@ const ForStudents: React.FC = () => {
             <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto md:mx-0"> {/* Limit width */}
               {intl.formatMessage({ id: "student.howItWorks.step1.desc2" })}
             </p>
->>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
           </motion.div>
 
           {/* Arrow Separator */}
@@ -195,45 +119,6 @@ const ForStudents: React.FC = () => {
 
           {/* --- Step 2 --- */}
           <motion.div
-<<<<<<< HEAD
-            className="mb-12 bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12 max-w-5xl ml-0 md:ml-8 lg:ml-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionVariant}
-            custom={0.2}
-          >
-            {/* Title Row with Icon */}
-            <div className="flex items-center gap-4 mb-4">
-              <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-primary/10 rounded-lg">
-                <ListChecks size={32} className="text-primary mx-auto my-auto" />
-              </div>
-              <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 text-left">
-                {intl.formatMessage({ id: "student.howItWorks.step2.title" })}
-              </h3>
-            </div>
-            {/* Description above list */}
-            <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed text-left">
-              {intl.formatMessage({ id: "student.howItWorks.step2.desc1" })}
-            </p>
-            {/* List of box points */}
-            <ul className="space-y-5 mb-8">
-              <li className="flex items-start gap-3">
-                <span className="mt-1 text-accent"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#3B82F6" fillOpacity="0.15"/><path d="M7 13l3 3 7-7" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-                <span className="text-lg md:text-xl text-gray-700 leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step2.box1" })}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 text-accent"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#3B82F6" fillOpacity="0.15"/><path d="M7 13l3 3 7-7" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-                <span className="text-lg md:text-xl text-gray-700 leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step2.box2" })}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 text-accent"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#3B82F6" fillOpacity="0.15"/><path d="M7 13l3 3 7-7" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-                <span className="text-lg md:text-xl text-gray-700 leading-relaxed">{intl.formatMessage({ id: "student.howItWorks.step2.box3" })}</span>
-              </li>
-            </ul>
-            {/* Description below list */}
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-left">
-=======
             className="mb-12 text-center md:text-left"
             initial="hidden"
             whileInView="visible"
@@ -269,7 +154,6 @@ const ForStudents: React.FC = () => {
               </motion.div>
             </div>
             <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto md:mx-0">
->>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
               {intl.formatMessage({ id: "student.howItWorks.step2.desc2" })}
             </p>
           </motion.div>
@@ -283,79 +167,6 @@ const ForStudents: React.FC = () => {
           </motion.div>
 
           {/* --- Step 3 --- */}
-<<<<<<< HEAD
-          <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-16 py-10 md:py-16 mb-4">
-            {/* Text Section */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center md:justify-start">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-left">
-                {intl.formatMessage({ id: "student.howItWorks.step3.title" })}
-              </h3>
-              <div className="text-lg md:text-xl text-gray-700 leading-relaxed text-left space-y-4">
-                <p>{intl.formatMessage({ id: "student.howItWorks.step3.desc1" })}</p>
-                <p>{intl.formatMessage({ id: "student.howItWorks.step3.desc2" })}</p>
-                <p>{intl.formatMessage({ id: "student.howItWorks.step3.desc3" })}</p>
-              </div>
-            </div>
-            {/* Image Section */}
-            <div className="flex-1 flex items-center justify-center">
-                <img src="/welcome-to-teg.jpeg" alt="Office" className="w-full h-full object-cover rounded-lg" />
-            </div>
-          </div>
-
-          {/* Sub-Section 1 */}
-          <HowItWorksSubsection
-            title={intl.formatMessage({ id: "student.howItWorks.step3.sub1.title" })}
-            description={
-              <ul className="space-y-3">
-                <li>
-                  <span className="font-semibold">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box1.title" })}:</span> {intl.formatMessage({ id: "student.howItWorks.step3.sub1.box1.desc" })}
-                </li>
-                <li>
-                  <span className="font-semibold">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box2.title" })}:</span> {intl.formatMessage({ id: "student.howItWorks.step3.sub1.box2.desc" })}
-                </li>
-                <li>
-                  <span className="font-semibold">{intl.formatMessage({ id: "student.howItWorks.step3.sub1.box3.title" })}:</span> {intl.formatMessage({ id: "student.howItWorks.step3.sub1.box3.desc" })}
-                </li>
-              </ul>
-            }
-            image={"/crowd.jpeg"}
-            imageOnLeft={true}
-          />
-
-          {/* Sub-Section 2 */}
-          <HowItWorksSubsection
-            title={intl.formatMessage({ id: "student.howItWorks.step3.sub2.title" })}
-            description={
-              <ul className="space-y-3">
-                <li>
-                  <span className="font-semibold">{intl.formatMessage({ id: "student.howItWorks.step3.sub2.box1.title" })}:</span> {intl.formatMessage({ id: "student.howItWorks.step3.sub2.box1.desc" })}
-                </li>
-                <li>
-                  <span className="font-semibold">{intl.formatMessage({ id: "student.howItWorks.step3.sub2.box2.title" })}:</span> {intl.formatMessage({ id: "student.howItWorks.step3.sub2.box2.desc" })}
-                </li>
-              </ul>
-            }
-            image={"/teg-talk.JPG"}
-            imageOnLeft={false}
-          />
-
-          {/* Sub-Section 3 */}
-          <HowItWorksSubsection
-            title={intl.formatMessage({ id: "student.howItWorks.step3.sub3.title" })}
-            description={
-              <ul className="space-y-3">
-                <li>
-                  <span className="font-semibold">{intl.formatMessage({ id: "student.howItWorks.step3.sub3.box1.title" })}:</span> {intl.formatMessage({ id: "student.howItWorks.step3.sub3.box1.desc" })}
-                </li>
-                <li>
-                  <span className="font-semibold">{intl.formatMessage({ id: "student.howItWorks.step3.sub3.box2.title" })}:</span> {intl.formatMessage({ id: "student.howItWorks.step3.sub3.box2.desc" })}
-                </li>
-              </ul>
-            }
-            image={"/mentoring.jpeg"}
-            imageOnLeft={true}
-          />
-=======
           <motion.div
             className="mb-12 text-center md:text-left"
             initial="hidden"
@@ -427,7 +238,6 @@ const ForStudents: React.FC = () => {
               </motion.div>
             </div>
           </motion.div>
->>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
 
           {/* Arrow Separator */}
           <motion.div

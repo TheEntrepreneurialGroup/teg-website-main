@@ -107,11 +107,7 @@ const en = {
   "student.hero.subtitle":
     "Join a community of up to 50 high-achieving students preparing for leadership roles through real responsibility, practical experience, and mentoring. 39 years of alumni success prove what you can achieve.",
   "student.hero.buttonText": "Apply Now",
-<<<<<<< HEAD
-  "student.hero.buttonLink": "#apply",
-=======
   "student.hero.buttonLink": "https://tally.so/r/wMM9zp",
->>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
 
   "student.intro.title":
     "TEG is not for everyone. 10+ hours of work per week. Real responsibility. Reliability of a leader.",
@@ -122,11 +118,7 @@ const en = {
     "Founded in 1986 by BMW, Roland Berger, BCG, KPMG, Siemens, and more, TEG is now one of the most renowned talent incubators in the German-speaking world.",
 
   "student.howItWorks.mainTitle": "How we make you into such a person",
-<<<<<<< HEAD
-  "student.howItWorks.step1.title": "You become a part of TEG",
-=======
   "student.howItWorks.step1.title": "You become part of TEG",
->>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
   "student.howItWorks.step1.desc1":
     "At the TEG office, you meet like-minded individuals who want more and are ready to deliver.",
   "student.howItWorks.step1.desc2":
