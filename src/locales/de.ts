@@ -78,11 +78,7 @@ const de = {
   "student.hero.title":"Werde ein Leader. Gestalte die Zukunft der Wirtschaft.",
   "student.hero.subtitle":"Tritt einer Gemeinschaft von maximal 50 hochqualifizierten Studierenden bei, die sich durch echte Verantwortung, praktische Erfahrung und Mentoring auf Führungspositionen vorbereiten. 39 Jahre Alumni-Erfolg beweisen, was du erreichen kannst.",
   "student.hero.buttonText": "Jetzt bewerben",
-<<<<<<< HEAD
-  "student.hero.buttonLink": "#apply",
-=======
   "student.hero.buttonLink": "https://tally.so/r/wMM9zp",
->>>>>>> d4a591e6dfa9c2797f3970f81a403b6b2dbc2714
 
    /* --- INTRO SECTION --- */
   "student.intro.title": "TEG ist nicht für jeden. 10+ Stunden Arbeitszeit pro Woche. Echte Verantwortung. Verlässlichkeit einer Führungskraft.",
