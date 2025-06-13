@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import Button from "./Button";
+
 interface HeroSectionTwoButtonsProps {
   title: string;
   subtitle: string;
@@ -54,20 +55,12 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           {buttonText1 && buttonLink1 && (
-            <NavLink
-              to={buttonLink1}
-              className="btn btn-primary border border-white"
-            >
-              {buttonText1}
-            </NavLink>
+            //className="btn btn-primary border border-white"
+            <Button href={buttonLink1}>{buttonText1}</Button>
           )}
           {buttonText2 && buttonLink2 && (
-            <NavLink
-              to={buttonLink2}
-              className="btn btn-primary border border-white"
-            >
-              {buttonText2}
-            </NavLink>
+            //className="btn btn-primary border border-white"
+            <Button href={buttonLink2}>{buttonText2}</Button>
           )}
         </motion.div>
       </div>
