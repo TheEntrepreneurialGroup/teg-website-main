@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Button from "./Button";
+
 interface HeroSectionProps {
   title: string;
   subtitle: string;
@@ -47,15 +49,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </motion.p>
 
         {buttonText && buttonLink && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <a href={buttonLink} className="btn btn-accent">
-              {buttonText}
-            </a>
-          </motion.div>
+          <Button href={buttonLink}>{buttonText}</Button>
         )}
       </div>
 
