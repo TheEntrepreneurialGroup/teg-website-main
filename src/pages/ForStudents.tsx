@@ -8,6 +8,7 @@ import {
 import { useIntl } from "react-intl";
 import HeroSection from "../components/HeroSection";
 import CallToAction from "../components/CallToAction";
+import ContactCard from "../components/ContactCard";
 
 const ForStudents: React.FC = () => {
   const intl = useIntl();
@@ -379,58 +380,14 @@ const ForStudents: React.FC = () => {
 
           {/* Card Container - Centered */}
           <div className="flex justify-center">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl">
-              {/* Top Section with Name */}
-              <div className="flex items-center p-6 gap-4">
-                {/* Rectangular Image */}
-                <div className="w-32 h-42 overflow-hidden border-2 border-gray-200 rounded-lg flex-shrink-0">
-                  <img
-                    src={contactPerson.imageUrl}
-                    alt={contactPerson.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Name and Address */}
-                <div className="flex-1 min-w-0">
-                  <h2 className="text-gray-700 text-xl md:text-2xl font-medium">
-                    {contactPerson.title}
-                  </h2>
-                  <h4 className="text-gray-700 text-xl md:text-2xl font-medium">
-                    {contactPerson.name}
-                  </h4>
-                </div>
-              </div>
-
-              {/* Divider Line */}
-              <div className="border-t border-gray-200"></div>
-
-              {/* Contact Information */}
-              <div className="grid grid-cols-2 divide-x divide-gray-200">
-                <div className="p-4 flex items-center gap-2 text-gray-700">
-                  <a
-                    href={contactPerson.linkedinUrl}
-                    className="flex items-center gap-2 text-primary hover:text-primary-dark"
-                  >
-                    <Linkedin size={20} />
-                    <span>
-                      {intl.formatMessage({ id: "student.contact.linkedin" })}
-                    </span>
-                  </a>
-                </div>
-                <div className="p-4 flex items-center gap-2 text-gray-700">
-                  <a
-                    href={`mailto:${contactPerson.email}`}
-                    className="flex items-center gap-2 text-primary hover:text-primary-dark"
-                  >
-                    <Mail size={20} />
-                    <span>
-                      {intl.formatMessage({ id: "student.contact.email" })}
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <ContactCard
+              name={contactPerson.name}
+              title={contactPerson.title}
+              imageUrl={contactPerson.imageUrl}
+              email={contactPerson.email}
+              linkedinUrl={contactPerson.linkedinUrl}
+              variant="default"
+            />
           </div>
         </div>
       </section>
