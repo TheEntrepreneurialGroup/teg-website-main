@@ -1,12 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Mail,
-  Linkedin,
   UserSearch,
   Hammer,
   ListChecks,
-  Quote,
 } from "lucide-react";
 import { useIntl } from "react-intl";
 
