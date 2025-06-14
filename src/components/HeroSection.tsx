@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Button from "./Button";
 
 interface HeroSectionProps {
   title: string;
@@ -8,7 +9,6 @@ interface HeroSectionProps {
   buttonLink?: string;
   backgroundImage: string;
 }
-
 const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
@@ -20,12 +20,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     <div
       className="relative h-screen min-h-[600px] flex items-center justify-start overflow-hidden"
       style={{
-      backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.8), rgba(15, 44, 89, 0.9)), url(${backgroundImage})`,
+      height: "calc(100vh - 6rem)",
+      marginTop: "1rem",
+      backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.4), rgba(15, 44, 89, 0.5)), url(${backgroundImage})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-primary/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-primary/40"></div>
 
       <div className="container-custom z-10 text-left pl-8">
       <motion.h1
@@ -47,15 +49,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       </motion.p>
 
       {buttonText && buttonLink && (
-        <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-        >
-        <a href={buttonLink} className="btn btn-accent">
-          {buttonText}
-        </a>
-        </motion.div>
+        <Button href={buttonLink}>{buttonText}</Button>
       )}
       </div>
 
@@ -88,5 +82,4 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     </div>
   );
 };
-
 export default HeroSection;

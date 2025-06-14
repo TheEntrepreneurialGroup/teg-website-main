@@ -1,31 +1,34 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import Button from "./Button";
 
 interface CallToActionProps {
   title: string;
   description: string;
   buttonText: string;
   buttonLink: string;
-  variant?: 'light' | 'dark';
+  variant?: "light" | "dark";
   className?: string;
   isSection?: boolean;
 }
 
-const CallToAction: React.FC<CallToActionProps> = ({ 
-  title, 
-  description, 
-  buttonText, 
+const CallToAction: React.FC<CallToActionProps> = ({
+  title,
+  description,
+  buttonText,
   buttonLink,
-  variant = 'dark',
-  className = '',
+  variant = "dark",
+  className = "",
   isSection = true,
 }) => {
-  const isLight = variant === 'light';
-  
+  const isLight = variant === "light";
+
   const content = (
     <>
       <motion.h2
-        className={`text-3xl md:text-4xl font-bold mb-4 ${isLight ? 'text-primary' : 'text-white'}`}
+        className={`text-3xl md:text-4xl font-bold mb-4 ${
+          isLight ? "text-primary" : "text-white"
+        }`}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -33,9 +36,11 @@ const CallToAction: React.FC<CallToActionProps> = ({
       >
         {title}
       </motion.h2>
-            
+
       <motion.p
-        className={`text-lg mb-8 ${isLight ? 'text-gray-600' : 'text-secondary-light'}`}
+        className={`text-lg mb-8 ${
+          isLight ? "text-gray-600" : "text-secondary-light"
+        }`}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -43,42 +48,36 @@ const CallToAction: React.FC<CallToActionProps> = ({
       >
         {description}
       </motion.p>
-            
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        <a
-          href={buttonLink}
-          className={`inline-block px-6 py-3 rounded ${isLight ? 'bg-primary text-white' : 'bg-accent text-primary'} font-medium`}
-        >
-          {buttonText}
-        </a>
-      </motion.div>
+
+      <Button href={buttonLink}>{buttonText}</Button>
     </>
   );
-  
-  // Conditional rendering based on isSection flag  
+
+  // Conditional rendering based on isSection flag
   if (isSection) {
     return (
-      <section className={`py-16 ${isLight ? 'bg-secondary-light' : 'bg-primary'} ${className}`}>
+      <section
+        className={`py-16 ${
+          isLight ? "bg-secondary-light" : "bg-primary"
+        } ${className}`}
+      >
         <div className="container-custom">
-          <div className="max-w-3xl">
-            {content}
-          </div>
+          <div className="max-w-3xl">{content}</div>
         </div>
       </section>
     );
   }
-  
+
   // Return just the content wrapped in a div for grid usage
   return (
-    <div className={`p-8 rounded-lg ${isLight ? 'bg-secondary-light' : 'bg-primary'} ${className}`}>
+    <div
+      className={`p-8 rounded-lg ${
+        isLight ? "bg-secondary-light" : "bg-primary"
+      } ${className}`}
+    >
       {content}
     </div>
   );
-};  
+};
 
 export default CallToAction;

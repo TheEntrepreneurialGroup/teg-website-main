@@ -1,12 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Mail,
-  Linkedin,
   UserSearch,
   Hammer,
   ListChecks,
-  Quote,
 } from "lucide-react";
 import { useIntl } from "react-intl";
 
@@ -14,6 +11,7 @@ import HeroSection from "../components/HeroSection";
 import SectionTitle from "../components/SectionTitle";
 import FeatureCard from "../components/FeatureCard";
 import CallToAction from "../components/CallToAction";
+import ContactCard from "../components/ContactCard";
 
 const ForCompanies: React.FC = () => {
   const intl = useIntl();
@@ -33,7 +31,7 @@ const ForCompanies: React.FC = () => {
         subtitle={intl.formatMessage({ id: "company.hero.subtitle" })}
         buttonText={intl.formatMessage({ id: "company.hero.buttonText" })}
         buttonLink="#partnerships"
-        backgroundImage="/get_forward.jpg"
+        backgroundImage="/get_forward2.jpg"
       />
 
       <section className="section">
@@ -181,70 +179,16 @@ const ForCompanies: React.FC = () => {
           </h2>
 
           {/* Card Container - Centered */}
-          <div className="flex ">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl">
-              <div className="flex flex-col md:flex-row items-center p-6 gap-4">
-                {/* Rectangular Image */}
-                <div className="w-full md:w-64 h-84 overflow-hidden border-2 border-gray-200 rounded-lg flex-shrink-0">
-                  <img
-                    src={contactPerson.imageUrl}
-                    alt={contactPerson.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Greeting, Name and Title vertically stacked */}
-                <div className="flex-1 mt-4 md:mt-0 md:text-left">
-                  <div className="text-gray-700">
-                    <Quote size={20} className="block mb-2" />
-                    <h2 className="text-3xl md:text-4xl font-bold">
-                      {intl.formatMessage({
-                        id: "company.contact.greeting",
-                        defaultMessage: "greeting",
-                      })}
-                    </h2>
-                    <div className="flex justify-end mt-2">
-                      <Quote size={20} />
-                    </div>
-                  </div>
-                  <p className="text-gray-700 text-xl md:text-2xl font-medium mt-4">
-                    {contactPerson.name}
-                  </p>
-                  <p className="text-gray-700 text-xl md:text-2xl font-medium">
-                    {contactPerson.title}
-                  </p>
-                </div>
-              </div>
-
-              {/* Divider Line */}
-              <div className="border-t border-gray-200"></div>
-
-              {/* Contact Information */}
-              <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-gray-200">
-                <div className="p-4 flex items-center gap-2 text-gray-700 justify-center">
-                  <a
-                    href={contactPerson.linkedinUrl}
-                    className="flex items-center gap-2 text-primary hover:text-primary-dark"
-                  >
-                    <Linkedin size={20} />
-                    <span>
-                      {intl.formatMessage({ id: "company.contact.linkedin" })}
-                    </span>
-                  </a>
-                </div>
-                <div className="p-4 flex items-center gap-2 text-gray-700 justify-center">
-                  <a
-                    href={`mailto:${contactPerson.email}`}
-                    className="flex items-center gap-2 text-primary hover:text-primary-dark"
-                  >
-                    <Mail size={20} />
-                    <span>
-                      {intl.formatMessage({ id: "company.contact.email" })}
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div className="flex justify-center">
+            <ContactCard
+              name={contactPerson.name}
+              title={contactPerson.title}
+              imageUrl={contactPerson.imageUrl}
+              email={contactPerson.email}
+              linkedinUrl={contactPerson.linkedinUrl}
+              greeting={intl.formatMessage({ id: "company.contact.greeting" })}
+              variant="quote"
+            />
           </div>
         </div>
       </section>
