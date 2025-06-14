@@ -269,28 +269,30 @@ const ForStudents: React.FC = () => {
 
           {/* --- Step 4 --- */}
           <motion.div
-            className="text-center md:text-left"
+            className="mb-12 bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12 max-w-5xl ml-0 md:ml-8 lg:ml-12"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={sectionVariant}
             custom={0.2}
           >
-            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-800">
+            <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 text-left mb-6">
               {intl.formatMessage({ id: "student.howItWorks.step4.title" })}
             </h3>
-            <p className="text-base md:text-lg text-gray-600 mb-3 max-w-3xl mx-auto md:mx-0">
-              {intl.formatMessage({ id: "student.howItWorks.step4.desc1" })}
-            </p>
-            <p className="text-base md:text-lg text-gray-600 mb-3 max-w-3xl mx-auto md:mx-0">
-              {intl.formatMessage({ id: "student.howItWorks.step4.desc2" })}
-            </p>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto md:mx-0">
-              {intl.formatMessage({ id: "student.howItWorks.step4.desc3" })}
-            </p>
+            <div className="space-y-4">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-left">
+                {intl.formatMessage({ id: "student.howItWorks.step4.desc1" })}
+              </p>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-left">
+                {intl.formatMessage({ id: "student.howItWorks.step4.desc2" })}
+              </p>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-left">
+                {intl.formatMessage({ id: "student.howItWorks.step4.desc3" })}
+              </p>
+            </div>
           </motion.div>
-          <p>
-          {intl.formatMessage({ id: "student.howItWorks.lastline" })}
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-left ml-0 md:ml-8 lg:ml-12 italic mt-4">
+            {intl.formatMessage({ id: "student.howItWorks.lastline" })}
           </p>
 
           {/* Arrow Separator */}
@@ -331,46 +333,72 @@ const ForStudents: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-24">
             {/* Left Box: Benefits */}
             <motion.div
-              className="bg-gray-100 p-6 md:p-8 rounded-lg shadow-sm"
+              className="bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              variants={boxVariant} // Use the box animation variant
+              variants={boxVariant}
               custom={0.2}
             >
-              <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">
-                {intl.formatMessage({ id: "student.applySection.benefits.title" })}
-              </h3>
-              <ul className="list-none space-y-3">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-primary/10 rounded-lg">
+                  <Target size={32} className="text-primary mx-auto my-auto" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-semibold text-gray-800">
+                  {intl.formatMessage({ id: "student.applySection.benefits.title" })}
+                </h3>
+              </div>
+              <ul className="space-y-4">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <li key={i} className="text-base text-gray-700 leading-relaxed">
-                    {intl.formatMessage({ id: `student.applySection.benefits.list.${i}` })}
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-1 text-accent">
+                      <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="12" fill="#3B82F6" fillOpacity="0.15"/>
+                        <path d="M7 13l3 3 7-7" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                    <span className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                      {intl.formatMessage({ id: `student.applySection.benefits.list.${i}` })}
+                    </span>
                   </li>
                 ))}
               </ul>
             </motion.div>
 
             {/* Right Box: Requirements */}
-             <motion.div
-              className="bg-gray-100 p-6 md:p-8 rounded-lg shadow-sm"
+            <motion.div
+              className="bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               variants={boxVariant}
-              custom={0.3} // Slightly later delay
+              custom={0.3}
             >
-              <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">
-                 {intl.formatMessage({ id: "student.applySection.requirements.title" })}
-              </h3>
-              <ul className="list-none space-y-3">
-                 {[1, 2, 3, 4, 5].map((i) => (
-                  <li key={i} className="text-base text-gray-700 leading-relaxed">
-                    {intl.formatMessage({ id: `student.applySection.requirements.list.${i}` })}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-primary/10 rounded-lg">
+                  <ListChecks size={32} className="text-primary mx-auto my-auto" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-semibold text-gray-800">
+                  {intl.formatMessage({ id: "student.applySection.requirements.title" })}
+                </h3>
+              </div>
+              <ul className="space-y-4">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-1 text-accent">
+                      <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="12" fill="#3B82F6" fillOpacity="0.15"/>
+                        <path d="M7 13l3 3 7-7" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                    <span className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                      {intl.formatMessage({ id: `student.applySection.requirements.list.${i}` })}
+                    </span>
                   </li>
                 ))}
               </ul>
-              <p className="text-base text-gray-700 italic mt-6">
-                 {intl.formatMessage({ id: "student.applySection.requirements.extraLine" })}
+              <p className="text-lg md:text-xl text-gray-700 italic mt-6">
+                {intl.formatMessage({ id: "student.applySection.requirements.extraLine" })}
               </p>
             </motion.div>
           </div>
