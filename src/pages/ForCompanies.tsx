@@ -1,10 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  UserSearch,
-  Hammer,
-  ListChecks,
-} from "lucide-react";
+import { UserSearch, Hammer, ListChecks } from "lucide-react";
 import { useIntl } from "react-intl";
 
 import HeroSection from "../components/HeroSection";
