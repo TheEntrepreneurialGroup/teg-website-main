@@ -107,7 +107,7 @@ const en = {
   "student.hero.subtitle":
     "Join a community of up to 50 high-achieving students preparing for leadership roles through real responsibility, practical experience, and mentoring. 39 years of alumni success prove what you can achieve.",
   "student.hero.buttonText": "Apply Now",
-  "student.hero.buttonLink": "https://tally.so/r/wMM9zp",
+  "student.hero.buttonLink": "https://tally.so/r/wMP4p8",
 
   "student.intro.title":
     "TEG is not for everyone. 10+ hours of work per week. Real responsibility. Reliability of a leader.",
@@ -215,7 +215,7 @@ const en = {
   "student.callToAction1.description":
     "Take responsibility. Become a member of TEG and gain the skills, community, and experience you need to become tomorrow's corporate leader.",
   "student.callToAction1.buttonText": "Apply Now!",
-  "student.callToAction1.buttonLink": "https://tally.so/r/wMM9zp",
+  "student.callToAction1.buttonLink": "https://tally.so/r/wMP4p8",
 
   "student.contact.title": "For more information, contact us",
   "student.contact.email": "Email",
