@@ -78,7 +78,7 @@ const de = {
   "student.hero.title":"Werde ein Leader. Gestalte die Zukunft der Wirtschaft.",
   "student.hero.subtitle":"Tritt einer Gemeinschaft von maximal 50 hochqualifizierten Studierenden bei, die sich durch echte Verantwortung, praktische Erfahrung und Mentoring auf Führungspositionen vorbereiten. 39 Jahre Alumni-Erfolg beweisen, was du erreichen kannst.",
   "student.hero.buttonText": "Jetzt bewerben",
-  "student.hero.buttonLink": "https://tally.so/r/wMM9zp",
+  "student.hero.buttonLink": "https://tally.so/r/wMP4p8",
 
    /* --- INTRO SECTION --- */
   "student.intro.title": "TEG ist nicht für jeden. 10+ Stunden Arbeitszeit pro Woche. Echte Verantwortung. Verlässlichkeit einer Führungskraft.",
@@ -157,7 +157,7 @@ const de = {
  "student.callToAction1.title": "Bist Du bereit, Deine Karriere als Führungskraft zu starten?", 
  "student.callToAction1.description": "Übernehme Verantwortung. Werd ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
  "student.callToAction1.buttonText": "Jetzt Bewerben!",
- "student.callToAction1.buttonLink": "https://tally.so/r/wMM9zp",
+ "student.callToAction1.buttonLink": "https://tally.so/r/wMP4p8",
 
   "student.features.meritBased.title": "Leistungsbasierter Aufstieg",
   "student.features.meritBased.description":"Steige durch eine strukturierte interne Karriereleiter auf, basierend auf nachgewiesener Leistung und Führungsfähigkeit.",
@@ -185,7 +185,7 @@ const de = {
   "student.callToAction.title":"Bereit, deine Karriere als Führungskraft zu starten?",
   "student.callToAction.description":"Übernimm Verantwortung. Tritt TEG bei und erlange die Fähigkeiten, das Netzwerk und die Erfahrung, die du benötigst, um die Führungskraft von morgen zu werden.",
   "student.cToAction.buttonText": "Jetzt bewerben",
-  "student.callToAon.buttonLink": "https://tally.so/r/wMM9zp",
+  "student.callToAon.buttonLink": "https://tally.so/r/wMP4p8",
 
   "student.contact.title": "Für weitere Informationen kontaktieren Sie uns",
   "student.contact.email": "E-Mail",
