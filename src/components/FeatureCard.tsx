@@ -7,12 +7,14 @@ interface FeatureCardProps {
   description: string;
   icon: React.ReactNode;
   delay?: number;
+  className?: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, delay = 0 }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, delay = 0, className }) => {
+    const combinedClassName = `card p-6 ${className || ""}`;  
   return (
     <motion.div 
-      className="card p-6"
+      className={combinedClassName}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

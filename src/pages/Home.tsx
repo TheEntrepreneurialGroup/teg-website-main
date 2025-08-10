@@ -78,6 +78,9 @@ export const Home: React.FC = () => {
               altText="Corporate Partners"
               caption={intl.formatMessage({ id: "home.legacy.image3.caption" })}
             />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <FeatureCard
               title={intl.formatMessage({ id: "home.legacy.feature1.title" })}
               description={intl.formatMessage({
