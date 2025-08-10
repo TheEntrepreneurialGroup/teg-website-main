@@ -13,7 +13,7 @@ import de from "./locales/de";
 const messages: Record<string, Record<string, string>> = { en, de };
 
 function App() {
-  const [locale, setLocale] = useState<"en" | "de">("en");
+  const [locale, setLocale] = useState<"en" | "de">("de");
 
   const switchLanguage = (lang: "en" | "de") => {
     setLocale(lang);
