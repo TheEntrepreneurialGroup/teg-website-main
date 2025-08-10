@@ -10,7 +10,7 @@ interface ImageCardProps {
 }
 
 const ImageCard: React.FC<ImageCardProps> = ({ imageUrl, altText, caption, delay = 0, className }) => {
-    const combinedClassName = `relative overflow-hidden ${className || ''}`;
+    const combinedClassName = `relative overflow-hidden card ${className || ''}`;
 
     return (
         <motion.div 
@@ -24,12 +24,12 @@ const ImageCard: React.FC<ImageCardProps> = ({ imageUrl, altText, caption, delay
                <img 
                     src={imageUrl} 
                     alt={altText} 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-auto object-cover" 
                 />
         
         {caption && (
-                 <div className="absolute bottom-0 left-0 right-0 p-4 pb-0 bg-gradient-to-t from-black/80 via-black/70 via-70% to-black/0">
-                    <p className="text-lg leading-6 text-white font-bold drop-shadow-[0_0_4px_rgba(0,0,0,0.8)]">{caption}</p>
+                 <div className="mt-2 px-4">
+                    <p className="text-lg leading-6 font-bold">{caption}</p>
                  </div>
             )}
         </motion.div>
