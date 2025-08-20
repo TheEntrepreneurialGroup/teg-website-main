@@ -1,10 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  UserSearch,
-  Hammer,
-  ListChecks,
-} from "lucide-react";
+import { UserSearch, Hammer, ListChecks } from "lucide-react";
 import { useIntl } from "react-intl";
 
 import HeroSection from "../components/HeroSection";
@@ -30,7 +26,7 @@ const ForCompanies: React.FC = () => {
         title={intl.formatMessage({ id: "company.hero.title" })}
         subtitle={intl.formatMessage({ id: "company.hero.subtitle" })}
         buttonText={intl.formatMessage({ id: "company.hero.buttonText" })}
-        buttonLink="#partnerships"
+        buttonLink="#contact"
         backgroundImage="/get_forward2.jpg"
       />
 
@@ -89,7 +85,7 @@ const ForCompanies: React.FC = () => {
         buttonText={intl.formatMessage({
           id: "company.callToAction.buttonText",
         })}
-        buttonLink={`mailto:${contactPerson.email}`}
+        buttonLink="#contact"
         variant="light"
       />
 
