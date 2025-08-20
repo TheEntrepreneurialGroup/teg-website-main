@@ -168,23 +168,27 @@ const ForCompanies: React.FC = () => {
       </section>
 
       <section id="contact" className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          {/* Section Title */}
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">
-            {intl.formatMessage({ id: "company.contact.title" })}
-          </h2>
+        <div className="flex flex-col items-center">
+          <div className="container mx-auto px-4 max-w-6xl">
+            {/* Section Title */}
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">
+              {intl.formatMessage({ id: "company.contact.title" })}
+            </h2>
 
-          {/* Card Container - Centered */}
-          <div className="flex justify-center">
-            <ContactCard
-              name={contactPerson.name}
-              title={contactPerson.title}
-              imageUrl={contactPerson.imageUrl}
-              email={contactPerson.email}
-              linkedinUrl={contactPerson.linkedinUrl}
-              greeting={intl.formatMessage({ id: "company.contact.greeting" })}
-              variant="quote"
-            />
+            {/* Card Container - Centered */}
+            <div className="flex justify-center">
+              <ContactCard
+                name={contactPerson.name}
+                title={contactPerson.title}
+                imageUrl={contactPerson.imageUrl}
+                email={contactPerson.email}
+                linkedinUrl={contactPerson.linkedinUrl}
+                greeting={intl.formatMessage({
+                  id: "company.contact.greeting",
+                })}
+                variant="quote"
+              />
+            </div>
           </div>
         </div>
       </section>

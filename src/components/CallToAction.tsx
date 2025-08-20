@@ -62,7 +62,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
         } ${className}`}
       >
         <div className="container-custom">
-          <div className="max-w-3xl">{content}</div>
+          <div className="max-w-full">{content}</div>
         </div>
       </section>
     );
