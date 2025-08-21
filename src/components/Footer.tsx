@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             </a>
             {
               <a
-                href="https://www.facebok.com/TheEntrepreneurialGroup"
+                href="https://www.facebook.com/TheEntrepreneurialGroup"
                 className="text-white hover:text-secondary-light transition-colors duration-300"
                 aria-label="Facebook"
               >
