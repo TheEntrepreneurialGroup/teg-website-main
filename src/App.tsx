@@ -9,6 +9,7 @@ import Imprint from "./pages/Imprint";
 import { IntlProvider } from "react-intl";
 import en from "./locales/en";
 import de from "./locales/de";
+import ScrollRestoration from "./components/ScrollRestoration";
 
 const messages: Record<string, Record<string, string>> = { en, de };
 
@@ -20,6 +21,7 @@ function App() {
   };
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
+      <ScrollRestoration />
       <Routes>
         <Route path="/" element={<Layout switchLanguage={switchLanguage} />}>
           <Route index element={<Home />} />
