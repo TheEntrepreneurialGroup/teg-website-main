@@ -58,13 +58,13 @@ const ForStudents: React.FC = () => {
         <div className="container-custom flex justify-center">
           <div className="w-full max-w-5xl p-12 md:p-16 flex flex-col gap-10">
             {/* Title Row with Icon */}
-            <div className="flex items-center gap-6 mb-6">
+            <div className="flex items-start gap-6 mb-6">
               <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white/10 rounded-lg">
                 <Info size={40} className="text-white mx-auto my-auto" />
               </div>
-              <p className="text-3xl md:text-5xl font-bold text-white text-left leading-tight">
+              <span className="text-3xl md:text-5xl font-bold text-white text-left leading-tight">
                 {intl.formatMessage({ id: "student.intro.title" })}
-              </p>
+              </span>
             </div>
             {/* List of sub-points */}
             <ul className="space-y-7">
