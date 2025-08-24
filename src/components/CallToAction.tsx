@@ -75,7 +75,9 @@ const CallToAction: React.FC<CallToActionProps> = ({
         isLight ? "bg-secondary-light" : "bg-primary"
       } ${className}`}
     >
-      {content}
+      <div className="text-center">
+        {content}
+      </div>
     </div>
   );
 };
