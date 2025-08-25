@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Linkedin, Quote } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Mail, Linkedin, Quote } from "lucide-react";
 
 interface ContactCardProps {
   name: string;
@@ -9,7 +9,7 @@ interface ContactCardProps {
   email: string;
   linkedinUrl: string;
   greeting?: string;
-  variant?: 'default' | 'quote';
+  variant?: "default" | "quote";
   delay?: number;
 }
 
@@ -20,8 +20,8 @@ const ContactCard: React.FC<ContactCardProps> = ({
   email,
   linkedinUrl,
   greeting,
-  variant = 'default',
-  delay = 0
+  variant = "default",
+  delay = 0,
 }) => {
   return (
     <motion.div
@@ -33,7 +33,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
     >
       <div className="flex flex-col md:flex-row items-center p-6 gap-4">
         {/* Image Section */}
-        <div className="w-full md:w-64 h-84 overflow-hidden border-2 border-gray-200 rounded-lg flex-shrink-0">
+        <div className="w-full md:w-64 h-84 overflow-hidden border-1 border-gray-200 rounded-lg flex-shrink-0">
           <img
             src={imageUrl}
             alt={name}
@@ -43,7 +43,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
 
         {/* Content Section */}
         <div className="flex-1 mt-4 md:mt-0 md:text-left">
-          {variant === 'quote' && greeting && (
+          {variant === "quote" && greeting && (
             <div className="text-gray-700">
               <Quote size={20} className="block mb-2" />
               <h2 className="text-3xl md:text-4xl font-bold">{greeting}</h2>
@@ -52,10 +52,10 @@ const ContactCard: React.FC<ContactCardProps> = ({
               </div>
             </div>
           )}
-          <p className="text-gray-700 text-xl md:text-2xl font-medium mt-4">
+          <p className="text-gray-600 text-xl md:text-2xl font-medium mt-3">
             {name}
           </p>
-          <p className="text-gray-700 text-xl md:text-2xl font-medium">
+          <p className="text-gray-700 text-base md:text-lg font-normal">
             {title}
           </p>
         </div>
@@ -91,4 +91,4 @@ const ContactCard: React.FC<ContactCardProps> = ({
   );
 };
 
-export default ContactCard; 
+export default ContactCard;
