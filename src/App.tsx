@@ -9,17 +9,19 @@ import Imprint from "./pages/Imprint";
 import { IntlProvider } from "react-intl";
 import en from "./locales/en";
 import de from "./locales/de";
+import ScrollRestoration from "./components/ScrollRestoration";
 
 const messages: Record<string, Record<string, string>> = { en, de };
 
 function App() {
-  const [locale, setLocale] = useState<"en" | "de">("en");
+  const [locale, setLocale] = useState<"en" | "de">("de");
 
   const switchLanguage = (lang: "en" | "de") => {
     setLocale(lang);
   };
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
+      <ScrollRestoration />
       <Routes>
         <Route path="/" element={<Layout switchLanguage={switchLanguage} />}>
           <Route index element={<Home />} />
