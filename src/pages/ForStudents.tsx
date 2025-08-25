@@ -55,19 +55,21 @@ const ForStudents: React.FC = () => {
       />
       {/* --- Intro Section --- */}
       <section className="py-16 md:py-20 bg-primary">
-        <div className="container-custom flex justify-center">
-          <div className="w-full max-w-5xl p-12 flex flex-col">
+        <div className="container-custom flex justify-center flex-col">
+          <div className="w-full mx-auto py-6">
             {/* Title Row with Icon */}
-              <div className="flex items-start gap-6">
+            <div className="flex items-start gap-6 flex-col sm:flex-row">
               <div className="flex-shrink-0 flex w-16 h-16 bg-white/10 rounded-lg">
                 <Info size={40} className="text-white mx-auto my-auto" />
               </div>
-              <div className="flex flex-col justify-start">
-                <p className="text-3xl md:text-5xl font-bold text-white text-left -mt-1.5">
+              <div className="w-full justify-start">
+                <p className="text-5xl md:text-5xl font-bold text-white text-left -mt-1.5 -mb-0">
                   {intl.formatMessage({ id: "student.intro.title" })}
                 </p>
               </div>
             </div>
+          </div>
+          <div className="w-full max-w-5xl mx-auto p-6 md:p-12">
             {/* List of sub-points */}
             <ul className="space-y-4">
               <li className="flex items-start gap-4">
@@ -159,41 +161,30 @@ const ForStudents: React.FC = () => {
           </motion.h2>
 
           {/* --- Step 1 --- */}
+
           <motion.div
-            className="mb-12 flex flex-col md:flex-row items-start bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12 gap-8 md:gap-14 max-w-5xl mx-auto"
+            className="mb-12 bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12 max-w-5xl mx-auto"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={sectionVariant}
-            custom={0.1}
+            custom={0.2}
           >
-            {/* Icon */}
-            <div className="flex-shrink-0 flex items-start justify-center w-16 h-16 bg-primary/10 rounded-lg">
-              <Target size={36} className="text-primary mx-auto my-auto" />
-            </div>
-            {/* Text Content */}
-            <div className="flex-1 min-w-0">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-5 text-gray-800 flex items-center">
+            {/* Title Row with Icon */}
+            <div className="flex items-center gap-4 mb-2">
+              <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-primary/10 rounded-lg">
+                <Target size={32} className="text-primary mx-auto my-auto" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 text-left">
                 {intl.formatMessage({ id: "student.howItWorks.step1.title" })}
               </h3>
-              <p className="text-lg md:text-xl text-gray-700 mb-4 leading-relaxed">
-                {intl.formatMessage({ id: "student.howItWorks.step1.desc1" })}
-              </p>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                {intl.formatMessage({ id: "student.howItWorks.step1.desc2" })}
-              </p>
             </div>
-          </motion.div>
-
-          {/* Arrow Separator */}
-          <motion.div
-            className="flex justify-center my-8 text-gray-400"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
-            <ArrowDown size={28} strokeWidth={1.5} />
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-left">
+              {intl.formatMessage({ id: "student.howItWorks.step1.desc1" })}
+            </p>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-left">
+              {intl.formatMessage({ id: "student.howItWorks.step1.desc2" })}
+            </p>
           </motion.div>
 
           {/* --- Step 2 --- */}
@@ -222,9 +213,9 @@ const ForStudents: React.FC = () => {
               {intl.formatMessage({ id: "student.howItWorks.step2.desc1" })}
             </p>
             {/* List of box points */}
-            <ul className="space-y-5 mb-8">
-              <li className="flex items-start gap-3">
-                <span className="mt-1 text-accent">
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="text-accent">
                   <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
                     <circle
                       cx="12"
@@ -246,8 +237,8 @@ const ForStudents: React.FC = () => {
                   {intl.formatMessage({ id: "student.howItWorks.step2.box1" })}
                 </span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 text-accent">
+              <li className="flex items-start gap-2">
+                <span className="text-accent">
                   <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
                     <circle
                       cx="12"
@@ -269,8 +260,8 @@ const ForStudents: React.FC = () => {
                   {intl.formatMessage({ id: "student.howItWorks.step2.box2" })}
                 </span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 text-accent">
+              <li className="flex items-start gap-2">
+                <span className=" text-accent">
                   <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
                     <circle
                       cx="12"
@@ -525,12 +516,12 @@ const ForStudents: React.FC = () => {
       {/* --- END HOW IT WORKS SECTION --- */}
 
       {/* --- APPLICATION INFO  --- */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-7 md:py-14 bg-white">
         {" "}
         {/* White background */}
-        <div className="container-custom max-w-5xl mx-auto px-4">
+        <div className="container-custom max-w-7xl mx-auto px-4">
           {/* Benefits vs Requirements Boxes */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 md:mb-24">
             {/* Left Box: Benefits */}
             <motion.div
               className="bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12"
@@ -540,7 +531,7 @@ const ForStudents: React.FC = () => {
               variants={boxVariant}
               custom={0.2}
             >
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-6 max-w-full">
                 <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-primary/10 rounded-lg">
                   <Target size={32} className="text-primary mx-auto my-auto" />
                 </div>
@@ -550,10 +541,10 @@ const ForStudents: React.FC = () => {
                   })}
                 </h3>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="mt-1 text-accent">
+                    <span className="text-accent">
                       <svg
                         width="22"
                         height="22"
@@ -608,10 +599,10 @@ const ForStudents: React.FC = () => {
                   })}
                 </h3>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="mt-1 text-accent">
+                    <span className="text-accent">
                       <svg
                         width="22"
                         height="22"
@@ -641,15 +632,15 @@ const ForStudents: React.FC = () => {
                     </span>
                   </li>
                 ))}
-              </ul> 
+              </ul>
             </motion.div>
           </div>
           <div className="flex justify-center">
-          <p className="text-lg md:text-xl text-gray-700 italic mt-6">
-                {intl.formatMessage({
-                  id: "student.applySection.requirements.extraLine",
-                })}
-              </p>
+            <p className="text-lg md:text-xl text-gray-700 italic">
+              {intl.formatMessage({
+                id: "student.applySection.requirements.extraLine",
+              })}
+            </p>
           </div>
           <CallToAction
             title={intl.formatMessage({ id: "student.callToAction1.title" })}
