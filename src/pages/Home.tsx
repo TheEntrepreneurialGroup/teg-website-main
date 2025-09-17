@@ -20,7 +20,7 @@ export const Home: React.FC = () => {
         buttonLink1={intl.formatMessage({ id: "home.hero.buttonLink1" })}
         buttonText2={intl.formatMessage({ id: "home.hero.buttonText2" })}
         buttonLink2={intl.formatMessage({ id: "home.hero.buttonLink2" })}
-        backgroundImage="/sigma.jpeg"
+        backgroundImage="/TEG_Hero_Home.jpg"
       />
 
       <section className="py-20 bg-secondary-light">
@@ -78,9 +78,9 @@ export const Home: React.FC = () => {
               altText="Corporate Partners"
               caption={intl.formatMessage({ id: "home.legacy.image3.caption" })}
             />
-            </div>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <FeatureCard
               title={intl.formatMessage({ id: "home.legacy.feature1.title" })}
               description={intl.formatMessage({
