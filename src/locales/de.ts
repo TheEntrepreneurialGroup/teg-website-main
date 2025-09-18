@@ -1,7 +1,8 @@
 const de = {
   // Home Page Texts
   "home.hero.title":
-    "Gegründet von Deutschlands führenden Unternehmen und visionären Studierenden, zur Förderung der Entscheider von morgen. Seit 1986.",
+    "Wir formen die nächsten Führungspersönlich\u00ADkeiten der deutschen Wirtschaft.",
+  "home.hero.since": "Seit 1986.",
   "home.hero.subtitle":
     "Die Entrepreneurial Group (TEG) formt die nächsten Führungspersönlichkeiten der deutschen Wirtschaft. Wir entwickeln außergewöhnliche Talente zu Unternehmern: Gründer, Führungskräfte und Business Leader.",
   "home.hero.buttonText1": "TEG für Unternehmen",

@@ -1,7 +1,8 @@
 const en = {
   // Home Page Texts
   "home.hero.title":
-    "Founded by Germany’s Top Corporations and Visionary Students, to Forge Tomorrow’s Decision-Makers. Since 1986.",
+    "We are developing the future leaders of the German economy.",
+  "home.hero.since": "Since 1986.",
   "home.hero.subtitle":
     "The Entrepreneurial Group (TEG) shapes the next leaders of the German economy. We develop exceptional talents into entrepreneurs: founders, executives, and business leaders.",
   "home.hero.buttonText1": "TEG for Companies",
@@ -45,7 +46,8 @@ const en = {
   "home.callToAction2.buttonLink": "/for-students",
 
   // Company Page Texts
-  "company.hero.title": "We develop your next leadership talents. With Certainty.",
+  "company.hero.title":
+    "We develop your next leadership talents. With Certainty.",
   "company.hero.subtitle":
     "Become a TEG partner and gain access to a proven talent pool of exceptional future leaders for 39 years.",
   "company.hero.buttonText": "Become a Partner",
@@ -97,8 +99,7 @@ const en = {
   "company.contact.greeting": "We look forward to hearing from you!",
   "company.contact.email": "Email",
   "company.contact.linkedin": "LinkedIn",
-  "company.contact.directorTitle":
-    "Director of Strategy and Partnerships",
+  "company.contact.directorTitle": "Director of Strategy and Partnerships",
   "company.contact.directorName": "~ Jonathan Babelotzky",
 
   // Student Page Texts
