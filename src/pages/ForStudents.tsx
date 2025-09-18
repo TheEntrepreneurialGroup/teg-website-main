@@ -51,7 +51,7 @@ const ForStudents: React.FC = () => {
         subtitle={intl.formatMessage({ id: "student.hero.subtitle" })}
         buttonText={intl.formatMessage({ id: "student.hero.buttonText" })}
         buttonLink={intl.formatMessage({ id: "student.hero.buttonLink" })}
-        backgroundImage="/invite.png"
+        backgroundImage="/TEG_Hero_Subpage.jpg"
       />
       {/* --- Intro Section --- */}
       <section className="py-16 md:py-20 bg-primary">

@@ -27,7 +27,7 @@ const ForCompanies: React.FC = () => {
         subtitle={intl.formatMessage({ id: "company.hero.subtitle" })}
         buttonText={intl.formatMessage({ id: "company.hero.buttonText" })}
         buttonLink="#contact"
-        backgroundImage="/get_forward2.jpg"
+        backgroundImage="/TEG_Hero_Subpage.jpg"
       />
 
       <section className="section">
