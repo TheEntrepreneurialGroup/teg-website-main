@@ -1,31 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-primary: #0F2C59;
-  --color-primary-light: #3A5AA9;
+  --color-primary: #0f2c59;
+  --color-primary-light: #3a5aa9;
   --color-primary-dark: #091c3a;
-  --color-secondary: #E5E5E5;
-  --color-secondary-light: #F5F5F5;
-  --color-secondary-dark: #C4C4C4;
-  --color-accent: #B8860B;
-  --color-accent-light: #DAA520;
-  --color-accent-dark: #8B6914;
+  --color-secondary: #e5e5e5;
+  --color-secondary-light: #f5f5f5;
+  --color-secondary-dark: #c4c4c4;
+  --color-accent: #b8860b;
+  --color-accent-light: #daa520;
+  --color-accent-dark: #8b6914;
 }
 
 @layer base {
   html {
     @apply scroll-smooth;
   }
-  
+
   body {
     @apply font-['Montserrat'] leading-relaxed text-gray-800;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-['Montserrat'] leading-tight text-primary font-bold;
   }
 
@@ -60,15 +65,15 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary-dark;
+    @apply bg-primary text-secondary hover:bg-primary-dark;
   }
 
   .btn-outline {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-secondary;
   }
 
   .btn-accent {
-    @apply bg-accent text-white hover:bg-accent-dark;
+    @apply bg-accent text-secondary hover:bg-accent-light active:bg-accent-dark hover:text-secondary;
   }
 
   .container-custom {
@@ -80,6 +85,6 @@
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+    @apply bg-secondary rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
   }
 }

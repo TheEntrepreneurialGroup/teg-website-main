@@ -15,6 +15,7 @@ export const Home: React.FC = () => {
     <div>
       <HeroSectionTwoButtons
         title={intl.formatMessage({ id: "home.hero.title" })}
+        since={intl.formatMessage({ id: "home.hero.since" })}
         subtitle={intl.formatMessage({ id: "home.hero.subtitle" })}
         buttonText1={intl.formatMessage({ id: "home.hero.buttonText1" })}
         buttonLink1={intl.formatMessage({ id: "home.hero.buttonLink1" })}
