@@ -24,7 +24,7 @@ const Layout: React.FC<{
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar scrolled={scrolled} switchLanguage={switchLanguage} />
-      <main className="flex-grow pt-24 md:pt-28 lg:pt-30">
+      <main className="flex-grow pt-16 md:pt-24 lg:pt-28">
         <AnimatePresence mode="wait">
           <Outlet />
         </AnimatePresence>
