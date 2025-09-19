@@ -24,7 +24,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
 }) => {
   return (
     <div
-      className="relative h-screen lg:h-[108vh] min-h-[600px] flex items-center justify-start overflow-hidden pl-8 pt-52"
+      className="relative h-full lg:h-[108vh] min-h-[600px] flex items-center justify-start overflow-hidden pt-52 pb-16"
       style={{
         marginTop: "1rem",
         backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.4), rgba(15, 44, 89, 0.5)), url(${backgroundImage})`,
@@ -32,6 +32,16 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
         backgroundPosition: "center",
       }}
     >
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .hero-bg-mobile {
+              background-position: left center !important;
+            }
+          }
+        `}
+      </style>
+
       <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-primary/60"></div>
       <div className="container-custom z-10 text-left pl-8">
         <motion.h1
@@ -42,14 +52,16 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
         >
           {title}
         </motion.h1>
-        <motion.h1
-          className="text-white mb-6 font-medium"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {since}
-        </motion.h1>
+        {since && (
+          <motion.h1
+            className="text-white mb-6 font-medium"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {since}
+          </motion.h1>
+        )}
         <motion.p
           className="text-secondary-light text-xl max-w-4xl mb-8"
           initial={{ opacity: 0, y: 20 }}
