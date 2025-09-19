@@ -1,11 +1,10 @@
-import ReactGA from 'react-ga4';
+import umami from "umami";
 
 export const handleGAButtonClick = (buttonText: string, source: string) => {
-  const deviceType = window.innerWidth <= 768 ? 'Mobile' : 'Desktop'; // Determine device type based on screen width
-
-  ReactGA.event({
-    category: 'Button',
-    action: 'Click',
-    label: `${buttonText} | Source: ${source} | Device: ${deviceType}`,
+  const deviceType = window.innerWidth <= 768 ? "Mobile" : "Desktop";
+  umami.track("CTA-click", {
+    button: buttonText,
+    source,
+    device: deviceType,
   });
 };
