@@ -11,6 +11,8 @@ import en from "./locales/en";
 import de from "./locales/de";
 import ScrollRestoration from "./components/ScrollRestoration";
 import ReactGA from "react-ga4";
+import CookieBanner from "./components/CookieBanner";
+
 
 const messages: Record<string, Record<string, string>> = { en, de };
 
@@ -21,6 +23,7 @@ const usePageTracking = () => {
     ReactGA.send("pageview");
   }, [location]);
 };
+
 function App() {
   const [locale, setLocale] = useState<"en" | "de">("de");
 
@@ -43,8 +46,12 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/imprint" element={<Imprint />} />
       </Routes>
+			<CookieBanner />
     </IntlProvider>
   );
 }
 
 export default App;
+
+
+
