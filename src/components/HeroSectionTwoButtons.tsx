@@ -24,7 +24,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
 }) => {
   return (
     <div
-      className="relative h-full lg:h-[108vh] min-h-[600px] flex items-center justify-start overflow-hidden pt-52 pb-16"
+      className="relative h-full md:h-screen lg:h-[108vh] min-h-[600px] flex items-center justify-start overflow-hidden md:pt-52 pb-16"
       style={{
         marginTop: "1rem",
         backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.4), rgba(15, 44, 89, 0.5)), url(${backgroundImage})`,
@@ -43,7 +43,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
       </style>
 
       <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-primary/60"></div>
-      <div className="container-custom z-10 text-left pl-8">
+      <div className="container-custom z-10 text-left pl-8 py-12">
         <motion.h1
           className="text-white font-bold break-words"
           initial={{ opacity: 0, y: 20 }}
