@@ -24,7 +24,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
 }) => {
   return (
     <div
-      className="relative h-full md:h-screen lg:h-[108vh] min-h-[600px] flex items-center justify-start overflow-hidden md:pt-52 pb-16"
+      className="relative h-full md:h-screen lg:h-[108vh] min-h-[600px] flex items-center justify-start overflow-hidden md:pt-40 pb-16"
       style={{
         marginTop: "1rem",
         backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.4), rgba(15, 44, 89, 0.5)), url(${backgroundImage})`,
@@ -54,7 +54,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
         </motion.h1>
         {since && (
           <motion.h1
-            className="text-white mb-6 font-medium"
+            className="text-white mb-6 font-normal"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -62,14 +62,16 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             {since}
           </motion.h1>
         )}
-        <motion.p
-          className="text-secondary-light text-xl max-w-4xl mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          {subtitle}
-        </motion.p>
+        {subtitle != "home.hero.subtitle" && (
+          <motion.p
+            className="text-secondary-light text-xl max-w-4xl mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            {subtitle}
+          </motion.p>
+        )}
         <motion.div
           className="flex gap-2 flex-wrap jusitfy-start w-full"
           initial={{ opacity: 0, y: 20 }}
