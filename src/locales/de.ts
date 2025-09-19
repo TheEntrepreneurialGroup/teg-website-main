@@ -3,8 +3,7 @@ const de = {
   "home.hero.title":
     "Wir formen die nächsten Führungspersönlich\u00ADkeiten der deutschen Wirtschaft.",
   "home.hero.since": "Seit 1986.",
-  "home.hero.subtitle":
-    "Die Entrepreneurial Group (TEG) formt die nächsten Führungspersönlichkeiten der deutschen Wirtschaft. Wir entwickeln außergewöhnliche Talente zu Unternehmern: Gründer, Führungskräfte und Business Leader.",
+  "home.hero.subtitle": "",
   "home.hero.buttonText1": "TEG für Unternehmen",
   "home.hero.buttonLink1": "/for-companies",
   "home.hero.buttonText2": "TEG für Studierende",
@@ -46,11 +45,10 @@ const de = {
   "home.callToAction2.buttonLink": "/for-students",
 
   // Company Page Texts
-  "company.hero.title":
-    "Wir entwickeln Ihre nächsten Führungstalente. Mit Sicherheit.",
+  "company.hero.title": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
   "company.hero.subtitle":
-    "Werden Sie Partner von TEG und erhalten Sie Zugang zu einem seit 39 Jahren bewährten Talent-Pool außergewöhnlicher Nachwuchsführungskräfte.",
-  "company.hero.buttonText": "Partner werden",
+    "Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
+  "company.hero.buttonText": "Zusammenarbeit beginnen",
 
   "company.sectionTitle.partnerships.title":
     "Partner werden, um Zugang zur nächsten Generation an Führungskräften zu erhalten",
@@ -109,10 +107,10 @@ const de = {
 
   /* --- HERO SECTION --- */
   "student.hero.title":
-    "Werde ein Leader. Gestalte die Zukunft der Wirtschaft.",
+    "39 Jahre Alumni-Erfolg beweisen, was du erreichen kannst.",
   "student.hero.subtitle":
-    "Tritt einer Gemeinschaft von maximal 50 hochqualifizierten Studierenden bei, die sich durch echte Verantwortung, praktische Erfahrung und Mentoring auf Führungspositionen vorbereiten. 39 Jahre Alumni-Erfolg beweisen, was du erreichen kannst.",
-  "student.hero.buttonText": "Jetzt bewerben",
+    "Werde Teil des Erfolgs. Sei Mitglied mit maximal 50 Studierenden von TEG.",
+  "student.hero.buttonText": "Mitglied werden",
   "student.hero.buttonLink": "https://tally.so/r/wMP4p8",
 
   /* --- INTRO SECTION --- */
