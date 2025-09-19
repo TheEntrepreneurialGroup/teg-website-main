@@ -26,7 +26,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   const content = (
     <>
       <motion.h2
-        className={`text-3xl md:text-4xl font-bold mb-4 ${
+        className={`text-3xl md:text-4xl font-bold mb-4 text-left ${
           isLight ? "text-primary" : "text-white"
         }`}
         initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
       </motion.h2>
 
       <motion.p
-        className={`text-lg px-5 ${
+        className={`text-lg text-left ${
           isLight ? "text-gray-600" : "text-secondary-light"
         }`}
         initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
         isLight ? "bg-secondary-light" : "bg-primary"
       } ${className}`}
     >
-      <div className="text-center">{content}</div>
+      <div className="text-left">{content}</div>
     </div>
   );
 };
