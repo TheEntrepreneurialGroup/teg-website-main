@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Quote } from "lucide-react";
+import { trackOutboundClick } from "../utils/analytics";
 
 interface ContactCardProps {
   name: string;
@@ -72,6 +73,9 @@ const ContactCard: React.FC<ContactCardProps> = ({
             className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors duration-300"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              trackOutboundClick(linkedinUrl, "ContactCard: " + name)
+            }
           >
             <Linkedin size={20} />
             <span>LinkedIn</span>
@@ -81,6 +85,9 @@ const ContactCard: React.FC<ContactCardProps> = ({
           <a
             href={`mailto:${email}`}
             className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors duration-300"
+            onClick={() =>
+              trackOutboundClick(`mailto:${email}`, "ContactCard: " + name)
+            }
           >
             <Mail size={20} />
             <span>Email</span>
