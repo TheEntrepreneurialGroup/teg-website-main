@@ -2,8 +2,6 @@
 // import "./CookieBanner.css";
 // import { RollerCoaster } from 'lucide-react';
 
-
-
 // export default function CookieBanner() {
 // 	const [visible, setVisible] = useState(false);
 
@@ -24,13 +22,11 @@
 // 		setVisible(false);
 // 	}
 
-
 // 	function enableAnalytics() {
 // 		const script = document.createElement("script");
 // 		script.src = "https://www.googletagmanager.com/gtag/js?id=G-364W48FTCN";
 //     script.async = true;
 //     document.head.appendChild(script);
-
 
 // 		(window as any).dataLayer = (window as any).dataLayer || [];
 //     function gtag(...args: any[]) {
@@ -39,7 +35,6 @@
 //     gtag("js", new Date());
 //     gtag("config", "G-364W48FTCN", { anonymize_ip: true });
 // 	}
-
 
 // 	if(!visible) return null;
 
@@ -52,15 +47,13 @@
 // 				<button className='accept-button' onClick={accept} style={{ marginLeft: "10px" }}>Accept All</button>
 
 // 				<button className='reject-button' onClick={reject} style={{ marginLeft: "5px" }}>Reject All</button>
-				
+
 // 				<button className='policy-button'>Privacy Policy</button>
 // 			</div>
-			
+
 // 		</div>
 // 	);
 // }
-
-
 
 // import { useEffect, useState } from "react";
 // import "./CookieBanner.css";
@@ -91,7 +84,7 @@
 //   };
 
 //   const goToPrivacyPolicy = () => {
-//     window.location.href = "../pages/PrivacyPolicy.tsx"; 
+//     window.location.href = "../pages/PrivacyPolicy.tsx";
 //   };
 
 //   function enableAnalytics() {
@@ -151,8 +144,3 @@
 //     </div>
 //   );
 // }
-
-
-
-
-

@@ -10,8 +10,7 @@ import { IntlProvider } from "react-intl";
 import en from "./locales/en";
 import de from "./locales/de";
 import ScrollRestoration from "./components/ScrollRestoration";
-import CookieBanner from "./components/CookieBanner";
-import { trackLanguageSwitch } from "../utils/analytics";
+import { trackLanguageSwitch } from "./utils/analytics";
 
 const messages: Record<string, Record<string, string>> = { en, de };
 
@@ -21,7 +20,7 @@ function App() {
 
   useEffect(() => {
     if (window.umami) {
-      window.umami.trackView(location.pathname + location.search);
+      window.umami.track();
     }
   }, [location]);
 
@@ -42,7 +41,6 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/imprint" element={<Imprint />} />
       </Routes>
-      <CookieBanner />
     </IntlProvider>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useIntl } from "react-intl";
 import { Building, TrendingUp } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
@@ -29,7 +29,7 @@ export const Home: React.FC = () => {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            umami.track(name);
+            window.umami.track(name);
             observer.disconnect();
           }
         },
