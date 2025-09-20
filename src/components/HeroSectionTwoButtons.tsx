@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
 import { trackButtonClick } from "../utils/analytics";
-import umami from "umami";
 
 interface HeroSectionTwoButtonsProps {
   title: string;
   since: string;
-  subtitle: string;
+  subtitle?: string;
   buttonText1?: string;
   buttonLink1?: string;
   buttonText2?: string;
