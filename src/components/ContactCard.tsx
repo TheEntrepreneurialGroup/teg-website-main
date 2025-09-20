@@ -31,13 +31,13 @@ const ContactCard: React.FC<ContactCardProps> = ({
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
     >
-      <div className="flex flex-col md:flex-row items-center p-6 gap-4">
+      <div className="flex flex-col md:flex-row items-center p-6 pb-2 gap-4">
         {/* Image Section */}
-        <div className="w-full md:w-64 h-84 overflow-hidden border-1 border-gray-200 rounded-lg flex-shrink-0">
+        <div className="w-full md:w-64 h-[500px] md:h-80 lg:h-96 overflow-hidden border-1 border-gray-200 rounded-lg flex-shrink-0">
           <img
             src={imageUrl}
             alt={name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
 
@@ -46,16 +46,16 @@ const ContactCard: React.FC<ContactCardProps> = ({
           {variant === "quote" && greeting && (
             <div className="text-gray-700">
               <Quote size={20} className="block mb-2" />
-              <h2 className="text-3xl md:text-4xl font-bold">{greeting}</h2>
+              <h2 className="text-3xl md:text-4xl font-semibold">{greeting}</h2>
               <div className="flex justify-end mt-2">
                 <Quote size={20} />
               </div>
             </div>
           )}
-          <p className="text-gray-600 text-xl md:text-2xl font-medium mt-3">
+          <p className="text-gray-600 text-2xl md:text-2xl font-medium mt-3 mb-1">
             {name}
           </p>
-          <p className="text-gray-700 text-base md:text-lg font-normal">
+          <p className="text-gray-700 text-base md:text-lg font-normal mt-0 mb-2">
             {title}
           </p>
         </div>
@@ -65,8 +65,8 @@ const ContactCard: React.FC<ContactCardProps> = ({
       <div className="border-t border-gray-200"></div>
 
       {/* Contact Information */}
-      <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-gray-200">
-        <div className="p-4 flex items-center gap-2 text-gray-700 justify-center">
+      <div className="flex flex-row justify-evenly divide-x divide-gray-200 m-4 gap-2">
+        <div className="flex items-center text-gray-700 justify-center">
           <a
             href={linkedinUrl}
             className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors duration-300"
@@ -77,7 +77,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
             <span>LinkedIn</span>
           </a>
         </div>
-        <div className="p-4 flex items-center gap-2 text-gray-700 justify-center">
+        <div className="flex items-center text-gray-700 justify-center">
           <a
             href={`mailto:${email}`}
             className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors duration-300"
