@@ -85,9 +85,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             <Button
               className="w-[250px] md:w-auto text-center min-w-[100px]"
               href={buttonLink1}
-              onClick={() =>
-                umami.track("home-hero-cta", { button: buttonText1 })
-              }
+              buttonText={"home-hero-cta: " + buttonText1}
             >
               {buttonText1}
             </Button>
@@ -96,9 +94,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             <Button
               className="w-[250px] md:w-auto text-center min-w-[100px]"
               href={buttonLink2}
-              onClick={() =>
-                umami.track("home-hero-cta", { button: buttonText2 })
-              }
+              buttonText={"home-hero-cta: " + buttonText2}
             >
               {buttonText2}
             </Button>
