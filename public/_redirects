@@ -2,6 +2,6 @@
 /health.js     https://analytics.teg-ev.de/script.js      200
 
 # Proxy the collector endpoint too
-#/api/stats    https://analytics.teg-ev.de/api/send       200
+/private    https://analytics.teg-ev.de/private/ping       200
 
 /*    /index.html   200
