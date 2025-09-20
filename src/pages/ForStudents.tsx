@@ -20,7 +20,7 @@ const ForStudents: React.FC = () => {
   const contactPerson = {
     name: intl.formatMessage({ id: "student.contact.directorName" }),
     title: intl.formatMessage({ id: "student.contact.directorTitle" }),
-    imageUrl: "/felix.jpg",
+    imageUrl: "/felix.jpeg",
     email: "info@teg-ev.de",
     linkedinUrl: "https://www.linkedin.com/in/felix-enke/",
   };
@@ -677,7 +677,7 @@ const ForStudents: React.FC = () => {
                 greeting={intl.formatMessage({
                   id: "student.contact.greeting",
                 })}
-                //variant="quote"
+                variant="quote"
               />
             </div>
           </div>
