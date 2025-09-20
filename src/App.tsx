@@ -10,29 +10,25 @@ import { IntlProvider } from "react-intl";
 import en from "./locales/en";
 import de from "./locales/de";
 import ScrollRestoration from "./components/ScrollRestoration";
-import ReactGA from "react-ga4";
 import CookieBanner from "./components/CookieBanner";
-
+import { trackLanguageSwitch } from "../utils/analytics";
 
 const messages: Record<string, Record<string, string>> = { en, de };
 
-const usePageTracking = () => {
+function App() {
+  const [locale, setLocale] = useState<"en" | "de">("de");
   const location = useLocation();
 
   useEffect(() => {
-    ReactGA.send("pageview");
+    if (window.umami) {
+      window.umami.trackView(location.pathname + location.search);
+    }
   }, [location]);
-};
-
-function App() {
-  const [locale, setLocale] = useState<"en" | "de">("de");
 
   const switchLanguage = (lang: "en" | "de") => {
     setLocale(lang);
+    trackLanguageSwitch(lang, "Navbar");
   };
-
-  ReactGA.initialize("G-364W48FTCN");
-  usePageTracking();
 
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
@@ -46,12 +42,9 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/imprint" element={<Imprint />} />
       </Routes>
-			<CookieBanner />
+      <CookieBanner />
     </IntlProvider>
   );
 }
 
 export default App;
-
-
-
