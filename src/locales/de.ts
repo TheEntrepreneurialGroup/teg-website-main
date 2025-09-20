@@ -272,7 +272,7 @@ const de = {
   "student.cToAction.buttonText": "Jetzt bewerben",
   "student.callToAon.buttonLink": "https://tally.so/r/wMP4p8",
 
-  "student.contact.title": "Für weitere Informationen kontaktieren Sie uns",
+  "student.contact.title": "Für weitere Informationen kontaktiere uns",
   "student.contact.greeting":
     "Wenn du Fragen hast oder mehr Informationen brauchst, schreib mir gerne eine Nachricht",
   "student.contact.email": "E-Mail",
