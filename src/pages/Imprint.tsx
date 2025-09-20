@@ -1,6 +1,7 @@
 // src/pages/Imprint.tsx
 import React from "react";
 import SectionTitle from "../components/SectionTitle"; // Adjust path as needed
+import { trackOutboundClick } from "../utils/analytics";
 
 const Imprint: React.FC = () => {
   return (
@@ -37,6 +38,9 @@ const Imprint: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline"
+                  onClick={() =>
+                    trackOutboundClick("https://www.teg-ev.de", "Imprint")
+                  }
                 >
                   https://www.teg-ev.de
                 </a>
