@@ -3,7 +3,7 @@ const en = {
   "home.hero.title":
     "We are developing the future leaders of the German economy.",
   "home.hero.since": "Since 1986.",
-  //"home.hero.subtitle": "",
+  "home.hero.subtitle": "",
   "home.hero.buttonText1": "TEG for Companies",
   "home.hero.buttonLink1": "/for-companies",
   "home.hero.buttonText2": "TEG for Students",

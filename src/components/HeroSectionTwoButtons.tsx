@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
-import { NavLink } from "react-router-dom";
-import { trackButtonClick } from "../utils/analytics";
 
 interface HeroSectionTwoButtonsProps {
   title: string;
@@ -64,7 +62,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             {since}
           </motion.h1>
         )}
-        {subtitle != "home.hero.subtitle" && (
+        {subtitle != "home.hero.subtitle" && subtitle != " " && (
           <motion.p
             className="text-secondary-light text-xl max-w-4xl mb-8"
             initial={{ opacity: 0, y: 20 }}

@@ -10,13 +10,17 @@ import { IntlProvider } from "react-intl";
 import en from "./locales/en";
 import de from "./locales/de";
 import ScrollRestoration from "./components/ScrollRestoration";
-import { trackLanguageSwitch } from "./utils/analytics";
+import { trackLanguageSwitch, assignSessionId } from "./utils/analytics";
 
 const messages: Record<string, Record<string, string>> = { en, de };
 
 function App() {
   const [locale, setLocale] = useState<"en" | "de">("de");
   const location = useLocation();
+
+  useEffect(() => {
+    assignSessionId();
+  });
 
   useEffect(() => {
     if (window.umami) {
