@@ -99,7 +99,7 @@ const en = {
   "company.contact.email": "Email",
   "company.contact.linkedin": "LinkedIn",
   "company.contact.directorTitle": "Director of Strategy and Partnerships",
-  "company.contact.directorName": "~ Jonathan Babelotzky",
+  "company.contact.directorName": "Jonathan Babelotzky",
 
   // Student Page Texts
   "student.hero.title":
@@ -218,6 +218,8 @@ const en = {
   "student.callToAction1.buttonLink": "https://tally.so/r/wMP4p8",
 
   "student.contact.title": "For more information, contact us",
+  "student.contact.greeting":
+    "If you have any questions or need more information, please feel free to reach out to me",
   "student.contact.email": "Email",
   "student.contact.linkedin": "LinkedIn",
   "student.contact.directorTitle": "Director of People & Culture",
