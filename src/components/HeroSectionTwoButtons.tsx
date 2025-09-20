@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
-import { handleGAButtonClick } from "../utils/analytics";
+import { trackButtonClick } from "../utils/analytics";
+import umami from "umami";
 
 interface HeroSectionTwoButtonsProps {
   title: string;
@@ -84,6 +85,9 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             <Button
               className="w-[250px] md:w-auto text-center min-w-[100px]"
               href={buttonLink1}
+              onClick={() =>
+                umami.track("home-hero-cta", { button: buttonText1 })
+              }
             >
               {buttonText1}
             </Button>
@@ -92,6 +96,9 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             <Button
               className="w-[250px] md:w-auto text-center min-w-[100px]"
               href={buttonLink2}
+              onClick={() =>
+                umami.track("home-hero-cta", { button: buttonText2 })
+              }
             >
               {buttonText2}
             </Button>

@@ -11,6 +11,37 @@ import ImageCard from "../components/ImageCard";
 export const Home: React.FC = () => {
   const intl = useIntl();
 
+  // Section refs
+  const alumniRef = useRef<HTMLDivElement>(null);
+  const legacyRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const sections = [
+      { ref: alumniRef, name: "home-alumni-section" },
+      { ref: legacyRef, name: "home-legacy-section" },
+      { ref: ctaRef, name: "home-cta-section" },
+    ];
+    const observers: IntersectionObserver[] = [];
+
+    sections.forEach(({ ref, name }) => {
+      if (!ref.current) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            umami.track(name);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.3 },
+      );
+      observer.observe(ref.current);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((obs) => obs.disconnect());
+  }, []);
+
   return (
     <div>
       <HeroSectionTwoButtons
@@ -24,7 +55,7 @@ export const Home: React.FC = () => {
         backgroundImage="/TEG_Hero_Home.jpg"
       />
 
-      <section className="py-20 bg-secondary-light">
+      <section className="py-20 bg-secondary-light" ref={alumniRef}>
         <div className="container-custom">
           <SectionTitle
             title={intl.formatMessage({ id: "home.alumni.title" })}
@@ -56,7 +87,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      <section id="about" className="section">
+      <section id="about" className="section" ref={legacyRef}>
         <div className="container-custom">
           <SectionTitle
             title={intl.formatMessage({ id: "home.legacy.title" })}
@@ -102,7 +133,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-20" ref={ctaRef}>
         <div className="container-custom grid grid-cols-1 md:grid-cols-2 gap-8">
           <CallToAction
             title={intl.formatMessage({ id: "home.callToAction1.title" })}
