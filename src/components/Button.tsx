@@ -8,12 +8,14 @@ interface ButtonProps extends HTMLMotionProps<"a"> {
   children: React.ReactNode;
   className?: string;
   buttonText?: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const Button: React.FC<ButtonProps> = ({
   children,
   href,
   className,
+  buttonText,
   onClick,
   ...props
 }) => (
@@ -26,8 +28,10 @@ const Button: React.FC<ButtonProps> = ({
     transition={{ duration: 0.6, delay: 0.6 }}
     whileTap={{ scale: 0.97 }}
     onClick={(e) => {
-      trackButtonClick(buttonText, href);
-      if (props.onClick) props.onClick(e);
+      if (!!buttonText && !!href && !!onClick) {
+        trackButtonClick(buttonText, href);
+        if (onClick) onClick(e);
+      }
     }}
     {...props}
   >

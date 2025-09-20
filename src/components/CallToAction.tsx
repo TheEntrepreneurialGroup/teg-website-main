@@ -56,15 +56,13 @@ const CallToAction: React.FC<CallToActionProps> = ({
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        <a
+        <Button
+          className="w-[250px] md:w-auto text-center min-w-[100px]"
           href={buttonLink}
-          className={`inline-block px-6 py-3 rounded ${
-            isLight ? "bg-primary text-white" : "bg-accent text-primary"
-          } font-medium`}
-          onClick={() => trackButtonClick(buttonText, "CallToAction")}
+          buttonText={"home-cta: " + buttonText}
         >
           {buttonText}
-        </a>
+        </Button>
       </motion.div>
     </>
   );
