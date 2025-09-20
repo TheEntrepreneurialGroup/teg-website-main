@@ -1,1 +1,7 @@
+# Serve the tracker from your site
+/stats.js     https://umami.luiswaller.com/script.js      200
+
+# Proxy the collector endpoint too
+/api/stats    https://umami.luiswaller.com/api/send       200
+
 /*    /index.html   200
