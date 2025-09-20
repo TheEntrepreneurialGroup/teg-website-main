@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
-import { handleGAButtonClick } from "../utils/analytics";
+import { trackButtonClick } from "../utils/analytics";
 
 interface CallToActionProps {
   title: string;
@@ -61,7 +61,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
           className={`inline-block px-6 py-3 rounded ${
             isLight ? "bg-primary text-white" : "bg-accent text-primary"
           } font-medium`}
-          onClick={() => handleGAButtonClick(buttonText, "CallToAction")}
+          onClick={() => trackButtonClick(buttonText, "CallToAction")}
         >
           {buttonText}
         </a>
