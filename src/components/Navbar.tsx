@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import { motion } from "framer-motion";
-import { handleGAButtonClick } from "../utils/analytics";
+import { trackButtonClick } from "../utils/analytics";
 
 interface NavbarProps {
   scrolled: boolean;
@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                   : ""
               }`
             }
-            onClick={() => handleGAButtonClick("About Us", "Navbar")}
+            onClick={() => trackButtonClick("About Us", "Navbar")}
             end
           >
             About Us
@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                   : ""
               }`
             }
-            onClick={() => handleGAButtonClick("TEG for Companies", "Navbar")}
+            onClick={() => trackButtonClick("TEG for Companies", "Navbar")}
           >
             TEG for Companies
           </NavLink>
@@ -75,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                   : ""
               }`
             }
-            onClick={() => handleGAButtonClick("TEG for Students", "Navbar")}
+            onClick={() => trackButtonClick("TEG for Students", "Navbar")}
           >
             TEG for Students
           </NavLink>
@@ -128,7 +128,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 }
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  handleGAButtonClick("About us", "Navbar");
+                  trackButtonClick("About us", "Navbar");
                 }}
                 end
               >
@@ -143,7 +143,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 }
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  handleGAButtonClick("TEG for Companies", "Navbar");
+                  trackButtonClick("TEG for Companies", "Navbar");
                 }}
               >
                 TEG for Companies
@@ -157,7 +157,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 }
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  handleGAButtonClick("TEG for Students", "Navbar");
+                  trackButtonClick("TEG for Students", "Navbar");
                 }}
               >
                 TEG for Students

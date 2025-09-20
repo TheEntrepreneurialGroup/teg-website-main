@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
-import { handleGAButtonClick } from "../utils/analytics";
+import { trackButtonClick } from "../utils/analytics";
 
 interface HeroSectionProps {
   title: string;
