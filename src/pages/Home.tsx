@@ -29,7 +29,9 @@ export const Home: React.FC = () => {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            window.umami.track(name);
+            if (window.umami) {
+              window.umami.track(name);
+            }
             observer.disconnect();
           }
         },
