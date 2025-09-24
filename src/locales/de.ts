@@ -115,7 +115,7 @@ const de = {
 
   /* --- INTRO SECTION --- */
   "student.intro.title":
-    "TEG ist nicht für jeden. 10+ Stunden Arbeitszeit pro Woche. Echte Verantwortung. Verlässlichkeit einer Führungskraft.",
+    "TEG ist nicht für jeden. 10+ Stunden Arbeitszeit pro Woche. Echte Verant\u00ADwortung. Verläss\u00ADlichkeit einer Führungs\u00ADkraft.",
   "student.intro.line.1":
     "Wenn Du diese Zeit investierst, wird es Dein Leben verändern.",
   "student.intro.line.3":

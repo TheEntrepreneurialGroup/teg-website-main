@@ -69,7 +69,7 @@ const ForStudents: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="w-full max-w-5xl mx-auto p-6 md:p-12">
+          <div className="w-full max-w-5xl mx-auto p-1 md:p-12">
             {/* List of sub-points */}
             <ul className="space-y-4">
               <li className="flex items-start gap-4">
@@ -658,7 +658,7 @@ const ForStudents: React.FC = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 bg-primary text-white">
+      <section id="contact" className="pt-20 bg-primary text-white">
         <div className="flex flex-col items-center">
           <div className="container mx-auto px-4 max-w-6xl">
             {/* Section Title */}

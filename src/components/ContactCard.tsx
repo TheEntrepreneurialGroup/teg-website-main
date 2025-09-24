@@ -32,7 +32,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
     >
-      <div className="flex flex-col md:flex-row items-center p-6 pb-2 gap-4">
+      <div className="flex flex-col md:flex-row items-center p-2 md:p-6 pb-2 gap-4">
         {/* Image Section */}
         <div className="w-full md:w-64 h-[500px] md:h-80 lg:h-96 overflow-hidden border-1 border-gray-200 rounded-lg flex-shrink-0">
           <img
