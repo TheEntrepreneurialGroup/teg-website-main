@@ -6,8 +6,8 @@ import { trackOutboundClick } from "../utils/analytics";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-primary text-white">
-      <div className="container-custom py-12">
-        <div className="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+      <div className="container-custom pb-3">
+        <div className="border-t border-gray-700 mt-6 pt-3 flex flex-col md:flex-row justify-between items-center">
           <p className="text-secondary-light text-sm">
             &copy; {new Date().getFullYear()} The Entrepreneurial Group. All
             rights reserved.

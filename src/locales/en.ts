@@ -110,7 +110,7 @@ const en = {
   "student.hero.buttonLink": "https://tally.so/r/wMP4p8",
 
   "student.intro.title":
-    "TEG is not for everyone. 10+ hours of work per week. Real responsibility. Reliability of a leader.",
+    "TEG is not for everyone. 10+ hours of work per week. Real respon\u00ADsibility. Relia\u00ADbility of a leader.",
   "student.intro.line.1": "If you invest this time, it will change your life.",
   "student.intro.line.2":
     "300+ alumni, including 41 corporate executives, 40 SME executives, and 15 founders of successful companies.",
