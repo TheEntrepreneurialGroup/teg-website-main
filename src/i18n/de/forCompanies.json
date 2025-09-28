@@ -1,39 +1,62 @@
 {
-  "company.hero.title": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
-  "company.hero.subtitle": "Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
-  "company.hero.buttonText": "Zusammenarbeit beginnen",
-
-  "company.sectionTitle.partnerships.title": "Partner werden, um Zugang zur nächsten Generation an Führungskräften zu erhalten",
-  "company.sectionTitle.partnerships.subtitle": "Seit 1986 entwickeln wir Talente, die heute Unternehmen in Deutschland und Europa prägen. Unsere Alumni stehen für Exzellenz:300+ Absolvent:innen, darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen. Gegründet von BMW, Roland Berger, BCG, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
-
-  "company.features.rightCharacteristics.title": "Selektion - Die richtigen Persönlichkeitsmerkmale",
-  "company.features.rightCharacteristics.description": "Wir wählen unsere Mitglieder gezielt nach den Eigenschaften aus, die für künftige Führungskräfte entscheidend sind: Verantwortungsbewusstsein, strategisches Denken, Umsetzungswille, Teamfähigkeit und Ambition. Nur wer diese Werte mitbringt, wird Teil von TEG.",
-  "company.features.preparation.title": "Vorbereitung - Reale Führungskompetenz ab Tag Eins",
-  "company.features.preparation.description": "Unsere Mitglieder sammeln durch Formate wie Task Forces, Panel Talks, Mentoring, Executive- oder Founders-Associate-Programme echte Erfahrung in unternehmerischer Verantwortung. Wir befähigen sie, sich in komplexen Business-Kontexten sicher zu bewegen und trainieren genau jene Fähigkeiten, die Sie benötigen.",
-
-  "company.features.identification.title": "Identifikation – Unsere Mitglieder wollen führen",
-  "company.features.identification.description": "Unsere Mitglieder brennen dafür, Verantwortung in Konzernen zu übernehmen. Sie denken nicht in Semestern, sondern in Karrieren und sehen in etablierten Unternehmen kein Hindernis, sondern ein Spielfeld für Wachstum, Innovation und Impact. TEG vermittelt nicht nur Skills, sondern auch Haltung.",
-
-  "company.callToAction.title": "Entwickeln Sie die Führungstalente von morgen",
-  "company.callToAction.description": "Werden Sie Partner von TEG, um privilegierten Zugang zu einer Elite-Pipeline zukünftiger Unternehmensführer zu erhalten und unserem exklusiven Netzwerk führender Unternehmen beizutreten.",
-  "company.callToAction.buttonText": "Partner werden",
-
-  "company.sectionTitle.opportunities.title": "Partnerschaftsmöglichkeiten",
-  "company.sectionTitle.opportunities.subtitle": "Warum funktioniert die Partnerschaft mit TEG?",
-
-  "company.cards.studentRun.title": "1. Wir führen TEG wie ein Unternehmen und lernen dabei, wie man eines führt",
-  "company.cards.studentRun.description": "TEG ist die einzige von Studierenden betriebene Organisation in München mit eigenem Office am Englischem Garten. Damit verbunden: echte Fixkosten, echtes Budget, echte Verantwortung. Unsere Mitglieder generieren selbstständig die nötigen Mittel und erwerben dabei genau die wirtschaftlichen Kompetenzen, die sie später in der Praxis brauchen.",
-  "company.cards.futureLeaders.title": "2. Wie lernen Sie unsere Mitglieder kennen?",
-  "company.cards.futureLeaders.description": "Ganz unkompliziert durch gezielte Events wie Unternehmensbesuche, Panel-Diskussionen oder Networking-Sessions. So kommen Sie ohne formelle Partnerschaft mit unseren Talenten in Kontakt, lernen ihre Denkweise kennen und erkennen frühzeitig, wer zu Ihrem Unternehmen passt. Viele dieser Events entstehen in Kooperation mit Firmen, die gemeinsam mit uns Verantwortung übernehmen bei minimalem organisatorischem Aufwand.",
-  "company.cards.internships.title": "3. Praktikum – Ihr möglicher Nachfolger arbeitet bereits mit",
-  "company.cards.internships.description": "Unsere Mitglieder absolvieren Praktika auf C-Level-Niveau direkt unter Geschäftsführeren, Bereichsleiteren oder Vorständen.Das ist kein typisches Praktikum. Es ist eine strategische Möglichkeit für Unternehmen, ambitionierte Nachwuchstalente früh kennenzulernen und sie gezielt auf künftige Schlüsselrollen vorzubereiten. Was heute ein Praktikum ist, kann morgen der Beginn einer Nachfolge- oder Führungskarriere sein.",
-  "company.cards.hireLeaders.title": "4. Einstellen & Integrieren – mit TEG als strategischem Partner",
-  "company.cards.hireLeaders.description": "Wie gelingt die erfolgreiche Integration junger Führungskräfte in bestehende Teams? Wir bereiten unsere Mitglieder nicht nur intensiv auf Führungsverantwortung vor, wir begleiten auch den Übergang ins Unternehmen.Durch gemeinsame Events, Panels und gezielte Vorbereitung auf öffentliche Auftritte (z.B. LinkedIn & Speaker-Rollen) sorgen wir dafür, dass unsere Mitglieder auch von älteren Teammitgliedern akzeptiert und respektiert werden. Fazit: Sie stellen nicht einfach nur ein, Sie gewinnen eine Führungskraft, die bereit ist, Wirkung zu entfalten.",
-
-  "company.contact.title": "Für weitere Informationen kontaktieren Sie uns",
-  "company.contact.greeting": "Ich freue mich von Ihnen zu hören!",
-  "company.contact.email": "E-Mail",
-  "company.contact.linkedin": "LinkedIn",
-  "company.contact.directorTitle": "Bereichsleiter Organisationsstrategie und Partnerschaften",
-  "company.contact.directorName": "Jonathan Babelotzky"
+  "hero": {
+    "title": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
+    "subtitle": "Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
+    "buttonText": "Zusammenarbeit beginnen"
+  },
+  "sectionTitle": {
+    "partnerships": {
+      "title": "Partner werden, um Zugang zur nächsten Generation an Führungskräften zu erhalten",
+      "subtitle": "Seit 1986 entwickeln wir Talente, die heute Unternehmen in Deutschland und Europa prägen. Unsere Alumni stehen für Exzellenz:300+ Absolvent:innen, darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen. Gegründet von BMW, Roland Berger, BCG, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum."
+    },
+    "opportunities": {
+      "title": "Partnerschaftsmöglichkeiten",
+      "subtitle": "Warum funktioniert die Partnerschaft mit TEG?"
+    }
+  },
+  "features": {
+    "rightCharacteristics": {
+      "title": "Selektion - Die richtigen Persönlichkeitsmerkmale",
+      "description": "Wir wählen unsere Mitglieder gezielt nach den Eigenschaften aus, die für künftige Führungskräfte entscheidend sind: Verantwortungsbewusstsein, strategisches Denken, Umsetzungswille, Teamfähigkeit und Ambition. Nur wer diese Werte mitbringt, wird Teil von TEG."
+    },
+    "preparation": {
+      "title": "Vorbereitung - Reale Führungskompetenz ab Tag Eins",
+      "description": "Unsere Mitglieder sammeln durch Formate wie Task Forces, Panel Talks, Mentoring, Executive- oder Founders-Associate-Programme echte Erfahrung in unternehmerischer Verantwortung. Wir befähigen sie, sich in komplexen Business-Kontexten sicher zu bewegen und trainieren genau jene Fähigkeiten, die Sie benötigen."
+    },
+    "identification": {
+      "title": "Identifikation – Unsere Mitglieder wollen führen",
+      "description": "Unsere Mitglieder brennen dafür, Verantwortung in Konzernen zu übernehmen. Sie denken nicht in Semestern, sondern in Karrieren und sehen in etablierten Unternehmen kein Hindernis, sondern ein Spielfeld für Wachstum, Innovation und Impact. TEG vermittelt nicht nur Skills, sondern auch Haltung."
+    }
+  },
+  "callToAction": {
+    "title": "Entwickeln Sie die Führungstalente von morgen",
+    "description": "Werden Sie Partner von TEG, um privilegierten Zugang zu einer Elite-Pipeline zukünftiger Unternehmensführer zu erhalten und unserem exklusiven Netzwerk führender Unternehmen beizutreten.",
+    "buttonText": "Partner werden"
+  },
+  "cards": {
+    "studentRun": {
+      "title": "1. Wir führen TEG wie ein Unternehmen und lernen dabei, wie man eines führt",
+      "description": "TEG ist die einzige von Studierenden betriebene Organisation in München mit eigenem Office am Englischem Garten. Damit verbunden: echte Fixkosten, echtes Budget, echte Verantwortung. Unsere Mitglieder generieren selbstständig die nötigen Mittel und erwerben dabei genau die wirtschaftlichen Kompetenzen, die sie später in der Praxis brauchen."
+    },
+    "futureLeaders": {
+      "title": "2. Wie lernen Sie unsere Mitglieder kennen?",
+      "description": "Ganz unkompliziert durch gezielte Events wie Unternehmensbesuche, Panel-Diskussionen oder Networking-Sessions. So kommen Sie ohne formelle Partnerschaft mit unseren Talenten in Kontakt, lernen ihre Denkweise kennen und erkennen frühzeitig, wer zu Ihrem Unternehmen passt. Viele dieser Events entstehen in Kooperation mit Firmen, die gemeinsam mit uns Verantwortung übernehmen bei minimalem organisatorischem Aufwand."
+    },
+    "internships": {
+      "title": "3. Praktikum – Ihr möglicher Nachfolger arbeitet bereits mit",
+      "description": "Unsere Mitglieder absolvieren Praktika auf C-Level-Niveau direkt unter Geschäftsführeren, Bereichsleiteren oder Vorständen.Das ist kein typisches Praktikum. Es ist eine strategische Möglichkeit für Unternehmen, ambitionierte Nachwuchstalente früh kennenzulernen und sie gezielt auf künftige Schlüsselrollen vorzubereiten. Was heute ein Praktikum ist, kann morgen der Beginn einer Nachfolge- oder Führungskarriere sein."
+    },
+    "hireLeaders": {
+      "title": "4. Einstellen & Integrieren – mit TEG als strategischem Partner",
+      "description": "Wie gelingt die erfolgreiche Integration junger Führungskräfte in bestehende Teams? Wir bereiten unsere Mitglieder nicht nur intensiv auf Führungsverantwortung vor, wir begleiten auch den Übergang ins Unternehmen.Durch gemeinsame Events, Panels und gezielte Vorbereitung auf öffentliche Auftritte (z.B. LinkedIn & Speaker-Rollen) sorgen wir dafür, dass unsere Mitglieder auch von älteren Teammitgliedern akzeptiert und respektiert werden. Fazit: Sie stellen nicht einfach nur ein, Sie gewinnen eine Führungskraft, die bereit ist, Wirkung zu entfalten."
+    }
+  },
+  "contact": {
+    "title": "Für weitere Informationen kontaktieren Sie uns",
+    "greeting": "Ich freue mich von Ihnen zu hören!",
+    "email": "E-Mail",
+    "linkedin": "LinkedIn",
+    "directorTitle": "Bereichsleiter Organisationsstrategie und Partnerschaften",
+    "directorName": "Jonathan Babelotzky"
+  }
 }

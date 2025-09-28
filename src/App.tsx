@@ -7,20 +7,23 @@ import { Home } from "./pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Imprint from "./pages/Imprint";
 import { IntlProvider } from "react-intl";
-import en from "./locales/en";
-import de from "./locales/de";
 import ScrollRestoration from "./components/ScrollRestoration";
 import { trackLanguageSwitch, assignSessionId } from "./utils/analytics";
 
-const messages: Record<string, Record<string, string>> = { en, de };
+const NAMESPACES = ["common", "home", "forStudents", "forCompanies"];
 
 function App() {
   const [locale, setLocale] = useState<"en" | "de">("de");
+  const [messages, setMessages] = useState<Record<string, string>>({});
   const location = useLocation();
 
   useEffect(() => {
     assignSessionId();
-  });
+  } []);
+
+  useEffect(() => {
+    loadTranslations(locale, NAMESPACES).then(setMessages);
+  }, [locale]);
 
   useEffect(() => {
     if (window.umami) {
@@ -34,7 +37,7 @@ function App() {
   };
 
   return (
-    <IntlProvider locale={locale} messages={messages[locale]}>
+    <IntlProvider locale={locale} messages={messages}>
       <ScrollRestoration />
       <Routes>
         <Route path="/" element={<Layout switchLanguage={switchLanguage} />}>

@@ -1,84 +1,128 @@
 {
-  "hero.title": "39 Jahre Alumni-Erfolg beweisen, was du erreichen kannst.",
-  "hero.subtitle": "Werde Teil des Erfolgs. Sei Mitglied mit maximal 50 Studierenden von TEG.",
-  "hero.buttonText": "Mitglied werden",
-  "hero.buttonLink": "https://tally.so/r/wMP4p8",
-
-  "intro.title": "TEG ist nicht für jeden. 10+ Stunden Arbeitszeit pro Woche. Echte Verant\u00ADwortung. Verläss\u00ADlichkeit einer Führungs\u00ADkraft.",
-  "intro.line.1": "Wenn Du diese Zeit investierst, wird es Dein Leben verändern.",
-  "intro.line.3": "300+ Alumnis, darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen.",
-  "intro.line.2": "1986 gegründet von BMW, Roland Berger, BCG, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
-
-  "howItWorks.mainTitle": "So machen wir Dich zu einem solchen Menschen",
-  "howItWorks.step1.title": "Du wirst Teil von TEG",
-  "howItWorks.step1.desc1": "Im TEG-Office triffst du auf Gleichgesinnte, die mehr wollen und bereit sind, dafür zu liefern.",
-  "howItWorks.step1.desc2": "In einer exklusiven Community mit maximal 50 Mitgliedern unterstützen wir uns gegenseitig mit Skills, Verantwortung und echtem Zusammenhalt.",
-
-  "howItWorks.step2.title": "Dein Mehrwert als Mitglied",
-  "howItWorks.step2.desc1": "Alle Programme bei TEG sind darauf ausgelegt, deine Karriere zu beschleunigen egal ob du Gründer:in, Führungskraft oder Unternehmensnachfolger:in werden willst",
-  "howItWorks.step2.box1": "Lerne aus erster Hand, wie man ein Unternehmen führt",
-  "howItWorks.step2.box2": "Positioniere dich strategisch und beschleunige deinen Karriereweg",
-  "howItWorks.step2.box3": "Wachse durch eine starke Community und deren Verbindungen",
-  "howItWorks.step2.desc2": "Unsere Mitglieder übernehmen in echten Projekten unternehmerische Verantwortung, nicht irgendwann, sondern jetzt.",
-
-  "howItWorks.step3.title": "Wie genau sorgt TEG für diesen Mehrwert?",
-  "howItWorks.step3.desc1": "TEG ist die einzige von Studierenden geführte Organisation in München mit eigenem Office am Englischen Garten, inklusive Fixkosten, Budgetverantwortung und echter Ownership.",
-  "howItWorks.step3.desc2": "Unsere Mitglieder führen TEG wie ein Unternehmen und lernen dabei, wie man eines führt.",
-  "howItWorks.step3.desc3": "Dazu kommen exklusive Programme & Formate:",
-  "howItWorks.step3.sub1.title": "Lerne wie Unternehmen funktionieren und erhalte Einblicke, für die andere Jahre brauchen.",
-  "howItWorks.step3.sub1.box1.title": "Task Forces",
-  "howItWorks.step3.sub1.box1.desc": "Übernimm die Führung eines Projekts innerhalb von TEG und entwickle essenzielle Leadership-Skills. Du lernst dabei, wie man Teams führt, Ressourcen einteilt und Entscheidungen trifft.",
-  "howItWorks.step3.sub1.box2.title": "Founders-Associate-Programme",
-  "howItWorks.step3.sub1.box2.desc": "Begleite einen unserer Gründer  und erhalte exklusive Einblicke in Strategie, Wachstum und Führung aus erster Hand. Du bist nicht Zuschauer, du bist Teil der Umsetzung",
-  "howItWorks.step3.sub1.box3.title": "Executive-Associate-Programme",
-  "howItWorks.step3.sub1.box3.desc": "Absolviere ein Praktikum auf C-Level-Niveau bei einem unserer Partnerunternehmen, direkt unter der Geschäftsführung, Bereichsleitung oder einem Vorstand. Du wirst gefordert, gefördert und ernst genommen",
-
-  "howItWorks.step3.sub2.title": "Beschleunige deine Karriere durch gezielte Positionierung",
-
-  "howItWorks.step3.sub2.box1.title": "Panel Talks",
-  "howItWorks.step3.sub2.box1.desc": "Du wirst als Experte eingeladen, bei öffentlichen Veranstaltungen aufzutreten auf Panels, Bühnen und in Workshops. Dabei entwickelst du nicht nur dein Auftreten, sondern positionierst dich auch öffentlich als Thought Leader.",
-  "howItWorks.step3.sub2.box2.title": "Talent Development",
-  "howItWorks.step3.sub2.box2.desc": "Mit gezieltem Support helfen wir dir, deine eigene Personal Brand zu entwickeln. Dazu gehören unter anderem LinkedIn-Sichtbarkeit, Storytelling, Speaker-Coaching und individuelle Positionierungsstrategien.",
-
-  "howItWorks.step3.sub3.title": "Profitiere von einer starken Community und deren Verbindungen",
-  "howItWorks.step3.sub3.box1.title": "Mentoring",
-  "howItWorks.step3.sub3.box1.desc": "Du bekommst einen persönlichen Mentor aus dem TEG-Netzwerk – jemanden, der bereits da ist, wo du hinwillst. Du erhälst Unterstützungbei deinen Herausforderungen, Entscheidungen und Wachstumszielen.",
-  "howItWorks.step3.sub3.box2.title": "Unternehmensbesuche",
-  "howItWorks.step3.sub3.box2.desc": "Wir organisieren regelmäßige Visits bei Unternehmen, mit denen wir im Austausch stehen. Diese Kontakte helfen dir nicht nur beim Verstehen der Unternehmenswelt sondern öffnen dir die Türen für Berufseinstieg, Projekte und Management Positionen.",
-
-  "howItWorks.step4.title": "Was machst du konkret im Verein?",
-  "howItWorks.step4.desc1": "Weil wir TEG wie ein echtes Unternehmen führen, arbeitest du nicht einfach „im Verein mit“ du übernimmst Verantwortung in einem unternehmerischen Setting.",
-  "howItWorks.step4.desc2": "TEG ist strukturiert wie ein Unternehmen: mit klaren Departments, echten Rollen und operativer Umsetzung. Ganz gleich, ob du im Marketing, in der Strategie oder im Event-Team bist, du denkst unternehmerisch und handelst mit Wirkung.",
-  "howItWorks.step4.desc3": "Setze deine Stärken richtig ein, führe eine Task Force, beteilige dich aktiv an unseren Programmen. Du trägst nicht einfach bei, du verantwortest, gestaltest und führst.",
-  "howItWorks.lastline": "Du hast nach einem Semester mehr unternehmerisches Wissen als 99% der Menschen.",
-  "applySection.applyButton": "Jetzt Bewerben!",
-
-  "applySection.benefits.title": "Was dich bei TEG erwartet",
-  "applySection.benefits.list.1": "Engagierte Community aus High Potentials",
-  "applySection.benefits.list.2": "Zugang zum eigenen Office & Infrastruktur",
-  "applySection.benefits.list.3": "Persönliches Mentoring & Leadership-Coaching",
-  "applySection.benefits.list.4": "Sichtbarkeit durch Events & LinkedIn-Support",
-  "applySection.benefits.list.5": "Lerne, wie Unternehmen wirklich funktionieren",
-  "applySection.benefits.list.6": "Verantwortung ab Tag eins: Projekte, Budgets, Teamführung",
-  "applySection.requirements.title": "Was Du mitbringen solltest",
-  "applySection.requirements.list.1": "10+ Stunden Commitment pro Woche",
-  "applySection.requirements.list.2": "Bereitschaft, Verantwortung zu übernehmen",
-  "applySection.requirements.list.3": "Wille, in einem Unternehmen unter der Leitung eines CEOs oder Directors zu lernen und zu performen",
-  "applySection.requirements.list.4": "Motivation, auf Executive-Level zu denken & zu handeln",
-  "applySection.requirements.list.5": "Mindset eines Machers, kein Abwarten, sondern Umsetzen",
-  "applySection.requirements.extraLine": "Shape the economy. Shape your future. Shape your mind",
-
-  "callToAction1.title": "Bist Du bereit, Deine Karriere als Führungskraft zu starten?",
-  "callToAction1.description": "Übernehme Verantwortung. Werd ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
-  "callToAction1.buttonText": "Jetzt Bewerben!",
-  "callToAction1.buttonLink": "https://tally.so/r/wMP4p8",
-
-  "features.meritBased.title": "Leistungsbasierter Aufstieg",
-  "features.meritBased.description": "Steige durch eine strukturierte interne Karriereleiter auf, basierend auf nachgewiesener Leistung und Führungsfähigkeit.",
-  "features.corporateImmersion.title": "Eintauchen in die Unternehmenswelt",
-  "features.corporateImmersion.description": "Arbeite direkt mit Führungskräften unserer Partnerunternehmen zusammen und gewinne Einblicke in die Unternehmensführung.",
-  "features.leadershipDevelopment.title": "Führungsentwicklung",
-  "features.leadershipDevelopment.description": "Entwickle und verfeinere wesentliche Führungsfähigkeiten durch praktische Projekte und Führungsherausforderungen.",
+  "hero": {
+    "title": "39 Jahre Alumni-Erfolg beweisen, was du erreichen kannst.",
+    "subtitle": "Werde Teil des Erfolgs. Sei Mitglied mit maximal 50 Studierenden von TEG.",
+    "buttonText": "Mitglied werden",
+    "buttonLink": "https://tally.so/r/wMP4p8"
+  },
+  "intro": {
+    "title": "TEG ist nicht für jeden. 10+ Stunden Arbeitszeit pro Woche. Echte Verant\u00ADwortung. Verläss\u00ADlichkeit einer Führungs\u00ADkraft.",
+    "line1": "Wenn Du diese Zeit investierst, wird es Dein Leben verändern.",
+    "line2": "1986 gegründet von BMW, Roland Berger, BCG, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
+    "line3": "300+ Alumnis, darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen."
+  },
+  "howItWorks": {
+    "mainTitle": "So machen wir Dich zu einem solchen Menschen",
+    "step1": {
+      "title": "Du wirst Teil von TEG",
+      "desc1": "Im TEG-Office triffst du auf Gleichgesinnte, die mehr wollen und bereit sind, dafür zu liefern.",
+      "desc2": "In einer exklusiven Community mit maximal 50 Mitgliedern unterstützen wir uns gegenseitig mit Skills, Verantwortung und echtem Zusammenhalt."
+    },
+    "step2": {
+      "title": "Dein Mehrwert als Mitglied",
+      "desc1": "Alle Programme bei TEG sind darauf ausgelegt, deine Karriere zu beschleunigen egal ob du Gründer:in, Führungskraft oder Unternehmensnachfolger:in werden willst",
+      "box1": "Lerne aus erster Hand, wie man ein Unternehmen führt",
+      "box2": "Positioniere dich strategisch und beschleunige deinen Karriereweg",
+      "box3": "Wachse durch eine starke Community und deren Verbindungen",
+      "desc2": "Unsere Mitglieder übernehmen in echten Projekten unternehmerische Verantwortung, nicht irgendwann, sondern jetzt."
+    },
+    "step3": {
+      "title": "Wie genau sorgt TEG für diesen Mehrwert?",
+      "desc1": "TEG ist die einzige von Studierenden geführte Organisation in München mit eigenem Office am Englischen Garten, inklusive Fixkosten, Budgetverantwortung und echter Ownership.",
+      "desc2": "Unsere Mitglieder führen TEG wie ein Unternehmen und lernen dabei, wie man eines führt.",
+      "desc3": "Dazu kommen exklusive Programme & Formate:",
+      "sub1": {
+        "title": "Lerne wie Unternehmen funktionieren und erhalte Einblicke, für die andere Jahre brauchen.",
+        "box1": {
+          "title": "Task Forces",
+          "desc": "Übernimm die Führung eines Projekts innerhalb von TEG und entwickle essenzielle Leadership-Skills. Du lernst dabei, wie man Teams führt, Ressourcen einteilt und Entscheidungen trifft."
+        },
+        "box2": {
+          "title": "Founders-Associate-Programme",
+          "desc": "Begleite einen unserer Gründer  und erhalte exklusive Einblicke in Strategie, Wachstum und Führung aus erster Hand. Du bist nicht Zuschauer, du bist Teil der Umsetzung"
+        },
+        "box3": {
+          "title": "Executive-Associate-Programme",
+          "desc": "Absolviere ein Praktikum auf C-Level-Niveau bei einem unserer Partnerunternehmen, direkt unter der Geschäftsführung, Bereichsleitung oder einem Vorstand. Du wirst gefordert, gefördert und ernst genommen"
+        }
+      },
+      "sub2": {
+        "title": "Beschleunige deine Karriere durch gezielte Positionierung",
+        "box1": {
+          "title": "Panel Talks",
+          "desc": "Du wirst als Experte eingeladen, bei öffentlichen Veranstaltungen aufzutreten auf Panels, Bühnen und in Workshops. Dabei entwickelst du nicht nur dein Auftreten, sondern positionierst dich auch öffentlich als Thought Leader."
+        },
+        "box2": {
+          "title": "Talent Development",
+          "desc": "Mit gezieltem Support helfen wir dir, deine eigene Personal Brand zu entwickeln. Dazu gehören unter anderem LinkedIn-Sichtbarkeit, Storytelling, Speaker-Coaching und individuelle Positionierungsstrategien."
+        }
+      },
+      "sub3": {
+        "title": "Profitiere von einer starken Community und deren Verbindungen",
+        "box1": {
+          "title": "Mentoring",
+          "desc": "Du bekommst einen persönlichen Mentor aus dem TEG-Netzwerk – jemanden, der bereits da ist, wo du hinwillst. Du erhälst Unterstützungbei deinen Herausforderungen, Entscheidungen und Wachstumszielen."
+        },
+        "box2": {
+          "title": "Unternehmensbesuche",
+          "desc": "Wir organisieren regelmäßige Visits bei Unternehmen, mit denen wir im Austausch stehen. Diese Kontakte helfen dir nicht nur beim Verstehen der Unternehmenswelt sondern öffnen dir die Türen für Berufseinstieg, Projekte und Management Positionen."
+        }
+      }
+    },
+    "step4": {
+      "title": "Was machst du konkret im Verein?",
+      "desc1": "Weil wir TEG wie ein echtes Unternehmen führen, arbeitest du nicht einfach „im Verein mit“ du übernimmst Verantwortung in einem unternehmerischen Setting.",
+      "desc2": "TEG ist strukturiert wie ein Unternehmen: mit klaren Departments, echten Rollen und operativer Umsetzung. Ganz gleich, ob du im Marketing, in der Strategie oder im Event-Team bist, du denkst unternehmerisch und handelst mit Wirkung.",
+      "desc3": "Setze deine Stärken richtig ein, führe eine Task Force, beteilige dich aktiv an unseren Programmen. Du trägst nicht einfach bei, du verantwortest, gestaltest und führst."
+    },
+    "lastline": "Du hast nach einem Semester mehr unternehmerisches Wissen als 99% der Menschen."
+  },
+  "applySection": {
+    "applyButton": "Jetzt Bewerben!",
+    "benefits": {
+      "title": "Was dich bei TEG erwartet",
+      "list": [
+        "Engagierte Community aus High Potentials",
+        "Zugang zum eigenen Office & Infrastruktur",
+        "Persönliches Mentoring & Leadership-Coaching",
+        "Sichtbarkeit durch Events & LinkedIn-Support",
+        "Lerne, wie Unternehmen wirklich funktionieren",
+        "Verantwortung ab Tag eins: Projekte, Budgets, Teamführung"
+      ]
+    },
+    "requirements": {
+      "title": "Was Du mitbringen solltest",
+      "list": [
+        "10+ Stunden Commitment pro Woche",
+        "Bereitschaft, Verantwortung zu übernehmen",
+        "Wille, in einem Unternehmen unter der Leitung eines CEOs oder Directors zu lernen und zu performen",
+        "Motivation, auf Executive-Level zu denken & zu handeln",
+        "Mindset eines Machers, kein Abwarten, sondern Umsetzen"
+      ],
+      "extraLine": "Shape the economy. Shape your future. Shape your mind"
+    }
+  },
+  "callToAction1": {
+    "title": "Bist Du bereit, Deine Karriere als Führungskraft zu starten?",
+    "description": "Übernehme Verantwortung. Werd ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
+    "buttonText": "Jetzt Bewerben!",
+    "buttonLink": "https://tally.so/r/wMP4p8"
+  },
+  "features": {
+    "meritBased": {
+      "title": "Leistungsbasierter Aufstieg",
+      "description": "Steige durch eine strukturierte interne Karriereleiter auf, basierend auf nachgewiesener Leistung und Führungsfähigkeit."
+    },
+    "corporateImmersion": {
+      "title": "Eintauchen in die Unternehmenswelt",
+      "description": "Arbeite direkt mit Führungskräften unserer Partnerunternehmen zusammen und gewinne Einblicke in die Unternehmensführung."
+    },
+    "leadershipDevelopment": {
+      "title": "Führungsentwicklung",
+      "description": "Entwickle und verfeinere wesentliche Führungsfähigkeiten durch praktische Projekte und Führungsherausforderungen."
+    }
+  }
+}
 
   "benefits.title": "Vorteile für Studierende",
   "benefits.list.1": "Exklusive Gemeinschaft hochqualifizierter Gleichgesinnter (maximal 50).",

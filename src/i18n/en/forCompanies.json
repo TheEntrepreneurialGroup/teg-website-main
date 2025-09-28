@@ -1,36 +1,60 @@
 {
-  "hero.title": "We develop your next leadership talents. With Certainty.",
-  "hero.subtitle": "Become a TEG partner and gain access to a proven talent pool of exceptional future leaders for 39 years.",
-  "hero.buttonText": "Become a Partner",
-
-  "sectionTitle.partnerships.title": "Partner with us to access the next generation of leaders",
-  "sectionTitle.partnerships.subtitle": "Since 1986, we have developed talents who now shape companies in Germany and Europe. Our alumni represent excellence: 300+ graduates, including 41 corporate executives, 40 SME executives, and 15 founders of successful companies. Founded by BMW, Roland Berger, BCG, KPMG, Siemens, and more, TEG is now one of the most renowned talent incubators in the German-speaking world.",
-
-  "features.rightCharacteristics.title": "Selection - The right personality traits",
-  "features.rightCharacteristics.description": "We carefully select our members based on the traits essential for future leaders: responsibility, strategic thinking, execution drive, teamwork, and ambition. Only those who embody these values become part of TEG.",
-  "features.preparation.title": "Preparation - Real leadership skills from day one",
-  "features.preparation.description": "Through formats like task forces, panel talks, mentoring, and executive or founders associate programs, our members gain real experience in entrepreneurial responsibility. We enable them to navigate complex business contexts confidently and train the skills you need.",
-  "features.identification.title": "Identification - Our members want to lead",
-  "features.identification.description": "Our members are passionate about taking responsibility in corporations. They don't think in semesters but in careers and see established companies not as obstacles but as playgrounds for growth, innovation, and impact. TEG not only imparts skills but also instills the right mindset.",
-
-  "callToAction.title": "Develop the leadership talents of tomorrow",
-  "callToAction.description": "Become a TEG partner to gain privileged access to an elite pipeline of future corporate leaders and join our exclusive network of leading companies.",
-  "callToAction.buttonText": "Become a Partner",
-
-  "sectionTitle.opportunities.title": "Partnership Opportunities",
-  "sectionTitle.opportunities.subtitle": "Why does the partnership with TEG work?",
-
-  "cards.studentRun.title": "1. We run TEG like a company and learn how to lead one",
-  "cards.studentRun.description": "TEG is the only student-run organization in Munich with its own office at the English Garden. This includes real fixed costs, a real budget, and real responsibility. Our members independently generate the necessary funds and acquire exactly the business skills they need later in practice.",
-  "cards.futureLeaders.title": "2. How do you get to know our members?",
-  "cards.futureLeaders.description": "Easily through targeted events like company visits, panel discussions, or networking sessions. This allows you to connect with our talents without a formal partnership, understand their mindset, and identify early on who fits your  Many of these events are created in collaboration with companies that take responsibility with us at minimal organizational effort.",
-  "cards.internships.title": "3. Internships – Your potential successor is already working with you",
-  "cards.internships.description": "Our members complete internships at the C-level directly under managing directors, department heads, or board members. This is not a typical internship. It is a strategic opportunity for companies to get to know ambitious young talents early and prepare them specifically for future key roles. What starts as an internship today can become the beginning of a succession or leadership career tomorrow.",
-  "cards.hireLeaders.title": "4. Hiring & Integration – with TEG as a strategic partner",
-  "cards.hireLeaders.description": "How do you successfully integrate young leaders into existing teams? We not only prepare our members intensively for leadership responsibility but also support the transition into the  Through joint events, panels, and targeted preparation for public appearances (e.g., LinkedIn & speaker roles), we ensure that our members are accepted and respected by older team members. Bottom line: You don't just hire someone; you gain a leader ready to make an impact.",
-
-  "contact.title": "For more information, contact us",
-  "contact.greeting": "We look forward to hearing from you!",
-  "contact.directorTitle": "Director of Strategy and Partnerships",
-  "contact.directorName": "Jonathan Babelotzky"
+  "hero": {
+    "title": "We develop your next leadership talents. With Certainty.",
+    "subtitle": "Become a TEG partner and gain access to a proven talent pool of exceptional future leaders for 39 years.",
+    "buttonText": "Become a Partner"
+  },
+  "sectionTitle": {
+    "partnerships": {
+      "title": "Partner with us to access the next generation of leaders",
+      "subtitle": "Since 1986, we have developed talents who now shape companies in Germany and Europe. Our alumni represent excellence: 300+ graduates, including 41 corporate executives, 40 SME executives, and 15 founders of successful companies. Founded by BMW, Roland Berger, BCG, KPMG, Siemens, and more, TEG is now one of the most renowned talent incubators in the German-speaking world."
+    },
+    "opportunities": {
+      "title": "Partnership Opportunities",
+      "subtitle": "Why does the partnership with TEG work?"
+    }
+  },
+  "features": {
+    "rightCharacteristics": {
+      "title": "Selection - The right personality traits",
+      "description": "We carefully select our members based on the traits essential for future leaders: responsibility, strategic thinking, execution drive, teamwork, and ambition. Only those who embody these values become part of TEG."
+    },
+    "preparation": {
+      "title": "Preparation - Real leadership skills from day one",
+      "description": "Through formats like task forces, panel talks, mentoring, and executive or founders associate programs, our members gain real experience in entrepreneurial responsibility. We enable them to navigate complex business contexts confidently and train the skills you need."
+    },
+    "identification": {
+      "title": "Identification - Our members want to lead",
+      "description": "Our members are passionate about taking responsibility in corporations. They don't think in semesters but in careers and see established companies not as obstacles but as playgrounds for growth, innovation, and impact. TEG not only imparts skills but also instills the right mindset."
+    }
+  },
+  "callToAction": {
+    "title": "Develop the leadership talents of tomorrow",
+    "description": "Become a TEG partner to gain privileged access to an elite pipeline of future corporate leaders and join our exclusive network of leading companies.",
+    "buttonText": "Become a Partner"
+  },
+  "cards": {
+    "studentRun": {
+      "title": "1. We run TEG like a company and learn how to lead one",
+      "description": "TEG is the only student-run organization in Munich with its own office at the English Garden. This includes real fixed costs, a real budget, and real responsibility. Our members independently generate the necessary funds and acquire exactly the business skills they need later in practice."
+    },
+    "futureLeaders": {
+      "title": "2. How do you get to know our members?",
+      "description": "Easily through targeted events like company visits, panel discussions, or networking sessions. This allows you to connect with our talents without a formal partnership, understand their mindset, and identify early on who fits your  Many of these events are created in collaboration with companies that take responsibility with us at minimal organizational effort."
+    },
+    "internships": {
+      "title": "3. Internships – Your potential successor is already working with you",
+      "description": "Our members complete internships at the C-level directly under managing directors, department heads, or board members. This is not a typical internship. It is a strategic opportunity for companies to get to know ambitious young talents early and prepare them specifically for future key roles. What starts as an internship today can become the beginning of a succession or leadership career tomorrow."
+    },
+    "hireLeaders": {
+      "title": "4. Hiring & Integration – with TEG as a strategic partner",
+      "description": "How do you successfully integrate young leaders into existing teams? We not only prepare our members intensively for leadership responsibility but also support the transition into the  Through joint events, panels, and targeted preparation for public appearances (e.g., LinkedIn & speaker roles), we ensure that our members are accepted and respected by older team members. Bottom line: You don't just hire someone; you gain a leader ready to make an impact."
+    }
+  },
+  "contact": {
+    "title": "For more information, contact us",
+    "greeting": "We look forward to hearing from you!",
+    "directorTitle": "Director of Strategy and Partnerships",
+    "directorName": "Jonathan Babelotzky"
+  }
 }
