@@ -9,12 +9,15 @@ import {
   ListChecks,
 } from "lucide-react";
 import { useIntl } from "react-intl";
+import { useTranslation } from "react-i18next";
 import HeroSection from "../components/HeroSection";
 import CallToAction from "../components/CallToAction";
 import HowItWorksSubsection from "../components/HowItWorksSubsection";
 import ContactCard from "../components/ContactCard";
+import HeroSectionStudents from "../components/sections/HeroSectionStudents";
 
 const ForStudents: React.FC = () => {
+  const { t } = useTranslation("home");
   const intl = useIntl();
 
   const contactPerson = {
@@ -45,13 +48,14 @@ const ForStudents: React.FC = () => {
 
   return (
     <div>
+      {/*<HeroSectionStudents></HeroSectionStudents>*/}
       {/* --- Hero Section --- */}
       <HeroSection
         title={intl.formatMessage({ id: "student.hero.title" })}
         subtitle={intl.formatMessage({ id: "student.hero.subtitle" })}
         buttonText={intl.formatMessage({ id: "student.hero.buttonText" })}
         buttonLink={intl.formatMessage({ id: "student.hero.buttonLink" })}
-        backgroundImage="/TEG_Hero_Subpage.jpg"
+        backgroundImage="/for_students.jpg"
       />
       {/* --- Intro Section --- */}
       <section className="py-16 md:py-20 bg-primary">
