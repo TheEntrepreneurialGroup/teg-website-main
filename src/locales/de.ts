@@ -1,7 +1,7 @@
 const de = {
   // Home Page Texts
   "home.hero.title":
-    "Wir formen die nächsten Führungspersönlich\u00ADkeiten der deutschen Wirtschaft.",
+    "Werde Teil der nächsten Generation Top-Manager, Führungskräfte und B2B-Gründer.",
   "home.hero.since": "Seit 1986.",
   "home.hero.subtitle": "",
   "home.hero.buttonText1": "TEG für Unternehmen",
@@ -107,9 +107,9 @@ const de = {
 
   /* --- HERO SECTION --- */
   "student.hero.title":
-    "39 Jahre Alumni-Erfolg beweisen, was du erreichen kannst.",
+    "Werde Teil der nächsten Generation Top-Manager, Führungskräfte und B2B-Gründer.",
   "student.hero.subtitle":
-    "Werde Teil des Erfolgs. Sei Mitglied mit maximal 50 Studierenden von TEG.",
+    "Maximal 50 aktive Mitglieder gleichzeitig. 10+ Stunden Arbeitszeit pro Woche. \n Echte Verantwortung und aktive Entwicklung  für Management-Rollen in Konzernen und Mittelstand oder B2B-Gründungen mit Konzernen als ersten Kunden.",
   "student.hero.buttonText": "Mitglied werden",
   "student.hero.buttonLink": "https://tally.so/r/wMP4p8",
 
