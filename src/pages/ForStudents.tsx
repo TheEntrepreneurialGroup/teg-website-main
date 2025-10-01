@@ -9,15 +9,15 @@ import {
   ListChecks,
 } from "lucide-react";
 import { useIntl } from "react-intl";
-import { useTranslation } from "react-i18next";
 import HeroSection from "../components/HeroSection";
 import CallToAction from "../components/CallToAction";
 import HowItWorksSubsection from "../components/HowItWorksSubsection";
 import ContactCard from "../components/ContactCard";
 import HeroSectionStudents from "../components/sections/HeroSectionStudents";
+import GoogleMaps from "../components/GoogleMaps";
+import LogoSection from "../components/sections/LogoSection";
 
 const ForStudents: React.FC = () => {
-  const { t } = useTranslation("home");
   const intl = useIntl();
 
   const contactPerson = {
@@ -57,6 +57,44 @@ const ForStudents: React.FC = () => {
         buttonLink={intl.formatMessage({ id: "student.hero.buttonLink" })}
         backgroundImage="/for_students.jpg"
       />
+
+      <LogoSection
+        images={[
+          { image: "/components-images/bmw-image.webp", text: "BMW" },
+          { image: "/components-images/bcg.png", text: "BCG" },
+          { image: "/components-images/siemens.svg", text: "Siemens" },
+          {
+            image: "/components-images/HypoVereinsbank.svg",
+            text: "HypoVereinsbank",
+          },
+          {
+            image: "/components-images/Roland_Berger_logo.svg",
+            text: "Roland Berger",
+          },
+          { image: "/components-images/ruhrgas-logo.png", text: "Ruhrgas" },
+        ]}
+        title={intl.formatMessage({ id: "home.partners.title" })}
+        description={intl.formatMessage({ id: "home.partners.description" })}
+      />
+
+      <LogoSection
+        images={[
+          { image: "/components-images/airbus.svg", text: "Airbus" },
+          {
+            image: "/components-images/maiborn-logo.png",
+            text: "MaibornWolff",
+          },
+          { image: "/components-images/tuv-logo.png", text: "TÜV" },
+          { image: "/components-images/Deloitte.svg", text: "Deloitte" },
+          { image: "/components-images/ey-logo.png", text: "EY" },
+          { image: "/components-images/Vattenfall.svg", text: "Vattenfall" },
+        ]}
+        title={intl.formatMessage({ id: "home.alumnis.title" })}
+        description={intl.formatMessage({ id: "home.alumnis.description" })}
+      />
+
+      <GoogleMaps />
+
       {/* --- Intro Section --- */}
       <section className="py-16 md:py-20 bg-primary">
         <div className="container-custom flex justify-center flex-col">
@@ -519,148 +557,29 @@ const ForStudents: React.FC = () => {
       </section>
       {/* --- END HOW IT WORKS SECTION --- */}
 
-      {/* --- APPLICATION INFO  --- */}
-      <section className="py-7 md:py-14 bg-white">
-        {" "}
-        {/* White background */}
-        <div className="container-custom max-w-7xl mx-auto px-4">
-          {/* Benefits vs Requirements Boxes */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 md:mb-24">
-            {/* Left Box: Benefits */}
-            <motion.div
-              className="bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={boxVariant}
-              custom={0.2}
-            >
-              <div className="flex items-center gap-4 mb-6 max-w-full">
-                <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-primary/10 rounded-lg">
-                  <Target size={32} className="text-primary mx-auto my-auto" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-800">
-                  {intl.formatMessage({
-                    id: "student.applySection.benefits.title",
-                  })}
-                </h3>
-              </div>
-              <ul className="space-y-3">
-                {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-accent">
-                      <svg
-                        width="22"
-                        height="22"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          r="12"
-                          fill="#3B82F6"
-                          fillOpacity="0.15"
-                        />
-                        <path
-                          d="M7 13l3 3 7-7"
-                          stroke="#2563EB"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    <span className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                      {intl.formatMessage({
-                        id: `student.applySection.benefits.list.${i}`,
-                      })}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Right Box: Requirements */}
-            <motion.div
-              className="bg-white/80 border border-gray-200 rounded-xl shadow-sm p-8 md:p-12"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={boxVariant}
-              custom={0.3}
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-primary/10 rounded-lg">
-                  <ListChecks
-                    size={32}
-                    className="text-primary mx-auto my-auto"
-                  />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-800">
-                  {intl.formatMessage({
-                    id: "student.applySection.requirements.title",
-                  })}
-                </h3>
-              </div>
-              <ul className="space-y-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-accent">
-                      <svg
-                        width="22"
-                        height="22"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          cx="12"
-                          cy="12"
-                          r="12"
-                          fill="#3B82F6"
-                          fillOpacity="0.15"
-                        />
-                        <path
-                          d="M7 13l3 3 7-7"
-                          stroke="#2563EB"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    <span className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                      {intl.formatMessage({
-                        id: `student.applySection.requirements.list.${i}`,
-                      })}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-          <div className="flex justify-center">
-            <p className="text-lg md:text-xl text-gray-700 italic">
-              {intl.formatMessage({
-                id: "student.applySection.requirements.extraLine",
-              })}
-            </p>
-          </div>
-          <CallToAction
-            title={intl.formatMessage({ id: "student.callToAction1.title" })}
-            description={intl.formatMessage({
-              id: "student.callToAction1.description",
+      <div className="container-custom max-w-7xl mx-auto px-4 pb-8">
+        <div className="flex justify-center">
+          <p className="text-lg md:text-xl text-gray-700 italic">
+            {intl.formatMessage({
+              id: "student.applySection.requirements.extraLine",
             })}
-            buttonText={intl.formatMessage({
-              id: "student.callToAction1.buttonText",
-            })}
-            buttonLink={intl.formatMessage({
-              id: "student.callToAction1.buttonLink",
-            })}
-            isSection={false}
-          />
+          </p>
         </div>
-      </section>
+
+        <CallToAction
+          title={intl.formatMessage({ id: "student.callToAction1.title" })}
+          description={intl.formatMessage({
+            id: "student.callToAction1.description",
+          })}
+          buttonText={intl.formatMessage({
+            id: "student.callToAction1.buttonText",
+          })}
+          buttonLink={intl.formatMessage({
+            id: "student.callToAction1.buttonLink",
+          })}
+          isSection={false}
+        />
+      </div>
 
       <section id="contact" className="pt-20 bg-primary text-white">
         <div className="flex flex-col items-center">
