@@ -107,7 +107,7 @@ const en = {
   "student.hero.subtitle":
     "Join a community of up to 50 high-achieving students preparing for leadership roles through real responsibility, practical experience, and mentoring. 39 years of alumni success prove what you can achieve.",
   "student.hero.buttonText": "Apply Now",
-  "student.hero.buttonLink": "https://tally.so/r/wMP4p8",
+  "student.hero.buttonLink": "https://tally.so/r/meJ1qx",
 
   "student.intro.title":
     "TEG is not for everyone. 10+ hours of work per week. Real respon\u00ADsibility. Relia\u00ADbility of a leader.",

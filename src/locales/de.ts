@@ -111,7 +111,7 @@ const de = {
   "student.hero.subtitle":
     "Werde Teil des Erfolgs. Sei Mitglied mit maximal 50 Studierenden von TEG.",
   "student.hero.buttonText": "Mitglied werden",
-  "student.hero.buttonLink": "https://tally.so/r/wMP4p8",
+  "student.hero.buttonLink": "https://tally.so/r/w20dbL",
 
   /* --- INTRO SECTION --- */
   "student.intro.title":
