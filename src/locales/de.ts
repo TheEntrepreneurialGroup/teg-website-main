@@ -123,6 +123,10 @@ const de = {
   "student.intro.line.2":
     "1986 gegründet von BMW, Roland Berger, BCG, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
 
+  "student.maps.title": "Hier sind wir Zuhause",
+  "student.maps.description":
+    "TEG ist die einzige von Studierenden geführte Organisation in München mit eigenem Office am Englischen Garten, inklusive Fixkosten, Budgetverantwortung und echter Ownership.",
+
   /* --- HOW IT WORKS SECTION --- */
 
   "student.howItWorks.mainTitle":
