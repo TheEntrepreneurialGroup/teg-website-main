@@ -16,6 +16,7 @@ import ContactCard from "../components/ContactCard";
 import HeroSectionStudents from "../components/sections/HeroSectionStudents";
 import GoogleMaps from "../components/GoogleMaps";
 import LogoSection from "../components/sections/LogoSection";
+import Testimonials from "../components/sections/TestimonialSection";
 
 const ForStudents: React.FC = () => {
   const intl = useIntl();
@@ -556,6 +557,8 @@ const ForStudents: React.FC = () => {
         </div>
       </section>
       {/* --- END HOW IT WORKS SECTION --- */}
+
+      <Testimonials />
 
       <div className="container-custom max-w-7xl mx-auto px-4 pb-8">
         <div className="flex justify-center">

@@ -135,6 +135,17 @@ const de = {
   "student.maps.description":
     "TEG ist die einzige von Studierenden geführte Organisation in München mit eigenem Office am Englischen Garten, inklusive Fixkosten, Budgetverantwortung und echter Ownership.",
 
+  "student.testimonials.title": "Stimmen von aktuell aktiven Mitgliedern",
+  "student.testimonials.quote1":
+    "Aus Druck entstehen Diamanten. Nirgendwo stimmt das mehr, als bei TEG.",
+  "student.testimonials.author1": "Ahmed Kaddour",
+  "student.testimonials.quote2":
+    "Ich war erstaunt, wie viel Verantwortung man bei TEG direkt zu Beginn bekommt und bin hier schon mindestens 5 Mal über mich hinaus gewachsen.",
+  "student.testimonials.author2": "Luis Waller",
+  "student.testimonials.quote3":
+    "Ich laufe regelmäßig Marathons, weil ich Herausforderungen und Höchstleistungen liebe. Genau deshalb bin ich auch bei TEG.",
+  "student.testimonials.author3": "Yesiienia Liaskina",
+
   /* --- HOW IT WORKS SECTION --- */
 
   "student.howItWorks.mainTitle":

@@ -129,6 +129,16 @@ const en = {
   "student.maps.description":
     "TEG is the only student-run organisation in Munich with its own office in the English Garden, including fixed costs, budget responsibility and genuine ownership.",
 
+  "student.testimonials.quote1":
+    "Diamonds are made under pressure. Nowhere is this truer than at TEG.",
+  "student.testimonials.author1": "Ahmed Kaddour",
+  "student.testimonials.quote2":
+    "I was amazed at how much responsibility you get at TEG right from the start, and I've grown beyond myself at least 5 times here.",
+  "student.testimonials.author2": "Luis Waller",
+  "student.testimonials.quote3":
+    "I regularly run marathons because I love challenges and peak performance. That's exactly why I'm at TEG.",
+  "student.testimonials.author3": "Yesiienia Liaskina",
+
   "student.howItWorks.mainTitle": "How we make you into such a person",
   "student.howItWorks.step1.title": "You become part of TEG",
   "student.howItWorks.step1.desc1":
