@@ -61,11 +61,11 @@
 
 @layer components {
   .btn {
-    @apply px-6 py-3 rounded-md font-semibold transition-all duration-300 inline-block;
+    @apply px-6 py-3 text-lg rounded-md font-semibold transition-all duration-300 inline-block;
   }
 
   .btn-primary {
-    @apply bg-primary text-secondary hover:bg-primary-dark;
+    @apply bg-primary text-white hover:bg-primary-dark;
   }
 
   .btn-outline {
