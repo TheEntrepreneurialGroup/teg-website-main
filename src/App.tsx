@@ -3,10 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import ForStudents from "./pages/ForStudents";
 import ForCompanies from "./pages/ForCompanies";
-import { Home } from "./pages/Home";
+import { Home } from "./components/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Imprint from "./pages/Imprint";
 import { IntlProvider } from "react-intl";
+import AlumniPage from "./pages/AlumniPage";
 import en from "./locales/en";
 import de from "./locales/de";
 
@@ -18,6 +19,7 @@ function App() {
   const switchLanguage = (lang: "en" | "de") => {
     setLocale(lang);
   };
+
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
       <Routes>
@@ -28,9 +30,15 @@ function App() {
         </Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/imprint" element={<Imprint />} />
+				<Route path="alumni" element={<AlumniPage />} />
       </Routes>
     </IntlProvider>
   );
 }
 
 export default App;
+
+
+
+
+
