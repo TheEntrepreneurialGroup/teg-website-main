@@ -111,7 +111,7 @@ const de = {
   "student.hero.subtitle":
     "Maximal 50 aktive Mitglieder gleichzeitig. 10+ Stunden Arbeitszeit pro Woche. \n Echte Verantwortung und aktive Entwicklung  für Management-Rollen in Konzernen und Mittelstand oder B2B-Gründungen mit Konzernen als ersten Kunden.",
   "student.hero.buttonText": "Mitglied werden",
-  "student.hero.buttonLink": "https://tally.so/r/wMP4p8",
+  "student.hero.buttonLink": "https://tally.so/r/w20dbL",
 
   /* --- INTRO SECTION --- */
   "student.intro.title":
