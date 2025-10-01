@@ -135,6 +135,13 @@ const de = {
   "student.maps.description":
     "TEG ist die einzige von Studierenden geführte Organisation in München mit eigenem Office am Englischen Garten, inklusive Fixkosten, Budgetverantwortung und echter Ownership.",
 
+  "home.cardText.imageAlt": "Willkommen im TEG-Office",
+  "home.cardText.title":
+    "Im TEG-Office triffst du auf Gleichgesinnte, die mehr wollen und bereit sind, dafür zu liefern.",
+  "home.cardText.subtitle": "Wir freuen uns dich kennenzulernen!",
+  "home.cardText.body":
+    "In einer auf 50 Mitglieder begrenzten Community unterstützen wir uns gegenseitig mit Skills, Verantwortung und echtem Zusammenhalt.",
+
   "student.testimonials.title": "Stimmen von aktuell aktiven Mitgliedern",
   "student.testimonials.quote1":
     "Aus Druck entstehen Diamanten. Nirgendwo stimmt das mehr, als bei TEG.",

@@ -44,7 +44,7 @@ const en = {
   "home.callToAction2.buttonText": "TEG for Students",
   "home.callToAction2.buttonLink": "/for-students",
 
-  "home.partners.title": "Our Partners",
+  "home.partners.title": "Our Founding Partners",
   "home.partners.description":
     "Founded in 1986 by BMW, BCG, Roland Berger, KPMG, Siemens, and many others, TEG is today one of the most renowned talent incubators in the German-speaking region.",
 
@@ -128,6 +128,13 @@ const en = {
   "student.maps.title": "This is where we belong",
   "student.maps.description":
     "TEG is the only student-run organisation in Munich with its own office in the English Garden, including fixed costs, budget responsibility and genuine ownership.",
+
+  "home.cardText.imageAlt": "Welcome at TEG Office",
+  "home.cardText.title":
+    "At the TEG office, you meet like-minded people who want more and are ready to deliver.",
+  "home.cardText.subtitle": "We look forward to meeting you!",
+  "home.cardText.body":
+    "In a community limited to 50 members, we support each other with skills, responsibility, and real camaraderie.",
 
   "student.testimonials.quote1":
     "Diamonds are made under pressure. Nowhere is this truer than at TEG.",
