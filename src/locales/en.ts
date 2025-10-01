@@ -117,6 +117,10 @@ const en = {
   "student.intro.line.3":
     "Founded in 1986 by BMW, Roland Berger, BCG, KPMG, Siemens, and more, TEG is now one of the most renowned talent incubators in the German-speaking world.",
 
+  "student.maps.title": "This is where we belong",
+  "student.maps.description":
+    "TEG is the only student-run organisation in Munich with its own office in the English Garden, including fixed costs, budget responsibility and genuine ownership.",
+
   "student.howItWorks.mainTitle": "How we make you into such a person",
   "student.howItWorks.step1.title": "You become part of TEG",
   "student.howItWorks.step1.desc1":
