@@ -144,9 +144,9 @@ const de = {
 
   "student.cardText2.imageAlt": "TEG office meeting",
   "student.cardText2.title":
-    "Learn entrepreneurial and economic thinking in practice",
+    "Unternehmerisch und wirtschaftlich Denken lernen in der Praxis",
   "student.cardText2.subtitle":
-    'Our motto: "Learn to run a business, by running TEG like a business".',
+    'Unser Motto: "Learn to run a business, by running TEG like a business".',
 
   "student.cardText3.imageAlt": "TEG Teamdiskussion",
   "student.cardText3.title": "Unsere Philosophie: Learning by Doing",
