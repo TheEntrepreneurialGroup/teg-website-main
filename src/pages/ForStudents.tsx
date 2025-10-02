@@ -7,8 +7,7 @@ import GoogleMaps from "../components/GoogleMaps";
 import LogoSection from "../components/sections/LogoSection";
 import Testimonials from "../components/sections/TestimonialSection";
 import CardText from "../components/sections/CardText";
-import { FormattedMessage } from "react-intl";
-import ApplicationProcessSection from "../components/sections/ApplicationProcessSection";
+import MemberProcessSection from "../components/sections/MemberProcessSection";
 import ApplicationPipelineSection from "../components/sections/ApplicationPipelineSection";
 
 const ForStudents: React.FC = () => {
@@ -102,8 +101,9 @@ const ForStudents: React.FC = () => {
         subtitle={intl.formatMessage({ id: "student.cardText2.subtitle" })}
       />
 
-      {/* <ApplicationProcessSection /> */}
       <ApplicationPipelineSection />
+
+      <MemberProcessSection />
 
       <Testimonials />
 
