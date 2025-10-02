@@ -1,9 +1,18 @@
 import { useIsHorizontal } from "../../hooks/useIsHorizontal";
 import { useIntl } from "react-intl";
+import Button from "../Button";
 
 export default function ApplicationPipelineSection() {
   const isHorizontal = useIsHorizontal();
   const intl = useIntl();
+
+  const buttonText = intl.formatMessage({
+    id: "student.callToAction1.buttonText",
+  });
+
+  const buttonLink = intl.formatMessage({
+    id: "student.callToAction1.buttonLink",
+  });
 
   return (
     <section className="flex justify-center bg-gray-100">
@@ -31,6 +40,14 @@ export default function ApplicationPipelineSection() {
             className="w-full h-auto block sm:w-[90%]"
           />
         </div>
+
+        <Button
+          className="w-[250px] md:w-auto text-center min-w-[100px]"
+          href={buttonLink}
+          buttonText={"home-cta: " + buttonText}
+        >
+          {buttonText}
+        </Button>
       </div>
     </section>
   );
