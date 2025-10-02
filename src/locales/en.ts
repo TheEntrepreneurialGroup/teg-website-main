@@ -159,6 +159,8 @@ const en = {
   "student.applicationPipeline.description":
     "We have fixed application periods every six months. You can apply from 1 to 25 October for a programme starting in November and from 1 to 25 April for a programme starting in May.",
 
+  "student.memberProcess.title": "Brief overview – How TEG works",
+
   "student.testimonials.title": "Voices of currently active members",
   "student.testimonials.quote1":
     "Diamonds are made under pressure. Nowhere is this truer than at TEG.",
