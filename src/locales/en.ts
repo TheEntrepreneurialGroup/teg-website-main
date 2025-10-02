@@ -129,13 +129,27 @@ const en = {
   "student.maps.description":
     "TEG is the only student-run organisation in Munich with its own office in the English Garden, including fixed costs, budget responsibility and genuine ownership.",
 
-  "home.cardText.imageAlt": "Welcome at TEG Office",
-  "home.cardText.title":
+  "student.cardText.imageAlt": "Welcome at TEG Office",
+  "student.cardText.title":
     "At the TEG office, you meet like-minded people who want more and are ready to deliver.",
-  "home.cardText.subtitle": "We look forward to meeting you!",
-  "home.cardText.body":
+  "student.cardText.subtitle": "We look forward to meeting you!",
+  "student.cardText.body":
     "In a community limited to 50 members, we support each other with skills, responsibility, and real camaraderie.",
 
+  "student.cardText2.imageAlt": "TEG office meeting",
+  "student.cardText2.title":
+    "Learn entrepreneurial and economic thinking in practice",
+  "student.cardText2.subtitle":
+    'Our motto: "Learn to run a business, by running TEG like a business".',
+
+  "student.cardText3.imageAlt": "TEG team discussion",
+  "student.cardText3.title": "Our Philosophy: Learning by Doing",
+  "student.cardText3.subtitle":
+    "Take the lead on a project within TEG and develop leadership skills: persuading people, making decisions, and achieving results.",
+  "student.cardText3.body":
+    "Get active: Create successful marketing campaigns, design software, or organize panel talks with speakers from the business world and much more.",
+
+  "student.testimonials.title": "Voices of currently active members",
   "student.testimonials.quote1":
     "Diamonds are made under pressure. Nowhere is this truer than at TEG.",
   "student.testimonials.author1": "Ahmed Kaddour",

@@ -18,7 +18,7 @@ export default function LogoSection({
   description,
 }: LogoSectionProps) {
   return (
-    <section className="py-20 bg-gray-100">
+    <section className="sm:py-6 md:py-10 lg:py-16 bg-gray-100">
       <div className="container-custom">
         {/* Centered Title */}
         <div className="text-center">
