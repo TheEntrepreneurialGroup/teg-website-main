@@ -19,7 +19,7 @@ export default function GoogleMaps() {
         </div>
         {/* Text Section */}
         <div className="flex-2 flex flex-col justify-center sm:pt-1">
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 text-left">
+          <h3 className="text-2xl sm:text-3xl font-bold text-primary text-left">
             {intl.formatMessage({ id: "student.maps.title" })}
           </h3>
           <div className="text-lg sm:text-xl text-gray-700 leading-relaxed text-left max-w-screen-sm">
