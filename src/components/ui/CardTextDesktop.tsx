@@ -17,11 +17,11 @@ const CardTextDesktop: React.FC<CardTextProps> = ({
 }) => (
   <section className="flex flex-col  items-center">
     <div className="flex flex-row max-w-7xl items-start bg-white md:p-14 lg:p-20 sm:gap-4 gap-8">
-      <div className="flex-shrink-0 w-1/2">
+      <div className="flex-shrink-0 w-1/2 h-[350px]">
         <img
           src={image}
           alt={imageAlt}
-          className="flex-shrink: 0 w-full h-full object-cover bg-white"
+          className="flex-shrink-0 w-full h-full object-cover bg-white"
         />
       </div>
       <div className="flex flex-col w-1/2 my-1">

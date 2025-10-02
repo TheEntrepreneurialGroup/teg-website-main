@@ -129,6 +129,12 @@ const en = {
   "student.maps.description":
     "TEG is the only student-run organisation in Munich with its own office in the English Garden, including fixed costs, budget responsibility and genuine ownership.",
 
+  "student.commitment.imageAlt": "TEG Founder working",
+  "student.commitment.title":
+    "TEG is not for everyone: 10+ hours of work per week, consistently over 3 semesters",
+  "student.commitment.subtitle":
+    "If you invest this time, it will change your life.",
+
   "student.cardText.imageAlt": "Welcome at TEG Office",
   "student.cardText.title":
     "At the TEG office, you meet like-minded people who want more and are ready to deliver.",
