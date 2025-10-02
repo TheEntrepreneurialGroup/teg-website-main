@@ -8,6 +8,8 @@ import LogoSection from "../components/sections/LogoSection";
 import Testimonials from "../components/sections/TestimonialSection";
 import CardText from "../components/sections/CardText";
 import { FormattedMessage } from "react-intl";
+import ApplicationProcessSection from "../components/sections/ApplicationProcessSection";
+import ApplicationPipelineSection from "../components/sections/ApplicationPipelineSection";
 
 const ForStudents: React.FC = () => {
   const intl = useIntl();
@@ -30,8 +32,8 @@ const ForStudents: React.FC = () => {
         buttonText={intl.formatMessage({ id: "student.hero.buttonText" })}
         buttonLink={intl.formatMessage({ id: "student.hero.buttonLink" })}
         backgroundImage="/for_students.jpg"
-        backgroundSize="cover" // or "cover", "100% 100%", etc.
-        backgroundPosition="center top" // or "top", "bottom", etc.
+        backgroundSize="cover"
+        backgroundPosition="center top"
       />
       {/* Commitment CardText Section */}
       <CardText
@@ -43,18 +45,18 @@ const ForStudents: React.FC = () => {
 
       <LogoSection
         images={[
-          { image: "/components-images/bmw-image.webp", text: "BMW" },
-          { image: "/components-images/bcg.png", text: "BCG" },
-          { image: "/components-images/siemens.svg", text: "Siemens" },
+          { image: "/logos/bmw-image.webp", text: "BMW" },
+          { image: "/logos/bcg.png", text: "BCG" },
+          { image: "/logos/siemens.svg", text: "Siemens" },
           {
-            image: "/components-images/HypoVereinsbank.svg",
+            image: "/logos/HypoVereinsbank.svg",
             text: "HypoVereinsbank",
           },
           {
-            image: "/components-images/Roland_Berger_logo.svg",
+            image: "/logos/Roland_Berger_logo.svg",
             text: "Roland Berger",
           },
-          { image: "/components-images/ruhrgas-logo.png", text: "Ruhrgas" },
+          { image: "/logos/ruhrgas-logo.png", text: "Ruhrgas" },
         ]}
         title={intl.formatMessage({ id: "home.partners.title" })}
         description={intl.formatMessage({ id: "home.partners.description" })}
@@ -69,15 +71,15 @@ const ForStudents: React.FC = () => {
       />
       <LogoSection
         images={[
-          { image: "/components-images/airbus.svg", text: "Airbus" },
+          { image: "/logos/airbus.svg", text: "Airbus" },
           {
-            image: "/components-images/maiborn-logo.png",
+            image: "/logos/maiborn-logo.png",
             text: "MaibornWolff",
           },
-          { image: "/components-images/tuv-logo.png", text: "TÜV" },
-          { image: "/components-images/Deloitte.svg", text: "Deloitte" },
-          { image: "/components-images/ey-logo.png", text: "EY" },
-          { image: "/components-images/Vattenfall.svg", text: "Vattenfall" },
+          { image: "/logos/tuv-logo.png", text: "TÜV" },
+          { image: "/logos/Deloitte.svg", text: "Deloitte" },
+          { image: "/logos/ey-logo.png", text: "EY" },
+          { image: "/logos/Vattenfall.svg", text: "Vattenfall" },
         ]}
         title={intl.formatMessage({ id: "home.alumnis.title" })}
         description={intl.formatMessage({ id: "home.alumnis.description" })}
@@ -99,6 +101,9 @@ const ForStudents: React.FC = () => {
         title={intl.formatMessage({ id: "student.cardText2.title" })}
         subtitle={intl.formatMessage({ id: "student.cardText2.subtitle" })}
       />
+
+      {/* <ApplicationProcessSection /> */}
+      <ApplicationPipelineSection />
 
       <Testimonials />
 

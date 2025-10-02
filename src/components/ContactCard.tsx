@@ -26,15 +26,15 @@ const ContactCard: React.FC<ContactCardProps> = ({
 }) => {
   return (
     <motion.div
-      className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl"
+      className="bg-white rounded-sm shadow-lg overflow-hidden w-full max-w-4xl"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
     >
-      <div className="flex flex-col md:flex-row items-center p-2 md:p-6 pb-2 gap-4">
+      <div className="flex flex-col md:flex-row items-center p-2 md:p-6 pb-2 gap-2 sm:gap-4">
         {/* Image Section */}
-        <div className="w-full md:w-64 h-[500px] md:h-80 lg:h-96 overflow-hidden border-1 border-gray-200 rounded-lg flex-shrink-0">
+        <div className="w-full md:w-64 h-[250px] md:h-80 lg:h-96 overflow-hidden border-1 border-gray-200 rounded-sm flex-shrink-0">
           <img
             src={imageUrl}
             alt={name}
@@ -46,7 +46,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
         <div className="flex-1 mt-4 md:mt-0 md:text-left">
           {variant === "quote" && greeting && (
             <div className="text-gray-700">
-              <Quote size={20} className="block mb-2" />
+              <Quote size={20} className="mb-2" />
               <h2 className="text-3xl md:text-4xl font-semibold">{greeting}</h2>
               <div className="flex justify-end mt-2">
                 <Quote size={20} />
