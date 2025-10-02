@@ -9,7 +9,9 @@ import Testimonials from "../components/sections/TestimonialSection";
 import CardText from "../components/sections/CardText";
 import MemberProcessSection from "../components/sections/MemberProcessSection";
 import ApplicationPipelineSection from "../components/sections/ApplicationPipelineSection";
-import CertificateSection from "../components/sections/CertificateSection";
+import PyramideSection from "../components/sections/PyramideSection";
+import TextComponent from "../components/TextComponent";
+import CertificatesSection from "../components/sections/CertificateSection";
 
 const ForStudents: React.FC = () => {
   const intl = useIntl();
@@ -106,7 +108,9 @@ const ForStudents: React.FC = () => {
 
       <MemberProcessSection />
 
-      <CertificateSection />
+      <PyramideSection />
+
+      <CertificatesSection />
 
       <Testimonials />
 
