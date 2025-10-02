@@ -95,8 +95,6 @@ const ForStudents: React.FC = () => {
         body={intl.formatMessage({ id: "student.cardText3.body" })}
       />
 
-      <GoogleMaps />
-
       <CardText
         image="/components-images/team-4.jpeg"
         imageAlt={intl.formatMessage({ id: "student.cardText2.imageAlt" })}
@@ -107,12 +105,6 @@ const ForStudents: React.FC = () => {
       <ApplicationPipelineSection />
 
       <MemberProcessSection />
-
-      <PyramideSection />
-
-      <CertificatesSection />
-
-      <Testimonials />
 
       <div className="container-custom max-w-7xl mx-auto px-4 pb-8">
         <CallToAction
@@ -129,6 +121,14 @@ const ForStudents: React.FC = () => {
           isSection={false}
         />
       </div>
+
+      <GoogleMaps />
+
+      <PyramideSection />
+
+      <CertificatesSection />
+
+      <Testimonials />
 
       <section id="contact" className="pt-20 bg-primary text-white">
         <div className="flex flex-col items-center">
