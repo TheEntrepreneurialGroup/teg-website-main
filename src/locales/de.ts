@@ -173,6 +173,27 @@ const de = {
   "student.certificate.title":
     "Bei uns lernst du alles was Du für eine erfolgreiche Zukunft in der Wirtschaft brauchst!",
 
+  "student.certificate.coach.title": "Coach-Zertifikat:",
+  "student.certificate.coach.intro":
+    "Die Königsdisziplin: andere zu Höchstleistungen befähigen. Du lernst, Wissen strukturiert weiterzugeben, neue Mitglieder einzuarbeiten und sie zu eigenen Ergebnissen zu führen. Dabei entwickelst du die Fähigkeit, Feedback klar zu geben, zu motivieren und Verantwortung für die Entwicklung anderer zu übernehmen.",
+  "student.certificate.coach.highlight": "Im Zertifikat enthalten sind:",
+  "student.certificate.coach.items":
+    "Dokumentation des durchgeführten Coachings, konkrete Ergebnisse deines Coachees, Nachweis deiner Fähigkeit andere erfolgreich anzuleiten.",
+
+  "student.certificate.projectlead.title": "Projektleitung-Zertifikat:",
+  "student.certificate.projectlead.intro":
+    "Du lernst ein gesamtes Projekt von Anfang bis Ende durchzuführen. Ziele zu setzen, Aufgaben zu vergeben und Teams zu koordinieren – unter echtem Zeit- und Ergebnisdruck. Dazu gehört auch, Rückschläge souverän zu meistern und Entscheidungen klar zu kommunizieren.",
+  "student.certificate.projectlead.highlight": "Im Zertifikat enthalten sind:",
+  "student.certificate.projectlead.items":
+    "Bestätigung der Projektleitung, Bericht über gelöste Herausforderungen, Nachweis positiver Ergebnisse für TEG.",
+
+  "student.certificate.professional.title": "Professional-Zertifikat:",
+  "student.certificate.professional.intro":
+    "Du lernst innerhalb kürzester Zeit (2 Semester) eine typische Rolle eines Unternehmens richtig gut zu beherrschen. Ganz gleich ob: Sales, Grafik Design, Accounting, Legal oder Software Engineering, wir haben für jeden Studienhintergrund und jedes Interesse etwas im Angebot.",
+  "student.certificate.professional.highlight": "Im Zertifikat enthalten sind:",
+  "student.certificate.professional.items":
+    "Erworbene Fähigkeiten, Tätigkeitsbericht und messbare Ergebnisse deiner Arbeit.",
+
   "student.testimonials.title": "Stimmen von aktuell aktiven Mitgliedern",
   "student.testimonials.quote1":
     "Aus Druck entstehen Diamanten. Nirgendwo stimmt das mehr, als bei TEG.",

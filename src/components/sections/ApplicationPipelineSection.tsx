@@ -16,13 +16,13 @@ export default function ApplicationPipelineSection() {
 
   return (
     <section className="flex justify-center bg-gray-100">
-      <div className="flex flex-col items-center w-full max-w-7xl p-2 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14">
+      <div className="flex flex-col items-start w-full max-w-7xl p-2 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14">
         {/* Text Section */}
-        <div className="w-full flex flex-col justify-center sm:pt-1">
-          <h3 className="text-2xl sm:text-3xl font-bold text-primary text-left">
+        <div className="w-full flex flex-col sm:pt-1">
+          <h3 className="text-2xl sm:text-3xl font-bold text-primary">
             {intl.formatMessage({ id: "student.applicationPipeline.title" })}
           </h3>
-          <p className="text-xl text-gray-700 text-left mt-2 m-0">
+          <p className="text-xl text-gray-700 mt-2 m-0">
             {intl.formatMessage({
               id: "student.applicationPipeline.description",
             })}
