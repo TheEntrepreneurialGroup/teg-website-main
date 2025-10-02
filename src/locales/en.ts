@@ -161,6 +161,9 @@ const en = {
 
   "student.memberProcess.title": "Brief overview – How TEG works",
 
+  "student.certificate.title":
+    "With us, you will learn everything you need for a successful future in business!",
+
   "student.testimonials.title": "Voices of currently active members",
   "student.testimonials.quote1":
     "Diamonds are made under pressure. Nowhere is this truer than at TEG.",

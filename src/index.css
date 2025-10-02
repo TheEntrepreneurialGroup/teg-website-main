@@ -73,7 +73,7 @@
   }
 
   .btn-accent {
-    @apply bg-accent text-secondary hover:bg-accent-light active:bg-accent-dark hover:text-secondary;
+    @apply bg-accent text-white hover:bg-accent-light active:bg-accent-dark hover:text-white;
   }
 
   .container-custom {
