@@ -7,6 +7,7 @@ import GoogleMaps from "../components/GoogleMaps";
 import LogoSection from "../components/sections/LogoSection";
 import Testimonials from "../components/sections/TestimonialSection";
 import CardText from "../components/sections/CardText";
+import { FormattedMessage } from "react-intl";
 
 const ForStudents: React.FC = () => {
   const intl = useIntl();
@@ -29,6 +30,15 @@ const ForStudents: React.FC = () => {
         buttonText={intl.formatMessage({ id: "student.hero.buttonText" })}
         buttonLink={intl.formatMessage({ id: "student.hero.buttonLink" })}
         backgroundImage="/for_students.jpg"
+        backgroundSize="cover" // or "cover", "100% 100%", etc.
+        backgroundPosition="center top" // or "top", "bottom", etc.
+      />
+      {/* Commitment CardText Section */}
+      <CardText
+        image="/components-images/teg_alumni.png"
+        imageAlt={intl.formatMessage({ id: "student.commitment.imageAlt" })}
+        title={intl.formatMessage({ id: "student.commitment.title" })}
+        subtitle={intl.formatMessage({ id: "student.commitment.subtitle" })}
       />
 
       <LogoSection
