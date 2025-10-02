@@ -169,6 +169,8 @@ const de = {
   "student.applicationPipeline.description":
     "Wir haben halbjährlich fixe Bewerbungszeiträume. Du kannst Dich jeweils  vom 1. bis 25. Oktober für einen Programmstart im November und 1. bis 25. April für einen Programmstart im Mai bewerben.",
 
+  "student.memberProcess.title": "Kurzüberblick – So funktioniert TEG",
+
   "student.testimonials.title": "Stimmen von aktuell aktiven Mitgliedern",
   "student.testimonials.quote1":
     "Aus Druck entstehen Diamanten. Nirgendwo stimmt das mehr, als bei TEG.",

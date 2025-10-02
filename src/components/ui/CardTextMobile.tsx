@@ -15,7 +15,7 @@ const CardTextMobile: React.FC<CardTextProps> = ({
   subtitle,
   body,
 }) => (
-  <section className="flex flex-col w-full items-center bg-white shadow-sm p-4 gap-2">
+  <section className="flex flex-col w-full items-center bg-white shadow-sm p-2 gap-2">
     <div className="flex flex-row gap-2">
       <img src={image} alt={imageAlt} className="w-1/2 object-cover" />
 
