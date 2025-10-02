@@ -164,6 +164,27 @@ const en = {
   "student.certificate.title":
     "With us, you will learn everything you need for a successful future in business!",
 
+  "student.certificate.coach.title": "Coach Certificate:",
+  "student.certificate.coach.intro":
+    "The supreme discipline: enabling others to achieve peak performance. You learn to pass on knowledge in a structured way, onboard new members, and guide them to their own results. In doing so, you develop the ability to give clear feedback, motivate, and take responsibility for the development of others.",
+  "student.certificate.coach.highlight": "Included in the certificate:",
+  "student.certificate.coach.items":
+    "Documentation of the coaching carried out, concrete results of your coachee, proof of your ability to successfully guide others.",
+
+  "student.certificate.projectlead.title": "Project Lead Certificate:",
+  "student.certificate.projectlead.intro":
+    "You learn to carry out an entire project from start to finish. This includes setting goals, assigning tasks, and coordinating teams – under real time and results pressure. It also means mastering setbacks confidently and communicating decisions clearly.",
+  "student.certificate.projectlead.highlight": "Included in the certificate:",
+  "student.certificate.projectlead.items":
+    "Confirmation of project leadership, report on solved challenges, proof of positive results for TEG.",
+
+  "student.certificate.professional.title": "Professional Certificate:",
+  "student.certificate.professional.intro":
+    "Within a very short time (2 semesters), you learn to master a typical company role really well. Whether it's Sales, Graphic Design, Accounting, Legal, or Software Engineering, we have something to offer for every academic background and interest.",
+  "student.certificate.professional.highlight": "Included in the certificate:",
+  "student.certificate.professional.items":
+    "Acquired skills, activity report, and measurable results of your work.",
+
   "student.testimonials.title": "Voices of currently active members",
   "student.testimonials.quote1":
     "Diamonds are made under pressure. Nowhere is this truer than at TEG.",
