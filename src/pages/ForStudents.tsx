@@ -1,19 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
-import {
-  Mail,
-  Linkedin,
-  ArrowDown,
-  Target,
-  Info,
-  ListChecks,
-} from "lucide-react";
 import { useIntl } from "react-intl";
 import HeroSection from "../components/HeroSection";
 import CallToAction from "../components/CallToAction";
-import HowItWorksSubsection from "../components/HowItWorksSubsection";
 import ContactCard from "../components/ContactCard";
-import HeroSectionStudents from "../components/sections/HeroSectionStudents";
 import GoogleMaps from "../components/GoogleMaps";
 import LogoSection from "../components/sections/LogoSection";
 import Testimonials from "../components/sections/TestimonialSection";
@@ -28,24 +17,6 @@ const ForStudents: React.FC = () => {
     imageUrl: "/felix.jpeg",
     email: "info@teg-ev.de",
     linkedinUrl: "https://www.linkedin.com/in/felix-enke/",
-  };
-
-  const sectionVariant = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (delay = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay },
-    }),
-  };
-
-  const boxVariant = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: (delay = 0) => ({
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, delay },
-    }),
   };
 
   return (
