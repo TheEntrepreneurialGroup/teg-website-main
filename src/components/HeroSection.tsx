@@ -9,13 +9,18 @@ interface HeroSectionProps {
   buttonText?: string;
   buttonLink?: string;
   backgroundImage: string;
+  backgroundSize?: string;
+  backgroundPosition?: string;
 }
+
 const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
   buttonText,
   buttonLink,
   backgroundImage,
+  backgroundSize = "cover",
+  backgroundPosition = "center bottom",
 }) => {
   return (
     <div
@@ -23,8 +28,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       style={{
         marginTop: "1rem",
         backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.4), rgba(15, 44, 89, 0.5)), url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center bottom",
+        backgroundSize,
+        backgroundPosition,
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-primary/60"></div>
@@ -55,4 +60,5 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     </div>
   );
 };
+
 export default HeroSection;
