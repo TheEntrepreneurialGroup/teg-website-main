@@ -44,6 +44,14 @@ const en = {
   "home.callToAction2.buttonText": "TEG for Students",
   "home.callToAction2.buttonLink": "/for-students",
 
+  "home.partners.title": "Our Founding Partners",
+  "home.partners.description":
+    "Founded in 1986 by BMW, BCG, Roland Berger, KPMG, Siemens, and many others, TEG is today one of the most renowned talent incubators in the German-speaking region.",
+
+  "home.alumnis.title": "Alumni",
+  "home.alumnis.description":
+    "300+ alumni, one in three in top management. Among them 41 corporate executives, 40 medium-sized business executives, and 15 founders of successful companies.",
+
   // Company Page Texts
   "company.hero.title":
     "We develop your next leadership talents. With Certainty.",
@@ -117,96 +125,79 @@ const en = {
   "student.intro.line.3":
     "Founded in 1986 by BMW, Roland Berger, BCG, KPMG, Siemens, and more, TEG is now one of the most renowned talent incubators in the German-speaking world.",
 
-  "student.howItWorks.mainTitle": "How we make you into such a person",
-  "student.howItWorks.step1.title": "You become part of TEG",
-  "student.howItWorks.step1.desc1":
-    "At the TEG office, you meet like-minded individuals who want more and are ready to deliver.",
-  "student.howItWorks.step1.desc2":
-    "In an exclusive community of up to 50 members, we support each other with skills, responsibility, and real camaraderie.",
+  "student.maps.title": "This is where we belong",
+  "student.maps.description":
+    "TEG is the only student-run organisation in Munich with its own office in the English Garden, including fixed costs, budget responsibility and genuine ownership.",
 
-  "student.howItWorks.step2.title": "Your value as a member",
-  "student.howItWorks.step2.desc1":
-    "All programs at TEG are designed to accelerate your career, whether you want to become a founder, executive, or corporate successor.",
-  "student.howItWorks.step2.box1": "Learn firsthand how to run a company",
-  "student.howItWorks.step2.box2":
-    "Position yourself strategically and accelerate your career path",
-  "student.howItWorks.step2.box3":
-    "Grow through a strong community and its connections",
-  "student.howItWorks.step2.desc2":
-    "Our members take on entrepreneurial responsibility in real projects, not someday, but now.",
+  "student.commitment.imageAlt": "TEG Founder working",
+  "student.commitment.title":
+    "TEG is not for everyone: 10+ hours of work per week, consistently over 3 semesters",
+  "student.commitment.subtitle":
+    "If you invest this time, it will change your life.",
 
-  "student.howItWorks.step3.title": "How exactly does TEG create this value?",
-  "student.howItWorks.step3.desc1":
-    "TEG is the only student-run organization in Munich with its own office at the English Garden, including fixed costs, budget responsibility, and real ownership.",
-  "student.howItWorks.step3.desc2":
-    "Our members run TEG like a company and learn how to lead one.",
-  "student.howItWorks.step3.desc3":
-    "Additionally, there are exclusive programs and formats:",
-  "student.howItWorks.step3.sub1.title":
-    "Learn how companies work and gain insights others take years to acquire.",
-  "student.howItWorks.step3.sub1.box1.title": "Task Forces",
-  "student.howItWorks.step3.sub1.box1.desc":
-    "Lead a project within TEG and develop essential leadership skills. You'll learn how to manage teams, allocate resources, and make decisions.",
-  "student.howItWorks.step3.sub1.box2.title": "Founders-Associate Programs",
-  "student.howItWorks.step3.sub1.box2.desc":
-    "Work alongside one of our founders and gain exclusive insights into strategy, growth, and leadership firsthand. You're not a spectator; you're part of the execution.",
-  "student.howItWorks.step3.sub1.box3.title": "Executive-Associate Programs",
-  "student.howItWorks.step3.sub1.box3.desc":
-    "Complete an internship at the C-level with one of our partner companies, directly under the management, department head, or board. You'll be challenged, supported, and taken seriously.",
+  "student.cardText.imageAlt": "Welcome at TEG Office",
+  "student.cardText.title":
+    "At the TEG office, you meet like-minded people who want more and are ready to deliver.",
+  "student.cardText.subtitle": "We look forward to meeting you!",
+  "student.cardText.body":
+    "In a community limited to 50 members, we support each other with skills, responsibility, and real camaraderie.",
 
-  "student.howItWorks.step3.sub2.title":
-    "Accelerate your career through strategic positioning",
-  "student.howItWorks.step3.sub2.box1.title": "Panel Talks",
-  "student.howItWorks.step3.sub2.box1.desc":
-    "You're invited as an expert to speak at public events on panels, stages, and workshops. This not only develops your presence but also positions you publicly as a thought leader.",
-  "student.howItWorks.step3.sub2.box2.title": "Talent Development",
-  "student.howItWorks.step3.sub2.box2.desc":
-    "With targeted support, we help you develop your personal brand. This includes LinkedIn visibility, storytelling, speaker coaching, and individual positioning strategies.",
+  "student.cardText2.imageAlt": "TEG office meeting",
+  "student.cardText2.title":
+    "Learn entrepreneurial and economic thinking in practice",
+  "student.cardText2.subtitle":
+    'Our motto: "Learn to run a business, by running TEG like a business".',
 
-  "student.howItWorks.step3.sub3.title":
-    "Benefit from a strong community and its connections",
-  "student.howItWorks.step3.sub3.box1.title": "Mentoring",
-  "student.howItWorks.step3.sub3.box1.desc":
-    "You get a personal mentor from the TEG network – someone who is already where you want to be. You'll receive support with your challenges, decisions, and growth goals.",
-  "student.howItWorks.step3.sub3.box2.title": "Company Visits",
-  "student.howItWorks.step3.sub3.box2.desc":
-    "We organize regular visits to companies we collaborate with. These connections not only help you understand the corporate world but also open doors for career entry, projects, and management positions.",
+  "student.cardText3.imageAlt": "TEG team discussion",
+  "student.cardText3.title": "Our Philosophy: Learning by Doing",
+  "student.cardText3.subtitle":
+    "Take the lead on a project within TEG and develop leadership skills: persuading people, making decisions, and achieving results.",
+  "student.cardText3.body":
+    "Get active: Create successful marketing campaigns, design software, or organize panel talks with speakers from the business world and much more.",
 
-  "student.howItWorks.step4.title":
-    "What exactly do you do in the organization?",
-  "student.howItWorks.step4.desc1":
-    "Because we run TEG like a real company, you don't just 'work in the organization' – you take on responsibility in an entrepreneurial setting.",
-  "student.howItWorks.step4.desc2":
-    "TEG is structured like a company: with clear departments, real roles, and operational execution. Whether you're in marketing, strategy, or the events team, you think entrepreneurially and act with impact.",
-  "student.howItWorks.step4.desc3":
-    "Leverage your strengths, lead a task force, actively participate in our programs. You don't just contribute; you take responsibility, shape, and lead.",
-  "student.howItWorks.lastline":
-    "After one semester, you'll have more entrepreneurial knowledge than 99% of people.",
+  "student.applicationPipeline.title": "Application Pipeline",
+  "student.applicationPipeline.description":
+    "We have fixed application periods every six months. You can apply from 1 to 25 October for a programme starting in November and from 1 to 25 April for a programme starting in May.",
+
+  "student.memberProcess.title": "Brief overview – How TEG works",
+
+  "student.certificate.title":
+    "With us, you will learn everything you need for a successful future in business!",
+
+  "student.certificate.coach.title": "Coach Certificate:",
+  "student.certificate.coach.intro":
+    "The supreme discipline: enabling others to achieve peak performance. You learn to pass on knowledge in a structured way, onboard new members, and guide them to their own results. In doing so, you develop the ability to give clear feedback, motivate, and take responsibility for the development of others.",
+  "student.certificate.coach.highlight": "Included in the certificate:",
+  "student.certificate.coach.items":
+    "Documentation of the coaching carried out, concrete results of your coachee, proof of your ability to successfully guide others.",
+
+  "student.certificate.projectlead.title": "Project Lead Certificate:",
+  "student.certificate.projectlead.intro":
+    "You learn to carry out an entire project from start to finish. This includes setting goals, assigning tasks, and coordinating teams – under real time and results pressure. It also means mastering setbacks confidently and communicating decisions clearly.",
+  "student.certificate.projectlead.highlight": "Included in the certificate:",
+  "student.certificate.projectlead.items":
+    "Confirmation of project leadership, report on solved challenges, proof of positive results for TEG.",
+
+  "student.certificate.professional.title": "Professional Certificate:",
+  "student.certificate.professional.intro":
+    "Within a very short time (2 semesters), you learn to master a typical company role really well. Whether it's Sales, Graphic Design, Accounting, Legal, or Software Engineering, we have something to offer for every academic background and interest.",
+  "student.certificate.professional.highlight": "Included in the certificate:",
+  "student.certificate.professional.items":
+    "Acquired skills, activity report, and measurable results of your work.",
+
+  "student.testimonials.title": "Voices of currently active members",
+  "student.testimonials.quote1":
+    "Diamonds are made under pressure. Nowhere is this truer than at TEG.",
+  "student.testimonials.author1": "Ahmed Kaddour",
+  "student.testimonials.quote2":
+    "I was amazed at how much responsibility you get at TEG right from the start, and I've grown beyond myself at least 5 times here.",
+  "student.testimonials.author2": "Luis Waller",
+  "student.testimonials.quote3":
+    "I regularly run marathons because I love challenges and peak performance. That's exactly why I'm at TEG.",
+  "student.testimonials.author3": "Yesiienia Liaskina",
+
   "student.applySection.applyButton": "Apply Now!",
 
-  "student.applySection.benefits.title": "What you can expect at TEG",
-  "student.applySection.benefits.list.1":
-    "Engaged community of high potentials",
-  "student.applySection.benefits.list.2":
-    "Access to your own office & infrastructure",
-  "student.applySection.benefits.list.3":
-    "Personal mentoring & leadership coaching",
-  "student.applySection.benefits.list.4":
-    "Visibility through events & LinkedIn support",
-  "student.applySection.benefits.list.5": "Learn how companies really work",
-  "student.applySection.benefits.list.6":
-    "Responsibility from day one: projects, budgets, team leadership",
-  "student.applySection.requirements.title": "What you should bring",
-  "student.applySection.requirements.list.1":
-    "10+ hours of commitment per week",
-  "student.applySection.requirements.list.2":
-    "Willingness to take responsibility",
-  "student.applySection.requirements.list.3":
-    "Desire to learn and perform under the guidance of a CEO or director",
-  "student.applySection.requirements.list.4":
-    "Motivation to think and act at an executive level",
-  "student.applySection.requirements.list.5":
-    "A doer mindset – no waiting, just executing",
   "student.applySection.requirements.extraLine":
     "Shape the economy. Shape your future. Shape your mind.",
 
