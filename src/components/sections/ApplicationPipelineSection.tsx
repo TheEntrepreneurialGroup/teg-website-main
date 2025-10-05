@@ -7,11 +7,11 @@ export default function ApplicationPipelineSection() {
   const intl = useIntl();
 
   const buttonText = intl.formatMessage({
-    id: "student.callToAction1.buttonText",
+    id: "student.callToAction.buttonText",
   });
 
   const buttonLink = intl.formatMessage({
-    id: "student.callToAction1.buttonLink",
+    id: "student.callToAction.buttonLink",
   });
 
   return (

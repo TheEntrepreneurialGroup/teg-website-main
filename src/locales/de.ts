@@ -205,19 +205,12 @@ const de = {
     "Ich laufe regelmäßig Marathons, weil ich Herausforderungen und Höchstleistungen liebe. Genau deshalb bin ich auch bei TEG.",
   "student.testimonials.author3": "Yesiienia Liaskina",
 
-  "student.callToAction1.title":
-    "Bist Du bereit, Deine Karriere als Führungskraft zu starten?",
-  "student.callToAction1.description":
-    "Übernehme Verantwortung. Werd ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
-  "student.callToAction1.buttonText": "Jetzt bewerben!",
-  "student.callToAction1.buttonLink": "https://tally.so/r/wMP4p8",
-
   "student.callToAction.title":
-    "Bereit, deine Karriere als Führungskraft zu starten?",
+    "Bist Du bereit, Deine Karriere als Führungskraft zu starten?",
   "student.callToAction.description":
-    "Übernimm Verantwortung. Tritt TEG bei und erlange die Fähigkeiten, das Netzwerk und die Erfahrung, die du benötigst, um die Führungskraft von morgen zu werden.",
-  "student.cToAction.buttonText": "Jetzt bewerben!",
-  "student.callToAon.buttonLink": "https://tally.so/r/wMP4p8",
+    "Übernehme Verantwortung. Werd ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
+  "student.callToAction.buttonText": "Jetzt bewerben!",
+  "student.callToAction.buttonLink": "https://tally.so/r/w20dbL",
 
   "student.contact.title": "Für weitere Informationen kontaktiere uns",
   "student.contact.greeting":

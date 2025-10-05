@@ -201,12 +201,12 @@ const en = {
   "student.applySection.requirements.extraLine":
     "Shape the economy. Shape your future. Shape your mind.",
 
-  "student.callToAction1.title":
+  "student.callToAction.title":
     "Are you ready to start your leadership career?",
-  "student.callToAction1.description":
+  "student.callToAction.description":
     "Take responsibility. Become a member of TEG and gain the skills, community, and experience you need to become tomorrow's corporate leader.",
-  "student.callToAction1.buttonText": "Apply Now!",
-  "student.callToAction1.buttonLink": "https://tally.so/r/wMP4p8",
+  "student.callToAction.buttonText": "Apply Now!",
+  "student.callToAction.buttonLink": "https://tally.so/r/w20dbL",
 
   "student.contact.title": "For more information, contact us",
   "student.contact.greeting":
