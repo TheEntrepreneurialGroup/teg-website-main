@@ -108,15 +108,15 @@ const ForStudents: React.FC = () => {
 
       <div className="container-custom max-w-7xl mx-auto px-4 pb-8">
         <CallToAction
-          title={intl.formatMessage({ id: "student.callToAction1.title" })}
+          title={intl.formatMessage({ id: "student.callToAction.title" })}
           description={intl.formatMessage({
-            id: "student.callToAction1.description",
+            id: "student.callToAction.description",
           })}
           buttonText={intl.formatMessage({
-            id: "student.callToAction1.buttonText",
+            id: "student.callToAction.buttonText",
           })}
           buttonLink={intl.formatMessage({
-            id: "student.callToAction1.buttonLink",
+            id: "student.callToAction.buttonLink",
           })}
           isSection={false}
         />
