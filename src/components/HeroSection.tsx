@@ -24,7 +24,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   return (
     <div
-      className="relative h-full md:h-screen min-h-[600px] flex items-center justify-start overflow-hidden pl-8 md:pt-96 pb-16"
+      className="relative h-full md:h-screen min-h-[600px] flex items-center justify-start overflow-hidden pl-8 mpt-16 md:pt-96 pb-16"
       style={{
         marginTop: "1rem",
         backgroundImage: `linear-gradient(rgba(15, 44, 89, 0.4), rgba(15, 44, 89, 0.5)), url(${backgroundImage})`,
