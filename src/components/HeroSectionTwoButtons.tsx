@@ -72,6 +72,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             {subtitle}
           </motion.p>
         )}
+
         <motion.div
           className="flex gap-2 flex-wrap jusitfy-start w-full"
           initial={{ opacity: 0, y: 20 }}
@@ -82,7 +83,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             <Button
               className="w-[250px] md:w-auto text-center min-w-[100px]"
               href={buttonLink1}
-              buttonText={"home-hero-cta: " + buttonText1}
+              buttonText={buttonText1}
             >
               {buttonText1}
             </Button>
@@ -91,7 +92,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
             <Button
               className="w-[250px] md:w-auto text-center min-w-[100px]"
               href={buttonLink2}
-              buttonText={"home-hero-cta: " + buttonText2}
+              buttonText={buttonText2}
             >
               {buttonText2}
             </Button>

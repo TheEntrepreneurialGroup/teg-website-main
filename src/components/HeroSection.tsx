@@ -43,7 +43,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         >
           {title}
         </motion.h1>
-
         <motion.p
           className="text-secondary-light text-xl max-w-3xl mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +53,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </motion.p>
 
         {buttonText && buttonLink && (
-          <Button href={buttonLink}>{buttonText}</Button>
+          <Button href={buttonLink} buttonText={buttonText}>
+            {buttonText}
+          </Button>
         )}
       </div>
     </div>
