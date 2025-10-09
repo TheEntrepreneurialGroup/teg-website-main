@@ -106,7 +106,7 @@ const ForStudents: React.FC = () => {
 
       <MemberProcessSection />
 
-      <div className="container-custom max-w-7xl mx-auto px-4 pb-8">
+      <div className="container-custom max-w-7xl mx-auto px-1 md:px-4 pb-8">
         <CallToAction
           title={intl.formatMessage({ id: "student.callToAction.title" })}
           description={intl.formatMessage({
