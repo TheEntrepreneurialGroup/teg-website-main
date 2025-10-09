@@ -82,7 +82,8 @@ const de = {
     "Werden Sie Partner von TEG, um privilegierten Zugang zu einer Elite-Pipeline zukünftiger Unternehmensführer zu erhalten und unserem exklusiven Netzwerk führender Unternehmen beizutreten.",
   "company.callToAction.buttonText": "Partner werden",
 
-  "company.sectionTitle.opportunities.title": "Partnerschaftsmöglichkeiten",
+  "company.sectionTitle.opportunities.title":
+    "Partners\u00ADschafts\u00ADmöglich\u00ADkeiten",
   "company.sectionTitle.opportunities.subtitle":
     "Warum funktioniert die Partnerschaft mit TEG?",
 
@@ -113,23 +114,12 @@ const de = {
 
   // --------- Student Page Texts ---------- //
 
-  /* --- HERO SECTION --- */
   "student.hero.title":
-    "Werde Teil der nächsten Generation Top-Manager, Führungskräfte und B2B-Gründer.",
+    "Werde Teil der nächsten Generation Top-Manager, Führungs\u00ADkräfte und B2B-Gründer.",
   "student.hero.subtitle":
     "Maximal 50 aktive Mitglieder gleichzeitig. 10+ Stunden Arbeitszeit pro Woche. \n Echte Verantwortung und aktive Entwicklung  für Management-Rollen in Konzernen und Mittelstand oder B2B-Gründungen mit Konzernen als ersten Kunden.",
   "student.hero.buttonText": "Mitglied werden",
   "student.hero.buttonLink": "https://tally.so/r/w20dbL",
-
-  /* --- INTRO SECTION --- */
-  "student.intro.title":
-    "TEG ist nicht für jeden. 10+ Stunden Arbeitszeit pro Woche. Echte Verant\u00ADwortung. Verläss\u00ADlichkeit einer Führungs\u00ADkraft.",
-  "student.intro.line.1":
-    "Wenn Du diese Zeit investierst, wird es Dein Leben verändern.",
-  "student.intro.line.3":
-    "300+ Alumnis, darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen.",
-  "student.intro.line.2":
-    "1986 gegründet von BMW, Roland Berger, BCG, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
 
   "student.maps.title": "Hier sind wir Zuhause",
   "student.maps.description":
@@ -150,7 +140,7 @@ const de = {
 
   "student.cardText2.imageAlt": "TEG office meeting",
   "student.cardText2.title":
-    "Unternehmerisch und wirtschaftlich Denken lernen in der Praxis",
+    "Unterneh\u00ADmerisch und wirtschaftlich Denken lernen in der Praxis",
   "student.cardText2.subtitle":
     'Unser Motto: "Learn to run a business, by running TEG like a business".',
 

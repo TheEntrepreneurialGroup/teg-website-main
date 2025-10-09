@@ -57,7 +57,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <Button
-          className="w-[250px] md:w-auto text-center min-w-[100px]"
+          className="max-w-[250px] md:w-auto text-center min-w-[100px]"
           href={buttonLink}
           buttonText={"home-cta: " + buttonText}
         >
