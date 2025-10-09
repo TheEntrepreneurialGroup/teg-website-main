@@ -113,17 +113,9 @@ const en = {
   "student.hero.title":
     "Become a Leader. Shape the Future of Germany's Economy.",
   "student.hero.subtitle":
-    "Join a community of up to 50 high-achieving students preparing for leadership roles through real responsibility, practical experience, and mentoring. 39 years of alumni success prove what you can achieve.",
+    "Join a community of up to 50 high-achieving students preparing for leadership roles through real responsib\u00ADility, practical experience, and mentoring. 39 years of alumni success prove what you can achieve.",
   "student.hero.buttonText": "Apply Now",
   "student.hero.buttonLink": "https://tally.so/r/meJ1qx",
-
-  "student.intro.title":
-    "TEG is not for everyone. 10+ hours of work per week. Real respon\u00ADsibility. Relia\u00ADbility of a leader.",
-  "student.intro.line.1": "If you invest this time, it will change your life.",
-  "student.intro.line.2":
-    "300+ alumni, including 41 corporate executives, 40 SME executives, and 15 founders of successful companies.",
-  "student.intro.line.3":
-    "Founded in 1986 by BMW, Roland Berger, BCG, KPMG, Siemens, and more, TEG is now one of the most renowned talent incubators in the German-speaking world.",
 
   "student.maps.title": "This is where we belong",
   "student.maps.description":

@@ -26,8 +26,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="container-custom flex justify-between items-center">
-        <Link to="/" className="flex items-center">
+      <div className="container-custom flex justify-between items-center w-full p-2">
+        <Link to="/" className="flex items-center p-0">
           <Logo />
         </Link>
 
@@ -100,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
 
         {/* Mobile Menu Button */}
         <button
-          className={`md:hidden ${
+          className={`md:hidden h-full aspect-square ml-auto ${
             mobileMenuOpen ? "text-black" : "text-white"
           } z-50`}
           onClick={toggleMobileMenu}
