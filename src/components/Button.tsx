@@ -28,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
     transition={{ duration: 0.6, delay: 0.6 }}
     whileTap={{ scale: 0.97 }}
     onClick={(e) => {
-      if (!!buttonText && !!href && !!onClick) {
+      if (!!buttonText && !!href) {
         trackButtonClick(buttonText, href);
         if (onClick) onClick(e);
       }
