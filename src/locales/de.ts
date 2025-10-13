@@ -44,11 +44,11 @@ const de = {
   "home.callToAction2.buttonText": "TEG für Studierende",
   "home.callToAction2.buttonLink": "/for-students",
 
-  "home.partners.title": "Unsere Gründer",
+  "home.partners.title": "Unsere Gründer-Firmen",
   "home.partners.description":
     "1986 gegründet von BMW, BCG und Roland Berger, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
 
-  "home.alumnis.title": "Alumni",
+  "home.alumnis.title": "Unsere Absolventen zeigen was für Dich möglich ist",
   "home.alumnis.description":
     "300+ Alumnis, jede:r Dritte Top-Management. Darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen.",
 
