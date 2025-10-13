@@ -10,7 +10,6 @@ import CardText from "../components/sections/CardText";
 import MemberProcessSection from "../components/sections/MemberProcessSection";
 import ApplicationPipelineSection from "../components/sections/ApplicationPipelineSection";
 import PyramideSection from "../components/sections/PyramideSection";
-import TextComponent from "../components/TextComponent";
 import CertificatesSection from "../components/sections/CertificateSection";
 
 const ForStudents: React.FC = () => {
