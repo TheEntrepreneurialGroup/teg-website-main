@@ -20,8 +20,7 @@ export default function LogoSection({
   return (
     <section className="p-2 sm:py-6 md:py-10 lg:py-16 bg-gray-100">
       <div className="container-custom">
-        {/* Centered Title */}
-        <div className="text-center">
+        <div className="text-left">
           <SectionTitle title={title} />
         </div>
 
@@ -32,7 +31,7 @@ export default function LogoSection({
           ))}
         </div>
         {/* Text under the logos */}
-        <p className="mt-6 text-lg text-center text-black">{description}</p>
+        <p className="mt-6 text-lg text-left text-black">{description}</p>
       </div>
     </section>
   );
