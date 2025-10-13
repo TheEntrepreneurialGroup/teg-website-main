@@ -1,6 +1,5 @@
 import React from "react";
 import { useIntl } from "react-intl";
-import HeroSection from "../components/HeroSection";
 import CallToAction from "../components/CallToAction";
 import ContactCard from "../components/ContactCard";
 import GoogleMaps from "../components/GoogleMaps";
@@ -11,9 +10,23 @@ import MemberProcessSection from "../components/sections/MemberProcessSection";
 import ApplicationPipelineSection from "../components/sections/ApplicationPipelineSection";
 import PyramideSection from "../components/sections/PyramideSection";
 import CertificatesSection from "../components/sections/CertificateSection";
+import HeroSectionStudentsDesktop from "../components/sections/HeroSectionStudentsDesktop";
+import HeroSectionStudentsMobile from "../components/sections/HeroSectionStudentsMobile";
+
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = React.useState(false);
+  React.useEffect(() => {
+    const handler = () => setIsDesktop(window.innerWidth >= 640); // sm breakpoint
+    handler();
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+  return isDesktop;
+};
 
 const ForStudents: React.FC = () => {
   const intl = useIntl();
+  const isDesktop = useIsDesktop();
 
   const contactPerson = {
     name: intl.formatMessage({ id: "student.contact.directorName" }),
@@ -25,17 +38,12 @@ const ForStudents: React.FC = () => {
 
   return (
     <div>
-      {/*<HeroSectionStudents></HeroSectionStudents>*/}
-      {/* --- Hero Section --- */}
-      <HeroSection
-        title={intl.formatMessage({ id: "student.hero.title" })}
-        subtitle={intl.formatMessage({ id: "student.hero.subtitle" })}
-        buttonText={intl.formatMessage({ id: "student.hero.buttonText" })}
-        buttonLink={intl.formatMessage({ id: "student.hero.buttonLink" })}
-        backgroundImage="/for_students.jpg"
-        backgroundSize="cover"
-        backgroundPosition="center top"
-      />
+      {isDesktop ? (
+      <HeroSectionStudentsDesktop />
+      ) : (
+      <HeroSectionStudentsMobile />
+      )
+      }
       <div className="max-w-7xl mx-auto">
         {/* Commitment CardText Section */}
         <CardText
