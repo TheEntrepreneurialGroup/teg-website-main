@@ -48,7 +48,7 @@ const en = {
   "home.partners.description":
     "Founded in 1986 by BMW, BCG, Roland Berger, KPMG, Siemens, and many others, TEG is today one of the most renowned talent incubators in the German-speaking region.",
 
-  "home.alumnis.title": "Alumni",
+  "home.alumnis.title": "Our Alumni show what is possible for you",
   "home.alumnis.description":
     "300+ alumni, one in three in top management. Among them 41 corporate executives, 40 medium-sized business executives, and 15 founders of successful companies.",
 
