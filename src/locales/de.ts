@@ -117,7 +117,7 @@ const de = {
   "student.hero.title":
     "Werde Teil der nächsten Generation Top-Manager, Führungs\u00ADkräfte und B2B-Gründer.",
   "student.hero.subtitle":
-    "Maximal 50 aktive Mitglieder gleichzeitig. 10+ Stunden Arbeitszeit pro Woche. \n Echte Verantwortung und aktive Entwicklung  für Management-Rollen in Konzernen und Mittelstand oder B2B-Gründungen mit Konzernen als ersten Kunden.",
+    "Bei uns entwickelst Du die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.hero.buttonText": "Mitglied werden",
   "student.hero.buttonLink": "https://tally.so/r/w20dbL",
 
