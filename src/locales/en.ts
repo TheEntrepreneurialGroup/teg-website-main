@@ -207,6 +207,10 @@ const en = {
   "student.contact.linkedin": "LinkedIn",
   "student.contact.directorTitle": "Director of People & Culture",
   "student.contact.directorName": "Felix Enke",
+
+  "navbar.about": "About Us",
+  "navbar.forCompanies": "For Companies",
+  "navbar.forStudents": "For Students",
 };
 
 export default en;
