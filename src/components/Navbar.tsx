@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import { motion } from "framer-motion";
 import { trackButtonClick } from "../utils/analytics";
+import { useIntl } from "react-intl";
 
 interface NavbarProps {
   scrolled: boolean;
@@ -12,6 +13,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const intl = useIntl();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -47,7 +49,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
             onClick={() => trackButtonClick("About Us", "Navbar")}
             end
           >
-            About Us
+            {intl.formatMessage({
+              id: "navbar.about",
+            })}
           </NavLink>
           <NavLink
             to="/for-companies"
@@ -62,7 +66,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
             }
             onClick={() => trackButtonClick("TEG for Companies", "Navbar")}
           >
-            TEG for Companies
+            {intl.formatMessage({
+              id: "navbar.forCompanies",
+            })}
           </NavLink>
           <NavLink
             to="/for-students"
@@ -77,7 +83,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
             }
             onClick={() => trackButtonClick("TEG for Students", "Navbar")}
           >
-            TEG for Students
+            {intl.formatMessage({
+              id: "navbar.forStudents",
+            })}
           </NavLink>
         </nav>
 
@@ -132,7 +140,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 }}
                 end
               >
-                About Us
+                {intl.formatMessage({
+                  id: "navbar.about",
+                })}
               </NavLink>
               <NavLink
                 to="/for-companies"
@@ -146,7 +156,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                   trackButtonClick("TEG for Companies", "Navbar");
                 }}
               >
-                TEG for Companies
+                {intl.formatMessage({
+                  id: "navbar.forCompanies",
+                })}
               </NavLink>
               <NavLink
                 to="/for-students"
@@ -160,7 +172,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                   trackButtonClick("TEG for Students", "Navbar");
                 }}
               >
-                TEG for Students
+                {intl.formatMessage({
+                  id: "navbar.forStudents",
+                })}
               </NavLink>
             </nav>
           </motion.div>

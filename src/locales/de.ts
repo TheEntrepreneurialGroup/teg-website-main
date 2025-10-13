@@ -209,6 +209,10 @@ const de = {
   "student.contact.linkedin": "LinkedIn",
   "student.contact.directorTitle": "Bereichsleiter People & Culture",
   "student.contact.directorName": "Felix Enke",
+
+  "navbar.about": "Über uns",
+  "navbar.forCompanies": "Für Unternehmen",
+  "navbar.forStudents": "Für Studierende",
 };
 
 export default de;
