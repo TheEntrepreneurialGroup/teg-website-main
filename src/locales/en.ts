@@ -186,7 +186,7 @@ const en = {
   "student.testimonials.author2": "Luis Waller",
   "student.testimonials.quote3":
     "I regularly run marathons because I love challenges and peak performance. That's exactly why I'm at TEG.",
-  "student.testimonials.author3": "Yesiienia Liaskina",
+  "student.testimonials.author3": "Yesieniia Liaskina",
 
   "student.applySection.applyButton": "Apply Now!",
 

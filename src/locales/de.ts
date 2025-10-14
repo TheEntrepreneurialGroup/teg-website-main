@@ -193,7 +193,7 @@ const de = {
   "student.testimonials.author2": "Luis Waller",
   "student.testimonials.quote3":
     "Ich laufe regelmäßig Marathons, weil ich Herausforderungen und Höchstleistungen liebe. Genau deshalb bin ich auch bei TEG.",
-  "student.testimonials.author3": "Yesiienia Liaskina",
+  "student.testimonials.author3": "Yesieniia Liaskina",
 
   "student.callToAction.title":
     "Bist Du bereit, Deine Karriere als Führungskraft zu starten?",

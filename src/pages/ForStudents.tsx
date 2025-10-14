@@ -38,14 +38,12 @@ const ForStudents: React.FC = () => {
 
   return (
     <div>
-      
-      <div className="max-w-7xl mx-auto">
-        {isDesktop ? (
-      <HeroSectionStudentsDesktop />
+      {isDesktop ? (
+        <HeroSectionStudentsDesktop />
       ) : (
-      <HeroSectionStudentsMobile />
-      )
-      }
+        <HeroSectionStudentsMobile />
+      )}
+      <div className="max-w-7xl mx-auto">
         {/* Commitment CardText Section */}
         <CardText
           image="/components-images/teg_alumni.png"
