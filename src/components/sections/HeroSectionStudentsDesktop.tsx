@@ -11,7 +11,7 @@ const HeroSectionStudentsDesktop: React.FC = () => {
   const backgroundImage = "/for_students.jpg";
 
   return (
-    <div className="flex flex-row items-center justify-start p-2">
+    <div className="flex flex-row items-center justify-start p-5">
       <img
         src={backgroundImage}
         alt="Hero Background"
@@ -20,9 +20,7 @@ const HeroSectionStudentsDesktop: React.FC = () => {
 
       <div className="container-custom text-left p-8 w-1/2">
         <h1 className="text-primary font-bold text-2xl">{title}</h1>
-        <p className="text-gray-700 max-w-3xl mb-8">
-          {subtitle}
-        </p>
+        <p className="text-gray-700 max-w-3xl mb-8">{subtitle}</p>
 
         {buttonText && buttonLink && (
           <Button href={buttonLink} buttonText={buttonText}>
