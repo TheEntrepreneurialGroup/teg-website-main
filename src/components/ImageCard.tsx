@@ -1,11 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 interface ImageCardProps {
   imageUrl: string;
   altText: string;
   caption?: string;
-  delay?: number;
   className?: string;
 }
 
@@ -13,7 +11,6 @@ const ImageCard: React.FC<ImageCardProps> = ({
   imageUrl,
   altText,
   caption,
-  delay = 0,
   className,
 }) => {
   const combinedClassName = `relative overflow-hidden card w-full${
@@ -21,13 +18,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
   }`;
 
   return (
-    <motion.div
-      className={combinedClassName}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
-    >
+    <div className={combinedClassName}>
       <img
         src={imageUrl}
         alt={altText}
@@ -39,7 +30,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
           <p className="text-lg leading-6 font-medium">{caption}</p>
         </div>
       )}
-    </motion.div>
+    </div>
   );
 };
 

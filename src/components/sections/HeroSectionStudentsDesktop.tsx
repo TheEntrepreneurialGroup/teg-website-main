@@ -11,14 +11,14 @@ const HeroSectionStudentsDesktop: React.FC = () => {
   const backgroundImage = "/for_students.jpg";
 
   return (
-    <div className="flex flex-row items-center justify-start p-5">
+    <div className="flex flex-row items-center justify-start bg-primary-light/5 pb-5">
       <img
         src={backgroundImage}
         alt="Hero Background"
-        className="object-cover w-3/4"
+        className="object-cover w-2/3"
       />
 
-      <div className="container-custom text-left p-8 w-1/2">
+      <div className="container-custom text-left p-8 w-1/3">
         <h1 className="text-primary font-bold text-2xl">{title}</h1>
         <p className="text-gray-700 max-w-3xl mb-8">{subtitle}</p>
 
