@@ -16,7 +16,7 @@ import HeroSectionStudentsMobile from "../components/sections/HeroSectionStudent
 const useIsDesktop = () => {
   const [isDesktop, setIsDesktop] = React.useState(false);
   React.useEffect(() => {
-    const handler = () => setIsDesktop(window.innerWidth >= 640); // sm breakpoint
+    const handler = () => setIsDesktop(window.innerWidth >= 1024); // sm breakpoint
     handler();
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);
@@ -45,7 +45,6 @@ const ForStudents: React.FC = () => {
       )}
 
       <div className="max-w-7xl mx-auto">
-        <MemberProcessSection />
         {/* Commitment CardText Section */}
         <CardText
           image="/components-images/teg_alumni.png"
@@ -53,6 +52,12 @@ const ForStudents: React.FC = () => {
           title={intl.formatMessage({ id: "student.commitment.title" })}
           subtitle={intl.formatMessage({ id: "student.commitment.subtitle" })}
         />
+
+        <MemberProcessSection />
+
+        <PyramideSection />
+
+        <CertificatesSection />
 
         <ApplicationPipelineSection />
 
@@ -74,10 +79,6 @@ const ForStudents: React.FC = () => {
           title={intl.formatMessage({ id: "home.partners.title" })}
           description={intl.formatMessage({ id: "home.partners.description" })}
         />
-
-        <PyramideSection />
-
-        <CertificatesSection />
 
         <CardText
           image="/welcome-to-teg.jpeg"
