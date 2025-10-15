@@ -86,6 +86,6 @@
   }
 
   .card {
-    @apply bg-secondary rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+    @apply bg-primary-light/5 rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
   }
 }
