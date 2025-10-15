@@ -121,7 +121,7 @@ const de = {
   "student.hero.buttonText": "Mitglied werden",
   "student.hero.buttonLink": "https://tally.so/r/w20dbL",
   "student.commitment.body":
-    "TEG ist ein 3 Semester langes Qualifizierungsprogramm parallel zur Universität für Studierende aller Studiengänge, welches wirtschaftliches und unternehmerisches Denken schult, und optimal auf das Berufsleben vorbereitet.",
+    "TEG ist ein 3 Semester langes Qualifizier\u00ADungspro\u00ADgramm parallel zur Universität für Studierende aller Studiengänge, welches wirtschaft\u00ADliches und unternehmer\u00ADisches Denken schult, und optimal auf das Berufsleben vorbereitet.",
   "student.commitment.down":
     "TEG-Mitglieder erlernen fachliche Kompetenzen deutlich über dem Level eines Berufseinsteigers. Bestätigt durch von Firmen gerne gesehene Zertifikate. Weiterhin werden durch Workshops und Praxis-Projekte Kompetenzen in den Bereichen Projektmanagement, Leadership und Coaching vermittelt.",
 
