@@ -13,7 +13,7 @@ interface CardTextProps {
 const useIsDesktop = () => {
   const [isDesktop, setIsDesktop] = React.useState(false);
   React.useEffect(() => {
-    const handler = () => setIsDesktop(window.innerWidth >= 640); // sm breakpoint
+    const handler = () => setIsDesktop(window.innerWidth >= 768); // md breakpoint
     handler();
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);

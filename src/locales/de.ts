@@ -120,6 +120,10 @@ const de = {
     "Bei uns entwickelst Du die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.hero.buttonText": "Mitglied werden",
   "student.hero.buttonLink": "https://tally.so/r/w20dbL",
+  "student.commitment.body":
+    "TEG ist ein 3 Semester langes Qualifizierungsprogramm parallel zur Universität für Studierende aller Studiengänge, welches wirtschaftliches und unternehmerisches Denken schult, und optimal auf das Berufsleben vorbereitet.",
+  "student.commitment.down":
+    "TEG-Mitglieder erlernen fachliche Kompetenzen deutlich über dem Level eines Berufseinsteigers. Bestätigt durch von Firmen gerne gesehene Zertifikate. Weiterhin werden durch Workshops und Praxis-Projekte Kompetenzen in den Bereichen Projektmanagement, Leadership und Coaching vermittelt.",
 
   "student.maps.title": "Hier sind wir Zuhause",
   "student.maps.description":

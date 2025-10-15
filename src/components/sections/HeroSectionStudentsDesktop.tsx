@@ -9,7 +9,6 @@ const HeroSectionStudentsDesktop: React.FC = () => {
   const buttonText = intl.formatMessage({ id: "student.hero.buttonText" });
   const buttonLink = intl.formatMessage({ id: "student.hero.buttonLink" });
   const backgroundImage = "/forstudent.jpg";
-  const body = intl.formatMessage({ id: "student.hero.body" });
 
   return (
     <div className="flex flex-row items-center justify-start gap-5">
@@ -23,7 +22,7 @@ const HeroSectionStudentsDesktop: React.FC = () => {
         <h1 className="text-primary font-bold text-3xl 2xl:text-4xl">
           {title}
         </h1>
-        <p className="text-gray-700 max-w-3xl mb-8 lg:text-xl">{subtitle}</p>
+        <p className="text-gray-700 max-w-3xl mb-8 text-xl">{subtitle}</p>
 
         {buttonText && buttonLink && (
           <Button href={buttonLink} buttonText={buttonText}>
