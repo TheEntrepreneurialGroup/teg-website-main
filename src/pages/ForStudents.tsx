@@ -43,6 +43,7 @@ const ForStudents: React.FC = () => {
       ) : (
         <HeroSectionStudentsMobile />
       )}
+
       <div className="max-w-7xl mx-auto">
         {/* Commitment CardText Section */}
         <CardText
@@ -51,6 +52,10 @@ const ForStudents: React.FC = () => {
           title={intl.formatMessage({ id: "student.commitment.title" })}
           subtitle={intl.formatMessage({ id: "student.commitment.subtitle" })}
         />
+
+        <ApplicationPipelineSection />
+
+        <MemberProcessSection />
 
         <LogoSection
           images={[
@@ -71,6 +76,10 @@ const ForStudents: React.FC = () => {
           description={intl.formatMessage({ id: "home.partners.description" })}
         />
 
+        <PyramideSection />
+
+        <CertificatesSection />
+
         <CardText
           image="/welcome-to-teg.jpeg"
           imageAlt={intl.formatMessage({ id: "student.cardText.imageAlt" })}
@@ -78,6 +87,7 @@ const ForStudents: React.FC = () => {
           subtitle={intl.formatMessage({ id: "student.cardText.subtitle" })}
           body={intl.formatMessage({ id: "student.cardText.body" })}
         />
+
         <LogoSection
           images={[
             { image: "/logos/airbus.svg", text: "Airbus" },
@@ -102,17 +112,6 @@ const ForStudents: React.FC = () => {
           body={intl.formatMessage({ id: "student.cardText3.body" })}
         />
 
-        <CardText
-          image="/components-images/team-4.jpeg"
-          imageAlt={intl.formatMessage({ id: "student.cardText2.imageAlt" })}
-          title={intl.formatMessage({ id: "student.cardText2.title" })}
-          subtitle={intl.formatMessage({ id: "student.cardText2.subtitle" })}
-        />
-
-        <ApplicationPipelineSection />
-
-        <MemberProcessSection />
-
         <div className="container-custom max-w-7xl mx-auto px-1 md:px-4 pb-8">
           <CallToAction
             title={intl.formatMessage({ id: "student.callToAction.title" })}
@@ -129,11 +128,14 @@ const ForStudents: React.FC = () => {
           />
         </div>
 
+        <CardText
+          image="/components-images/team-4.jpeg"
+          imageAlt={intl.formatMessage({ id: "student.cardText2.imageAlt" })}
+          title={intl.formatMessage({ id: "student.cardText2.title" })}
+          subtitle={intl.formatMessage({ id: "student.cardText2.subtitle" })}
+        />
+
         <GoogleMaps />
-
-        <PyramideSection />
-
-        <CertificatesSection />
 
         <Testimonials />
 
