@@ -73,19 +73,20 @@ const ForCompanies: React.FC = () => {
         </div>
       </section>
 
-      <CallToAction
-        title={intl.formatMessage({ id: "company.callToAction.title" })}
-        description={intl.formatMessage({
-          id: "company.callToAction.description",
-        })}
-        buttonText={intl.formatMessage({
-          id: "company.callToAction.buttonText",
-        })}
-        buttonLink="#contact"
-        variant="light"
-      />
-
-      <section id="partnerships" className="py-20 bg-secondary-light">
+      <div className="flex flex-col items-center">
+        <CallToAction
+          title={intl.formatMessage({ id: "company.callToAction.title" })}
+          description={intl.formatMessage({
+            id: "company.callToAction.description",
+          })}
+          buttonText={intl.formatMessage({
+            id: "company.callToAction.buttonText",
+          })}
+          buttonLink="#contact"
+          variant="light"
+        />
+      </div>
+      <section id="partnerships" className="py-20">
         <div className="container-custom">
           <SectionTitle
             title={intl.formatMessage({
@@ -96,8 +97,8 @@ const ForCompanies: React.FC = () => {
             })}
           />
 
-          <div className="space-y-6 mb-8 w-full max-w-4xl text-left">
-            <div className="card p-6">
+          <div className="flex flex-wrap items-center gap-6 mb-8 w-full text-left">
+            <div className="card p-6  max-w-4xl">
               <h4 className="font-semibold text-xl text-primary mb-2">
                 {intl.formatMessage({ id: "company.cards.studentRun.title" })}
               </h4>
@@ -107,7 +108,7 @@ const ForCompanies: React.FC = () => {
                 })}
               </p>
             </div>
-            <div className="card p-6">
+            <div className="card p-6  max-w-4xl">
               <h4 className="font-semibold text-xl text-primary mb-2">
                 {intl.formatMessage({
                   id: "company.cards.futureLeaders.title",
@@ -119,7 +120,7 @@ const ForCompanies: React.FC = () => {
                 })}
               </p>
             </div>
-            <div className="card p-6">
+            <div className="card p-6  max-w-4xl">
               <h4 className="font-semibold text-xl text-primary mb-2">
                 {intl.formatMessage({ id: "company.cards.internships.title" })}
               </h4>
@@ -129,7 +130,7 @@ const ForCompanies: React.FC = () => {
                 })}
               </p>
             </div>
-            <div className="card p-6">
+            <div className="card p-6  max-w-4xl">
               <h4 className="font-semibold text-xl text-primary mb-2">
                 {intl.formatMessage({ id: "company.cards.hireLeaders.title" })}
               </h4>
