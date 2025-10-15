@@ -57,7 +57,7 @@ export const Home: React.FC = () => {
         backgroundImage="/TEG_Hero_Home.jpg"
       />
 
-      <section className="py-20 bg-secondary-light" ref={alumniRef}>
+      <section className="py-20 bg-primary-light/5" ref={alumniRef}>
         <div className="container-custom">
           <SectionTitle
             title={intl.formatMessage({ id: "home.alumni.title" })}
