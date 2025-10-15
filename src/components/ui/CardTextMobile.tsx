@@ -14,7 +14,7 @@ function useShouldStack(subtitle: string) {
 
   useEffect(() => {
     const check = () => {
-      const isSmall = window.innerWidth < 350;
+      const isSmall = window.innerWidth < 400;
       const wordCount = subtitle.trim().split(/\s+/).length;
       setShouldStack(isSmall && wordCount > 10);
       console.log(isSmall);
