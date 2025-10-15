@@ -18,7 +18,7 @@ export default function LogoSection({
   description,
 }: LogoSectionProps) {
   return (
-    <section className="py-4 sm:py-6 md:py-10 lg:py-16 bg-gray-100">
+    <section className="py-4 sm:py-6 md:py-10 lg:py-16 bg-primary-light/5">
       <div className="container-custom">
         <div className="text-left">
           <SectionTitle title={title} />
