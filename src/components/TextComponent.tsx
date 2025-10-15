@@ -16,7 +16,7 @@ export default function TextComponent({
   return (
     <section
       className={
-        `bg-secondary-light p-2 sm:p-6 md:p-7 border-dashed ` +
+        `bg-primary-light/5 p-2 sm:p-6 md:p-7 border-dashed ` +
         (borderRight
           ? "border-r-4 border-primary"
           : "border-l-4 border-primary")
