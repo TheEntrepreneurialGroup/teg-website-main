@@ -4,7 +4,7 @@ import { useIntl } from "react-intl";
 export default function GoogleMaps() {
   const intl = useIntl();
   return (
-    <section className="flex justify-center bg-primary-light/5">
+    <section className="flex justify-center ">
       <div className="flex flex-col sm:flex-row items-center w-full max-w-7xl p-2 sm:p-8 md:p-14 lg:p-20 justify-center sm:justify-start gap-4 sm:gap-6 md:gap-14 sm:items-start">
         {/* Maps Section */}
         <div className="flex-3 h-[250px] w-full min-w-[250px] items-start">

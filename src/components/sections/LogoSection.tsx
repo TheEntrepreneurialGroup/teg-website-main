@@ -18,14 +18,14 @@ export default function LogoSection({
   description,
 }: LogoSectionProps) {
   return (
-    <section className="py-4 sm:py-6 md:py-10 lg:py-16 bg-primary-light/5">
+    <section className="py-4 sm:py-6 md:py-10 lg:py-16">
       <div className="container-custom">
         <div className="text-left">
           <SectionTitle title={title} />
         </div>
 
         {/* Logos */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 place-items-center">
+        <div className="mt-8 grid grid-cols-3 md:grid-cols-6 gap-6 place-items-center">
           {images.map(({ image, text = "Logo" }, idx) => (
             <Badge key={idx} image={image} text={text} />
           ))}

@@ -8,7 +8,7 @@ const HeroSectionStudentsMobile: React.FC = () => {
   const subtitle = intl.formatMessage({ id: "student.hero.subtitle" });
   const buttonText = intl.formatMessage({ id: "student.hero.buttonText" });
   const buttonLink = intl.formatMessage({ id: "student.hero.buttonLink" });
-  const backgroundImage = "/for_students.jpg";
+  const backgroundImage = "/forstudent.jpg";
 
   return (
     <div className="flex flex-col items-center justify-start">
@@ -20,9 +20,7 @@ const HeroSectionStudentsMobile: React.FC = () => {
 
       <div className="container-custom text-left p-8">
         <h1 className="text-primary font-bold text-2xl">{title}</h1>
-        <p className="text-gray-700 max-w-3xl mb-8">
-          {subtitle}
-        </p>
+        <p className="text-gray-700 max-w-3xl mb-8">{subtitle}</p>
 
         {buttonText && buttonLink && (
           <Button href={buttonLink} buttonText={buttonText}>
