@@ -68,22 +68,18 @@ export const Home: React.FC = () => {
             <StatCard
               value={intl.formatMessage({ id: "home.alumni.stat1.value" })}
               label={intl.formatMessage({ id: "home.alumni.stat1.label" })}
-              delay={0.1}
             />
             <StatCard
               value={intl.formatMessage({ id: "home.alumni.stat2.value" })}
               label={intl.formatMessage({ id: "home.alumni.stat2.label" })}
-              delay={0.2}
             />
             <StatCard
               value={intl.formatMessage({ id: "home.alumni.stat3.value" })}
               label={intl.formatMessage({ id: "home.alumni.stat3.label" })}
-              delay={0.3}
             />
             <StatCard
               value={intl.formatMessage({ id: "home.alumni.stat4.value" })}
               label={intl.formatMessage({ id: "home.alumni.stat4.label" })}
-              delay={0.4}
             />
           </div>
         </div>
@@ -121,7 +117,6 @@ export const Home: React.FC = () => {
                 id: "home.legacy.feature1.description",
               })}
               icon={<TrendingUp size={40} />}
-              delay={0.3}
             />
             <FeatureCard
               title={intl.formatMessage({ id: "home.legacy.feature2.title" })}
@@ -129,7 +124,6 @@ export const Home: React.FC = () => {
                 id: "home.legacy.feature2.description",
               })}
               icon={<Building size={40} />}
-              delay={0.1}
             />
           </div>
         </div>

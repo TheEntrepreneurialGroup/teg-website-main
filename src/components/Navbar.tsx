@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-import { motion } from "framer-motion";
+
 import { trackButtonClick } from "../utils/analytics";
 import { useIntl } from "react-intl";
 
@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
   };
 
   return (
-    <motion.header
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary-dark ${
         scrolled ? "shadow-md" : "md:py-2"
       }`}
@@ -119,7 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <motion.div
+          <div
             className="fixed inset-0 bg-white flex flex-col items-start justify-center z-40 p-6"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -177,10 +177,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 })}
               </NavLink>
             </nav>
-          </motion.div>
+          </div>
         )}
       </div>
-    </motion.header>
+    </header>
   );
 };
 

@@ -1,31 +1,26 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { DivideIcon as LucideIcon } from 'lucide-react';
+import React from "react";
+import { DivideIcon as LucideIcon } from "lucide-react";
 
 interface FeatureCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
-  delay?: number;
   className?: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, delay = 0, className }) => {
-    const combinedClassName = `card p-6 ${className || ""}`;  
+const FeatureCard: React.FC<FeatureCardProps> = ({
+  title,
+  description,
+  icon,
+  className,
+}) => {
+  const combinedClassName = `card p-6 bg-primary-light/5${className || ""}`;
   return (
-    <motion.div 
-      className={combinedClassName}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
-    >
-      <div className="text-primary-light mb-4">
-        {icon}
-      </div>
+    <div className={combinedClassName}>
+      <div className="text-primary-light mb-4">{icon}</div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
       <p className="text-gray-600">{description}</p>
-    </motion.div>
+    </div>
   );
 };
 
