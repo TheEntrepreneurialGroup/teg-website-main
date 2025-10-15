@@ -14,7 +14,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
   className,
 }) => {
-  const combinedClassName = `card p-6 bg-primary-light/5${className || ""}`;
+  const combinedClassName = `card p-6 bg-primary-light/5 ${className || ""}`;
   return (
     <div className={combinedClassName}>
       <div className="text-primary-light mb-4">{icon}</div>

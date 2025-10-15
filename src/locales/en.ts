@@ -126,6 +126,10 @@ const en = {
     "TEG is not for everyone: 10+ hours of work per week, consistently over 3 semesters",
   "student.commitment.subtitle":
     "If you invest this time, it will change your life.",
+  "student.commitment.body":
+    "TEG is a three-semester qualification programme run in parallel with university studies for students of all disciplines, which trains them in economic and entrepreneurial thinking and prepares them optimally for professional life.",
+  "student.commitment.down":
+    "TEG members acquire professional skills that are significantly above the level of a career starter. This is confirmed by certificates that are highly regarded by companies. Furthermore, workshops and practical projects teach skills in the areas of project management, leadership and coaching.",
 
   "student.cardText.imageAlt": "Welcome at TEG Office",
   "student.cardText.title":

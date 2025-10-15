@@ -50,7 +50,8 @@ const ForStudents: React.FC = () => {
           image="/components-images/teg_alumni.png"
           imageAlt={intl.formatMessage({ id: "student.commitment.imageAlt" })}
           title={intl.formatMessage({ id: "student.commitment.title" })}
-          subtitle={intl.formatMessage({ id: "student.commitment.subtitle" })}
+          subtitle={intl.formatMessage({ id: "student.commitment.body" })}
+          body={intl.formatMessage({ id: "student.commitment.down" })}
         />
 
         <MemberProcessSection />
