@@ -15,9 +15,9 @@ const CardTextDesktop: React.FC<CardTextProps> = ({
   subtitle,
   body,
 }) => (
-  <section className="flex flex-col  items-center">
-    <div className="flex flex-row max-w-7xl items-start bg-white md:p-14 lg:p-20 sm:gap-4 gap-8">
-      <div className="flex-shrink-0 w-1/2 h-[350px]">
+  <section className="flex flex-col items-center max-w-7xl md:p-14 lg:p-20 gap-5">
+    <div className="flex flex-row  items-stretch bg-white  sm:gap-4 gap-8">
+      <div className="flex-shrink-0 w-1/2 h-auto min-h-[350px] max-h-[450px]">
         <img
           src={image}
           alt={imageAlt}
