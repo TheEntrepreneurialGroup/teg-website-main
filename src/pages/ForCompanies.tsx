@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { UserSearch, Hammer, ListChecks } from "lucide-react";
 import { useIntl } from "react-intl";
 
@@ -51,7 +50,6 @@ const ForCompanies: React.FC = () => {
                 id: "company.features.rightCharacteristics.description",
               })}
               icon={<UserSearch size={40} />}
-              delay={0.1}
             />
             <FeatureCard
               title={intl.formatMessage({
@@ -61,7 +59,6 @@ const ForCompanies: React.FC = () => {
                 id: "company.features.preparation.description",
               })}
               icon={<Hammer size={40} />}
-              delay={0.2}
             />
             <FeatureCard
               title={intl.formatMessage({
@@ -71,7 +68,6 @@ const ForCompanies: React.FC = () => {
                 id: "company.features.identification.description",
               })}
               icon={<ListChecks size={40} />}
-              delay={0.3}
             />
           </div>
         </div>
@@ -101,12 +97,7 @@ const ForCompanies: React.FC = () => {
           />
 
           <div className="space-y-6 mb-8 w-full max-w-4xl text-left">
-            <motion.div
-              className="card p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-            >
+            <div className="card p-6">
               <h4 className="font-semibold text-xl text-primary mb-2">
                 {intl.formatMessage({ id: "company.cards.studentRun.title" })}
               </h4>
@@ -115,13 +106,8 @@ const ForCompanies: React.FC = () => {
                   id: "company.cards.studentRun.description",
                 })}
               </p>
-            </motion.div>
-            <motion.div
-              className="card p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+            </div>
+            <div className="card p-6">
               <h4 className="font-semibold text-xl text-primary mb-2">
                 {intl.formatMessage({
                   id: "company.cards.futureLeaders.title",
@@ -132,13 +118,8 @@ const ForCompanies: React.FC = () => {
                   id: "company.cards.futureLeaders.description",
                 })}
               </p>
-            </motion.div>
-            <motion.div
-              className="card p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
+            </div>
+            <div className="card p-6">
               <h4 className="font-semibold text-xl text-primary mb-2">
                 {intl.formatMessage({ id: "company.cards.internships.title" })}
               </h4>
@@ -147,13 +128,8 @@ const ForCompanies: React.FC = () => {
                   id: "company.cards.internships.description",
                 })}
               </p>
-            </motion.div>
-            <motion.div
-              className="card p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
+            </div>
+            <div className="card p-6">
               <h4 className="font-semibold text-xl text-primary mb-2">
                 {intl.formatMessage({ id: "company.cards.hireLeaders.title" })}
               </h4>
@@ -162,7 +138,7 @@ const ForCompanies: React.FC = () => {
                   id: "company.cards.hireLeaders.description",
                 })}
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

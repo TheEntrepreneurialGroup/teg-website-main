@@ -23,10 +23,6 @@ const Button: React.FC<ButtonProps> = ({
     //can override the parameters,
     href={href}
     className={clsx("btn btn-accent", className)}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: 0.6 }}
-    whileTap={{ scale: 0.97 }}
     onClick={(e) => {
       if (!!buttonText && !!href) {
         trackButtonClick(buttonText, href);

@@ -45,6 +45,7 @@ const ForStudents: React.FC = () => {
       )}
 
       <div className="max-w-7xl mx-auto">
+        <MemberProcessSection />
         {/* Commitment CardText Section */}
         <CardText
           image="/components-images/teg_alumni.png"
@@ -54,8 +55,6 @@ const ForStudents: React.FC = () => {
         />
 
         <ApplicationPipelineSection />
-
-        <MemberProcessSection />
 
         <LogoSection
           images={[

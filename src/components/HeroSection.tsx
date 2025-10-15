@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+
 import Button from "./Button";
 import { trackButtonClick } from "../utils/analytics";
 
@@ -35,22 +35,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-primary/60"></div>
 
       <div className="container-custom z-10 text-left pl-8">
-        <motion.h1
-          className="text-white font-bold "
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {title}
-        </motion.h1>
-        <motion.p
-          className="text-secondary-light text-xl max-w-3xl mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
+        <h1 className="text-white font-bold">{title}</h1>
+        <p className="text-secondary-light text-xl max-w-3xl mb-8">
           {subtitle}
-        </motion.p>
+        </p>
 
         {buttonText && buttonLink && (
           <Button href={buttonLink} buttonText={buttonText}>

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+
 import Button from "./Button";
 
 interface HeroSectionTwoButtonsProps {
@@ -44,41 +44,15 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
 
       <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-primary/60"></div>
       <div className="container-custom z-10 text-left md:pl-8 py-12">
-        <motion.h1
-          className="text-white font-bold break-words"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {title}
-        </motion.h1>
-        {since && (
-          <motion.h1
-            className="text-white mb-6 font-normal"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            {since}
-          </motion.h1>
-        )}
+        <h1 className="text-white font-bold break-words">{title}</h1>
+        {since && <h1 className="text-white mb-6 font-normal">{since}</h1>}
         {subtitle != "home.hero.subtitle" && subtitle != " " && (
-          <motion.p
-            className="text-secondary-light text-xl max-w-4xl mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          <p className="text-secondary-light text-xl max-w-4xl mb-8">
             {subtitle}
-          </motion.p>
+          </p>
         )}
 
-        <motion.div
-          className="flex gap-2 flex-wrap jusitfy-start w-full"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
+        <div className="flex gap-2 flex-wrap jusitfy-start w-full">
           {buttonText1 && buttonLink1 && (
             <Button
               className="w-[250px] md:w-auto text-center min-w-[100px]"
@@ -97,7 +71,7 @@ const HeroSectionTwoButtons: React.FC<HeroSectionTwoButtonsProps> = ({
               {buttonText2}
             </Button>
           )}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

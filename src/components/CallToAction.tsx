@@ -1,7 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
 import Button from "./Button";
-import { trackButtonClick } from "../utils/analytics";
 
 interface CallToActionProps {
   title: string;
@@ -26,36 +24,23 @@ const CallToAction: React.FC<CallToActionProps> = ({
 
   const content = (
     <>
-      <motion.h2
+      <h2
         className={`text-3xl md:text-4xl font-bold mb-4 ${
           isLight ? "text-primary" : "text-white"
         }`}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
       >
         {title}
-      </motion.h2>
+      </h2>
 
-      <motion.p
+      <p
         className={`text-lg mb-8 ${
           isLight ? "text-gray-600" : "text-secondary-light"
         }`}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
       >
         {description}
-      </motion.p>
+      </p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
+      <div>
         <Button
           className="max-w-[250px] md:w-auto text-center min-w-[100px]"
           href={buttonLink}
@@ -63,7 +48,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
         >
           {buttonText}
         </Button>
-      </motion.div>
+      </div>
     </>
   );
 
