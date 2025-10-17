@@ -121,9 +121,9 @@ const de = {
   "student.hero.buttonText": "Mitglied werden",
   "student.hero.buttonLink": "https://tally.so/r/w20dbL",
   "student.commitment.body":
-    "TEG ist ein 3 Semester langes Qualifizier\u00ADungspro\u00ADgramm parallel zur Universität für Studierende aller Studiengänge, welches wirtschaft\u00ADliches und unternehmer\u00ADisches Denken schult, und optimal auf das Berufsleben vorbereitet.",
+    "Deine Mitgliedschaft bei TEG beginnt mit einer 3 Semester langen Grundausbildung, diese ist ein Qualifizier\u00ADungspro\u00ADgramm parallel zur Universität für Studierende aller Studiengänge, welches wirtschaft\u00ADliches und unternehmer\u00ADisches Denken schult, und optimal auf das Berufsleben vorbereitet. Nach Abschluss bist du Dein Leben lang Teil unseres TEG-Alumni-Netzwerks.",
   "student.commitment.down":
-    "TEG-Mitglieder erlernen fachliche Kompetenzen deutlich über dem Level eines Berufseinsteigers. Bestätigt durch von Firmen gerne gesehene Zertifikate. Weiterhin werden durch Workshops und Praxis-Projekte Kompetenzen in den Bereichen Projektmanagement, Leadership und Coaching vermittelt.",
+    "Während der Grundausbildung erlernen TEG-Mitglieder fachliche Kompetenzen deutlich über dem Level eines Berufseinsteigers. Bestätigt durch von Firmen gerne gesehene Zertifikate. Weiterhin werden durch Workshops und Praxis-Projekte Kompetenzen in den Bereichen Projektmanagement, Leadership und Coaching vermittelt. Diese Fähigkeiten erlauben eine steile Fach- und Führungskarriere bis hin in die Geschäftsführung von Unternehmen oder befähigen zur erfolgreichen eigenen Gründung.",
 
   "student.maps.title": "Hier sind wir Zuhause",
   "student.maps.description":
