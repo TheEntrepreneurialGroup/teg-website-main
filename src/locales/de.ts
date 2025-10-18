@@ -117,7 +117,7 @@ const de = {
   "student.hero.title":
     "Werde Teil der nächsten Generation Top-Manager, Führungs\u00ADkräfte und B2B-Gründer.",
   "student.hero.subtitle":
-    "Bei uns entwickelst Du die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
+    "Bei uns entwickelst Du schon während dem Studium die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.hero.buttonText": "Mitglied werden",
   "student.hero.buttonLink": "https://tally.so/r/w20dbL",
   "student.commitment.body":
