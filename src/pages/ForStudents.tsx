@@ -46,13 +46,25 @@ const ForStudents: React.FC = () => {
 
       <div className="max-w-7xl mx-auto">
         <section className="flex justify-center">
+          <div className="flex flex-col items-start w-full max-w-7xl p-2 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14 text-lg md:text-xl text-gray-700">
+            Werde Mitglied bei Deutschlands ältestem studentischen Business-Netzwerk für Unternehmertum und Leadership. Wir sind die einzige von Studierenden geführte Organisation in München mit 30% C-level/Top-Management-Quote unter den Absolventen und einem eigenen Office am englischen Garten. Bewerbungen sind derzeit offen bis zum 25.10. für Studierende aller Fachrichtungen und Hochschulen. Aufgrund eines rollenden Auswahlverfahrens werden frühzeitige Bewerbungen stärker berücksichtigt.
+          </div>
+        </section>
+      </div>
+
+      <div className="max-w-7xl mx-auto">
+        <section className="flex justify-center">
           <div className="flex flex-col items-start w-full max-w-7xl p-2 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary">
               Lerne uns kennen
             </h3>
             <ul className="list-disc pl-5 text-lg md:text-xl text-gray-700 text-left max-w-4xl">
               <li>
-                07.10. (Abends) Fireside-Chat "Wie wird man eine Führungskraft?": Gemeinsam mit Atreus (Interimsmanagement) und Heidrick & Struggles (C-Level-Vermittlung) sprechen wir darüber, wie Karrieren in die Chefetage verlaufen - und was man schon früh dafür mitbringen sollte. ~{" "}
+                07.10. (Abends) Fireside-Chat "Wie wird man eine
+                Führungskraft?": Gemeinsam mit Atreus (Interimsmanagement) und
+                Heidrick & Struggles (C-Level-Vermittlung) sprechen wir darüber,
+                wie Karrieren in die Chefetage verlaufen - und was man schon
+                früh dafür mitbringen sollte. ~{" "}
                 <a href="https://luma.com/jsc8kfna">
                   https://luma.com/jsc8kfna
                 </a>
@@ -68,9 +80,7 @@ const ForStudents: React.FC = () => {
               </li>
               <li>
                 WhatsApp-Gruppe für Events und Bewerbungsfragen:{" "}
-                <a href="https://lnkd.in/eCbxCrMx">
-                  https://lnkd.in/eCbxCrMx
-                </a>
+                <a href="https://lnkd.in/eCbxCrMx">https://lnkd.in/eCbxCrMx</a>
               </li>
             </ul>
           </div>
