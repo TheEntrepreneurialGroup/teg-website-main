@@ -53,8 +53,7 @@ const Imprint: React.FC = () => {
                 Board of Directors authorized to represent:
               </h3>
               <p className="mb-1">
-                Ana Goldbeck, Jonathan Babelotzky, Felix Enke, Leonard Hoffmann,
-                Simon Reyher, Lucas Zierenberg
+                Jonathan Babelotzky, Felix Enke, Lucas Zierenberg, Ahmed Kaddour
               </p>
             </div>
 
