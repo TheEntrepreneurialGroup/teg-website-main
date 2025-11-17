@@ -45,38 +45,6 @@ const ForStudents: React.FC = () => {
       )}
 
       <div className="max-w-7xl mx-auto">
-        <section className="flex justify-center">
-          <div className="flex flex-col items-start w-full max-w-7xl p-2 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14">
-            <h3 className="text-2xl sm:text-3xl font-bold text-primary">
-              Lerne uns kennen
-            </h3>
-            <ul className="list-disc pl-5 text-lg md:text-xl text-gray-700 text-left max-w-4xl">
-              <li>
-                07.10. (Abends) Fireside-Chat "Wie wird man eine
-                Führungskraft?": Gemeinsam mit Atreus (Interimsmanagement) und
-                Heidrick & Struggles (C-Level-Vermittlung) sprechen wir darüber,
-                wie Karrieren in die Chefetage verlaufen - und was man schon
-                früh dafür mitbringen sollte. ~{" "}
-                <a href="https://luma.com/jsc8kfna">
-                  https://luma.com/jsc8kfna
-                </a>
-              </li>
-              <li>
-                24.10. (Abends) TEG-Talk: Ulrich Beck, TEG-Alumni und 11 Jahre
-                Vizepräsident Finance der Airbus Group + 3 weitere inspirierende
-                Speaker erzählen über Karrieren an die Spitze der deutschen
-                Wirtschaft, sowie erfolgreiche Gründungen ~{" "}
-                <a href="https://luma.com/by6x0unh">
-                  https://luma.com/by6x0unh
-                </a>
-              </li>
-              <li>
-                WhatsApp-Gruppe für Events und Bewerbungsfragen:{" "}
-                <a href="https://lnkd.in/eCbxCrMx">https://lnkd.in/eCbxCrMx</a>
-              </li>
-            </ul>
-          </div>
-        </section>
 
         {/* Commitment CardText Section */}
         <CardText
