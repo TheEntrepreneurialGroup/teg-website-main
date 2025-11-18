@@ -172,7 +172,7 @@ const PrivacyPolicy: React.FC = () => {
               Oliver Fratczak, Maximilian Reuter
             </p>
             <p>
-              <strong>E-Mail:</strong> info@teg-ev.de
+              <strong>E-Mail:</strong> info+website@teg-ev.de
             </p>
             <p>
               Verantwortliche Stelle ist die natürliche oder juristische Person,
