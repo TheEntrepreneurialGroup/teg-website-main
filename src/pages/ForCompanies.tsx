@@ -15,7 +15,7 @@ const ForCompanies: React.FC = () => {
     name: intl.formatMessage({ id: "company.contact.directorName" }),
     title: intl.formatMessage({ id: "company.contact.directorTitle" }),
     imageUrl: "/jonathan.jpg",
-    email: "info@teg-ev.de",
+    email: "info+website@teg-ev.de",
     linkedinUrl: "https://www.linkedin.com/in/jonathan-babelotzky/",
   };
 
