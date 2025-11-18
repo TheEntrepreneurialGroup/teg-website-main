@@ -61,7 +61,7 @@ const de = {
   "company.sectionTitle.partnerships.title":
     "Partner werden, um Zugang zur nächsten Generation an Führungskräften zu erhalten",
   "company.sectionTitle.partnerships.subtitle":
-    "Seit 1986 entwickeln wir Talente, die heute Unternehmen in Deutschland und Europa prägen. Unsere Alumni stehen für Exzellenz:300+ Absolvent:innen, darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen. Gegründet von BMW, Roland Berger, BCG, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
+    "Seit 1986 entwickeln wir Talente, die heute Unternehmen in Deutschland und Europa prägen. Unsere Alumni stehen für Exzellenz: 300+ Absolvent:innen, darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen. Gegründet von BMW, Roland Berger, BCG, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
 
   "company.features.rightCharacteristics.title":
     "Selektion - Die richtigen Persönlichkeitsmerkmale",
