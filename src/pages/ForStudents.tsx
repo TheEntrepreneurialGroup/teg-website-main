@@ -32,7 +32,7 @@ const ForStudents: React.FC = () => {
     name: intl.formatMessage({ id: "student.contact.directorName" }),
     title: intl.formatMessage({ id: "student.contact.directorTitle" }),
     imageUrl: "/felix.jpeg",
-    email: "info@teg-ev.de",
+    email: "info+website@teg-ev.de",
     linkedinUrl: "https://www.linkedin.com/in/felix-enke/",
   };
 
