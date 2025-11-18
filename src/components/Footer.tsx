@@ -57,10 +57,10 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a
-              href="mailto:info@teg-ev.de"
+              href="mailto:info+website@teg-ev.de"
               className="text-secondary-light text-sm hover:text-white transition-colors duration-300"
               onClick={() =>
-                trackOutboundClick("mailto:info@teg-ev.de", "Footer")
+                trackOutboundClick("mailto:info+website@teg-ev.de", "Footer")
               }
             >
               Contact
