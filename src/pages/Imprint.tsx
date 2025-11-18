@@ -29,7 +29,7 @@ const Imprint: React.FC = () => {
               <p className="mb-1">80539 München</p>
               <br />
               <p className="mb-1">
-                <strong>Email:</strong> info@teg-ev.de
+                <strong>Email:</strong> info+website@teg-ev.de
               </p>
               <p className="mb-1">
                 <strong>Internet:</strong>{" "}
