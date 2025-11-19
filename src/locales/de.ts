@@ -61,7 +61,7 @@ const de = {
   "company.sectionTitle.partnerships.title":
     "Partner werden, um Zugang zur nächsten Generation an Führungskräften zu erhalten",
   "company.sectionTitle.partnerships.subtitle":
-    "Seit 1986 entwickeln wir Talente, die heute Unternehmen in Deutschland und Europa prägen. Unsere Alumni stehen für Exzellenz:300+ Absolvent:innen, darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen. Gegründet von BMW, Roland Berger, BCG, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
+    "Seit 1986 entwickeln wir Talente, die heute Unternehmen in Deutschland und Europa prägen. Unsere Alumni stehen für Exzellenz: 300+ Absolvent:innen, darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen. Gegründet von BMW, Roland Berger, BCG, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
 
   "company.features.rightCharacteristics.title":
     "Selektion - Die richtigen Persönlichkeitsmerkmale",
@@ -90,7 +90,7 @@ const de = {
   "company.cards.studentRun.title":
     "1. Wir führen TEG wie ein Unternehmen und lernen dabei, wie man eines führt",
   "company.cards.studentRun.description":
-    "TEG ist die einzige von Studierenden betriebene Organisation in München mit eigenem Office am Englischem Garten. Damit verbunden: echte Fixkosten, echtes Budget, echte Verantwortung. Unsere Mitglieder generieren selbstständig die nötigen Mittel und erwerben dabei genau die wirtschaftlichen Kompetenzen, die sie später in der Praxis brauchen.",
+    "TEG ist die einzige von Studierenden betriebene Organisation in München mit eigenem Office am Englischen Garten. Damit verbunden: echte Fixkosten, echtes Budget, echte Verantwortung. Unsere Mitglieder generieren selbstständig die nötigen Mittel und erwerben dabei genau die wirtschaftlichen Kompetenzen, die sie später in der Praxis brauchen.",
   "company.cards.futureLeaders.title":
     "2. Wie lernen Sie unsere Mitglieder kennen?",
   "company.cards.futureLeaders.description":
@@ -98,7 +98,7 @@ const de = {
   "company.cards.internships.title":
     "3. Praktikum – Ihr möglicher Nachfolger arbeitet bereits mit",
   "company.cards.internships.description":
-    "Unsere Mitglieder absolvieren Praktika auf C-Level-Niveau direkt unter Geschäftsführeren, Bereichsleiteren oder Vorständen.Das ist kein typisches Praktikum. Es ist eine strategische Möglichkeit für Unternehmen, ambitionierte Nachwuchstalente früh kennenzulernen und sie gezielt auf künftige Schlüsselrollen vorzubereiten. Was heute ein Praktikum ist, kann morgen der Beginn einer Nachfolge- oder Führungskarriere sein.",
+    "Unsere Mitglieder absolvieren Praktika auf C-Level-Niveau direkt unter Geschäftsführern, Bereichsleitern oder Vorständen. Das ist kein typisches Praktikum. Es ist eine strategische Möglichkeit für Unternehmen, ambitionierte Nachwuchstalente früh kennenzulernen und sie gezielt auf künftige Schlüsselrollen vorzubereiten. Was heute ein Praktikum ist, kann morgen der Beginn einer Nachfolge- oder Führungskarriere sein.",
   "company.cards.hireLeaders.title":
     "4. Einstellen & Integrieren – mit TEG als strategischem Partner",
   "company.cards.hireLeaders.description":
@@ -117,7 +117,7 @@ const de = {
   "student.hero.title":
     "Werde Teil der nächsten Generation Top-Manager, Führungs\u00ADkräfte und B2B-Gründer.",
   "student.hero.subtitle":
-    "Bei uns entwickelst Du schon während deinem Studium die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
+    "Bei uns entwickelst Du schon während deines Studiums die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.hero.buttonText": "Mitglied werden",
   "student.hero.buttonLink": "https://tally.so/r/w20dbL",
   "student.commitment.body":
@@ -137,7 +137,7 @@ const de = {
 
   "student.cardText.imageAlt": "Willkommen im TEG-Office",
   "student.cardText.title":
-    "Im TEG-Office triffst du auf Gleichgesinnte, die mehr wollen und bereit sind, dafür zu liefern.",
+    "Im TEG-Office triffst Du auf Gleichgesinnte, die mehr wollen und bereit sind, dafür zu liefern.",
   "student.cardText.subtitle": "Wir freuen uns dich kennenzulernen!",
   "student.cardText.body":
     "In einer auf 50 Mitglieder begrenzten Community unterstützen wir uns gegenseitig mit Skills, Verantwortung und echtem Zusammenhalt.",
@@ -165,7 +165,7 @@ const de = {
 
   "student.memberProcess.title": "Kurzüberblick – So funktioniert TEG",
   "student.certificate.title":
-    "Bei uns lernst du alles was Du für eine erfolgreiche Zukunft in der Wirtschaft brauchst!",
+    "Bei uns lernst Du alles was Du für eine erfolgreiche Zukunft in der Wirtschaft brauchst!",
 
   "student.certificate.coach.title": "Coach-Zertifikat:",
   "student.certificate.coach.intro":
@@ -202,13 +202,13 @@ const de = {
   "student.callToAction.title":
     "Bist Du bereit, Deine Karriere als Führungskraft zu starten?",
   "student.callToAction.description":
-    "Übernehme Verantwortung. Werd ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
+    "Übernehme Verantwortung. Werde ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.callToAction.buttonText": "Jetzt bewerben!",
   "student.callToAction.buttonLink": "https://tally.so/r/w20dbL",
 
   "student.contact.title": "Für weitere Informationen kontaktiere uns",
   "student.contact.greeting":
-    "Wenn du Fragen hast oder mehr Informationen brauchst, schreib mir gerne eine Nachricht",
+    "Wenn Du Fragen hast oder mehr Informationen brauchst, schreib mir gerne eine Nachricht",
   "student.contact.email": "E-Mail",
   "student.contact.linkedin": "LinkedIn",
   "student.contact.directorTitle": "Bereichsleiter People & Culture",
