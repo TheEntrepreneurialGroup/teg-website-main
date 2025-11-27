@@ -1,7 +1,7 @@
 const de = {
   // Home Page Texts
   "home.hero.title":
-    "Werde Teil der nächsten Generation Top-Manager, Führungskräfte und B2B-Gründer.",
+    "Wir formen die nächste Führungspersönlichkeiten der deutschen Wirtschaft",
   "home.hero.since": "Seit 1986.",
   "home.hero.subtitle": "",
   "home.hero.buttonText1": "TEG für Unternehmen",
