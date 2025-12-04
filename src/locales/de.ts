@@ -1,7 +1,7 @@
 const de = {
   // Home Page Texts
   "home.hero.title":
-    "Wir formen die nächste Führungspersönlichkeiten der deutschen Wirtschaft",
+    "Wir formen die nächsten Führungspersönlichkeiten der deutschen Wirtschaft",
   "home.hero.since": "Seit 1986.",
   "home.hero.subtitle": "",
   "home.hero.buttonText1": "TEG für Unternehmen",
@@ -11,7 +11,7 @@ const de = {
   "home.alumni.title": "Unsere Alumni: 39 Jahre Exzellenz mit Wirkung",
   "home.alumni.stat1.value": "300+ Alumni",
   "home.alumni.stat1.label":
-    "Unsere Alumni bilden das Rückgrat der deutschen Wirtschaft ob in Top Management Positionen, im mittleren Management oder in führenden Fachrollen.",
+    "Unsere Alumni bilden das Rückgrat der deutschen Wirtschaft, ob in Top Management Positionen, im mittleren Management oder in führenden Fachrollen.",
   "home.alumni.stat2.value": "41",
   "home.alumni.stat2.label": "Top-Level Führungskräfte in Konzernen",
   "home.alumni.stat3.value": "40",
@@ -30,7 +30,7 @@ const de = {
   "home.legacy.feature1.description":
     "Seit 39 Jahren steigen unsere Alumni konsequent in Führungspositionen führender Unternehmen auf oder gründen erfolgreiche Firmen.",
   "home.legacy.feature2.title":
-    " Unternehmerisches Denken mit Corporate-Verantwortung",
+    "Unternehmerisches Denken mit Corporate-Verantwortung",
   "home.legacy.feature2.description":
     "Jede Initiative hat ihre Geschichte. Wir bewundern traditionsreiche, exzellent organisierte Unternehmen genauso sehr wie unsere eigene Legacy. Die Visionen früherer TEG-Mitglieder sind heute Realität. Unsere Mitglieder übernehmen Verantwortung, führen Unternehmen mit Weitblick und lösen konkrete Herausforderungen für unsere Partner im Ökosystem. Sie gestalten nicht nur, sie bauen.",
   "home.callToAction1.title": "Partner werden: TEG & Ihr Unternehmen",
@@ -48,9 +48,9 @@ const de = {
   "home.partners.description":
     "1986 gegründet von BMW, BCG und Roland Berger, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
 
-  "home.alumnis.title": "Unsere Absolventen zeigen was für Dich möglich ist",
+  "home.alumnis.title": "Unsere Absolventen zeigen, was für Dich möglich ist",
   "home.alumnis.description":
-    "300+ Alumnis, jede:r Dritte Top-Management. Darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen.",
+    "300+ Alumni, jede:r im Dritte Top-Management. Darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen.",
 
   // Company Page Texts
   "company.hero.title": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
@@ -102,7 +102,7 @@ const de = {
   "company.cards.hireLeaders.title":
     "4. Einstellen & Integrieren – mit TEG als strategischem Partner",
   "company.cards.hireLeaders.description":
-    "Wie gelingt die erfolgreiche Integration junger Führungskräfte in bestehende Teams? Wir bereiten unsere Mitglieder nicht nur intensiv auf Führungsverantwortung vor, wir begleiten auch den Übergang ins Unternehmen.Durch gemeinsame Events, Panels und gezielte Vorbereitung auf öffentliche Auftritte (z.B. LinkedIn & Speaker-Rollen) sorgen wir dafür, dass unsere Mitglieder auch von älteren Teammitgliedern akzeptiert und respektiert werden. Fazit: Sie stellen nicht einfach nur ein, Sie gewinnen eine Führungskraft, die bereit ist, Wirkung zu entfalten.",
+    "Wie gelingt die erfolgreiche Integration junger Führungskräfte in bestehende Teams? Wir bereiten unsere Mitglieder nicht nur intensiv auf Führungsverantwortung vor, wir begleiten auch den Übergang ins Unternehmen. Durch gemeinsame Events, Panels und gezielte Vorbereitung auf öffentliche Auftritte (z.B. LinkedIn & Speaker-Rollen) sorgen wir dafür, dass unsere Mitglieder auch von älteren Teammitgliedern akzeptiert und respektiert werden. Fazit: Sie stellen nicht einfach nur ein, Sie gewinnen eine Führungskraft, die bereit ist, Wirkung zu entfalten.",
 
   "company.contact.title": "Für weitere Informationen kontaktieren Sie uns",
   "company.contact.greeting": "Ich freue mich von Ihnen zu hören!",
@@ -115,7 +115,7 @@ const de = {
   // --------- Student Page Texts ---------- //
 
   "student.hero.title":
-    "Werde Teil der nächsten Generation Top-Manager, Führungs\u00ADkräfte und B2B-Gründer.",
+    "Werde Teil der nächsten Generation von Top-Managern, Führungs\u00ADkräften und B2B-Gründern.",
   "student.hero.subtitle":
     "Bei uns entwickelst Du schon während deines Studiums die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.hero.buttonText": "Mitglied werden",
@@ -125,11 +125,11 @@ const de = {
   "student.commitment.down":
     "Während der Grundausbildung erlernen TEG-Mitglieder fachliche Kompetenzen deutlich über dem Level eines Berufseinsteigers. Bestätigt durch von Firmen gerne gesehene Zertifikate. Weiterhin werden durch Workshops und Praxis-Projekte Kompetenzen in den Bereichen Projektmanagement, Leadership und Coaching vermittelt. Diese Fähigkeiten erlauben eine steile Fach- und Führungskarriere bis hin in die Geschäftsführung von Unternehmen oder befähigen zur erfolgreichen eigenen Gründung.",
 
-  "student.maps.title": "Hier sind wir Zuhause",
+  "student.maps.title": "Hier sind wir zu Hause",
   "student.maps.description":
     "TEG ist die einzige von Studierenden geführte Organisation in München mit eigenem Office am Englischen Garten, inklusive Fixkosten, Budgetverantwortung und echter Ownership.",
 
-  "student.commitment.imageAlt": "TEG Gründer am arbeiten",
+  "student.commitment.imageAlt": "TEG Gründer bei der Arbeit",
   "student.commitment.title":
     "TEG ist nicht für jeden: 10+ Stunden Arbeitszeit pro Woche, konstant über 3 Semester",
   "student.commitment.subtitle":
@@ -138,7 +138,7 @@ const de = {
   "student.cardText.imageAlt": "Willkommen im TEG-Office",
   "student.cardText.title":
     "Im TEG-Office triffst Du auf Gleichgesinnte, die mehr wollen und bereit sind, dafür zu liefern.",
-  "student.cardText.subtitle": "Wir freuen uns dich kennenzulernen!",
+  "student.cardText.subtitle": "Wir freuen uns, dich kennenzulernen!",
   "student.cardText.body":
     "In einer auf 50 Mitglieder begrenzten Community unterstützen wir uns gegenseitig mit Skills, Verantwortung und echtem Zusammenhalt.",
 
@@ -172,7 +172,7 @@ const de = {
     "Die Königsdisziplin: andere zu Höchstleistungen befähigen. Du lernst, Wissen strukturiert weiterzugeben, neue Mitglieder einzuarbeiten und sie zu eigenen Ergebnissen zu führen. Dabei entwickelst du die Fähigkeit, Feedback klar zu geben, zu motivieren und Verantwortung für die Entwicklung anderer zu übernehmen.",
   "student.certificate.coach.highlight": "Im Zertifikat enthalten sind:",
   "student.certificate.coach.items":
-    "Dokumentation des durchgeführten Coachings, konkrete Ergebnisse deines Coachees, Nachweis deiner Fähigkeit andere erfolgreich anzuleiten.",
+    "Dokumentation des durchgeführten Coachings, konkrete Ergebnisse deines Coachees, Nachweis deiner Fähigkeit, andere erfolgreich anzuleiten.",
 
   "student.certificate.projectlead.title": "Projektleitung-Zertifikat:",
   "student.certificate.projectlead.intro":
