@@ -35,7 +35,7 @@ const en = {
     "Every initiative has its story. We admire traditional, excellently organized companies as much as our own legacy. The visions of former TEG members are now reality. Our members take responsibility, lead companies with foresight, and solve concrete challenges for our ecosystem partners. They don't just shape; they build.",
   "home.callToAction1.title": "Become a Partner: TEG & Your Company",
   "home.callToAction1.description":
-    "Shape the next generation of leaders with us. Learn how your company can benefit from access to the TEG ecosystem – and gain direct access to a proven talent pool for 39 years.",
+    "Shape the next generation of leaders with us. Learn how your company can benefit from access to the TEG ecosystem – and gain direct access to a talent pool proven over 39 years.",
   "home.callToAction1.buttonText": "TEG for Companies",
   "home.callToAction1.buttonLink": "/for-companies",
   "home.callToAction2.title": "Apply Now: TEG for Students",
@@ -48,15 +48,15 @@ const en = {
   "home.partners.description":
     "Founded in 1986 by BMW, BCG, Roland Berger, KPMG, Siemens, and many others, TEG is today one of the most renowned talent incubators in the German-speaking region.",
 
-  "home.alumnis.title": "Our Alumni show what is possible for you",
+  "home.alumnis.title": "Our alumni show what is possible for you",
   "home.alumnis.description":
     "300+ alumni, one in three in top management. Among them 41 corporate executives, 40 medium-sized business executives, and 15 founders of successful companies.",
 
   // Company Page Texts
   "company.hero.title":
-    "We develop your next leadership talents. With Certainty.",
+    "We develop your next leadership talents with certainty.",
   "company.hero.subtitle":
-    "Become a TEG partner and gain access to a proven talent pool of exceptional future leaders for 39 years.",
+    "Become a TEG partner and gain access to a proven talent pool of exceptional future leaders built over 39 years.",
   "company.hero.buttonText": "Become a Partner",
 
   "company.sectionTitle.partnerships.title":
@@ -134,7 +134,7 @@ const en = {
   "student.cardText.imageAlt": "Welcome at TEG Office",
   "student.cardText.title":
     "At the TEG office, you meet like-minded people who want more and are ready to deliver.",
-  "student.cardText.subtitle": "We look forward to meeting you!",
+  "student.cardText.subtitle": "Welcome to the TEG Office – we look forward to meeting you!",
   "student.cardText.body":
     "In a community limited to 50 members, we support each other with skills, responsibility, and real camaraderie.",
 
@@ -186,7 +186,7 @@ const en = {
     "Diamonds are made under pressure. Nowhere is this truer than at TEG.",
   "student.testimonials.author1": "Ahmed Kaddour",
   "student.testimonials.quote2":
-    "I was amazed at how much responsibility you get at TEG right from the start, and I've grown beyond myself at least 5 times here.",
+    "I was amazed at how much responsibility you get at TEG right from the start, and I've surpassed myself at least five times here.",
   "student.testimonials.author2": "Luis Waller",
   "student.testimonials.quote3":
     "I regularly run marathons because I love challenges and peak performance. That's exactly why I'm at TEG.",
