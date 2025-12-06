@@ -1,0 +1,7 @@
+# Serve the tracker from your site
+/health.js     https://analytics.teg-ev.de/script.js      200
+
+# Proxy the collector endpoint too
+/private/ping    https://analytics.teg-ev.de/private/ping       200
+
+/*    /index.html   200
