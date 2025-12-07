@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 interface TestimonialCardProps {
   quote: string
@@ -7,10 +7,10 @@ interface TestimonialCardProps {
     roleLine1: string
     roleLine2: string
   }
-  avatar: "placeholder"
+  avatar?: string
 }
 
-export function TestimonialCard({ quote, person }: TestimonialCardProps) {
+export function TestimonialCard({ quote, person, avatar }: TestimonialCardProps) {
   return (
     <div className="bg-gray-100 rounded-lg p-6 md:p-8 flex flex-col md:flex-row gap-6">
       <div className="flex-1">
@@ -25,6 +25,7 @@ export function TestimonialCard({ quote, person }: TestimonialCardProps) {
       </div>
       <div className="flex flex-col items-center md:items-end gap-3">
         <Avatar className="w-20 h-20">
+          {avatar && avatar !== "placeholder" && <AvatarImage src={avatar} alt={person.name} className="object-cover object-top" />}
           <AvatarFallback className="bg-gray-300 text-gray-600 text-2xl">
             {person.name
               .split(" ")

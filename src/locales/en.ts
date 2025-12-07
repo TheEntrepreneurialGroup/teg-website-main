@@ -215,6 +215,51 @@ const en = {
   "navbar.about": "About Us",
   "navbar.forCompanies": "For Companies",
   "navbar.forStudents": "For Students",
+
+  // For Companies Page
+  "company.problemHero.title": "Digital Markets, Outdated Structures: Germany's Companies Lag Behind",
+  "company.problemHero.subtitle": "Digital tools and AI define everyday work today, yet many structures are not prepared for them. Employees are already using technologies independently, often without clear processes or responsibilities. The result: decisions are delayed, workflows become inefficient, innovation stalls – while competitors are already gaining strategic speed.",
+  "company.problemHero.cta": "Schedule a conversation now",
+  "company.problemHero.offer.title": "Our Offer",
+  "company.problemHero.offer.subtitle": "The New Generation of Intrapreneurs",
+  "company.problemHero.offer.text": "To break up outdated structures, it takes more than new software – it takes the courage to act entrepreneurially. We bring you the future leaders who carry this 'founder spirit' into your departments. TEG talents independently recognize technological opportunities and implement them into efficient solutions to modernize your company from the inside out.",
+
+  "company.founders.title": "Our Founders",
+
+  "company.whyTeg.title": "Why TEG?",
+  "company.whyTeg.features.selection.title": "Selection",
+  "company.whyTeg.features.selection.subtitle": "We filter specifically for the \"doer gene\". Only talents who combine initiative with genuine ownership and approach problems proactively like founders make it into our pool.",
+  "company.whyTeg.features.preparation.title": "Preparation",
+  "company.whyTeg.features.preparation.subtitle": "We turn digital natives into true corporate entrepreneurs. Our members learn to transform wild innovations into strategic value and take responsibility for processes instead of just using tools.",
+  "company.whyTeg.features.verification.title": "Verification",
+  "company.whyTeg.features.verification.subtitle": "No experiments, but validated performance. Through our network and mentoring, we guarantee practical applicability – talents ready to lead your digital transformation immediately.",
+  "company.whyTeg.ctaBanner.title": "Meet Your Next Leaders",
+  "company.whyTeg.ctaBanner.text": "persuasive text persuasive text persuasive text persuasive text persuasive text persuasive text persuasive text persuasive text",
+  "company.whyTeg.ctaBanner.cta": "Contact",
+
+  "company.testimonials.title": "What Others Say About Us",
+  "company.testimonials.quote1.text": "yap yap yap yap yap yap yap yap yap yap important term yap yap yap yap yap important term yap yap yap yap yap important term yap yap yap yap yap",
+  "company.testimonials.quote1.author": "Max Mustermann",
+  "company.testimonials.quote1.role1": "TEG Alumni",
+  "company.testimonials.quote1.role2": "exCEO of The Startup",
+  "company.testimonials.quote2.text": "yap yap yap yap yap yap yap yap yap yap important term yap yap yap yap yap important term yap yap yap yap yap important term yap yap yap yap yap",
+  "company.testimonials.quote2.author": "Max Musterman",
+  "company.testimonials.quote2.role1": "TEG Alumni",
+  "company.testimonials.quote2.role2": "exCEO of The Startup",
+  "company.testimonials.quote3.text": "yap yap yap yap yap yap yap yap yap yap key term yap yap yap yap yap key term yap yap yap yap yap key term yap yap yap yap yap",
+  "company.testimonials.quote3.author": "Max Musterman",
+  "company.testimonials.quote3.role1": "TEG Alumni",
+  "company.testimonials.quote3.role2": "exCEO of The Startup",
+  "company.testimonials.quote4.text": "Being an entrepreneur means taking responsibility. TEG offers students the opportunity to implement their own ideas and grow from these challenges.",
+  "company.testimonials.quote4.author": "Prof. Dr. h.c. Roland Berger",
+  "company.testimonials.quote4.role1": "Entrepreneur and Founder",
+  "company.testimonials.quote4.role2": "Roland Berger GmbH",
+
+  "company.runTeg.title": "Run TEG like a company",
+  "company.runTeg.pillar1.title": "Strategy & Partnership",
+  "company.runTeg.pillar2.title": "People & Culture",
+  "company.runTeg.pillar3.title": "Strategy & Partnership",
+  "company.runTeg.pillar4.title": "Strategy & Partnership",
 };
 
 export default en;

@@ -21,8 +21,17 @@ import { PillarCard } from "@/components/blocks/PillarCard";
 
 import { useIntl } from "react-intl";
 
+import ContactCard from "@/components/ContactCard";
+
 export default function ForCompanies() {
   const intl = useIntl();
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const testimonials = [
     {
@@ -42,6 +51,13 @@ export default function ForCompanies() {
       author: intl.formatMessage({ id: "company.testimonials.quote3.author" }),
       role1: intl.formatMessage({ id: "company.testimonials.quote3.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote3.role2" }),
+    },
+    {
+      text: intl.formatMessage({ id: "company.testimonials.quote4.text" }),
+      author: intl.formatMessage({ id: "company.testimonials.quote4.author" }),
+      role1: intl.formatMessage({ id: "company.testimonials.quote4.role1" }),
+      role2: intl.formatMessage({ id: "company.testimonials.quote4.role2" }),
+      image: "/rolandberger.jpg",
     },
   ];
 
@@ -64,21 +80,25 @@ export default function ForCompanies() {
           text={intl.formatMessage({ id: "company.problemHero.subtitle" })}
           variant="body"
         />
-        <PrimaryButton
-          label={intl.formatMessage({ id: "company.problemHero.cta" })}
-          align="left"
-          size="sm"
-        />
         <OfferBox
-          title={intl.formatMessage({ id: "company.problemHero.offer.title" })}
-          textPlaceholder={true}
+          title={intl.formatMessage({
+            id: "company.problemHero.offer.subtitle",
+          })}
+          text={intl.formatMessage({ id: "company.problemHero.offer.text" })}
           size="large"
         />
+        <div className="mt-8">
+          <PrimaryButton
+            label={intl.formatMessage({ id: "company.problemHero.cta" })}
+            align="left"
+            size="default"
+            onClick={scrollToContact}
+          />
+        </div>
       </ProblemHeroSection>
 
       <LogoMarqueeSection
         title={intl.formatMessage({ id: "company.founders.title" })}
-        autoscroll={true}
       >
         <LogoMarquee
           speed="slow"
@@ -139,6 +159,7 @@ export default function ForCompanies() {
           <PrimaryButton
             label={intl.formatMessage({ id: "company.whyTeg.ctaBanner.cta" })}
             align="right"
+            onClick={scrollToContact}
           />
         </WideBannerCTA>
       </WhyTegSection>
@@ -158,7 +179,7 @@ export default function ForCompanies() {
                 roleLine1: quote.role1,
                 roleLine2: quote.role2,
               }}
-              avatar="placeholder"
+              avatar={quote.image || "placeholder"}
             />
           ))}
         </TestimonialList>
@@ -175,6 +196,21 @@ export default function ForCompanies() {
           ))}
         </PillarGrid>
       </RunTegSection>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-12 md:py-20 border-t">
+        <div className="flex justify-center w-full">
+          <ContactCard
+            name={intl.formatMessage({ id: "company.contact.directorName" })}
+            title={intl.formatMessage({ id: "company.contact.directorTitle" })}
+            imageUrl="/jonathan.jpg"
+            email="jonathan.babelotzky@teg-ev.de"
+            linkedinUrl="https://www.linkedin.com/in/jonathan-babelotzky/"
+            greeting={intl.formatMessage({ id: "company.contact.greeting" })}
+            variant="quote"
+          />
+        </div>
+      </section>
     </LandingPage>
   );
 }

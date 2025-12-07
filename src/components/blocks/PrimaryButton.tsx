@@ -4,9 +4,10 @@ interface PrimaryButtonProps {
   label: string
   align?: "left" | "center" | "right"
   size?: "sm" | "default" | "lg"
+  onClick?: () => void
 }
 
-export function PrimaryButton({ label, align = "left", size = "default" }: PrimaryButtonProps) {
+export function PrimaryButton({ label, align = "left", size = "default", onClick }: PrimaryButtonProps) {
   const alignClass = {
     left: "justify-start",
     center: "justify-center",
@@ -15,7 +16,7 @@ export function PrimaryButton({ label, align = "left", size = "default" }: Prima
 
   return (
     <div className={`flex ${alignClass}`}>
-      <Button size={size} className="bg-blue-600 hover:bg-blue-700 text-white">
+      <Button size={size} className="bg-blue-600 hover:bg-blue-700 text-white" onClick={onClick}>
         {label}
       </Button>
     </div>
