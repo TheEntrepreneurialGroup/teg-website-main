@@ -234,7 +234,7 @@ const en = {
   "company.whyTeg.features.verification.title": "Verification",
   "company.whyTeg.features.verification.subtitle": "No experiments, but validated performance. Through our network and mentoring, we guarantee practical applicability – talents ready to lead your digital transformation immediately.",
   "company.whyTeg.ctaBanner.title": "Meet Your Next Leaders",
-  "company.whyTeg.ctaBanner.text": "persuasive text persuasive text persuasive text persuasive text persuasive text persuasive text persuasive text persuasive text",
+  "company.whyTeg.ctaBanner.text": "Academic excellence alone does not solve business problems. TEG members bridge the gap between theoretical knowledge and practical value creation from day one. They are trained to navigate established corporate structures diplomatically without losing their digital edge. Instead of theoretical concepts, they bring applicable solutions for digital transformation – from process optimization to strategic realignment. You are not getting interns here, but juniors with a founder's mindset who are ready to take responsibility for budgets and results.",
   "company.whyTeg.ctaBanner.cta": "Contact",
 
   "company.testimonials.title": "What Others Say About Us",
