@@ -34,12 +34,7 @@ export default function ForCompanies() {
   };
 
   const testimonials = [
-    {
-      text: intl.formatMessage({ id: "company.testimonials.quote1.text" }),
-      author: intl.formatMessage({ id: "company.testimonials.quote1.author" }),
-      role1: intl.formatMessage({ id: "company.testimonials.quote1.role1" }),
-      role2: intl.formatMessage({ id: "company.testimonials.quote1.role2" }),
-    },
+
     {
       text: intl.formatMessage({ id: "company.testimonials.quote2.text" }),
       author: intl.formatMessage({ id: "company.testimonials.quote2.author" }),
