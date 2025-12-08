@@ -1,7 +1,6 @@
 import type { ReactNode } from "react"
 
 interface TestimonialListProps {
-  layout: "stacked"
   children: ReactNode
 }
 

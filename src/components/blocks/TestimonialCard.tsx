@@ -1,3 +1,4 @@
+import { Quote } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 interface TestimonialCardProps {
@@ -12,33 +13,33 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ quote, person, avatar }: TestimonialCardProps) {
   return (
-    <div className="bg-gray-100 rounded-lg p-6 md:p-8 flex flex-col md:flex-row gap-6">
-      <div className="flex-1">
-        <p className="text-base leading-relaxed">
-          {quote.split("wichtiger begriff").map((part, i, arr) => (
-            <span key={i}>
-              {part}
-              {i < arr.length - 1 && <strong className="font-semibold">wichtiger begriff</strong>}
-            </span>
-          ))}
+    <div className="w-full flex flex-col p-4 bg-gray-100 rounded-2xl">
+      <div className="relative flex-grow text-left">
+        <Quote className="absolute left-2 top-2 w-8 h-8 opacity-30" />
+        <p className="text-lg leading-relaxed font-medium px-14 py-4">
+          {quote}
         </p>
+        <Quote className="absolute right-2 bottom-2 w-8 h-8 opacity-30 rotate-180" />
       </div>
-      <div className="flex flex-col items-center md:items-end gap-3">
-        <Avatar className="w-20 h-20">
-          {avatar && avatar !== "placeholder" && <AvatarImage src={avatar} alt={person.name} className="object-cover object-top" />}
-          <AvatarFallback className="bg-gray-300 text-gray-600 text-2xl">
-            {person.name
-              .split(" ")
-              .map((n) => n[0])
-              .join("")}
-          </AvatarFallback>
-        </Avatar>
-        <div className="text-center md:text-right">
-          <p className="font-semibold">{person.name}</p>
-          <p className="text-sm text-muted-foreground">{person.roleLine1}</p>
-          <p className="text-sm text-muted-foreground">{person.roleLine2}</p>
+
+      <div className="flex">
+        <div className="flex items-center gap-2">
+          <Avatar className="w-24 h-24">
+            {avatar && avatar !== "placeholder" && <AvatarImage src={avatar} alt={person.name} className="object-cover object-top" />}
+            <AvatarFallback className="bg-gray-300 text-gray-600 text-2xl">
+              {person.name
+                .split(" ")
+                .map((n) => n[0])
+                .join("")}
+            </AvatarFallback>
+          </Avatar>
+          <div className="flex flex-col text-left leading-loose">
+            <p className="font-semibold">{person.name}</p>
+            <p className="text-sm text-muted-foreground">{person.roleLine1}</p>
+            <p className="text-sm text-muted-foreground">{person.roleLine2}</p>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

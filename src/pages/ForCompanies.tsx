@@ -111,7 +111,7 @@ export default function ForCompanies() {
         <SectionTitle
           text={intl.formatMessage({ id: "company.whyTeg.title" })}
         />
-        <FeatureGrid layout="2x2">
+        <FeatureGrid>
           <IconFeature
             icon="search-people"
             title={intl.formatMessage({
@@ -160,7 +160,7 @@ export default function ForCompanies() {
         <SectionTitle
           text={intl.formatMessage({ id: "company.testimonials.title" })}
         />
-        <TestimonialList layout="stacked">
+        <TestimonialList>
           {testimonials.map((quote, index) => (
             <TestimonialCard
               key={index}
