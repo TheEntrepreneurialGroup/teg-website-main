@@ -12,6 +12,8 @@ const en = {
   "home.alumni.stat1.value": "300+ Alumni",
   "home.alumni.stat1.label":
     "Our alumni form the backbone of the German economy, whether in top management positions, middle management, or leading specialist roles.",
+  "home.alumni.alumni.value": "300+",
+  "home.alumni.alumni.label":"Alumni",
   "home.alumni.stat2.value": "41",
   "home.alumni.stat2.label": "Top-level executives in corporations",
   "home.alumni.stat3.value": "40",

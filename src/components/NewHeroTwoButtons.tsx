@@ -21,13 +21,13 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
     buttonLink2,
 }) => {
     return (
-        <section className="relative w-full aspect-[16/9] md:h-[75vh] md:aspect-auto overflow-hidden mb-12">
+        <section className="relative w-full aspect-[16/9] md:h-[75vh] md:aspect-auto overflow-hidden">
             <img
                 src={bgImage}
                 alt="Hero"
                 className="absolute inset-0 w-full h-full object-cover z-0"
             />
-            <div className="absolute inset-0 bg-[#091c3a]/70 z-10"></div> // Darken the bg
+            <div className="absolute inset-0 bg-primary-dark/80 z-10"></div>
             <div className="relative z-20 h-full w-full flex flex-col justify-center items-center p-8">
                 <div className="flex flex-col items-center">
                     <h1 className="text-center text-gray-100 mb-2">{title}</h1>

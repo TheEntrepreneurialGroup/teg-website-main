@@ -12,6 +12,8 @@ const de = {
   "home.alumni.stat1.value": "300+ Alumni",
   "home.alumni.stat1.label":
     "Unsere Alumni bilden das Rückgrat der deutschen Wirtschaft, ob in Top Management Positionen, im mittleren Management oder in führenden Fachrollen.",
+  "home.alumni.alumni.value": "300+",
+  "home.alumni.alumni.label":"Alumni",
   "home.alumni.stat2.value": "41",
   "home.alumni.stat2.label": "Top-Level Führungskräfte in Konzernen",
   "home.alumni.stat3.value": "40",
