@@ -6,7 +6,7 @@ interface ProblemHeroSectionProps {
 
 export function ProblemHeroSection({ children }: ProblemHeroSectionProps) {
   return (
-    <section className="py-12 md:py-20 border-b">
+    <section className="py-12 md:py-20">
       <div className="space-y-6">{children}</div>
     </section>
   )
