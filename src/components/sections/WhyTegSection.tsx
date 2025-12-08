@@ -6,7 +6,7 @@ interface WhyTegSectionProps {
 
 export function WhyTegSection({ children }: WhyTegSectionProps) {
   return (
-    <section className="py-12 md:py-20 border-b">
+    <section className="py-12 md:py-20">
       <div className="space-y-8">{children}</div>
     </section>
   )
