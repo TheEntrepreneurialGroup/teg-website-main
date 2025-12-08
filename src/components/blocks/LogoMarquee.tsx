@@ -14,22 +14,20 @@ export function LogoMarquee({ logos, speed = "medium" }: LogoMarqueeProps) {
   const duplicatedLogos = [...logos, ...logos]
 
   return (
-    <div className="relative overflow-hidden w-full">
-      <div className="flex gap-8 md:gap-12">
-        <div className={`flex gap-8 md:gap-12 ${speedClasses[speed]}`}>
-          {duplicatedLogos.map((logo, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 bg-muted rounded-lg flex items-center justify-center"
-            >
-              {logo.src === "placeholder" ? (
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-muted-foreground/20 rounded" />
-              ) : (
-                <img src={logo.src || "/placeholder.svg"} alt="" className="w-full h-full object-contain p-4" />
-              )}
-            </div>
-          ))}
-        </div>
+    <div className="relative w-screen overflow-hidden ml-[calc(50%-50vw)]">
+      <div className={`inline-flex w-max flex-nowrap ${speedClasses[speed]}`}>
+        {duplicatedLogos.map((logo, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-auto h-8 md:h-20 mr-8 md:mr-16 flex items-center justify-center"
+          >
+            {logo.src === "placeholder" ? (
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-muted-foreground/20 rounded" />
+            ) : (
+              <img src={logo.src || "/placeholder.svg"} alt="" className="w-full h-full object-contain mr-2" />
+            )}
+          </div>
+        ))}
       </div>
     </div>
   )

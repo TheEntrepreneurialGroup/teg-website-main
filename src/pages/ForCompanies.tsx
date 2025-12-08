@@ -96,7 +96,7 @@ export default function ForCompanies() {
         title={intl.formatMessage({ id: "company.founders.title" })}
       >
         <LogoMarquee
-          speed="slow"
+          speed="medium"
           logos={[
             { src: "/logos/Deloitte.svg" },
             { src: "/logos/HypoVereinsbank.svg" },
