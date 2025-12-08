@@ -1,7 +1,6 @@
 import type { ReactNode } from "react"
 
 interface FeatureGridProps {
-  layout: "2x2"
   children: ReactNode
 }
 
