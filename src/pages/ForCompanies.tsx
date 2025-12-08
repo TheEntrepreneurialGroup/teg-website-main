@@ -11,7 +11,6 @@ import { FeatureGrid } from "@/components/blocks/FeatureGrid";
 import { Headline } from "@/components/blocks/Headline";
 import { Subheadline } from "@/components/blocks/Subheadline";
 import { PrimaryButton } from "@/components/blocks/PrimaryButton";
-import { OfferBox } from "@/components/blocks/OfferBox";
 import { SectionTitle } from "@/components/blocks/SectionTitle";
 import { LogoMarquee } from "@/components/blocks/LogoMarquee";
 import { IconFeature } from "@/components/blocks/IconFeature";
@@ -75,21 +74,18 @@ export default function ForCompanies() {
           text={intl.formatMessage({ id: "company.problemHero.subtitle" })}
           variant="body"
         />
-        <OfferBox
-          title={intl.formatMessage({
-            id: "company.problemHero.offer.subtitle",
-          })}
+        <WideBannerCTA
+          background="grey"
+          title={intl.formatMessage({ id: "company.problemHero.offer.subtitle" })}
           text={intl.formatMessage({ id: "company.problemHero.offer.text" })}
-          size="large"
-        />
-        <div className="mt-8">
+          align="left"
+        >
           <PrimaryButton
             label={intl.formatMessage({ id: "company.problemHero.cta" })}
-            align="left"
-            size="default"
+            align="right"
             onClick={scrollToContact}
           />
-        </div>
+        </WideBannerCTA>
       </ProblemHeroSection>
 
       <LogoMarqueeSection
