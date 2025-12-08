@@ -13,7 +13,7 @@ const de = {
   "home.alumni.stat1.label":
     "Unsere Alumni bilden das Rückgrat der deutschen Wirtschaft, ob in Top Management Positionen, im mittleren Management oder in führenden Fachrollen.",
   "home.alumni.alumni.value": "300+",
-  "home.alumni.alumni.label":"Alumni",
+  "home.alumni.alumni.label": "Alumni",
   "home.alumni.stat2.value": "41",
   "home.alumni.stat2.label": "Top-Level Führungskräfte in Konzernen",
   "home.alumni.stat3.value": "40",
@@ -53,6 +53,24 @@ const de = {
   "home.alumnis.title": "Unsere Absolventen zeigen, was für Dich möglich ist",
   "home.alumnis.description":
     "300+ Alumni, jede:r im Dritte Top-Management. Darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen.",
+
+  "home.card1.title": "Keine Modeerscheinung, sondern ein Vermächtnis",
+  "home.card1.description": "Seit 1986 verbindet TEG ambitionierte Studierende mit führenden Unternehmen. Über 39 Jahre haben wir ein bewährtes System entwickelt, das High-Potentials auf Top-Führungsrollen vorbereitet – durch echte Praxiserfahrung und nachhaltiges Mentoring.",
+  "home.card1.buttonText": "Über uns",
+  "home.card1.buttonLink": "/about",
+  "home.card1.imageAlt": "Historischer Zeitungsartikel über die Gründung von TEG im Jahr 1986",
+
+  "home.card2.title": "Neue Generation von Führungskräften",
+  "home.card2.description": "Gestalten Sie mit uns die nächste Generation von Führungskräften. Erfahren Sie, wie Ihr Unternehmen vom Zugang zum TEG-Ökosystem profitieren kann – und erhalten Sie direkten Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
+  "home.card2.buttonText": "Partner werden",
+  "home.card2.buttonLink": "/for-companies",
+  "home.card2.imageAlt": "TEG-Mitglieder im Gespräch bei einem Networking-Event",
+
+  "home.card3.title": "Bist du bereit?",
+  "home.card3.description": "Werde Teil einer selektiven Community von bis zu 50 High-Potentials, die auf Top-Führungsrollen vorbereitet werden – durch echte Verantwortung, Praxiserfahrung und Mentoring. Der Erfolg unserer Alumni über 39 Jahre zeigt, was möglich ist.",
+  "home.card3.buttonText": "Mitglied werden",
+  "home.card3.buttonLink": "/for-students",
+  "home.card3.imageAlt": "Studierende im professionellen Austausch während einer TEG-Veranstaltung",
 
   // Company Page Texts
   "company.hero.title": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
