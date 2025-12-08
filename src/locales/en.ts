@@ -13,7 +13,7 @@ const en = {
   "home.alumni.stat1.label":
     "Our alumni form the backbone of the German economy, whether in top management positions, middle management, or leading specialist roles.",
   "home.alumni.alumni.value": "300+",
-  "home.alumni.alumni.label":"Alumni",
+  "home.alumni.alumni.label": "Alumni",
   "home.alumni.stat2.value": "41",
   "home.alumni.stat2.label": "Top-level executives in corporations",
   "home.alumni.stat3.value": "40",
@@ -53,6 +53,24 @@ const en = {
   "home.alumnis.title": "Our alumni show what is possible for you",
   "home.alumnis.description":
     "300+ alumni, one in three in top management. Among them 41 corporate executives, 40 medium-sized business executives, and 15 founders of successful companies.",
+
+  "home.card1.title": "Not a trend, a legacy",
+  "home.card1.description": "Since 1986, TEG has connected ambitious students with leading companies. Over 39 years, we've developed a proven system that prepares high-potentials for top leadership roles – through real-world experience and sustainable mentoring.",
+  "home.card1.buttonText": "About us",
+  "home.card1.buttonLink": "/about",
+  "home.card1.imageAlt": "Historic newspaper article about TEG's founding in 1986",
+
+  "home.card2.title": "New Generation of Leaders",
+  "home.card2.description": "Shape the next generation of leaders with us. Discover how your company can benefit from access to the TEG ecosystem – and gain direct access to a talent pool proven over 39 years.",
+  "home.card2.buttonText": "Become a partner",
+  "home.card2.buttonLink": "/for-companies",
+  "home.card2.imageAlt": "TEG members engaged in conversation at a networking event",
+
+  "home.card3.title": "Are you ready?",
+  "home.card3.description": "Become part of a selective community of up to 50 high-potentials being prepared for top leadership roles – through real responsibility, practical experience, and mentoring. The success of our alumni over 39 years shows what's possible.",
+  "home.card3.buttonText": "Join us",
+  "home.card3.buttonLink": "/for-students",
+  "home.card3.imageAlt": "Students in professional exchange during a TEG event",
 
   // Company Page Texts
   "company.hero.title":

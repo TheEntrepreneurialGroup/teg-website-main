@@ -25,7 +25,7 @@ const TEGInZahlen: React.FC<TEGInZahlenProps> = ({
     text4
 }) => {
     return (
-        <div className="p-8 mb-28">
+        <div className="p-8 mb-12">
             <h1 className="mb-16">{title}</h1>
             <div className="flex justify-around">
                 <NumberBox number={number1} text={text1} />
