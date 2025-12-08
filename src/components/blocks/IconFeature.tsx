@@ -16,7 +16,7 @@ export function IconFeature({ icon, title, subtitle }: IconFeatureProps) {
   const Icon = iconMap[icon]
 
   return (
-    <div className="flex flex-col items-center text-center gap-3 p-6">
+    <div className="flex flex-col items-center text-center gap-3 p-6 w-max lg:max-w-[33.333%] md:max-w-[50%]">
       <Icon className="w-16 h-16" strokeWidth={1.5} />
       <div>
         <h3 className="text-xl font-semibold mb-1">{title}</h3>
