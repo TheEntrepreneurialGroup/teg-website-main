@@ -221,7 +221,7 @@ const en = {
   "company.problemHero.subtitle": "Digital tools and AI define everyday work today, yet many structures are not prepared for them. Employees are already using technologies independently, often without clear processes or responsibilities. The result: decisions are delayed, workflows become inefficient, innovation stalls – while competitors are already gaining strategic speed.",
   "company.problemHero.cta": "Schedule a conversation now",
   "company.problemHero.offer.title": "Our Offer",
-  "company.problemHero.offer.subtitle": "The New Generation of Intrapreneurs",
+  "company.problemHero.offer.subtitle": "The New Generation of Entrepreneurs",
   "company.problemHero.offer.text": "To break up outdated structures, it takes more than new software – it takes the courage to act entrepreneurially. We bring you the future leaders who carry this 'founder spirit' into your departments. TEG talents independently recognize technological opportunities and implement them into efficient solutions to modernize your company from the inside out.",
 
   "company.founders.title": "Our Founders",
