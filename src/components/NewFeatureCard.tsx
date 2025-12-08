@@ -1,5 +1,7 @@
 import React from "react";
 import Button from "./Button";
+import { PrimaryButton } from "./blocks/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 
 interface NewFeatureCardProps {
   title: string;
@@ -20,6 +22,7 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
   imageURL,
   imageAltText
 }) => {
+  const navigate = useNavigate()
   return (
     <div
       className="
@@ -43,7 +46,11 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
       <div className={`${imagePosition === "right" ? "order-1" : "order-2"} flex-1 min-w-0`}>
         <div className="text-primary text-3xl font-bold overflow-hidden">{title}</div>
         <div className="mt-2 mb-6 overflow-hidden">{description}</div>
-        <Button href={buttonLink}>{buttonText}</Button>
+        <PrimaryButton
+          label={buttonText}
+          onClick={() => navigate(buttonLink)}
+          size="lg"
+        />
       </div>
     </div>
   );

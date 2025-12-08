@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { useIntl } from "react-intl";
 import NewHeroTwoButtons from "@/components/NewHeroTwoButtons";
 import TEGInZahlen from "@/components/sections/TEGInZahlen";
@@ -16,8 +16,8 @@ export const Home: React.FC = () => {
         bgImage="TEG_Hero_Subpage.jpg"
         buttonText1={intl.formatMessage({ id: "home.hero.buttonText1" })}
         buttonText2={intl.formatMessage({ id: "home.hero.buttonText2" })}
-        buttonLink1="/for-students"
-        buttonLink2="/for-companies"
+        buttonLink2="/for-students"
+        buttonLink1="/for-companies"
       />
 
       <TEGInZahlen
@@ -46,7 +46,7 @@ export const Home: React.FC = () => {
         tilte1={intl.formatMessage({ id: "home.card1.title" })}
         text1={intl.formatMessage({ id: "home.card1.description" })}
         button1Text={intl.formatMessage({ id: "home.card1.buttonText" })}
-        Link1={intl.formatMessage({ id: "home.card1.buttonLink" })}
+        Link1="/"
 
         image2="components-images/team-2.jpeg"
         imagePos2="right"

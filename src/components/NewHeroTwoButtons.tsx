@@ -1,5 +1,7 @@
 import React from "react";
 import Button from "./Button";
+import { PrimaryButton } from "./blocks/PrimaryButton";
+import { useNavigate } from 'react-router-dom'
 
 interface NewHeroTwoButtonsProps {
     title: string;
@@ -20,6 +22,7 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
     buttonLink1,
     buttonLink2,
 }) => {
+    const navigate = useNavigate()
     return (
         <section className="relative w-full aspect-[16/9] md:h-[75vh] md:aspect-auto overflow-hidden">
             <img
@@ -34,8 +37,20 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
                     <h3 className="text-center text-gray-100">{subtitle}</h3>
                 </div>
                 <div className="mt-28 flex justify-center">
-                    <Button className="mr-28" href={buttonLink1}>{buttonText1}</Button>
-                    <Button href={buttonLink2}>{buttonText2}</Button>
+                    <div className="mr-8">
+                        <PrimaryButton
+                            label={buttonText1}
+                            onClick={() => navigate(buttonLink1)}
+                            size="lg"
+                        />
+                    </div>
+                    <div>
+                        <PrimaryButton
+                            label={buttonText2}
+                            onClick={() => navigate(buttonLink2)}
+                            size="lg"
+                        />
+                    </div>
                 </div>
             </div>
 
