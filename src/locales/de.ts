@@ -223,7 +223,7 @@ const de = {
   "company.problemHero.subtitle": "Digitale Tools und KI bestimmen heute den Arbeitsalltag, viele Strukturen sind darauf jedoch nicht vorbereitet. Mitarbeitende nutzen bereits Technologien eigenständig, oft ohne klare Prozesse oder Verantwortlichkeiten. Die Folge: Entscheidungen verzögern sich, Abläufe werden ineffizient, Innovation stockt – während Wettbewerber bereits strategisch Tempo gewinnen.",
   "company.problemHero.cta": "Jetzt Gespräch vereinbaren",
   "company.problemHero.offer.title": "Unser Angebot",
-  "company.problemHero.offer.subtitle": "Die neue Generation der Intrapreneure",
+  "company.problemHero.offer.subtitle": "Die neue Generation der Entrepreneur",
   "company.problemHero.offer.text": "Um veraltete Strukturen aufzubrechen, braucht es mehr als neue Software – es braucht den Mut zu unternehmerischem Handeln. Wir bringen Ihnen die zukünftigen Führungskräfte, die diesen „Founder-Spirit“ in Ihre Abteilungen tragen. Die Talente des TEG erkennen technologische Chancen eigenständig und setzen sie in effiziente Lösungen um, um Ihr Unternehmen von innen heraus zu modernisieren.",
 
   "company.founders.title": "Unsere Gründer",
