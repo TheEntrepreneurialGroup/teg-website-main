@@ -40,10 +40,10 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
         className={`
           w-full md:w-1/2 h-64 md:h-full object-cover rounded-md
           flex-shrink-0
-          order-1 md:${imagePosition === "right" ? "order-2" : "order-1"}
+          ${imagePosition === "right" ? "order-1 md:order-2" : "order-1"}
         `}
       />
-      <div className={`${imagePosition === "right" ? "order-1" : "order-2"} flex-1 min-w-0`}>
+      <div className={`${imagePosition === "right" ? "order-2 md:order-1" : "order-2"} flex-1 min-w-0`}>
         <div className="text-primary text-3xl font-bold overflow-hidden">{title}</div>
         <div className="mt-2 mb-6 overflow-hidden">{description}</div>
         <PrimaryButton
