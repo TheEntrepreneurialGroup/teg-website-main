@@ -27,7 +27,11 @@ const TEGInZahlen: React.FC<TEGInZahlenProps> = ({
     return (
         <div className="p-8 mb-12">
             <h1 className="mb-16">{title}</h1>
+<<<<<<< HEAD
             <div className="flex flex-wrap justify-center gap-8">
+=======
+            <div className="w-full flex flex-wrap justify-center gap-4">
+>>>>>>> 525a5e0 (TEG in Zahlen visially improved alignment and mobile ready)
                 <NumberBox number={number1} text={text1} />
                 <NumberBox number={number2} text={text2} />
                 <NumberBox number={number3} text={text3} />
