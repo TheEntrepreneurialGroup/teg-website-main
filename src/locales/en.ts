@@ -22,6 +22,8 @@ const en = {
   "home.alumni.stat3.label": "Top-level executives in SMEs",
   "home.alumni.stat4.value": "15",
   "home.alumni.stat4.label": "Company founders",
+  "home.mission": "We enable high-potential students to grow into confident, capable young leaders by providing real industry exposure, hands-on responsibility, and structured development toward future managerial roles.",
+  "home.vision": "We want to create a Europe where ambitious young leaders drive transformative innovation, turning bold ideas into real-world impact. By connecting talent with opportunities, nurturing strategic thinking, and fostering hands-on leadership, we aim to awaken the continent from its deep-tech slumber and help Europe reclaim its position at the forefront of global innovation.",
   "home.legacy.title": "Our Legacy",
   "home.legacy.subtitle":
     "Founded by 11 leading German companies and four outstanding students. Proven over four decades.",
