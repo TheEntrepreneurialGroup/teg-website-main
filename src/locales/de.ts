@@ -283,8 +283,9 @@ const de = {
   "company.runTeg.title": "Run TEG like a company",
   "company.runTeg.pillar1.title": "Strategy & Partnership",
   "company.runTeg.pillar2.title": "People & Culture",
-  "company.runTeg.pillar3.title": "Strategy & Partnership",
-  "company.runTeg.pillar4.title": "Strategy & Partnership",
+  "company.runTeg.pillar3.title": "Marketing",
+  "company.runTeg.pillar4.title": "Finance, Administration & Legal",
+
 };
 
 export default de;
