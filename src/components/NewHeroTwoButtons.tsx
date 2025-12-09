@@ -36,8 +36,8 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
             <div className="absolute bottom-0 left-0 p-2 md:p-16 w-full">
                 <div className="relative z-20 h-full w-full flex flex-col justify-center items-center md:justify-start md:items-start">
                     <div className="flex flex-col justify-start w-full">
-                        <h1 className="hidden md:block text-left text-gray-100 mb-2 w-full">{title}</h1>
-                        <h1 className="block md:hidden text-left text-gray-100 mb-2 w-full text-2xl">{mobileTitle}</h1> 
+                        <h1 className="hidden sm:block text-left text-gray-100 mb-2 w-full">{title}</h1>
+                        <h1 className="block sm:hidden text-left text-gray-100 mb-2 w-full text-2xl">{mobileTitle}</h1> 
                         <h3 className="text-left text-gray-100 font-normal w-full">{subtitle}</h3>
                     </div>
                     <div className="mt-4 md:mt-16 flex flex-col md:flex-row justify-center items-center md:justify-start md:items-start w-full">
