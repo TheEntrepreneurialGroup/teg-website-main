@@ -160,8 +160,9 @@ export default function ForCompanies() {
         <SectionTitle
           text={intl.formatMessage({ id: "company.testimonials.title" })}
         />
-        <TestimonialList>
-          {testimonials.map((quote, index) => (
+        <TestimonialList
+          speed="slow"
+          testimonials={testimonials.map((quote, index) => (
             <TestimonialCard
               key={index}
               quote={quote.text}
@@ -172,7 +173,7 @@ export default function ForCompanies() {
               }}
               avatar={quote.image || "placeholder"}
             />
-          ))}
+          ))}>
         </TestimonialList>
       </TestimonialsSection>
 

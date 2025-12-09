@@ -86,6 +86,10 @@ export default {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' }, // move by half content width
         },
+        scrollrev: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' }, // move by half content width
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
