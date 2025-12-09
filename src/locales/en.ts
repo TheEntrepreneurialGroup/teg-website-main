@@ -242,11 +242,11 @@ const en = {
 
   // For Companies Page
   "company.problemHero.title": "Digital Markets, Outdated Structures: Germany's Companies Lag Behind",
-  "company.problemHero.subtitle": "Digital tools and AI define everyday work today, yet many structures are not prepared for them. Employees are already using technologies independently, often without clear processes or responsibilities. The result: decisions are delayed, workflows become inefficient, innovation stalls – while competitors are already gaining strategic speed.",
+  "company.problemHero.subtitle": "Digital tools and AI define everyday work today, yet many structures are not prepared for them. Employees are already using technologies independently, often without clear processes or responsibilities. The result: decisions are delayed, workflows become inefficient and innovation stalls, while competitors are already gaining strategic speed.",
   "company.problemHero.cta": "Schedule a conversation now",
   "company.problemHero.offer.title": "Our Offer",
   "company.problemHero.offer.subtitle": "The New Generation of Entrepreneurs",
-  "company.problemHero.offer.text": "To break up outdated structures, it takes more than new software – it takes the courage to act entrepreneurially. We bring you the future leaders who carry this 'founder spirit' into your departments. TEG talents independently recognize technological opportunities and implement them into efficient solutions to modernize your company from the inside out.",
+  "company.problemHero.offer.text": "To break up outdated structures, it takes more than new software. It takes the courage to act entrepreneurially. We bring you the future leaders who carry this 'founder spirit' into your departments. TEG talents independently recognize technological opportunities and implement them into efficient solutions to modernize your company from the inside out.",
 
   "company.founders.title": "Our Founders",
 
@@ -256,9 +256,9 @@ const en = {
   "company.whyTeg.features.preparation.title": "Preparation",
   "company.whyTeg.features.preparation.subtitle": "We turn digital natives into true corporate entrepreneurs. Our members learn to transform wild innovations into strategic value and take responsibility for processes instead of just using tools.",
   "company.whyTeg.features.verification.title": "Verification",
-  "company.whyTeg.features.verification.subtitle": "No experiments, but validated performance. Through our network and mentoring, we guarantee practical applicability – talents ready to lead your digital transformation immediately.",
+  "company.whyTeg.features.verification.subtitle": "No experiments, but validated performance. Through our network and mentoring, we guarantee practical applicability and talents ready to lead your digital transformation immediately.",
   "company.whyTeg.ctaBanner.title": "Meet Your Next Leaders",
-  "company.whyTeg.ctaBanner.text": "Academic excellence alone does not solve business problems. TEG members bridge the gap between theoretical knowledge and practical value creation from day one. They are trained to navigate established corporate structures diplomatically without losing their digital edge. Instead of theoretical concepts, they bring applicable solutions for digital transformation – from process optimization to strategic realignment. You are not getting interns here, but juniors with a founder's mindset who are ready to take responsibility for budgets and results.",
+  "company.whyTeg.ctaBanner.text": "Academic excellence alone does not solve business problems. TEG members bridge the gap between theoretical knowledge and practical value creation from day one. We are quipped to navigate established corporate structures diplomatically without losing our digital edge. Instead of theoretical concepts, we bring applicable solutions for digital transformation - from process optimization to strategic realignment. You are not getting any interns, but juniors with a founder's mindset, who are ready to take responsibility for budgets and results.",
   "company.whyTeg.ctaBanner.cta": "Contact",
 
   "company.testimonials.title": "What Others Say About Us",
