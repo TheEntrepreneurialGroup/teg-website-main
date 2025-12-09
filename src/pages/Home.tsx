@@ -48,6 +48,7 @@ export const Home: React.FC = () => {
         text1={intl.formatMessage({ id: "home.card1.description" })}
         button1Text={intl.formatMessage({ id: "home.card1.buttonText" })}
         Link1="/"
+        clickable1 = {false}
 
         image2="components-images/team-2.jpeg"
         imagePos2="right"
@@ -56,6 +57,7 @@ export const Home: React.FC = () => {
         text2={intl.formatMessage({ id: "home.card2.description" })}
         button2Text={intl.formatMessage({ id: "home.card2.buttonText" })}
         Link2={intl.formatMessage({ id: "home.card2.buttonLink" })}
+        clickable2
       
         image3="forstudent.jpg"
         imagePos3="left"
@@ -64,6 +66,7 @@ export const Home: React.FC = () => {
         text3={intl.formatMessage({ id: "home.card3.description" })}
         button3Text={intl.formatMessage({ id: "home.card3.buttonText" })}
         Link3={intl.formatMessage({ id: "home.card3.buttonLink" })}
+        clickable3
       />
     </div>
   );

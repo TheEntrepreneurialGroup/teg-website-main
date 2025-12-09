@@ -9,6 +9,7 @@ interface SectionsProps {
     text1: string;
     button1Text: string;
     Link1: string;
+    clickable1: boolean;
 
     image2: string;
     imagePos2: "left" | "right";
@@ -17,6 +18,7 @@ interface SectionsProps {
     text2: string;
     button2Text: string;
     Link2: string;
+    clickable2: boolean;
 
     image3: string;
     imagePos3: "left" | "right";
@@ -25,6 +27,7 @@ interface SectionsProps {
     text3: string;
     button3Text: string;
     Link3: string;
+    clickable3: boolean;
 }
 
 const Sections: React.FC<SectionsProps> = ({
@@ -35,6 +38,7 @@ const Sections: React.FC<SectionsProps> = ({
     text1,
     button1Text,
     Link1,
+    clickable1,
     image2,
     imagePos2,
     imageAlt2,
@@ -42,6 +46,7 @@ const Sections: React.FC<SectionsProps> = ({
     text2,
     button2Text,
     Link2,
+    clickable2,
     image3,
     imagePos3,
     imageAlt3,
@@ -49,6 +54,7 @@ const Sections: React.FC<SectionsProps> = ({
     text3,
     button3Text,
     Link3,
+    clickable3
 }) => {
     return (
         <div className="flex flex-col items-center">
@@ -60,6 +66,7 @@ const Sections: React.FC<SectionsProps> = ({
                 imageAltText={imageAlt1}
                 imageURL={image1}
                 buttonLink={Link1}
+                clickable={clickable1}
             />
             <NewFeatureCard
                 title={tilte2}
@@ -69,6 +76,7 @@ const Sections: React.FC<SectionsProps> = ({
                 imageAltText={imageAlt2}
                 imageURL={image2}
                 buttonLink={Link2}
+                clickable={clickable2}
             />
             <NewFeatureCard
                 title={tilte3}
@@ -78,6 +86,7 @@ const Sections: React.FC<SectionsProps> = ({
                 imageAltText={imageAlt3}
                 imageURL={image3}
                 buttonLink={Link3}
+                clickable={clickable3}
             />
         </div>
     );

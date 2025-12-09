@@ -11,6 +11,7 @@ interface NewFeatureCardProps {
   imageURL: string;
   imageAltText: string;
   imagePosition: "left" | "right";
+  clickable: boolean;
 }
 
 const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
@@ -20,7 +21,8 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
   buttonLink,
   imagePosition,
   imageURL,
-  imageAltText
+  imageAltText,
+  clickable
 }) => {
   const navigate = useNavigate()
   return (
@@ -46,11 +48,13 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
       <div className={`${imagePosition === "right" ? "order-2 md:order-1" : "order-2"} flex-1 min-w-0`}>
         <div className="text-primary text-3xl font-bold overflow-hidden">{title}</div>
         <div className="mt-2 mb-6 overflow-hidden">{description}</div>
-        <PrimaryButton
-          label={buttonText}
-          onClick={() => navigate(buttonLink)}
-          size="lg"
-        />
+        <div className={`${ clickable ? "" : "hidden"}`}>
+          <PrimaryButton
+            label={buttonText}
+            onClick={() => navigate(buttonLink)}
+            size="lg"
+          />
+        </div>
       </div>
     </div>
   );
