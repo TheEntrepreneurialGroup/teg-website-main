@@ -35,16 +35,25 @@ export default function ForCompanies() {
   const testimonials = [
 
     {
+      text: intl.formatMessage({ id: "company.testimonials.quote1.text" }),
+      author: intl.formatMessage({ id: "company.testimonials.quote1.author" }),
+      role1: intl.formatMessage({ id: "company.testimonials.quote1.role1" }),
+      role2: intl.formatMessage({ id: "company.testimonials.quote1.role2" }),
+      companyLogo: "/logos/placeholder-logo.png", // Vodafone placeholder
+    },
+    {
       text: intl.formatMessage({ id: "company.testimonials.quote2.text" }),
       author: intl.formatMessage({ id: "company.testimonials.quote2.author" }),
       role1: intl.formatMessage({ id: "company.testimonials.quote2.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote2.role2" }),
+      companyLogo: "/logos/placeholder-logo.png", // McKinsey placeholder
     },
     {
       text: intl.formatMessage({ id: "company.testimonials.quote3.text" }),
       author: intl.formatMessage({ id: "company.testimonials.quote3.author" }),
       role1: intl.formatMessage({ id: "company.testimonials.quote3.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote3.role2" }),
+      companyLogo: "/bmw-image.webp", // BMW image/logo
     },
     {
       text: intl.formatMessage({ id: "company.testimonials.quote4.text" }),
@@ -52,6 +61,7 @@ export default function ForCompanies() {
       role1: intl.formatMessage({ id: "company.testimonials.quote4.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote4.role2" }),
       image: "/rolandberger.jpg",
+      companyLogo: "/logos/Roland_Berger_logo.svg",
     },
   ];
 
@@ -171,6 +181,7 @@ export default function ForCompanies() {
                 roleLine1: quote.role1,
                 roleLine2: quote.role2,
               }}
+              companyLogo={quote.companyLogo}
               avatar={quote.image || "placeholder"}
             />
           ))}>
