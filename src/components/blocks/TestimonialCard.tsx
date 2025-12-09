@@ -13,7 +13,7 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ quote, person, avatar }: TestimonialCardProps) {
   return (
-    <div className="w-full flex flex-col p-4 bg-gray-100 rounded-2xl">
+    <div className="w-[90vw] md:w-[50vw] lg:w-[35vw] flex flex-col p-4 bg-gray-100 rounded-2xl">
       <div className="relative flex-grow text-left">
         <Quote className="absolute left-2 top-2 w-8 h-8 opacity-30" />
         <p className="text-lg leading-relaxed font-medium px-14 py-4">
