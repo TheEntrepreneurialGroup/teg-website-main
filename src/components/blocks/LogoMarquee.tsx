@@ -5,13 +5,19 @@ interface LogoMarqueeProps {
 
 export function LogoMarquee({ logos, speed = "medium" }: LogoMarqueeProps) {
   const speedClasses = {
+<<<<<<< HEAD
     slow: "animate-[scroll_240s_linear_infinite]",
     medium: "animate-[scroll_160s_linear_infinite]",
     fast: "animate-[scroll_80s_linear_infinite]",
+=======
+    slow: "animate-[scroll_120s_linear_infinite]",
+    medium: "animate-[scroll_80s_linear_infinite]",
+    fast: "animate-[scroll_40s_linear_infinite]",
+>>>>>>> a479543 (Hotfix for Marquee animation)
   }
 
-  // Duplicate logos for seamless loop - triple to ensure smoothness on wide screens
-  const duplicatedLogos = [...logos, ...logos, ...logos]
+  // Duplicate logos for seamless loop - number must be divisible by 2 to not break the effect
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos]
 
   return (
     <div className="relative w-screen overflow-hidden ml-[calc(50%-50vw)] bg-white py-4">
@@ -23,7 +29,11 @@ export function LogoMarquee({ logos, speed = "medium" }: LogoMarqueeProps) {
         {duplicatedLogos.map((logo, index) => (
           <div
             key={index}
+<<<<<<< HEAD
             className="flex-shrink-0 w-auto h-6 md:h-12 mr-12 md:mr-24 flex items-center justify-center group"
+=======
+            className="flex-shrink-0 w-auto h-8 md:h-16 mr-12 md:mr-24 flex items-center justify-center"
+>>>>>>> a479543 (Hotfix for Marquee animation)
           >
             {logo.src === "placeholder" ? (
               <div className="w-16 h-16 bg-muted-foreground/20 rounded" />
