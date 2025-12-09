@@ -39,21 +39,24 @@ export default function ForCompanies() {
       author: intl.formatMessage({ id: "company.testimonials.quote1.author" }),
       role1: intl.formatMessage({ id: "company.testimonials.quote1.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote1.role2" }),
-      companyLogo: "/logos/placeholder-logo.png", // Vodafone placeholder
+      companyLogo: "/logos/vodafone.png", // Vodafone
+      image: "/BerndWiedemann.jpg",
     },
     {
       text: intl.formatMessage({ id: "company.testimonials.quote2.text" }),
       author: intl.formatMessage({ id: "company.testimonials.quote2.author" }),
       role1: intl.formatMessage({ id: "company.testimonials.quote2.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote2.role2" }),
-      companyLogo: "/logos/placeholder-logo.png", // McKinsey placeholder
+      companyLogo: "/logos/McKinsey.png", // McKinsey
+      image: "/JohannesPruchnow.jpg",
     },
     {
       text: intl.formatMessage({ id: "company.testimonials.quote3.text" }),
       author: intl.formatMessage({ id: "company.testimonials.quote3.author" }),
       role1: intl.formatMessage({ id: "company.testimonials.quote3.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote3.role2" }),
-      companyLogo: "/bmw-image.webp", // BMW image/logo
+      companyLogo: "/logos/BMW.png", // BMW
+      image: "/bodoDonauer.jpg",
     },
     {
       text: intl.formatMessage({ id: "company.testimonials.quote4.text" }),
