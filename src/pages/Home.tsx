@@ -12,6 +12,7 @@ export const Home: React.FC = () => {
     <div>
       <NewHeroTwoButtons
         title={intl.formatMessage({ id: "home.hero.title" })}
+        mobileTitle={intl.formatMessage({ id: "home.hero.mobileTitle" })}
         subtitle={intl.formatMessage({ id: "home.hero.since" })}
         bgImage="TEG_Hero_Subpage.jpg"
         buttonText1={intl.formatMessage({ id: "home.hero.buttonText1" })}

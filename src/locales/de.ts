@@ -2,6 +2,7 @@ const de = {
   // Home Page Texts
   "home.hero.title":
     "Wir formen die nächsten Führungspersönlichkeiten der deutschen Wirtschaft",
+  "home.hero.mobileTitle": "Wir formen die nächsten Führungs- persönlichkeiten der deutschen Wirtschaft",
   "home.hero.since": "Seit 1986.",
   "home.hero.subtitle": "",
   "home.hero.buttonText1": "TEG für Unternehmen",
