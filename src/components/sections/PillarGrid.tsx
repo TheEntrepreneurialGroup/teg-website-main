@@ -6,5 +6,5 @@ interface PillarGridProps {
 }
 
 export function PillarGrid({ columns, children }: PillarGridProps) {
-  return <div className={`grid grid-cols-1 md:grid-cols-${columns} gap-6`}>{children}</div>
+  return <div className={`grid grid-cols-1 md:grid-cols-2 gap-6`}>{children}</div> //dynamically choosing the number of cols doesnt work since tailwind removes not used classes
 }
