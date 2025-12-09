@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+
 import { PrimaryButton } from "./blocks/PrimaryButton";
 import { useNavigate } from "react-router-dom";
 
@@ -26,10 +26,10 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
   return (
     <div
       className="
-        w-[clamp(500px,70vw,1000px)]
-        h-[clamp(350px,50vh,600px)]
+        w-full max-w-5xl
+        h-auto
         p-6 
-        flex items-center gap-10
+        flex flex-col md:flex-row items-center gap-10
         mb-8
         overflow-hidden
       "
@@ -38,9 +38,9 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
         src={imageURL}
         alt={imageAltText}
         className={`
-          w-1/2 min-w-[300px] h-full min-h-[400px] object-cover rounded-md
+          w-full md:w-1/2 h-64 md:h-full object-cover rounded-md
           flex-shrink-0
-          ${imagePosition === "right" ? "order-2" : "order-1"}
+          order-1 md:${imagePosition === "right" ? "order-2" : "order-1"}
         `}
       />
       <div className={`${imagePosition === "right" ? "order-1" : "order-2"} flex-1 min-w-0`}>
