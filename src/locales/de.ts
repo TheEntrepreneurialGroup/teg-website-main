@@ -243,11 +243,11 @@ const de = {
 
   // For Companies Page
   "company.problemHero.title": "Digitale Märkte, veraltete Strukturen: Deutschlands Unternehmen hinken hinterher",
-  "company.problemHero.subtitle": "Digitale Tools und KI bestimmen heute den Arbeitsalltag, viele Strukturen sind darauf jedoch nicht vorbereitet. Mitarbeitende nutzen bereits Technologien eigenständig, oft ohne klare Prozesse oder Verantwortlichkeiten. Die Folge: Entscheidungen verzögern sich, Abläufe werden ineffizient, Innovation stockt – während Wettbewerber bereits strategisch Tempo gewinnen.",
+  "company.problemHero.subtitle": "Digitale Tools und KI bestimmen heute den Arbeitsalltag, viele Strukturen sind darauf jedoch nicht vorbereitet. Mitarbeitende nutzen bereits Technologien eigenständig, oft ohne klare Prozesse oder Verantwortlichkeiten. Die Folge: Entscheidungen verzögern sich, Abläufe werden ineffizient und Innovation stockt, während Wettbewerber bereits strategisch Tempo gewinnen.",
   "company.problemHero.cta": "Jetzt Gespräch vereinbaren",
   "company.problemHero.offer.title": "Unser Angebot",
   "company.problemHero.offer.subtitle": "Die neue Generation der Entrepreneur",
-  "company.problemHero.offer.text": "Um veraltete Strukturen aufzubrechen, braucht es mehr als neue Software – es braucht den Mut zu unternehmerischem Handeln. Wir bringen Ihnen die zukünftigen Führungskräfte, die diesen „Founder-Spirit“ in Ihre Abteilungen tragen. Die Talente des TEG erkennen technologische Chancen eigenständig und setzen sie in effiziente Lösungen um, um Ihr Unternehmen von innen heraus zu modernisieren.",
+  "company.problemHero.offer.text": "Um veraltete Strukturen aufzubrechen, braucht es mehr als neue Software. Es braucht den Mut unternehmerisch zu handeln. Wir bringen Ihnen die zukünftigen Führungskräfte, die diesen „Founder-Spirit“ in Ihre Abteilungen tragen. Die TEG erkennen technologische Chancen eigenständig und setzen sie in effiziente Lösungen um, um Ihr Unternehmen von innen heraus zu modernisieren.",
 
   "company.founders.title": "Unsere Gründer",
 
@@ -257,9 +257,9 @@ const de = {
   "company.whyTeg.features.preparation.title": "Vorbereitung",
   "company.whyTeg.features.preparation.subtitle": "Wir machen aus Digital Natives echte Corporate Entrepreneurs. Unsere Mitglieder lernen, wilde Innovationen in strategische Mehrwerte zu verwandeln und Verantwortung für Prozesse zu übernehmen, statt nur Tools zu nutzen.",
   "company.whyTeg.features.verification.title": "Verifikation",
-  "company.whyTeg.features.verification.subtitle": "Keine Experimente, sondern validierte Performance. Durch unser Netzwerk und Mentoring garantieren wir Praxistauglichkeit – Talente, die bereit sind, Ihren digitalen Wandel sofort anzuführen.",
+  "company.whyTeg.features.verification.subtitle": "Keine Experimente, sondern validierte Performance. Durch unser Netzwerk und Mentoring garantieren wir Praxistauglichkeit und Talente, die bereit sind, Ihren digitalen Wandel sofort anzuführen.",
   "company.whyTeg.ctaBanner.title": "Lerne deine nächsten Führungskräfte kennen",
-  "company.whyTeg.ctaBanner.text": "Akademische Exzellenz allein löst keine Business-Probleme. TEG-Mitglieder schließen die Lücke zwischen theoretischem Wissen und praktischer Wertschöpfung ab Tag eins. Sie sind darauf trainiert, sich in gewachsenen Unternehmensstrukturen diplomatisch zu bewegen, ohne ihren digitalen Vorsprung zu verlieren. Statt theoretischer Konzepte bringen sie anwendbare Lösungen für die digitale Transformation mit – von der Prozessoptimierung bis zur strategischen Neuausrichtung. Sie holen sich hier keine Praktikanten, sondern Junioren mit dem Mindset eines Gründers, die bereit sind, Verantwortung für Budgets und Ergebnisse zu übernehmen.",
+  "company.whyTeg.ctaBanner.text": "Akademische Exzellenz allein löst keine Business-Probleme. Bei TEG schließen wir die Lücke zwischen theoretischem Wissen und praktischer Wertschöpfung ab Tag eins. Wir sind darauf vorbereitet, uns in gewachsenen Unternehmensstrukturen diplomatisch zu bewegen, ohne unseren digitalen Vorsprung zu verlieren. Statt theoretischer Konzepte bringen wir anwendbare Lösungen für die digitale Transformation mit - von der Prozessoptimierung bis zur strategischen Neuausrichtung. Wir sind keine klassischen Praktikanten, sondern Junioren mit dem Mindset eines Gründers, die bereit sind, Verantwortung für Budgets und Ergebnisse zu übernehmen.",
   "company.whyTeg.ctaBanner.cta": "Kontakt",
 
   "company.testimonials.title": "Was sagen andere über uns?",
