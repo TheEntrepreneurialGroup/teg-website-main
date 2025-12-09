@@ -21,6 +21,8 @@ const de = {
   "home.alumni.stat3.label": "Top-Level Führungskräfte im Mittelstand",
   "home.alumni.stat4.value": "15",
   "home.alumni.stat4.label": "Unternehmensgründer",
+  "home.mission": "Wir befähigen leistungsstarke Studierende, sich zu selbstbewussten und kompetenten jungen Führungskräften zu entwickeln, indem wir ihnen echten Unternehmenseinblick, praktische Verantwortung und eine strukturierte Entwicklung auf ihrem Weg in zukünftige Managementrollen bieten.",
+  "home.vision": "Wir wollen ein Europa schaffen, in dem ambitionierte junge Führungskräfte transformative Innovationen vorantreiben und mutige Ideen in greifbare Ergebnisse verwandeln. Indem wir Talente mit Chancen verbinden, strategisches Denken fördern und praktische Führungserfahrung ermöglichen, möchten wir den Kontinent aus seinem Deep-Tech-Schlaf wecken und Europa wieder an die Spitze globaler Innovation bringen.",
   "home.legacy.title": "Unser Vermächtnis",
   "home.legacy.subtitle":
     "Gegründet von 11 führenden deutschen Unternehmen und vier herausragenden Studierenden. Bewährt über vier Jahrzehnte.",

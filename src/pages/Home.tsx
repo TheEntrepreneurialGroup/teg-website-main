@@ -34,10 +34,10 @@ export const Home: React.FC = () => {
       />
 
       <MissionAndVision
-        visionTitle="Vision"
         missionTitle="Mission"
-        visionText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel elit facilisis, sagittis tortor a, varius eros. Aenean purus purus, volutpat a fermentum ultrices, faucibus eu massa. Fusce accumsan dolor blandit pharetra pellentesque. Phasellus et venenatis dolor, nec eleifend nunc. Aliquam dictum convallis tortor ut sagittis. Phasellus elementum augue ac massa accumsan dapibus. Nulla non enim ut tortor dignissim efficitur. Donec commodo, dui ac luctus hendrerit, odio sem volutpat magna, eget porttitor orci nulla ut erat."
-        missionText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel elit facilisis, sagittis tortor a, varius eros. Aenean purus purus, volutpat a fermentum ultrices, faucibus eu massa. Fusce accumsan dolor blandit pharetra pellentesque. Phasellus et venenatis dolor, nec eleifend nunc. Aliquam dictum convallis tortor ut sagittis. Phasellus elementum augue ac massa accumsan dapibus. Nulla non enim ut tortor dignissim efficitur. Donec commodo, dui ac luctus hendrerit, odio sem volutpat magna, eget porttitor orci nulla ut erat."
+        visionTitle="Vision"
+        missionText={intl.formatMessage({ id: "home.mission" })}
+        visionText={intl.formatMessage({ id: "home.vision" })}
       />
 
       <Sections

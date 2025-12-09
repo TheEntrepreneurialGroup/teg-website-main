@@ -15,7 +15,7 @@ const MissionAndVision: React.FC<MissionAndVisionProps> = ({
     visionText,
 }) => {
     return (
-        <div className="flex flex-col md:flex-row justify-between bg-primary p-8 md:p-16 mb-16 gap-8">
+        <div className="flex flex-shrink flex-col md:flex-row justify-center bg-primary p-8 md:p-16 mb-16 gap-8">
             <TextBox
                 title={missionTitle}
                 text={missionText}
