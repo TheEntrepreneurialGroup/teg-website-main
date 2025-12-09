@@ -5,17 +5,17 @@ interface TestimonialListProps {
 
 export function TestimonialList({ testimonials, speed = "medium" }: TestimonialListProps) {
   const speedClasses = {
-    slow: "animate-[scroll_60s_linear_infinite]",
-    medium: "animate-[scroll_40s_linear_infinite]",
-    fast: "animate-[scroll_20s_linear_infinite]",
+    slow: "animate-[scroll_120s_linear_infinite]",
+    medium: "animate-[scroll_80s_linear_infinite]",
+    fast: "animate-[scroll_40s_linear_infinite]",
   }
 
   // Duplicate logos for seamless loop
   const duplicatedTestimonials = [...testimonials, ...testimonials]
 
   return (
-    <div className="relative w-screen overflow-hidden ml-[calc(50%-50vw)]">
-      <div className={`inline-flex w-max flex-nowrap ${speedClasses[speed]} hover:[animation-play-state:paused]`}>
+    <div className="relative w-screen overflow-hidden ml-[calc(50%-50vw)] py-8">
+      <div className={`inline-flex w-max flex-nowrap ${speedClasses[speed]}`}>
         {duplicatedTestimonials.map((testimonial, index) => (
           <div
             key={index}
