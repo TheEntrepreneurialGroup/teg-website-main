@@ -4,8 +4,7 @@ import { LogoMarqueeSection } from "@/components/sections/LogoMarqueeSection";
 import { WhyTegSection } from "@/components/sections/WhyTegSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSectionNew";
 import { TestimonialList } from "@/components/sections/TestimonialList";
-import { RunTegSection } from "@/components/sections/RunTegSection";
-import { PillarGrid } from "@/components/sections/PillarGrid";
+import { TalentQualitySection } from "@/components/sections/TalentQualitySection";
 import { FeatureGrid } from "@/components/blocks/FeatureGrid";
 
 import { Headline } from "@/components/blocks/Headline";
@@ -16,7 +15,7 @@ import { LogoMarquee } from "@/components/blocks/LogoMarquee";
 import { IconFeature } from "@/components/blocks/IconFeature";
 import { WideBannerCTA } from "@/components/blocks/WideBannerCTA";
 import { TestimonialCard } from "@/components/blocks/TestimonialCard";
-import { PillarCard } from "@/components/blocks/PillarCard";
+
 
 import { useIntl } from "react-intl";
 
@@ -68,12 +67,7 @@ export default function ForCompanies() {
     },
   ];
 
-  const pillars = [
-    { title: intl.formatMessage({ id: "company.runTeg.pillar1.title" }) },
-    { title: intl.formatMessage({ id: "company.runTeg.pillar2.title" }) },
-    { title: intl.formatMessage({ id: "company.runTeg.pillar3.title" }) },
-    { title: intl.formatMessage({ id: "company.runTeg.pillar4.title" }) },
-  ];
+
 
   return (
     <LandingPage>
@@ -168,6 +162,9 @@ export default function ForCompanies() {
         </WideBannerCTA>
       </WhyTegSection>
 
+      {/* Talent Quality Assurance Section */}
+      <TalentQualitySection />
+
       {/* Testimonials Section */}
       <TestimonialsSection>
         <SectionTitle
@@ -191,17 +188,7 @@ export default function ForCompanies() {
         </TestimonialList>
       </TestimonialsSection>
 
-      {/* Run TEG Section */}
-      <RunTegSection>
-        <SectionTitle
-          text={intl.formatMessage({ id: "company.runTeg.title" })}
-        />
-        <PillarGrid columns={2}>
-          {pillars.map((pillar, index) => (
-            <PillarCard key={index} title={pillar.title} />
-          ))}
-        </PillarGrid>
-      </RunTegSection>
+
 
       {/* Contact Section */}
       <section id="contact" className="py-12 md:py-20 border-t">
