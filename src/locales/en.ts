@@ -2,6 +2,8 @@ const en = {
   // Home Page Texts
   "home.hero.title":
     "We are developing the future leaders of the German economy.",
+  "home.hero.mobileTitle":
+    "We are developing the future leaders of the German economy.",
   "home.hero.since": "Since 1986.",
   "home.hero.subtitle": "",
   "home.hero.buttonText1": "TEG for Companies",
