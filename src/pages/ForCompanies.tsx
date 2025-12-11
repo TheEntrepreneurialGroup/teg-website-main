@@ -101,10 +101,8 @@ export default function ForCompanies() {
         <LogoMarquee
           speed="medium"
           logos={[
-            { src: "/logos/Deloitte.svg" },
             { src: "/logos/HypoVereinsbank.svg" },
             { src: "/logos/Roland_Berger_logo.svg" },
-            { src: "/logos/Vattenfall.svg" },
             { src: "/logos/airbus.svg" },
             { src: "/logos/bcg.png" },
             { src: "/logos/ruhrgas-logo.png" },

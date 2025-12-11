@@ -10,14 +10,14 @@
   --color-brand: #e2eafe;
   --color-primary-dark: #091c3a;
   --color-secondary: #e5e5e5;
-  --color-secondary-light: #f5f5f5;
+  --color-secondary-light: rgba(245 245 245 0.3);
   --color-secondary-dark: #c4c4c4;
   --color-accent: #b8860b;
   --color-accent-light: #daa520;
   --color-accent-dark: #8b6914;
 
   /* Shadcn Variables Mapped to TEG Theme */
-  --background: 0 0% 100%;
+  --background: rgb(255 255 255);
   --foreground: 222.2 84% 4.9%;
 
   --card: 0 0% 100%;
