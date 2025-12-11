@@ -258,7 +258,7 @@ const de = {
   "company.whyTeg.features.preparation.subtitle": "Wir machen aus Digital Natives echte Corporate Entrepreneurs. Unsere Mitglieder lernen, wilde Innovationen in strategische Mehrwerte zu verwandeln und Verantwortung für Prozesse zu übernehmen, statt nur Tools zu nutzen.",
   "company.whyTeg.features.verification.title": "Verifikation",
   "company.whyTeg.features.verification.subtitle": "Keine Experimente, sondern validierte Performance. Durch unser Netzwerk und Mentoring garantieren wir Praxistauglichkeit und Talente, die bereit sind, Ihren digitalen Wandel sofort anzuführen.",
-  "company.whyTeg.ctaBanner.title": "Lerne deine nächsten Führungskräfte kennen",
+  "company.whyTeg.ctaBanner.title": "Lernen Sie Ihre nächsten Führungskräfte kennen",
   "company.whyTeg.ctaBanner.text": "Akademische Exzellenz allein löst keine Business-Probleme. Bei TEG schließen wir die Lücke zwischen theoretischem Wissen und praktischer Wertschöpfung ab Tag eins. Wir sind darauf vorbereitet, uns in gewachsenen Unternehmensstrukturen diplomatisch zu bewegen, ohne unseren digitalen Vorsprung zu verlieren. Statt theoretischer Konzepte bringen wir anwendbare Lösungen für die digitale Transformation mit - von der Prozessoptimierung bis zur strategischen Neuausrichtung. Wir sind keine klassischen Praktikanten, sondern Junioren mit dem Mindset eines Gründers, die bereit sind, Verantwortung für Budgets und Ergebnisse zu übernehmen.",
   "company.whyTeg.ctaBanner.cta": "Kontakt",
 

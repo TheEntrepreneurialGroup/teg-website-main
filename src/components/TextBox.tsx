@@ -11,9 +11,11 @@ const TextBox: React.FC<TextBoxProps> = ({
 }) => {
     return (
         <div className="flex justify-center items-center min-h-full mx-8">
-            <div className="w-full md:w-[30vw] h-auto overflow-hidden bg-secondary-light p-8 rounded-lg">
-                <div className="flex justify-center text-primary text-4xl mb-2"><b>{title}</b></div>
-                <div className="text-justify">{text}</div>
+            <div className="flex items-center w-full md:w-[30vw] overflow-hidden bg-secondary-light p-8 rounded-lg">
+                <div className="flex flex-shrink flex-col">
+                    <div className="w-full text-center text-primary text-4xl mb-2"><b>{title}</b></div>
+                    <div className="w-full text-justify">{text}</div>
+                </div>
             </div>
         </div>
     );
