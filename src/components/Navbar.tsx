@@ -90,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
         </nav>
 
         {/* Language Switcher */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4 mx-4">
           <button
             onClick={() => switchLanguage("en")}
             className="font-semibold text-white hover:text-primary-light transition-colors duration-300"
