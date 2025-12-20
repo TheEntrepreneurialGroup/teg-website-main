@@ -1,164 +1,71 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { useIntl } from "react-intl";
-import { Building, TrendingUp } from "lucide-react";
-import SectionTitle from "../components/SectionTitle";
-import FeatureCard from "../components/FeatureCard";
-import StatCard from "../components/StatCard";
-import CallToAction from "../components/CallToAction";
-import HeroSectionTwoButtons from "../components/HeroSectionTwoButtons";
-import ImageCard from "../components/ImageCard";
+import NewHeroTwoButtons from "@/components/NewHeroTwoButtons";
+import TEGInZahlen from "@/components/sections/TEGInZahlen";
+import Sections from "@/components/sections/Sections";
+import MissionAndVision from "@/components/sections/MissionAndVision";
 
 export const Home: React.FC = () => {
   const intl = useIntl();
 
-  // Section refs
-  const alumniRef = useRef<HTMLDivElement>(null);
-  const legacyRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const sections = [
-      { ref: alumniRef, name: "home-alumni-section" },
-      { ref: legacyRef, name: "home-legacy-section" },
-      { ref: ctaRef, name: "home-cta-section" },
-    ];
-    const observers: IntersectionObserver[] = [];
-
-    sections.forEach(({ ref, name }) => {
-      if (!ref.current) return;
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            if (window.umami) {
-              window.umami.track(name);
-            }
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.3 },
-      );
-      observer.observe(ref.current);
-      observers.push(observer);
-    });
-
-    return () => observers.forEach((obs) => obs.disconnect());
-  }, []);
-
   return (
     <div>
-      <HeroSectionTwoButtons
+      <NewHeroTwoButtons
         title={intl.formatMessage({ id: "home.hero.title" })}
-        since={intl.formatMessage({ id: "home.hero.since" })}
-        subtitle={intl.formatMessage({ id: "home.hero.subtitle" })}
+        mobileTitle={intl.formatMessage({ id: "home.hero.mobileTitle" })}
+        subtitle={intl.formatMessage({ id: "home.hero.since" })}
+        bgImage="TEG_Hero_Subpage.jpg"
         buttonText1={intl.formatMessage({ id: "home.hero.buttonText1" })}
-        buttonLink1={intl.formatMessage({ id: "home.hero.buttonLink1" })}
         buttonText2={intl.formatMessage({ id: "home.hero.buttonText2" })}
-        buttonLink2={intl.formatMessage({ id: "home.hero.buttonLink2" })}
-        backgroundImage="/TEG_Hero_Home.jpg"
+        buttonLink2="/for-students"
+        buttonLink1="/for-companies"
       />
 
-      <section className="py-20 bg-primary-light/5" ref={alumniRef}>
-        <div className="container-custom">
-          <SectionTitle
-            title={intl.formatMessage({ id: "home.alumni.title" })}
-            centered
-          />
+      <TEGInZahlen
+        title="TEG in Zahlen"
+        number1={intl.formatMessage({ id: "home.alumni.alumni.value" })}
+        text1={intl.formatMessage({ id: "home.alumni.alumni.label" })}
+        number2={intl.formatMessage({ id: "home.alumni.stat2.value" })}
+        text2={intl.formatMessage({ id: "home.alumni.stat2.label" })}
+        number3={intl.formatMessage({ id: "home.alumni.stat3.value" })}
+        text3={intl.formatMessage({ id: "home.alumni.stat3.label" })}
+        number4={intl.formatMessage({ id: "home.alumni.stat4.value" })}
+        text4={intl.formatMessage({ id: "home.alumni.stat4.label" })}
+      />
 
-          <div className="grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-6">
-            <StatCard
-              value={intl.formatMessage({ id: "home.alumni.stat1.value" })}
-              label={intl.formatMessage({ id: "home.alumni.stat1.label" })}
-            />
-            <StatCard
-              value={intl.formatMessage({ id: "home.alumni.stat2.value" })}
-              label={intl.formatMessage({ id: "home.alumni.stat2.label" })}
-            />
-            <StatCard
-              value={intl.formatMessage({ id: "home.alumni.stat3.value" })}
-              label={intl.formatMessage({ id: "home.alumni.stat3.label" })}
-            />
-            <StatCard
-              value={intl.formatMessage({ id: "home.alumni.stat4.value" })}
-              label={intl.formatMessage({ id: "home.alumni.stat4.label" })}
-            />
-          </div>
-        </div>
-      </section>
+      <MissionAndVision
+        missionTitle="Mission"
+        visionTitle="Vision"
+        missionText={intl.formatMessage({ id: "home.mission" })}
+        visionText={intl.formatMessage({ id: "home.vision" })}
+      />
 
-      <section id="about" className="section" ref={legacyRef}>
-        <div className="container-custom">
-          <SectionTitle
-            title={intl.formatMessage({ id: "home.legacy.title" })}
-            subtitle={intl.formatMessage({ id: "home.legacy.subtitle" })}
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <ImageCard
-              imageUrl="/corporates.png"
-              altText="Corporate Partners"
-              caption={intl.formatMessage({ id: "home.legacy.image1.caption" })}
-            />
-            <ImageCard
-              imageUrl="/founders.png"
-              altText="Corporate Partners"
-              caption={intl.formatMessage({ id: "home.legacy.image2.caption" })}
-            />
-            <ImageCard
-              imageUrl="/kuratorium.jpg"
-              altText="Corporate Partners"
-              caption={intl.formatMessage({ id: "home.legacy.image3.caption" })}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <FeatureCard
-              title={intl.formatMessage({ id: "home.legacy.feature1.title" })}
-              description={intl.formatMessage({
-                id: "home.legacy.feature1.description",
-              })}
-              icon={<TrendingUp size={40} />}
-            />
-            <FeatureCard
-              title={intl.formatMessage({ id: "home.legacy.feature2.title" })}
-              description={intl.formatMessage({
-                id: "home.legacy.feature2.description",
-              })}
-              icon={<Building size={40} />}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20" ref={ctaRef}>
-        <div className="container-custom grid grid-cols-1 md:grid-cols-2 gap-8">
-          <CallToAction
-            title={intl.formatMessage({ id: "home.callToAction1.title" })}
-            description={intl.formatMessage({
-              id: "home.callToAction1.description",
-            })}
-            buttonText={intl.formatMessage({
-              id: "home.callToAction1.buttonText",
-            })}
-            buttonLink={intl.formatMessage({
-              id: "home.callToAction1.buttonLink",
-            })}
-            isSection={false}
-          />
-          <CallToAction
-            title={intl.formatMessage({ id: "home.callToAction2.title" })}
-            description={intl.formatMessage({
-              id: "home.callToAction2.description",
-            })}
-            buttonText={intl.formatMessage({
-              id: "home.callToAction2.buttonText",
-            })}
-            buttonLink={intl.formatMessage({
-              id: "home.callToAction2.buttonLink",
-            })}
-            isSection={false}
-          />
-        </div>
-      </section>
+      <Sections
+        image1="kuratorium.jpg"
+        imagePos1="left"
+        imageAlt1={intl.formatMessage({ id: "home.card1.imageAlt" })}
+        tilte1={intl.formatMessage({ id: "home.card1.title" })}
+        text1={intl.formatMessage({ id: "home.card1.description" })}
+        button1Text={intl.formatMessage({ id: "home.card1.buttonText" })}
+        Link1="/"
+        clickable1={false}
+        image2="components-images/team-2.jpeg"
+        imagePos2="right"
+        imageAlt2={intl.formatMessage({ id: "home.card2.imageAlt" })}
+        tilte2={intl.formatMessage({ id: "home.card2.title" })}
+        text2={intl.formatMessage({ id: "home.card2.description" })}
+        button2Text={intl.formatMessage({ id: "home.card2.buttonText" })}
+        Link2={intl.formatMessage({ id: "home.card2.buttonLink" })}
+        clickable2
+        image3="forstudent.jpg"
+        imagePos3="left"
+        imageAlt3={intl.formatMessage({ id: "home.card3.imageAlt" })}
+        tilte3={intl.formatMessage({ id: "home.card3.title" })}
+        text3={intl.formatMessage({ id: "home.card3.description" })}
+        button3Text={intl.formatMessage({ id: "home.card3.buttonText" })}
+        Link3={intl.formatMessage({ id: "home.card3.buttonLink" })}
+        clickable3
+      />
     </div>
   );
 };
