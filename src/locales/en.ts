@@ -2,6 +2,8 @@ const en = {
   // Home Page Texts
   "home.hero.title":
     "We are developing the future leaders of the German economy.",
+  "home.hero.mobileTitle":
+    "We are developing the future leaders of the German economy.",
   "home.hero.since": "Since 1986.",
   "home.hero.subtitle": "",
   "home.hero.buttonText1": "TEG for Companies",
@@ -12,12 +14,18 @@ const en = {
   "home.alumni.stat1.value": "300+ Alumni",
   "home.alumni.stat1.label":
     "Our alumni form the backbone of the German economy, whether in top management positions, middle management, or leading specialist roles.",
+  "home.alumni.alumni.value": "300+",
+  "home.alumni.alumni.label": "Alumni",
   "home.alumni.stat2.value": "41",
   "home.alumni.stat2.label": "Top-level executives in corporations",
   "home.alumni.stat3.value": "40",
   "home.alumni.stat3.label": "Top-level executives in SMEs",
   "home.alumni.stat4.value": "15",
   "home.alumni.stat4.label": "Company founders",
+  "home.mission":
+    "We enable high-potential students to grow into confident, capable young leaders by providing real industry exposure, hands-on responsibility, and structured development toward future managerial roles.",
+  "home.vision":
+    "We want to create a Europe where ambitious young leaders drive transformative innovation, turning bold ideas into real-world impact. By connecting talent with opportunities, nurturing strategic thinking, and fostering hands-on leadership, we aim to awaken the continent from its deep-tech slumber and help Europe reclaim its position at the forefront of global innovation.",
   "home.legacy.title": "Our Legacy",
   "home.legacy.subtitle":
     "Founded by 11 leading German companies and four outstanding students. Proven over four decades.",
@@ -51,6 +59,29 @@ const en = {
   "home.alumnis.title": "Our alumni show what is possible for you",
   "home.alumnis.description":
     "300+ alumni, one in three in top management. Among them 41 corporate executives, 40 medium-sized business executives, and 15 founders of successful companies.",
+
+  "home.card1.title": "Not a trend, a legacy",
+  "home.card1.description":
+    "Since 1986, TEG has connected ambitious students with leading companies. Over 39 years, we've developed a proven system that prepares high-potentials for top leadership roles – through real-world experience and sustainable mentoring.",
+  "home.card1.buttonText": "About us",
+  "home.card1.buttonLink": "/about",
+  "home.card1.imageAlt":
+    "Historic newspaper article about TEG's founding in 1986",
+
+  "home.card2.title": "New Generation of Leaders",
+  "home.card2.description":
+    "Shape the next generation of leaders with us. Discover how your company can benefit from access to the TEG ecosystem – and gain direct access to a talent pool proven over 39 years.",
+  "home.card2.buttonText": "Become a partner",
+  "home.card2.buttonLink": "/for-companies",
+  "home.card2.imageAlt":
+    "TEG members engaged in conversation at a networking event",
+
+  "home.card3.title": "Are you ready?",
+  "home.card3.description":
+    "Become part of a selective community of up to 50 high-potentials being prepared for top leadership roles – through real responsibility, practical experience, and mentoring. The success of our alumni over 39 years shows what's possible.",
+  "home.card3.buttonText": "Join us",
+  "home.card3.buttonLink": "/for-students",
+  "home.card3.imageAlt": "Students in professional exchange during a TEG event",
 
   // Company Page Texts
   "company.hero.title":
@@ -134,7 +165,8 @@ const en = {
   "student.cardText.imageAlt": "Welcome at TEG Office",
   "student.cardText.title":
     "At the TEG office, you meet like-minded people who want more and are ready to deliver.",
-  "student.cardText.subtitle": "Welcome to the TEG Office – we look forward to meeting you!",
+  "student.cardText.subtitle":
+    "Welcome to the TEG Office – we look forward to meeting you!",
   "student.cardText.body":
     "In a community limited to 50 members, we support each other with skills, responsibility, and real camaraderie.",
 
@@ -215,6 +247,84 @@ const en = {
   "navbar.about": "About Us",
   "navbar.forCompanies": "For Companies",
   "navbar.forStudents": "For Students",
+
+  // For Companies Page
+  "company.problemHero.title":
+    "Digital Markets, Outdated Structures: Germany's Companies Lag Behind",
+  "company.problemHero.subtitle":
+    "Digital tools and AI define everyday work today, yet many structures are not prepared for them. Employees are already using technologies independently, often without clear processes or responsibilities. The result: decisions are delayed, workflows become inefficient and innovation stalls, while competitors are already gaining strategic speed.",
+  "company.problemHero.cta": "Schedule a conversation now",
+  "company.problemHero.offer.title": "Our Offer",
+  "company.problemHero.offer.subtitle": "The New Generation of Entrepreneurs",
+  "company.problemHero.offer.text":
+    "To break up outdated structures, it takes more than new software. It takes the courage to act entrepreneurially. We bring you the future leaders who carry this 'founder spirit' into your departments. TEG talents independently recognize technological opportunities and implement them into efficient solutions to modernize your company from the inside out.",
+
+  "company.founders.title": "Our Founders",
+
+  "company.whyTeg.title": "Why TEG?",
+  "company.whyTeg.features.selection.title": "Selection",
+  "company.whyTeg.features.selection.subtitle":
+    'We filter specifically for the "doer gene". Only talents who combine initiative with genuine ownership and approach problems proactively like founders make it into our pool.',
+  "company.whyTeg.features.preparation.title": "Preparation",
+  "company.whyTeg.features.preparation.subtitle":
+    "We turn digital natives into true corporate entrepreneurs. Our members learn to transform wild innovations into strategic value and take responsibility for processes instead of just using tools.",
+  "company.whyTeg.features.verification.title": "Verification",
+  "company.whyTeg.features.verification.subtitle":
+    "No experiments, but validated performance. Through our network and mentoring, we guarantee practical applicability and talents ready to lead your digital transformation immediately.",
+  "company.whyTeg.ctaBanner.title": "Meet Your Next Leaders",
+  "company.whyTeg.ctaBanner.text":
+    "Academic excellence alone does not solve business problems. TEG members bridge the gap between theoretical knowledge and practical value creation from day one. We are quipped to navigate established corporate structures diplomatically without losing our digital edge. Instead of theoretical concepts, we bring applicable solutions for digital transformation - from process optimization to strategic realignment. You are not getting any interns, but juniors with a founder's mindset, who are ready to take responsibility for budgets and results.",
+  "company.whyTeg.ctaBanner.cta": "Contact",
+
+  "company.quality.title":
+    "More than a Degree: A Parallel Career as a Quality Guarantee",
+  "company.quality.intro":
+    "TEG members don't just join a club; they undergo a three-semester, intensive management training program alongside their studies. With over 10 hours of investment per week, we simulate real professional life. Working with us means meeting talents who have passed three crucial maturity tests:",
+  "company.quality.operational.title": "Operational Excellence",
+  "company.quality.operational.desc":
+    "Our members specialize early in functions like Sales, Tech, or Finance and apply this directly in the operational management of TEG.",
+  "company.quality.operational.benefit":
+    "Your Benefit: Immediate operational readiness, minimal onboarding.",
+  "company.quality.project.title": "Project Management under Pressure",
+  "company.quality.project.desc":
+    "Setting goals, managing budgets, meeting deadlines: Our talents learn to steer projects independently and manage setbacks with a solution-oriented mindset.",
+  "company.quality.project.benefit":
+    "Your Benefit: Reliable results and structured workflows from day one.",
+  "company.quality.leadership.title": "Leadership & Feedback",
+  "company.quality.leadership.desc":
+    "The supreme discipline: Members learn early to lead teams and cultivate a professional feedback culture. Our coaches are trained to empower others to perform.",
+  "company.quality.leadership.benefit":
+    "Your Benefit: High social competence and leadership potential.",
+  "company.quality.resilience":
+    "Proven Resilience: Only those who deliver consistent performance over 3 semesters join our network. This strict selection process is your guarantee of quality.",
+
+  "company.testimonials.title": "What Others Say About Us",
+  "company.testimonials.quote1.text":
+    "After coincidentally seeing the team working in their office at 11 PM on a Saturday night, I thought to myself that this initiative is worth supporting.",
+  "company.testimonials.quote1.author": "Dr. Bernd Wiemann",
+  "company.testimonials.quote1.role1": "CEO",
+  "company.testimonials.quote1.role2": "Vodafone Pilot Development",
+  "company.testimonials.quote2.text":
+    "We need more personal initiative and more entrepreneurship in Germany to move the country forward again. TEG is committed to this. An important contribution from which all participants benefit.",
+  "company.testimonials.quote2.author": "Johannes Pruchnow",
+  "company.testimonials.quote2.role1": "Principal",
+  "company.testimonials.quote2.role2": "McKinsey & Company, Inc.",
+  "company.testimonials.quote3.text":
+    "Through my work in Human Resources at BMW, I know what matters in graduates and what qualities are required by innovative companies. TEG trains the skills that are needed but are taught too little at university.",
+  "company.testimonials.quote3.author": "Bodo Donauer",
+  "company.testimonials.quote3.role1": "Director HR and Social Affairs",
+  "company.testimonials.quote3.role2": "BMW Group",
+  "company.testimonials.quote4.text":
+    "Being an entrepreneur means taking responsibility. TEG offers students the opportunity to implement their own ideas and grow from these challenges.",
+  "company.testimonials.quote4.author": "Prof. Dr. h.c. Roland Berger",
+  "company.testimonials.quote4.role1": "Entrepreneur and Founder",
+  "company.testimonials.quote4.role2": "Roland Berger GmbH",
+
+  "company.runTeg.title": "Run TEG like a company",
+  "company.runTeg.pillar1.title": "Strategy & Partnership",
+  "company.runTeg.pillar2.title": "People & Culture",
+  "company.runTeg.pillar3.title": "Marketing",
+  "company.runTeg.pillar4.title": "Finance, Administration & Legal",
 };
 
 export default en;
