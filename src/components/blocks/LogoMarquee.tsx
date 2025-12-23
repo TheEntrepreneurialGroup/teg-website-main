@@ -19,7 +19,7 @@ export function LogoMarquee({ logos, speed = "medium" }: LogoMarqueeProps) {
       <div className="absolute top-0 left-0 w-32 md:w-64 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 right-0 w-32 md:w-64 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-      <div className={`inline-flex w-max flex-nowrap ${speedClasses[speed]}`}>
+      <div className="inline-flex w-max flex-nowrap logo-marquee-scroll">
         {duplicatedLogos.map((logo, index) => (
           <div
             key={index}
