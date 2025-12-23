@@ -83,12 +83,14 @@ const en = {
   "home.card3.buttonLink": "/for-students",
   "home.card3.imageAlt": "Students in professional exchange during a TEG event",
 
-  // Company Page Texts
   "company.hero.title":
     "We develop your next leadership talents with certainty.",
+  "company.hero.mobileTitle":
+    "We develop your next leadership talents.",
   "company.hero.subtitle":
     "Become a TEG partner and gain access to a proven talent pool of exceptional future leaders built over 39 years.",
-  "company.hero.buttonText": "Become a Partner",
+  "company.hero.buttonText1": "Get in touch",
+  "company.hero.buttonText2": "TEG for Students",
 
   "company.sectionTitle.partnerships.title":
     "Partner with us to access the next generation of leaders",
@@ -297,6 +299,7 @@ const en = {
     "Your Benefit: High social competence and leadership potential.",
   "company.quality.resilience":
     "Proven Resilience: Only those who deliver consistent performance over 3 semesters join our network. This strict selection process is your guarantee of quality.",
+  "company.quality.cta": "Get in touch now",
 
   "company.testimonials.title": "What Others Say About Us",
   "company.testimonials.quote1.text":

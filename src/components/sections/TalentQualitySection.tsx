@@ -2,12 +2,20 @@
 import { useIntl } from "react-intl";
 import { SectionTitle } from "@/components/blocks/SectionTitle";
 import { TextBoxVorteile } from "../blocks/TextBoxVorteile";
+import { PrimaryButton } from "@/components/blocks/PrimaryButton";
 
 export function TalentQualitySection() {
     const intl = useIntl();
 
+    const scrollToContact = () => {
+        const contactSection = document.getElementById("contact");
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
-        <section className="w-full py-16 md:py-24">
+        <section className="w-full py-10 md:py-14">
             <div className="container mx-auto px-4 md:px-8">
                 {/* Header */}
                 <div className="max-w-4xl mx-auto text-center mb-16">
@@ -50,6 +58,15 @@ export function TalentQualitySection() {
                     <p className="text-xl md:text-2xl font-medium leading-relaxed max-w-5xl mx-auto">
                         {intl.formatMessage({ id: "company.quality.resilience" })}
                     </p>
+                </div>
+
+                {/* CTA Button below the banner */}
+                <div className="mt-10">
+                    <PrimaryButton
+                        label={intl.formatMessage({ id: "company.quality.cta" })}
+                        align="center"
+                        onClick={scrollToContact}
+                    />
                 </div>
             </div>
         </section>

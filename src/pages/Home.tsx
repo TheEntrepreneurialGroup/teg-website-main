@@ -2,7 +2,7 @@ import React from "react";
 import { useIntl } from "react-intl";
 import NewHeroTwoButtons from "@/components/NewHeroTwoButtons";
 import TEGInZahlen from "@/components/sections/TEGInZahlen";
-import Sections from "@/components/sections/Sections";
+import NewFeatureCard from "@/components/NewFeatureCard";
 import MissionAndVision from "@/components/sections/MissionAndVision";
 
 export const Home: React.FC = () => {
@@ -33,6 +33,20 @@ export const Home: React.FC = () => {
         text4={intl.formatMessage({ id: "home.alumni.stat4.label" })}
       />
 
+      {/* First card - News article (above Mission and Vision) */}
+      <div className="flex flex-col items-center">
+        <NewFeatureCard
+          title={intl.formatMessage({ id: "home.card1.title" })}
+          description={intl.formatMessage({ id: "home.card1.description" })}
+          buttonText={intl.formatMessage({ id: "home.card1.buttonText" })}
+          imagePosition="left"
+          imageAltText={intl.formatMessage({ id: "home.card1.imageAlt" })}
+          imageURL="kuratorium.jpg"
+          buttonLink="/"
+          clickable={false}
+        />
+      </div>
+
       <MissionAndVision
         missionTitle="Mission"
         visionTitle="Vision"
@@ -40,32 +54,29 @@ export const Home: React.FC = () => {
         visionText={intl.formatMessage({ id: "home.vision" })}
       />
 
-      <Sections
-        image1="kuratorium.jpg"
-        imagePos1="left"
-        imageAlt1={intl.formatMessage({ id: "home.card1.imageAlt" })}
-        tilte1={intl.formatMessage({ id: "home.card1.title" })}
-        text1={intl.formatMessage({ id: "home.card1.description" })}
-        button1Text={intl.formatMessage({ id: "home.card1.buttonText" })}
-        Link1="/"
-        clickable1={false}
-        image2="components-images/team-2.jpeg"
-        imagePos2="right"
-        imageAlt2={intl.formatMessage({ id: "home.card2.imageAlt" })}
-        tilte2={intl.formatMessage({ id: "home.card2.title" })}
-        text2={intl.formatMessage({ id: "home.card2.description" })}
-        button2Text={intl.formatMessage({ id: "home.card2.buttonText" })}
-        Link2={intl.formatMessage({ id: "home.card2.buttonLink" })}
-        clickable2
-        image3="forstudent.jpg"
-        imagePos3="left"
-        imageAlt3={intl.formatMessage({ id: "home.card3.imageAlt" })}
-        tilte3={intl.formatMessage({ id: "home.card3.title" })}
-        text3={intl.formatMessage({ id: "home.card3.description" })}
-        button3Text={intl.formatMessage({ id: "home.card3.buttonText" })}
-        Link3={intl.formatMessage({ id: "home.card3.buttonLink" })}
-        clickable3
-      />
+      {/* Other cards with pictures (below Mission and Vision) */}
+      <div className="flex flex-col items-center">
+        <NewFeatureCard
+          title={intl.formatMessage({ id: "home.card2.title" })}
+          description={intl.formatMessage({ id: "home.card2.description" })}
+          buttonText={intl.formatMessage({ id: "home.card2.buttonText" })}
+          imagePosition="right"
+          imageAltText={intl.formatMessage({ id: "home.card2.imageAlt" })}
+          imageURL="components-images/team-2.jpeg"
+          buttonLink={intl.formatMessage({ id: "home.card2.buttonLink" })}
+          clickable
+        />
+        <NewFeatureCard
+          title={intl.formatMessage({ id: "home.card3.title" })}
+          description={intl.formatMessage({ id: "home.card3.description" })}
+          buttonText={intl.formatMessage({ id: "home.card3.buttonText" })}
+          imagePosition="left"
+          imageAltText={intl.formatMessage({ id: "home.card3.imageAlt" })}
+          imageURL="forstudent.jpg"
+          buttonLink={intl.formatMessage({ id: "home.card3.buttonLink" })}
+          clickable
+        />
+      </div>
     </div>
   );
 };

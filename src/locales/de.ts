@@ -86,9 +86,11 @@ const de = {
 
   // Company Page Texts
   "company.hero.title": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
+  "company.hero.mobileTitle": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
   "company.hero.subtitle":
     "Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
-  "company.hero.buttonText": "Zusammenarbeit beginnen",
+  "company.hero.buttonText1": "Kontakt aufnehmen",
+  "company.hero.buttonText2": "TEG für Studierende",
 
   "company.sectionTitle.partnerships.title":
     "Partner werden, um Zugang zur nächsten Generation an Führungskräften zu erhalten",
@@ -300,6 +302,7 @@ const de = {
     "Ihr Vorteil: Hohe Sozialkompetenz und Führungspotenzial.",
   "company.quality.resilience":
     "Geprüfte Resilienz: Nur wer konstante Leistung über 3 Semester erbringt, wird Teil unseres Netzwerks. Dieser strenge Selektionsprozess ist Ihre Garantie für Qualität.",
+  "company.quality.cta": "Jetzt Kontakt aufnehmen",
 
   "company.testimonials.title": "Was sagen andere über uns?",
   "company.testimonials.quote1.text":
