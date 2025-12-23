@@ -1,4 +1,5 @@
 import { LandingPage } from "@/components/LandingPage";
+import NewHeroTwoButtons from "@/components/NewHeroTwoButtons";
 import { ProblemHeroSection } from "@/components/sections/ProblemHeroSection";
 import { LogoMarqueeSection } from "@/components/sections/LogoMarqueeSection";
 import { WhyTegSection } from "@/components/sections/WhyTegSection";
@@ -66,138 +67,152 @@ export default function ForCompanies() {
   ];
 
   return (
-    <LandingPage>
-      {/* Problem Hero Section */}
-      <ProblemHeroSection>
-        <Headline
-          text={intl.formatMessage({ id: "company.problemHero.title" })}
-          variant="h2"
-        />
-        <Subheadline
-          text={intl.formatMessage({ id: "company.problemHero.subtitle" })}
-          variant="body"
-        />
-        <WideBannerCTA
-          background="grey"
-          title={intl.formatMessage({
-            id: "company.problemHero.offer.subtitle",
-          })}
-          text={intl.formatMessage({ id: "company.problemHero.offer.text" })}
-          align="left"
-        >
-          <PrimaryButton
-            label={intl.formatMessage({ id: "company.problemHero.cta" })}
-            align="right"
-            onClick={scrollToContact}
+    <>
+      {/* Hero Section - outside container for full width */}
+      <NewHeroTwoButtons
+        title={intl.formatMessage({ id: "company.hero.title" })}
+        mobileTitle={intl.formatMessage({ id: "company.hero.mobileTitle" })}
+        subtitle={intl.formatMessage({ id: "company.hero.subtitle" })}
+        bgImage="TEG_Hero_Home.jpg"
+        buttonText1={intl.formatMessage({ id: "company.hero.buttonText1" })}
+        buttonText2={intl.formatMessage({ id: "company.hero.buttonText2" })}
+        buttonLink1="#contact"
+        buttonLink2="/for-students"
+      />
+
+      <LandingPage>
+        {/* Problem Hero Section */}
+        <ProblemHeroSection>
+          <Headline
+            text={intl.formatMessage({ id: "company.problemHero.title" })}
+            variant="h2"
           />
-        </WideBannerCTA>
-      </ProblemHeroSection>
-
-      <LogoMarqueeSection
-        title={intl.formatMessage({ id: "company.founders.title" })}
-      >
-        <LogoMarquee
-          speed="medium"
-          logos={[
-            { src: "/logos/HypoVereinsbank.svg" },
-            { src: "/logos/Roland_Berger_logo.svg" },
-            { src: "/logos/airbus.svg" },
-            { src: "/logos/bcg.png" },
-            { src: "/logos/ruhrgas-logo.png" },
-            { src: "/logos/siemens.svg" },
-          ]}
-        />
-      </LogoMarqueeSection>
-
-      {/* Why TEG Section */}
-      <WhyTegSection>
-        <SectionTitle
-          text={intl.formatMessage({ id: "company.whyTeg.title" })}
-        />
-        <FeatureGrid>
-          <IconFeature
-            icon="search-people"
+          <Subheadline
+            text={intl.formatMessage({ id: "company.problemHero.subtitle" })}
+            variant="body"
+          />
+          <WideBannerCTA
+            background="grey"
             title={intl.formatMessage({
-              id: "company.whyTeg.features.selection.title",
+              id: "company.problemHero.offer.subtitle",
             })}
-            subtitle={intl.formatMessage({
-              id: "company.whyTeg.features.selection.subtitle",
-            })}
-          />
-          <IconFeature
-            icon="briefcase"
-            title={intl.formatMessage({
-              id: "company.whyTeg.features.preparation.title",
-            })}
-            subtitle={intl.formatMessage({
-              id: "company.whyTeg.features.preparation.subtitle",
-            })}
-          />
-          <IconFeature
-            icon="checklist"
-            title={intl.formatMessage({
-              id: "company.whyTeg.features.verification.title",
-            })}
-            subtitle={intl.formatMessage({
-              id: "company.whyTeg.features.verification.subtitle",
-            })}
-          />
-        </FeatureGrid>
-
-        <WideBannerCTA
-          background="grey"
-          title={intl.formatMessage({ id: "company.whyTeg.ctaBanner.title" })}
-          text={intl.formatMessage({ id: "company.whyTeg.ctaBanner.text" })}
-          align="left"
-        >
-          <PrimaryButton
-            label={intl.formatMessage({ id: "company.whyTeg.ctaBanner.cta" })}
-            align="right"
-            onClick={scrollToContact}
-          />
-        </WideBannerCTA>
-      </WhyTegSection>
-
-      {/* Talent Quality Assurance Section */}
-      <TalentQualitySection />
-
-      {/* Testimonials Section */}
-      <TestimonialsSection>
-        <SectionTitle
-          text={intl.formatMessage({ id: "company.testimonials.title" })}
-        />
-        <TestimonialList
-          speed="slow"
-          testimonials={testimonials.map((quote, index) => (
-            <TestimonialCard
-              key={index}
-              quote={quote.text}
-              person={{
-                name: quote.author,
-                roleLine1: quote.role1,
-                roleLine2: quote.role2,
-              }}
-              companyLogo={quote.companyLogo}
-              avatar={quote.image || "placeholder"}
+            text={intl.formatMessage({ id: "company.problemHero.offer.text" })}
+            align="left"
+          >
+            <PrimaryButton
+              label={intl.formatMessage({ id: "company.problemHero.cta" })}
+              align="left"
+              onClick={scrollToContact}
             />
-          ))}
-        ></TestimonialList>
-      </TestimonialsSection>
+          </WideBannerCTA>
+        </ProblemHeroSection>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-12 md:py-20 border-t">
-        <div className="flex justify-center w-full">
-          <ContactCard
-            name={intl.formatMessage({ id: "company.contact.directorName" })}
-            title={intl.formatMessage({ id: "company.contact.directorTitle" })}
-            imageUrl="/jonathan.jpg"
-            email="jonathan.babelotzky@teg-ev.de"
-            linkedinUrl="https://www.linkedin.com/in/jonathan-babelotzky/"
-            greeting={intl.formatMessage({ id: "company.contact.greeting" })}
-            variant="quote"
+        <LogoMarqueeSection
+          title={intl.formatMessage({ id: "company.founders.title" })}
+        >
+          <LogoMarquee
+            speed="medium"
+            logos={[
+              { src: "/logos/HypoVereinsbank.svg" },
+              { src: "/logos/Roland_Berger_logo.svg" },
+              { src: "/logos/airbus.svg" },
+              { src: "/logos/bcg.png" },
+              { src: "/logos/ruhrgas-logo.png" },
+              { src: "/logos/siemens.svg" },
+            ]}
           />
-        </div>
-      </section>
-    </LandingPage>
+        </LogoMarqueeSection>
+
+        {/* Why TEG Section */}
+        <WhyTegSection>
+          <SectionTitle
+            text={intl.formatMessage({ id: "company.whyTeg.title" })}
+          />
+          <FeatureGrid>
+            <IconFeature
+              icon="search-people"
+              title={intl.formatMessage({
+                id: "company.whyTeg.features.selection.title",
+              })}
+              subtitle={intl.formatMessage({
+                id: "company.whyTeg.features.selection.subtitle",
+              })}
+            />
+            <IconFeature
+              icon="briefcase"
+              title={intl.formatMessage({
+                id: "company.whyTeg.features.preparation.title",
+              })}
+              subtitle={intl.formatMessage({
+                id: "company.whyTeg.features.preparation.subtitle",
+              })}
+            />
+            <IconFeature
+              icon="checklist"
+              title={intl.formatMessage({
+                id: "company.whyTeg.features.verification.title",
+              })}
+              subtitle={intl.formatMessage({
+                id: "company.whyTeg.features.verification.subtitle",
+              })}
+            />
+          </FeatureGrid>
+
+          <WideBannerCTA
+            background="grey"
+            title={intl.formatMessage({ id: "company.whyTeg.ctaBanner.title" })}
+            text={intl.formatMessage({ id: "company.whyTeg.ctaBanner.text" })}
+            align="left"
+          >
+            <PrimaryButton
+              label={intl.formatMessage({ id: "company.whyTeg.ctaBanner.cta" })}
+              align="left"
+              onClick={scrollToContact}
+            />
+          </WideBannerCTA>
+        </WhyTegSection>
+
+        {/* Talent Quality Assurance Section */}
+        <TalentQualitySection />
+
+        {/* Testimonials Section */}
+        <TestimonialsSection>
+          <SectionTitle
+            text={intl.formatMessage({ id: "company.testimonials.title" })}
+          />
+          <TestimonialList
+            speed="slow"
+            testimonials={testimonials.map((quote, index) => (
+              <TestimonialCard
+                key={index}
+                quote={quote.text}
+                person={{
+                  name: quote.author,
+                  roleLine1: quote.role1,
+                  roleLine2: quote.role2,
+                }}
+                companyLogo={quote.companyLogo}
+                avatar={quote.image || "placeholder"}
+              />
+            ))}
+          ></TestimonialList>
+        </TestimonialsSection>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-12 md:py-20 border-t">
+          <div className="flex justify-center w-full">
+            <ContactCard
+              name={intl.formatMessage({ id: "company.contact.directorName" })}
+              title={intl.formatMessage({ id: "company.contact.directorTitle" })}
+              imageUrl="/jonathan.jpg"
+              email="jonathan.babelotzky@teg-ev.de"
+              linkedinUrl="https://www.linkedin.com/in/jonathan-babelotzky/"
+              greeting={intl.formatMessage({ id: "company.contact.greeting" })}
+              variant="quote"
+            />
+          </div>
+        </section>
+      </LandingPage>
+    </>
   );
 }

@@ -6,7 +6,7 @@ interface TestimonialsSectionProps {
 
 export function TestimonialsSection({ children }: TestimonialsSectionProps) {
   return (
-    <section className="py-12 md:py-20">
+    <section className="py-8 md:py-12">
       {children}
     </section>
   )

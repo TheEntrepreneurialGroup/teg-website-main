@@ -16,7 +16,7 @@ export function PrimaryButton({ label, align = "left", size = "default", onClick
 
   return (
     <div className={`flex ${alignClass}`}>
-      <Button size={size} className="bg-blue-600 hover:bg-blue-700 text-white shadow-[0px_0px_5px_rgba(0,0,0,0.1)] text-xl px-6 py-3" onClick={onClick}>
+      <Button size={size} className="bg-accent hover:bg-accent-light active:bg-accent-dark text-white shadow-[0px_0px_5px_rgba(0,0,0,0.1)] text-xl px-6 py-3" onClick={onClick}>
         {label}
       </Button>
     </div>
