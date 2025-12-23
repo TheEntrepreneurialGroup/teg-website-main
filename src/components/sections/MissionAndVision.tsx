@@ -15,15 +15,17 @@ const MissionAndVision: React.FC<MissionAndVisionProps> = ({
     visionText,
 }) => {
     return (
-        <div className="flex flex-col md:flex-row justify-center items-stretch bg-primary p-8 md:p-16 mb-16 gap-8">
-            <TextBox
-                title={missionTitle}
-                text={missionText}
-            />
-            <TextBox
-                title={visionTitle}
-                text={visionText}
-            />
+        <div className="bg-primary py-12 md:py-16 px-4 md:px-8 mb-8">
+            <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8">
+                <TextBox
+                    title={missionTitle}
+                    text={missionText}
+                />
+                <TextBox
+                    title={visionTitle}
+                    text={visionText}
+                />
+            </div>
         </div>
     );
 }

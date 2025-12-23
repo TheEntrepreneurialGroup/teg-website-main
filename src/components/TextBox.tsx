@@ -10,13 +10,13 @@ const TextBox: React.FC<TextBoxProps> = ({
     text
 }) => {
     return (
-        <div className="flex justify-center items-center h-full mx-8">
-            <div className="flex items-center w-full md:w-[30vw] h-full overflow-hidden bg-secondary-light p-8 rounded-lg">
-                <div className="flex flex-shrink flex-col">
-                    <div className="w-full text-center text-primary text-4xl mb-2"><b>{title}</b></div>
-                    <div className="w-full text-justify">{text}</div>
-                </div>
-            </div>
+        <div className="flex-1 bg-white rounded-xl p-8 md:p-10 shadow-lg">
+            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4 text-center">
+                {title}
+            </h3>
+            <p className="text-gray-700 leading-relaxed text-center md:text-lg">
+                {text}
+            </p>
         </div>
     );
 }
