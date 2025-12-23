@@ -118,4 +118,23 @@
   .card {
     @apply bg-primary-light/5 rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .logo-marquee-scroll {
+    animation: scroll 60s linear infinite;
+  }
+
+  @media (min-width: 768px) {
+    .logo-marquee-scroll {
+      animation: scroll 200s linear infinite;
+    }
+  }
 }
