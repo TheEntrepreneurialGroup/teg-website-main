@@ -134,7 +134,8 @@ const en = {
   "student.cardText.imageAlt": "Welcome at TEG Office",
   "student.cardText.title":
     "At the TEG office, you meet like-minded people who want more and are ready to deliver.",
-  "student.cardText.subtitle": "Welcome to the TEG Office – we look forward to meeting you!",
+  "student.cardText.subtitle":
+    "Welcome to the TEG Office – we look forward to meeting you!",
   "student.cardText.body":
     "In a community limited to 50 members, we support each other with skills, responsibility, and real camaraderie.",
 
