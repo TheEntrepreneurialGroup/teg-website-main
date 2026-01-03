@@ -1,7 +1,6 @@
 import React from "react";
 
 import Button from "./Button";
-import { trackButtonClick } from "../utils/analytics";
 
 interface HeroSectionProps {
   title: string;
