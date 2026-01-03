@@ -50,11 +50,10 @@
 	color: gray;
 } */
 
-
 /* .cookie-banner {
   max-width: 500px; /* Adjusted for better responsiveness */
-  /* width: 90%; /* Responsive width */
-  /* padding: 1.5rem;
+/* width: 90%; /* Responsive width */
+/* padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -64,7 +63,7 @@
   font-weight: 700;
   border: 2px solid white;
   border-radius: 1rem; */
-  /* background: rgb(24, 52, 91, 0.7);
+/* background: rgb(24, 52, 91, 0.7);
   color: white;
   position: fixed;
   z-index: 9999;
@@ -88,9 +87,9 @@
 /* .cookie-buttons {
   display: flex;
   gap: 1rem; /* Consistent spacing */
-  /* justify-content: center;
+/* justify-content: center;
   align-items: center;
-} */ 
+} */
 
 /* .accept-button,
 .reject-button,
@@ -104,7 +103,7 @@
 
 /* .accept-button {
   border-color: #4caf50; /* Green for accept */
-  /* color: white;
+/* color: white;
   font-weight: 800;
 } */
 
@@ -114,7 +113,7 @@
 
 /* .reject-button {
   border-color: #f44336; /* Red for reject */
-  /* color: white;
+/* color: white;
 } */
 
 /* .reject-button:hover {
@@ -129,7 +128,7 @@
 
 /* .policy-button:hover {
   background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
-  /* color: white;
+/* color: white;
 }  */
 
 /* Responsive adjustments */
@@ -144,4 +143,3 @@
     gap: 0.5rem;
   }
 }   */
-
