@@ -92,7 +92,7 @@
 
 @layer components {
   .btn {
-    @apply px-6 py-3 text-lg rounded-md font-semibold transition-all duration-300 inline-block;
+    @apply px-6 py-3 text-lg font-semibold transition-all duration-300 inline-block;
   }
 
   .btn-primary {
@@ -116,7 +116,7 @@
   }
 
   .card {
-    @apply bg-primary-light/5 rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+    @apply bg-primary-light/5 shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
   }
 
   .scrollbar-hide {

@@ -45,7 +45,6 @@ const ForStudents: React.FC = () => {
       )}
 
       <div className="max-w-7xl mx-auto">
-
         {/* Commitment CardText Section */}
         <CardText
           image="/components-images/teg_alumni.png"

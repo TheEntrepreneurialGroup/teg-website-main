@@ -1,20 +1,25 @@
 import { Quote } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface TestimonialCardProps {
-  quote: string
+  quote: string;
   person: {
-    name: string
-    roleLine1: string
-    roleLine2: string
-  }
-  avatar?: string
-  companyLogo?: string
+    name: string;
+    roleLine1: string;
+    roleLine2: string;
+  };
+  avatar?: string;
+  companyLogo?: string;
 }
 
-export function TestimonialCard({ quote, person, avatar, companyLogo }: TestimonialCardProps) {
+export function TestimonialCard({
+  quote,
+  person,
+  avatar,
+  companyLogo,
+}: TestimonialCardProps) {
   return (
-    <div className="w-[90vw] md:w-[50vw] lg:w-[35vw] min-h-[320px] flex flex-col p-4 bg-gray-100 rounded-2xl relative">
+    <div className="w-[90vw] md:w-[50vw] lg:w-[35vw] min-h-[320px] flex flex-col p-4 bg-gray-100  relative">
       <div className="relative flex-grow text-left">
         <Quote className="absolute left-2 top-2 w-8 h-8 opacity-30" />
         <p className="text-lg leading-relaxed font-medium px-14 py-4">
@@ -26,7 +31,13 @@ export function TestimonialCard({ quote, person, avatar, companyLogo }: Testimon
       <div className="flex justify-between items-end">
         <div className="flex items-center gap-2">
           <Avatar className="w-24 h-24">
-            {avatar && avatar !== "placeholder" && <AvatarImage src={avatar} alt={person.name} className="object-cover object-top" />}
+            {avatar && avatar !== "placeholder" && (
+              <AvatarImage
+                src={avatar}
+                alt={person.name}
+                className="object-cover object-top"
+              />
+            )}
             <AvatarFallback className="bg-gray-300 text-gray-600 text-2xl">
               {person.name
                 .split(" ")
@@ -42,7 +53,11 @@ export function TestimonialCard({ quote, person, avatar, companyLogo }: Testimon
         </div>
         {companyLogo && (
           <div className="mb-2 mr-4">
-            <img src={companyLogo} alt="Company Logo" className="h-10 w-auto object-contain opacity-80" />
+            <img
+              src={companyLogo}
+              alt="Company Logo"
+              className="h-10 w-auto object-contain opacity-80"
+            />
           </div>
         )}
       </div>
