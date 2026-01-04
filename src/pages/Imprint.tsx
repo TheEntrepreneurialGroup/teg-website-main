@@ -18,7 +18,7 @@ const Imprint: React.FC = () => {
 
           <div className="max-w-3xl mx-auto mt-12 text-gray-600">
             {/* Contact Information Block */}
-            <div className="mb-6 p-6 border border-gray-200 rounded-lg bg-gray-50">
+            <div className="mb-6 p-6 border border-gray-200  bg-gray-50">
               <h3 className="text-lg font-semibold mb-2 text-primary">
                 Contact Info:
               </h3>
@@ -48,7 +48,7 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Representation Block */}
-            <div className="mb-6 p-6 border border-gray-200 rounded-lg bg-gray-50">
+            <div className="mb-6 p-6 border border-gray-200  bg-gray-50">
               <h3 className="text-lg font-semibold mb-2 text-primary">
                 Board of Directors authorized to represent:
               </h3>
@@ -58,7 +58,7 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Register Entry Block */}
-            <div className="mb-6 p-6 border border-gray-200 rounded-lg bg-gray-50">
+            <div className="mb-6 p-6 border border-gray-200  bg-gray-50">
               <h3 className="text-lg font-semibold mb-2 text-primary">
                 Register Entry:
               </h3>
@@ -67,7 +67,7 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Scope of Imprint */}
-            <div className="mb-6 p-6 border border-gray-200 rounded-lg bg-gray-50">
+            <div className="mb-6 p-6 border border-gray-200  bg-gray-50">
               <p className="text-sm">
                 The imprint applies according to § 5 TMG for our telemedia
                 including our Instagram, LinkedIn and Facebook presence.

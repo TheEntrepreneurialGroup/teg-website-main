@@ -33,7 +33,13 @@ export const Home: React.FC = () => {
         text4={intl.formatMessage({ id: "home.alumni.stat4.label" })}
       />
 
-      {/* First card - News article (above Mission and Vision) */}
+      <MissionAndVision
+        missionTitle="Mission"
+        visionTitle="Vision"
+        missionText={intl.formatMessage({ id: "home.mission" })}
+        visionText={intl.formatMessage({ id: "home.vision" })}
+      />
+
       <div className="flex flex-col items-center">
         <NewFeatureCard
           title={intl.formatMessage({ id: "home.card1.title" })}
@@ -45,17 +51,7 @@ export const Home: React.FC = () => {
           buttonLink="/"
           clickable={false}
         />
-      </div>
 
-      <MissionAndVision
-        missionTitle="Mission"
-        visionTitle="Vision"
-        missionText={intl.formatMessage({ id: "home.mission" })}
-        visionText={intl.formatMessage({ id: "home.vision" })}
-      />
-
-      {/* Other cards with pictures (below Mission and Vision) */}
-      <div className="flex flex-col items-center">
         <NewFeatureCard
           title={intl.formatMessage({ id: "home.card2.title" })}
           description={intl.formatMessage({ id: "home.card2.description" })}
