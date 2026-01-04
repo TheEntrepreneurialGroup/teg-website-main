@@ -2,8 +2,10 @@ import React from "react";
 
 import { PrimaryButton } from "./blocks/PrimaryButton";
 import { useNavigate } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 interface NewFeatureCardProps {
+  className?: string;
   title: string;
   description: string;
   buttonText: string;
@@ -15,6 +17,7 @@ interface NewFeatureCardProps {
 }
 
 const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
+  className,
   title,
   description,
   buttonText,
@@ -27,33 +30,30 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
   const navigate = useNavigate();
   return (
     <div
-      className="
-        w-full max-w-5xl
-        h-auto
-        p-6 
-        flex flex-col md:flex-row items-center gap-10
-        mb-8
-        overflow-hidden
-      "
+      className={cn(
+        "w-full h-fiit flex flex-col md:flex-row items-center gap-10 overflow-visible",
+        className,
+      )}
     >
       <img
         src={imageURL}
         alt={imageAltText}
         className={`
-          w-full md:w-1/2 h-64 md:h-full object-cover 
-          flex-shrink-0
+          w-full md:w-1/2 aspect-[4/3] object-cover object-center
           ${imagePosition === "right" ? "order-1 md:order-2" : "order-1"}
         `}
       />
       <div
         className={`${
-          imagePosition === "right" ? "order-2 md:order-1" : "order-2"
-        } flex-1 min-w-0`}
+          imagePosition === "right"
+            ? "order-2 md:order-1 md:pr-0 md:pl-8"
+            : "order-2 md:order-2 md:pl-0 md:pr-8"
+        } flex-1 min-w-0 px-4 md:px-0`}
       >
-        <div className="text-primary text-3xl font-bold overflow-hidden">
+        <div className="text-primary text-3xl font-bold leading-tight max-w-[60ch] overflow-hidden">
           {title}
         </div>
-        <div className="mt-2 mb-6 overflow-hidden">{description}</div>
+        <div className="mt-2 mb-6 text-gray-700 max-w-prose">{description}</div>
         <div className={`${clickable ? "" : "hidden"}`}>
           <PrimaryButton
             label={buttonText}

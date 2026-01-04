@@ -42,6 +42,7 @@ export const Home: React.FC = () => {
 
       <div className="flex flex-col items-center">
         <NewFeatureCard
+          className="md:pl-1"
           title={intl.formatMessage({ id: "home.card1.title" })}
           description={intl.formatMessage({ id: "home.card1.description" })}
           buttonText={intl.formatMessage({ id: "home.card1.buttonText" })}
