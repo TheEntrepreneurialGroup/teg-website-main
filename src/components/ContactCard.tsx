@@ -23,10 +23,10 @@ const ContactCard: React.FC<ContactCardProps> = ({
   variant = "default",
 }) => {
   return (
-    <div className="bg-white rounded-sm shadow-lg overflow-hidden w-full max-w-4xl">
+    <div className="bg-white  shadow-lg overflow-hidden w-full max-w-4xl">
       <div className="flex flex-col md:flex-row items-center p-2 md:p-6 pb-2 gap-2 sm:gap-4">
         {/* Image Section */}
-        <div className="w-full md:w-64 h-[500px] md:h-80 lg:h-96 overflow-hidden border-1 border-gray-200 rounded-sm flex-shrink-0">
+        <div className="w-full md:w-64 h-[500px] md:h-80 lg:h-96 overflow-hidden border-1 border-gray-200  flex-shrink-0">
           <img
             src={imageUrl}
             alt={name}

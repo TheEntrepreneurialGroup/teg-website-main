@@ -7,14 +7,18 @@ interface HowItWorksSubsectionProps {
   imageOnLeft?: boolean;
 }
 
-const HowItWorksSubsection: React.FC<HowItWorksSubsectionProps> = ({ 
-  title, 
-  description, 
+const HowItWorksSubsection: React.FC<HowItWorksSubsectionProps> = ({
+  title,
+  description,
   image,
-  imageOnLeft = false 
+  imageOnLeft = false,
 }) => {
   return (
-    <div className={`flex flex-col ${imageOnLeft ? 'md:flex-row-reverse' : 'md:flex-row'} items-center md:items-stretch gap-8 md:gap-16 py-10 md:py-16`}>
+    <div
+      className={`flex flex-col ${
+        imageOnLeft ? "md:flex-row-reverse" : "md:flex-row"
+      } items-center md:items-stretch gap-8 md:gap-16 py-10 md:py-16`}
+    >
       {/* Text Section */}
       <div className="flex-1 min-w-0 flex flex-col justify-center md:justify-start">
         <h5 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-left">
@@ -27,13 +31,19 @@ const HowItWorksSubsection: React.FC<HowItWorksSubsectionProps> = ({
       {/* Image Section */}
       <div className="flex-1 flex items-center justify-center">
         {image ? (
-          <img src={image} alt={title} className="w-full h-full object-cover rounded-lg" />
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover "
+          />
         ) : (
-            <span className="text-gray-400 text-base italic">Image coming soon</span>
+          <span className="text-gray-400 text-base italic">
+            Image coming soon
+          </span>
         )}
       </div>
     </div>
   );
 };
 
-export default HowItWorksSubsection; 
+export default HowItWorksSubsection;
