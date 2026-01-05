@@ -1,17 +1,24 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 
 interface NumberBoxProps {
+  className?: string;
   number: string;
   text: string;
 }
 
-const NumberBox: React.FC<NumberBoxProps> = ({ number, text }) => {
+const NumberBox: React.FC<NumberBoxProps> = ({ className, number, text }) => {
   return (
-    <div className="bg-primary-light flex flex-col justify-around items-center w-44 h-44 md:w-64 md:h-64 p-4 md:px-12 shadow-[0px_0px_5px_rgba(0,0,0,0.2)]">
-      <div className="text-gray-100 text-5xl font-medium flex h-1/2 items-center justify-center text-center">
+    <div
+      className={cn(
+        "w-full flex flex-col justify-start items-center h-full",
+        className,
+      )}
+    >
+      <div className="text-[rgb(184,134,11)] text-4xl md:text-5xl font-semibold leading-tight">
         {number}
       </div>
-      <div className="text-gray-100 text-sm md:text-lg flex h-1/2 items-center justify-center text-center">
+      <div className="text-neutral-700 text-md md:text-lg p-4 md:px-6 text-center">
         {text}
       </div>
     </div>
