@@ -17,8 +17,6 @@ function useShouldStack(subtitle: string) {
       const isSmall = window.innerWidth < 400;
       const wordCount = subtitle.trim().split(/\s+/).length;
       setShouldStack(isSmall && wordCount > 10);
-      console.log(isSmall);
-      console.log(wordCount);
     };
     check();
     window.addEventListener("resize", check);
