@@ -14,15 +14,17 @@ export const Home: React.FC = () => {
         title={intl.formatMessage({ id: "home.hero.title" })}
         mobileTitle={intl.formatMessage({ id: "home.hero.mobileTitle" })}
         subtitle={intl.formatMessage({ id: "home.hero.since" })}
-        bgImage="TEG_Hero_Subpage.jpg"
+        bgImage="TEG_Hero_Subpage.png"
         buttonText1={intl.formatMessage({ id: "home.hero.buttonText1" })}
         buttonText2={intl.formatMessage({ id: "home.hero.buttonText2" })}
         buttonLink2="/for-students"
         buttonLink1="/for-companies"
+        gradientClassName="bg-gradient-to-b from-transparent from-45% via-primary/85  via-60% to-primary to-90% lg:via-65%"
       />
 
       <TEGInZahlen
-        title="TEG in Zahlen"
+        className="md:py-20"
+        title={intl.formatMessage({ id: "home.alumni.title" })}
         number1={intl.formatMessage({ id: "home.alumni.alumni.value" })}
         text1={intl.formatMessage({ id: "home.alumni.alumni.label" })}
         number2={intl.formatMessage({ id: "home.alumni.stat2.value" })}
@@ -40,9 +42,9 @@ export const Home: React.FC = () => {
         visionText={intl.formatMessage({ id: "home.vision" })}
       />
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center lg:px-48 xl:px-96 xl:py-20 gap-10 md:gap-0 pb-20 md:pb-0">
         <NewFeatureCard
-          className="md:pl-1"
+          className="pl-1"
           title={intl.formatMessage({ id: "home.card1.title" })}
           description={intl.formatMessage({ id: "home.card1.description" })}
           buttonText={intl.formatMessage({ id: "home.card1.buttonText" })}
