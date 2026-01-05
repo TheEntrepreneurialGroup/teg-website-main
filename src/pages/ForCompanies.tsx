@@ -75,9 +75,10 @@ export default function ForCompanies() {
         subtitle={intl.formatMessage({ id: "company.hero.subtitle" })}
         bgImage="TEG_Hero_Home.jpg"
         buttonText1={intl.formatMessage({ id: "company.hero.buttonText1" })}
-        buttonText2={intl.formatMessage({ id: "company.hero.buttonText2" })}
         buttonLink1="#contact"
-        buttonLink2="/for-students"
+        gradientClassName="bg-gradient-to-b from-transparent from-45% via-primary/85 via-80% to-primary to-95%"
+        imageClassName="object-top md:object-center"
+        className="lg:h-screen"
       />
 
       <LandingPage>
@@ -203,7 +204,9 @@ export default function ForCompanies() {
           <div className="flex justify-center w-full">
             <ContactCard
               name={intl.formatMessage({ id: "company.contact.directorName" })}
-              title={intl.formatMessage({ id: "company.contact.directorTitle" })}
+              title={intl.formatMessage({
+                id: "company.contact.directorTitle",
+              })}
               imageUrl="/jonathan.jpg"
               email="jonathan.babelotzky@teg-ev.de"
               linkedinUrl="https://www.linkedin.com/in/jonathan-babelotzky/"

@@ -21,7 +21,7 @@ export function TestimonialCard({
   return (
     <div className="w-[90vw] md:w-[50vw] lg:w-[35vw] min-h-[320px] flex flex-col p-4 bg-gray-100  relative">
       <div className="relative flex-grow text-left">
-        <Quote className="absolute left-2 top-2 w-8 h-8 opacity-30" />
+        <Quote className="absolute left-0 top-0 w-8 h-8 opacity-30" />
         <p className="text-lg leading-relaxed font-medium px-14 py-4">
           {quote}
         </p>
