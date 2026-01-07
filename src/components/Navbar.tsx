@@ -1,26 +1,36 @@
-import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-
 import { trackButtonClick } from "../utils/analytics";
 import { useIntl } from "react-intl";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface NavbarProps {
   scrolled: boolean;
   switchLanguage: (lang: "en" | "de") => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
+export default function Navbar({ scrolled, switchLanguage }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const intl = useIntl();
+  const pathname = usePathname();
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+
+  const isActive = (path: string) => pathname === path;
+
+  const navLinks = [
+    { label: intl.formatMessage({ id: "navbar.about" }), path: "/" , track: "About Us"},
+    { label: intl.formatMessage({ id: "navbar.forCompanies" }), path: "/for-companies", track: "TEG for Companies" },
+    { label: intl.formatMessage({ id: "navbar.forStudents" }), path: "/for-students", track: "TEG for Students" },
+  ];
 
   return (
-    <header
+    <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary-dark ${
         scrolled ? "shadow-md" : "md:py-2"
       }`}
@@ -29,64 +39,26 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="container-custom flex justify-between items-center w-full p-2">
-        <Link to="/" className="flex items-center p-0">
+        <Link href="/" className="flex items-center p-0">
           <Logo />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `font-semibold relative ${
-                scrolled || isActive ? "text-white" : "text-white"
-              } hover:text-primary-light transition-colors duration-300 ${
-                isActive
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              href={link.path}
+              onClick={() => trackButtonClick(link.track, "Navbar")}
+              className={`font-semibold relative text-white hover:text-primary-light transition-colors duration-300 ${
+                isActive(link.path)
                   ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
                   : ""
-              }`
-            }
-            onClick={() => trackButtonClick("About Us", "Navbar")}
-            end
-          >
-            {intl.formatMessage({
-              id: "navbar.about",
-            })}
-          </NavLink>
-          <NavLink
-            to="/for-companies"
-            className={({ isActive }) =>
-              `font-semibold relative ${
-                scrolled || isActive ? "text-white" : "text-white"
-              } hover:text-primary-light transition-colors duration-300 ${
-                isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
-                  : ""
-              }`
-            }
-            onClick={() => trackButtonClick("TEG for Companies", "Navbar")}
-          >
-            {intl.formatMessage({
-              id: "navbar.forCompanies",
-            })}
-          </NavLink>
-          <NavLink
-            to="/for-students"
-            className={({ isActive }) =>
-              `font-semibold relative ${
-                scrolled || isActive ? "text-white" : "text-white"
-              } hover:text-primary-light transition-colors duration-300 ${
-                isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
-                  : ""
-              }`
-            }
-            onClick={() => trackButtonClick("TEG for Students", "Navbar")}
-          >
-            {intl.formatMessage({
-              id: "navbar.forStudents",
-            })}
-          </NavLink>
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         {/* Language Switcher */}
@@ -118,70 +90,37 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
         </button>
 
         {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div
-            className="fixed inset-0 bg-white flex flex-col items-start justify-center z-40 p-6"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.3 }}
-          >
-            <nav className="flex flex-col items-start space-y-6">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
-                  } hover:text-primary transition-colors duration-300`
-                }
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  trackButtonClick("About us", "Navbar");
-                }}
-                end
-              >
-                {intl.formatMessage({
-                  id: "navbar.about",
-                })}
-              </NavLink>
-              <NavLink
-                to="/for-companies"
-                className={({ isActive }) =>
-                  `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
-                  } hover:text-primary transition-colors duration-300`
-                }
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  trackButtonClick("TEG for Companies", "Navbar");
-                }}
-              >
-                {intl.formatMessage({
-                  id: "navbar.forCompanies",
-                })}
-              </NavLink>
-              <NavLink
-                to="/for-students"
-                className={({ isActive }) =>
-                  `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
-                  } hover:text-primary transition-colors duration-300`
-                }
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  trackButtonClick("TEG for Students", "Navbar");
-                }}
-              >
-                {intl.formatMessage({
-                  id: "navbar.forStudents",
-                })}
-              </NavLink>
-            </nav>
-          </div>
-        )}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              className="fixed inset-0 bg-white flex flex-col items-start justify-center z-40 p-6"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.3 }}
+            >
+              <nav className="flex flex-col items-start space-y-6">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    href={link.path}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      trackButtonClick(link.track, "Navbar");
+                    }}
+                    className={`text-xl font-semibold ${
+                      isActive(link.path) ? "text-primary" : "text-gray-800"
+                    } hover:text-primary transition-colors duration-300`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
-};
+}
 
-export default Navbar;

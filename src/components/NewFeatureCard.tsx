@@ -1,8 +1,9 @@
-import React from "react";
+"use client";
 
+import React from "react";
+import { useRouter } from "next/navigation";
 import { PrimaryButton } from "./blocks/PrimaryButton";
-import { useNavigate } from "react-router-dom";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 interface NewFeatureCardProps {
   className?: string;
@@ -27,7 +28,7 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
   imageAltText,
   clickable,
 }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   return (
     <div
       className={cn(
@@ -57,7 +58,7 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
         <div className={`${clickable ? "" : "hidden"}`}>
           <PrimaryButton
             label={buttonText}
-            onClick={() => navigate(buttonLink)}
+            onClick={() => router.push(buttonLink)}
             size="lg"
           />
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Linkedin, Facebook, Instagram } from "lucide-react";
 import { trackOutboundClick } from "../utils/analytics";
 
@@ -66,13 +66,13 @@ const Footer: React.FC = () => {
               Contact
             </a>
             <Link
-              to="/imprint"
+              href="/imprint"
               className="text-secondary-light text-sm hover:text-white transition-colors duration-300"
             >
               Imprint
             </Link>
             <Link
-              to="/privacy-policy"
+              href="/privacy-policy"
               className="text-secondary-light text-sm hover:text-white transition-colors duration-300"
             >
               Privacy Policy

@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
+import { useRouter } from "next/navigation";
 import { PrimaryButton } from "./blocks/PrimaryButton";
-import { useNavigate } from "react-router-dom";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 interface NewHeroTwoButtonsProps {
   title: string;
@@ -30,7 +32,7 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
   imageClassName,
   className,
 }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleLink = (to: string) => {
     if (to.startsWith("#")) {
@@ -45,7 +47,7 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
       return;
     }
 
-    navigate(to);
+    router.push(to);
   };
   return (
     <>
@@ -118,7 +120,7 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
                 <div>
                   <PrimaryButton
                     label={buttonText2}
-                    onClick={() => handleLink(buttonLink1)}
+                    onClick={() => handleLink(buttonLink2)}
                     size="lg"
                   />
                 </div>

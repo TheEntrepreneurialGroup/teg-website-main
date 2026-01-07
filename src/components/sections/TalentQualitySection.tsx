@@ -1,7 +1,7 @@
 import { useIntl } from "react-intl";
-import { SectionTitle } from "@/components/blocks/SectionTitle";
+import { SectionTitle } from "../blocks/SectionTitle";
 import { TextBoxVorteile } from "../blocks/TextBoxVorteile";
-import { PrimaryButton } from "@/components/blocks/PrimaryButton";
+import { PrimaryButton } from "../blocks/PrimaryButton";
 
 export function TalentQualitySection() {
   const intl = useIntl();
