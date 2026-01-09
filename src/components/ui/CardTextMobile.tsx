@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 interface CardTextProps {
   image: string;
@@ -10,7 +10,6 @@ interface CardTextProps {
 
 function useShouldStack(subtitle: string) {
   const [shouldStack, setShouldStack] = useState(false);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const check = () => {

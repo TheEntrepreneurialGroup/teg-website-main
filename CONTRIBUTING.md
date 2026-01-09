@@ -5,6 +5,7 @@ Thank you for your interest in contributing to our website! This document provid
 ## ⚠️ Important Notice
 
 **DO NOT PUSH DIRECTLY TO MAIN BRANCH**
+
 - This is a private repository without branch protection
 - All changes must go through Pull Requests
 - The main branch is reserved for production-ready code only
@@ -32,6 +33,7 @@ Thank you for your interest in contributing to our website! This document provid
 ### 3. Development Workflow
 
 1. Create a new branch from `dev`:
+
    ```bash
    git checkout dev
    git pull origin dev
@@ -41,6 +43,7 @@ Thank you for your interest in contributing to our website! This document provid
 2. Make your changes following our Code Style Guidelines.
 
 3. Commit your changes with clear commit messages:
+
    ```bash
    git commit -m "fix: resolve issue #123 - brief description"
    ```
@@ -91,6 +94,7 @@ Thank you for your interest in contributing to our website! This document provid
 ## 🎨 Commit Message Format
 
 Use the following format for commit messages:
+
 ```
 type: brief description
 
@@ -106,4 +110,4 @@ type: brief description
 
 ---
 
-Thank you for contributing to our project! 🎉 
+Thank you for contributing to our project! 🎉

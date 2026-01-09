@@ -15,9 +15,7 @@ const HowItWorksSubsection: React.FC<HowItWorksSubsectionProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col ${
-        imageOnLeft ? "md:flex-row-reverse" : "md:flex-row"
-      } items-center md:items-stretch gap-8 md:gap-16 py-10 md:py-16`}
+      className={`flex flex-col ${imageOnLeft ? "md:flex-row-reverse" : "md:flex-row"} items-center md:items-stretch gap-8 md:gap-16 py-10 md:py-16`}
     >
       {/* Text Section */}
       <div className="flex-1 min-w-0 flex flex-col justify-center md:justify-start">
