@@ -85,8 +85,7 @@ const en = {
 
   "company.hero.title":
     "We develop your next leadership talents with certainty.",
-  "company.hero.mobileTitle":
-    "We develop your next leadership talents.",
+  "company.hero.mobileTitle": "We develop your next leadership talents.",
   "company.hero.subtitle":
     "Become a TEG partner and gain access to a proven talent pool of exceptional future leaders built over 39 years.",
   "company.hero.buttonText1": "Get in touch",

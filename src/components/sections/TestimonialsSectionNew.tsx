@@ -1,13 +1,9 @@
-import type { ReactNode } from "react"
+import type { ReactNode } from "react";
 
 interface TestimonialsSectionProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export function TestimonialsSection({ children }: TestimonialsSectionProps) {
-  return (
-    <section className="py-8 md:py-12">
-      {children}
-    </section>
-  )
+  return <section className="py-8 md:py-12">{children}</section>;
 }

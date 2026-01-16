@@ -1,9 +1,9 @@
-import { Search, Briefcase, CheckSquare } from "lucide-react"
+import { Search, Briefcase, CheckSquare } from "lucide-react";
 
 interface IconFeatureProps {
-  icon: "search-people" | "briefcase" | "checklist"
-  title: string
-  subtitle: string
+  icon: "search-people" | "briefcase" | "checklist";
+  title: string;
+  subtitle: string;
 }
 
 export function IconFeature({ icon, title, subtitle }: IconFeatureProps) {
@@ -11,9 +11,9 @@ export function IconFeature({ icon, title, subtitle }: IconFeatureProps) {
     "search-people": Search,
     briefcase: Briefcase,
     checklist: CheckSquare,
-  }
+  };
 
-  const Icon = iconMap[icon]
+  const Icon = iconMap[icon];
 
   return (
     <div className="flex flex-col items-center text-center gap-3 p-6 w-max lg:max-w-[33.333%] md:max-w-[50%]">
@@ -23,5 +23,5 @@ export function IconFeature({ icon, title, subtitle }: IconFeatureProps) {
         <p className="text-sm text-muted-foreground">{subtitle}</p>
       </div>
     </div>
-  )
+  );
 }

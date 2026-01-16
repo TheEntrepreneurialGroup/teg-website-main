@@ -1,7 +1,7 @@
-import type { ReactNode } from "react"
+import type { ReactNode } from "react";
 
 interface WhyTegSectionProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export function WhyTegSection({ children }: WhyTegSectionProps) {
@@ -9,5 +9,5 @@ export function WhyTegSection({ children }: WhyTegSectionProps) {
     <section className="py-8 md:py-12">
       <div className="space-y-8">{children}</div>
     </section>
-  )
+  );
 }
