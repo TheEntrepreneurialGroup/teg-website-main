@@ -1,6 +1,5 @@
 import React from "react";
 import NumberBox from "../NumberBox";
-import { cn } from "@/lib/utils";
 
 interface TEGInZahlenProps {
   className?: string;

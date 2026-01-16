@@ -1,7 +1,7 @@
-import type { ReactNode } from "react"
+import type { ReactNode } from "react";
 
 interface ProblemHeroSectionProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export function ProblemHeroSection({ children }: ProblemHeroSectionProps) {
@@ -9,5 +9,5 @@ export function ProblemHeroSection({ children }: ProblemHeroSectionProps) {
     <section className="py-8 md:py-12">
       <div className="space-y-6">{children}</div>
     </section>
-  )
+  );
 }
