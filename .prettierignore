@@ -1,0 +1,15 @@
+# Folders
+node_modules
+.next
+build
+dist
+
+# Files
+pnpm-lock.yaml
+.env
+.env.local
+
+# Images & Icons
+public/**/*.svg
+public/**/*.png
+public/**/*.jpg
