@@ -20,10 +20,11 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@/components/*": ["./src/app/ui/components/*"],
-      "@/lib/*": ["./src/app/lib/*"],
-      "@/styles/*": ["./src/app/ui/styles/*"],
-      "@/ui/*": ["./src/app/ui/*"]
+      "@/app/*": ["./src/app/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/ui/*": ["./src/components/ui/*"]
     }
   },
   "include": [

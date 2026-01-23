@@ -1,0 +1,9 @@
+[context.production.environment]
+  NEXT_PUBLIC_ENV = "production"
+
+[context.branch-deploy.environment]
+  NEXT_PUBLIC_ENV = "dev"
+  NEXT_PUBLIC_API_BASE = "https://api-dev.teg-ev.de"
+
+[context.deploy-preview.environment]
+  NEXT_PUBLIC_ENV = "preview"
