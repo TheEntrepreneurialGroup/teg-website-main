@@ -1,0 +1,11 @@
+{
+  "metadata": {
+    "title": "TEG - The Entrepreneurial Group E.V. Website",
+    "description": "Offizielle TEG Website Beschreibung"
+  },
+  "navbar": {
+    "about": "Über uns",
+    "for_companies": "Für Unternehmen",
+    "for_students": "Für Studierende"
+  }
+}
