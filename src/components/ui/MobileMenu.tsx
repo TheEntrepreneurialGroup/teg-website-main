@@ -37,7 +37,6 @@ export default function MobileMenu({
       <nav className="flex w-full flex-col items-start space-y-6">
         <NavLink
           href="/"
-          exact
           onClick={() => {
             onClose();
             trackButtonClick("About Us", "Navbar");

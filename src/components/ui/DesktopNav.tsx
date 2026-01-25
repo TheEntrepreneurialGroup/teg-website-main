@@ -7,7 +7,6 @@ import { useLocale } from "next-intl";
 export default function DesktopNav() {
   const t = useTranslations("navbar");
   const locale = useLocale();
-  console.debug("DesktopNav locale: ", locale);
 
   return (
     <nav className="hidden items-center space-x-8 md:flex">

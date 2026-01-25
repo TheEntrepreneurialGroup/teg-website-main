@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import clsx from "clsx";
-import { useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { usePathname as getPath } from "next/navigation";
 
 import { Menu, X } from "lucide-react";
 import Logo from "@/components/Logo";
@@ -19,10 +17,6 @@ export default function Navbar({ scrolled = false }: NavbarProps) {
   const toggleMobileMenu = () => setMobileMenuOpen((s) => !s);
   const closeMobile = () => setMobileMenuOpen(false);
   const pathname = usePathname();
-  const path = getPath();
-  console.debug("Pathname of navbar:", pathname);
-  console.debug("Path of navbar:", path);
-  const localse = useLocale();
 
   return (
     <header

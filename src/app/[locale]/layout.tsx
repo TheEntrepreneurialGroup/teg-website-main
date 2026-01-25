@@ -1,14 +1,19 @@
 import { Locale, NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getFormatter,
+  getNow,
+  getTimeZone,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import clsx from "clsx";
 
-import type { Metadata } from "next";
 import Navbar from "@/components/sections/Navbar";
 
 import { montserrat } from "@/components/fonts";
-import "@/app/globals.css";
+import "../globals.css";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -17,15 +22,25 @@ export function generateStaticParams() {
 export async function generateMetadata(
   props: Omit<LayoutProps<"/[locale]">, "children">,
 ) {
-  const { locale } = await props.params;
+  const params = await props.params;
+  const locale = params.locale as Locale;
 
   const t = await getTranslations({
-    locale: locale as Locale,
+    locale: locale,
+    namespace: "metadata",
   });
 
+  const formatter = await getFormatter({ locale });
+  const now = await getNow({ locale });
+  const timeZone = await getTimeZone({ locale });
+
   return {
-    title: t("metadata.title"),
-    description: t("metadata.description"),
+    title: t("title"),
+    description: t("description"),
+    other: {
+      currentYear: formatter.dateTime(now, { year: "numeric" }),
+      timeZone,
+    },
   };
 }
 
@@ -45,7 +60,7 @@ export default async function LocalLayout({
   return (
     <html className="h-full" lang={locale}>
       <body className={clsx(montserrat.className, "flex h-full flex-col")}>
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale}>
           <Navbar />
           {children}
         </NextIntlClientProvider>
