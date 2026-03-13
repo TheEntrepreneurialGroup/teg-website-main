@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 type LogoProps = {
   variant?: "white" | "color";
@@ -15,7 +15,7 @@ export default function Logo({
   alt = "TEG | The Entrepreneurial Group",
 }: LogoProps) {
   const src =
-    variant === "white" ? "/TEG_logo_white_text.svg" : "/TEG_logo.svg";
+    variant === "white" ? "/common/teg/TEG_logo_white.svg" : "/TEG_logo.svg";
   return (
     <Link href="/" aria-label="Home">
       <Image src={src} alt={alt} width={width} height={height} priority />
