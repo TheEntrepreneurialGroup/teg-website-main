@@ -42,3 +42,5 @@ next-env.d.ts
 
 # next-intl typescript enhancement: https://next-intl.dev/docs/workflows/typescript
 messages/*.d.json.ts
+
+.vscode/
