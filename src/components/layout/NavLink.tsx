@@ -1,6 +1,6 @@
 "use client";
 import { Link, usePathname } from "@/i18n/navigation";
-import clsx from "clsx";
+import { cn } from "@/lib/utils/utils";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { ComponentProps } from "react";
 
@@ -19,12 +19,12 @@ export default function NavLink({
     <Link
       href={href}
       onClick={onClick}
-      className={clsx(
-        "hover:text-primary-light relative font-semibold transition-colors duration-300",
+      className={cn(
+        "hover:text-primary-light relative font-semibold text-white transition-colors duration-300",
         className,
-        { "text-white": isActive, "text-gray-800": !isActive },
+        { "opacity-70": !isActive },
         isActive &&
-          "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-white after:content-['']",
+          "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-full after:bg-white after:content-['']",
       )}
       aria-current={isActive ? "page" : undefined}
       {...rest}
