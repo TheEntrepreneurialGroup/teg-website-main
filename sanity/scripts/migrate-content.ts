@@ -272,7 +272,7 @@ const forStudentsContent = {
       {
         _key: "btn1",
         text: { de: "Mitglied werden", en: "Become a Member" },
-        link: "https://tally.so/r/w20dbL",
+        link: "https://tally.so/r/7RZXpA",
       },
     ],
   },
@@ -323,7 +323,7 @@ const forStudentsContent = {
           en: "Take responsibility. Become a member of TEG and acquire the skills, community and experience you need to become tomorrow's business leader.",
         },
         buttonText: { de: "Jetzt bewerben!", en: "Apply Now!" },
-        buttonLink: "https://tally.so/r/w20dbL",
+        buttonLink: "https://tally.so/r/7RZXpA",
       },
     ],
   },
