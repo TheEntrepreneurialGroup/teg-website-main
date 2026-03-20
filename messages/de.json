@@ -7,5 +7,12 @@
     "about": "Über uns",
     "for_companies": "Für Unternehmen",
     "for_students": "Für Studierende"
+  },
+  "mobile_nav": {
+    "open_menu": "Menü öffnen",
+    "close_menu": "Menü schließen",
+    "title": "Navigation",
+    "description": "Mobiles Navigationsmenü mit Seitenlinks und Sprachumschalter.",
+    "primary_navigation": "Mobile Hauptnavigation"
   }
 }
