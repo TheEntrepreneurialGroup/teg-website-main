@@ -1,6 +1,6 @@
 "use client";
 import { Link, usePathname } from "@/i18n/navigation";
-import { cn } from "@/lib/utils/utils";
+import { cn } from "@/lib/utils";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { ComponentProps } from "react";
 
@@ -20,11 +20,13 @@ export default function NavLink({
       href={href}
       onClick={onClick}
       className={cn(
-        "hover:text-primary-light relative font-semibold text-white transition-colors duration-300",
+        "hover:text-secondary-dark relative font-semibold text-white transition-colors duration-300",
         className,
-        { "opacity-70": !isActive },
-        isActive &&
-          "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-full after:bg-white after:content-['']",
+        { "opacity-80": !isActive },
+        {
+          "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-full after:bg-white after:content-['']":
+            isActive,
+        },
       )}
       aria-current={isActive ? "page" : undefined}
       {...rest}

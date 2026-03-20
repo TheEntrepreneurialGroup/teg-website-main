@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { cn } from "@/lib/utils/utils";
+import { cn } from "@/lib/utils";
 import { useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { langArray } from "@/i18n/i18n";
@@ -33,9 +33,13 @@ export default function LanguageSwitcher({
               locale={language}
               onClick={onNavigate}
               className={cn(
-                "hover:text-primary-light font-semibold text-white transition-colors duration-300",
+                "hover:text-secondary-dark relative font-semibold text-white transition-colors duration-300",
+                { "opacity-80": !isActive },
+                {
+                  "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-full after:bg-white after:content-['']":
+                    isActive,
+                },
                 linkClassName,
-                isActive && "opacity-70",
               )}
               aria-current={isActive ? "true" : undefined}
             >
