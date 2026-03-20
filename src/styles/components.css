@@ -1,0 +1,29 @@
+@layer components {
+  .btn {
+    @apply inline-block px-6 py-3 text-lg font-semibold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white;
+  }
+
+  .btn-outline {
+    @apply border-primary text-primary hover:bg-primary hover:text-secondary border-2;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:bg-accent-light active:bg-accent-dark text-white hover:text-white;
+  }
+
+  .container-custom {
+    @apply container mx-auto max-w-full px-4 md:px-8;
+  }
+
+  .section {
+    @apply py-12 md:py-20;
+  }
+
+  .card {
+    @apply bg-primary-light/5 overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-lg;
+  }
+}

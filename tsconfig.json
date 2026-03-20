@@ -26,7 +26,6 @@
       "@/ui/*": ["./src/components/ui/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/lib/*": ["./src/lib/*"],
-      "@/utils/*": ["./src/utils/*"],
       "@/i18n/*": ["./src/i18n/*"]
     }
   },

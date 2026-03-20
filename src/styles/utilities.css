@@ -1,0 +1,30 @@
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .logo-marquee-scroll {
+    animation: logo-marquee 60s linear infinite;
+  }
+
+  @media (min-width: 48rem) {
+    .logo-marquee-scroll {
+      animation-duration: 200s;
+    }
+  }
+}
+
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -13,7 +13,7 @@ import clsx from "clsx";
 import Navbar from "@/components/sections/Navbar";
 
 import { montserrat } from "@/components/fonts";
-import "../globals.css";
+import "@/styles/globals.css";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
