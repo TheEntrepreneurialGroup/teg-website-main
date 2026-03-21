@@ -58,7 +58,7 @@ export default async function LocalLayout({
   setRequestLocale(locale);
 
   return (
-    <html className="h-full" lang={locale}>
+    <html className="h-full" lang={locale} data-scroll-behavior="smooth">
       <body className={clsx(montserrat.className, "flex h-full flex-col")}>
         <NextIntlClientProvider locale={locale}>
           <Navbar />

@@ -29,7 +29,7 @@ export const routing = defineRouting({
     },
     "/privacy-policy": {
       de: "/datenschutz",
-      en: "privacy-policy",
+      en: "/privacy-policy",
     },
   },
 });
