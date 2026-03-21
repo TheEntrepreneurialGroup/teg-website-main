@@ -1,4 +1,4 @@
-import { AppLocale } from "@/i18n/i18n";
+import { AppLocale } from "@/i18n";
 import messages from "../../messages/de.json";
 
 declare module "next-intl" {

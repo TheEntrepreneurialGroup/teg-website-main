@@ -1,6 +1,6 @@
 import { Locale, NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { localeList } from "@/i18n";
 import {
   getFormatter,
   getNow,
@@ -16,7 +16,7 @@ import { montserrat } from "@/components/fonts";
 import "@/styles/globals.css";
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  return localeList.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata(
@@ -50,7 +50,7 @@ export default async function LocalLayout({
 }: LayoutProps<"/[locale]">) {
   // Ensure that the incoming `locale` is valid
   const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) {
+  if (!hasLocale(localeList, locale)) {
     notFound();
   }
 
@@ -60,7 +60,7 @@ export default async function LocalLayout({
   return (
     <html className="h-full" lang={locale} data-scroll-behavior="smooth">
       <body className={clsx(montserrat.className, "flex h-full flex-col")}>
-        <NextIntlClientProvider locale={locale}>
+        <NextIntlClientProvider locale={locale} messages={null}>
           <Navbar />
           {children}
         </NextIntlClientProvider>

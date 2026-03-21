@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { langArray } from "@/i18n/i18n";
+import { localeList } from "@/i18n";
 
 interface LanguageSwitcherProps {
   onNavigate?: () => void;
@@ -23,7 +23,7 @@ export default function LanguageSwitcher({
 
   return (
     <div className={cn("flex items-center gap-4", className)}>
-      {langArray.map((language, index) => {
+      {localeList.map((language, index) => {
         const isActive = locale === language;
 
         return (
@@ -46,7 +46,7 @@ export default function LanguageSwitcher({
               {language.toUpperCase()}
             </Link>
 
-            {index < langArray.length - 1 && (
+            {index < localeList.length - 1 && (
               <span className={cn("text-white", separatorClassName)}>|</span>
             )}
           </React.Fragment>
