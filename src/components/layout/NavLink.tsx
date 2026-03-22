@@ -22,7 +22,7 @@ export default function NavLink({
       className={cn(
         "hover:text-secondary-dark relative text-current transition-colors duration-100",
         {
-          "after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-full after:bg-current after:content-[''] lg:after:-bottom-1 lg:after:h-[1px]":
+          "after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-full after:bg-current after:content-[''] lg:after:-bottom-1":
             isActive,
         },
         className,

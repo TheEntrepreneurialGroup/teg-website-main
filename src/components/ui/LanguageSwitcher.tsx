@@ -45,8 +45,9 @@ export default function LanguageSwitcher({
               {language.toUpperCase()}
             </Link>
 
+            {/* Trennlinie */}
             {index < localeList.length - 1 && (
-              <span className={cn("text-current", separatorClassName)}>|</span>
+              <span aria-hidden="true" className="h-8 w-[1px] bg-white" />
             )}
           </React.Fragment>
         );

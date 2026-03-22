@@ -17,26 +17,20 @@ export default function MobileNav() {
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <div className="flex h-16 w-full items-center justify-between px-4">
-          <Logo
-            className="shrink-0"
-            imageClassName="h-auto w-36"
-            sizes="9rem"
-          />
-
+        <div className="flex w-full items-center justify-end px-4">
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center text-white"
+            className="size-fit items-center text-white"
             aria-label={t("mobile_nav.open_menu")}
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="h-8 w-8" />
           </button>
         </div>
       </Dialog.Trigger>
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-40" />
-        <Dialog.Content className="fixed inset-0 z-50 flex flex-col items-start justify-end bg-white px-8 pt-20 pb-12 shadow-xl">
+        <Dialog.Content className="fixed inset-0 z-50 flex flex-col items-start justify-end bg-white px-8 pt-20 pb-12">
           <div className="absolute top-4 right-4">
             <Dialog.Close asChild>
               <button
@@ -58,7 +52,7 @@ export default function MobileNav() {
 
           <nav
             aria-label={t("mobile_nav.primary_navigation")}
-            className="w-full max-w-sm"
+            className="w-full"
           >
             <ul className="flex flex-col gap-10">
               {mainNavPages.map((page) => (
@@ -66,7 +60,7 @@ export default function MobileNav() {
                   <Dialog.Close asChild>
                     <NavLink
                       href={page.href}
-                      className="text-primary-dark text-4xl leading-none"
+                      className="text-primary-dark text-4xl"
                     >
                       {t(page.messageKey)}
                     </NavLink>
@@ -77,9 +71,7 @@ export default function MobileNav() {
 
             <LanguageSwitcher
               onNavigate={close}
-              className="text-primary-dark mt-10"
-              linkClassName="font-semibold"
-              separatorClassName=""
+              className="text-primary-dark mt-10 text-2xl font-medium"
             />
           </nav>
         </Dialog.Content>

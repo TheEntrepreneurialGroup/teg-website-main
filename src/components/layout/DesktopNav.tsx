@@ -7,21 +7,25 @@ import { mainNavPages } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 interface DesktopNavProps {
+  containerClassName?: string;
   className?: string;
 }
 
 // Only visible on 'md:flex' breakpoint else 'hidden'
-export default function DesktopNav({ className }: DesktopNavProps) {
+export default function DesktopNav({
+  containerClassName,
+  className,
+}: DesktopNavProps) {
   const t = useTranslations();
 
   return (
-    <div className="hidden h-16 w-full items-center justify-between pr-4 text-lg text-white md:flex lg:h-24 lg:px-4 lg:pr-12 lg:text-2xl xl:pr-16">
-      <Logo
-        imageClassName="h-auto w-64 lg:w-70 xl:w-78"
-        sizes="(min-width: 1024px) 8rem, (min-width: 768px) 7rem, 6rem"
-      />
-
-      <nav className={cn("flex gap-8 lg:gap-12 xl:gap-20", className)}>
+    <div
+      className={cn(
+        "flex h-16 w-full items-center justify-between text-lg lg:h-24 lg:text-2xl",
+        containerClassName,
+      )}
+    >
+      <nav className={cn("flex gap-4 lg:gap-8", className)}>
         {mainNavPages.map((page) => {
           return (
             <NavLink key={page.id} href={page.href}>
