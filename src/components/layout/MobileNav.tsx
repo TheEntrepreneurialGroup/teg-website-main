@@ -35,16 +35,16 @@ export default function MobileNav() {
       </Dialog.Trigger>
 
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-40 bg-black/30" />
+        <Dialog.Overlay className="fixed inset-0 z-40" />
         <Dialog.Content className="fixed inset-0 z-50 flex flex-col items-start justify-end bg-white px-8 pt-20 pb-12 shadow-xl">
           <div className="absolute top-4 right-4">
             <Dialog.Close asChild>
               <button
                 type="button"
-                className="text-primary-dark inline-flex h-10 w-10 items-center justify-center rounded-md"
+                className="text-primary-dark inline-flex items-center justify-center"
                 aria-label={t("mobile_nav.close_menu")}
               >
-                <X className="h-6 w-6" />
+                <X className="h-8 w-8" />
               </button>
             </Dialog.Close>
           </div>
@@ -77,9 +77,9 @@ export default function MobileNav() {
 
             <LanguageSwitcher
               onNavigate={close}
-              className="mt-10"
-              linkClassName="font-semibold text-primary-dark"
-              separatorClassName="text-primary-dark/50"
+              className="text-primary-dark mt-10"
+              linkClassName="font-semibold"
+              separatorClassName=""
             />
           </nav>
         </Dialog.Content>

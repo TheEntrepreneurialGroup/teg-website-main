@@ -20,13 +20,12 @@ export default function NavLink({
       href={href}
       onClick={onClick}
       className={cn(
-        "hover:text-secondary-dark relative font-semibold text-white transition-colors duration-300",
-        className,
-        { "opacity-80": !isActive },
+        "hover:text-secondary-dark relative text-current transition-colors duration-100",
         {
-          "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-full after:bg-white after:content-['']":
+          "after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-full after:bg-current after:content-[''] lg:after:-bottom-1 lg:after:h-[1px]":
             isActive,
         },
+        className,
       )}
       aria-current={isActive ? "page" : undefined}
       {...rest}

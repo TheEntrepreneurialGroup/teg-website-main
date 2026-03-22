@@ -15,13 +15,13 @@ export default function DesktopNav({ className }: DesktopNavProps) {
   const t = useTranslations();
 
   return (
-    <div className="hidden h-16 w-full items-center justify-between px-4 md:flex lg:h-24 lg:px-20 xl:px-26">
+    <div className="hidden h-16 w-full items-center justify-between pr-4 text-lg text-white md:flex lg:h-24 lg:px-4 lg:pr-12 lg:text-2xl xl:pr-16">
       <Logo
-        imageClassName="h-auto w-44 lg:w-58 xl:w-64"
+        imageClassName="h-auto w-64 lg:w-70 xl:w-78"
         sizes="(min-width: 1024px) 8rem, (min-width: 768px) 7rem, 6rem"
       />
 
-      <nav className={cn("flex gap-8", className)}>
+      <nav className={cn("flex gap-8 lg:gap-12 xl:gap-20", className)}>
         {mainNavPages.map((page) => {
           return (
             <NavLink key={page.id} href={page.href}>
@@ -31,7 +31,7 @@ export default function DesktopNav({ className }: DesktopNavProps) {
         })}
       </nav>
 
-      <LanguageSwitcher />
+      <LanguageSwitcher className="gap-2 lg:gap-4" />
     </div>
   );
 }

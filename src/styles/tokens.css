@@ -2,6 +2,10 @@
   --background: #ffffff;
   --foreground: #171717;
 
+  /* Override 2XL basic from tailwind node_modules/tailwindcss/index.css*/
+  --text-2xl: 1.35rem;
+  --text-2xl--line-height: calc(2 / 1.35);
+
   /* Shadcn-style semantic tokens kept as regular CSS variables. */
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 4.9%;

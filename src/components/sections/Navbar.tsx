@@ -11,7 +11,7 @@ export default function Navbar({ scrolled = false }: NavbarProps) {
     <header
       className={cn(
         "bg-primary-dark sticky top-0 right-0 left-0 z-50 transition-all duration-300",
-        { "shadow-md": scrolled, "md:py-2": !scrolled },
+        { "shadow-md": scrolled, "md:py-4": !scrolled },
       )}
     >
       <DesktopNav />

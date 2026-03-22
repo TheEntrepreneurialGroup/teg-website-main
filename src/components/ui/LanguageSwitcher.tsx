@@ -33,10 +33,9 @@ export default function LanguageSwitcher({
               locale={language}
               onClick={onNavigate}
               className={cn(
-                "hover:text-secondary-dark relative font-semibold text-white transition-colors duration-300",
-                { "opacity-80": !isActive },
+                "hover:text-secondary-dark relative text-current transition-colors duration-100",
                 {
-                  "after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-full after:bg-white after:content-['']":
+                  "after:absolute after:-bottom-0.5 after:left-0 after:h-[1px] after:w-full after:bg-current after:content-[''] lg:after:-bottom-1":
                     isActive,
                 },
                 linkClassName,
@@ -47,7 +46,7 @@ export default function LanguageSwitcher({
             </Link>
 
             {index < localeList.length - 1 && (
-              <span className={cn("text-white", separatorClassName)}>|</span>
+              <span className={cn("text-current", separatorClassName)}>|</span>
             )}
           </React.Fragment>
         );
