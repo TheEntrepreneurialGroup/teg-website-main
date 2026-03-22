@@ -47,7 +47,7 @@ export default function LanguageSwitcher({
 
             {/* Trennlinie */}
             {index < localeList.length - 1 && (
-              <span aria-hidden="true" className="h-8 w-[1px] bg-white" />
+              <span aria-hidden="true" className="h-8 w-[1px] bg-current" />
             )}
           </React.Fragment>
         );

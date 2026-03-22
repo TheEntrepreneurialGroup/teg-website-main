@@ -1,4 +1,6 @@
+// src/components/layout/MobileNav.tsx
 "use client";
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -7,42 +9,43 @@ import { mainNavPages } from "@/i18n/navigation";
 import NavLink from "@/components/layout/NavLink";
 import LanguageSwitcher from "@/ui/LanguageSwitcher";
 import Logo from "@/ui/Logo";
+import { cn } from "@/lib/utils";
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
   const t = useTranslations();
 
-  const close = () => setOpen(false);
-
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
-      <Dialog.Trigger asChild>
-        <div className="flex w-full items-center justify-end px-4">
+      {/* Persistent top bar, always visible */}
+      <div className="relative z-60 flex px-4">
+        <Dialog.Trigger asChild>
           <button
             type="button"
-            className="size-fit items-center text-white"
-            aria-label={t("mobile_nav.open_menu")}
+            className="size-fit"
+            aria-label={
+              open ? t("mobile_nav.close_menu") : t("mobile_nav.open_menu")
+            }
           >
-            <Menu className="h-8 w-8" />
+            {open ? <X className="size-auto" /> : <Menu className="h-8 w-8" />}
           </button>
-        </div>
-      </Dialog.Trigger>
+        </Dialog.Trigger>
+      </div>
 
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-40" />
-        <Dialog.Content className="fixed inset-0 z-50 flex flex-col items-start justify-end bg-white px-8 pt-20 pb-12">
-          <div className="absolute top-4 right-4">
-            <Dialog.Close asChild>
-              <button
-                type="button"
-                className="text-primary-dark inline-flex items-center justify-center"
-                aria-label={t("mobile_nav.close_menu")}
-              >
-                <X className="h-8 w-8" />
-              </button>
-            </Dialog.Close>
-          </div>
+        {/* Overlay starts below persistent header */}
+        <Dialog.Overlay
+          className="fixed inset-x-0 bottom-0 z-40 bg-black/40"
+          style={{ top: "var(--nav-h)" }}
+        />
 
+        {/* Content starts below persistent header */}
+        <Dialog.Content
+          className={cn(
+            "fixed inset-x-0 bottom-0 z-50 overflow-y-auto bg-white px-8 pt-10 pb-12",
+          )}
+          style={{ top: "var(--nav-h)" }}
+        >
           <Dialog.Title className="sr-only">
             {t("mobile_nav.title")}
           </Dialog.Title>
@@ -52,7 +55,7 @@ export default function MobileNav() {
 
           <nav
             aria-label={t("mobile_nav.primary_navigation")}
-            className="w-full"
+            className="w-full items-end"
           >
             <ul className="flex flex-col gap-10">
               {mainNavPages.map((page) => (
@@ -70,7 +73,7 @@ export default function MobileNav() {
             </ul>
 
             <LanguageSwitcher
-              onNavigate={close}
+              onNavigate={() => setOpen(false)}
               className="text-primary-dark mt-10 text-2xl font-medium"
             />
           </nav>
