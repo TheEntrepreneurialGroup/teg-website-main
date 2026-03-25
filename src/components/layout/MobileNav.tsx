@@ -1,19 +1,30 @@
-// src/components/layout/MobileNav.tsx
 "use client";
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useTranslations } from "next-intl";
 import * as Dialog from "@radix-ui/react-dialog";
-import { mainNavPages } from "@/i18n/navigation";
 import NavLink from "@/components/layout/NavLink";
 import LanguageSwitcher from "@/ui/LanguageSwitcher";
-import Logo from "@/ui/Logo";
 import { cn } from "@/lib/utils";
+import type { InternalHref } from "@/i18n/navigation.types";
 
-export default function MobileNav() {
+interface MobileNavProps {
+  labels: {
+    openMenu: string;
+    closeMenu: string;
+    title: string;
+    description: string;
+    primaryNavigation: string;
+  };
+  navItems: Array<{
+    id: string;
+    href: InternalHref;
+    label: string;
+  }>;
+}
+
+export default function MobileNav({ labels, navItems }: MobileNavProps) {
   const [open, setOpen] = useState(false);
-  const t = useTranslations();
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -23,9 +34,7 @@ export default function MobileNav() {
           <button
             type="button"
             className="size-fit"
-            aria-label={
-              open ? t("mobile_nav.close_menu") : t("mobile_nav.open_menu")
-            }
+            aria-label={open ? labels.closeMenu : labels.openMenu}
           >
             {open ? <X className="size-auto" /> : <Menu className="h-8 w-8" />}
           </button>
@@ -33,39 +42,35 @@ export default function MobileNav() {
       </div>
 
       <Dialog.Portal>
-        {/* Overlay starts below persistent header */}
         <Dialog.Overlay
           className="fixed inset-x-0 bottom-0 z-40 bg-black/40"
           style={{ top: "var(--nav-h)" }}
         />
 
-        {/* Content starts below persistent header */}
         <Dialog.Content
           className={cn(
             "fixed inset-x-0 bottom-0 z-50 overflow-y-auto bg-white px-8 pt-10 pb-12",
           )}
           style={{ top: "var(--nav-h)" }}
         >
-          <Dialog.Title className="sr-only">
-            {t("mobile_nav.title")}
-          </Dialog.Title>
+          <Dialog.Title className="sr-only">{labels.title}</Dialog.Title>
           <Dialog.Description className="sr-only">
-            {t("mobile_nav.description")}
+            {labels.description}
           </Dialog.Description>
 
           <nav
-            aria-label={t("mobile_nav.primary_navigation")}
+            aria-label={labels.primaryNavigation}
             className="w-full items-end"
           >
             <ul className="flex flex-col gap-10">
-              {mainNavPages.map((page) => (
-                <li key={page.id}>
+              {navItems.map((item) => (
+                <li key={item.id}>
                   <Dialog.Close asChild>
                     <NavLink
-                      href={page.href}
+                      href={item.href}
                       className="text-primary-dark text-4xl"
                     >
-                      {t(page.messageKey)}
+                      {item.label}
                     </NavLink>
                   </Dialog.Close>
                 </li>

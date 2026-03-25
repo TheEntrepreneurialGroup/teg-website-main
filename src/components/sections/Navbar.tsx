@@ -2,12 +2,30 @@ import { cn } from "@/lib/utils";
 import DesktopNav from "@/components/layout/DesktopNav";
 import MobileNav from "@/components/layout/MobileNav";
 import Logo from "@/ui/Logo";
+import { getTranslations } from "next-intl/server";
+import { mainNavPages } from "@/i18n/navigation";
 
 interface NavbarProps {
   scrolled?: boolean;
 }
 
-export default function Navbar({ scrolled = false }: NavbarProps) {
+export default async function Navbar({ scrolled = false }: NavbarProps) {
+  const t = await getTranslations();
+
+  const mobileNavLabels = {
+    openMenu: t("mobile_nav.open_menu"),
+    closeMenu: t("mobile_nav.close_menu"),
+    title: t("mobile_nav.title"),
+    description: t("mobile_nav.description"),
+    primaryNavigation: t("mobile_nav.primary_navigation"),
+  };
+
+  const mobileNavItems = mainNavPages.map((page) => ({
+    id: page.id,
+    href: page.href,
+    label: t(page.messageKey),
+  }));
+
   return (
     <header
       className={cn(
@@ -32,7 +50,7 @@ export default function Navbar({ scrolled = false }: NavbarProps) {
 
         <DesktopNav containerClassName="hidden md:flex" />
         <div className="md:hidden">
-          <MobileNav />
+          <MobileNav labels={mobileNavLabels} navItems={mobileNavItems} />
         </div>
       </div>
     </header>
