@@ -14,5 +14,14 @@
     "title": "Navigation",
     "description": "Mobile navigation menu with page links and language switcher.",
     "primary_navigation": "Mobile primary navigation"
+  },
+  "testimonials_members": {
+    "title": "Voices of currently active members",
+    "test_1": "Diamonds are made under pressure. Nowhere is this truer than at TEG.",
+    "name_1": "Ahmed Kaddour",
+    "test_2": "I was amazed at how much responsibility you get at TEG right from the start, and I've surpassed myself at least five times here.",
+    "name_2": "Luis Waller",
+    "test_3": "I regularly run marathons because I love challenges and peak performance. That's exactly why I'm at TEG.",
+    "name_3": "Yesieniia Liaskina"
   }
 }

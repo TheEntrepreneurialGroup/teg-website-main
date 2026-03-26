@@ -14,5 +14,14 @@
     "title": "Navigation",
     "description": "Mobiles Navigationsmenü mit Seitenlinks und Sprachumschalter.",
     "primary_navigation": "Mobile Hauptnavigation"
+  },
+  "testimonials_members": {
+    "title": "Stimmen von aktuell aktiven Mitgliedern",
+    "test_1": "Aus Druck entstehen Diamanten. Nirgendwo stimmt das mehr, als bei TEG.",
+    "name_1": "Ahmed Kaddour",
+    "test_2": "Ich war erstaunt, wie viel Verantwortung man bei TEG direkt zu Beginn bekommt und bin hier schon mindestens 5 Mal über mich hinaus gewachsen.",
+    "name_2": "Luis Waller",
+    "test_3": "Ich laufe regelmäßig Marathons, weil ich Herausforderungen und Höchstleistungen liebe. Genau deshalb bin ich auch bei TEG.",
+    "name_3": "Yesieniia Liaskina"
   }
 }
