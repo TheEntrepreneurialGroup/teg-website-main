@@ -67,7 +67,7 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
             {buttonText2 && buttonLink2 && (
               <PrimaryButton
                 label={buttonText2}
-                onClick={() => handleLink(buttonLink1)}
+                onClick={() => handleLink(buttonLink2)}
                 size="lg"
                 align="center"
               />
@@ -118,7 +118,7 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
                 <div>
                   <PrimaryButton
                     label={buttonText2}
-                    onClick={() => handleLink(buttonLink1)}
+                    onClick={() => handleLink(buttonLink2)}
                     size="lg"
                   />
                 </div>
