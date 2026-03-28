@@ -21,15 +21,15 @@
     "steps": {
       "1": {
         "title": "1. Online Bewerbung",
-        "description": "Fülle das unten verlinkte Formular bis zum 25. Oktober aus."
+        "description": "Fülle das unten verlinkte Formular bis zum 25. April aus."
       },
       "2": {
         "title": "Bewerbungs-Ergebnis",
-        "description": "Am 26. Oktober teilen wir dir mit, ob du zu den Interviews eingeladen wirst."
+        "description": "Am 26. April teilen wir dir mit, ob du zu den Interviews eingeladen wirst."
       },
       "3": {
         "title": "2. Interview im TEG-Office",
-        "description": "Vom 28. Oktober bis 3. November finden die Interviews statt."
+        "description": "Vom 28. April bis 3. Mai finden die Interviews statt."
       },
       "4": {
         "title": "Aufnahme-Entscheidung",
@@ -39,8 +39,8 @@
         "title": "Kick-off & Pflicht-Termine",
         "intro": "Bewerbe dich nur, wenn du die folgenden Termine wahrnehmen kannst:",
         "bullets": [
-          "7.11. ab 19 Uhr, Kick-off",
-          "8.11., 22.11., 6.12 ganztags. Onboarding & Workshops"
+          "8./9.5. Kick-off",
+          "30.05. und 20.06. ganztägig Workshops (Pflichttermin)"
         ]
       }
     },

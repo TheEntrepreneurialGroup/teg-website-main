@@ -21,15 +21,15 @@
     "steps": {
       "1": {
         "title": "1. Online Application",
-        "description": "Fill out the linked form below by October 25th."
+        "description": "Fill out the linked form below by April 25th."
       },
       "2": {
         "title": "Application Result",
-        "description": "On October 26th, we will let you know if you are invited to the interviews."
+        "description": "On April 26th, we will let you know if you are invited to the interviews."
       },
       "3": {
         "title": "2. Interview at TEG Office",
-        "description": "The interviews will take place from October 28th to November 3rd."
+        "description": "The interviews will take place from April 28th to May 3rd."
       },
       "4": {
         "title": "Admission Decision",
@@ -39,8 +39,8 @@
         "title": "Kick-off & Mandatory Dates",
         "intro": "Only apply if you can attend the following dates:",
         "bullets": [
-          "Nov 7th from 7 PM, Kick-off",
-          "Nov 8th, 22nd, Dec 6th full days. Onboarding & Workshops"
+          "May 8th/9th, Kick-off",
+          "May 30th and June 20th full days. Workshops (mandatory)"
         ]
       }
     },
