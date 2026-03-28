@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import { ArrowDown } from "lucide-react";
 import QuoteMember from "../QuoteMember";
+import { Button } from "../ui/Button";
+import Link from "next/link";
 
 export default function TestimonialsMembers() {
   const t = useTranslations("testimonials_members");
@@ -40,10 +42,10 @@ export default function TestimonialsMembers() {
           strokeWidth={1.5}
           className="text-secondary-dark"
         />
-        {/*TODO: add button component once finished afaik the current one is a remenant from last webpage*/}
-        <div className="flex items-center justify-center bg-amber-600">
-          <p className="px-8 py-2">Button</p>
-        </div>
+        {/*TODO: change the page to redirect towards; maybe style changes; afaik button component not really done yet*/}
+        <Button variant="secondary" size="lg" asChild>
+          <Link href="/students">{t("button")}</Link>
+        </Button>
       </div>
     </div>
   );
