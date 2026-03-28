@@ -41,7 +41,7 @@ export default function TestimonialsMembers() {
           strokeWidth={1.5}
           className="text-secondary-dark"
         />
-        {/*TODO: addd button component once finished*/}
+        {/*TODO: add button component once finished afaik the current one is a remenant from last webpage*/}
         <div className="flex items-center justify-center bg-amber-600">
           <p className="px-8 py-2">Button</p>
         </div>
