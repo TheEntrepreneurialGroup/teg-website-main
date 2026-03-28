@@ -14,5 +14,36 @@
     "title": "Navigation",
     "description": "Mobile navigation menu with page links and language switcher.",
     "primary_navigation": "Mobile primary navigation"
+  },
+  "ApplicationProcess": {
+    "title": "Application Pipeline",
+    "subtitle": "We have fixed application periods every six months. You can apply from 1 to 25 October for a programme starting in November and from 1 to 25 April for a programme starting in May.",
+    "steps": {
+      "1": {
+        "title": "1. Online Application",
+        "description": "Fill out the linked form below by October 25th."
+      },
+      "2": {
+        "title": "Application Result",
+        "description": "On October 26th, we will let you know if you are invited to the interviews."
+      },
+      "3": {
+        "title": "2. Interview at TEG Office",
+        "description": "The interviews will take place from October 28th to November 3rd."
+      },
+      "4": {
+        "title": "Admission Decision",
+        "description": "At the end of the interview phase, you will be informed whether you have been accepted for this semester."
+      },
+      "5": {
+        "title": "Kick-off & Mandatory Dates",
+        "intro": "Only apply if you can attend the following dates:",
+        "bullets": [
+          "Nov 7th from 7 PM, Kick-off",
+          "Nov 8th, 22nd, Dec 6th full days. Onboarding & Workshops"
+        ]
+      }
+    },
+    "cta": "Apply Now!"
   }
 }

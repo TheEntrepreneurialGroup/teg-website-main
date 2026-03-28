@@ -1,3 +1,9 @@
+import { ApplicationProcess } from "@/components/sections/ApplicationProcess";
+
 export default function Page() {
-  return <p>student page</p>;
+  return (
+    <div className="w-full flex-1">
+      <ApplicationProcess />
+    </div>
+  );
 }
