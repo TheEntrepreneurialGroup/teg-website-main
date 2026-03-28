@@ -16,8 +16,8 @@ export default function QuoteMember({
   return (
     <div
       className={
-        "flex h-30 w-full items-center gap-2 " +
-        (reverse ? "flex-row-reverse" : "flex-row")
+        "flex h-28 w-full items-center gap-6 " +
+        (reverse ? "flex-row" : "flex-row-reverse")
       }
     >
       <div className="relative aspect-square h-full shrink-0 overflow-hidden rounded-full">
@@ -28,9 +28,9 @@ export default function QuoteMember({
           className="object-cover"
         />
       </div>
-      <div className="max-w-2xl gap-2">
+      <div className="max-w-160">
         {/*TODO: change the hardcoded colours to tokens once tokens decided upon*/}
-        <p className="text-xl font-normal text-gray-700 italic">
+        <p className="pb-2 text-xl font-normal text-gray-700 italic">
           &quot;{quote}&quot;
         </p>
         <p className="text-xl font-semibold text-gray-900">~ {name}</p>
