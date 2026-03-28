@@ -1,33 +1,32 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { ArrowDown } from "lucide-react";
+import QuoteMember from "../QuoteMember";
 
 export default function TestimonialsMembers() {
   const t = useTranslations("testimonials_members");
 
   return (
-    <div className="flex w-full shrink-0 flex-col items-center">
-      <h1>{t("title")}</h1>
+    <div className="flex w-full shrink-0 flex-col items-center gap-6">
+      <h1 className="mb-8">{t("title")}</h1>
 
-      {/*TODO: refactor each quote to component*/}
+      <QuoteMember
+        photoSrc="/student-section/ahmed.jpeg"
+        name={t("name_1")}
+        quote={t("quote_1")}
+      />
 
-      <div className="flex h-30 w-full flex-row items-center gap-2">
-        <div className="relative aspect-square h-full shrink-0 overflow-hidden rounded-full">
-          <Image
-            src="/student-section/ahmed.jpeg"
-            alt="Photo of member"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="max-w-2xl gap-2">
-          {/*TODO: change the hardcoded colours to tokens once tokens decided upon*/}
-          <p className="text-xl font-normal text-gray-700 italic">
-            &quot;{t("test_1")}&quot;
-          </p>
-          <p className="text-xl font-semibold text-gray-900">~ {t("name_1")}</p>
-        </div>
-      </div>
+      <QuoteMember
+        photoSrc="/student-section/luis.jpeg"
+        name={t("name_2")}
+        quote={t("quote_2")}
+        reverse
+      />
+
+      <QuoteMember
+        photoSrc="/student-section/yesiienia.jpeg"
+        name={t("name_3")}
+        quote={t("quote_3")}
+      />
 
       <div className="flex w-full shrink-0 flex-col items-center gap-8">
         <ArrowDown
