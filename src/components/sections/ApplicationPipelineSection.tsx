@@ -33,8 +33,8 @@ export default function ApplicationPipelineSection() {
           <img
             src={
               isHorizontal
-                ? "/svg/pipeline-desktop.svg"
-                : "/svg/pipeline-phone.svg"
+                ? "/svg/pipeline-desktop_SS2026_transparent-bg.svg"
+                : "/svg/pipeline-phone_SS2026_transparent-bg.svg"
             }
             alt="Pipeline"
             className="w-full h-auto block sm:w-[90%]"

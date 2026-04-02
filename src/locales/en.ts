@@ -235,7 +235,7 @@ const en = {
   "student.callToAction.description":
     "Take responsibility. Become a member of TEG and gain the skills, community, and experience you need to become tomorrow's corporate leader.",
   "student.callToAction.buttonText": "Apply Now!",
-  "student.callToAction.buttonLink": "https://tally.so/r/7RZXpA",
+  "student.callToAction.buttonLink": "https://tally.so/r/yPDXd4",
 
   "student.contact.title": "For more information, contact us",
   "student.contact.greeting":
