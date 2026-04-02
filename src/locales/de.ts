@@ -153,7 +153,7 @@ const de = {
   "student.hero.subtitle":
     "Bei uns entwickelst Du schon während deines Studiums die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.hero.buttonText": "Mitglied werden",
-  "student.hero.buttonLink": "https://tally.so/r/7RZXpA",
+  "student.hero.buttonLink": "https://tally.so/r/yPDXd4",
   "student.commitment.body":
     "Deine Mitgliedschaft bei TEG beginnt mit einer 3 Semester langen Grundausbildung, diese ist ein Qualifizier\u00ADungspro\u00ADgramm parallel zur Universität für Studierende aller Studiengänge, welches wirtschaft\u00ADliches und unternehmer\u00ADisches Denken schult, und optimal auf das Berufsleben vorbereitet. Nach Abschluss bist du Dein Leben lang Teil unseres TEG-Alumni-Netzwerks.",
   "student.commitment.down":
@@ -238,7 +238,7 @@ const de = {
   "student.callToAction.description":
     "Übernehme Verantwortung. Werde ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.callToAction.buttonText": "Jetzt bewerben!",
-  "student.callToAction.buttonLink": "https://tally.so/r/7RZXpA",
+  "student.callToAction.buttonLink": "https://tally.so/r/yPDXd4",
 
   "student.contact.title": "Für weitere Informationen kontaktiere uns",
   "student.contact.greeting":
