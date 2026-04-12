@@ -3,7 +3,6 @@ import { useIntl } from "react-intl";
 import NewHeroTwoButtons from "@/components/NewHeroTwoButtons";
 import TEGInZahlen from "@/components/sections/TEGInZahlen";
 import NewFeatureCard from "@/components/NewFeatureCard";
-import MissionAndVision from "@/components/sections/MissionAndVision";
 
 export const Home: React.FC = () => {
   const intl = useIntl();
@@ -35,13 +34,13 @@ export const Home: React.FC = () => {
         text4={intl.formatMessage({ id: "home.alumni.stat4.label" })}
       />
 
-      <MissionAndVision
+      {/* <MissionAndVision
         missionTitle="Mission"
         visionTitle="Vision"
         missionText={intl.formatMessage({ id: "home.mission" })}
         visionText={intl.formatMessage({ id: "home.vision" })}
       />
-
+ */}
       <div className="flex flex-col items-center lg:px-48 xl:px-96 xl:py-20 gap-10 md:gap-0 pb-20 md:pb-0">
         <NewFeatureCard
           className="pl-1"
