@@ -111,7 +111,7 @@ const ForStudents: React.FC = () => {
           <div className="flex flex-col items-center">
             <div className="container mx-auto px-4 max-w-6xl">
               {/* Section Title */}
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">
+              <h2 className="font-bold mb-12 text-white text-center">
                 {intl.formatMessage({ id: "student.contact.title" })}
               </h2>
 
