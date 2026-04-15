@@ -227,7 +227,7 @@ const de = {
     "Aus Druck entstehen Diamanten. Nirgendwo stimmt das mehr, als bei TEG.",
   "student.testimonials.author1": "Ahmed Kaddour",
   "student.testimonials.quote2":
-    "Ich war erstaunt, wie viel Verantwortung man bei TEG direkt zu Beginn bekommt und bin hier schon mindestens 5 Mal über mich hinaus gewachsen.",
+    "Durch die Praxiserfahrung zusammen mit schnelle Verantwortung in TEG, hat den Grundstein für meine heutige Selbständigkeit gelegt. Im ersten Semester hatte ich meine ersten B2B Verkaufsgespräche mit Microsoft C-Level und im Zweiten habe ich eine gesamte Konferenz mit über 150 Teilnehmern geleitet.",
   "student.testimonials.author2": "Luis Waller",
   "student.testimonials.quote3":
     "Ich laufe regelmäßig Marathons, weil ich Herausforderungen und Höchstleistungen liebe. Genau deshalb bin ich auch bei TEG.",

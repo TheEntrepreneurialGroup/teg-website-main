@@ -219,7 +219,7 @@ const en = {
     "Diamonds are made under pressure. Nowhere is this truer than at TEG.",
   "student.testimonials.author1": "Ahmed Kaddour",
   "student.testimonials.quote2":
-    "I was amazed at how much responsibility you get at TEG right from the start, and I've surpassed myself at least five times here.",
+    "The practical experience I gained, combined with the opportunity to take on responsibility quickly at TEG, laid the foundations for my current self-employment. In my first semester, I had my first B2B sales meetings with Microsoft C-level executives, and in my second, I led an entire conference with over 150 participants.",
   "student.testimonials.author2": "Luis Waller",
   "student.testimonials.quote3":
     "I regularly run marathons because I love challenges and peak performance. That's exactly why I'm at TEG.",
