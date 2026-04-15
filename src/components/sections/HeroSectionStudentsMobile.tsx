@@ -18,7 +18,7 @@ const HeroSectionStudentsMobile: React.FC = () => {
         className="w-full h-auto"
       />
 
-      <div className="container-custom text-left p-8">
+      <div className="container-custom text-left p-2">
         <h1 className="text-primary font-bold text-3xl mb-2">{title}</h1>
         <p className="text-gray-700 max-w-3xl mb-8 text-xl">{subtitle}</p>
 
