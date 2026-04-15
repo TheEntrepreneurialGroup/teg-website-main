@@ -58,16 +58,6 @@ export default function Testimonials() {
           strokeWidth={1.5}
           className="text-secondary-dark"
         />
-        <p className="text-xl italic my-4">
-          {intl.formatMessage({
-            id: "student.applySection.requirements.extraLine",
-          })}
-        </p>
-        <ArrowDown
-          size={28}
-          strokeWidth={1.5}
-          className="text-secondary-dark"
-        />
       </div>
 
       {/* Button */}
