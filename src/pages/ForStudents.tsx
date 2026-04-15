@@ -42,15 +42,6 @@ const ForStudents: React.FC = () => {
       )}
 
       <div className="max-w-7xl mx-auto">
-        {/* Commitment CardText Section */}
-        <CardText
-          image="/components-images/teg_alumni.png"
-          imageAlt={intl.formatMessage({ id: "student.commitment.imageAlt" })}
-          title={intl.formatMessage({ id: "student.commitment.title" })}
-          subtitle={intl.formatMessage({ id: "student.commitment.body" })}
-          body={intl.formatMessage({ id: "student.commitment.down" })}
-        />
-
         <ApplicationPipelineSection />
 
         <LogoSection

@@ -19,7 +19,7 @@ const HeroSectionStudentsDesktop: React.FC = () => {
       />
 
       <div className="container-custom text-left p-8 w-2/4 h-full">
-        <h1 className="text-primary font-bold text-3xl 2xl:text-4xl">
+        <h1 className="text-primary font-bold text-3xl 2xl:text-4xl mb-4">
           {title}
         </h1>
         <p className="text-gray-700 max-w-3xl mb-8 text-xl">{subtitle}</p>
