@@ -159,9 +159,9 @@ const en = {
   "student.commitment.subtitle":
     "If you invest this time, it will change your life.",
   "student.commitment.body":
-    "TEG is a three-semester qualification programme run in parallel with university studies for students of all disciplines, which trains them in economic and entrepreneurial thinking and prepares them optimally for professional life.",
+    "Your membership of TEG involves a three-semester foundation course. This is a training programme run alongside university studies for students of all disciplines, which develops economic and entrepreneurial thinking and provides excellent preparation for a career in management and professional life.",
   "student.commitment.down":
-    "TEG members acquire professional skills that are significantly above the level of a career starter. This is confirmed by certificates that are highly regarded by companies. Furthermore, workshops and practical projects teach skills in the areas of project management, leadership and coaching.",
+    "TEG members acquire professional skills that are well above the level of an entry-level employee. Through workshops and practical projects, they develop skills in project management, leadership and coaching. This has enabled former TEG graduates to pursue rapid professional and managerial careers, rising to senior management positions within companies or successfully launching their own businesses.",
 
   "student.cardText.imageAlt": "Welcome at TEG Office",
   "student.cardText.title":

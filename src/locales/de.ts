@@ -154,10 +154,6 @@ const de = {
     "Bei uns entwickelst Du schon während deines Studiums die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.hero.buttonText": "Mitglied werden",
   "student.hero.buttonLink": "https://tally.so/r/yPDXd4",
-  "student.commitment.body":
-    "Deine Mitgliedschaft bei TEG beginnt mit einer 3 Semester langen Grundausbildung, diese ist ein Qualifizier\u00ADungspro\u00ADgramm parallel zur Universität für Studierende aller Studiengänge, welches wirtschaft\u00ADliches und unternehmer\u00ADisches Denken schult, und optimal auf das Berufsleben vorbereitet. Nach Abschluss bist du Dein Leben lang Teil unseres TEG-Alumni-Netzwerks.",
-  "student.commitment.down":
-    "Während der Grundausbildung erlernen TEG-Mitglieder fachliche Kompetenzen deutlich über dem Level eines Berufseinsteigers. Bestätigt durch von Firmen gerne gesehene Zertifikate. Weiterhin werden durch Workshops und Praxis-Projekte Kompetenzen in den Bereichen Projektmanagement, Leadership und Coaching vermittelt. Diese Fähigkeiten erlauben eine steile Fach- und Führungskarriere bis hin in die Geschäftsführung von Unternehmen oder befähigen zur erfolgreichen eigenen Gründung.",
 
   "student.maps.title": "Hier sind wir zu Hause",
   "student.maps.description":
@@ -168,6 +164,10 @@ const de = {
     "TEG ist nicht für jeden: 10+ Stunden Arbeitszeit pro Woche, konstant über 3 Semester",
   "student.commitment.subtitle":
     "Wenn Du diese Zeit investierst, wird es Dein Leben verändern.",
+  "student.commitment.body":
+    "Deine Mitgliedschaft bei TEG ist eine 3 Semester lange Grundausbildung. Dies ist ein Qualifizier\u00ADungspro\u00ADgramm parallel zur Universität für Studierende aller Studiengänge, welches wirtschaft\u00ADliches und unternehmer\u00ADisches Denken schult, und optimal auf das Management- und Berufsleben vorbereitet.",
+  "student.commitment.down":
+    "Während der Grundausbildung erlernen TEG-Mitglieder fachliche Kompetenzen deutlich über dem Level eines Berufseinsteigers. Durch Workshops und Praxis-Projekte werden Kompetenzen in den Bereichen Projektmanagement, Leadership und Coaching vermittelt. Dies ermöglichte ehemalige TEG-Absolventen steile Fach- und Führungskarrieren bis hin in die Geschäftsführung von Unternehmen, oder zur erfolgreichen eigenen Gründung.",
 
   "student.cardText.imageAlt": "Willkommen im TEG-Office",
   "student.cardText.title":
