@@ -57,19 +57,23 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
             {mobileTitle}
           </h1>
           <p className="text-gray-700 text-xl mb-6">{subtitle}</p>
-          <div className="flex sm:flex-row md:flex-col flex-col gap-3">
+          <div className="flex flex-col items-start gap-3">
             <PrimaryButton
               label={buttonText1}
               onClick={() => handleLink(buttonLink1)}
               size="lg"
-              align="center"
+              align="left"
+              fullWidth={false}
+              minWidthClassName="w-[250px]"
             />
             {buttonText2 && buttonLink2 && (
               <PrimaryButton
                 label={buttonText2}
                 onClick={() => handleLink(buttonLink2)}
                 size="lg"
-                align="center"
+                align="left"
+                fullWidth={false}
+                minWidthClassName="w-[250px]"
               />
             )}
           </div>
