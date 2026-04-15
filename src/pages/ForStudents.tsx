@@ -2,14 +2,11 @@ import React from "react";
 import { useIntl } from "react-intl";
 import CallToAction from "../components/CallToAction";
 import ContactCard from "../components/ContactCard";
-import GoogleMaps from "../components/GoogleMaps";
 import LogoSection from "../components/sections/LogoSection";
 import Testimonials from "../components/sections/TestimonialSection";
 import CardText from "../components/sections/CardText";
 import MemberProcessSection from "../components/sections/MemberProcessSection";
 import ApplicationPipelineSection from "../components/sections/ApplicationPipelineSection";
-import PyramideSection from "../components/sections/PyramideSection";
-import CertificatesSection from "../components/sections/CertificateSection";
 import HeroSectionStudentsDesktop from "../components/sections/HeroSectionStudentsDesktop";
 import HeroSectionStudentsMobile from "../components/sections/HeroSectionStudentsMobile";
 
@@ -54,12 +51,6 @@ const ForStudents: React.FC = () => {
           body={intl.formatMessage({ id: "student.commitment.down" })}
         />
 
-        <MemberProcessSection />
-
-        <PyramideSection />
-
-        <CertificatesSection />
-
         <ApplicationPipelineSection />
 
         <LogoSection
@@ -81,13 +72,7 @@ const ForStudents: React.FC = () => {
           description={intl.formatMessage({ id: "home.partners.description" })}
         />
 
-        <CardText
-          image="/welcome-to-teg.jpeg"
-          imageAlt={intl.formatMessage({ id: "student.cardText.imageAlt" })}
-          title={intl.formatMessage({ id: "student.cardText.title" })}
-          subtitle={intl.formatMessage({ id: "student.cardText.subtitle" })}
-          body={intl.formatMessage({ id: "student.cardText.body" })}
-        />
+        <MemberProcessSection />
 
         <LogoSection
           images={[
@@ -103,14 +88,6 @@ const ForStudents: React.FC = () => {
           ]}
           title={intl.formatMessage({ id: "home.alumnis.title" })}
           description={intl.formatMessage({ id: "home.alumnis.description" })}
-        />
-
-        <CardText
-          image="/components-images/team-2.jpeg"
-          imageAlt={intl.formatMessage({ id: "student.cardText3.imageAlt" })}
-          title={intl.formatMessage({ id: "student.cardText3.title" })}
-          subtitle={intl.formatMessage({ id: "student.cardText3.subtitle" })}
-          body={intl.formatMessage({ id: "student.cardText3.body" })}
         />
 
         <div className="container-custom max-w-7xl mx-auto px-1 md:px-4 pb-8">
@@ -130,13 +107,12 @@ const ForStudents: React.FC = () => {
         </div>
 
         <CardText
-          image="/components-images/team-4.jpeg"
-          imageAlt={intl.formatMessage({ id: "student.cardText2.imageAlt" })}
-          title={intl.formatMessage({ id: "student.cardText2.title" })}
-          subtitle={intl.formatMessage({ id: "student.cardText2.subtitle" })}
+          image="/components-images/team-2.jpeg"
+          imageAlt={intl.formatMessage({ id: "student.cardText3.imageAlt" })}
+          title={intl.formatMessage({ id: "student.cardText3.title" })}
+          subtitle={intl.formatMessage({ id: "student.cardText3.subtitle" })}
+          body={intl.formatMessage({ id: "student.cardText3.body" })}
         />
-
-        <GoogleMaps />
 
         <Testimonials />
 
