@@ -234,7 +234,7 @@ const de = {
   "student.testimonials.author3": "Yesieniia Liaskina",
 
   "student.callToAction.title":
-    "Bist Du bereit, Deine Karriere als Führungskraft zu starten?",
+    "Bist Du bereit, deine Karriere als Führungskraft zu starten?",
   "student.callToAction.description":
     "Übernehme Verantwortung. Werde ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.callToAction.buttonText": "Jetzt bewerben!",
