@@ -50,11 +50,13 @@ const NewFeatureCard: React.FC<NewFeatureCardProps> = ({
             : "order-2 md:order-2 md:pl-0 md:pr-8"
         } flex-1 min-w-0 px-4 md:px-0`}
       >
-        <div className="text-primary text-3xl font-bold leading-tight max-w-[60ch] overflow-hidden">
+        <div className="text-primary text-3xl font-semibold leading-tight max-w-[60ch] overflow-hidden">
           {title}
         </div>
-        <div className="mt-2 mb-6 text-gray-700 max-w-prose">{description}</div>
-        <div className={`${clickable ? "" : "hidden"}`}>
+        <div className="mt-2 text-xl text-gray-700 max-w-prose">
+          {description}
+        </div>
+        <div className={`${clickable ? "" : "hidden"} mt-4`}>
           <PrimaryButton
             label={buttonText}
             onClick={() => navigate(buttonLink)}

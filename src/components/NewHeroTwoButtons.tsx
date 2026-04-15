@@ -52,11 +52,11 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
       {/* Mobile: Stacked layout - image above, content below (like ForStudents) */}
       <section className="md:hidden flex flex-col">
         <img src={bgImage} alt="Hero" className="w-full h-auto" />
-        <div className="px-4 py-6 bg-white">
-          <h1 className="text-primary font-bold text-2xl mb-2">
+        <div className="p-4 bg-white">
+          <h1 className="text-primary font-semibold text-3xl mb-2">
             {mobileTitle}
           </h1>
-          <p className="text-gray-700 text-base mb-6">{subtitle}</p>
+          <p className="text-gray-700 text-xl mb-6">{subtitle}</p>
           <div className="flex sm:flex-row md:flex-col flex-col gap-3">
             <PrimaryButton
               label={buttonText1}

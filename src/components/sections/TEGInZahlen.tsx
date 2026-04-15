@@ -28,8 +28,8 @@ const TEGInZahlen: React.FC<TEGInZahlenProps> = ({
 }) => {
   return (
     <section className={className}>
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-20 text-center">
+      <div className="max-w-6xl mx-auto p-4">
+        <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-20 text-leftalign">
           {title}
         </h2>
 
