@@ -209,11 +209,11 @@ const de = {
     "Kennenlern Brunch 18.04. | 10:00 - 14:00 Uhr",
   "student.events.list.brunch.description":
     "Lerne TEG bei einem entspannten Brunch kennen und komm mit Mitgliedern und Alumni ins Gespräch.",
-  "student.events.list.brunch.linkLabel": "Zur Eventseite",
+  "student.events.list.brunch.linkLabel": "Jetzt anmelden",
   "student.events.list.talk.title": "TEG Talk 24.04. | 18:30 - 22:00 Uhr",
   "student.events.list.talk.description":
     "Mit Speakern wie dem Microsoft CTO, dem Strategy Director von Siemens und der Gründerin des weltweit ersten Unternehmens für den Handel mit Elektronik-Bauteilen. Dazu kommen zwei weitere Perspektiven aus der Praxis.",
-  "student.events.list.talk.linkLabel": "Zur Eventseite",
+  "student.events.list.talk.linkLabel": "Jetzt anmelden",
   "student.events.list.workshop.title":
     "Top-Management-Workshops für Mitglieder",
   "student.events.list.workshop.description":

@@ -17,17 +17,17 @@ export default function Testimonials() {
     {
       quote: intl.formatMessage({ id: "student.testimonials.quote1" }),
       author: intl.formatMessage({ id: "student.testimonials.author1" }),
-      image: "/for-students/testimonials/ahmed.jpeg",
+      image: "/for-students/testimonials/ahmed.avif",
     },
     {
       quote: intl.formatMessage({ id: "student.testimonials.quote2" }),
       author: intl.formatMessage({ id: "student.testimonials.author2" }),
-      image: "/for-students/testimonials/luis.jpeg",
+      image: "/for-students/testimonials/luis.avif",
     },
     {
       quote: intl.formatMessage({ id: "student.testimonials.quote3" }),
       author: intl.formatMessage({ id: "student.testimonials.author3" }),
-      image: "/for-students/testimonials/yesiienia.jpeg",
+      image: "/for-students/testimonials/yesiienia.avif",
     },
   ];
 

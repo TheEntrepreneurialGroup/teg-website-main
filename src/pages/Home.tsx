@@ -13,7 +13,7 @@ export const Home: React.FC = () => {
         title={intl.formatMessage({ id: "home.hero.title" })}
         mobileTitle={intl.formatMessage({ id: "home.hero.mobileTitle" })}
         subtitle={intl.formatMessage({ id: "home.hero.since" })}
-        bgImage="/shared/heroes/hero-subpage.png"
+        bgImage="/shared/heroes/hero-subpage.avif"
         buttonText1={intl.formatMessage({ id: "home.hero.buttonText1" })}
         buttonText2={intl.formatMessage({ id: "home.hero.buttonText2" })}
         buttonLink2="/for-students"
@@ -34,13 +34,6 @@ export const Home: React.FC = () => {
         text4={intl.formatMessage({ id: "home.alumni.stat4.label" })}
       />
 
-      {/* <MissionAndVision
-        missionTitle="Mission"
-        visionTitle="Vision"
-        missionText={intl.formatMessage({ id: "home.mission" })}
-        visionText={intl.formatMessage({ id: "home.vision" })}
-      />
- */}
       <div className="flex flex-col items-center lg:px-48 xl:px-96 xl:py-20 gap-10 md:gap-0 pb-20 md:pb-0">
         <FeatureCard
           className="pl-1"
@@ -49,7 +42,7 @@ export const Home: React.FC = () => {
           buttonText={intl.formatMessage({ id: "home.card1.buttonText" })}
           imagePosition="left"
           imageAltText={intl.formatMessage({ id: "home.card1.imageAlt" })}
-          imageURL="/home/kuratorium.jpg"
+          imageURL="/home/kuratorium.avif"
           buttonLink="/"
           clickable={false}
         />
@@ -60,7 +53,7 @@ export const Home: React.FC = () => {
           buttonText={intl.formatMessage({ id: "home.card2.buttonText" })}
           imagePosition="right"
           imageAltText={intl.formatMessage({ id: "home.card2.imageAlt" })}
-          imageURL="/shared/images/team-event.jpeg"
+          imageURL="/home/tegtalk-WS26.avif"
           buttonLink={intl.formatMessage({ id: "home.card2.buttonLink" })}
           clickable
         />
@@ -70,7 +63,7 @@ export const Home: React.FC = () => {
           buttonText={intl.formatMessage({ id: "home.card3.buttonText" })}
           imagePosition="left"
           imageAltText={intl.formatMessage({ id: "home.card3.imageAlt" })}
-          imageURL="/shared/heroes/hero-students.jpg"
+          imageURL="/home/fuehrungskraefte.avif"
           buttonLink={intl.formatMessage({ id: "home.card3.buttonLink" })}
           clickable
         />
