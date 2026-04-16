@@ -25,7 +25,7 @@ const SingleTestimonial: React.FC<SingleTestimonialProps> = ({
       className="h-24 w-24 shrink-0 md:h-28 md:w-28 rounded-full object-cover"
     ></img>
     <div className="max-w-2xl">
-      <p className="text-xl italic text-gray-700 font-normal leading-relaxed m-0">
+      <p className="text-xl italic text-muted-foreground font-normal leading-relaxed m-0">
         “{quote}”
       </p>
       <p className="text-xl not-italic text-primary-dark font-semibold mt-1 m-0">

@@ -5,16 +5,16 @@ import { trackOutboundClick } from "../utils/analytics";
 
 const Imprint: React.FC = () => {
   return (
-    <div className="bg-white text-gray-800">
+    <div className="bg-white text-foreground">
       {" "}
       {/* Or use bg-secondary-light */}
       <section className="py-20">
         <div className="container-custom">
           <SectionTitle text="Imprint / Legal Notice" />
 
-          <div className="max-w-3xl mx-auto mt-12 text-gray-600">
+          <div className="max-w-3xl mx-auto mt-12 text-muted-foreground">
             {/* Contact Information Block */}
-            <div className="mb-6 p-6 border border-gray-200  bg-gray-50">
+            <div className="mb-6 p-6 border border-border  bg-muted">
               <h3 className="text-lg font-semibold mb-2 text-primary">
                 Contact Info:
               </h3>
@@ -44,7 +44,7 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Representation Block */}
-            <div className="mb-6 p-6 border border-gray-200  bg-gray-50">
+            <div className="mb-6 p-6 border border-border  bg-muted">
               <h3 className="text-lg font-semibold mb-2 text-primary">
                 Board of Directors authorized to represent:
               </h3>
@@ -54,7 +54,7 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Register Entry Block */}
-            <div className="mb-6 p-6 border border-gray-200  bg-gray-50">
+            <div className="mb-6 p-6 border border-border  bg-muted">
               <h3 className="text-lg font-semibold mb-2 text-primary">
                 Register Entry:
               </h3>
@@ -63,7 +63,7 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Scope of Imprint */}
-            <div className="mb-6 p-6 border border-gray-200  bg-gray-50">
+            <div className="mb-6 p-6 border border-border  bg-muted">
               <p className="text-sm">
                 The imprint applies according to § 5 TMG for our telemedia
                 including our Instagram, LinkedIn and Facebook presence.
@@ -71,7 +71,7 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Disclaimer & Copyright Section */}
-            <div className="mt-10 pt-6 border-t border-gray-300">
+            <div className="mt-10 pt-6 border-t border-secondary-dark">
               <h3 className="text-lg font-semibold mb-3 text-primary">
                 Disclaimer:
               </h3>
@@ -91,7 +91,7 @@ const Imprint: React.FC = () => {
                 external sites.
               </p>
 
-              <h4 className="text-md font-semibold mt-4 mb-2 text-gray-700">
+              <h4 className="text-md font-semibold mt-4 mb-2 text-muted-foreground">
                 Copyright:
               </h4>
               <p className="text-sm mb-3">

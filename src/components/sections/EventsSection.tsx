@@ -57,7 +57,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
         </h3>
 
         <div className="flex flex-col md:flex-row items-start gap-2 md:gap-8">
-          <div className="w-full md:w-1/2 h-[250px] md:min-h-[350px] md:max-h-[450px] overflow-hidden bg-slate-100 flex-shrink-0">
+          <div className="w-full md:w-1/2 h-[250px] md:min-h-[350px] md:max-h-[450px] overflow-hidden bg-muted flex-shrink-0">
             <img
               src={activeEvent.imageSrc}
               alt={intl.formatMessage({ id: activeEvent.imageAltId })}
@@ -71,7 +71,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
               <h4 className="text-xl md:text-3xl font-bold text-primary leading-tight">
                 {intl.formatMessage({ id: activeEvent.titleId })}
               </h4>
-              <p className="text-lg text-gray-700 leading-relaxed flex-1 min-h-0">
+              <p className="text-lg text-muted-foreground leading-relaxed flex-1 min-h-0">
                 {intl.formatMessage({ id: activeEvent.descriptionId })}
               </p>
               <Button
@@ -90,7 +90,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
                       key={index}
                       type="button"
                       onClick={() => setActiveIndex(index)}
-                      className={`h-1.5 w-6 md:w-7 rounded-none transition-colors ${index === activeIndex ? "bg-accent" : "bg-slate-300"}`}
+                      className={`h-1.5 w-6 md:w-7 rounded-none transition-colors ${index === activeIndex ? "bg-accent" : "bg-secondary-dark"}`}
                       aria-label={`${intl.formatMessage({ id: "student.events.slide" })} ${index + 1}`}
                     />
                   ))}

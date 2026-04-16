@@ -83,7 +83,7 @@ const ForStudents: React.FC = () => {
         <EventSection events={events} />
         {/* Commitment CardText Section */}
         <CardText
-          image="/for-students/commitment/teg-alumni.avif"
+          image="/for-students/commitment/ancient-group.avif"
           imageAlt={intl.formatMessage({ id: "student.commitment.imageAlt" })}
           title={intl.formatMessage({ id: "student.commitment.title" })}
           subtitle={intl.formatMessage({ id: "student.commitment.body" })}
