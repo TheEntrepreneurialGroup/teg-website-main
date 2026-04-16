@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Button";
+import { PrimaryButton } from "../blocks/PrimaryButton";
 import { useIntl } from "react-intl";
 
 const HeroSectionStudentsMobile: React.FC = () => {
@@ -25,9 +25,11 @@ const HeroSectionStudentsMobile: React.FC = () => {
         </p>
 
         {buttonText && buttonLink && (
-          <Button href={buttonLink} buttonText={buttonText}>
-            {buttonText}
-          </Button>
+          <PrimaryButton
+            label={buttonText}
+            href={buttonLink}
+            buttonText={buttonText}
+          />
         )}
       </div>
     </div>

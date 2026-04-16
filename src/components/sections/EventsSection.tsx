@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
-import Button from "../Button";
+import { PrimaryButton } from "../blocks/PrimaryButton";
 
 export type EventSlide = {
   titleId: string;
@@ -30,7 +30,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
     }, autoPlayMs);
 
     return () => window.clearInterval(timer);
-  }, [events.length, autoPlayMs]);
+  }, [events.length, autoPlayMs, activeIndex]);
 
   if (events.length === 0) {
     return null;
@@ -44,7 +44,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
   return (
     <section className="w-full py-8 md:py-14">
       <div className="px-4 md:px-0">
-        <h3 className="text-2xl sm:text-3xl font-bold text-primary leading-tight mb-5 md:mb-8">
+        <h3 className="text-3xl font-bold text-primary leading-tight mb-5 md:mb-8">
           {intl.formatMessage({ id: "student.events.title" })}{" "}
           <a
             href={intl.formatMessage({ id: "student.events.calendarLink" })}
@@ -73,14 +73,13 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
             {intl.formatMessage({ id: activeEvent.descriptionId })}
           </p>
           <div className="mt-4">
-            <Button
+            <PrimaryButton
+              label={activeEventLinkLabel}
               href={activeEvent.link}
               target="_blank"
               rel="noreferrer"
               buttonText={`student-events: ${activeEventLinkLabel}`}
-            >
-              {activeEventLinkLabel}
-            </Button>
+            />
           </div>
           {events.length > 1 && (
             <div className="flex items-center justify-start gap-4 mt-4 w-full">
