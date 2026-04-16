@@ -18,7 +18,7 @@ export default function LogoSection({
   description,
 }: LogoSectionProps) {
   return (
-    <section className="p-2 sm:p-8 md:p-14 lg:p-20">
+    <section className="p-4 sm:p-8 md:p-14 lg:p-20">
       <div className="text-left">
         <SectionTitle text={title} className="text-left" />
       </div>
@@ -30,7 +30,7 @@ export default function LogoSection({
         ))}
       </div>
       {/* Text under the logos */}
-      <p className="mt-6 text-lg text-left text-foreground">{description}</p>
+      <p className="mt-6 text-xl text-left text-foreground">{description}</p>
     </section>
   );
 }

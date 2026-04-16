@@ -1,7 +1,7 @@
 import { SectionTitle } from "@/components/blocks/SectionTitle";
 import { useIntl } from "react-intl";
 import SingleTestimonial from "../ui/SingleTestimonial";
-import Button from "../Button";
+import { PrimaryButton } from "../blocks/PrimaryButton";
 import { ArrowDown } from "lucide-react";
 
 type Testimonial = {
@@ -32,7 +32,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="mx-auto flex flex-col p-2 sm:p-16">
+    <section className="mx-auto flex flex-col p-4 sm:p-16">
       <SectionTitle
         text={intl.formatMessage({
           id: "student.testimonials.title",
@@ -63,16 +63,15 @@ export default function Testimonials() {
 
       {/* Button */}
       <div className="text-center">
-        <Button
-          className="w-[250px] md:w-auto text-center min-w-[100px]"
+        <PrimaryButton
+          label={intl.formatMessage({ id: "student.applySection.applyButton" })}
           href={intl.formatMessage({ id: "student.hero.buttonLink" })}
           buttonText={
             "student testimonial: " +
             intl.formatMessage({ id: "student.hero.applyButton" })
           }
-        >
-          {intl.formatMessage({ id: "student.applySection.applyButton" })}
-        </Button>
+          align="center"
+        />
       </div>
     </section>
   );

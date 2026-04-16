@@ -34,7 +34,7 @@ export const Home: React.FC = () => {
         text4={intl.formatMessage({ id: "home.alumni.stat4.label" })}
       />
 
-      <div className="flex flex-col items-center lg:px-48 xl:px-96 xl:py-20 gap-10 md:gap-0 pb-20 md:pb-0">
+      <div className="flex flex-col items-center max-w-7xl mx-auto xl:py-20 gap-10 md:gap-0 pb-20 md:pb-0">
         <FeatureCard
           className="pl-1"
           title={intl.formatMessage({ id: "home.card1.title" })}
