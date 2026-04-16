@@ -1,6 +1,6 @@
 // src/pages/Imprint.tsx
 import React from "react";
-import SectionTitle from "../components/SectionTitle"; // Adjust path as needed
+import { SectionTitle } from "@/components/blocks/SectionTitle";
 import { trackOutboundClick } from "../utils/analytics";
 
 const Imprint: React.FC = () => {
@@ -10,11 +10,7 @@ const Imprint: React.FC = () => {
       {/* Or use bg-secondary-light */}
       <section className="py-20">
         <div className="container-custom">
-          <SectionTitle
-            title="Imprint / Legal Notice"
-            // Subtitle removed as the scope is mentioned in the text below
-            centered
-          />
+          <SectionTitle text="Imprint / Legal Notice" />
 
           <div className="max-w-3xl mx-auto mt-12 text-gray-600">
             {/* Contact Information Block */}
