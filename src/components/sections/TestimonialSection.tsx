@@ -32,14 +32,15 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="mx-auto max-w-7xl flex flex-col p-8 sm:p-14 md:p-20 text-center">
+    <section className="mx-auto flex flex-col p-2 sm:p-16">
       <SectionTitle
+        centered={false}
         title={intl.formatMessage({
           id: "student.testimonials.title",
         })}
       />
 
-      <div className="flex flex-col w-full text-left gap-4 md:gap-12 mb-3">
+      <div className="flex flex-col w-full text-left gap-4 md:gap-10">
         {testimonials.map((t, idx) => (
           <SingleTestimonial
             key={idx}
@@ -52,7 +53,7 @@ export default function Testimonials() {
       </div>
 
       {/* Pfeile + Claim */}
-      <div className="flex flex-col items-center my-10 text-center gap-2">
+      <div className="flex flex-col items-center my-6 md:my-10 text-center gap-2">
         <ArrowDown
           size={28}
           strokeWidth={1.5}

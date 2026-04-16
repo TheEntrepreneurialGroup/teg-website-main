@@ -20,7 +20,7 @@ export default function LogoSection({
   return (
     <section className="p-2 sm:p-8 md:p-14 lg:p-20">
       <div className="text-left">
-        <SectionTitle title={title} />
+        <SectionTitle title={title} centered={false} />
       </div>
 
       {/* Logos */}
