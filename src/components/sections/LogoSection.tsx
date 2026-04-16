@@ -30,7 +30,7 @@ export default function LogoSection({
         ))}
       </div>
       {/* Text under the logos */}
-      <p className="mt-6 text-lg text-left text-black">{description}</p>
+      <p className="mt-6 text-lg text-left text-foreground">{description}</p>
     </section>
   );
 }

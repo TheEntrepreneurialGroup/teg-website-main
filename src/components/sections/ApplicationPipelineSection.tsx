@@ -22,7 +22,7 @@ export default function ApplicationPipelineSection() {
           <h3 className="text-2xl sm:text-3xl font-bold text-primary">
             {intl.formatMessage({ id: "student.applicationPipeline.title" })}
           </h3>
-          <p className="text-xl text-gray-700 mt-2 m-0">
+          <p className="text-xl text-muted-foreground mt-2 m-0">
             {intl.formatMessage({
               id: "student.applicationPipeline.description",
             })}

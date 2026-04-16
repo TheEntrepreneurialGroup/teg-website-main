@@ -44,29 +44,6 @@ export default {
           light: "#DAA520",
           dark: "#8B6914",
         },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        success: {
-          DEFAULT: "#10B981",
-          light: "#34D399",
-          dark: "#059669",
-        },
-        warning: {
-          DEFAULT: "#F59E0B",
-          light: "#FBBF24",
-          dark: "#D97706",
-        },
-        error: {
-          DEFAULT: "#EF4444",
-          light: "#F87171",
-          dark: "#DC2626",
-        },
         brand: "#e2eafe",
       },
       borderRadius: {

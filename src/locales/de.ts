@@ -21,7 +21,7 @@ const de = {
   "home.alumni.stat3.value": "40",
   "home.alumni.stat3.label": "Top-Level Führungskräfte im Mittelstand",
   "home.alumni.stat4.value": "15",
-  "home.alumni.stat4.label": "Unternehmensgründer",
+  "home.alumni.stat4.label": "Unternehmens\u00ADgründer",
   "home.mission":
     "Wir befähigen leistungsstarke Studierende, sich zu selbstbewussten und kompetenten jungen Führungskräften zu entwickeln, indem wir ihnen echten Unternehmenseinblick, praktische Verantwortung und eine strukturierte Entwicklung auf ihrem Weg in zukünftige Managementrollen bieten.",
   "home.vision":

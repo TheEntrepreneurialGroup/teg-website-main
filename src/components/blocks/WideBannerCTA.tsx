@@ -15,7 +15,7 @@ export function WideBannerCTA({
   align,
   children,
 }: WideBannerCTAProps) {
-  const bgClass = background === "grey" ? "bg-gray-100" : "bg-white";
+  const bgClass = background === "grey" ? "bg-muted" : "bg-white";
   const textAlign = align === "center" ? "text-center" : "text-left";
 
   return (

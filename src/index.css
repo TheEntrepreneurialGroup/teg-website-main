@@ -5,26 +5,8 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #0f2c59;
-  --color-primary-light: #3a5aa9;
-  --color-brand: #e2eafe;
-  --color-primary-dark: #091c3a;
-  --color-secondary: #e5e5e5;
-  --color-secondary-light: rgba(245 245 245 0.3);
-  --color-secondary-dark: #c4c4c4;
-  --color-accent: #b8860b;
-  --color-accent-light: #daa520;
-  --color-accent-dark: #8b6914;
-
-  /* Shadcn Variables Mapped to TEG Theme */
   --background: rgb(255 255 255);
   --foreground: 222.2 84% 4.9%;
-
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
 
   --primary: 217 71% 20%;
   /* #0f2c59 converted to HSL approx */
@@ -57,7 +39,7 @@
   }
 
   body {
-    @apply font-['Montserrat'] leading-relaxed text-gray-800;
+    @apply font-['Montserrat'] leading-relaxed text-foreground;
   }
 
   h1,
