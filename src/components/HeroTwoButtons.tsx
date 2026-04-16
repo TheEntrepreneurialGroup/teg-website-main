@@ -3,7 +3,7 @@ import { PrimaryButton } from "./blocks/PrimaryButton";
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
-interface NewHeroTwoButtonsProps {
+interface HeroTwoButtonsProps {
   title: string;
   mobileTitle?: string;
   subtitle?: string; // This is the new since in the old HeroSectionTwoButtonsProps
@@ -17,7 +17,7 @@ interface NewHeroTwoButtonsProps {
   className?: string;
 }
 
-const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
+const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
   title,
   mobileTitle,
   subtitle,
@@ -135,4 +135,4 @@ const NewHeroTwoButtons: React.FC<NewHeroTwoButtonsProps> = ({
   );
 };
 
-export default NewHeroTwoButtons;
+export default HeroTwoButtons;

@@ -1,15 +1,15 @@
 import React from "react";
 import { useIntl } from "react-intl";
-import NewHeroTwoButtons from "@/components/NewHeroTwoButtons";
+import HeroTwoButtons from "@/components/HeroTwoButtons";
 import TEGInZahlen from "@/components/sections/TEGInZahlen";
-import NewFeatureCard from "@/components/NewFeatureCard";
+import FeatureCard from "@/components/FeatureCard";
 
 export const Home: React.FC = () => {
   const intl = useIntl();
 
   return (
     <div>
-      <NewHeroTwoButtons
+      <HeroTwoButtons
         title={intl.formatMessage({ id: "home.hero.title" })}
         mobileTitle={intl.formatMessage({ id: "home.hero.mobileTitle" })}
         subtitle={intl.formatMessage({ id: "home.hero.since" })}
@@ -42,7 +42,7 @@ export const Home: React.FC = () => {
       />
  */}
       <div className="flex flex-col items-center lg:px-48 xl:px-96 xl:py-20 gap-10 md:gap-0 pb-20 md:pb-0">
-        <NewFeatureCard
+        <FeatureCard
           className="pl-1"
           title={intl.formatMessage({ id: "home.card1.title" })}
           description={intl.formatMessage({ id: "home.card1.description" })}
@@ -54,7 +54,7 @@ export const Home: React.FC = () => {
           clickable={false}
         />
 
-        <NewFeatureCard
+        <FeatureCard
           title={intl.formatMessage({ id: "home.card2.title" })}
           description={intl.formatMessage({ id: "home.card2.description" })}
           buttonText={intl.formatMessage({ id: "home.card2.buttonText" })}
@@ -64,7 +64,7 @@ export const Home: React.FC = () => {
           buttonLink={intl.formatMessage({ id: "home.card2.buttonLink" })}
           clickable
         />
-        <NewFeatureCard
+        <FeatureCard
           title={intl.formatMessage({ id: "home.card3.title" })}
           description={intl.formatMessage({ id: "home.card3.description" })}
           buttonText={intl.formatMessage({ id: "home.card3.buttonText" })}

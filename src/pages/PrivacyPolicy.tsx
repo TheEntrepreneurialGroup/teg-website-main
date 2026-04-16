@@ -1,5 +1,5 @@
 import React from "react";
-import SectionTitle from "../components/SectionTitle"; // Adjust path as needed
+import { SectionTitle } from "@/components/blocks/SectionTitle";
 
 const PrivacyPolicy: React.FC = () => {
   return (
@@ -7,10 +7,7 @@ const PrivacyPolicy: React.FC = () => {
     <div className="bg-white text-gray-800">
       <section className="py-20">
         <div className="container-custom">
-          <SectionTitle
-            title="Datenschutzerklärung" // Changed title to German
-            centered
-          />
+          <SectionTitle text="Datenschutzerklärung" />
           {/* Using Tailwind's prose class for automatic styling of text elements */}
           <div className="prose prose-lg max-w-none mt-12 text-gray-600">
             {/* ===== 1. Datenschutz auf einen Blick ===== */}
