@@ -8,24 +8,26 @@ interface FeatureCardProps {
   className?: string;
   title: string;
   description: string;
-  buttonText: string;
-  buttonLink: string;
+  body?: string;
+  buttonText?: string;
+  buttonLink?: string;
   imageURL: string;
   imageAltText: string;
-  imagePosition: "left" | "right";
-  clickable: boolean;
+  imagePosition?: "left" | "right";
+  clickable?: boolean;
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({
   className,
   title,
   description,
+  body,
   buttonText,
   buttonLink,
-  imagePosition,
+  imagePosition = "left",
   imageURL,
   imageAltText,
-  clickable,
+  clickable = false,
 }) => {
   const navigate = useNavigate();
   return (
@@ -56,7 +58,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         <div className="mt-2 text-xl text-muted-foreground max-w-prose">
           {description}
         </div>
-        <div className={`${clickable ? "" : "hidden"} mt-4`}>
+        {body && (
+          <div className="mt-2 text-xl text-muted-foreground max-w-prose">
+            {body}
+          </div>
+        )}
+        <div className={`${clickable && buttonText ? "" : "hidden"} mt-4`}>
           <PrimaryButton
             label={buttonText}
             onClick={() => navigate(buttonLink)}
