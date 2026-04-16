@@ -27,8 +27,8 @@ const CardTextDesktop: React.FC<CardTextProps> = ({
       <div className="flex flex-col w-1/2 my-1">
         <h2 className="font-bold text-3xl mb-2">{title}</h2>
 
-        <p className="text-gray-700 m-0 mb-2 text-xl">{subtitle}</p>
-        {body && <p className="text-gray-700 m-0 text-xl">{body}</p>}
+        <p className="text-muted-foreground m-0 mb-2 text-xl">{subtitle}</p>
+        {body && <p className="text-muted-foreground m-0 text-xl">{body}</p>}
       </div>
     </div>
   </section>

@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-primary text-white">
       <div className="container-custom pb-3">
-        <div className="border-t border-gray-700 mt-6 pt-3 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-primary-dark mt-6 pt-3 flex flex-col md:flex-row justify-between items-center">
           <p className="text-secondary-light text-sm">
             &copy; {new Date().getFullYear()} The Entrepreneurial Group. All
             rights reserved.

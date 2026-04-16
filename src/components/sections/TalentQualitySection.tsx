@@ -22,7 +22,7 @@ export function TalentQualitySection() {
             text={intl.formatMessage({ id: "company.quality.title" })}
             className="mb-8"
           />
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             {intl.formatMessage({ id: "company.quality.intro" })}
           </p>
         </div>

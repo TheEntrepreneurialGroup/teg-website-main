@@ -45,8 +45,8 @@ const CardTextMobile: React.FC<CardTextProps> = ({
               className="object-cover h-[250px]"
             />
           </div>
-          <p className="text-gray-700 m-0 text-lg">{subtitle}</p>
-          {body && <p className="text-gray-700 m-0 text-lg">{body}</p>}
+          <p className="text-muted-foreground m-0 text-lg">{subtitle}</p>
+          {body && <p className="text-muted-foreground m-0 text-lg">{body}</p>}
         </>
       ) : (
         <>
@@ -59,10 +59,12 @@ const CardTextMobile: React.FC<CardTextProps> = ({
 
             <div className="w-1/2">
               <h2 className="font-bold text-xl mb-2">{title}</h2>
-              <p className="text-gray-700 m-0 mb-2 text-lg">{subtitle}</p>
+              <p className="text-muted-foreground m-0 mb-2 text-lg">
+                {subtitle}
+              </p>
             </div>
           </div>
-          {body && <p className="text-gray-700 m-0 text-lg">{body}</p>}
+          {body && <p className="text-muted-foreground m-0 text-lg">{body}</p>}
         </>
       )}
     </section>

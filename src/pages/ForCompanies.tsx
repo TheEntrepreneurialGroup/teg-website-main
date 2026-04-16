@@ -81,6 +81,19 @@ export default function ForCompanies() {
         className="lg:h-screen"
       />
 
+      {/* Hero Section - outside container for full width */}
+      <HeroTwoButtons
+        title={intl.formatMessage({ id: "company.hero.title" })}
+        mobileTitle={intl.formatMessage({ id: "company.hero.mobileTitle" })}
+        subtitle={intl.formatMessage({ id: "company.hero.subtitle" })}
+        bgImage="/shared/heroes/hero-home.avif"
+        buttonText1={intl.formatMessage({ id: "company.hero.buttonText1" })}
+        buttonLink1="#contact"
+        gradientClassName="bg-gradient-to-b from-transparent from-45% via-primary/85 via-80% to-primary to-95%"
+        imageClassName="object-top md:object-center"
+        className="lg:h-screen"
+      />
+
       <LandingPage>
         {/* Problem Hero Section */}
         <ProblemHeroSection>

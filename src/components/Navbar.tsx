@@ -109,7 +109,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
         {/* Mobile Menu Button */}
         <button
           className={`md:hidden h-full aspect-square ml-auto ${
-            mobileMenuOpen ? "text-black" : "text-white"
+            mobileMenuOpen ? "text-foreground" : "text-white"
           } z-50`}
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
@@ -131,7 +131,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 to="/"
                 className={({ isActive }) =>
                   `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
+                    isActive ? "text-primary" : "text-foreground"
                   } hover:text-primary transition-colors duration-300`
                 }
                 onClick={() => {
@@ -148,7 +148,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 to="/for-companies"
                 className={({ isActive }) =>
                   `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
+                    isActive ? "text-primary" : "text-foreground"
                   } hover:text-primary transition-colors duration-300`
                 }
                 onClick={() => {
@@ -164,7 +164,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 to="/for-students"
                 className={({ isActive }) =>
                   `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
+                    isActive ? "text-primary" : "text-foreground"
                   } hover:text-primary transition-colors duration-300`
                 }
                 onClick={() => {

@@ -20,7 +20,9 @@ const HeroSectionStudentsMobile: React.FC = () => {
 
       <div className="container-custom text-left p-2">
         <h1 className="text-primary font-bold text-3xl mb-2 mt-2">{title}</h1>
-        <p className="text-gray-700 max-w-3xl mb-4 text-xl">{subtitle}</p>
+        <p className="text-muted-foreground max-w-3xl mb-4 text-xl">
+          {subtitle}
+        </p>
 
         {buttonText && buttonLink && (
           <Button href={buttonLink} buttonText={buttonText}>

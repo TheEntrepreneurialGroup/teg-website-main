@@ -4,12 +4,12 @@ import { SectionTitle } from "@/components/blocks/SectionTitle";
 const PrivacyPolicy: React.FC = () => {
   return (
     // Using bg-secondary-light might match the ForCompanies page better if desired
-    <div className="bg-white text-gray-800">
+    <div className="bg-white text-foreground">
       <section className="py-20">
         <div className="container-custom">
           <SectionTitle text="Datenschutzerklärung" />
           {/* Using Tailwind's prose class for automatic styling of text elements */}
-          <div className="prose prose-lg max-w-none mt-12 text-gray-600">
+          <div className="prose prose-lg max-w-none mt-12 text-muted-foreground">
             {/* ===== 1. Datenschutz auf einen Blick ===== */}
             <h2>1. Datenschutz auf einen Blick</h2>
 

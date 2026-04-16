@@ -10,15 +10,15 @@ export const Home: React.FC = () => {
   return (
     <div>
       <HeroTwoButtons
-        title={intl.formatMessage({ id: "home.hero.title" })}
-        mobileTitle={intl.formatMessage({ id: "home.hero.mobileTitle" })}
-        subtitle={intl.formatMessage({ id: "home.hero.since" })}
-        bgImage="/shared/heroes/hero-subpage.avif"
-        buttonText1={intl.formatMessage({ id: "home.hero.buttonText1" })}
-        buttonText2={intl.formatMessage({ id: "home.hero.buttonText2" })}
-        buttonLink2="/for-students"
-        buttonLink1="/for-companies"
-        gradientClassName="bg-gradient-to-b from-transparent from-45% via-primary/85  via-60% to-primary to-90% lg:via-65%"
+        title={intl.formatMessage({ id: "company.hero.title" })}
+        mobileTitle={intl.formatMessage({ id: "company.hero.mobileTitle" })}
+        subtitle={intl.formatMessage({ id: "company.hero.subtitle" })}
+        bgImage="/shared/heroes/hero-home.avif"
+        buttonText1={intl.formatMessage({ id: "company.hero.buttonText1" })}
+        buttonLink1="#contact"
+        gradientClassName="bg-gradient-to-b from-transparent from-45% via-primary/85 via-80% to-primary to-95%"
+        imageClassName="object-top md:object-center"
+        className="lg:h-screen"
       />
 
       <TEGInZahlen
