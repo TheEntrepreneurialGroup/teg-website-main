@@ -188,6 +188,33 @@ const en = {
   "student.applicationPipeline.description":
     "We have fixed application periods every six months. You can apply from 1 to 25 October for a programme starting in November and from 1 to 25 April for a programme starting in May.",
 
+  "student.events.title": "Meet us at our",
+  "student.events.calendarLabel": "events",
+  "student.events.calendarLink":
+    "https://luma.com/calendar/cal-wx7ERCipEGjooAr",
+  "student.events.imageAlt": "TEG event",
+  "student.events.previous": "Previous",
+  "student.events.next": "Next",
+  "student.events.slide": "Slide",
+  "student.events.list.brunch.title":
+    "Meet-and-Greet Brunch 18.04. | 10:00 - 14:00",
+  "student.events.list.brunch.description":
+    "Get to know TEG at a relaxed brunch and meet members and alumni.",
+  "student.events.list.brunch.linkLabel": "Open event page",
+  "student.events.list.talk.title": "TEG Talk 24.04. | 18:30 - 22:00",
+  "student.events.list.talk.description":
+    "Featuring speakers such as the Microsoft CTO, Siemens' Strategy Director, and the founder of the world's first company for trading electronic components, plus two additional industry perspectives.",
+  "student.events.list.talk.linkLabel": "Open event page",
+  "student.events.list.workshop.title": "Top-Management Workshops for Members",
+  "student.events.list.workshop.description":
+    "To help you land in top management later on, look forward to exclusive workshops with Uli Beck, TEG alumnus and former Vice President Finance at Airbus Group for 8 years, or the CEO of Horbach GmbH. Apply to TEG now.",
+  "student.events.list.workshop.linkLabel": "Apply to TEG now",
+  "student.events.list.whatsapp.title":
+    "WhatsApp group for events and application questions",
+  "student.events.list.whatsapp.description":
+    "Get event updates and ask your application questions directly in the community.",
+  "student.events.list.whatsapp.linkLabel": "Open WhatsApp group",
+
   "student.memberProcess.title": "Brief overview – How TEG works",
 
   "student.certificate.title":
