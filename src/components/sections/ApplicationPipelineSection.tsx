@@ -1,6 +1,6 @@
 import { useIsHorizontal } from "../../hooks/useIsHorizontal";
 import { useIntl } from "react-intl";
-import Button from "../Button";
+import { PrimaryButton } from "../blocks/PrimaryButton";
 
 export default function ApplicationPipelineSection() {
   const isHorizontal = useIsHorizontal();
@@ -16,10 +16,10 @@ export default function ApplicationPipelineSection() {
 
   return (
     <section className="flex justify-center ">
-      <div className="flex flex-col items-start w-full max-w-7xl p-2 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14">
+      <div className="flex flex-col items-start w-full max-w-7xl p-4 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14">
         {/* Text Section */}
         <div className="w-full flex flex-col sm:pt-1">
-          <h3 className="text-2xl sm:text-3xl font-bold text-primary">
+          <h3 className="text-3xl font-bold text-primary">
             {intl.formatMessage({ id: "student.applicationPipeline.title" })}
           </h3>
           <p className="text-xl text-muted-foreground mt-2 m-0">
@@ -41,13 +41,11 @@ export default function ApplicationPipelineSection() {
           />
         </div>
 
-        <Button
-          className="text-center"
+        <PrimaryButton
+          label={buttonText}
           href={buttonLink}
           buttonText={"home-cta: " + buttonText}
-        >
-          {buttonText}
-        </Button>
+        />
       </div>
     </section>
   );
