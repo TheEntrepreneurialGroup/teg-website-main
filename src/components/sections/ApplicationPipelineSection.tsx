@@ -42,7 +42,7 @@ export default function ApplicationPipelineSection() {
         </div>
 
         <Button
-          className="w-[250px] md:w-auto text-center min-w-[100px]"
+          className="text-center"
           href={buttonLink}
           buttonText={"home-cta: " + buttonText}
         >
