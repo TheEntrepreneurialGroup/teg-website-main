@@ -37,32 +37,32 @@ export default function ForCompanies() {
       author: intl.formatMessage({ id: "company.testimonials.quote1.author" }),
       role1: intl.formatMessage({ id: "company.testimonials.quote1.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote1.role2" }),
-      companyLogo: "/logos/vodafone.png", // Vodafone
-      image: "/BerndWiedemann.jpg",
+      companyLogo: "/shared/logos/vodafone.png", // Vodafone
+      image: "/for-companies/testimonials/bernd-wiedemann.jpg",
     },
     {
       text: intl.formatMessage({ id: "company.testimonials.quote2.text" }),
       author: intl.formatMessage({ id: "company.testimonials.quote2.author" }),
       role1: intl.formatMessage({ id: "company.testimonials.quote2.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote2.role2" }),
-      companyLogo: "/logos/McKinsey.png", // McKinsey
-      image: "/JohannesPruchnow.jpg",
+      companyLogo: "/shared/logos/mckinsey.png", // McKinsey
+      image: "/for-companies/testimonials/johannes-pruchnow.jpg",
     },
     {
       text: intl.formatMessage({ id: "company.testimonials.quote3.text" }),
       author: intl.formatMessage({ id: "company.testimonials.quote3.author" }),
       role1: intl.formatMessage({ id: "company.testimonials.quote3.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote3.role2" }),
-      companyLogo: "/logos/BMW.png", // BMW
-      image: "/bodoDonauer.jpg",
+      companyLogo: "/shared/logos/bmw.png", // BMW
+      image: "/for-companies/testimonials/bodo-donauer.jpg",
     },
     {
       text: intl.formatMessage({ id: "company.testimonials.quote4.text" }),
       author: intl.formatMessage({ id: "company.testimonials.quote4.author" }),
       role1: intl.formatMessage({ id: "company.testimonials.quote4.role1" }),
       role2: intl.formatMessage({ id: "company.testimonials.quote4.role2" }),
-      image: "/rolandberger.jpg",
-      companyLogo: "/logos/Roland_Berger_logo.svg",
+      image: "/for-companies/testimonials/roland-berger.jpg",
+      companyLogo: "/shared/logos/roland-berger.svg",
     },
   ];
 
@@ -73,7 +73,7 @@ export default function ForCompanies() {
         title={intl.formatMessage({ id: "company.hero.title" })}
         mobileTitle={intl.formatMessage({ id: "company.hero.mobileTitle" })}
         subtitle={intl.formatMessage({ id: "company.hero.subtitle" })}
-        bgImage="TEG_Hero_Home.jpg"
+        bgImage="/shared/heroes/hero-home.jpg"
         buttonText1={intl.formatMessage({ id: "company.hero.buttonText1" })}
         buttonLink1="#contact"
         gradientClassName="bg-gradient-to-b from-transparent from-45% via-primary/85 via-80% to-primary to-95%"
@@ -114,12 +114,12 @@ export default function ForCompanies() {
           <LogoMarquee
             speed="medium"
             logos={[
-              { src: "/logos/HypoVereinsbank.svg" },
-              { src: "/logos/Roland_Berger_logo.svg" },
-              { src: "/logos/airbus.svg" },
-              { src: "/logos/bcg.png" },
-              { src: "/logos/ruhrgas-logo.png" },
-              { src: "/logos/siemens.svg" },
+              { src: "/shared/logos/hypovereinsbank.svg" },
+              { src: "/shared/logos/roland-berger.svg" },
+              { src: "/shared/logos/airbus.svg" },
+              { src: "/shared/logos/bcg.png" },
+              { src: "/shared/logos/ruhrgas.png" },
+              { src: "/shared/logos/siemens.svg" },
             ]}
           />
         </LogoMarqueeSection>
@@ -207,7 +207,7 @@ export default function ForCompanies() {
               title={intl.formatMessage({
                 id: "company.contact.directorTitle",
               })}
-              imageUrl="/jonathan.jpg"
+              imageUrl="/for-companies/contact/jonathan.jpg"
               email="jonathan.babelotzky@teg-ev.de"
               linkedinUrl="https://www.linkedin.com/in/jonathan-babelotzky/"
               greeting={intl.formatMessage({ id: "company.contact.greeting" })}

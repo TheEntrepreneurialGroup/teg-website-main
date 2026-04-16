@@ -13,7 +13,7 @@ export const Home: React.FC = () => {
         title={intl.formatMessage({ id: "home.hero.title" })}
         mobileTitle={intl.formatMessage({ id: "home.hero.mobileTitle" })}
         subtitle={intl.formatMessage({ id: "home.hero.since" })}
-        bgImage="TEG_Hero_Subpage.png"
+        bgImage="/shared/heroes/hero-subpage.png"
         buttonText1={intl.formatMessage({ id: "home.hero.buttonText1" })}
         buttonText2={intl.formatMessage({ id: "home.hero.buttonText2" })}
         buttonLink2="/for-students"
@@ -49,7 +49,7 @@ export const Home: React.FC = () => {
           buttonText={intl.formatMessage({ id: "home.card1.buttonText" })}
           imagePosition="left"
           imageAltText={intl.formatMessage({ id: "home.card1.imageAlt" })}
-          imageURL="kuratorium.jpg"
+          imageURL="/home/kuratorium.jpg"
           buttonLink="/"
           clickable={false}
         />
@@ -60,7 +60,7 @@ export const Home: React.FC = () => {
           buttonText={intl.formatMessage({ id: "home.card2.buttonText" })}
           imagePosition="right"
           imageAltText={intl.formatMessage({ id: "home.card2.imageAlt" })}
-          imageURL="components-images/team-2.jpeg"
+          imageURL="/shared/images/team-event.jpeg"
           buttonLink={intl.formatMessage({ id: "home.card2.buttonLink" })}
           clickable
         />
@@ -70,7 +70,7 @@ export const Home: React.FC = () => {
           buttonText={intl.formatMessage({ id: "home.card3.buttonText" })}
           imagePosition="left"
           imageAltText={intl.formatMessage({ id: "home.card3.imageAlt" })}
-          imageURL="forstudent.jpg"
+          imageURL="/shared/heroes/hero-students.jpg"
           buttonLink={intl.formatMessage({ id: "home.card3.buttonLink" })}
           clickable
         />

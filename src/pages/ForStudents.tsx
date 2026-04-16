@@ -33,7 +33,7 @@ const ForStudents: React.FC = () => {
       titleId: "student.events.list.brunch.title",
       descriptionId: "student.events.list.brunch.description",
       link: "https://luma.com/y7fv91t6",
-      imageSrc: "/students/EventSection/brunch.svg",
+      imageSrc: "/for-students/events/brunch.svg",
       imageAltId: "student.events.imageAlt",
       linkLabelId: "student.events.list.brunch.linkLabel",
     },
@@ -41,7 +41,7 @@ const ForStudents: React.FC = () => {
       titleId: "student.events.list.talk.title",
       descriptionId: "student.events.list.talk.description",
       link: "https://luma.com/fuk94geg",
-      imageSrc: "/students/EventSection/talk.svg",
+      imageSrc: "/for-students/events/talk.svg",
       imageAltId: "student.events.imageAlt",
       linkLabelId: "student.events.list.talk.linkLabel",
     },
@@ -49,7 +49,7 @@ const ForStudents: React.FC = () => {
       titleId: "student.events.list.workshop.title",
       descriptionId: "student.events.list.workshop.description",
       link: "https://tally.so/r/yPDXd4",
-      imageSrc: "/students/EventSection/workshop.svg",
+      imageSrc: "/for-students/events/workshop.svg",
       imageAltId: "student.events.imageAlt",
       linkLabelId: "student.events.list.workshop.linkLabel",
     },
@@ -57,7 +57,7 @@ const ForStudents: React.FC = () => {
       titleId: "student.events.list.whatsapp.title",
       descriptionId: "student.events.list.whatsapp.description",
       link: "https://chat.whatsapp.com/J5hQYkeq14hCOkJsJ74w5x",
-      imageSrc: "/students/EventSection/whatsapp.svg",
+      imageSrc: "/for-students/events/whatsapp.svg",
       imageAltId: "student.events.imageAlt",
       linkLabelId: "student.events.list.whatsapp.linkLabel",
     },
@@ -66,7 +66,7 @@ const ForStudents: React.FC = () => {
   const contactPerson = {
     name: intl.formatMessage({ id: "student.contact.directorName" }),
     title: intl.formatMessage({ id: "student.contact.directorTitle" }),
-    imageUrl: "/felix.jpeg",
+    imageUrl: "/for-students/contact/felix.jpeg",
     email: "info+website@teg-ev.de",
     linkedinUrl: "https://www.linkedin.com/in/felix-enke/",
   };
@@ -83,7 +83,7 @@ const ForStudents: React.FC = () => {
         <EventSection events={events} />
         {/* Commitment CardText Section */}
         <CardText
-          image="/components-images/teg_alumni.png"
+          image="/for-students/commitment/teg-alumni.png"
           imageAlt={intl.formatMessage({ id: "student.commitment.imageAlt" })}
           title={intl.formatMessage({ id: "student.commitment.title" })}
           subtitle={intl.formatMessage({ id: "student.commitment.body" })}
@@ -94,18 +94,18 @@ const ForStudents: React.FC = () => {
 
         <LogoSection
           images={[
-            { image: "/logos/bmw-image.webp", text: "BMW" },
-            { image: "/logos/bcg.png", text: "BCG" },
-            { image: "/logos/siemens.svg", text: "Siemens" },
+            { image: "/shared/logos/bmw-image.webp", text: "BMW" },
+            { image: "/shared/logos/bcg.png", text: "BCG" },
+            { image: "/shared/logos/siemens.svg", text: "Siemens" },
             {
-              image: "/logos/HypoVereinsbank.svg",
+              image: "/shared/logos/hypovereinsbank.svg",
               text: "HypoVereinsbank",
             },
             {
-              image: "/logos/Roland_Berger_logo.svg",
+              image: "/shared/logos/roland-berger.svg",
               text: "Roland Berger",
             },
-            { image: "/logos/ruhrgas-logo.png", text: "Ruhrgas" },
+            { image: "/shared/logos/ruhrgas.png", text: "Ruhrgas" },
           ]}
           title={intl.formatMessage({ id: "home.partners.title" })}
           description={intl.formatMessage({ id: "home.partners.description" })}
@@ -115,15 +115,15 @@ const ForStudents: React.FC = () => {
 
         <LogoSection
           images={[
-            { image: "/logos/airbus.svg", text: "Airbus" },
+            { image: "/shared/logos/airbus.svg", text: "Airbus" },
             {
-              image: "/logos/maiborn-logo.png",
+              image: "/shared/logos/maiborn-wolff.png",
               text: "MaibornWolff",
             },
-            { image: "/logos/tuv-logo.png", text: "TÜV" },
-            { image: "/logos/Deloitte.svg", text: "Deloitte" },
-            { image: "/logos/ey-logo.png", text: "EY" },
-            { image: "/logos/Vattenfall.svg", text: "Vattenfall" },
+            { image: "/shared/logos/tuv.png", text: "TÜV" },
+            { image: "/shared/logos/deloitte.svg", text: "Deloitte" },
+            { image: "/shared/logos/ey.png", text: "EY" },
+            { image: "/shared/logos/vattenfall.svg", text: "Vattenfall" },
           ]}
           title={intl.formatMessage({ id: "home.alumnis.title" })}
           description={intl.formatMessage({ id: "home.alumnis.description" })}
@@ -146,7 +146,7 @@ const ForStudents: React.FC = () => {
         </div>
 
         <CardText
-          image="/components-images/team-2.jpeg"
+          image="/shared/images/team-event.jpeg"
           imageAlt={intl.formatMessage({ id: "student.cardText3.imageAlt" })}
           title={intl.formatMessage({ id: "student.cardText3.title" })}
           subtitle={intl.formatMessage({ id: "student.cardText3.subtitle" })}
