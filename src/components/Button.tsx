@@ -20,14 +20,17 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => (
   <motion.a
-    //can override the parameters,
     href={href}
-    className={clsx("btn btn-accent", className)}
+    className={clsx(
+      "inline-flex h-12 w-full md:w-[260px] items-center justify-center bg-accent px-6 text-base font-semibold text-white transition-colors hover:bg-accent-light hover:text-white active:bg-accent-dark",
+      className,
+    )}
     onClick={(e) => {
       if (!!buttonText && !!href) {
         trackButtonClick(buttonText, href);
-        if (onClick) onClick(e);
       }
+
+      if (onClick) onClick(e);
     }}
     {...props}
   >
