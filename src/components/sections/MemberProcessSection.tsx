@@ -19,8 +19,8 @@ export default function MemberProcessSection() {
           <img
             src={
               isHorizontal
-                ? "/svg/overview-desktop.svg"
-                : "/svg/overview-phone.svg"
+                ? "/for-students/member-process/overview-desktop.svg"
+                : "/for-students/member-process/overview-phone.svg"
             }
             alt="Pipeline"
             className="w-full h-auto block sm:w-[90%]"
