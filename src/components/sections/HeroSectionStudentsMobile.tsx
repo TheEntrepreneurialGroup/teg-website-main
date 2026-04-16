@@ -8,7 +8,7 @@ const HeroSectionStudentsMobile: React.FC = () => {
   const subtitle = intl.formatMessage({ id: "student.hero.subtitle" });
   const buttonText = intl.formatMessage({ id: "student.hero.buttonText" });
   const buttonLink = intl.formatMessage({ id: "student.hero.buttonLink" });
-  const backgroundImage = "/shared/heroes/hero-students.jpg";
+  const backgroundImage = "/shared/heroes/hero-students.avif";
 
   return (
     <div className="flex flex-col items-center justify-start">
