@@ -4,7 +4,7 @@ import CallToAction from "../components/CallToAction";
 import ContactCard from "../components/ContactCard";
 import LogoSection from "../components/sections/LogoSection";
 import Testimonials from "../components/sections/TestimonialSection";
-import CardText from "../components/sections/CardText";
+import FeatureCard from "../components/FeatureCard";
 import MemberProcessSection from "../components/sections/MemberProcessSection";
 import ApplicationPipelineSection from "../components/sections/ApplicationPipelineSection";
 import HeroSectionStudentsDesktop from "../components/sections/HeroSectionStudentsDesktop";
@@ -81,13 +81,16 @@ const ForStudents: React.FC = () => {
 
       <div className="max-w-7xl mx-auto">
         <EventSection events={events} />
-        {/* Commitment CardText Section */}
-        <CardText
-          image="/for-students/commitment/ancient-group.avif"
-          imageAlt={intl.formatMessage({ id: "student.commitment.imageAlt" })}
+        {/* Commitment Section */}
+        <FeatureCard
+          imageURL="/for-students/commitment/ancient-group.avif"
+          imageAltText={intl.formatMessage({
+            id: "student.commitment.imageAlt",
+          })}
           title={intl.formatMessage({ id: "student.commitment.title" })}
-          subtitle={intl.formatMessage({ id: "student.commitment.body" })}
+          description={intl.formatMessage({ id: "student.commitment.body" })}
           body={intl.formatMessage({ id: "student.commitment.down" })}
+          imagePosition="left"
         />
 
         <ApplicationPipelineSection />
@@ -145,12 +148,15 @@ const ForStudents: React.FC = () => {
           />
         </div>
 
-        <CardText
-          image="/for-students/cards/ftc-crowd.avif"
-          imageAlt={intl.formatMessage({ id: "student.cardText3.imageAlt" })}
+        <FeatureCard
+          imageURL="/for-students/cards/ftc-crowd.avif"
+          imageAltText={intl.formatMessage({
+            id: "student.cardText3.imageAlt",
+          })}
           title={intl.formatMessage({ id: "student.cardText3.title" })}
-          subtitle={intl.formatMessage({ id: "student.cardText3.subtitle" })}
+          description={intl.formatMessage({ id: "student.cardText3.subtitle" })}
           body={intl.formatMessage({ id: "student.cardText3.body" })}
+          imagePosition="right"
         />
 
         <Testimonials />
