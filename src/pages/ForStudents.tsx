@@ -9,6 +9,9 @@ import MemberProcessSection from "../components/sections/MemberProcessSection";
 import ApplicationPipelineSection from "../components/sections/ApplicationPipelineSection";
 import HeroSectionStudentsDesktop from "../components/sections/HeroSectionStudentsDesktop";
 import HeroSectionStudentsMobile from "../components/sections/HeroSectionStudentsMobile";
+import EventSection, {
+  type EventSlide,
+} from "../components/sections/EventsSection";
 
 const useIsDesktop = () => {
   const [isDesktop, setIsDesktop] = React.useState(false);
@@ -24,6 +27,41 @@ const useIsDesktop = () => {
 const ForStudents: React.FC = () => {
   const intl = useIntl();
   const isDesktop = useIsDesktop();
+
+  const events: EventSlide[] = [
+    {
+      titleId: "student.events.list.brunch.title",
+      descriptionId: "student.events.list.brunch.description",
+      link: "https://luma.com/y7fv91t6",
+      imageSrc: "/students/EventSection/brunch.svg",
+      imageAltId: "student.events.imageAlt",
+      linkLabelId: "student.events.list.brunch.linkLabel",
+    },
+    {
+      titleId: "student.events.list.talk.title",
+      descriptionId: "student.events.list.talk.description",
+      link: "https://luma.com/fuk94geg",
+      imageSrc: "/students/EventSection/talk.svg",
+      imageAltId: "student.events.imageAlt",
+      linkLabelId: "student.events.list.talk.linkLabel",
+    },
+    {
+      titleId: "student.events.list.workshop.title",
+      descriptionId: "student.events.list.workshop.description",
+      link: "https://tally.so/r/yPDXd4",
+      imageSrc: "/students/EventSection/workshop.svg",
+      imageAltId: "student.events.imageAlt",
+      linkLabelId: "student.events.list.workshop.linkLabel",
+    },
+    {
+      titleId: "student.events.list.whatsapp.title",
+      descriptionId: "student.events.list.whatsapp.description",
+      link: "https://chat.whatsapp.com/J5hQYkeq14hCOkJsJ74w5x",
+      imageSrc: "/students/EventSection/whatsapp.svg",
+      imageAltId: "student.events.imageAlt",
+      linkLabelId: "student.events.list.whatsapp.linkLabel",
+    },
+  ];
 
   const contactPerson = {
     name: intl.formatMessage({ id: "student.contact.directorName" }),
@@ -52,6 +90,8 @@ const ForStudents: React.FC = () => {
         />
 
         <ApplicationPipelineSection />
+
+        <EventSection events={events} />
 
         <LogoSection
           images={[

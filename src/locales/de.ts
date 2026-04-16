@@ -197,6 +197,34 @@ const de = {
   "student.applicationPipeline.description":
     "Wir haben halbjährlich fixe Bewerbungszeiträume. Du kannst Dich jeweils  vom 1. bis 25. Oktober für einen Programmstart im November und 1. bis 25. April für einen Programmstart im Mai bewerben.",
 
+  "student.events.title": "Lerne uns kennen auf unseren",
+  "student.events.calendarLabel": "Events",
+  "student.events.calendarLink":
+    "https://luma.com/calendar/cal-wx7ERCipEGjooAr",
+  "student.events.imageAlt": "TEG Event",
+  "student.events.previous": "Zurück",
+  "student.events.next": "Weiter",
+  "student.events.slide": "Slide",
+  "student.events.list.brunch.title":
+    "Kennenlern Brunch 18.04. | 10:00 - 14:00 Uhr",
+  "student.events.list.brunch.description":
+    "Lerne TEG bei einem entspannten Brunch kennen und komm mit Mitgliedern und Alumni ins Gespräch.",
+  "student.events.list.brunch.linkLabel": "Zur Eventseite",
+  "student.events.list.talk.title": "TEG Talk 24.04. | 18:30 - 22:00 Uhr",
+  "student.events.list.talk.description":
+    "Mit Speakern wie dem Microsoft CTO, dem Strategy Director von Siemens und der Gründerin des weltweit ersten Unternehmens für den Handel mit Elektronik-Bauteilen. Dazu kommen zwei weitere Perspektiven aus der Praxis.",
+  "student.events.list.talk.linkLabel": "Zur Eventseite",
+  "student.events.list.workshop.title":
+    "Top-Management-Workshops für Mitglieder",
+  "student.events.list.workshop.description":
+    "Damit du später auch im Top-Management landest, freu dich auf exklusive Workshops mit Uli Beck, TEG-Absolvent und 8 Jahre Vice President Finance der Airbus Group, oder dem CEO der Horbach GmbH. Jetzt bei TEG bewerben.",
+  "student.events.list.workshop.linkLabel": "Jetzt bei TEG bewerben",
+  "student.events.list.whatsapp.title":
+    "WhatsApp-Gruppe für Events und Bewerbungsfragen",
+  "student.events.list.whatsapp.description":
+    "Erhalte Event-Updates und stelle deine Fragen zur Bewerbung direkt in der Community.",
+  "student.events.list.whatsapp.linkLabel": "Zur WhatsApp-Gruppe",
+
   "student.memberProcess.title": "Kurzüberblick – So funktioniert TEG",
   "student.certificate.title":
     "Bei uns lernst Du alles was Du für eine erfolgreiche Zukunft in der Wirtschaft brauchst!",
