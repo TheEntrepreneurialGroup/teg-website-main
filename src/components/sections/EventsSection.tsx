@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
+import Button from "../Button";
 
 export type EventSlide = {
   titleId: string;
@@ -36,6 +37,9 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
   }
 
   const activeEvent = events[activeIndex];
+  const activeEventLinkLabel = activeEvent.linkLabelId
+    ? intl.formatMessage({ id: activeEvent.linkLabelId })
+    : activeEvent.link;
 
   return (
     <section className="w-full flex flex-col items-center px-2 py-8 md:px-14 lg:px-20 md:py-14 gap-5">
@@ -70,16 +74,15 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
               <p className="text-lg text-gray-700 leading-relaxed flex-1 min-h-0">
                 {intl.formatMessage({ id: activeEvent.descriptionId })}
               </p>
-              <a
+              <Button
                 href={activeEvent.link}
-                className="inline-flex h-12 w-full md:w-[260px] items-center justify-center bg-accent px-6 text-base font-semibold text-white hover:bg-accent-light hover:text-white active:bg-accent-dark transition-colors flex-shrink-0"
+                className="flex-shrink-0"
                 target="_blank"
                 rel="noreferrer"
+                buttonText={`student-events: ${activeEventLinkLabel}`}
               >
-                {activeEvent.linkLabelId
-                  ? intl.formatMessage({ id: activeEvent.linkLabelId })
-                  : activeEvent.link}
-              </a>
+                {activeEventLinkLabel}
+              </Button>
               {events.length > 1 && (
                 <div className="flex items-center justify-center md:justify-start gap-4 h-12 flex-shrink-0 w-full">
                   {events.map((_, index) => (
