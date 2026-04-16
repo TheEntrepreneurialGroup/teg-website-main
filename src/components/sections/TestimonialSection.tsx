@@ -1,4 +1,4 @@
-import SectionTitle from "../SectionTitle";
+import { SectionTitle } from "@/components/blocks/SectionTitle";
 import { useIntl } from "react-intl";
 import SingleTestimonial from "../ui/SingleTestimonial";
 import Button from "../Button";
@@ -34,10 +34,10 @@ export default function Testimonials() {
   return (
     <section className="mx-auto flex flex-col p-2 sm:p-16">
       <SectionTitle
-        centered={false}
-        title={intl.formatMessage({
+        text={intl.formatMessage({
           id: "student.testimonials.title",
         })}
+        className="text-left"
       />
 
       <div className="flex flex-col w-full text-left gap-4 md:gap-10">

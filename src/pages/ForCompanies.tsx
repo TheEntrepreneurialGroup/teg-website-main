@@ -1,5 +1,5 @@
 import { LandingPage } from "@/components/LandingPage";
-import NewHeroTwoButtons from "@/components/NewHeroTwoButtons";
+import HeroTwoButtons from "@/components/HeroTwoButtons";
 import { ProblemHeroSection } from "@/components/sections/ProblemHeroSection";
 import { LogoMarqueeSection } from "@/components/sections/LogoMarqueeSection";
 import { WhyTegSection } from "@/components/sections/WhyTegSection";
@@ -69,7 +69,7 @@ export default function ForCompanies() {
   return (
     <>
       {/* Hero Section - outside container for full width */}
-      <NewHeroTwoButtons
+      <HeroTwoButtons
         title={intl.formatMessage({ id: "company.hero.title" })}
         mobileTitle={intl.formatMessage({ id: "company.hero.mobileTitle" })}
         subtitle={intl.formatMessage({ id: "company.hero.subtitle" })}
