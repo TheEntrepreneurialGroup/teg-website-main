@@ -46,7 +46,7 @@ export function PrimaryButton({
 
   if (href && isExternal(href)) {
     return (
-      <div className={"flex " + alignClass}>
+      <div className={"flex w-full md:w-auto " + alignClass}>
         <Button
           asChild
           size={size}
@@ -63,7 +63,7 @@ export function PrimaryButton({
 
   if (href) {
     return (
-      <div className={"flex " + alignClass}>
+      <div className={"flex w-full md:w-auto " + alignClass}>
         <Button
           asChild
           size={size}
@@ -77,7 +77,7 @@ export function PrimaryButton({
   }
 
   return (
-    <div className={"flex " + alignClass}>
+    <div className={"flex w-full md:w-auto " + alignClass}>
       <Button size={size} className={buttonClasses} onClick={handleClick}>
         {label}
       </Button>

@@ -51,7 +51,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
           loading="lazy"
         />
 
-        <div className="order-2 lg:order-1 flex-1 min-w-0 px-4 lg:px-8 xl:px-24 2xl:px-44 flex flex-col justify-between lg:aspect-[4/3] lg:pt-8">
+        <div className="order-2 lg:order-1 flex-1 min-w-0 px-4 lg:px-8 xl:px-24 2xl:px-44 flex flex-col justify-between lg:aspect-[4/3] lg:py-[3%] xl:py-[6%]">
           <div>
             <h3 className="text-3xl font-semibold text-primary mb-5 lg:mb-8">
               {intl.formatMessage({ id: "student.events.title" })}{" "}
@@ -71,9 +71,10 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
               {intl.formatMessage({ id: activeEvent.descriptionId })}
             </p>
           </div>
-          <div className="pb-4 lg:pb-8">
+          <div className="pb-4">
             <div className="mt-4">
               <PrimaryButton
+                className="min-w-[300px]"
                 label={activeEventLinkLabel}
                 href={activeEvent.link}
                 buttonText={`student-events: ${activeEventLinkLabel}`}
