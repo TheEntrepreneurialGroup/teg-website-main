@@ -1,7 +1,6 @@
 import React from "react";
 
 import { PrimaryButton } from "./blocks/PrimaryButton";
-import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 interface FeatureCardProps {
@@ -50,7 +49,6 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   imageAltText,
   variant = "md",
 }) => {
-  const navigate = useNavigate();
   const resolvedButtonText = buttonText?.trim();
   const resolvedButtonLink = buttonLink?.trim();
   const shouldShowButton =
@@ -96,7 +94,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           <div className="mt-2 lg:mt-4">
             <PrimaryButton
               label={resolvedButtonText!}
-              onClick={() => navigate(resolvedButtonLink!)}
+              href={resolvedButtonLink!}
               size="lg"
             />
           </div>
