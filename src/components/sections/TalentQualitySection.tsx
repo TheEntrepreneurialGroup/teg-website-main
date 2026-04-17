@@ -66,7 +66,7 @@ export function TalentQualitySection() {
 
         {/* Resilience Banner */}
         <div className="w-full bg-primary text-white p-8 md:p-12  text-center shadow-lg">
-          <p className="text-xl md:text-2xl font-medium leading-relaxed max-w-5xl mx-auto">
+          <p className="text-xl md:text-2xl font-normal leading-relaxed max-w-5xl mx-auto">
             {intl.formatMessage({ id: "company.quality.resilience" })}
           </p>
         </div>

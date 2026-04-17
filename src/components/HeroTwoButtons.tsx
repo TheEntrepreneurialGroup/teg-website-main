@@ -53,7 +53,7 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
       <section className="md:hidden flex flex-col">
         <img src={bgImage} alt="Hero" className="w-full h-auto" />
         <div className="p-4 bg-white">
-          <h1 className="text-primary font-semibold text-3xl mb-2">
+          <h1 className="text-primary font-normal text-3xl mb-2">
             {mobileTitle}
           </h1>
           <p className="text-muted-foreground text-xl mb-6">{subtitle}</p>

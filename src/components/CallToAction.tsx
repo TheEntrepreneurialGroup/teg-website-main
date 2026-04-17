@@ -25,7 +25,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   const content = (
     <>
       <h2
-        className={`text-3xl font-bold mb-4 ${isLight ? "text-primary" : "text-white"}`}
+        className={`text-3xl font-semibold mb-4 ${isLight ? "text-primary" : "text-white"}`}
       >
         {title}
       </h2>
