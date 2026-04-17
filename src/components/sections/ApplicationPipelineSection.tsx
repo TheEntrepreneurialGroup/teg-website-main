@@ -16,7 +16,7 @@ export default function ApplicationPipelineSection() {
 
   return (
     <section className="flex justify-center ">
-      <div className="flex flex-col items-start w-full max-w-7xl p-4 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14">
+      <div className="flex flex-col items-start w-full max-w-7xl p-4 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14 mt-8">
         {/* Text Section */}
         <div className="w-full flex flex-col sm:pt-1">
           <h3 className="text-3xl font-semibold text-primary">
