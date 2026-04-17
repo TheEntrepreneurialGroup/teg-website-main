@@ -39,13 +39,13 @@ const ContactCard: React.FC<ContactCardProps> = ({
           {variant === "quote" && greeting && (
             <div className="text-muted-foreground">
               <Quote size={15} className="" />
-              <h2 className="text-xl font-medium my-1">{greeting}</h2>
+              <h2 className="text-xl font-normal my-1">{greeting}</h2>
               <div className="flex justify-end">
                 <Quote size={15} />
               </div>
             </div>
           )}
-          <p className="text-muted-foreground text-2xl md:text-2xl font-medium mt-3 mb-1">
+          <p className="text-muted-foreground text-2xl md:text-2xl font-normal mt-3 mb-1">
             {name}
           </p>
           <p className="text-muted-foreground text-base md:text-lg font-normal mt-0 mb-2">

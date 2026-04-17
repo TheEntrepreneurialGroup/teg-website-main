@@ -22,7 +22,7 @@ export function TestimonialCard({
     <div className="w-[90vw] md:w-[50vw] lg:w-[35vw] min-h-[320px] flex flex-col p-4 bg-muted  relative">
       <div className="relative flex-grow text-left">
         <Quote className="absolute left-0 top-0 w-8 h-8 opacity-30" />
-        <p className="text-lg leading-relaxed font-medium px-14 py-4">
+        <p className="text-lg leading-relaxed font-normal px-14 py-4">
           {quote}
         </p>
         <Quote className="absolute right-2 bottom-2 w-8 h-8 opacity-30 rotate-180" />
@@ -46,7 +46,7 @@ export function TestimonialCard({
             </AvatarFallback>
           </Avatar>
           <div className="flex flex-col text-left leading-loose">
-            <p className="font-semibold">{person.name}</p>
+            <p className="font-normal">{person.name}</p>
             <p className="text-sm text-muted-foreground">{person.roleLine1}</p>
             <p className="text-sm text-muted-foreground">{person.roleLine2}</p>
           </div>

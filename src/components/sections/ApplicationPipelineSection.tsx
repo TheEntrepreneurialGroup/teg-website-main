@@ -19,7 +19,7 @@ export default function ApplicationPipelineSection() {
       <div className="flex flex-col items-start w-full max-w-7xl p-4 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14">
         {/* Text Section */}
         <div className="w-full flex flex-col sm:pt-1">
-          <h3 className="text-3xl font-bold text-primary">
+          <h3 className="text-3xl font-semibold text-primary">
             {intl.formatMessage({ id: "student.applicationPipeline.title" })}
           </h3>
           <p className="text-xl text-muted-foreground mt-2 m-0">

@@ -28,7 +28,7 @@ const SingleTestimonial: React.FC<SingleTestimonialProps> = ({
       <p className="text-xl italic text-muted-foreground font-normal leading-relaxed m-0">
         “{quote}”
       </p>
-      <p className="text-xl not-italic text-primary-dark font-semibold mt-1 m-0">
+      <p className="text-xl not-italic text-primary-dark font-normal mt-1 m-0">
         {author}
       </p>
     </div>

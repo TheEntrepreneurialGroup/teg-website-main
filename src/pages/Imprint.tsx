@@ -15,10 +15,10 @@ const Imprint: React.FC = () => {
           <div className="max-w-3xl mx-auto mt-12 text-muted-foreground">
             {/* Contact Information Block */}
             <div className="mb-6 p-6 border border-border  bg-muted">
-              <h3 className="text-lg font-semibold mb-2 text-primary">
+              <h3 className="text-lg font-normal mb-2 text-primary">
                 Contact Info:
               </h3>
-              <p className="mb-1 font-semibold">
+              <p className="mb-1 font-normal">
                 The Entrepreneurial Group e. V.
               </p>
               <p className="mb-1">Kaulbachstrasse 64</p>
@@ -45,7 +45,7 @@ const Imprint: React.FC = () => {
 
             {/* Representation Block */}
             <div className="mb-6 p-6 border border-border  bg-muted">
-              <h3 className="text-lg font-semibold mb-2 text-primary">
+              <h3 className="text-lg font-normal mb-2 text-primary">
                 Board of Directors authorized to represent:
               </h3>
               <p className="mb-1">
@@ -55,7 +55,7 @@ const Imprint: React.FC = () => {
 
             {/* Register Entry Block */}
             <div className="mb-6 p-6 border border-border  bg-muted">
-              <h3 className="text-lg font-semibold mb-2 text-primary">
+              <h3 className="text-lg font-normal mb-2 text-primary">
                 Register Entry:
               </h3>
               <p className="mb-1">Register court: Munich</p>
@@ -72,7 +72,7 @@ const Imprint: React.FC = () => {
 
             {/* Disclaimer & Copyright Section */}
             <div className="mt-10 pt-6 border-t border-secondary-dark">
-              <h3 className="text-lg font-semibold mb-3 text-primary">
+              <h3 className="text-lg font-normal mb-3 text-primary">
                 Disclaimer:
               </h3>
               <p className="text-sm mb-4">
@@ -91,7 +91,7 @@ const Imprint: React.FC = () => {
                 external sites.
               </p>
 
-              <h4 className="text-md font-semibold mt-4 mb-2 text-muted-foreground">
+              <h4 className="text-md font-normal mt-4 mb-2 text-muted-foreground">
                 Copyright:
               </h4>
               <p className="text-sm mb-3">

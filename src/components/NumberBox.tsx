@@ -15,7 +15,7 @@ const NumberBox: React.FC<NumberBoxProps> = ({ className, number, text }) => {
         className,
       )}
     >
-      <div className="text-accent text-5xl font-medium leading-tight">
+      <div className="text-accent text-5xl font-normal leading-tight">
         {number}
       </div>
       <div className="text-muted-foreground text-2xl md:text-lg p-4 md:px-6 text-center">

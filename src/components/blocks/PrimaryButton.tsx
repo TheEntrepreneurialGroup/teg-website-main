@@ -35,7 +35,7 @@ export function PrimaryButton({
   }[align];
 
   const buttonClasses =
-    "bg-accent hover:bg-accent-light active:bg-accent-dark text-white text-xl font-medium px-4 md:px-6 py-3 whitespace-normal text-center w-full md:w-auto " +
+    "bg-accent hover:bg-accent-light active:bg-accent-dark text-white text-xl font-normal px-4 md:px-6 py-3 whitespace-normal text-center w-full md:w-auto " +
     minWidthClassName +
     (fullWidth ? " w-full" : "") +
     (className ? " " + className : "");
@@ -55,7 +55,7 @@ export function PrimaryButton({
           target={target}
           rel={rel}
           className={
-            "inline-flex items-center justify-center gap-2 font-medium transition-all " +
+            "inline-flex items-center justify-center gap-2 font-normal transition-all " +
             buttonClasses
           }
           onClick={handleClick}
