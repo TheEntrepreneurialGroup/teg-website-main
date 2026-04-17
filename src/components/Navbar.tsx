@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary-dark ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary-dark text-xl ${
         scrolled ? "shadow-md" : "md:py-2"
       }`}
       initial={{ y: -100 }}
@@ -42,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
+                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
                   : ""
               }`
             }
@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
+                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
                   : ""
               }`
             }
@@ -77,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
                 scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
+                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
                   : ""
               }`
             }
