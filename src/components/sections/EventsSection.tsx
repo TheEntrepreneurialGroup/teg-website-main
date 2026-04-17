@@ -42,57 +42,59 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
     : activeEvent.link;
 
   return (
-    <section className="w-full py-8 md:py-14">
-      <div className="px-4 md:px-0"></div>
-
-      <div className="w-full flex flex-col md:flex-row items-center gap-10">
+    <section className="w-full py-8 lg:py-0">
+      <div className="w-full flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-0">
         <img
           src={activeEvent.imageSrc}
           alt={intl.formatMessage({ id: activeEvent.imageAltId })}
-          className="w-full md:w-1/2 aspect-[4/3] object-cover object-center order-1 md:order-2"
+          className="w-full lg:w-1/2 aspect-[4/3] object-cover object-center order-1 lg:order-2"
           loading="lazy"
         />
 
-        <div className="order-2 md:order-1 flex-1 min-w-0 px-4 md:px-0 md:pr-8">
-          <h3 className="text-3xl font-semibold text-primary  mb-5 md:mb-8">
-            {intl.formatMessage({ id: "student.events.title" })}{" "}
-            <a
-              href={intl.formatMessage({ id: "student.events.calendarLink" })}
-              className="text-accent hover:text-accent-light underline underline-offset-4"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {intl.formatMessage({ id: "student.events.calendarLabel" })}
-            </a>
-          </h3>
-          <h4 className="text-primary text-3xl font-medium leading-tight">
-            {intl.formatMessage({ id: activeEvent.titleId })}
-          </h4>
-          <p className="mt-2 text-xl text-muted-foreground leading-relaxed">
-            {intl.formatMessage({ id: activeEvent.descriptionId })}
-          </p>
-          <div className="mt-4">
-            <PrimaryButton
-              label={activeEventLinkLabel}
-              href={activeEvent.link}
-              target="_blank"
-              rel="noreferrer"
-              buttonText={`student-events: ${activeEventLinkLabel}`}
-            />
+        <div className="order-2 lg:order-1 flex-1 min-w-0 px-4 lg:px-8 xl:px-24 2xl:px-44 flex flex-col justify-between lg:aspect-[4/3] lg:pt-8">
+          <div>
+            <h3 className="text-3xl font-semibold text-primary mb-5 lg:mb-8">
+              {intl.formatMessage({ id: "student.events.title" })}{" "}
+              <a
+                href={intl.formatMessage({ id: "student.events.calendarLink" })}
+                className="text-accent hover:text-accent-light underline underline-offset-4"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {intl.formatMessage({ id: "student.events.calendarLabel" })}
+              </a>
+            </h3>
+            <h4 className="text-primary text-3xl font-normal leading-tight">
+              {intl.formatMessage({ id: activeEvent.titleId })}
+            </h4>
+            <p className="mt-2 text-xl text-muted-foreground leading-relaxed">
+              {intl.formatMessage({ id: activeEvent.descriptionId })}
+            </p>
           </div>
-          {events.length > 1 && (
-            <div className="flex items-center justify-start gap-4 mt-4 w-full">
-              {events.map((_, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  onClick={() => setActiveIndex(index)}
-                  className={`h-1.5 w-6 md:w-7 rounded-none transition-colors ${index === activeIndex ? "bg-accent" : "bg-secondary-dark"}`}
-                  aria-label={`${intl.formatMessage({ id: "student.events.slide" })} ${index + 1}`}
-                />
-              ))}
+          <div className="pb-4 lg:pb-8">
+            <div className="mt-4">
+              <PrimaryButton
+                label={activeEventLinkLabel}
+                href={activeEvent.link}
+                target="_blank"
+                rel="noreferrer"
+                buttonText={`student-events: ${activeEventLinkLabel}`}
+              />
             </div>
-          )}
+            {events.length > 1 && (
+              <div className="flex items-center justify-start gap-4 mt-4 w-full">
+                {events.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    className={`h-1.5 w-6 lg:w-7 rounded-none transition-colors ${index === activeIndex ? "bg-accent" : "bg-secondary-dark"}`}
+                    aria-label={`${intl.formatMessage({ id: "student.events.slide" })} ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

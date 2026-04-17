@@ -62,7 +62,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   // Return just the content wrapped in a div for grid usage
   return (
     <div
-      className={`p-8  ${
+      className={`p-8 ${
         isLight ? "bg-secondary-light" : "bg-primary"
       } ${className}`}
     >

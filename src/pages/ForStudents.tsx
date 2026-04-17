@@ -16,7 +16,7 @@ import EventSection, {
 const useIsDesktop = () => {
   const [isDesktop, setIsDesktop] = React.useState(false);
   React.useEffect(() => {
-    const handler = () => setIsDesktop(window.innerWidth >= 1024); // sm breakpoint
+    const handler = () => setIsDesktop(window.innerWidth >= 1024); // lg breakpoint
     handler();
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);
@@ -79,22 +79,23 @@ const ForStudents: React.FC = () => {
         <HeroSectionStudentsMobile />
       )}
 
+      <EventSection events={events} />
+
+      <FeatureCard
+        imageURL="/for-students/commitment/ancient-group.avif"
+        imageAltText={intl.formatMessage({
+          id: "student.commitment.imageAlt",
+        })}
+        title={intl.formatMessage({ id: "student.commitment.title" })}
+        description={intl.formatMessage({ id: "student.commitment.body" })}
+        body={intl.formatMessage({ id: "student.commitment.down" })}
+        imagePosition="left"
+        variant="lg"
+      />
+
+      <ApplicationPipelineSection />
+
       <div className="max-w-7xl mx-auto">
-        <EventSection events={events} />
-        {/* Commitment Section */}
-        <FeatureCard
-          imageURL="/for-students/commitment/ancient-group.avif"
-          imageAltText={intl.formatMessage({
-            id: "student.commitment.imageAlt",
-          })}
-          title={intl.formatMessage({ id: "student.commitment.title" })}
-          description={intl.formatMessage({ id: "student.commitment.body" })}
-          body={intl.formatMessage({ id: "student.commitment.down" })}
-          imagePosition="left"
-        />
-
-        <ApplicationPipelineSection />
-
         <LogoSection
           images={[
             { image: "/shared/logos/bmw-image.webp", text: "BMW" },
@@ -113,9 +114,11 @@ const ForStudents: React.FC = () => {
           title={intl.formatMessage({ id: "home.partners.title" })}
           description={intl.formatMessage({ id: "home.partners.description" })}
         />
+      </div>
 
-        <MemberProcessSection />
+      <MemberProcessSection />
 
+      <div className="max-w-7xl mx-auto">
         <LogoSection
           images={[
             { image: "/shared/logos/airbus.svg", text: "Airbus" },
@@ -146,46 +149,47 @@ const ForStudents: React.FC = () => {
         })}
       />
 
+      <FeatureCard
+        imageURL="/for-students/cards/ftc-crowd.avif"
+        imageAltText={intl.formatMessage({
+          id: "student.cardText3.imageAlt",
+        })}
+        title={intl.formatMessage({ id: "student.cardText3.title" })}
+        description={intl.formatMessage({ id: "student.cardText3.subtitle" })}
+        body={intl.formatMessage({ id: "student.cardText3.body" })}
+        imagePosition="right"
+        variant="lg"
+      />
+
       <div className="max-w-7xl mx-auto">
-        <FeatureCard
-          imageURL="/for-students/cards/ftc-crowd.avif"
-          imageAltText={intl.formatMessage({
-            id: "student.cardText3.imageAlt",
-          })}
-          title={intl.formatMessage({ id: "student.cardText3.title" })}
-          description={intl.formatMessage({ id: "student.cardText3.subtitle" })}
-          body={intl.formatMessage({ id: "student.cardText3.body" })}
-          imagePosition="right"
-        />
-
         <Testimonials />
+      </div>
 
-        <section id="contact" className="pt-20 bg-primary text-white">
-          <div className="flex flex-col items-center">
-            <div className="container mx-auto px-4 max-w-6xl">
-              {/* Section Title */}
-              <h2 className="font-semibold mb-12 text-white text-center">
-                {intl.formatMessage({ id: "student.contact.title" })}
-              </h2>
+      <section id="contact" className="pt-20 bg-primary text-white">
+        <div className="flex flex-col items-center">
+          <div className="container mx-auto px-4 max-w-6xl">
+            {/* Section Title */}
+            <h2 className="font-semibold mb-12 text-white text-center">
+              {intl.formatMessage({ id: "student.contact.title" })}
+            </h2>
 
-              {/* Card Container - Centered */}
-              <div className="flex justify-center">
-                <ContactCard
-                  name={contactPerson.name}
-                  title={contactPerson.title}
-                  imageUrl={contactPerson.imageUrl}
-                  email={contactPerson.email}
-                  linkedinUrl={contactPerson.linkedinUrl}
-                  greeting={intl.formatMessage({
-                    id: "student.contact.greeting",
-                  })}
-                  variant="quote"
-                />
-              </div>
+            {/* Card Container - Centered */}
+            <div className="flex justify-center">
+              <ContactCard
+                name={contactPerson.name}
+                title={contactPerson.title}
+                imageUrl={contactPerson.imageUrl}
+                email={contactPerson.email}
+                linkedinUrl={contactPerson.linkedinUrl}
+                greeting={intl.formatMessage({
+                  id: "student.contact.greeting",
+                })}
+                variant="quote"
+              />
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };
