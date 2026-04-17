@@ -12,10 +12,10 @@ interface ProcessStepProps {
 function ProcessStep({ title, className, children }: ProcessStepProps) {
   return (
     <div className={cn("flex flex-col gap-4", className)}>
-      <div className="bg-primary text-primary-foreground flex min-h-[100px] items-center justify-center p-4 text-center text-sm leading-tight font-bold lg:min-h-[120px] lg:p-6 lg:text-base">
+      <div className="bg-primary flex min-h-[100px] items-center justify-center p-4 text-center text-sm leading-tight font-bold text-white lg:min-h-[120px] lg:p-6 lg:text-base">
         {title}
       </div>
-      <div className="text-muted-foreground px-1 text-sm leading-relaxed">
+      <div className="text-foreground/80 px-1 text-sm leading-relaxed">
         {children}
       </div>
     </div>
@@ -32,7 +32,7 @@ export function ApplicationProcess() {
         <h2 className="text-primary text-3xl font-bold md:text-4xl">
           {t("title")}
         </h2>
-        <p className="text-muted-foreground max-w-4xl text-base leading-relaxed md:text-lg">
+        <p className="text-foreground/80 max-w-4xl text-base leading-relaxed md:text-lg">
           {t("subtitle")}
         </p>
       </div>

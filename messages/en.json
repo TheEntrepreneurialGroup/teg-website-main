@@ -45,5 +45,37 @@
       }
     },
     "cta": "Apply Now!"
+  },
+  "MemberProcess": {
+    "title": "Brief overview – How TEG works",
+    "semester1": {
+      "title": "1. Semester",
+      "p1": "Onboarding into your <bold>Specialist Role</bold> at TEG",
+      "p2": "<bold>Mentoring</bold> by a 'TEG-Buddy'",
+      "p3": "<bold>Workshops</bold>:",
+      "bullets": [
+        "Being a team player + Leadership,",
+        "Managing risks and opportunities,",
+        "Internal communication",
+        "... and more"
+      ]
+    },
+    "semester2": {
+      "title": "2. Semester",
+      "p1": "Exclusive <bold>Internships</bold> and <bold>Working Student Jobs</bold>",
+      "p2": "<bold>Professional Certificate</bold>",
+      "p3": "<bold>Project Lead Certificate</bold> (optional)"
+    },
+    "semester3": {
+      "title": "3. Semester",
+      "p1": "<bold>Coach Certificate</bold>"
+    },
+    "afterwards": {
+      "title": "Afterwards",
+      "or": "or",
+      "leftTitle": "<bold>Placement for a management career</bold> at a company of your choice",
+      "leftSubtitle": "Our Sales Team also organizes target companies for you that are not active partners.",
+      "rightTitle": "<bold>Mediation of a suitable B2B problem</bold> for a startup, from one of our partner companies."
+    }
   }
 }

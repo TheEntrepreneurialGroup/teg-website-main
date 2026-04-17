@@ -45,5 +45,37 @@
       }
     },
     "cta": "Jetzt bewerben!"
+  },
+  "MemberProcess": {
+    "title": "Kurzüberblick – So funktioniert TEG",
+    "semester1": {
+      "title": "1. Semester",
+      "p1": "Onboarding in deine <bold>Fachrolle</bold> bei TEG",
+      "p2": "<bold>Mentoring</bold> durch einen 'TEG-Buddy'",
+      "p3": "<bold>Workshops</bold>:",
+      "bullets": [
+        "Teamplayer sein + Mitarbeiterführung,",
+        "Risiken und Chancen managen,",
+        "Interne Kommunikation",
+        "... und weitere"
+      ]
+    },
+    "semester2": {
+      "title": "2. Semester",
+      "p1": "Exklusive <bold>Praktika</bold> und <bold>Werkstudenten-Jobs</bold>",
+      "p2": "<bold>Professional-Zertifikat</bold>",
+      "p3": "<bold>Projektleitung-Zertifikat</bold> (optional)"
+    },
+    "semester3": {
+      "title": "3. Semester",
+      "p1": "<bold>Coach-Zertifikat</bold>"
+    },
+    "afterwards": {
+      "title": "Danach",
+      "or": "oder",
+      "leftTitle": "<bold>Placement für eine Führungskarriere</bold> bei einer Firma deiner Wahl",
+      "leftSubtitle": "Unser Sales-Team organisiert für Dich auch Wunsch-Firmen, die keine aktiven Partner sind.",
+      "rightTitle": "<bold>Vermittlung eines geeigneten B2B-Problems</bold> für eine Gründung, von einer unserer Partner-Firmen."
+    }
   }
 }
