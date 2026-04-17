@@ -37,7 +37,7 @@ export default function ApplicationPipelineSection() {
                 : "/for-students/pipeline/pipeline-phone.svg"
             }
             alt="Pipeline"
-            className="w-full h-auto block sm:w-[90%]"
+            className="w-full h-auto block"
           />
         </div>
 
