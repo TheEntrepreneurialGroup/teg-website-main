@@ -36,7 +36,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   return (
     <div
       className={cn(
-        "w-full h-fiit flex flex-col md:flex-row items-center gap-10 overflow-visible",
+        "w-full h-fiit flex flex-col md:gap-0 gap-10 md:flex-row items-center overflow-visible",
         className,
       )}
     >
@@ -51,8 +51,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       <div
         className={`order-2 ${
           imagePosition === "right"
-            ? "md:order-1 md:pr-16 md:pl-44"
-            : "md:order-2 md:pl-16 md:pr-44"
+            ? "md:order-1 md:px-8 lg:px-24 xl:px-44"
+            : "md:order-2 md:pl-12 md:px-8 lg:px-24 xl:px-44"
         } flex-1 min-w-0 px-4 md:px-0`}
       >
         <div className="text-primary text-3xl font-semibold leading-tight max-w-[60ch] overflow-hidden">
@@ -67,7 +67,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           </div>
         )}
         {shouldShowButton && (
-          <div className="mt-4">
+          <div className="mt-2 lg:mt-4">
             <PrimaryButton
               label={resolvedButtonText!}
               onClick={() => navigate(resolvedButtonLink!)}
