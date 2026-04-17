@@ -37,11 +37,11 @@ export default function Testimonials() {
         <img
           src={active.image}
           alt={active.author}
-          className="w-full lg:w-1/2 aspect-[4/3] object-cover object-top order-1"
+          className="w-full lg:w-1/2 aspect-[4/3] object-cover object-top order-1 lg:order-2"
           loading="lazy"
         />
 
-        <div className="order-2 flex-1 min-w-0 px-4 lg:px-8 xl:px-24 2xl:px-44 flex flex-col justify-between lg:aspect-[4/3] lg:py-[3%] xl:py-[6%]">
+        <div className="order-2 lg:order-1 flex-1 min-w-0 px-4 lg:px-8 xl:px-24 2xl:px-44 flex flex-col justify-between lg:aspect-[4/3] lg:py-[3%] xl:py-[6%]">
           <div>
             <h3 className="text-3xl font-semibold text-primary mb-8 lg:mb-16">
               {intl.formatMessage({ id: "student.testimonials.title" })}

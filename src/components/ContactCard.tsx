@@ -1,6 +1,5 @@
 import React from "react";
-
-import { Mail, Linkedin, Quote } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import { trackOutboundClick } from "../utils/analytics";
 
 interface ContactCardProps {
@@ -9,8 +8,8 @@ interface ContactCardProps {
   imageUrl: string;
   email: string;
   linkedinUrl: string;
+  heading?: string;
   greeting?: string;
-  variant?: "default" | "quote";
 }
 
 const ContactCard: React.FC<ContactCardProps> = ({
@@ -19,50 +18,49 @@ const ContactCard: React.FC<ContactCardProps> = ({
   imageUrl,
   email,
   linkedinUrl,
+  heading,
   greeting,
-  variant = "default",
 }) => {
   return (
-    <div className="bg-white  shadow-lg overflow-hidden w-full max-w-4xl">
-      <div className="flex flex-col md:flex-row items-center p-2 md:p-6 pb-2 gap-2 sm:gap-4">
-        {/* Image Section */}
-        <div className="w-full max-w-xs mx-auto md:mx-0 md:w-64 aspect-[3/4] overflow-hidden border-1 border-border flex-shrink-0">
-          <img
-            src={imageUrl}
-            alt={name}
-            className="w-full h-full object-cover object-top"
-          />
-        </div>
+    <div
+      id="contact"
+      className="w-full flex flex-col lg:flex-row lg:items-stretch"
+    >
+      <img
+        src={imageUrl}
+        alt={name}
+        className="w-full lg:w-1/2 aspect-[4/3] object-cover object-top order-1"
+        loading="lazy"
+      />
 
-        {/* Content Section */}
-        <div className="flex-1 mt-4 md:mt-0 md:text-left">
-          {variant === "quote" && greeting && (
-            <div className="text-muted-foreground">
-              <Quote size={15} className="" />
-              <h2 className="text-xl font-normal my-1">{greeting}</h2>
-              <div className="flex justify-end">
-                <Quote size={15} />
-              </div>
-            </div>
-          )}
-          <p className="text-muted-foreground text-2xl md:text-2xl font-normal mt-3 mb-1">
-            {name}
-          </p>
-          <p className="text-muted-foreground text-base md:text-lg font-normal mt-0 mb-2">
-            {title}
-          </p>
-        </div>
-      </div>
+      <div className="order-2 flex-1 min-w-0 px-4 lg:px-8 xl:px-24 2xl:px-44 bg-primary text-white flex flex-col justify-center py-8 lg:py-0 lg:aspect-[4/3]">
+        {heading && (
+          <h2 className="font-semibold text-white mb-8 lg:mb-16 text-3xl">
+            {heading}
+          </h2>
+        )}
 
-      {/* Divider Line */}
-      <div className="border-t border-border"></div>
+        {greeting && (
+          <div className="border-l-[1.5px] border-accent pl-4">
+            <p className="text-xl italic text-white/80 leading-relaxed">
+              &ldquo;{greeting}&rdquo;
+            </p>
+            <p className="text-2xl font-semibold mt-3">{name}</p>
+            <p className="text-lg text-white/70 mt-1">{title}</p>
+          </div>
+        )}
 
-      {/* Contact Information */}
-      <div className="flex flex-row justify-evenly divide-x divide-gray-200 m-4 gap-2">
-        <div className="flex items-center text-muted-foreground justify-center">
+        {!greeting && (
+          <div>
+            <p className="text-2xl font-semibold">{name}</p>
+            <p className="text-lg text-white/70 mt-1">{title}</p>
+          </div>
+        )}
+
+        <div className="flex items-center gap-6 mt-6">
           <a
             href={linkedinUrl}
-            className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors duration-300"
+            className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors duration-300"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() =>
@@ -72,11 +70,9 @@ const ContactCard: React.FC<ContactCardProps> = ({
             <Linkedin size={20} />
             <span>LinkedIn</span>
           </a>
-        </div>
-        <div className="flex items-center text-muted-foreground justify-center">
           <a
             href={`mailto:${email}`}
-            className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors duration-300"
+            className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors duration-300"
             onClick={() =>
               trackOutboundClick(`mailto:${email}`, "ContactCard: " + name)
             }
