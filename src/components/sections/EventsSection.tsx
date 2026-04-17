@@ -43,19 +43,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
 
   return (
     <section className="w-full py-8 md:py-14">
-      <div className="px-4 md:px-0">
-        <h3 className="text-3xl font-bold text-primary leading-tight mb-5 md:mb-8">
-          {intl.formatMessage({ id: "student.events.title" })}{" "}
-          <a
-            href={intl.formatMessage({ id: "student.events.calendarLink" })}
-            className="text-accent hover:text-accent-light underline underline-offset-4"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {intl.formatMessage({ id: "student.events.calendarLabel" })}
-          </a>
-        </h3>
-      </div>
+      <div className="px-4 md:px-0"></div>
 
       <div className="w-full flex flex-col md:flex-row items-center gap-10">
         <img
@@ -66,7 +54,18 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
         />
 
         <div className="order-2 md:order-1 flex-1 min-w-0 px-4 md:px-0 md:pr-8">
-          <h4 className="text-primary text-3xl font-semibold leading-tight">
+          <h3 className="text-3xl font-semibold text-primary  mb-5 md:mb-8">
+            {intl.formatMessage({ id: "student.events.title" })}{" "}
+            <a
+              href={intl.formatMessage({ id: "student.events.calendarLink" })}
+              className="text-accent hover:text-accent-light underline underline-offset-4"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {intl.formatMessage({ id: "student.events.calendarLabel" })}
+            </a>
+          </h3>
+          <h4 className="text-primary text-3xl font-medium leading-tight">
             {intl.formatMessage({ id: activeEvent.titleId })}
           </h4>
           <p className="mt-2 text-xl text-muted-foreground leading-relaxed">

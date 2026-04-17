@@ -74,7 +74,7 @@
 
 @layer components {
   .btn {
-    @apply px-6 py-3 text-lg font-semibold transition-all duration-300 inline-block;
+    @apply px-6 py-3 text-lg font-normal transition-all duration-300 inline-block;
   }
 
   .btn-primary {

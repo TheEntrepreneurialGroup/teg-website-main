@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `font-semibold relative ${
+              `font-normal relative ${
                 scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
@@ -56,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
           <NavLink
             to="/for-companies"
             className={({ isActive }) =>
-              `font-semibold relative ${
+              `font-normal relative ${
                 scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
@@ -73,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
           <NavLink
             to="/for-students"
             className={({ isActive }) =>
-              `font-semibold relative ${
+              `font-normal relative ${
                 scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
@@ -93,14 +93,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
         <div className="hidden md:flex items-center space-x-4 mx-4">
           <button
             onClick={() => switchLanguage("en")}
-            className="font-semibold text-white hover:text-primary-light transition-colors duration-300"
+            className="font-normal text-white hover:text-primary-light transition-colors duration-300"
           >
             EN
           </button>
           <span className="text-white">|</span>
           <button
             onClick={() => switchLanguage("de")}
-            className="font-semibold text-white hover:text-primary-light transition-colors duration-300"
+            className="font-normal text-white hover:text-primary-light transition-colors duration-300"
           >
             DE
           </button>
@@ -130,7 +130,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `text-xl font-semibold ${
+                  `text-xl font-normal ${
                     isActive ? "text-primary" : "text-foreground"
                   } hover:text-primary transition-colors duration-300`
                 }
@@ -147,7 +147,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
               <NavLink
                 to="/for-companies"
                 className={({ isActive }) =>
-                  `text-xl font-semibold ${
+                  `text-xl font-normal ${
                     isActive ? "text-primary" : "text-foreground"
                   } hover:text-primary transition-colors duration-300`
                 }
@@ -163,7 +163,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
               <NavLink
                 to="/for-students"
                 className={({ isActive }) =>
-                  `text-xl font-semibold ${
+                  `text-xl font-normal ${
                     isActive ? "text-primary" : "text-foreground"
                   } hover:text-primary transition-colors duration-300`
                 }
