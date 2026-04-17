@@ -63,8 +63,7 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
               onClick={() => handleLink(buttonLink1)}
               size="lg"
               align="left"
-              fullWidth={false}
-              minWidthClassName="w-[250px]"
+              className="w-[250px]"
             />
             {buttonText2 && buttonLink2 && (
               <PrimaryButton
@@ -72,8 +71,7 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
                 onClick={() => handleLink(buttonLink2)}
                 size="lg"
                 align="left"
-                fullWidth={false}
-                minWidthClassName="w-[250px]"
+                className="w-[250px]"
               />
             )}
           </div>
