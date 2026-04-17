@@ -48,19 +48,21 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
               {intl.formatMessage({ id: "student.events.title" })}{" "}
               <a
                 href={intl.formatMessage({ id: "student.events.calendarLink" })}
-                className="text-accent hover:text-accent-light underline underline-offset-4"
+                className="text-accent hover:text-accent-light"
                 target="_blank"
                 rel="noreferrer"
               >
                 {intl.formatMessage({ id: "student.events.calendarLabel" })}
               </a>
             </h3>
-            <h4 className="text-primary text-3xl font-normal leading-tight">
-              {intl.formatMessage({ id: activeEvent.titleId })}
-            </h4>
-            <p className="mt-2 text-xl text-muted-foreground leading-relaxed">
-              {intl.formatMessage({ id: activeEvent.descriptionId })}
-            </p>
+            <div className="border-l-[1.5px] border-accent pl-4">
+              <h4 className="text-primary text-3xl font-normal leading-tight">
+                {intl.formatMessage({ id: activeEvent.titleId })}
+              </h4>
+              <p className="mt-2 text-xl text-muted-foreground leading-relaxed">
+                {intl.formatMessage({ id: activeEvent.descriptionId })}
+              </p>
+            </div>
           </div>
           <div className="pb-4">
             <div className="mt-4">
@@ -78,7 +80,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
                     key={index}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className={`h-1.5 w-6 lg:w-7 rounded-none transition-colors ${index === activeIndex ? "bg-accent" : "bg-secondary-dark"}`}
+                    className={`h-[1.5px] w-6 lg:w-7 rounded-none transition-colors ${index === activeIndex ? "bg-accent" : "bg-secondary-dark"}`}
                     aria-label={`${intl.formatMessage({ id: "student.events.slide" })} ${index + 1}`}
                   />
                 ))}
