@@ -19,7 +19,7 @@ const HeroSectionStudentsMobile: React.FC = () => {
       />
 
       <div className="container-custom text-left p-4">
-        <h1 className="text-primary font-bold text-3xl mb-2 mt-2">{title}</h1>
+        <h1 className="text-primary font-semibold text-3xl mb-3">{title}</h1>
         <p className="text-muted-foreground max-w-3xl mb-4 text-xl">
           {subtitle}
         </p>
