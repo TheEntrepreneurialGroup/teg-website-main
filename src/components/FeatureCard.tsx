@@ -49,10 +49,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         `}
       />
       <div
-        className={`${
+        className={`order-2 ${
           imagePosition === "right"
-            ? "order-2 md:order-1 md:pr-0 md:pl-8"
-            : "order-2 md:order-2 md:pl-0 md:pr-8"
+            ? "md:order-1 md:pr-16 md:pl-44"
+            : "md:order-2 md:pl-16 md:pr-44"
         } flex-1 min-w-0 px-4 md:px-0`}
       >
         <div className="text-primary text-3xl font-semibold leading-tight max-w-[60ch] overflow-hidden">
