@@ -46,12 +46,14 @@ export default function Testimonials() {
             <h3 className="text-3xl font-semibold text-primary mb-8 lg:mb-16">
               {intl.formatMessage({ id: "student.testimonials.title" })}
             </h3>
-            <p className="text-xl italic text-muted-foreground leading-relaxed">
-              &ldquo;{active.quote}&rdquo;
-            </p>
-            <p className="text-xl text-primary font-semibold mt-3">
-              {active.author}
-            </p>
+            <div className="border-l-[1.5px] border-accent pl-4">
+              <p className="text-xl italic text-muted-foreground leading-relaxed">
+                &ldquo;{active.quote}&rdquo;
+              </p>
+              <p className="text-xl text-primary font-semibold mt-3">
+                {active.author}
+              </p>
+            </div>
           </div>
           <div className="pb-4">
             <div className="mt-4">
@@ -73,7 +75,7 @@ export default function Testimonials() {
                     key={index}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className={`h-1.5 w-6 lg:w-7 rounded-none transition-colors ${index === activeIndex ? "bg-accent" : "bg-secondary-dark"}`}
+                    className={`h-[1.5px] w-6 lg:w-7 rounded-none transition-colors ${index === activeIndex ? "bg-accent" : "bg-secondary-dark"}`}
                     aria-label={`${intl.formatMessage({ id: "student.testimonials.title" })} ${index + 1}`}
                   />
                 ))}

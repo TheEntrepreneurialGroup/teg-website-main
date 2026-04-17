@@ -82,7 +82,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         <div className="text-primary text-3xl font-semibold leading-tight max-w-[60ch] overflow-hidden">
           {title}
         </div>
-        <div className="mt-2 text-xl text-muted-foreground max-w-prose">
+        <div className="mt-4 text-xl text-muted-foreground max-w-prose">
           {description}
         </div>
         {body && (
