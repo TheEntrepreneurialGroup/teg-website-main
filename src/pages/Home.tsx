@@ -36,17 +36,14 @@ export const Home: React.FC = () => {
         text4={intl.formatMessage({ id: "home.alumni.stat4.label" })}
       />
 
-      <div className="flex flex-col items-center max-w-7xl mx-auto xl:py-20 gap-10 md:gap-0 pb-20 md:pb-0">
+      <div className="flex flex-col gap-20 md:gap-0 pb-20 md:pb-0">
         <FeatureCard
           className="pl-1"
           title={intl.formatMessage({ id: "home.card1.title" })}
           description={intl.formatMessage({ id: "home.card1.description" })}
-          buttonText={intl.formatMessage({ id: "home.card1.buttonText" })}
           imagePosition="left"
           imageAltText={intl.formatMessage({ id: "home.card1.imageAlt" })}
           imageURL="/home/kuratorium.avif"
-          buttonLink="/"
-          clickable={false}
         />
 
         <FeatureCard
@@ -57,7 +54,6 @@ export const Home: React.FC = () => {
           imageAltText={intl.formatMessage({ id: "home.card2.imageAlt" })}
           imageURL="/home/tegtalk-WS26.avif"
           buttonLink={intl.formatMessage({ id: "home.card2.buttonLink" })}
-          clickable
         />
         <FeatureCard
           title={intl.formatMessage({ id: "home.card3.title" })}
@@ -67,7 +63,6 @@ export const Home: React.FC = () => {
           imageAltText={intl.formatMessage({ id: "home.card3.imageAlt" })}
           imageURL="/home/fuehrungskraefte.avif"
           buttonLink={intl.formatMessage({ id: "home.card3.buttonLink" })}
-          clickable
         />
       </div>
     </div>

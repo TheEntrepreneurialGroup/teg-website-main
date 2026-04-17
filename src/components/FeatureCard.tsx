@@ -14,7 +14,6 @@ interface FeatureCardProps {
   imageURL: string;
   imageAltText: string;
   imagePosition?: "left" | "right";
-  clickable?: boolean;
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({
@@ -27,9 +26,13 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   imagePosition = "left",
   imageURL,
   imageAltText,
-  clickable = false,
 }) => {
   const navigate = useNavigate();
+  const resolvedButtonText = buttonText?.trim();
+  const resolvedButtonLink = buttonLink?.trim();
+  const shouldShowButton =
+    Boolean(resolvedButtonText) && Boolean(resolvedButtonLink);
+
   return (
     <div
       className={cn(
@@ -63,13 +66,15 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             {body}
           </div>
         )}
-        <div className={`${clickable && buttonText ? "" : "hidden"} mt-4`}>
-          <PrimaryButton
-            label={buttonText}
-            onClick={() => navigate(buttonLink)}
-            size="lg"
-          />
-        </div>
+        {shouldShowButton && (
+          <div className="mt-4">
+            <PrimaryButton
+              label={resolvedButtonText!}
+              onClick={() => navigate(resolvedButtonLink!)}
+              size="lg"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
