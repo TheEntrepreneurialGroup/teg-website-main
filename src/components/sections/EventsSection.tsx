@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
 import { PrimaryButton } from "../blocks/PrimaryButton";
+import { useSlideshow } from "../../hooks/useSlideshow";
 
 export type EventSlide = {
   titleId: string;
@@ -18,19 +18,10 @@ type EventSectionProps = {
 
 function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
   const intl = useIntl();
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    if (events.length <= 1) {
-      return;
-    }
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((prev: number) => (prev + 1) % events.length);
-    }, autoPlayMs);
-
-    return () => window.clearInterval(timer);
-  }, [events.length, autoPlayMs, activeIndex]);
+  const { activeIndex, setActiveIndex } = useSlideshow(
+    events.length,
+    autoPlayMs,
+  );
 
   if (events.length === 0) {
     return null;
@@ -53,7 +44,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
 
         <div className="order-2 lg:order-1 flex-1 min-w-0 px-4 lg:px-8 xl:px-24 2xl:px-44 flex flex-col justify-between lg:aspect-[4/3] lg:py-[3%] xl:py-[6%]">
           <div>
-            <h3 className="text-3xl font-semibold text-primary mb-5 lg:mb-8">
+            <h3 className="text-3xl font-semibold text-primary mb-8 lg:mb-16">
               {intl.formatMessage({ id: "student.events.title" })}{" "}
               <a
                 href={intl.formatMessage({ id: "student.events.calendarLink" })}

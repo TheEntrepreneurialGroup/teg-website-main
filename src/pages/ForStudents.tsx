@@ -161,9 +161,7 @@ const ForStudents: React.FC = () => {
         variant="lg"
       />
 
-      <div className="max-w-7xl mx-auto">
-        <Testimonials />
-      </div>
+      <Testimonials />
 
       <section id="contact" className="pt-20 bg-primary text-white">
         <div className="flex flex-col items-center">
