@@ -157,37 +157,23 @@ const ForStudents: React.FC = () => {
         title={intl.formatMessage({ id: "student.cardText3.title" })}
         description={intl.formatMessage({ id: "student.cardText3.subtitle" })}
         body={intl.formatMessage({ id: "student.cardText3.body" })}
-        imagePosition="right"
+        imagePosition="left"
         variant="lg"
       />
 
       <Testimonials />
 
-      <section id="contact" className="pt-20 bg-primary text-white">
-        <div className="flex flex-col items-center">
-          <div className="container mx-auto px-4 max-w-6xl">
-            {/* Section Title */}
-            <h2 className="font-semibold mb-12 text-white text-center">
-              {intl.formatMessage({ id: "student.contact.title" })}
-            </h2>
-
-            {/* Card Container - Centered */}
-            <div className="flex justify-center">
-              <ContactCard
-                name={contactPerson.name}
-                title={contactPerson.title}
-                imageUrl={contactPerson.imageUrl}
-                email={contactPerson.email}
-                linkedinUrl={contactPerson.linkedinUrl}
-                greeting={intl.formatMessage({
-                  id: "student.contact.greeting",
-                })}
-                variant="quote"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactCard
+        name={contactPerson.name}
+        title={contactPerson.title}
+        imageUrl={contactPerson.imageUrl}
+        email={contactPerson.email}
+        linkedinUrl={contactPerson.linkedinUrl}
+        heading={intl.formatMessage({ id: "student.contact.title" })}
+        greeting={intl.formatMessage({
+          id: "student.contact.greeting",
+        })}
+      />
     </div>
   );
 };
