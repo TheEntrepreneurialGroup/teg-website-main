@@ -23,7 +23,7 @@ export default function MemberProcessSection() {
                 : "/for-students/member-process/overview-phone.svg"
             }
             alt="Pipeline"
-            className="w-full h-auto block sm:w-[90%]"
+            className="w-full h-auto block"
           />
         </div>
       </div>
