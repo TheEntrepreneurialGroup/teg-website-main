@@ -11,14 +11,14 @@ const HeroSectionStudentsDesktop: React.FC = () => {
   const backgroundImage = "/shared/heroes/hero-students.avif";
 
   return (
-    <div className="flex flex-row items-center justify-start gap-5">
+    <div className="flex flex-row items-center justify-start">
       <img
         src={backgroundImage}
         alt="Hero Background"
         className="object-cover w-1/2"
       />
 
-      <div className="container-custom text-left p-8 w-2/4 h-full">
+      <div className="container-custom text-left lg:p-12 xl:p-24 w-2/4 h-full">
         <h1 className="text-primary font-bold text-3xl 2xl:text-4xl mb-4">
           {title}
         </h1>

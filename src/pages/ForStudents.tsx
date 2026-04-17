@@ -118,6 +118,19 @@ const ForStudents: React.FC = () => {
 
       <MemberProcessSection />
 
+      <CallToAction
+        title={intl.formatMessage({ id: "student.callToAction.title" })}
+        description={intl.formatMessage({
+          id: "student.callToAction.description",
+        })}
+        buttonText={intl.formatMessage({
+          id: "student.callToAction.buttonText",
+        })}
+        buttonLink={intl.formatMessage({
+          id: "student.callToAction.buttonLink",
+        })}
+      />
+
       <div className="max-w-7xl mx-auto">
         <LogoSection
           images={[
@@ -135,19 +148,6 @@ const ForStudents: React.FC = () => {
           description={intl.formatMessage({ id: "home.alumnis.description" })}
         />
       </div>
-
-      <CallToAction
-        title={intl.formatMessage({ id: "student.callToAction.title" })}
-        description={intl.formatMessage({
-          id: "student.callToAction.description",
-        })}
-        buttonText={intl.formatMessage({
-          id: "student.callToAction.buttonText",
-        })}
-        buttonLink={intl.formatMessage({
-          id: "student.callToAction.buttonLink",
-        })}
-      />
 
       <FeatureCard
         imageURL="/for-students/cards/ftc-crowd.avif"
