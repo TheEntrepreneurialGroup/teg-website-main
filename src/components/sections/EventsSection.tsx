@@ -81,7 +81,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
               />
             </div>
             {events.length > 1 && (
-              <div className="flex items-center justify-start gap-4 mt-4 w-full">
+              <div className="flex items-center justify-center md:justify-start gap-4 mt-4 w-full">
                 {events.map((_, index) => (
                   <button
                     key={index}
