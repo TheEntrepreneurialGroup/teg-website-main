@@ -76,8 +76,6 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
               <PrimaryButton
                 label={activeEventLinkLabel}
                 href={activeEvent.link}
-                target="_blank"
-                rel="noreferrer"
                 buttonText={`student-events: ${activeEventLinkLabel}`}
               />
             </div>
