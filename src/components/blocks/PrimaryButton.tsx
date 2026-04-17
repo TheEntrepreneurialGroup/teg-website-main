@@ -35,7 +35,7 @@ export function PrimaryButton({
   }[align];
 
   const buttonClasses =
-    "bg-accent hover:bg-accent-light active:bg-accent-dark text-white shadow-[0px_0px_5px_rgba(0,0,0,0.1)] text-lg px-4 md:px-6 py-3 whitespace-normal text-center w-full md:w-auto " +
+    "bg-accent hover:bg-accent-light active:bg-accent-dark text-white text-xl font-medium px-4 md:px-6 py-3 whitespace-normal text-center w-full md:w-auto " +
     minWidthClassName +
     (fullWidth ? " w-full" : "") +
     (className ? " " + className : "");
