@@ -9,6 +9,7 @@ import MemberProcessSection from "../components/sections/MemberProcessSection";
 import ApplicationPipelineSection from "../components/sections/ApplicationPipelineSection";
 import HeroSectionStudentsDesktop from "../components/sections/HeroSectionStudentsDesktop";
 import HeroSectionStudentsMobile from "../components/sections/HeroSectionStudentsMobile";
+import StudentFaqSection from "../components/sections/StudentFaqSection";
 import EventSection, {
   type EventSlide,
 } from "../components/sections/EventsSection";
@@ -117,6 +118,8 @@ const ForStudents: React.FC = () => {
       </div>
 
       <MemberProcessSection />
+
+      <StudentFaqSection />
 
       <CallToAction
         title={intl.formatMessage({ id: "student.callToAction.title" })}
