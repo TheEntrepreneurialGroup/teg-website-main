@@ -24,7 +24,7 @@ export function WideBannerCTA({
         <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${textAlign}`}>
           {title}
         </h3>
-        <p className={`text-muted-foreground mb-6 ${textAlign}`}>{text}</p>
+        <p className={`text-foreground mb-6 ${textAlign}`}>{text}</p>
         {children}
       </div>
     </div>

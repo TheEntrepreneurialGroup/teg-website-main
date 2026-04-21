@@ -22,9 +22,7 @@ const HeroSectionStudentsDesktop: React.FC = () => {
         <h1 className="text-primary font-bold text-3xl 2xl:text-4xl mb-4">
           {title}
         </h1>
-        <p className="text-muted-foreground max-w-3xl mb-8 text-xl">
-          {subtitle}
-        </p>
+        <p className="text-foreground max-w-3xl mb-8 text-xl">{subtitle}</p>
 
         {buttonText && buttonLink && (
           <PrimaryButton

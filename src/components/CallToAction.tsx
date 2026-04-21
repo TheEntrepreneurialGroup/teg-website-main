@@ -32,7 +32,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
 
       <p
         className={`text-xl mb-8 ${
-          isLight ? "text-muted-foreground" : "text-secondary-light"
+          isLight ? "text-foreground" : "text-secondary-light"
         }`}
       >
         {description}
