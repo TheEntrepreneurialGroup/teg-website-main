@@ -56,7 +56,7 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
           <h1 className="text-primary font-semibold text-3xl mb-2">
             {mobileTitle}
           </h1>
-          <p className="text-muted-foreground text-xl mb-6">{subtitle}</p>
+          <p className="text-foreground text-xl mb-6">{subtitle}</p>
           <div className="flex flex-col items-start gap-3">
             <PrimaryButton
               label={buttonText1}

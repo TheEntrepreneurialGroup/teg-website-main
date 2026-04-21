@@ -16,7 +16,7 @@ function ProcessStep({
       <div className="bg-primary text-white flex aspect-[2:1] items-center justify-center p-2 text-center text-lg leading-tight font-normal">
         {title}
       </div>
-      <div className="text-muted-foreground pt-2 text-lg leading-relaxed">
+      <div className="text-foreground pt-2 text-lg leading-relaxed">
         {children}
       </div>
     </div>
@@ -34,7 +34,7 @@ export default function ApplicationPipelineSection() {
           <h3 className="text-3xl font-semibold text-primary">
             {t("student.applicationPipeline.title")}
           </h3>
-          <p className="text-xl text-muted-foreground mt-3">
+          <p className="text-xl text-foreground mt-3">
             {t("student.applicationPipeline.description")}
           </p>
         </div>

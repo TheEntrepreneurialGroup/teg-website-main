@@ -20,9 +20,7 @@ const HeroSectionStudentsMobile: React.FC = () => {
 
       <div className="container-custom text-left p-4">
         <h1 className="text-primary font-semibold text-3xl mb-3">{title}</h1>
-        <p className="text-muted-foreground max-w-3xl mb-4 text-xl">
-          {subtitle}
-        </p>
+        <p className="text-foreground max-w-3xl mb-4 text-xl">{subtitle}</p>
 
         {buttonText && buttonLink && (
           <PrimaryButton
