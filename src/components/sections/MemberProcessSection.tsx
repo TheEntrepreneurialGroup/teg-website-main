@@ -18,7 +18,7 @@ const semesterData: SemesterData[] = [
       "Onboarding in deine Fachrolle innerhalb eines TEG Departments",
       "Coaching & Mentoring in deiner Department Aufgabe",
       "Eigeninitiativische KPI Erhöhung innerhalb TEG Initiative",
-      "C-Level Workshop Schulung im Semester",
+      "C-Level Workshop Schulung im Semester: z.B. Teamdynamik & Mitarbeiterführung, Krisenmanagement, interne & externe Kommunikation",
     ],
   },
   {
@@ -26,7 +26,7 @@ const semesterData: SemesterData[] = [
     title: "2. Semester",
     subtitle: "Anwendung in realen Projektleitung",
     bullets: [
-      "Zugang zu Fachkonferenzen, C-Level Workshops oder Management TEG Talks",
+      "Zugang zu Fachkonferenzen, zwei C-Level Workshops oder einem Management TEG Talk",
       "Kompetenzen: Ziel-Setzung, Teamleitung, Verkauf- & Vermarktungs-Strategien",
       "Bei erreichten KPIs: Projektleitung-Zertifikat",
     ],
@@ -54,142 +54,338 @@ const semesterData: SemesterData[] = [
   },
 ];
 
-function SemesterCard({
-  data,
-  isActive,
-  onClick,
+// On desktop, the 4 cards sit in a horizontal stack.
+// Active card is the leftmost and largest. Others peek from behind, offset to the right.
+// STACK_OFFSETS[i] = how much to translate the card at visual position i (0=active front, 1=next, etc.)
+const PEEK_GAP = 52; // px gap between each peeking card edge
+
+function DesktopStackedCards({
+  activeIndex,
+  onSelect,
 }: {
-  data: SemesterData;
-  isActive: boolean;
-  onClick: () => void;
+  activeIndex: number;
+  onSelect: (i: number) => void;
 }) {
+  const total = semesterData.length;
+
+  // Build an ordered list: active card first, then the rest in sequence
+  const orderedIndexes: number[] = [];
+  for (let i = 0; i < total; i++) {
+    orderedIndexes.push((activeIndex + i) % total);
+  }
+
+  // Container height: active card drives height, we reserve fixed height
   return (
-    <div
-      onClick={onClick}
-      className={`
-        relative cursor-pointer transition-all duration-300 ease-out
-        border-2 rounded-sm bg-white
-        ${isActive ? "border-primary shadow-lg" : "border-primary/30 hover:border-primary/60"}
-        ${isActive ? "lg:col-span-2 lg:row-span-1" : ""}
-      `}
-    >
-      {/* Large Number Background */}
-      <div
-        className={`
-          absolute font-serif italic font-bold text-accent-light select-none pointer-events-none
-          ${data.isInfinity ? "text-[4rem] md:text-[5rem] lg:text-[6rem] top-2 left-3" : "text-[5rem] md:text-[6rem] lg:text-[7rem] -top-2 left-2"}
-        `}
-        style={{ lineHeight: 1 }}
-      >
-        {data.number}
-        <span className="text-accent-light text-[1.5rem] md:text-[2rem] align-top">.</span>
-      </div>
+    <div className="relative w-full" style={{ height: 420 }}>
+      {orderedIndexes.map((dataIndex, stackPos) => {
+        const data = semesterData[dataIndex];
+        const isActive = stackPos === 0;
 
-      {/* Content */}
-      <div
-        className={`
-          relative z-10 p-6 pt-16 md:pt-20 lg:pt-24
-          ${isActive ? "pb-6" : "pb-4"}
-        `}
-      >
-        <h4 className="text-primary font-semibold text-lg md:text-xl leading-tight">
-          {data.subtitle}
-        </h4>
+        // The active card: full width minus right space for peeking cards
+        // Each subsequent card peeks by PEEK_GAP px from the right edge of the previous
+        const peekingCount = total - 1; // 3 cards peeking
+        const activeWidth = `calc(100% - ${peekingCount * PEEK_GAP + 16}px)`;
 
-        {/* Expanded Content */}
-        <div
-          className={`
-            overflow-hidden transition-all duration-300 ease-out
-            ${isActive ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"}
-          `}
-        >
-          <ul className="space-y-2">
-            {data.bullets.map((bullet, idx) => (
-              <li
-                key={idx}
-                className="flex items-start gap-2 text-muted-foreground text-sm md:text-base"
-              >
-                <span className="text-accent-light mt-1.5 text-xs">●</span>
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+        // Left offset: each peeking card is PEEK_GAP px to the right of where it would be if it were active
+        const peekingOffset = isActive
+          ? 0
+          : `calc(${activeWidth} + ${(stackPos - 1) * PEEK_GAP}px)`;
+
+        // Z-index: active is on top, then decreasing
+        const zIndex = total - stackPos;
+
+        return (
+          <div
+            key={dataIndex}
+            onClick={() => !isActive && onSelect(dataIndex)}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: isActive ? 0 : (peekingOffset as string),
+              width: isActive ? activeWidth : PEEK_GAP + 16 + "px",
+              height: "100%",
+              zIndex,
+              transition:
+                "left 0.45s cubic-bezier(0.4,0,0.2,1), width 0.45s cubic-bezier(0.4,0,0.2,1)",
+              cursor: isActive ? "default" : "pointer",
+            }}
+          >
+            <div
+              className={`
+                h-full flex flex-col relative overflow-hidden
+                bg-white
+                ${
+                  isActive
+                    ? "shadow-xl border border-primary/10"
+                    : "shadow-md border border-primary/8 hover:border-primary/20"
+                }
+              `}
+              style={{ borderRadius: 2 }}
+            >
+              {/* Active card: full content */}
+              {isActive ? (
+                <>
+                  {/* Top accent line */}
+                  <div className="h-0.5 w-full bg-accent-light" />
+
+                  <div className="flex flex-1 overflow-hidden">
+                    {/* Left: large number column */}
+                    <div className="flex items-start justify-center pt-8 pl-6 pr-4 w-28 shrink-0">
+                      <span
+                        className={`
+                          font-sans font-bold leading-none select-none text-primary/8
+                          ${data.isInfinity ? "text-[9rem]" : "text-[9rem]"}
+                        `}
+                        style={{
+                          fontSize: "9rem",
+                          color: "hsl(217 71% 20% / 0.07)",
+                        }}
+                      >
+                        {data.number}
+                      </span>
+                    </div>
+
+                    {/* Right: content */}
+                    <div className="flex flex-col justify-start py-8 pr-8 pl-2 flex-1 min-w-0">
+                      {/* Step label */}
+                      <p className="text-xs font-semibold tracking-widest uppercase text-accent-light mb-2">
+                        {data.isInfinity ? "Alumni" : `Schritt ${data.number}`}
+                      </p>
+                      <h4 className="text-primary font-bold text-2xl leading-tight mb-1">
+                        {data.title}
+                      </h4>
+                      <p className="text-muted-foreground text-sm font-medium mb-5">
+                        {data.subtitle}
+                      </p>
+
+                      <ul className="space-y-3 flex-1">
+                        {data.bullets.map((bullet, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-3 text-foreground text-sm leading-relaxed"
+                          >
+                            <span
+                              className="mt-1.5 shrink-0 rounded-full"
+                              style={{
+                                width: 6,
+                                height: 6,
+                                backgroundColor: "#DAA520",
+                              }}
+                            />
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Bottom-right golden dot indicator cluster */}
+                      <div className="flex items-center justify-end gap-1.5 mt-5 pt-4 border-t border-primary/6">
+                        {semesterData.map((_, dotIdx) => (
+                          <span
+                            key={dotIdx}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onSelect(dotIdx);
+                            }}
+                            className="cursor-pointer transition-all duration-300"
+                            style={{
+                              display: "inline-block",
+                              width: dotIdx === activeIndex ? 20 : 6,
+                              height: 6,
+                              borderRadius: 3,
+                              backgroundColor:
+                                dotIdx === activeIndex
+                                  ? "#DAA520"
+                                  : "hsl(217 71% 20% / 0.15)",
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                /* Peeking card: rotated title + number */
+                <div className="h-full flex flex-col items-center justify-between py-6 px-2 overflow-hidden">
+                  {/* Small number at top */}
+                  <span
+                    className="font-sans font-bold text-primary/20 select-none"
+                    style={{ fontSize: "2.5rem", lineHeight: 1 }}
+                  >
+                    {data.number}
+                  </span>
+
+                  {/* Rotated label */}
+                  <div
+                    className="flex-1 flex items-center justify-center"
+                    style={{
+                      writingMode: "vertical-rl",
+                      transform: "rotate(180deg)",
+                    }}
+                  >
+                    <span className="text-xs font-semibold text-primary/40 tracking-wide whitespace-nowrap">
+                      {data.title}
+                    </span>
+                  </div>
+
+                  {/* Gold dot at bottom */}
+                  <span
+                    className="rounded-full"
+                    style={{
+                      width: 6,
+                      height: 6,
+                      backgroundColor: "#DAA520",
+                      opacity: 0.5,
+                    }}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
-function SemesterCardMobile({
-  data,
-  isActive,
-  onClick,
+function MobileTimeline({
+  activeIndex,
+  onSelect,
 }: {
-  data: SemesterData;
-  isActive: boolean;
-  onClick: () => void;
+  activeIndex: number;
+  onSelect: (i: number) => void;
 }) {
   return (
-    <div className="flex gap-4">
-      {/* Number Column */}
-      <div className="flex flex-col items-center">
-        <div
-          onClick={onClick}
-          className={`
-            w-16 h-16 flex items-center justify-center cursor-pointer
-            border-2 rounded-sm bg-white transition-all duration-300
-            ${isActive ? "border-primary shadow-lg" : "border-primary/30"}
-          `}
-        >
-          <span
-            className={`
-              font-serif italic font-bold text-accent-light
-              ${data.isInfinity ? "text-3xl" : "text-4xl"}
-            `}
-          >
-            {data.number}
-            <span className="text-accent-light text-sm align-top">.</span>
-          </span>
-        </div>
-        {/* Connecting Line */}
-        <div className="w-0.5 flex-1 bg-accent-light/30 min-h-4" />
-      </div>
+    <div className="flex flex-col w-full gap-0">
+      {semesterData.map((data, index) => {
+        const isActive = activeIndex === index;
+        const isLast = index === semesterData.length - 1;
 
-      {/* Content Column */}
-      <div className="flex-1 pb-6">
-        <div
-          onClick={onClick}
-          className={`
-            cursor-pointer p-4 border-2 rounded-sm bg-white transition-all duration-300
-            ${isActive ? "border-primary shadow-lg" : "border-primary/30"}
-          `}
-        >
-          <h4 className="text-primary font-semibold text-base leading-tight">
-            {data.title}
-          </h4>
-          <p className="text-muted-foreground text-sm mt-1">{data.subtitle}</p>
+        return (
+          <div key={index} className="flex gap-4">
+            {/* Timeline column */}
+            <div
+              className="flex flex-col items-center"
+              style={{ width: 40, flexShrink: 0 }}
+            >
+              {/* Number node */}
+              <button
+                onClick={() => onSelect(index)}
+                className={`
+                  w-10 h-10 flex items-center justify-center shrink-0 transition-all duration-300
+                  font-bold font-sans border
+                  ${
+                    isActive
+                      ? "bg-primary text-white border-primary shadow-md"
+                      : "bg-white text-primary/40 border-primary/15 hover:border-primary/40"
+                  }
+                `}
+                style={{
+                  borderRadius: 2,
+                  fontSize: data.isInfinity ? "1.1rem" : "1rem",
+                }}
+                aria-label={`${data.title} auswählen`}
+              >
+                {data.number}
+              </button>
+              {/* Connector line */}
+              {!isLast && (
+                <div
+                  className="w-px flex-1 transition-all duration-300"
+                  style={{
+                    minHeight: 24,
+                    backgroundColor: isActive
+                      ? "#DAA520"
+                      : "hsl(217 71% 20% / 0.12)",
+                  }}
+                />
+              )}
+            </div>
 
-          {/* Expanded Content */}
-          <div
-            className={`
-              overflow-hidden transition-all duration-300 ease-out
-              ${isActive ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"}
-            `}
-          >
-            <ul className="space-y-2">
-              {data.bullets.map((bullet, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-2 text-muted-foreground text-sm"
+            {/* Card content */}
+            <div
+              className={`
+                flex-1 mb-4 transition-all duration-300 cursor-pointer
+                border bg-white
+                ${
+                  isActive
+                    ? "border-primary/20 shadow-lg"
+                    : "border-primary/8 shadow-sm hover:border-primary/20"
+                }
+              `}
+              style={{ borderRadius: 2 }}
+              onClick={() => onSelect(index)}
+            >
+              {/* Gold accent top bar only on active */}
+              {isActive && <div className="h-0.5 w-full bg-accent-light" />}
+
+              <div className="p-4">
+                <p className="text-xs font-semibold tracking-widest uppercase text-accent-light mb-1">
+                  {data.isInfinity ? "Alumni" : `Schritt ${data.number}`}
+                </p>
+                <h4 className="text-primary font-bold text-base leading-tight">
+                  {data.title}
+                </h4>
+                <p className="text-muted-foreground text-xs mt-0.5">
+                  {data.subtitle}
+                </p>
+
+                {/* Expanded bullets */}
+                <div
+                  className="overflow-hidden transition-all duration-300"
+                  style={{
+                    maxHeight: isActive ? 400 : 0,
+                    opacity: isActive ? 1 : 0,
+                    marginTop: isActive ? 12 : 0,
+                  }}
                 >
-                  <span className="text-accent-light mt-1 text-xs">●</span>
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
+                  <ul className="space-y-2.5">
+                    {data.bullets.map((bullet, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2.5 text-foreground text-sm leading-relaxed"
+                      >
+                        <span
+                          className="mt-1.5 shrink-0 rounded-full"
+                          style={{
+                            width: 5,
+                            height: 5,
+                            backgroundColor: "#DAA520",
+                          }}
+                        />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Gold dot indicators bottom right */}
+                  <div className="flex items-center justify-end gap-1.5 mt-4 pt-3 border-t border-primary/6">
+                    {semesterData.map((_, dotIdx) => (
+                      <span
+                        key={dotIdx}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onSelect(dotIdx);
+                        }}
+                        className="cursor-pointer transition-all duration-300"
+                        style={{
+                          display: "inline-block",
+                          width: dotIdx === index ? 18 : 5,
+                          height: 5,
+                          borderRadius: 3,
+                          backgroundColor:
+                            dotIdx === index
+                              ? "#DAA520"
+                              : "hsl(217 71% 20% / 0.15)",
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 }
@@ -211,28 +407,17 @@ export default function MemberProcessSection() {
           </p>
         </div>
 
-        {/* Desktop Grid Layout */}
-        <div className="hidden md:grid grid-cols-4 gap-4 w-full">
-          {semesterData.map((semester, index) => (
-            <SemesterCard
-              key={index}
-              data={semester}
-              isActive={activeIndex === index}
-              onClick={() => setActiveIndex(index)}
-            />
-          ))}
+        {/* Desktop stacked card layout */}
+        <div className="hidden md:block w-full">
+          <DesktopStackedCards
+            activeIndex={activeIndex}
+            onSelect={setActiveIndex}
+          />
         </div>
 
-        {/* Mobile Vertical Timeline */}
+        {/* Mobile timeline layout */}
         <div className="md:hidden w-full">
-          {semesterData.map((semester, index) => (
-            <SemesterCardMobile
-              key={index}
-              data={semester}
-              isActive={activeIndex === index}
-              onClick={() => setActiveIndex(index)}
-            />
-          ))}
+          <MobileTimeline activeIndex={activeIndex} onSelect={setActiveIndex} />
         </div>
       </div>
     </section>
