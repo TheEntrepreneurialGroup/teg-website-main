@@ -196,6 +196,24 @@ const de = {
   "student.applicationPipeline.title": "Bewerbungsprozess",
   "student.applicationPipeline.description":
     "Wir haben halbjährlich fixe Bewerbungszeiträume. Du kannst Dich jeweils  vom 1. bis 25. Oktober für einen Programmstart im November und 1. bis 25. April für einen Programmstart im Mai bewerben.",
+  "student.applicationPipeline.step1.title": "1. Online Bewerbung",
+  "student.applicationPipeline.step1.description":
+    "Fülle das unten verlinkte Formular bis zum 25. April aus.",
+  "student.applicationPipeline.step2.title": "Bewerbungs-Ergebnis",
+  "student.applicationPipeline.step2.description":
+    "Am 26. April teilen wir dir mit, ob du zu den Interviews eingeladen wirst.",
+  "student.applicationPipeline.step3.title": "2. Interview im TEG-Office",
+  "student.applicationPipeline.step3.description":
+    "Vom 28. April bis 3. Mai finden die Interviews statt.",
+  "student.applicationPipeline.step4.title": "Aufnahme-Entscheidung",
+  "student.applicationPipeline.step4.description":
+    "Am Ende der Interview-Phase wird dir mitgeteilt, ob du dieses Semester aufgenommen wurdest.",
+  "student.applicationPipeline.step5.title": "Kick-off & Pflicht-Termine",
+  "student.applicationPipeline.step5.intro":
+    "Bewerbe dich nur, wenn du die folgenden Termine wahrnehmen kannst:",
+  "student.applicationPipeline.step5.bullet1": "8./9.5. Kick-off",
+  "student.applicationPipeline.step5.bullet2":
+    "30.05. und 20.06. ganztägig Workshops (Pflichttermin)",
 
   "student.events.title": "Lerne uns kennen auf unseren",
   "student.events.calendarLabel": "Events",
@@ -226,6 +244,33 @@ const de = {
   "student.events.list.whatsapp.linkLabel": "Zur WhatsApp-Gruppe",
 
   "student.memberProcess.title": "Kurzüberblick – So funktioniert TEG",
+  "student.memberProcess.semester1.title": "1. Semester",
+  "student.memberProcess.semester1.p1":
+    "Onboarding in deine <b>Fachrolle</b> bei TEG",
+  "student.memberProcess.semester1.p2":
+    "<b>Mentoring</b> durch einen 'TEG-Buddy'",
+  "student.memberProcess.semester1.p3": "<b>Workshops</b>:",
+  "student.memberProcess.semester1.bullet1":
+    "Teamplayer sein + Mitarbeiterführung,",
+  "student.memberProcess.semester1.bullet2": "Risiken und Chancen managen,",
+  "student.memberProcess.semester1.bullet3": "Interne Kommunikation",
+  "student.memberProcess.semester1.bullet4": "... und weitere",
+  "student.memberProcess.semester2.title": "2. Semester",
+  "student.memberProcess.semester2.p1":
+    "Exklusive <b>Praktika</b> und <b>Werkstudenten-Jobs</b>",
+  "student.memberProcess.semester2.p2": "<b>Professional-Zertifikat</b>",
+  "student.memberProcess.semester2.p3":
+    "<b>Projektleitung-Zertifikat</b> (optional)",
+  "student.memberProcess.semester3.title": "3. Semester",
+  "student.memberProcess.semester3.p1": "<b>Coach-Zertifikat</b>",
+  "student.memberProcess.afterwards.title": "Danach",
+  "student.memberProcess.afterwards.or": "oder",
+  "student.memberProcess.afterwards.leftTitle":
+    "<b>Placement für eine Führungskarriere</b> bei einer Firma deiner Wahl",
+  "student.memberProcess.afterwards.leftSubtitle":
+    "Unser Sales-Team organisiert für Dich auch Wunsch-Firmen, die keine aktiven Partner sind.",
+  "student.memberProcess.afterwards.rightTitle":
+    "<b>Vermittlung eines geeigneten B2B-Problems</b> für eine Gründung, von einer unserer Partner-Firmen.",
   "student.certificate.title":
     "Bei uns lernst Du alles was Du für eine erfolgreiche Zukunft in der Wirtschaft brauchst!",
 
