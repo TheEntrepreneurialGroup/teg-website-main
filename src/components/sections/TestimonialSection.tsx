@@ -47,7 +47,7 @@ export default function Testimonials() {
               {intl.formatMessage({ id: "student.testimonials.title" })}
             </h3>
             <div className="border-l-[1.5px] border-accent pl-4">
-              <p className="text-xl italic text-muted-foreground leading-relaxed">
+              <p className="text-xl italic text-foreground leading-relaxed">
                 &ldquo;{active.quote}&rdquo;
               </p>
               <p className="text-xl text-primary font-semibold mt-3">

@@ -59,7 +59,7 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
               <h4 className="text-primary text-3xl font-normal leading-tight">
                 {intl.formatMessage({ id: activeEvent.titleId })}
               </h4>
-              <p className="mt-2 text-xl text-muted-foreground leading-relaxed">
+              <p className="mt-2 text-xl text-foreground leading-relaxed">
                 {intl.formatMessage({ id: activeEvent.descriptionId })}
               </p>
             </div>
