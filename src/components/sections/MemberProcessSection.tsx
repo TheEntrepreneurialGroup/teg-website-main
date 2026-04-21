@@ -45,7 +45,7 @@ export default function MemberProcessSection() {
                       values={richValues}
                     />
                   </p>
-                  <ul className="text-foreground mt-1 list-disc space-y-0.5 pl-6 text-lg">
+                  <ul className="text-foreground mt-1 list-disc space-y-0.5 pl-3 text-lg">
                     <li>{t("student.memberProcess.semester1.bullet1")}</li>
                     <li>{t("student.memberProcess.semester1.bullet2")}</li>
                     <li>{t("student.memberProcess.semester1.bullet3")}</li>

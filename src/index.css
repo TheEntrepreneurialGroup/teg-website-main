@@ -5,30 +5,27 @@
 @tailwind utilities;
 
 :root {
-  --background: rgb(255 255 255);
-  --foreground: 222.2 84% 4.9%;
+  --background: 0 0% 100%; /* #ffffff */
+  --foreground: 222.2 84% 4.9%; /* #020817 */
 
-  --primary: 217 71% 20%;
-  /* #0f2c59 converted to HSL approx */
-  --primary-foreground: 210 40% 98%;
+  --primary: 217 71% 20%; /* #0f2b57 */
+  --primary-foreground: 210 40% 98%; /* #f8fafc */
 
-  --secondary: 0 0% 90%;
-  /* #e5e5e5 */
-  --secondary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 0 0% 90%; /* #e6e6e6 */
+  --secondary-foreground: 222.2 47.4% 11.2%; /* #0f172a */
 
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --muted: 210 40% 96.1%; /* #f1f5f9 */
+  --muted-foreground: 215.4 16.3% 46.9%; /* #64748b */
 
-  --accent: 43 89% 38%;
-  /* #b8860b */
-  --accent-foreground: 222.2 47.4% 11.2%;
+  --accent: 43 89% 38%; /* #b7860b */
+  --accent-foreground: 222.2 47.4% 11.2%; /* #0f172a */
 
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive: 0 84.2% 60.2%; /* #ef4444 */
+  --destructive-foreground: 210 40% 98%; /* #f8fafc */
 
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 217 71% 20%;
+  --border: 214.3 31.8% 91.4%; /* #e2e8f0 */
+  --input: 214.3 31.8% 91.4%; /* #e2e8f0 */
+  --ring: 217 71% 20%; /* #0f2b57 */
 
   --radius: 0.5rem;
 }
