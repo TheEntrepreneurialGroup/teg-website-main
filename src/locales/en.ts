@@ -187,6 +187,24 @@ const en = {
   "student.applicationPipeline.title": "Application Pipeline",
   "student.applicationPipeline.description":
     "We have fixed application periods every six months. You can apply from 1 to 25 October for a programme starting in November and from 1 to 25 April for a programme starting in May.",
+  "student.applicationPipeline.step1.title": "1. Online Application",
+  "student.applicationPipeline.step1.description":
+    "Fill out the linked form below by April 25th.",
+  "student.applicationPipeline.step2.title": "Application Result",
+  "student.applicationPipeline.step2.description":
+    "On April 26th, we will let you know if you are invited to the interviews.",
+  "student.applicationPipeline.step3.title": "2. Interview at TEG Office",
+  "student.applicationPipeline.step3.description":
+    "The interviews will take place from April 28th to May 3rd.",
+  "student.applicationPipeline.step4.title": "Admission Decision",
+  "student.applicationPipeline.step4.description":
+    "At the end of the interview phase, you will be informed whether you have been accepted for this semester.",
+  "student.applicationPipeline.step5.title": "Kick-off & Mandatory Dates",
+  "student.applicationPipeline.step5.intro":
+    "Only apply if you can attend the following dates:",
+  "student.applicationPipeline.step5.bullet1": "May 8th/9th, Kick-off",
+  "student.applicationPipeline.step5.bullet2":
+    "May 30th and June 20th full days. Workshops (mandatory)",
 
   "student.events.title": "Meet us at our",
   "student.events.calendarLabel": "events",
@@ -216,6 +234,33 @@ const en = {
   "student.events.list.whatsapp.linkLabel": "Open WhatsApp group",
 
   "student.memberProcess.title": "Brief overview – How TEG works",
+  "student.memberProcess.semester1.title": "1. Semester",
+  "student.memberProcess.semester1.p1":
+    "Onboarding into your <b>Specialist Role</b> at TEG",
+  "student.memberProcess.semester1.p2": "<b>Mentoring</b> by a 'TEG-Buddy'",
+  "student.memberProcess.semester1.p3": "<b>Workshops</b>:",
+  "student.memberProcess.semester1.bullet1":
+    "Being a team player + Leadership,",
+  "student.memberProcess.semester1.bullet2":
+    "Managing risks and opportunities,",
+  "student.memberProcess.semester1.bullet3": "Internal communication",
+  "student.memberProcess.semester1.bullet4": "... and more",
+  "student.memberProcess.semester2.title": "2. Semester",
+  "student.memberProcess.semester2.p1":
+    "Exclusive <b>Internships</b> and <b>Working Student Jobs</b>",
+  "student.memberProcess.semester2.p2": "<b>Professional Certificate</b>",
+  "student.memberProcess.semester2.p3":
+    "<b>Project Lead Certificate</b> (optional)",
+  "student.memberProcess.semester3.title": "3. Semester",
+  "student.memberProcess.semester3.p1": "<b>Coach Certificate</b>",
+  "student.memberProcess.afterwards.title": "Afterwards",
+  "student.memberProcess.afterwards.or": "or",
+  "student.memberProcess.afterwards.leftTitle":
+    "<b>Placement for a management career</b> at a company of your choice",
+  "student.memberProcess.afterwards.leftSubtitle":
+    "Our Sales Team also organizes target companies for you that are not active partners.",
+  "student.memberProcess.afterwards.rightTitle":
+    "<b>Mediation of a suitable B2B problem</b> for a startup, from one of our partner companies.",
 
   "student.certificate.title":
     "With us, you will learn everything you need for a successful future in business!",
