@@ -67,8 +67,8 @@ function DesktopLayout({
 }) {
   return (
     <div className="w-full flex flex-col">
-      {/* Card row */}
-      <div className="w-full flex" style={{ minHeight: 300 }}>
+      {/* Card row — fixed height to prevent layout shift when switching cards */}
+      <div className="w-full flex" style={{ height: 320 }}>
         {semesterData.map((data, index) => {
           const isActive = index === activeIndex;
 
@@ -103,9 +103,7 @@ function DesktopLayout({
                         className="font-semibold text-primary leading-tight"
                         style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)" }}
                       >
-                        {data.isInfinity
-                          ? "Alumni"
-                          : `${data.number}. ${data.title}`}
+                        {data.isInfinity ? "Alumni" : data.title}
                       </h4>
                       <p
                         className="text-muted-foreground font-normal"
@@ -116,8 +114,8 @@ function DesktopLayout({
                     </div>
                   </div>
 
-                  {/* Bullet list */}
-                  <ul className="mt-4 space-y-2 flex-1">
+                  {/* Bullet list — overflow hidden to prevent layout shift */}
+                  <ul className="mt-4 space-y-2 flex-1 overflow-hidden">
                     {data.bullets.map((bullet, idx) => (
                       <li
                         key={idx}
@@ -125,7 +123,7 @@ function DesktopLayout({
                         style={{ fontSize: "clamp(0.8rem, 1.1vw, 0.95rem)" }}
                       >
                         <span
-                          className="shrink-0 rounded-full bg-accent-light mt-[0.45em]"
+                          className="shrink-0 rounded-full bg-primary mt-[0.45em]"
                           style={{ width: 5, height: 5 }}
                         />
                         {bullet}
@@ -175,25 +173,6 @@ function DesktopLayout({
           );
         })}
       </div>
-
-      {/* Full-width segmented progress bar */}
-      <div className="w-full flex">
-        {semesterData.map((_, index) => {
-          const isActive = index === activeIndex;
-          return (
-            <button
-              key={index}
-              type="button"
-              onClick={() => onSelect(index)}
-              aria-label={`Schritt ${index + 1} anzeigen`}
-              className={`
-                h-[1.5px] transition-all duration-500 ease-in-out
-                ${isActive ? "flex-[3] bg-accent-light" : "flex-1 bg-secondary-dark/40"}
-              `}
-            />
-          );
-        })}
-      </div>
     </div>
   );
 }
@@ -227,7 +206,7 @@ function MobileLayout() {
             {/* Right: content */}
             <div className="flex-1 pl-3 sm:pl-4 pb-6 sm:pb-8">
               <h4 className="font-semibold text-primary text-sm sm:text-base leading-tight">
-                {data.isInfinity ? "Alumni" : `${data.number}. ${data.title}`}
+                {data.isInfinity ? "Alumni" : `${data.number} ${data.title}`}
               </h4>
               <p className="text-muted-foreground font-normal text-xs sm:text-sm mt-0.5 leading-snug">
                 {data.subtitle}
@@ -240,7 +219,7 @@ function MobileLayout() {
                     className="flex items-start gap-2 text-foreground text-xs sm:text-sm leading-relaxed"
                   >
                     <span
-                      className="shrink-0 rounded-full bg-accent-light mt-[0.4em]"
+                      className="shrink-0 rounded-full bg-primary mt-[0.4em]"
                       style={{ width: 5, height: 5 }}
                     />
                     {bullet}
