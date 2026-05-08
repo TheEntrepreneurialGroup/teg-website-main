@@ -5,22 +5,37 @@ import { trackOutboundClick } from "@/utils/analytics";
 
 const EVENT_URL = "https://luma.com/71152vc3?utm_source=tg_ws";
 
-const speakerLogos = [
+const speakerItems = [
+  {
+    name: "PwC",
+    src: "/shared/logos/ai-conference/pwc.png",
+    visibility: "flex",
+    className: "",
+  },
   {
     name: "BCG",
-    src: "/shared/logos/bcg.avif",
-    className: "h-[32px] sm:h-[36px] lg:h-[42px]",
+    src: "/shared/logos/ai-conference/bcg.avif",
+    visibility: "flex",
+    className: "",
   },
-];
-
-const speakerItems = [
-  { name: "McKinsey & Company", visibility: "" },
-  { name: "BCG", logo: speakerLogos[0], visibility: "" },
-  { name: "Roland Berger", visibility: "" },
-  { name: "IBM", visibility: "" },
-  { name: "pwc", visibility: "hidden sm:block" },
-  { name: "Hogan Lovells", visibility: "hidden md:block" },
-  { name: "Capgemini Invent", visibility: "hidden xl:block" },
+  {
+    name: "Roland Berger",
+    src: "/shared/logos/ai-conference/roland-berger.svg",
+    visibility: "hidden min-[430px]:flex",
+    className: "brightness-0 invert",
+  },
+  {
+    name: "IBM",
+    src: "/shared/logos/ai-conference/ibm.svg",
+    visibility: "hidden min-[560px]:flex",
+    className: "brightness-0 invert",
+  },
+  {
+    name: "Capgemini Invent",
+    src: "/shared/logos/ai-conference/capgemini%20invent.png",
+    visibility: "hidden min-[900px]:flex",
+    className: "",
+  },
 ];
 
 export const ConferenceTicketBanner: React.FC = () => {
@@ -86,22 +101,18 @@ export const ConferenceTicketBanner: React.FC = () => {
                   })}
                 </p>
 
-                <div className="grid w-full min-w-0 grid-cols-2 items-center justify-items-center gap-x-4 gap-y-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 xl:gap-x-6">
+                <div className="grid w-full min-w-0 grid-cols-2 items-center justify-items-center gap-x-3 gap-y-4 min-[430px]:max-w-[420px] min-[430px]:grid-cols-3 min-[560px]:max-w-[560px] min-[560px]:grid-cols-4 min-[900px]:max-w-[760px] min-[900px]:grid-cols-5 lg:gap-x-5">
                   {speakerItems.map((item) => (
                     <span
                       key={item.name}
-                      className={`${item.visibility} max-w-full text-center text-[15px] font-bold leading-tight tracking-normal sm:text-[16px] lg:text-[18px]`}
+                      className={`${item.visibility} h-[36px] w-[108px] items-center justify-center min-[430px]:h-[40px] min-[430px]:w-[120px] min-[560px]:h-[44px] min-[560px]:w-[126px] md:h-[48px] md:w-[140px] lg:h-[50px] lg:w-[148px]`}
                     >
-                      {item.logo ? (
-                        <img
-                          src={item.logo.src}
-                          alt={item.logo.name}
-                          className={`${item.logo.className} max-w-full object-contain brightness-0 invert`}
-                          loading="eager"
-                        />
-                      ) : (
-                        item.name
-                      )}
+                      <img
+                        src={item.src}
+                        alt={item.name}
+                        className={`${item.className} mx-auto max-h-full max-w-full object-contain`}
+                        loading="eager"
+                      />
                     </span>
                   ))}
                 </div>
