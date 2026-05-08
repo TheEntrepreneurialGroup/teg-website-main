@@ -1,53 +1,77 @@
-import { useIsHorizontal } from "../../hooks/useIsHorizontal";
 import { useIntl } from "react-intl";
-import Button from "../Button";
+import { PrimaryButton } from "../blocks/PrimaryButton";
+import { cn } from "@/lib/utils";
+
+function ProcessStep({
+  title,
+  className,
+  children,
+}: {
+  title: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className={cn("flex flex-col", className)}>
+      <div className="bg-primary text-white flex aspect-[2:1] items-center justify-center p-2 text-center text-lg leading-tight font-normal">
+        {title}
+      </div>
+      <div className="text-foreground pt-2 text-lg leading-relaxed">
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function ApplicationPipelineSection() {
-  const isHorizontal = useIsHorizontal();
   const intl = useIntl();
-
-  const buttonText = intl.formatMessage({
-    id: "student.callToAction.buttonText",
-  });
-
-  const buttonLink = intl.formatMessage({
-    id: "student.callToAction.buttonLink",
-  });
+  const t = (id: string) => intl.formatMessage({ id });
 
   return (
-    <section className="flex justify-center ">
-      <div className="flex flex-col items-start w-full max-w-7xl p-2 sm:p-8 md:p-14 lg:p-20 gap-4 sm:gap-6 md:gap-14">
-        {/* Text Section */}
-        <div className="w-full flex flex-col sm:pt-1">
-          <h3 className="text-2xl sm:text-3xl font-bold text-primary">
-            {intl.formatMessage({ id: "student.applicationPipeline.title" })}
+    <section className="flex justify-center">
+      <div className="flex flex-col items-start w-full max-w-7xl p-4 sm:p-8 md:p-14 lg:p-20 gap-6 md:gap-12">
+        <div className="w-full flex flex-col">
+          <h3 className="text-3xl font-semibold text-primary">
+            {t("student.applicationPipeline.title")}
           </h3>
-          <p className="text-xl text-gray-700 mt-2 m-0">
-            {intl.formatMessage({
-              id: "student.applicationPipeline.description",
-            })}
+          <p className="text-xl text-foreground mt-3">
+            {t("student.applicationPipeline.description")}
           </p>
         </div>
-        {/* SVG Section */}
-        <div className="h-full min-w-[250px] justify-start">
-          <img
-            src={
-              isHorizontal
-                ? "/svg/pipeline-desktop.svg"
-                : "/svg/pipeline-phone.svg"
-            }
-            alt="Pipeline"
-            className="w-full h-auto block sm:w-[90%]"
-          />
+
+        <div className="w-full grid grid-cols-1 items-start gap-6 md:grid-cols-5 md:gap-3">
+          <ProcessStep title={t("student.applicationPipeline.step1.title")}>
+            <p>{t("student.applicationPipeline.step1.description")}</p>
+          </ProcessStep>
+
+          <ProcessStep title={t("student.applicationPipeline.step2.title")}>
+            <p>{t("student.applicationPipeline.step2.description")}</p>
+          </ProcessStep>
+
+          <ProcessStep title={t("student.applicationPipeline.step3.title")}>
+            <p>{t("student.applicationPipeline.step3.description")}</p>
+          </ProcessStep>
+
+          <ProcessStep title={t("student.applicationPipeline.step4.title")}>
+            <p>{t("student.applicationPipeline.step4.description")}</p>
+          </ProcessStep>
+
+          <ProcessStep title={t("student.applicationPipeline.step5.title")}>
+            <p>{t("student.applicationPipeline.step5.intro")}</p>
+            <ul className="mt-1 list-disc space-y-1 pl-3">
+              <li>{t("student.applicationPipeline.step5.bullet1")}</li>
+              <li>{t("student.applicationPipeline.step5.bullet2")}</li>
+            </ul>
+          </ProcessStep>
         </div>
 
-        <Button
-          className="w-[250px] md:w-auto text-center min-w-[100px]"
-          href={buttonLink}
-          buttonText={"home-cta: " + buttonText}
-        >
-          {buttonText}
-        </Button>
+        <PrimaryButton
+          label={t("student.callToAction.buttonText")}
+          href={t("student.callToAction.buttonLink")}
+          buttonText={
+            "application-pipeline: " + t("student.callToAction.buttonText")
+          }
+        />
       </div>
     </section>
   );

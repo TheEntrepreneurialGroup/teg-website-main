@@ -2,22 +2,34 @@ const de = {
   // Home Page Texts
   "home.hero.title":
     "Wir formen die nächsten Führungspersönlichkeiten der deutschen Wirtschaft",
+  "home.hero.mobileTitle":
+    "Wir formen die nächsten Führungs- persönlichkeiten der deutschen Wirtschaft",
   "home.hero.since": "Seit 1986.",
   "home.hero.subtitle": "",
   "home.hero.buttonText1": "TEG für Unternehmen",
   "home.hero.buttonLink1": "/for-companies",
   "home.hero.buttonText2": "TEG für Studierende",
   "home.hero.buttonLink2": "/for-students",
+  "home.conferenceBanner.cta": "Sichere dir hier dein Ticket",
+  "home.conferenceBanner.speakers": "Mit Speakern von:",
+  "home.conferenceBanner.aria":
+    "Ticket für die AI Consulting Conference 2026 auf Luma öffnen",
   "home.alumni.title": "Unsere Alumni: 39 Jahre Exzellenz mit Wirkung",
   "home.alumni.stat1.value": "300+ Alumni",
   "home.alumni.stat1.label":
     "Unsere Alumni bilden das Rückgrat der deutschen Wirtschaft, ob in Top Management Positionen, im mittleren Management oder in führenden Fachrollen.",
+  "home.alumni.alumni.value": "300+",
+  "home.alumni.alumni.label": "Alumni",
   "home.alumni.stat2.value": "41",
   "home.alumni.stat2.label": "Top-Level Führungskräfte in Konzernen",
   "home.alumni.stat3.value": "40",
   "home.alumni.stat3.label": "Top-Level Führungskräfte im Mittelstand",
   "home.alumni.stat4.value": "15",
-  "home.alumni.stat4.label": "Unternehmensgründer",
+  "home.alumni.stat4.label": "Unternehmens\u00ADgründer",
+  "home.mission":
+    "Wir befähigen leistungsstarke Studierende, sich zu selbstbewussten und kompetenten jungen Führungskräften zu entwickeln, indem wir ihnen echten Unternehmenseinblick, praktische Verantwortung und eine strukturierte Entwicklung auf ihrem Weg in zukünftige Managementrollen bieten.",
+  "home.vision":
+    "Wir wollen ein Europa schaffen, in dem ambitionierte junge Führungskräfte transformative Innovationen vorantreiben und mutige Ideen in greifbare Ergebnisse verwandeln. Indem wir Talente mit Chancen verbinden, strategisches Denken fördern und praktische Führungserfahrung ermöglichen, möchten wir den Kontinent aus seinem Deep-Tech-Schlaf wecken und Europa wieder an die Spitze globaler Innovation bringen.",
   "home.legacy.title": "Unser Vermächtnis",
   "home.legacy.subtitle":
     "Gegründet von 11 führenden deutschen Unternehmen und vier herausragenden Studierenden. Bewährt über vier Jahrzehnte.",
@@ -52,11 +64,37 @@ const de = {
   "home.alumnis.description":
     "300+ Alumni, jede:r im Dritte Top-Management. Darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen.",
 
+  "home.card1.title": "Keine Modeerscheinung, sondern ein Vermächtnis",
+  "home.card1.description":
+    "Seit 1986 verbindet TEG ambitionierte Studierende mit führenden Unternehmen. Über 39 Jahre haben wir ein bewährtes System entwickelt, das High-Potentials auf Top-Führungsrollen vorbereitet – durch echte Praxiserfahrung und nachhaltiges Mentoring.",
+  "home.card1.buttonText": "Über uns",
+  "home.card1.buttonLink": "/about",
+  "home.card1.imageAlt":
+    "Historischer Zeitungsartikel über die Gründung von TEG im Jahr 1986",
+
+  "home.card2.title": "Neue Generation von Führungskräften",
+  "home.card2.description":
+    "Gestalten Sie mit uns die nächste Generation von Führungskräften. Erfahren Sie, wie Ihr Unternehmen vom Zugang zum TEG-Ökosystem profitieren kann – und erhalten Sie direkten Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
+  "home.card2.buttonText": "Partner werden",
+  "home.card2.buttonLink": "/for-companies",
+  "home.card2.imageAlt":
+    "TEG-Mitglieder im Gespräch bei einem Networking-Event",
+
+  "home.card3.title": "Bist du bereit?",
+  "home.card3.description":
+    "Werde Teil einer selektiven Community von bis zu 50 High-Potentials, die auf Top-Führungsrollen vorbereitet werden – durch echte Verantwortung, Praxiserfahrung und Mentoring. Der Erfolg unserer Alumni über 39 Jahre zeigt, was möglich ist.",
+  "home.card3.buttonText": "Mitglied werden",
+  "home.card3.buttonLink": "/for-students",
+  "home.card3.imageAlt":
+    "Studierende im professionellen Austausch während einer TEG-Veranstaltung",
+
   // Company Page Texts
   "company.hero.title": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
+  "company.hero.mobileTitle": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
   "company.hero.subtitle":
     "Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
-  "company.hero.buttonText": "Zusammenarbeit beginnen",
+  "company.hero.buttonText1": "Kontakt aufnehmen",
+  "company.hero.buttonText2": "TEG für Studierende",
 
   "company.sectionTitle.partnerships.title":
     "Partner werden, um Zugang zur nächsten Generation an Führungskräften zu erhalten",
@@ -119,11 +157,7 @@ const de = {
   "student.hero.subtitle":
     "Bei uns entwickelst Du schon während deines Studiums die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.hero.buttonText": "Mitglied werden",
-  "student.hero.buttonLink": "https://tally.so/r/w20dbL",
-  "student.commitment.body":
-    "Deine Mitgliedschaft bei TEG beginnt mit einer 3 Semester langen Grundausbildung, diese ist ein Qualifizier\u00ADungspro\u00ADgramm parallel zur Universität für Studierende aller Studiengänge, welches wirtschaft\u00ADliches und unternehmer\u00ADisches Denken schult, und optimal auf das Berufsleben vorbereitet. Nach Abschluss bist du Dein Leben lang Teil unseres TEG-Alumni-Netzwerks.",
-  "student.commitment.down":
-    "Während der Grundausbildung erlernen TEG-Mitglieder fachliche Kompetenzen deutlich über dem Level eines Berufseinsteigers. Bestätigt durch von Firmen gerne gesehene Zertifikate. Weiterhin werden durch Workshops und Praxis-Projekte Kompetenzen in den Bereichen Projektmanagement, Leadership und Coaching vermittelt. Diese Fähigkeiten erlauben eine steile Fach- und Führungskarriere bis hin in die Geschäftsführung von Unternehmen oder befähigen zur erfolgreichen eigenen Gründung.",
+  "student.hero.buttonLink": "https://tally.so/r/yPDXd4",
 
   "student.maps.title": "Hier sind wir zu Hause",
   "student.maps.description":
@@ -134,6 +168,10 @@ const de = {
     "TEG ist nicht für jeden: 10+ Stunden Arbeitszeit pro Woche, konstant über 3 Semester",
   "student.commitment.subtitle":
     "Wenn Du diese Zeit investierst, wird es Dein Leben verändern.",
+  "student.commitment.body":
+    "Deine Mitgliedschaft bei TEG ist eine 3 Semester lange Grundausbildung. Dies ist ein Qualifizier\u00ADungspro\u00ADgramm parallel zur Universität für Studierende aller Studiengänge, welches wirtschaft\u00ADliches und unternehmer\u00ADisches Denken schult, und optimal auf das Management- und Berufsleben vorbereitet.",
+  "student.commitment.down":
+    "Während der Grundausbildung erlernen TEG-Mitglieder fachliche Kompetenzen deutlich über dem Level eines Berufseinsteigers. Durch Workshops und Praxis-Projekte werden Kompetenzen in den Bereichen Projektmanagement, Leadership und Coaching vermittelt. Dies ermöglichte ehemalige TEG-Absolventen steile Fach- und Führungskarrieren bis hin in die Geschäftsführung von Unternehmen, oder zur erfolgreichen eigenen Gründung.",
 
   "student.cardText.imageAlt": "Willkommen im TEG-Office",
   "student.cardText.title":
@@ -162,8 +200,81 @@ const de = {
   "student.applicationPipeline.title": "Bewerbungsprozess",
   "student.applicationPipeline.description":
     "Wir haben halbjährlich fixe Bewerbungszeiträume. Du kannst Dich jeweils  vom 1. bis 25. Oktober für einen Programmstart im November und 1. bis 25. April für einen Programmstart im Mai bewerben.",
+  "student.applicationPipeline.step1.title": "1. Online Bewerbung",
+  "student.applicationPipeline.step1.description":
+    "Fülle das unten verlinkte Formular bis zum 25. April aus.",
+  "student.applicationPipeline.step2.title": "Bewerbungs-Ergebnis",
+  "student.applicationPipeline.step2.description":
+    "Am 26. April teilen wir dir mit, ob du zu den Interviews eingeladen wirst.",
+  "student.applicationPipeline.step3.title": "2. Interview im TEG-Office",
+  "student.applicationPipeline.step3.description":
+    "Vom 28. April bis 3. Mai finden die Interviews statt.",
+  "student.applicationPipeline.step4.title": "Aufnahme-Entscheidung",
+  "student.applicationPipeline.step4.description":
+    "Am Ende der Interview-Phase wird dir mitgeteilt, ob du dieses Semester aufgenommen wurdest.",
+  "student.applicationPipeline.step5.title": "Kick-off & Pflicht-Termine",
+  "student.applicationPipeline.step5.intro":
+    "Bewerbe dich nur, wenn du die folgenden Termine wahrnehmen kannst:",
+  "student.applicationPipeline.step5.bullet1": "8./9.5. Kick-off",
+  "student.applicationPipeline.step5.bullet2":
+    "30.05. und 20.06. ganztägig Workshops (Pflichttermin)",
+
+  "student.events.title": "Lerne uns kennen auf unseren",
+  "student.events.calendarLabel": "Events",
+  "student.events.calendarLink":
+    "https://luma.com/calendar/cal-wx7ERCipEGjooAr",
+  "student.events.imageAlt": "TEG Event",
+  "student.events.previous": "Zurück",
+  "student.events.next": "Weiter",
+  "student.events.slide": "Slide",
+  "student.events.list.brunch.title":
+    "Kennenlern Brunch 18.04. | 10:00 - 14:00 Uhr",
+  "student.events.list.brunch.description":
+    "Lerne TEG bei einem entspannten Brunch kennen und komm mit Mitgliedern und Alumni ins Gespräch.",
+  "student.events.list.brunch.linkLabel": "Jetzt anmelden",
+  "student.events.list.talk.title": "TEG Talk 24.04. | 18:30 - 22:00 Uhr",
+  "student.events.list.talk.description":
+    "Mit Speakern wie dem Microsoft CTO, dem Strategy Director von Siemens und der Gründerin des weltweit ersten Unternehmens für den Handel mit Elektronik-Bauteilen. Dazu kommen zwei weitere Perspektiven aus der Praxis.",
+  "student.events.list.talk.linkLabel": "Jetzt anmelden",
+  "student.events.list.workshop.title":
+    "Top-Management-Workshops für Mitglieder",
+  "student.events.list.workshop.description":
+    "Damit du später auch im Top-Management landest, freu dich auf exklusive Workshops mit Uli Beck, TEG-Absolvent und 8 Jahre Vice President Finance der Airbus Group, oder dem CEO der Horbach GmbH. Jetzt bei TEG bewerben.",
+  "student.events.list.workshop.linkLabel": "Jetzt bei TEG bewerben",
+  "student.events.list.whatsapp.title":
+    "WhatsApp-Gruppe für Events und Bewerbungsfragen",
+  "student.events.list.whatsapp.description":
+    "Erhalte Event-Updates und stelle deine Fragen zur Bewerbung direkt in der Community.",
+  "student.events.list.whatsapp.linkLabel": "Zur WhatsApp-Gruppe",
 
   "student.memberProcess.title": "Kurzüberblick – So funktioniert TEG",
+  "student.memberProcess.semester1.title": "1. Semester",
+  "student.memberProcess.semester1.p1":
+    "Onboarding in deine <b>Fachrolle</b> bei TEG",
+  "student.memberProcess.semester1.p2":
+    "<b>Mentoring</b> durch einen 'TEG-Buddy'",
+  "student.memberProcess.semester1.p3": "<b>Workshops</b>:",
+  "student.memberProcess.semester1.bullet1":
+    "Teamplayer sein + Mitarbeiterführung,",
+  "student.memberProcess.semester1.bullet2": "Risiken und Chancen managen,",
+  "student.memberProcess.semester1.bullet3": "Interne Kommunikation",
+  "student.memberProcess.semester1.bullet4": "... und weitere",
+  "student.memberProcess.semester2.title": "2. Semester",
+  "student.memberProcess.semester2.p1":
+    "Exklusive <b>Praktika</b> und <b>Werkstudenten-Jobs</b>",
+  "student.memberProcess.semester2.p2": "<b>Professional-Zertifikat</b>",
+  "student.memberProcess.semester2.p3":
+    "<b>Projektleitung-Zertifikat</b> (optional)",
+  "student.memberProcess.semester3.title": "3. Semester",
+  "student.memberProcess.semester3.p1": "<b>Coach-Zertifikat</b>",
+  "student.memberProcess.afterwards.title": "Danach",
+  "student.memberProcess.afterwards.or": "oder",
+  "student.memberProcess.afterwards.leftTitle":
+    "<b>Placement für eine Führungskarriere</b> bei einer Firma deiner Wahl",
+  "student.memberProcess.afterwards.leftSubtitle":
+    "Unser Sales-Team organisiert für Dich auch Wunsch-Firmen, die keine aktiven Partner sind.",
+  "student.memberProcess.afterwards.rightTitle":
+    "<b>Vermittlung eines geeigneten B2B-Problems</b> für eine Gründung, von einer unserer Partner-Firmen.",
   "student.certificate.title":
     "Bei uns lernst Du alles was Du für eine erfolgreiche Zukunft in der Wirtschaft brauchst!",
 
@@ -193,18 +304,18 @@ const de = {
     "Aus Druck entstehen Diamanten. Nirgendwo stimmt das mehr, als bei TEG.",
   "student.testimonials.author1": "Ahmed Kaddour",
   "student.testimonials.quote2":
-    "Ich war erstaunt, wie viel Verantwortung man bei TEG direkt zu Beginn bekommt und bin hier schon mindestens 5 Mal über mich hinaus gewachsen.",
+    "Durch die Praxiserfahrung zusammen mit schnelle Verantwortung in TEG, hat den Grundstein für meinen beruflichen Erfolg gelegt. Im ersten Semester hatte ich meine ersten B2B Verkaufsgespräche mit Microsoft C-Level und im Zweiten habe ich eine gesamte Konferenz mit über 150 Teilnehmern geleitet.",
   "student.testimonials.author2": "Luis Waller",
   "student.testimonials.quote3":
     "Ich laufe regelmäßig Marathons, weil ich Herausforderungen und Höchstleistungen liebe. Genau deshalb bin ich auch bei TEG.",
   "student.testimonials.author3": "Yesieniia Liaskina",
 
   "student.callToAction.title":
-    "Bist Du bereit, Deine Karriere als Führungskraft zu starten?",
+    "Bist Du bereit, deine Karriere als Führungskraft zu starten?",
   "student.callToAction.description":
     "Übernehme Verantwortung. Werde ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
   "student.callToAction.buttonText": "Jetzt bewerben!",
-  "student.callToAction.buttonLink": "https://tally.so/r/w20dbL",
+  "student.callToAction.buttonLink": "https://tally.so/r/yPDXd4",
 
   "student.contact.title": "Für weitere Informationen kontaktiere uns",
   "student.contact.greeting":
@@ -217,6 +328,86 @@ const de = {
   "navbar.about": "Über uns",
   "navbar.forCompanies": "Für Unternehmen",
   "navbar.forStudents": "Für Studierende",
+
+  // For Companies Page
+  "company.problemHero.title":
+    "Digitale Märkte, veraltete Strukturen: Deutschlands Unternehmen hinken hinterher",
+  "company.problemHero.subtitle":
+    "Digitale Tools und KI bestimmen heute den Arbeitsalltag, viele Strukturen sind darauf jedoch nicht vorbereitet. Mitarbeitende nutzen bereits Technologien eigenständig, oft ohne klare Prozesse oder Verantwortlichkeiten. Die Folge: Entscheidungen verzögern sich, Abläufe werden ineffizient und Innovation stockt, während Wettbewerber bereits strategisch Tempo gewinnen.",
+  "company.problemHero.cta": "Jetzt Gespräch vereinbaren",
+  "company.problemHero.offer.title": "Unser Angebot",
+  "company.problemHero.offer.subtitle": "Die neue Generation der Entrepreneure",
+  "company.problemHero.offer.text":
+    "Um veraltete Strukturen aufzubrechen, braucht es mehr als neue Software. Es braucht den Mut unternehmerisch zu handeln. Wir bringen Ihnen die zukünftigen Führungskräfte, die diesen „Founder-Spirit“ in Ihre Abteilungen tragen. Die TEG erkennen technologische Chancen eigenständig und setzen sie in effiziente Lösungen um, um Ihr Unternehmen von innen heraus zu modernisieren.",
+
+  "company.founders.title": "Unsere Gründer",
+
+  "company.whyTeg.title": "Wieso TEG?",
+  "company.whyTeg.features.selection.title": "Selektion",
+  "company.whyTeg.features.selection.subtitle":
+    "Wir filtern gezielt nach dem „Macher-Gen“. Nur Talente, die Eigeninitiative mit echtem Ownership verbinden und Probleme proaktiv wie Gründer angehen, schaffen es in unseren Pool.",
+  "company.whyTeg.features.preparation.title": "Vorbereitung",
+  "company.whyTeg.features.preparation.subtitle":
+    "Wir machen aus Digital Natives echte Corporate Entrepreneurs. Unsere Mitglieder lernen, wilde Innovationen in strategische Mehrwerte zu verwandeln und Verantwortung für Prozesse zu übernehmen, statt nur Tools zu nutzen.",
+  "company.whyTeg.features.verification.title": "Verifikation",
+  "company.whyTeg.features.verification.subtitle":
+    "Keine Experimente, sondern validierte Performance. Durch unser Netzwerk und Mentoring garantieren wir Praxistauglichkeit und Talente, die bereit sind, Ihren digitalen Wandel sofort anzuführen.",
+  "company.whyTeg.ctaBanner.title":
+    "Lernen Sie Ihre nächsten Führungskräfte kennen",
+  "company.whyTeg.ctaBanner.text":
+    "Akademische Exzellenz allein löst keine Business-Probleme. Bei TEG schließen wir die Lücke zwischen theoretischem Wissen und praktischer Wertschöpfung ab Tag eins. Wir sind darauf vorbereitet, uns in gewachsenen Unternehmensstrukturen diplomatisch zu bewegen, ohne unseren digitalen Vorsprung zu verlieren. Statt theoretischer Konzepte bringen wir anwendbare Lösungen für die digitale Transformation mit - von der Prozessoptimierung bis zur strategischen Neuausrichtung. Wir sind keine klassischen Praktikanten, sondern Junioren mit dem Mindset eines Gründers, die bereit sind, Verantwortung für Budgets und Ergebnisse zu übernehmen.",
+  "company.whyTeg.ctaBanner.cta": "Kontakt",
+
+  "company.quality.title":
+    "Mehr als Studium: Eine Parallel-Karriere als Qualitätsgarant",
+  "company.quality.intro":
+    "TEG-Mitglieder durchlaufen kein Freizeitprogramm, sondern eine dreisemestrige, intensive Management-Ausbildung parallel zum Studium. Mit über 10 Stunden Invest pro Woche simulieren wir den Berufsalltag. Wenn Sie mit uns arbeiten, treffen Sie auf Talente, die drei entscheidende Reifeprüfungen bestanden haben:",
+  "company.quality.operational.title": "Operative Exzellenz",
+  "company.quality.operational.desc":
+    "Unsere Mitglieder spezialisieren sich frühzeitig auf Funktionen wie Sales, Tech oder Finance und wenden dies in der operativen Steuerung des TEG direkt an.",
+  "company.quality.operational.benefit":
+    "Ihr Vorteil: Keine lange Einarbeitung, sofortige Einsatzfähigkeit.",
+  "company.quality.project.title": "Projektmanagement & Druck",
+  "company.quality.project.desc":
+    "Ziele setzen, Budgets verwalten, Deadlines halten: Unsere Talente lernen, Projekte eigenverantwortlich zu steuern und Rückschläge lösungsorientiert zu managen.",
+  "company.quality.project.benefit":
+    "Ihr Vorteil: Verlässliche Ergebnisse und strukturierte Arbeitsweise.",
+  "company.quality.leadership.title": "Leadership & Feedback",
+  "company.quality.leadership.desc":
+    "Die Königsdisziplin: Mitglieder lernen früh, Teams zu führen und eine professionelle Feedback-Kultur zu leben. Wer bei uns Coach ist, befähigt andere zu Höchstleistungen.",
+  "company.quality.leadership.benefit":
+    "Ihr Vorteil: Hohe Sozialkompetenz und Führungspotenzial.",
+  "company.quality.resilience":
+    "Geprüfte Resilienz: Nur wer konstante Leistung über 3 Semester erbringt, wird Teil unseres Netzwerks. Dieser strenge Selektionsprozess ist Ihre Garantie für Qualität.",
+  "company.quality.cta": "Jetzt Kontakt aufnehmen",
+
+  "company.testimonials.title": "Was sagen andere über uns?",
+  "company.testimonials.quote1.text":
+    "Nachdem ich das Team zufälligerweise an einem Samstagabend um 23 Uhr arbeitend in ihrem Büro gesehen habe, dachte ich mir, dass diese Initiative es wert ist, unterstützt zu werden.",
+  "company.testimonials.quote1.author": "Dr. Bernd Wiemann",
+  "company.testimonials.quote1.role1": "CEO",
+  "company.testimonials.quote1.role2": "Vodafone Pilotentwicklung",
+  "company.testimonials.quote2.text":
+    "Wir brauchen in Deutschland mehr Eigeninitiative und mehr Unternehmertum, um das Land wieder nach vorn zu bringen. Dafür engagiert sich TEG. Ein wichtiger Beitrag, von dem alle Beteiligten profitieren.",
+  "company.testimonials.quote2.author": "Johannes Pruchnow",
+  "company.testimonials.quote2.role1": "Principal",
+  "company.testimonials.quote2.role2": "McKinsey & Company, Inc.",
+  "company.testimonials.quote3.text":
+    "Durch meine Arbeit im Bereich Personalwesen bei BMW weiß ich, worauf es bei Absolventen ankommt und welche Eigenschaften von innovativen Unternehmen vorrausgesetzt werden. TEG schult die Skills, die gebraucht, aber ander Universität zu wenig vermittelt werden.",
+  "company.testimonials.quote3.author": "Bodo Donauer",
+  "company.testimonials.quote3.role1": "Director HR and Social Affairs",
+  "company.testimonials.quote3.role2": "BMW Group",
+  "company.testimonials.quote4.text":
+    "Unternehmer zu sein heißt Verantwortung zu übernehmen. TEG eröffnet Studenten die Möglichkeit eigene Ideen umzusetzen und an diesen Herausforderungen zu wachsen.",
+  "company.testimonials.quote4.author": "Prof. Dr. h.c. Roland Berger",
+  "company.testimonials.quote4.role1": "Unternehmer und Gründer",
+  "company.testimonials.quote4.role2": "Roland Berger GmbH",
+
+  "company.runTeg.title": "Run TEG like a company",
+  "company.runTeg.pillar1.title": "Strategy & Partnership",
+  "company.runTeg.pillar2.title": "People & Culture",
+  "company.runTeg.pillar3.title": "Marketing",
+  "company.runTeg.pillar4.title": "Finance, Administration & Legal",
 };
 
 export default de;

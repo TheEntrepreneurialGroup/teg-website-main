@@ -5,16 +5,29 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #0f2c59;
-  --color-primary-light: #3a5aa9;
-  --color-brand: #e2eafe;
-  --color-primary-dark: #091c3a;
-  --color-secondary: #e5e5e5;
-  --color-secondary-light: #f5f5f5;
-  --color-secondary-dark: #c4c4c4;
-  --color-accent: #b8860b;
-  --color-accent-light: #daa520;
-  --color-accent-dark: #8b6914;
+  --background: 0 0% 100%; /* #ffffff */
+  --foreground: 222.2 84% 4.9%; /* #020817 */
+
+  --primary: 217 71% 20%; /* #0f2b57 */
+  --primary-foreground: 210 40% 98%; /* #f8fafc */
+
+  --secondary: 0 0% 90%; /* #e6e6e6 */
+  --secondary-foreground: 222.2 47.4% 11.2%; /* #0f172a */
+
+  --muted: 210 40% 96.1%; /* #f1f5f9 */
+  --muted-foreground: 215.4 16.3% 46.9%; /* #64748b */
+
+  --accent: 43 89% 38%; /* #b7860b */
+  --accent-foreground: 222.2 47.4% 11.2%; /* #0f172a */
+
+  --destructive: 0 84.2% 60.2%; /* #ef4444 */
+  --destructive-foreground: 210 40% 98%; /* #f8fafc */
+
+  --border: 214.3 31.8% 91.4%; /* #e2e8f0 */
+  --input: 214.3 31.8% 91.4%; /* #e2e8f0 */
+  --ring: 217 71% 20%; /* #0f2b57 */
+
+  --radius: 0.5rem;
 }
 
 @layer base {
@@ -23,7 +36,7 @@
   }
 
   body {
-    @apply font-['Montserrat'] leading-relaxed text-gray-800;
+    @apply font-['Montserrat'] leading-relaxed text-foreground;
   }
 
   h1,
@@ -36,23 +49,19 @@
   }
 
   h1 {
-    @apply text-4xl md:text-5xl;
-  }
-
-  h2 {
     @apply text-3xl md:text-4xl;
   }
 
-  h3 {
+  h2 {
     @apply text-2xl md:text-3xl;
   }
 
-  h4 {
+  h3 {
     @apply text-xl md:text-2xl;
   }
 
-  p {
-    @apply my-4;
+  h4 {
+    @apply text-lg md:text-xl;
   }
 
   a {
@@ -62,7 +71,7 @@
 
 @layer components {
   .btn {
-    @apply px-6 py-3 text-lg rounded-md font-semibold transition-all duration-300 inline-block;
+    @apply px-6 py-3 text-lg font-normal transition-all duration-300 inline-block;
   }
 
   .btn-primary {
@@ -86,6 +95,65 @@
   }
 
   .card {
-    @apply bg-primary-light/5 rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+    @apply bg-primary-light/5 shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .logo-marquee-scroll {
+    animation: scroll 60s linear infinite;
+  }
+
+  .conference-banner-pattern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(214, 166, 45, 0.24),
+        transparent 34%
+      ),
+      repeating-linear-gradient(
+        105deg,
+        transparent 0 30px,
+        rgba(255, 255, 255, 0.94) 30px 58px,
+        transparent 58px 118px
+      );
+    opacity: 0.28;
+    pointer-events: none;
+  }
+
+  .conference-banner-pattern::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        #061d38 0 7%,
+        transparent 18% 82%,
+        #061d38 93% 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(6, 29, 56, 0.18),
+        rgba(9, 39, 74, 0.8) 48%,
+        rgba(6, 29, 56, 0.25)
+      );
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    .logo-marquee-scroll {
+      animation: scroll 200s linear infinite;
+    }
   }
 }
