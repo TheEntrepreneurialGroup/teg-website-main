@@ -3,12 +3,15 @@ import { useIntl } from "react-intl";
 import HeroTwoButtons from "@/components/HeroTwoButtons";
 import TEGInZahlen from "@/components/sections/TEGInZahlen";
 import FeatureCard from "@/components/FeatureCard";
+import { ConferenceTicketBanner } from "@/components/ConferenceTicketBanner";
 
 export const Home: React.FC = () => {
   const intl = useIntl();
 
   return (
     <div>
+      <ConferenceTicketBanner />
+
       <HeroTwoButtons
         title={intl.formatMessage({ id: "home.hero.title" })}
         subtitle={intl.formatMessage({ id: "home.hero.since" })}
