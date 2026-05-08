@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+import { PrimaryButton } from "./blocks/PrimaryButton";
 
 interface CallToActionProps {
   title: string;
@@ -25,30 +25,24 @@ const CallToAction: React.FC<CallToActionProps> = ({
   const content = (
     <>
       <h2
-        className={`text-3xl md:text-4xl font-bold mb-4 ${
-          isLight ? "text-primary" : "text-white"
-        }`}
+        className={`text-3xl font-semibold mb-4 ${isLight ? "text-primary" : "text-white"}`}
       >
         {title}
       </h2>
 
       <p
-        className={`text-lg mb-8 ${
-          isLight ? "text-gray-600" : "text-secondary-light"
+        className={`text-xl mb-8 ${
+          isLight ? "text-foreground" : "text-secondary-light"
         }`}
       >
         {description}
       </p>
 
-      <div>
-        <Button
-          className="max-w-[250px] md:w-auto text-center min-w-[100px]"
-          href={buttonLink}
-          buttonText={"home-cta: " + buttonText}
-        >
-          {buttonText}
-        </Button>
-      </div>
+      <PrimaryButton
+        label={buttonText}
+        href={buttonLink}
+        buttonText={"home-cta: " + buttonText}
+      />
     </>
   );
 
@@ -60,9 +54,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
           isLight ? "bg-secondary-light" : "bg-primary"
         } ${className}`}
       >
-        <div className="container-custom">
-          <div className="max-w-3xl">{content}</div>
-        </div>
+        <div className="max-w-7xl mx-auto px-4 md:px-8">{content}</div>
       </section>
     );
   }
@@ -70,7 +62,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   // Return just the content wrapped in a div for grid usage
   return (
     <div
-      className={`p-8 rounded-lg ${
+      className={`p-8 ${
         isLight ? "bg-secondary-light" : "bg-primary"
       } ${className}`}
     >

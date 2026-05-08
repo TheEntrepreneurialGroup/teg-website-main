@@ -1,164 +1,73 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { useIntl } from "react-intl";
-import { Building, TrendingUp } from "lucide-react";
-import SectionTitle from "../components/SectionTitle";
-import FeatureCard from "../components/FeatureCard";
-import StatCard from "../components/StatCard";
-import CallToAction from "../components/CallToAction";
-import HeroSectionTwoButtons from "../components/HeroSectionTwoButtons";
-import ImageCard from "../components/ImageCard";
+import HeroTwoButtons from "@/components/HeroTwoButtons";
+import TEGInZahlen from "@/components/sections/TEGInZahlen";
+import FeatureCard from "@/components/FeatureCard";
+import { ConferenceTicketBanner } from "@/components/ConferenceTicketBanner";
 
 export const Home: React.FC = () => {
   const intl = useIntl();
 
-  // Section refs
-  const alumniRef = useRef<HTMLDivElement>(null);
-  const legacyRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const sections = [
-      { ref: alumniRef, name: "home-alumni-section" },
-      { ref: legacyRef, name: "home-legacy-section" },
-      { ref: ctaRef, name: "home-cta-section" },
-    ];
-    const observers: IntersectionObserver[] = [];
-
-    sections.forEach(({ ref, name }) => {
-      if (!ref.current) return;
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            if (window.umami) {
-              window.umami.track(name);
-            }
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.3 },
-      );
-      observer.observe(ref.current);
-      observers.push(observer);
-    });
-
-    return () => observers.forEach((obs) => obs.disconnect());
-  }, []);
-
   return (
     <div>
-      <HeroSectionTwoButtons
+      <ConferenceTicketBanner />
+
+      <HeroTwoButtons
         title={intl.formatMessage({ id: "home.hero.title" })}
-        since={intl.formatMessage({ id: "home.hero.since" })}
-        subtitle={intl.formatMessage({ id: "home.hero.subtitle" })}
+        subtitle={intl.formatMessage({ id: "home.hero.since" })}
+        mobileTitle={intl.formatMessage({ id: "home.hero.mobileTitle" })}
+        bgImage="/shared/heroes/hero-home.avif"
         buttonText1={intl.formatMessage({ id: "home.hero.buttonText1" })}
-        buttonLink1={intl.formatMessage({ id: "home.hero.buttonLink1" })}
         buttonText2={intl.formatMessage({ id: "home.hero.buttonText2" })}
-        buttonLink2={intl.formatMessage({ id: "home.hero.buttonLink2" })}
-        backgroundImage="/TEG_Hero_Home.jpg"
+        buttonLink2="/for-students"
+        buttonLink1="/for-companies"
+        gradientClassName="bg-gradient-to-b from-transparent from-45% via-primary/85 via-80% to-primary to-95%"
+        imageClassName="object-top md:object-center"
+        className="lg:h-screen"
       />
 
-      <section className="py-20 bg-primary-light/5" ref={alumniRef}>
-        <div className="container-custom">
-          <SectionTitle
-            title={intl.formatMessage({ id: "home.alumni.title" })}
-            centered
-          />
+      <TEGInZahlen
+        className="md:py-20"
+        title={intl.formatMessage({ id: "home.alumni.title" })}
+        number1={intl.formatMessage({ id: "home.alumni.alumni.value" })}
+        text1={intl.formatMessage({ id: "home.alumni.alumni.label" })}
+        number2={intl.formatMessage({ id: "home.alumni.stat2.value" })}
+        text2={intl.formatMessage({ id: "home.alumni.stat2.label" })}
+        number3={intl.formatMessage({ id: "home.alumni.stat3.value" })}
+        text3={intl.formatMessage({ id: "home.alumni.stat3.label" })}
+        number4={intl.formatMessage({ id: "home.alumni.stat4.value" })}
+        text4={intl.formatMessage({ id: "home.alumni.stat4.label" })}
+      />
 
-          <div className="grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-6">
-            <StatCard
-              value={intl.formatMessage({ id: "home.alumni.stat1.value" })}
-              label={intl.formatMessage({ id: "home.alumni.stat1.label" })}
-            />
-            <StatCard
-              value={intl.formatMessage({ id: "home.alumni.stat2.value" })}
-              label={intl.formatMessage({ id: "home.alumni.stat2.label" })}
-            />
-            <StatCard
-              value={intl.formatMessage({ id: "home.alumni.stat3.value" })}
-              label={intl.formatMessage({ id: "home.alumni.stat3.label" })}
-            />
-            <StatCard
-              value={intl.formatMessage({ id: "home.alumni.stat4.value" })}
-              label={intl.formatMessage({ id: "home.alumni.stat4.label" })}
-            />
-          </div>
-        </div>
-      </section>
+      <div className="flex flex-col gap-20 md:gap-0 pb-20 md:pb-0">
+        <FeatureCard
+          className="pl-1"
+          title={intl.formatMessage({ id: "home.card1.title" })}
+          description={intl.formatMessage({ id: "home.card1.description" })}
+          imagePosition="left"
+          imageAltText={intl.formatMessage({ id: "home.card1.imageAlt" })}
+          imageURL="/home/kuratorium.avif"
+        />
 
-      <section id="about" className="section" ref={legacyRef}>
-        <div className="container-custom">
-          <SectionTitle
-            title={intl.formatMessage({ id: "home.legacy.title" })}
-            subtitle={intl.formatMessage({ id: "home.legacy.subtitle" })}
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <ImageCard
-              imageUrl="/corporates.png"
-              altText="Corporate Partners"
-              caption={intl.formatMessage({ id: "home.legacy.image1.caption" })}
-            />
-            <ImageCard
-              imageUrl="/founders.png"
-              altText="Corporate Partners"
-              caption={intl.formatMessage({ id: "home.legacy.image2.caption" })}
-            />
-            <ImageCard
-              imageUrl="/kuratorium.jpg"
-              altText="Corporate Partners"
-              caption={intl.formatMessage({ id: "home.legacy.image3.caption" })}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <FeatureCard
-              title={intl.formatMessage({ id: "home.legacy.feature1.title" })}
-              description={intl.formatMessage({
-                id: "home.legacy.feature1.description",
-              })}
-              icon={<TrendingUp size={40} />}
-            />
-            <FeatureCard
-              title={intl.formatMessage({ id: "home.legacy.feature2.title" })}
-              description={intl.formatMessage({
-                id: "home.legacy.feature2.description",
-              })}
-              icon={<Building size={40} />}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20" ref={ctaRef}>
-        <div className="container-custom grid grid-cols-1 md:grid-cols-2 gap-8">
-          <CallToAction
-            title={intl.formatMessage({ id: "home.callToAction1.title" })}
-            description={intl.formatMessage({
-              id: "home.callToAction1.description",
-            })}
-            buttonText={intl.formatMessage({
-              id: "home.callToAction1.buttonText",
-            })}
-            buttonLink={intl.formatMessage({
-              id: "home.callToAction1.buttonLink",
-            })}
-            isSection={false}
-          />
-          <CallToAction
-            title={intl.formatMessage({ id: "home.callToAction2.title" })}
-            description={intl.formatMessage({
-              id: "home.callToAction2.description",
-            })}
-            buttonText={intl.formatMessage({
-              id: "home.callToAction2.buttonText",
-            })}
-            buttonLink={intl.formatMessage({
-              id: "home.callToAction2.buttonLink",
-            })}
-            isSection={false}
-          />
-        </div>
-      </section>
+        <FeatureCard
+          title={intl.formatMessage({ id: "home.card2.title" })}
+          description={intl.formatMessage({ id: "home.card2.description" })}
+          buttonText={intl.formatMessage({ id: "home.card2.buttonText" })}
+          imagePosition="right"
+          imageAltText={intl.formatMessage({ id: "home.card2.imageAlt" })}
+          imageURL="/home/tegtalk-WS26.avif"
+          buttonLink={intl.formatMessage({ id: "home.card2.buttonLink" })}
+        />
+        <FeatureCard
+          title={intl.formatMessage({ id: "home.card3.title" })}
+          description={intl.formatMessage({ id: "home.card3.description" })}
+          buttonText={intl.formatMessage({ id: "home.card3.buttonText" })}
+          imagePosition="left"
+          imageAltText={intl.formatMessage({ id: "home.card3.imageAlt" })}
+          imageURL="/home/fuehrungskraefte.avif"
+          buttonLink={intl.formatMessage({ id: "home.card3.buttonLink" })}
+        />
+      </div>
     </div>
   );
 };

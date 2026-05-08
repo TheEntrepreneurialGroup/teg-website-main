@@ -1,28 +1,24 @@
 // src/pages/Imprint.tsx
 import React from "react";
-import SectionTitle from "../components/SectionTitle"; // Adjust path as needed
+import { SectionTitle } from "@/components/blocks/SectionTitle";
 import { trackOutboundClick } from "../utils/analytics";
 
 const Imprint: React.FC = () => {
   return (
-    <div className="bg-white text-gray-800">
+    <div className="bg-white text-foreground">
       {" "}
       {/* Or use bg-secondary-light */}
       <section className="py-20">
         <div className="container-custom">
-          <SectionTitle
-            title="Imprint / Legal Notice"
-            // Subtitle removed as the scope is mentioned in the text below
-            centered
-          />
+          <SectionTitle text="Imprint / Legal Notice" />
 
-          <div className="max-w-3xl mx-auto mt-12 text-gray-600">
+          <div className="max-w-3xl mx-auto mt-12 text-muted-foreground">
             {/* Contact Information Block */}
-            <div className="mb-6 p-6 border border-gray-200 rounded-lg bg-gray-50">
-              <h3 className="text-lg font-semibold mb-2 text-primary">
+            <div className="mb-6 p-6 border border-border  bg-muted">
+              <h3 className="text-lg font-normal mb-2 text-primary">
                 Contact Info:
               </h3>
-              <p className="mb-1 font-semibold">
+              <p className="mb-1 font-normal">
                 The Entrepreneurial Group e. V.
               </p>
               <p className="mb-1">Kaulbachstrasse 64</p>
@@ -48,8 +44,8 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Representation Block */}
-            <div className="mb-6 p-6 border border-gray-200 rounded-lg bg-gray-50">
-              <h3 className="text-lg font-semibold mb-2 text-primary">
+            <div className="mb-6 p-6 border border-border  bg-muted">
+              <h3 className="text-lg font-normal mb-2 text-primary">
                 Board of Directors authorized to represent:
               </h3>
               <p className="mb-1">
@@ -58,8 +54,8 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Register Entry Block */}
-            <div className="mb-6 p-6 border border-gray-200 rounded-lg bg-gray-50">
-              <h3 className="text-lg font-semibold mb-2 text-primary">
+            <div className="mb-6 p-6 border border-border  bg-muted">
+              <h3 className="text-lg font-normal mb-2 text-primary">
                 Register Entry:
               </h3>
               <p className="mb-1">Register court: Munich</p>
@@ -67,7 +63,7 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Scope of Imprint */}
-            <div className="mb-6 p-6 border border-gray-200 rounded-lg bg-gray-50">
+            <div className="mb-6 p-6 border border-border  bg-muted">
               <p className="text-sm">
                 The imprint applies according to § 5 TMG for our telemedia
                 including our Instagram, LinkedIn and Facebook presence.
@@ -75,8 +71,8 @@ const Imprint: React.FC = () => {
             </div>
 
             {/* Disclaimer & Copyright Section */}
-            <div className="mt-10 pt-6 border-t border-gray-300">
-              <h3 className="text-lg font-semibold mb-3 text-primary">
+            <div className="mt-10 pt-6 border-t border-secondary-dark">
+              <h3 className="text-lg font-normal mb-3 text-primary">
                 Disclaimer:
               </h3>
               <p className="text-sm mb-4">
@@ -95,7 +91,7 @@ const Imprint: React.FC = () => {
                 external sites.
               </p>
 
-              <h4 className="text-md font-semibold mt-4 mb-2 text-gray-700">
+              <h4 className="text-md font-normal mt-4 mb-2 text-muted-foreground">
                 Copyright:
               </h4>
               <p className="text-sm mb-3">
