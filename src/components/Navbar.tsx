@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary-dark ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary-dark text-xl ${
         scrolled ? "shadow-md" : "md:py-2"
       }`}
       initial={{ y: -100 }}
@@ -38,11 +38,11 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `font-semibold relative ${
+              `font-normal relative ${
                 scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
+                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
                   : ""
               }`
             }
@@ -56,11 +56,11 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
           <NavLink
             to="/for-companies"
             className={({ isActive }) =>
-              `font-semibold relative ${
+              `font-normal relative ${
                 scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
+                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
                   : ""
               }`
             }
@@ -73,11 +73,11 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
           <NavLink
             to="/for-students"
             className={({ isActive }) =>
-              `font-semibold relative ${
+              `font-normal relative ${
                 scrolled || isActive ? "text-white" : "text-white"
               } hover:text-primary-light transition-colors duration-300 ${
                 isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white"
+                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
                   : ""
               }`
             }
@@ -90,17 +90,17 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
         </nav>
 
         {/* Language Switcher */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4 mx-4">
           <button
             onClick={() => switchLanguage("en")}
-            className="font-semibold text-white hover:text-primary-light transition-colors duration-300"
+            className="font-normal text-white hover:text-primary-light transition-colors duration-300"
           >
             EN
           </button>
           <span className="text-white">|</span>
           <button
             onClick={() => switchLanguage("de")}
-            className="font-semibold text-white hover:text-primary-light transition-colors duration-300"
+            className="font-normal text-white hover:text-primary-light transition-colors duration-300"
           >
             DE
           </button>
@@ -109,7 +109,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
         {/* Mobile Menu Button */}
         <button
           className={`md:hidden h-full aspect-square ml-auto ${
-            mobileMenuOpen ? "text-black" : "text-white"
+            mobileMenuOpen ? "text-foreground" : "text-white"
           } z-50`}
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
@@ -130,8 +130,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
+                  `text-xl font-normal ${
+                    isActive ? "text-primary" : "text-foreground"
                   } hover:text-primary transition-colors duration-300`
                 }
                 onClick={() => {
@@ -147,8 +147,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
               <NavLink
                 to="/for-companies"
                 className={({ isActive }) =>
-                  `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
+                  `text-xl font-normal ${
+                    isActive ? "text-primary" : "text-foreground"
                   } hover:text-primary transition-colors duration-300`
                 }
                 onClick={() => {
@@ -163,8 +163,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
               <NavLink
                 to="/for-students"
                 className={({ isActive }) =>
-                  `text-xl font-semibold ${
-                    isActive ? "text-primary" : "text-gray-800"
+                  `text-xl font-normal ${
+                    isActive ? "text-primary" : "text-foreground"
                   } hover:text-primary transition-colors duration-300`
                 }
                 onClick={() => {
