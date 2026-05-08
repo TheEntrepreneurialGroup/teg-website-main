@@ -10,6 +10,10 @@ const de = {
   "home.hero.buttonLink1": "/for-companies",
   "home.hero.buttonText2": "TEG für Studierende",
   "home.hero.buttonLink2": "/for-students",
+  "home.conferenceBanner.cta": "Sichere dir hier dein Ticket",
+  "home.conferenceBanner.speakers": "Mit Speakern von:",
+  "home.conferenceBanner.aria":
+    "Ticket für die AI Consulting Conference 2026 auf Luma öffnen",
   "home.alumni.title": "Unsere Alumni: 39 Jahre Exzellenz mit Wirkung",
   "home.alumni.stat1.value": "300+ Alumni",
   "home.alumni.stat1.label":
