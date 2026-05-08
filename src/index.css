@@ -111,6 +111,46 @@
     animation: scroll 60s linear infinite;
   }
 
+  .conference-banner-pattern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(214, 166, 45, 0.24),
+        transparent 34%
+      ),
+      repeating-linear-gradient(
+        105deg,
+        transparent 0 30px,
+        rgba(255, 255, 255, 0.94) 30px 58px,
+        transparent 58px 118px
+      );
+    opacity: 0.28;
+    pointer-events: none;
+  }
+
+  .conference-banner-pattern::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        #061d38 0 7%,
+        transparent 18% 82%,
+        #061d38 93% 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(6, 29, 56, 0.18),
+        rgba(9, 39, 74, 0.8) 48%,
+        rgba(6, 29, 56, 0.25)
+      );
+    pointer-events: none;
+  }
+
   @media (min-width: 768px) {
     .logo-marquee-scroll {
       animation: scroll 200s linear infinite;
