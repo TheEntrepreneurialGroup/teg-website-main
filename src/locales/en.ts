@@ -218,6 +218,10 @@ const en = {
   "student.events.previous": "Previous",
   "student.events.next": "Next",
   "student.events.slide": "Slide",
+  "student.events.list.aiConference.title": "AI Consulting Conference 2026",
+  "student.events.list.aiConference.description":
+    "Join TEG for an evening on AI, consulting, and leadership with speakers from leading consulting and technology companies.",
+  "student.events.list.aiConference.linkLabel": "Get your ticket",
   "student.events.list.brunch.title":
     "Meet-and-Greet Brunch 18.04. | 10:00 - 14:00",
   "student.events.list.brunch.description":

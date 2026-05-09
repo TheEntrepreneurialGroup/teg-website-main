@@ -227,6 +227,10 @@ const de = {
   "student.events.previous": "Zurück",
   "student.events.next": "Weiter",
   "student.events.slide": "Slide",
+  "student.events.list.aiConference.title": "AI Consulting Conference 2026",
+  "student.events.list.aiConference.description":
+    "Komm zur TEG AI Consulting Conference mit Speakern führender Beratungs- und Technologieunternehmen.",
+  "student.events.list.aiConference.linkLabel": "Ticket sichern",
   "student.events.list.brunch.title":
     "Kennenlern Brunch 18.04. | 10:00 - 14:00 Uhr",
   "student.events.list.brunch.description":
