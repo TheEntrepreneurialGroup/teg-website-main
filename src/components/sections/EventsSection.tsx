@@ -35,12 +35,14 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
   return (
     <section className="w-full py-8 lg:py-0">
       <div className="w-full flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-0">
-        <img
-          src={activeEvent.imageSrc}
-          alt={intl.formatMessage({ id: activeEvent.imageAltId })}
-          className="w-full lg:w-1/2 aspect-[4/3] object-cover object-center order-1 lg:order-2"
-          loading="lazy"
-        />
+        <div className="relative order-1 aspect-[4/3] w-full flex-none overflow-hidden bg-secondary-light lg:order-2 lg:w-1/2">
+          <img
+            src={activeEvent.imageSrc}
+            alt={intl.formatMessage({ id: activeEvent.imageAltId })}
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            loading="lazy"
+          />
+        </div>
 
         <div className="order-2 lg:order-1 flex-1 min-w-0 px-4 lg:px-8 xl:px-24 2xl:px-44 flex flex-col justify-between lg:aspect-[4/3] lg:py-[3%] xl:py-[6%]">
           <div>

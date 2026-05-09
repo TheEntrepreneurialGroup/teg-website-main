@@ -30,20 +30,12 @@ const ForStudents: React.FC = () => {
 
   const events: EventSlide[] = [
     {
-      titleId: "student.events.list.brunch.title",
-      descriptionId: "student.events.list.brunch.description",
-      link: "https://luma.com/y7fv91t6",
-      imageSrc: "/for-students/events/brunch.avif",
+      titleId: "student.events.list.aiConference.title",
+      descriptionId: "student.events.list.aiConference.description",
+      link: "https://luma.com/71152vc3?utm_source=tg_ws",
+      imageSrc: "/for-students/events/ai-consulting-conference.svg",
       imageAltId: "student.events.imageAlt",
-      linkLabelId: "student.events.list.brunch.linkLabel",
-    },
-    {
-      titleId: "student.events.list.talk.title",
-      descriptionId: "student.events.list.talk.description",
-      link: "https://luma.com/fuk94geg",
-      imageSrc: "/for-students/events/tegtalk-SS26.avif",
-      imageAltId: "student.events.imageAlt",
-      linkLabelId: "student.events.list.talk.linkLabel",
+      linkLabelId: "student.events.list.aiConference.linkLabel",
     },
     {
       titleId: "student.events.list.workshop.title",
