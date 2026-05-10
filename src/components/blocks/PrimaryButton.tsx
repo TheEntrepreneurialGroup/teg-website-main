@@ -18,6 +18,10 @@ function isExternal(url: string) {
   );
 }
 
+function isHashLink(url: string) {
+  return url.startsWith("#");
+}
+
 export function PrimaryButton({
   label,
   href,
@@ -56,6 +60,21 @@ export function PrimaryButton({
           <a href={href} target="_blank" rel="noreferrer">
             {label}
           </a>
+        </Button>
+      </div>
+    );
+  }
+
+  if (href && isHashLink(href)) {
+    return (
+      <div className={"flex w-full md:w-auto " + alignClass}>
+        <Button
+          asChild
+          size={size}
+          className={buttonClasses}
+          onClick={handleClick}
+        >
+          <a href={href}>{label}</a>
         </Button>
       </div>
     );
