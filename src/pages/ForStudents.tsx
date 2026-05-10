@@ -36,14 +36,16 @@ const ForStudents: React.FC = () => {
       imageSrc: "/for-students/events/ai-consulting-conference.svg",
       imageAltId: "student.events.imageAlt",
       linkLabelId: "student.events.list.aiConference.linkLabel",
+      imageFit: "contain",
     },
     {
       titleId: "student.events.list.workshop.title",
       descriptionId: "student.events.list.workshop.description",
-      link: "https://tally.so/r/yPDXd4",
+      link: "#application-closed",
       imageSrc: "/for-students/events/workshop.avif",
       imageAltId: "student.events.imageAlt",
       linkLabelId: "student.events.list.workshop.linkLabel",
+      imageObjectPosition: "52% 62%",
     },
     {
       titleId: "student.events.list.whatsapp.title",
@@ -82,6 +84,7 @@ const ForStudents: React.FC = () => {
         description={intl.formatMessage({ id: "student.commitment.body" })}
         body={intl.formatMessage({ id: "student.commitment.down" })}
         imagePosition="left"
+        imageObjectPosition="65% center"
         variant="lg"
       />
 
@@ -111,6 +114,7 @@ const ForStudents: React.FC = () => {
       <MemberProcessSection />
 
       <CallToAction
+        id="application-closed"
         title={intl.formatMessage({ id: "student.callToAction.title" })}
         description={intl.formatMessage({
           id: "student.callToAction.description",
