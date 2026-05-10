@@ -9,6 +9,7 @@ interface CallToActionProps {
   variant?: "light" | "dark";
   className?: string;
   isSection?: boolean;
+  id?: string;
 }
 
 const CallToAction: React.FC<CallToActionProps> = ({
@@ -19,6 +20,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   variant = "dark",
   className = "",
   isSection = true,
+  id,
 }) => {
   const isLight = variant === "light";
 
@@ -50,6 +52,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   if (isSection) {
     return (
       <section
+        id={id}
         className={`py-16 ${
           isLight ? "bg-secondary-light" : "bg-primary"
         } ${className}`}

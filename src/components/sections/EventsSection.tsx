@@ -9,6 +9,8 @@ export type EventSlide = {
   imageSrc: string;
   imageAltId: string;
   linkLabelId?: string;
+  imageFit?: "cover" | "contain";
+  imageObjectPosition?: string;
 };
 
 type EventSectionProps = {
@@ -31,20 +33,27 @@ function EventSection({ events, autoPlayMs = 6000 }: EventSectionProps) {
   const activeEventLinkLabel = activeEvent.linkLabelId
     ? intl.formatMessage({ id: activeEvent.linkLabelId })
     : activeEvent.link;
+  const imageFitClass =
+    activeEvent.imageFit === "contain" ? "object-contain" : "object-cover";
 
   return (
-    <section className="w-full py-8 lg:py-0">
-      <div className="w-full flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-0">
-        <div className="relative order-1 aspect-[4/3] w-full flex-none overflow-hidden bg-secondary-light lg:order-2 lg:w-1/2">
+    <section className="w-full overflow-hidden py-8 lg:py-0">
+      <div className="flex w-full min-w-0 flex-col gap-10 md:h-[560px] md:flex-row md:items-stretch md:gap-0 lg:h-[600px] xl:h-[640px]">
+        <div className="relative order-1 aspect-[4/3] w-full flex-none overflow-hidden bg-[#061d38] md:order-2 md:w-1/2 md:aspect-auto md:self-stretch">
           <img
             src={activeEvent.imageSrc}
             alt={intl.formatMessage({ id: activeEvent.imageAltId })}
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className={`absolute inset-0 h-full w-full ${imageFitClass} object-center`}
+            style={
+              activeEvent.imageObjectPosition
+                ? { objectPosition: activeEvent.imageObjectPosition }
+                : undefined
+            }
             loading="lazy"
           />
         </div>
 
-        <div className="order-2 lg:order-1 flex-1 min-w-0 px-4 lg:px-8 xl:px-24 2xl:px-44 flex flex-col justify-between lg:aspect-[4/3] lg:py-[3%] xl:py-[6%]">
+        <div className="order-2 flex-1 min-w-0 bg-background px-4 md:order-1 md:h-full md:px-8 md:py-8 xl:px-24 xl:py-12 2xl:px-44 flex flex-col justify-between">
           <div>
             <h3 className="text-3xl font-semibold text-primary mb-8 lg:mb-16">
               {intl.formatMessage({ id: "student.events.title" })}{" "}
