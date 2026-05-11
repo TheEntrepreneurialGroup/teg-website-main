@@ -30,28 +30,22 @@ const ForStudents: React.FC = () => {
 
   const events: EventSlide[] = [
     {
-      titleId: "student.events.list.brunch.title",
-      descriptionId: "student.events.list.brunch.description",
-      link: "https://luma.com/y7fv91t6",
-      imageSrc: "/for-students/events/brunch.avif",
+      titleId: "student.events.list.aiConference.title",
+      descriptionId: "student.events.list.aiConference.description",
+      link: "https://luma.com/71152vc3?utm_source=tg_ws",
+      imageSrc: "/for-students/events/ai-consulting-conference.svg",
       imageAltId: "student.events.imageAlt",
-      linkLabelId: "student.events.list.brunch.linkLabel",
-    },
-    {
-      titleId: "student.events.list.talk.title",
-      descriptionId: "student.events.list.talk.description",
-      link: "https://luma.com/fuk94geg",
-      imageSrc: "/for-students/events/tegtalk-SS26.avif",
-      imageAltId: "student.events.imageAlt",
-      linkLabelId: "student.events.list.talk.linkLabel",
+      linkLabelId: "student.events.list.aiConference.linkLabel",
+      imageFit: "contain",
     },
     {
       titleId: "student.events.list.workshop.title",
       descriptionId: "student.events.list.workshop.description",
-      link: "https://tally.so/r/yPDXd4",
+      link: "#application-closed",
       imageSrc: "/for-students/events/workshop.avif",
       imageAltId: "student.events.imageAlt",
       linkLabelId: "student.events.list.workshop.linkLabel",
+      imageObjectPosition: "52% 62%",
     },
     {
       titleId: "student.events.list.whatsapp.title",
@@ -90,6 +84,7 @@ const ForStudents: React.FC = () => {
         description={intl.formatMessage({ id: "student.commitment.body" })}
         body={intl.formatMessage({ id: "student.commitment.down" })}
         imagePosition="left"
+        imageObjectPosition="65% center"
         variant="lg"
       />
 
@@ -119,6 +114,7 @@ const ForStudents: React.FC = () => {
       <MemberProcessSection />
 
       <CallToAction
+        id="application-closed"
         title={intl.formatMessage({ id: "student.callToAction.title" })}
         description={intl.formatMessage({
           id: "student.callToAction.description",

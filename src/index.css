@@ -36,7 +36,7 @@
   }
 
   body {
-    @apply font-['Montserrat'] leading-relaxed text-foreground;
+    @apply bg-background font-['Montserrat'] leading-relaxed text-foreground;
   }
 
   h1,
