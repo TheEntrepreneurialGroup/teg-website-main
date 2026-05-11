@@ -150,8 +150,8 @@ const en = {
     "Become a Leader. Shape the Future of Germany's Economy.",
   "student.hero.subtitle":
     "Join a community of up to 50 high-achieving students preparing for leadership roles through real responsib\u00ADility, practical experience, and mentoring. 39 years of alumni success prove what you can achieve.",
-  "student.hero.buttonText": "Apply Now",
-  "student.hero.buttonLink": "https://tally.so/r/meJ1qx",
+  "student.hero.buttonText": "Applications closed",
+  "student.hero.buttonLink": "#application-closed",
 
   "student.maps.title": "This is where we belong",
   "student.maps.description":
@@ -218,6 +218,10 @@ const en = {
   "student.events.previous": "Previous",
   "student.events.next": "Next",
   "student.events.slide": "Slide",
+  "student.events.list.aiConference.title": "AI Consulting Conference 2026",
+  "student.events.list.aiConference.description":
+    "Join TEG for an evening on AI, consulting, and leadership with speakers from leading consulting and technology companies.",
+  "student.events.list.aiConference.linkLabel": "Get your ticket",
   "student.events.list.brunch.title":
     "Meet-and-Greet Brunch 18.04. | 10:00 - 14:00",
   "student.events.list.brunch.description":
@@ -229,8 +233,8 @@ const en = {
   "student.events.list.talk.linkLabel": "Open event page",
   "student.events.list.workshop.title": "Top-Management Workshops for Members",
   "student.events.list.workshop.description":
-    "To help you land in top management later on, look forward to exclusive workshops with Uli Beck, TEG alumnus and former Vice President Finance at Airbus Group for 8 years, or the CEO of Horbach GmbH. Apply to TEG now.",
-  "student.events.list.workshop.linkLabel": "Apply to TEG now",
+    "Exclusive workshops with experienced leaders and TEG alumni. Build the skills that prepare you for management roles.",
+  "student.events.list.workshop.linkLabel": "Applications closed",
   "student.events.list.whatsapp.title":
     "WhatsApp group for events and application questions",
   "student.events.list.whatsapp.description":
@@ -306,12 +310,14 @@ const en = {
   "student.applySection.requirements.extraLine":
     "Shape the economy. Shape your future. Shape your mind.",
 
-  "student.callToAction.title":
-    "Are you ready to start your leadership career?",
+  "student.callToAction.title": "Applications are closed",
   "student.callToAction.description":
-    "Take responsibility. Become a member of TEG and gain the skills, community, and experience you need to become tomorrow's corporate leader.",
-  "student.callToAction.buttonText": "Apply Now!",
-  "student.callToAction.buttonLink": "https://tally.so/r/yPDXd4",
+    "We are not accepting new applications right now. The next application phase starts next semester.",
+  "student.callToAction.buttonText": "Applications closed",
+  "student.callToAction.buttonLink": "#application-closed",
+  "student.applicationClosed.title": "Applications closed",
+  "student.applicationClosed.description":
+    "Thank you for your interest in TEG. The current application phase has already closed. The next opportunity to apply starts next semester.",
 
   "student.contact.title": "For more information, contact us",
   "student.contact.greeting":
