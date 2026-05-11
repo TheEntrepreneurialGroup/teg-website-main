@@ -1,5 +1,4 @@
 import { useIntl } from "react-intl";
-import { PrimaryButton } from "../blocks/PrimaryButton";
 import { cn } from "@/lib/utils";
 
 function ProcessStep({
@@ -64,14 +63,6 @@ export default function ApplicationPipelineSection() {
             </ul>
           </ProcessStep>
         </div>
-
-        <PrimaryButton
-          label={t("student.callToAction.buttonText")}
-          href={t("student.callToAction.buttonLink")}
-          buttonText={
-            "application-pipeline: " + t("student.callToAction.buttonText")
-          }
-        />
       </div>
     </section>
   );

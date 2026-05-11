@@ -156,8 +156,8 @@ const de = {
     "Werde Teil der nächsten Generation von Top-Managern, Führungs\u00ADkräften und B2B-Gründern.",
   "student.hero.subtitle":
     "Bei uns entwickelst Du schon während deines Studiums die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
-  "student.hero.buttonText": "Mitglied werden",
-  "student.hero.buttonLink": "https://tally.so/r/yPDXd4",
+  "student.hero.buttonText": "Bewerbungsphase geschlossen",
+  "student.hero.buttonLink": "#application-closed",
 
   "student.maps.title": "Hier sind wir zu Hause",
   "student.maps.description":
@@ -227,6 +227,10 @@ const de = {
   "student.events.previous": "Zurück",
   "student.events.next": "Weiter",
   "student.events.slide": "Slide",
+  "student.events.list.aiConference.title": "AI Consulting Conference 2026",
+  "student.events.list.aiConference.description":
+    "Komm zur TEG AI Consulting Conference mit Speakern führender Beratungs- und Technologieunternehmen.",
+  "student.events.list.aiConference.linkLabel": "Ticket sichern",
   "student.events.list.brunch.title":
     "Kennenlern Brunch 18.04. | 10:00 - 14:00 Uhr",
   "student.events.list.brunch.description":
@@ -239,8 +243,8 @@ const de = {
   "student.events.list.workshop.title":
     "Top-Management-Workshops für Mitglieder",
   "student.events.list.workshop.description":
-    "Damit du später auch im Top-Management landest, freu dich auf exklusive Workshops mit Uli Beck, TEG-Absolvent und 8 Jahre Vice President Finance der Airbus Group, oder dem CEO der Horbach GmbH. Jetzt bei TEG bewerben.",
-  "student.events.list.workshop.linkLabel": "Jetzt bei TEG bewerben",
+    "Exklusive Workshops mit erfahrenen Führungskräften und TEG-Alumni. Entwickle die Skills, die dich auf Managementrollen vorbereiten.",
+  "student.events.list.workshop.linkLabel": "Bewerbungsphase geschlossen",
   "student.events.list.whatsapp.title":
     "WhatsApp-Gruppe für Events und Bewerbungsfragen",
   "student.events.list.whatsapp.description":
@@ -310,12 +314,14 @@ const de = {
     "Ich laufe regelmäßig Marathons, weil ich Herausforderungen und Höchstleistungen liebe. Genau deshalb bin ich auch bei TEG.",
   "student.testimonials.author3": "Yesieniia Liaskina",
 
-  "student.callToAction.title":
-    "Bist Du bereit, deine Karriere als Führungskraft zu starten?",
+  "student.callToAction.title": "Die Bewerbungsphase ist geschlossen",
   "student.callToAction.description":
-    "Übernehme Verantwortung. Werde ein Mitglied bei TEG und erwerbe die Fähigkeiten, die Community und die Erfahrung, die Du brauchst, um die Unternehmensführung von morgen zu werden.",
-  "student.callToAction.buttonText": "Jetzt bewerben!",
-  "student.callToAction.buttonLink": "https://tally.so/r/yPDXd4",
+    "Aktuell nehmen wir keine neuen Bewerbungen an. Die nächste Bewerbungsphase startet zum kommenden Semester.",
+  "student.callToAction.buttonText": "Bewerbungsphase geschlossen",
+  "student.callToAction.buttonLink": "#application-closed",
+  "student.applicationClosed.title": "Bewerbungsphase geschlossen",
+  "student.applicationClosed.description":
+    "Vielen Dank für dein Interesse an TEG. Die aktuelle Bewerbungsphase ist bereits abgeschlossen. Die nächste Möglichkeit zur Bewerbung startet zum kommenden Semester.",
 
   "student.contact.title": "Für weitere Informationen kontaktiere uns",
   "student.contact.greeting":
