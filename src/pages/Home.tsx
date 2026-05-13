@@ -41,7 +41,6 @@ export const Home: React.FC = () => {
 
       <div className="flex flex-col gap-20 md:gap-0 pb-20 md:pb-0">
         <FeatureCard
-          className="pl-1"
           title={intl.formatMessage({ id: "home.card1.title" })}
           description={intl.formatMessage({ id: "home.card1.description" })}
           imagePosition="left"
