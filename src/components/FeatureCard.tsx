@@ -19,22 +19,22 @@ interface FeatureCardProps {
 
 const variantClasses = {
   md: {
-    outer: "md:flex-row md:gap-0",
-    image: "md:w-1/2",
+    outer: "md:grid md:grid-cols-2 md:gap-0",
+    image: "md:w-full",
     imageOrderRight: "order-1 md:order-2",
     imageOrderLeft: "order-1",
-    textRight: "md:order-1 md:px-8 lg:px-24 xl:px-44",
-    textLeft: "md:order-2 md:pl-12 md:px-8 lg:px-24 xl:px-44",
-    textBase: "md:px-0",
+    textRight: "md:order-1",
+    textLeft: "md:order-2",
+    textBase: "",
   },
   lg: {
-    outer: "md:flex-row md:gap-0",
-    image: "md:w-1/2",
+    outer: "md:grid md:grid-cols-2 md:gap-0",
+    image: "md:w-full",
     imageOrderRight: "order-1 md:order-2",
     imageOrderLeft: "order-1",
-    textRight: "md:order-1 md:px-8 xl:px-24 2xl:px-44",
-    textLeft: "md:order-2 md:pl-12 md:px-8 xl:px-24 2xl:px-44",
-    textBase: "md:px-0",
+    textRight: "md:order-1",
+    textLeft: "md:order-2",
+    textBase: "",
   },
 };
 
@@ -85,7 +85,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       </div>
       <div
         className={cn(
-          "order-2 flex-1 min-w-0 px-4 py-8 md:py-0",
+          "order-2 flex min-w-0 flex-col justify-center px-6 py-10 sm:px-8 md:w-full md:px-10 md:py-12 lg:px-16 lg:py-16 xl:px-24",
           v.textBase,
           imagePosition === "right" ? v.textRight : v.textLeft,
         )}
