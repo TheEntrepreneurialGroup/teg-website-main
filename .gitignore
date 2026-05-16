@@ -51,6 +51,7 @@ chrome-user-data
 #own add
 /dist
 .next/
+Ressources/
 
 packages/react-devtools-core/dist
 packages/react-devtools-extensions/chrome/build
