@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node ./scripts/generate-sitemap.mjs",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -62,6 +63,7 @@
     "react-day-picker": "^9.11.3",
     "react-dom": "^18.3.1",
     "react-ga4": "^2.1.0",
+    "react-helmet-async": "^3.0.0",
     "react-hook-form": "^7.68.0",
     "react-intl": "^7.1.11",
     "react-resizable-panels": "^3.0.6",
