@@ -414,6 +414,25 @@ const de = {
   "company.runTeg.pillar2.title": "People & Culture",
   "company.runTeg.pillar3.title": "Marketing",
   "company.runTeg.pillar4.title": "Finance, Administration & Legal",
+
+  "seo.home.title":
+    "TEG | Führungskräfteentwicklung für Studierende und Unternehmen",
+  "seo.home.description":
+    "Seit 1986 entwickelt TEG ambitionierte Studierende zu zukünftigen Führungskräften und verbindet sie mit führenden Unternehmen in Deutschland.",
+  "seo.students.title":
+    "TEG für Studierende | Verantwortung, Netzwerk und Führungskompetenz",
+  "seo.students.description":
+    "Werde Teil von TEG und entwickle Führungskompetenz durch echte Verantwortung, Mentoring, Events und Zugang zu einem starken Alumni-Netzwerk.",
+  "seo.companies.title":
+    "TEG für Unternehmen | Zugang zu zukünftigen Führungskräften",
+  "seo.companies.description":
+    "Werden Sie TEG-Partner und gewinnen Sie Zugang zu einem seit 1986 gewachsenen Talent-Pool aus ambitionierten zukünftigen Führungskräften.",
+  "seo.imprint.title": "Impressum | TEG",
+  "seo.imprint.description":
+    "Impressum und rechtliche Angaben von The Entrepreneurial Group e. V.",
+  "seo.privacy.title": "Datenschutzerklärung | TEG",
+  "seo.privacy.description":
+    "Informationen zur Verarbeitung personenbezogener Daten auf der Website von The Entrepreneurial Group e. V.",
 };
 
 export default de;

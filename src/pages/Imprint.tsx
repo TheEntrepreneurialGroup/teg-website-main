@@ -10,7 +10,7 @@ const Imprint: React.FC = () => {
       {/* Or use bg-secondary-light */}
       <section className="py-20">
         <div className="container-custom">
-          <SectionTitle text="Imprint / Legal Notice" />
+          <SectionTitle text="Imprint / Legal Notice" as="h1" />
 
           <div className="max-w-3xl mx-auto mt-12 text-muted-foreground">
             {/* Contact Information Block */}
