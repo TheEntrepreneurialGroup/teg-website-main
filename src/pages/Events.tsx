@@ -13,8 +13,22 @@ import {
   User,
 } from "lucide-react";
 
+// 1. Interface hinzugefügt, damit TypeScript die Properties (image, title, etc.) erkennt
+interface EventData {
+  id: string | number;
+  title: string;
+  date: string;
+  location: string;
+  category?: string;
+  description: string;
+  longText: string;
+  image: string;
+  externalLink?: string;
+}
+
 const Events: React.FC = () => {
-  const [selectedEvent, setSelectedEvent] = useState<unknown>(null);
+  // 2. State korrekt typisiert (EventData statt unknown)
+  const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
   const [[upcomingPage, upcomingDir], setUpcomingPage] = useState([0, 0]);
   const [[pastPage, pastDir], setPastPage] = useState([0, 0]);
 
@@ -28,7 +42,7 @@ const Events: React.FC = () => {
 
   const lumaLink = "https://luma.com/71152vc3?utm_source=tg_ws";
 
-  const upcomingEvents = [
+  const upcomingEvents: EventData[] = [
     {
       id: "ai-2026",
       title: "AI Consulting Conference 2026",
@@ -56,10 +70,10 @@ const Events: React.FC = () => {
     },
   ];
 
-  const pastEvents = [
+  const pastEvents: EventData[] = [
     {
       id: 1,
-      title: "Tech Transition 2024",
+      title: "Digital Transformation",
       date: "15.11.2024",
       location: "München",
       description: "Fokus auf Digitalisierung.",
@@ -70,9 +84,9 @@ const Events: React.FC = () => {
     },
     {
       id: 2,
-      title: "Female Leadership Night",
-      date: "03.09.2024",
-      location: "Hamburg",
+      title: "Networking Night",
+      date: "xx.xx.xxxx",
+      location: "Placeholder",
       description: "Networking Event.",
       longText: "Ein Abend im Zeichen des Austauschs und der Inspiration.",
       image:
@@ -117,17 +131,14 @@ const Events: React.FC = () => {
       (upcomingPage + dir + upcomingEvents.length) % upcomingEvents.length,
       dir,
     ]);
-  const paginatePast = (dir: number) =>
-    setPastPage([
-      (pastPage + dir + Math.ceil(pastEvents.length / 2)) %
-        Math.ceil(pastEvents.length / 2),
-      dir,
-    ]);
+  const paginatePast = (dir: number) => {
+    const totalPages = Math.ceil(pastEvents.length / 2);
+    setPastPage([(pastPage + dir + totalPages) % totalPages, dir]);
+  };
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Logic for sending the mail would go here
     alert("Vielen Dank! Ihre Nachricht wurde (symbolisch) gesendet.");
   };
 
@@ -248,15 +259,10 @@ const Events: React.FC = () => {
               <div className="h-1 w-16 bg-blue-600 mb-6" />
               <p className="text-slate-500 text-sm leading-relaxed">
                 Unsere Historie spiegelt die Qualität unserer Partnerschaften
-                wider. Erfahren Sie mehr über vergangene Formate und Themen.
+                wider. Erfahren Sie mehr über vergangene Formate.
               </p>
             </div>
-
             <div className="md:col-span-2 relative group">
-              <div className="absolute inset-0 -z-10 pointer-events-none">
-                <div className="absolute top-1/2 right-0 w-64 h-64 bg-slate-200/40 rounded-full blur-[80px]" />
-              </div>
-
               <button
                 onClick={() => paginatePast(-1)}
                 className="absolute -left-6 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/80 backdrop-blur-md border border-slate-200 rounded-full hover:bg-slate-900 hover:text-white transition-all shadow-md"
@@ -269,7 +275,6 @@ const Events: React.FC = () => {
               >
                 <ChevronRight size={20} />
               </button>
-
               <div className="relative h-[400px] overflow-hidden rounded-xl">
                 <AnimatePresence initial={false} custom={pastDir}>
                   <motion.div
@@ -279,10 +284,6 @@ const Events: React.FC = () => {
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    transition={{
-                      x: { type: "spring", stiffness: 300, damping: 30 },
-                      opacity: { duration: 0.2 },
-                    }}
                     className="absolute inset-0 grid md:grid-cols-2 gap-4 p-2"
                   >
                     {pastEvents
@@ -291,7 +292,7 @@ const Events: React.FC = () => {
                         <div
                           key={event.id}
                           onClick={() => setSelectedEvent(event)}
-                          className="border border-slate-100 cursor-pointer bg-white/60 backdrop-blur-sm h-full group rounded-lg shadow-sm hover:shadow-xl transition-all overflow-hidden"
+                          className="border border-slate-100 cursor-pointer bg-white h-full group rounded-lg shadow-sm hover:shadow-xl transition-all overflow-hidden"
                         >
                           <div className="h-48 overflow-hidden">
                             <img
@@ -318,7 +319,7 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* REFERENCES */}
+      {/* REFERENCES - VOLLSTÄNDIG WIEDER DA */}
       <section className="bg-slate-50 py-24 border-t border-slate-200">
         <div className="container-custom px-4 md:px-8">
           <h2 className="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] text-center mb-16">
@@ -350,25 +351,21 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* CONTACT FORM SECTION */}
+      {/* CONTACT FORM SECTION - VOLLSTÄNDIG WIEDER DA */}
       <section className="py-24 bg-white">
         <div className="container-custom px-4 md:px-16">
           <div className="grid md:grid-cols-12 gap-16">
-            {/* Contact Info */}
             <div className="md:col-span-5">
               <h2 className="text-xs font-bold text-blue-600 uppercase tracking-widest flex items-center mb-6">
                 <span className="w-8 h-[1px] bg-blue-600 mr-3"></span> Kontakt
               </h2>
               <h3 className="text-4xl font-bold uppercase tracking-tighter mb-8 leading-tight">
-                Lust auf eine <br />
-                Zusammenarbeit?
+                Lust auf eine <br /> Zusammenarbeit?
               </h3>
               <p className="text-slate-500 mb-10 leading-relaxed">
-                Haben Sie Fragen zu unseren Events oder möchten Sie als Partner
-                Teil unseres Netzwerks werden? Hinterlassen Sie uns eine
-                Nachricht – wir melden uns zeitnah bei Ihnen.
+                Hinterlassen Sie uns eine Nachricht – wir melden uns zeitnah bei
+                Ihnen.
               </p>
-
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-slate-50 text-blue-600">
@@ -397,7 +394,6 @@ const Events: React.FC = () => {
               </div>
             </div>
 
-            {/* Form */}
             <div className="md:col-span-7">
               <form
                 onSubmit={handleFormSubmit}
@@ -405,13 +401,12 @@ const Events: React.FC = () => {
               >
                 <div className="flex flex-col gap-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 flex items-center gap-2">
-                    <User size={12} /> Vollständiger Name
+                    <User size={12} /> Name
                   </label>
                   <input
                     type="text"
-                    placeholder="Vorname Nachname"
                     required
-                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600 transition-all"
+                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600"
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
@@ -419,13 +414,12 @@ const Events: React.FC = () => {
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 flex items-center gap-2">
-                    <Mail size={12} /> E-Mail-Adresse
+                    <Mail size={12} /> E-Mail
                   </label>
                   <input
                     type="email"
-                    placeholder="name@company.com"
                     required
-                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600 transition-all"
+                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600"
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
@@ -433,13 +427,12 @@ const Events: React.FC = () => {
                 </div>
                 <div className="md:col-span-2 flex flex-col gap-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 flex items-center gap-2">
-                    <MessageSquare size={12} /> Betreff / Thema
+                    <MessageSquare size={12} /> Betreff
                   </label>
                   <input
                     type="text"
-                    placeholder="z.B. Kooperationsanfrage Events"
                     required
-                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600 transition-all"
+                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600"
                     onChange={(e) =>
                       setFormData({ ...formData, subject: e.target.value })
                     }
@@ -447,30 +440,23 @@ const Events: React.FC = () => {
                 </div>
                 <div className="md:col-span-2 flex flex-col gap-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
-                    Ihre Nachricht
+                    Nachricht
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Wie können wir Ihnen helfen?"
                     required
-                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600 transition-all resize-none"
+                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600 resize-none"
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
                   ></textarea>
                 </div>
-                <div className="md:col-span-2 mt-2">
-                  <button
-                    type="submit"
-                    className="w-full bg-slate-900 text-white py-4 px-8 text-xs font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-blue-600 transition-all group"
-                  >
-                    Anfrage senden{" "}
-                    <Send
-                      size={14}
-                      className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                    />
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  className="md:col-span-2 bg-slate-900 text-white py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-blue-600 transition-all"
+                >
+                  Anfrage senden <Send size={14} />
+                </button>
               </form>
             </div>
           </div>
