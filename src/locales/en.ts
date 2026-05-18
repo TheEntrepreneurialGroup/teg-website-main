@@ -1,5 +1,4 @@
 const en = {
-  // Home Page Texts
   "home.hero.title":
     "We are developing the future leaders of the German economy.",
   "home.hero.mobileTitle":
@@ -145,7 +144,6 @@ const en = {
   "company.contact.directorTitle": "Director of Strategy and Partnerships",
   "company.contact.directorName": "Jonathan Babelotzky",
 
-  // Student Page Texts
   "student.hero.title":
     "Become a Leader. Shape the Future of Germany's Economy.",
   "student.hero.subtitle":
@@ -330,8 +328,8 @@ const en = {
   "navbar.about": "About Us",
   "navbar.forCompanies": "For Companies",
   "navbar.forStudents": "For Students",
+  "navbar.events": "Events",
 
-  // For Companies Page
   "company.problemHero.title":
     "Digital Markets, Outdated Structures: Germany's Companies Lag Behind",
   "company.problemHero.subtitle":
