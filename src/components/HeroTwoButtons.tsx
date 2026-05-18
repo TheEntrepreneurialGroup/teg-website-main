@@ -19,7 +19,6 @@ interface HeroTwoButtonsProps {
 
 const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
   title,
-  mobileTitle,
   subtitle,
   bgImage,
   buttonText1,
@@ -48,22 +47,43 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
     navigate(to);
   };
   return (
-    <>
-      {/* Mobile: Stacked layout - image above, content below (like ForStudents) */}
-      <section className="md:hidden flex flex-col">
-        <img src={bgImage} alt="Hero" className="w-full h-auto" />
-        <div className="p-4 bg-white">
-          <h1 className="text-primary font-semibold text-3xl mb-2">
-            {mobileTitle}
-          </h1>
-          <p className="text-foreground text-xl mb-6">{subtitle}</p>
-          <div className="flex flex-col items-start gap-3">
+    <section
+      className={cn(
+        "relative flex flex-col md:block md:w-full md:h-[75vh] md:min-h-[600px] md:overflow-hidden",
+        className,
+      )}
+    >
+      <img
+        src={bgImage}
+        alt="Hero"
+        className={cn(
+          "w-full h-auto md:absolute md:inset-0 md:w-full md:h-full md:object-cover md:z-0",
+          imageClassName ?? "object-center",
+        )}
+      />
+      <div
+        className={cn(
+          "hidden md:block absolute inset-0 z-10 bg-gradient-to-b from-transparent via-primary/10 via-65% to-primary to-90%",
+          gradientClassName,
+        )}
+      />
+      <div className="bg-white p-4 md:absolute md:bottom-0 md:left-0 md:z-20 md:w-full md:bg-transparent md:p-16">
+        <div className="relative z-20 h-full w-full flex flex-col justify-start items-start">
+          <div className="flex flex-col justify-start w-full">
+            <h1 className="mb-2 text-3xl font-semibold text-primary md:w-full md:text-left md:text-gray-100">
+              {title}
+            </h1>
+            <p className="w-full text-left text-xl text-foreground md:text-gray-100 md:font-normal">
+              {subtitle}
+            </p>
+          </div>
+          <div className="mt-6 flex flex-col items-start gap-3 md:mt-16 md:flex-row md:gap-8">
             <PrimaryButton
               label={buttonText1}
               onClick={() => handleLink(buttonLink1)}
               size="lg"
               align="left"
-              className="w-[250px]"
+              className="w-[250px] md:w-auto"
             />
             {buttonText2 && buttonLink2 && (
               <PrimaryButton
@@ -71,65 +91,13 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
                 onClick={() => handleLink(buttonLink2)}
                 size="lg"
                 align="left"
-                className="w-[250px]"
+                className="w-[250px] md:w-auto"
               />
             )}
           </div>
         </div>
-      </section>
-
-      {/* Desktop: Overlaid layout */}
-      <section
-        className={cn(
-          "hidden md:block relative w-full h-[75vh] min-h-[600px] overflow-hidden",
-          className,
-        )}
-      >
-        <img
-          src={bgImage}
-          alt="Hero"
-          className={cn(
-            "absolute inset-0 w-full h-full object-cover z-0",
-            imageClassName ?? "object-center",
-          )}
-        />
-        {/* <div className="absolute inset-0 bg-primary-dark/65 z-10"></div> */}
-        <div
-          className={cn(
-            "absolute inset-0 z-10 bg-gradient-to-b from-transparent via-primary/10 via-65% to-primary to-90%",
-            gradientClassName,
-          )}
-        />
-        <div className="absolute bottom-0 left-0 p-16 w-full">
-          <div className="relative z-20 h-full w-full flex flex-col justify-start items-start">
-            <div className="flex flex-col justify-start w-full">
-              <h1 className="text-left text-gray-100 mb-2 w-full">{title}</h1>
-              <h3 className="text-left text-gray-100 font-normal w-full">
-                {subtitle}
-              </h3>
-            </div>
-            <div className="mt-16 flex flex-row justify-start items-start w-full">
-              <div className="mr-8">
-                <PrimaryButton
-                  label={buttonText1}
-                  onClick={() => handleLink(buttonLink1)}
-                  size="lg"
-                />
-              </div>
-              {buttonText2 && buttonLink2 && (
-                <div>
-                  <PrimaryButton
-                    label={buttonText2}
-                    onClick={() => handleLink(buttonLink2)}
-                    size="lg"
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
