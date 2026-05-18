@@ -463,12 +463,7 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* FOOTER MINI */}
-      <footer className="py-12 border-t border-slate-100 text-center">
-        <p className="text-[10px] text-slate-400 uppercase tracking-widest">
-          © 2024 Event Portal — Excellence since 1986
-        </p>
-      </footer>
+      
 
       {/* MODAL */}
       <AnimatePresence>
