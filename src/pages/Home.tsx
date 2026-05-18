@@ -1,6 +1,7 @@
 import React from "react";
 import { useIntl } from "react-intl";
 import HeroTwoButtons from "@/components/HeroTwoButtons";
+import OrganizationSchema from "@/components/OrganizationSchema";
 import TEGInZahlen from "@/components/sections/TEGInZahlen";
 import FeatureCard from "@/components/FeatureCard";
 import { ConferenceTicketBanner } from "@/components/ConferenceTicketBanner";
@@ -10,6 +11,7 @@ export const Home: React.FC = () => {
 
   return (
     <div>
+      <OrganizationSchema />
       <ConferenceTicketBanner />
 
       <HeroTwoButtons

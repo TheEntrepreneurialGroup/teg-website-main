@@ -7,7 +7,7 @@ const PrivacyPolicy: React.FC = () => {
     <div className="bg-white text-foreground">
       <section className="py-20">
         <div className="container-custom">
-          <SectionTitle text="Datenschutzerklärung" />
+          <SectionTitle text="Datenschutzerklärung" as="h1" />
           {/* Using Tailwind's prose class for automatic styling of text elements */}
           <div className="prose prose-lg max-w-none mt-12 text-muted-foreground">
             {/* ===== 1. Datenschutz auf einen Blick ===== */}

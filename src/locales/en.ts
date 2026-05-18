@@ -409,6 +409,25 @@ const en = {
   "company.runTeg.pillar2.title": "People & Culture",
   "company.runTeg.pillar3.title": "Marketing",
   "company.runTeg.pillar4.title": "Finance, Administration & Legal",
+
+  "seo.home.title":
+    "TEG | Leadership development for students and companies",
+  "seo.home.description":
+    "Since 1986, TEG has developed ambitious students into future leaders and connected them with leading companies in Germany.",
+  "seo.students.title":
+    "TEG for Students | Responsibility, network, and leadership development",
+  "seo.students.description":
+    "Join TEG and build leadership skills through real responsibility, mentoring, events, and access to a strong alumni network.",
+  "seo.companies.title":
+    "TEG for Companies | Access future leadership talent",
+  "seo.companies.description":
+    "Become a TEG partner and gain access to a talent pool of ambitious future leaders built over decades.",
+  "seo.imprint.title": "Imprint | TEG",
+  "seo.imprint.description":
+    "Imprint and legal information for The Entrepreneurial Group e. V.",
+  "seo.privacy.title": "Privacy Policy | TEG",
+  "seo.privacy.description":
+    "Information about how The Entrepreneurial Group e. V. processes personal data on this website.",
 };
 
 export default en;
