@@ -11,9 +11,9 @@ import {
   MessageSquare,
   Send,
   User,
+  Linkedin,
 } from "lucide-react";
 
-// 1. Interface hinzugefügt, damit TypeScript die Properties (image, title, etc.) erkennt
 interface EventData {
   id: string | number;
   title: string;
@@ -27,18 +27,9 @@ interface EventData {
 }
 
 const Events: React.FC = () => {
-  // 2. State korrekt typisiert (EventData statt unknown)
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
   const [[upcomingPage, upcomingDir], setUpcomingPage] = useState([0, 0]);
   const [[pastPage, pastDir], setPastPage] = useState([0, 0]);
-
-  // Form State
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
 
   const lumaLink = "https://luma.com/71152vc3?utm_source=tg_ws";
 
@@ -50,10 +41,8 @@ const Events: React.FC = () => {
       location: "Netlight, München",
       category: "Upcoming Highlight",
       description: "KI verändert gerade, wie Consulting funktioniert.",
-      longText:
-        "Detaillierte Informationen über die Zukunft der künstlichen Intelligenz in der Beratungsbranche.",
-      image:
-        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1600",
+      longText: "Detaillierte Informationen über die Zukunft der künstlichen Intelligenz in der Beratungsbranche.",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1600",
       externalLink: lumaLink,
     },
     {
@@ -63,10 +52,8 @@ const Events: React.FC = () => {
       location: "Hub Berlin",
       category: "Upcoming Workshop",
       description: "Methoden und Frameworks für moderne Strategieberatung.",
-      longText:
-        "Ein intensiver Praxistag mit Experten aus den führenden Strategieberatungen.",
-      image:
-        "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1600",
+      longText: "Ein intensiver Praxistag mit Experten aus den führenden Strategieberatungen.",
+      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1600",
     },
   ];
 
@@ -77,10 +64,8 @@ const Events: React.FC = () => {
       date: "15.11.2024",
       location: "München",
       description: "Fokus auf Digitalisierung.",
-      longText:
-        "Rückblick auf die Herausforderungen der digitalen Transformation.",
-      image:
-        "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=1600",
+      longText: "Rückblick auf die Herausforderungen der digitalen Transformation.",
+      image: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=1600",
     },
     {
       id: 2,
@@ -89,8 +74,7 @@ const Events: React.FC = () => {
       location: "Placeholder",
       description: "Networking Event.",
       longText: "Ein Abend im Zeichen des Austauschs und der Inspiration.",
-      image:
-        "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1600",
+      image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1600",
     },
     {
       id: 3,
@@ -99,8 +83,7 @@ const Events: React.FC = () => {
       location: "Frankfurt",
       description: "Case Study Competition.",
       longText: "Die besten Teams traten gegeneinander an.",
-      image:
-        "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600",
+      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600",
     },
     {
       id: 4,
@@ -109,8 +92,7 @@ const Events: React.FC = () => {
       location: "Köln",
       description: "Netzwerktreffen.",
       longText: "Generationenübergreifender Austausch ehemaliger Mitglieder.",
-      image:
-        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600",
+      image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600",
     },
   ];
 
@@ -136,15 +118,8 @@ const Events: React.FC = () => {
     setPastPage([(pastPage + dir + totalPages) % totalPages, dir]);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Vielen Dank! Ihre Nachricht wurde (symbolisch) gesendet.");
-  };
-
   return (
     <div className="bg-white min-h-screen text-slate-900 overflow-x-hidden">
-      {/* HERO */}
       <div className="relative h-[45vh] w-full overflow-hidden bg-slate-900">
         <img
           src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600"
@@ -168,11 +143,7 @@ const Events: React.FC = () => {
         </div>
       </div>
 
-      {/* UPCOMING SECTION */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-[120px]" />
-        </div>
         <div className="container-custom relative px-4 md:px-16">
           <div className="flex justify-between items-end mb-10">
             <h2 className="text-xs font-bold text-blue-600 uppercase tracking-widest flex items-center">
@@ -202,13 +173,9 @@ const Events: React.FC = () => {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  transition={{
-                    x: { type: "spring", stiffness: 300, damping: 30 },
-                    opacity: { duration: 0.2 },
-                  }}
                   className="absolute inset-0 grid md:grid-cols-12 border border-slate-200 shadow-2xl bg-white/90 backdrop-blur-sm overflow-hidden rounded-xl"
                 >
-                  <div className="md:col-span-7 overflow-hidden h-full">
+                  <div className="md:col-span-7 h-full">
                     <img
                       src={upcomingEvents[upcomingPage].image}
                       className="w-full h-full object-cover"
@@ -248,7 +215,6 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* PAST SECTION */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="container-custom px-4 md:px-16 relative z-10">
           <div className="grid md:grid-cols-3 gap-16 items-center">
@@ -259,10 +225,10 @@ const Events: React.FC = () => {
               <div className="h-1 w-16 bg-blue-600 mb-6" />
               <p className="text-slate-500 text-sm leading-relaxed">
                 Unsere Historie spiegelt die Qualität unserer Partnerschaften
-                wider. Erfahren Sie mehr über vergangene Formate.
+                wider.
               </p>
             </div>
-            <div className="md:col-span-2 relative group">
+            <div className="md:col-span-2 relative group h-[400px]">
               <button
                 onClick={() => paginatePast(-1)}
                 className="absolute -left-6 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/80 backdrop-blur-md border border-slate-200 rounded-full hover:bg-slate-900 hover:text-white transition-all shadow-md"
@@ -275,7 +241,7 @@ const Events: React.FC = () => {
               >
                 <ChevronRight size={20} />
               </button>
-              <div className="relative h-[400px] overflow-hidden rounded-xl">
+              <div className="relative h-full overflow-hidden rounded-xl">
                 <AnimatePresence initial={false} custom={pastDir}>
                   <motion.div
                     key={pastPage}
@@ -319,7 +285,6 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* REFERENCES - VOLLSTÄNDIG WIEDER DA */}
       <section className="bg-slate-50 py-24 border-t border-slate-200">
         <div className="container-custom px-4 md:px-8">
           <h2 className="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] text-center mb-16">
@@ -337,13 +302,10 @@ const Events: React.FC = () => {
                 />
                 <p className="text-slate-600 italic text-sm mb-6">
                   "Die Zusammenarbeit war hochprofessionell. Die Qualität der
-                  Studierenden und die Organisation der Events setzen Maßstäbe."
+                  Studierenden setzt Maßstäbe."
                 </p>
                 <p className="font-bold uppercase text-[10px] tracking-widest">
                   Referenz Speaker {i}
-                </p>
-                <p className="text-[10px] text-slate-400 uppercase">
-                  Partner / Beratungshaus
                 </p>
               </div>
             ))}
@@ -351,121 +313,59 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* CONTACT FORM SECTION - VOLLSTÄNDIG WIEDER DA */}
       <section className="py-24 bg-white">
         <div className="container-custom px-4 md:px-16">
-          <div className="grid md:grid-cols-12 gap-16">
-            <div className="md:col-span-5">
-              <h2 className="text-xs font-bold text-blue-600 uppercase tracking-widest flex items-center mb-6">
-                <span className="w-8 h-[1px] bg-blue-600 mr-3"></span> Kontakt
-              </h2>
-              <h3 className="text-4xl font-bold uppercase tracking-tighter mb-8 leading-tight">
-                Lust auf eine <br /> Zusammenarbeit?
-              </h3>
-              <p className="text-slate-500 mb-10 leading-relaxed">
-                Hinterlassen Sie uns eine Nachricht – wir melden uns zeitnah bei
-                Ihnen.
-              </p>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-slate-50 text-blue-600">
-                    <Mail size={20} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                      Email
-                    </p>
-                    <p className="text-slate-900 font-medium">info@teg-ev.de</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-slate-50 text-blue-600">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                      Location
-                    </p>
-                    <p className="text-slate-900 font-medium">
-                      München, Deutschland
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row overflow-hidden rounded-sm shadow-2xl min-h-[450px]">
+            <div className="md:w-1/2 w-full h-80 md:h-auto relative">
+              <img
+                src="https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0gzQgDQEELoFutNYC1Ox.jpg"
+                alt="Jonathan Babelotzky"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
 
-            <div className="md:col-span-7">
-              <form
-                onSubmit={handleFormSubmit}
-                className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 bg-slate-50 rounded-2xl border border-slate-100"
-              >
-                <div className="flex flex-col gap-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 flex items-center gap-2">
-                    <User size={12} /> Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600"
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 flex items-center gap-2">
-                    <Mail size={12} /> E-Mail
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600"
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                  />
-                </div>
-                <div className="md:col-span-2 flex flex-col gap-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 flex items-center gap-2">
-                    <MessageSquare size={12} /> Betreff
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600"
-                    onChange={(e) =>
-                      setFormData({ ...formData, subject: e.target.value })
-                    }
-                  />
-                </div>
-                <div className="md:col-span-2 flex flex-col gap-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
-                    Nachricht
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    className="bg-white border border-slate-200 p-4 text-sm outline-none focus:border-blue-600 resize-none"
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="md:col-span-2 bg-slate-900 text-white py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-blue-600 transition-all"
+            <div className="md:w-1/2 w-full bg-[#0a1e3b] p-12 md:p-16 flex flex-col justify-center text-white">
+              <div className="flex gap-6 mb-10">
+                <div className="w-[2px] bg-amber-500" />
+                <p className="italic text-xl text-slate-200 leading-tight">
+                  “Ich freue mich von Ihnen <br /> zu hören!”
+                </p>
+              </div>
+
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold mb-2 tracking-tight">
+                  Jonathan Babelotzky
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed font-medium">
+                  Bereichsleiter
+                  <br />
+                  Organisationsstrategie und
+                  <br />
+                  Partnerschaften
+                </p>
+              </div>
+
+              <div className="flex gap-12">
+                <a
+                  href="https://www.linkedin.com/in/jonathan-babelotzky/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-amber-500 hover:text-white transition-all text-sm font-bold tracking-wider"
                 >
-                  Anfrage senden <Send size={14} />
-                </button>
-              </form>
+                  <Linkedin size={18} /> LinkedIn
+                </a>
+                <a
+                  href="mailto:jonathan.babelotzky@teg-ev.de"
+                  className="flex items-center gap-2 text-amber-500 hover:text-white transition-all text-sm font-bold tracking-wider"
+                >
+                  <Mail size={18} /> Email
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      
-
-      {/* MODAL */}
       <AnimatePresence>
         {selectedEvent && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-md">
