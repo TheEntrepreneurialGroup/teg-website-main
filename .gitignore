@@ -48,6 +48,13 @@ chrome-user-data
 *.swp
 *.swo
 
+# Local research, generated source material, and execution traces
+/respl/
+/outputs/ai-generated/
+/outputs/work-history/
+/outputs/tracks/
+/public/about/alumni/*.jpg
+
 #own add
 /dist
 .next/
