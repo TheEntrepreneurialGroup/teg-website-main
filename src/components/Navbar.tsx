@@ -21,13 +21,23 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary-dark text-xl ${
-        scrolled ? "shadow-md" : "md:py-2"
+      className={`fixed top-0 left-0 right-0 z-50 text-xl transition-[background-color,backdrop-filter,box-shadow,padding] duration-500 ease-out ${
+        scrolled
+          ? "bg-primary-dark shadow-[0_8px_24px_-12px_rgba(0,0,0,0.55)] backdrop-blur-md"
+          : "bg-transparent backdrop-blur-0 md:py-2"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
+      {/* Soft gradient veil when transparent — keeps logo + nav legible over imagery */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-x-0 top-0 h-full bg-gradient-to-b from-black/45 via-black/15 to-transparent transition-opacity duration-500 ${
+          scrolled ? "opacity-0" : "opacity-100"
+        }`}
+      />
+      <div className="relative">
       <div className="container-custom flex justify-between items-center w-full p-2">
         <Link to="/" className="flex items-center p-0">
           <Logo />
@@ -179,6 +189,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
             </nav>
           </div>
         )}
+      </div>
       </div>
     </header>
   );
