@@ -29,7 +29,7 @@ const Layout: React.FC<{
     <div className="flex flex-col min-h-screen">
       <Navbar scrolled={scrolled} switchLanguage={switchLanguage} />
       <main
-        className={`flex-grow overflow-x-hidden ${
+        className={`flex-grow [overflow-x:clip] ${
           isImmersive ? "pt-0" : "pt-16 md:pt-24 lg:pt-28"
         }`}
       >

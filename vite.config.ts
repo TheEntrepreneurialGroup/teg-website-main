@@ -14,4 +14,9 @@ export default defineConfig({
   optimizeDeps: {
     include: ["lucide-react"],
   },
+  server: {
+    watch: {
+      ignored: ["**/.playwright-mcp/**", "**/respl/screenshots/**"],
+    },
+  },
 });
