@@ -601,11 +601,11 @@ const About: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -16, filter: "blur(6px)" }}
                   transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
-                  className="max-w-[16ch] font-bold leading-[0.92] tracking-[-0.02em] text-white text-[clamp(2.75rem,9vw,8rem)]"
+                  className="max-w-[16ch] md:max-w-[18ch] font-bold leading-[0.92] tracking-[-0.02em] text-white text-[clamp(2.75rem,9vw,8rem)]"
                 >
-                  {isDe ? "Echte Unternehmen." : "Real businesses."}
+                  {isDe ? "Verantwortung für die" : "Responsibility for the"}
                   <br />
-                  <span className="text-white/55">{isDe ? "Echte Verantwortung." : "Real responsibility."}</span>
+                  <span className="text-white/55 md:whitespace-nowrap md:text-[0.88em] md:tracking-[-0.03em]">{isDe ? "deutsche Wirtschaft." : "German economy."}</span>
                   <br />
                   <span className="text-[#F6D77B]">{isDe ? "Seit 1986." : "Since 1986."}</span>
                 </motion.h1>
