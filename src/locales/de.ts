@@ -1,5 +1,4 @@
 const de = {
-  // Home Page Texts
   "home.hero.title":
     "Wir formen die nächsten Führungspersönlichkeiten der deutschen Wirtschaft",
   "home.hero.mobileTitle":
@@ -88,7 +87,6 @@ const de = {
   "home.card3.imageAlt":
     "Studierende im professionellen Austausch während einer TEG-Veranstaltung",
 
-  // Company Page Texts
   "company.hero.title": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
   "company.hero.mobileTitle": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
   "company.hero.subtitle":
@@ -149,8 +147,6 @@ const de = {
   "company.contact.directorTitle":
     "Bereichsleiter Organisationsstrategie und Partnerschaften",
   "company.contact.directorName": "Jonathan Babelotzky",
-
-  // --------- Student Page Texts ---------- //
 
   "student.hero.title":
     "Werde Teil der nächsten Generation von Top-Managern, Führungs\u00ADkräften und B2B-Gründern.",
@@ -334,8 +330,8 @@ const de = {
   "navbar.about": "Über uns",
   "navbar.forCompanies": "Für Unternehmen",
   "navbar.forStudents": "Für Studierende",
+  "navbar.events": "Events",
 
-  // For Companies Page
   "company.problemHero.title":
     "Digitale Märkte, veraltete Strukturen: Deutschlands Unternehmen hinken hinterher",
   "company.problemHero.subtitle":
