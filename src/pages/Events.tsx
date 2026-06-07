@@ -549,11 +549,7 @@ const Events: React.FC = () => {
                   Jonathan Babelotzky
                 </h3>
                 <p className="text-slate-400 text-sm leading-relaxed font-medium">
-                  Bereichsleiter
-                  <br />
-                  Organisationsstrategie und
-                  <br />
-                  Partnerschaften
+                  Leitung Strategie &amp; Partnerschaften
                 </p>
               </div>
 

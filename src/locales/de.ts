@@ -144,8 +144,7 @@ const de = {
   "company.contact.greeting": "Ich freue mich von Ihnen zu hören!",
   "company.contact.email": "E-Mail",
   "company.contact.linkedin": "LinkedIn",
-  "company.contact.directorTitle":
-    "Bereichsleiter Organisationsstrategie und Partnerschaften",
+  "company.contact.directorTitle": "Leitung Strategie & Partnerschaften",
   "company.contact.directorName": "Jonathan Babelotzky",
 
   "student.hero.title":
