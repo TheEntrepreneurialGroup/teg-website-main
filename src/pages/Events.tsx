@@ -353,7 +353,7 @@ const Events: React.FC = () => {
                 </button>
               </>
             )}
-            <div className="relative min-h-[900px] md:h-[560px]">
+            <div className="relative min-h-[960px] sm:min-h-[900px] md:min-h-0 md:h-[680px] lg:h-[528px]">
               <AnimatePresence initial={false} custom={upcomingDir}>
                 <motion.div
                   key={upcomingPage}
@@ -375,7 +375,7 @@ const Events: React.FC = () => {
                       alt=""
                     />
                   </div>
-                  <div className="md:col-span-5 p-6 sm:p-8 md:p-12 flex flex-col justify-center">
+                  <div className="md:col-span-5 p-6 sm:p-8 flex flex-col justify-center">
                     <p className="text-blue-600 font-bold text-[10px] uppercase mb-4">
                       {upcomingEvents[upcomingPage].category}
                     </p>
