@@ -1,10 +1,10 @@
 export const routeSeoEntries = [
   {
     path: "/",
-    titleMessageId: "seo.home.title",
-    descriptionMessageId: "seo.home.description",
+    titleMessageId: "seo.about.title",
+    descriptionMessageId: "seo.about.description",
     indexable: true,
-    openGraphImagePath: "/shared/heroes/hero-home.avif",
+    openGraphImagePath: "/shared/heroes/hero-subpage.avif",
     priority: 1,
     changeFrequency: "weekly",
   },

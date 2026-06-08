@@ -8,11 +8,12 @@ const Layout: React.FC<{
   switchLanguage: (lang: "en" | "de") => void;
 }> = ({ switchLanguage }) => {
   const [scrolled, setScrolled] = useState(false);
+  const [mergeActive, setMergeActive] = useState(false);
   const location = useLocation();
   // Pages whose hero is designed to sit BEHIND the transparent navbar.
-  const immersiveHeroRoutes = ["/about"];
+  const immersiveHeroRoutes = ["/"];
   const isImmersive = immersiveHeroRoutes.includes(location.pathname);
-  const isAboutPage = location.pathname === "/about";
+  const isAboutPage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +24,19 @@ const Layout: React.FC<{
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
       }
+
+      // Desktop only: once the compliment video section takes over the lower
+      // viewport, fade the fixed navbar out so the dropping header reads as the
+      // header relocating into the footer.
+      let isMerge = false;
+      if (isAboutPage && window.innerWidth >= 768) {
+        const videoEl = document.getElementById("compliment-video-section");
+        if (videoEl) {
+          const rect = videoEl.getBoundingClientRect();
+          isMerge = rect.top < window.innerHeight * 0.8;
+        }
+      }
+      setMergeActive((prev) => (prev !== isMerge ? isMerge : prev));
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -39,6 +53,7 @@ const Layout: React.FC<{
         switchLanguage={switchLanguage}
         isAboutPage={isAboutPage}
         hideNavItems={hideNavItems}
+        hidden={mergeActive}
       />
       <main
         className={`flex-grow [overflow-x:clip] ${

@@ -2,7 +2,6 @@ import { routeSeoEntries as sharedRouteSeoEntries } from "./routeSeoEntries.mjs"
 
 export type AppRoutePath =
   | "/"
-  | "/about"
   | "/for-students"
   | "/for-companies"
   | "/imprint"

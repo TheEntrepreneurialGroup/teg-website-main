@@ -15,6 +15,7 @@ export default defineConfig({
     include: ["lucide-react"],
   },
   server: {
+    allowedHosts: true,
     watch: {
       ignored: ["**/.playwright-mcp/**", "**/respl/screenshots/**"],
     },
