@@ -76,3 +76,4 @@ packages/react-devtools-timeline/dist
 
 .playwright-mcp/
 *.png
+public/shared/teg-compliment.mp4
