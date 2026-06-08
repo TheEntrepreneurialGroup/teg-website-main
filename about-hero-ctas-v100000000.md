@@ -379,7 +379,7 @@
                   - generic [ref=e492]: von
                   - text: Partnerschaften.
                 - generic [ref=e493]:
-                  - generic [ref=e495]: Ensemble
+                  - generic [ref=e495]: TEG Board - Unsere Vorstände
                   - generic [ref=e496]:
                     - button "01 — Jonathan Babelotzky — Vorstand" [pressed] [ref=e497] [cursor=pointer]:
                       - generic [ref=e498]:

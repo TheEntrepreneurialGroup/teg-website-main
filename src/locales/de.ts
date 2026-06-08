@@ -335,6 +335,7 @@ const de = {
   "navbar.forCompanies": "Für Unternehmen",
   "navbar.forStudents": "Für Studierende",
   "navbar.aboutPage.about": "Über Uns",
+  "navbar.aboutPage.events": "Konferenzen & Events",
   "navbar.aboutPage.executives": "Für Führungskräfte",
   "navbar.aboutPage.students": "Für Studierende",
 
@@ -546,7 +547,7 @@ const de = {
   "about.cta.companiesButton": "Partner werden",
 
   "seo.about.title":
-    "Über TEG | Studentisch geführte Organisation für reale Verantwortung",
+    "Über TEG | Wir formen die neue Generation von Führungskräften für die Deutsche Wirtschaft",
   "seo.about.description":
     "TEG ist seit 1986 eine studentisch geführte Organisation, in der Verantwortung, Umsetzung und wirtschaftliche Realität nicht simuliert, sondern gelebt werden.",
 

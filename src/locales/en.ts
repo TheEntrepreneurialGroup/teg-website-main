@@ -331,6 +331,7 @@ const en = {
   "navbar.forCompanies": "For Companies",
   "navbar.forStudents": "For Students",
   "navbar.aboutPage.about": "About Us",
+  "navbar.aboutPage.events": "Conferences & Events",
   "navbar.aboutPage.executives": "For Executives",
   "navbar.aboutPage.students": "For Students",
 
@@ -541,7 +542,7 @@ const en = {
   "about.cta.companiesButton": "Become a partner",
 
   "seo.about.title":
-    "About TEG | Student-led organization for real responsibility",
+    "About TEG | We shape the next generation of leaders for the German economy",
   "seo.about.description":
     "Since 1986, TEG is a student-led organization where responsibility, execution and economic reality are not simulated but lived.",
 
