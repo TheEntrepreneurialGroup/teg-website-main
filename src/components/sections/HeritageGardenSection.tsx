@@ -65,10 +65,10 @@ const HeritageGardenSection: React.FC<Props> = ({
           </>
         ),
         intro:
-          "Eine gemeinnützige Münchner Initiative der Erwachsenenbildung — institutionell verwurzelt seit 1986, in heutiger Form etabliert im Januar 1988.",
+          "Eine gemeinnützige Münchner Initiative der Erwachsenenbildung - institutionell verwurzelt seit 1986, in heutiger Form etabliert im Januar 1988.",
         pressTag: "Pressebeleg · Donaukurier",
         kuratoriumTag: "Kuratorium 1986",
-        kuratoriumLine: "Elf Häuser tragen die erste TEG‑Struktur.",
+        kuratoriumLine: "Vorständer elf Deutscher Top-Unternehmen gründen TEG.\nDennoch keine lineare Gründungsphase!",
         todayPrefix: "heute",
         founderArrow: "via",
         articleAlt:
@@ -85,7 +85,7 @@ const HeritageGardenSection: React.FC<Props> = ({
           "A non‑profit Munich initiative for adult education — institutionally rooted since 1986 and established in its current form in January 1988.",
         pressTag: "Press proof · Donaukurier",
         kuratoriumTag: "Founding board 1986",
-        kuratoriumLine: "Eleven houses carried the first TEG structure.",
+        kuratoriumLine: "Board members of eleven German top companies found TEG.\nYet no linear founding phase!",
         todayPrefix: "today",
         founderArrow: "via",
         articleAlt:
@@ -431,15 +431,11 @@ const HeritageGardenSection: React.FC<Props> = ({
         <div className="mt-24 md:mt-32">
           <div className="mb-6 flex flex-wrap items-center justify-between gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#F6D77B]/80">
             <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-[#F6D77B]/55" />
               {copy.kuratoriumTag}
               <span className="text-white/45">·</span>
               <span className="text-white/65 normal-case tracking-normal text-[12px] font-normal">
                 {copy.kuratoriumLine}
               </span>
-            </div>
-            <div className="text-[#F6D77B]/70">
-              11 <span className="text-white/55">{isDe ? "Häuser" : "houses"}</span>
             </div>
           </div>
 

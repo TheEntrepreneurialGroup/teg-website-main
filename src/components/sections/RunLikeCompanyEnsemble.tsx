@@ -133,7 +133,7 @@ const EnsembleChip: React.FC<{
             alt=""
             loading="lazy"
             draggable={false}
-            className={`h-full w-full object-cover ease-out ${
+            className={`h-full w-full object-cover object-top ease-out ${
               active
                 ? "scale-[1.04] saturate-100 brightness-[1.02]"
                 : "scale-100 saturate-0 brightness-[0.68] group-hover:saturate-[0.6] group-hover:brightness-[0.92]"
@@ -278,7 +278,7 @@ const RunLikeCompanyEnsemble: React.FC<RunLikeCompanyEnsembleProps> = ({
       ref={sectionRef}
       className="relative isolate bg-[#040F1F] text-white"
       style={{ height: `${pinHeightVh}vh` }}
-      aria-label={isDe ? "Das TEG-Ensemble" : "The TEG ensemble"}
+      aria-label={isDe ? "TEG Board - Unsere Vorstände" : "TEG Board - Unsere Vorstände"}
     >
       <div className="sticky top-0 flex h-screen w-full items-stretch overflow-hidden">
         <div
@@ -320,10 +320,10 @@ const RunLikeCompanyEnsemble: React.FC<RunLikeCompanyEnsembleProps> = ({
           {/* Persistent in-focus index — removed per request */}
 
           {/* Stage + Right column */}
-          <div className="relative grid h-full grid-cols-12 items-stretch gap-4 pb-6 pt-[112px] md:gap-10 md:pb-14 md:pt-[140px] lg:gap-12">
+          <div className="relative grid h-full grid-cols-12 items-start gap-4 pb-6 pt-[112px] md:gap-10 md:pb-14 md:pt-[140px] lg:gap-12">
             {/* STAGE */}
-            <div className="col-span-12 flex min-h-0 md:col-span-7 lg:col-span-7">
-              <div className="relative aspect-[4/5] w-full md:aspect-auto md:h-full">
+            <div className="col-span-12 flex min-h-0 self-stretch md:col-span-7 lg:col-span-7">
+              <div className="relative aspect-[4/5] w-full md:aspect-auto md:h-full max-h-[640px]">
                 <motion.div
                   key={active.slug + "-portrait"}
                   initial={{ opacity: 0, scale: 1.03 }}
@@ -404,14 +404,14 @@ const RunLikeCompanyEnsemble: React.FC<RunLikeCompanyEnsembleProps> = ({
             </div>
 
             {/* RIGHT */}
-            <div className="col-span-12 flex min-h-0 flex-col gap-4 md:col-span-5 md:gap-8 lg:col-span-5">
-              <div className="relative min-h-[120px] flex-1 overflow-hidden md:min-h-0">
+            <div className="col-span-12 flex min-h-0 self-stretch flex-col gap-4 md:col-span-5 md:gap-8 lg:col-span-5">
+              <div className="relative min-h-[120px] flex-1 md:min-h-0">
                 <motion.div
                   key={active.slug + "-quote"}
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: EASE_LUXE }}
-                  className="relative h-full pl-6"
+                  className="relative pl-6"
                 >
                   <span
                     aria-hidden="true"
@@ -434,7 +434,7 @@ const RunLikeCompanyEnsemble: React.FC<RunLikeCompanyEnsembleProps> = ({
 
               <div className="relative shrink-0">
                 <div className="mb-3 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.3em] text-white/45">
-                  <span>{isDe ? "Ensemble" : "Ensemble"}</span>
+                  <span>{isDe ? "TEG Board - Unsere Vorstände" : "TEG Board - Unsere Vorstände"}</span>
                   {navHint ? (
                     <span className="text-white/35 normal-case tracking-normal text-[11px] font-normal">
                       {navHint}

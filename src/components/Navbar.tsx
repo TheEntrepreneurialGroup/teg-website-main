@@ -54,7 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
           {isAboutPage ? (
             <>
               <NavLink
-                to="/"
+                to="/about#story"
                 className={({ isActive }) =>
                   `font-normal relative ${
                     scrolled || isActive ? "text-white" : "text-white"
@@ -68,6 +68,21 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
                 end
               >
                 {intl.formatMessage({ id: "navbar.aboutPage.about" })}
+              </NavLink>
+              <NavLink
+                to="/events"
+                className={({ isActive }) =>
+                  `font-normal relative ${
+                    scrolled || isActive ? "text-white" : "text-white"
+                  } hover:text-primary-light transition-colors duration-300 ${
+                    isActive
+                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
+                      : ""
+                  }`
+                }
+                onClick={() => trackButtonClick("Events", "Navbar")}
+              >
+                {intl.formatMessage({ id: "navbar.aboutPage.events" })}
               </NavLink>
               <NavLink
                 to="/for-companies"
@@ -193,7 +208,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
               {isAboutPage ? (
                 <>
                   <NavLink
-                    to="/"
+                    to="/about#story"
                     className={({ isActive }) =>
                       `text-xl font-normal ${
                         isActive ? "text-primary" : "text-foreground"
@@ -206,6 +221,20 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
                     end
                   >
                     {intl.formatMessage({ id: "navbar.aboutPage.about" })}
+                  </NavLink>
+                  <NavLink
+                    to="/events"
+                    className={({ isActive }) =>
+                      `text-xl font-normal ${
+                        isActive ? "text-primary" : "text-foreground"
+                      } hover:text-primary transition-colors duration-300`
+                    }
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      trackButtonClick("Events", "Navbar");
+                    }}
+                  >
+                    {intl.formatMessage({ id: "navbar.aboutPage.events" })}
                   </NavLink>
                   <NavLink
                     to="/for-companies"
