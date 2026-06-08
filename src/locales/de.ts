@@ -334,6 +334,9 @@ const de = {
   "navbar.about": "Über uns",
   "navbar.forCompanies": "Für Unternehmen",
   "navbar.forStudents": "Für Studierende",
+  "navbar.aboutPage.about": "Über Uns",
+  "navbar.aboutPage.executives": "Für Führungskräfte",
+  "navbar.aboutPage.students": "Für Studierende",
 
   // For Companies Page
   "company.problemHero.title":

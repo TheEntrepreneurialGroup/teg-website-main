@@ -50,69 +50,6 @@ export type RunLikeCompanyEnsembleProps = {
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 const EASE_LUXE = [0.22, 1, 0.36, 1] as const;
 
-const getBoardLabel = (unit: string) => {
-  if (/\bVorstand\b/i.test(unit)) return "Vorstand";
-  if (/\bBoard\b/i.test(unit)) return "Board";
-  return null;
-};
-
-const PortraitImage: React.FC<{
-  src: string;
-  alt: string;
-  loading?: "eager" | "lazy";
-  draggable?: boolean;
-  style?: React.CSSProperties;
-  className: string;
-  fallback: React.ReactNode;
-}> = ({ src, alt, loading = "lazy", draggable = false, style, className, fallback }) => {
-  const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading");
-
-  useEffect(() => {
-    let cancelled = false;
-    setStatus("loading");
-
-    const preloader = new window.Image();
-    preloader.src = src;
-
-    if (preloader.complete && preloader.naturalWidth > 0) {
-      setStatus("loaded");
-      return () => {
-        cancelled = true;
-      };
-    }
-
-    preloader.onload = () => {
-      if (!cancelled) setStatus("loaded");
-    };
-    preloader.onerror = () => {
-      if (!cancelled) setStatus("error");
-    };
-
-    return () => {
-      cancelled = true;
-      preloader.onload = null;
-      preloader.onerror = null;
-    };
-  }, [src]);
-
-  if (status !== "loaded") {
-    return <>{fallback}</>;
-  }
-
-  return (
-    <img
-      src={src}
-      alt={alt}
-      loading={loading}
-      decoding="async"
-      draggable={draggable}
-      style={style}
-      className={className}
-      onError={() => setStatus("error")}
-    />
-  );
-};
-
 /* SplitName — staggered word reveal */
 function SplitName({ text, keyId }: { text: string; keyId: string }) {
   const parts = text.split(" ");
@@ -170,7 +107,6 @@ const EnsembleChip: React.FC<{
   onHover: (m: TeamMember | null) => void;
 }> = ({ member, index, active, onSelect, onHover }) => {
   const indexLabel = String(index + 1).padStart(2, "0");
-  const boardLabel = getBoardLabel(member.unit);
 
   return (
     <button
@@ -180,7 +116,7 @@ const EnsembleChip: React.FC<{
       onMouseLeave={() => onHover(null)}
       onFocus={() => onHover(member)}
       onBlur={() => onHover(null)}
-      aria-label={`${indexLabel} — ${member.name}${boardLabel ? ` — ${boardLabel}` : ""}`}
+      aria-label={`${indexLabel} — ${member.name}`}
       aria-pressed={active}
       className="group relative block text-left outline-none"
     >
@@ -192,7 +128,7 @@ const EnsembleChip: React.FC<{
         }`}
       >
         {member.photo ? (
-          <PortraitImage
+          <img
             src={member.photo}
             alt=""
             loading="lazy"
@@ -203,21 +139,6 @@ const EnsembleChip: React.FC<{
                 : "scale-100 saturate-0 brightness-[0.68] group-hover:saturate-[0.6] group-hover:brightness-[0.92]"
             }`}
             style={{ transitionProperty: "transform, filter", transitionDuration: "1100ms" }}
-            fallback={
-              <div className="relative flex h-full w-full items-center justify-center bg-gradient-to-br from-white/[0.08] to-white/[0.02]">
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 opacity-[0.10] mix-blend-overlay"
-                  style={{
-                    backgroundImage:
-                      "repeating-linear-gradient(0deg, rgba(255,255,255,0.5) 0 1px, transparent 1px 4px)",
-                  }}
-                />
-                <span className="relative font-mono text-[10px] font-medium tracking-[0.32em] text-white/40">
-                  {indexLabel}
-                </span>
-              </div>
-            }
           />
         ) : (
           <div className="relative flex h-full w-full items-center justify-center bg-gradient-to-br from-white/[0.06] to-transparent">
@@ -234,11 +155,6 @@ const EnsembleChip: React.FC<{
             </span>
           </div>
         )}
-        {boardLabel ? (
-          <span className="pointer-events-none absolute left-1.5 top-1.5 rounded-full border border-[#F6D77B]/40 bg-[#040F1F]/78 px-1.5 py-0.5 text-[7px] font-semibold uppercase tracking-[0.14em] text-[#F6D77B] backdrop-blur-sm">
-            {boardLabel}
-          </span>
-        ) : null}
         {active && (
           <>
             <span className="pointer-events-none absolute -left-px -top-px h-3 w-3 border-l border-t border-[#F6D77B]" />
@@ -416,28 +332,12 @@ const RunLikeCompanyEnsemble: React.FC<RunLikeCompanyEnsembleProps> = ({
                   className="absolute inset-0 overflow-hidden rounded-[1px] ring-1 ring-white/12"
                 >
                   {active.photo ? (
-                    <PortraitImage
+                    <img
                       src={active.photo}
                       alt={active.name}
-                      loading="eager"
                       draggable={false}
                       style={{ objectPosition: "50% 18%" }}
                       className="h-full w-full object-cover"
-                      fallback={
-                        <div className="relative flex h-full w-full items-center justify-center bg-gradient-to-br from-white/[0.08] to-white/[0.02]">
-                          <div
-                            aria-hidden="true"
-                            className="absolute inset-0 opacity-[0.10] mix-blend-overlay"
-                            style={{
-                              backgroundImage:
-                                "repeating-linear-gradient(0deg, rgba(255,255,255,0.5) 0 1px, transparent 1px 4px)",
-                            }}
-                          />
-                          <span className="relative text-xs font-semibold uppercase tracking-[0.4em] text-white/35">
-                            {active.initials}
-                          </span>
-                        </div>
-                      }
                     />
                   ) : (
                     <div className="relative flex h-full w-full items-center justify-center bg-gradient-to-br from-white/[0.06] to-transparent">

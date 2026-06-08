@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { useIntl } from "react-intl";
 import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
 import { PrimaryButton } from "@/components/blocks/PrimaryButton";
@@ -7,6 +7,7 @@ import RunLikeCompanyReveal from "@/components/sections/RunLikeCompanyReveal";
 import YblaJourney from "@/components/sections/YblaJourney";
 import TegGardenStatement from "@/components/sections/TegGardenStatement";
 import GardenCtaPair from "@/components/sections/GardenCtaPair";
+import HeritageGardenSection from "@/components/sections/HeritageGardenSection";
 import { useScrollIntent } from "@/hooks/useScrollIntent";
 
 const About: React.FC = () => {
@@ -68,56 +69,6 @@ const About: React.FC = () => {
       cta_companies: isDe ? "Für Unternehmen" : "For Companies",
     },
 
-    formats: {
-      title: isDe
-        ? "Unser letztes Event — und unser nächstes."
-        : "Our most recent event — and our next one.",
-      intro: isDe
-        ? "Was wir gerade in München gebaut haben, und worauf wir als Nächstes hinarbeiten."
-        : "What we just built in Munich, and what we are working towards next.",
-      items: isDe
-        ? [
-            {
-              kind: "Letztes Event · TEG Talk",
-              title: "TEG Talk Corporate Entrepreneurship",
-              when: "24. April 2026",
-              where: "O2 Tower München — bei Wayra Germany",
-              who: "Georg Doll, Dr. Tobias Süß, Paul Sachse, Dr. Irene Lejeune, Dr. Hartwig Rüll",
-              img: "/home/tegtalk-WS26.avif",
-              alt: "TEG Talk Format mit Publikum",
-            },
-            {
-              kind: "Nächstes Event · Konferenz",
-              title: "AI Consulting Conference 2026",
-              when: "10. Juni 2026 — 150 Plätze, nur auf Bewerbung",
-              where: "Netlight Offices, Prannerstraße 4, München",
-              who: "BCG, McKinsey, Roland Berger, Accenture, appliedAI, IBM, MaibornWolff, Hogan Lovells, Munich Re, Capgemini, PwC, LMU, Netlight",
-              img: "/for-students/events/ai-consulting-conference.svg",
-              alt: "AI Consulting Conference 2026 — Konferenz-Poster",
-            },
-          ]
-        : [
-            {
-              kind: "Most recent · TEG Talk",
-              title: "TEG Talk Corporate Entrepreneurship",
-              when: "24 April 2026",
-              where: "O2 Tower Munich — hosted at Wayra Germany",
-              who: "Georg Doll, Dr. Tobias Süß, Paul Sachse, Dr. Irene Lejeune, Dr. Hartwig Rüll",
-              img: "/home/tegtalk-WS26.avif",
-              alt: "TEG Talk format with audience",
-            },
-            {
-              kind: "Up next · Conference",
-              title: "AI Consulting Conference 2026",
-              when: "10 June 2026 — 150 seats, application only",
-              where: "Netlight Offices, Prannerstraße 4, Munich",
-              who: "BCG, McKinsey, Roland Berger, Accenture, appliedAI, IBM, MaibornWolff, Hogan Lovells, Munich Re, Capgemini, PwC, LMU, Netlight",
-              img: "/for-students/events/ai-consulting-conference.svg",
-              alt: "AI Consulting Conference 2026 — Conference Poster",
-            },
-          ],
-    },
-
     runLikeCompany: {
       eyebrow: isDe ? "Wie wir arbeiten" : "How we work",
       title: isDe ? "Run TEG like a company." : "Run TEG like a company.",
@@ -177,93 +128,17 @@ const About: React.FC = () => {
           initials: "FN",
           placeholder: false,
         },
-        {
-          slug: "feristah",
-          name: "Feristah Fenkci",
-          unit: "Strategy",
-          role: "Director of Strategy",
-          photo: "/about/team-leads/feristah-fenkci.png",
-          quote: isDe
-            ? "Wer Chemie studiert und in der Chemie- oder Pharmaindustrie eine Führungsrolle anstrebt, dem empfehle ich TEG. Um mitzuentscheiden, welche Produkte entwickelt werden, braucht man neben Fachwissen auch unternehmerische und kommunikative Kompetenzen — die entwickelt man parallel zum Studium bei TEG."
-            : "If you study chemistry and want to lead in the chemical or pharma industry, I recommend TEG. To help decide which products get developed, you need entrepreneurial and communication skills alongside the science — and you build those skills at TEG.",
-          initials: "FF",
-          placeholder: false,
-        },
-        {
-          slug: "berkay",
-          name: "Berkay Zobu",
-          unit: isDe ? "Finance & Legal" : "Finance & Legal",
-          role: "Director of Finance & Legal",
-          photo: "/about/team-leads/berkay.png",
-          quote: isDe
-            ? "Als Teil des Finance & Legal Departments unterstütze ich Planung und Verwaltung des Budgets, das Management der Bankkonten sowie die Überwachung interner und externer rechtlicher Prozesse — strukturiert, zuverlässig, effizient."
-            : "In TEG's Finance & Legal department I support budget planning and oversight, manage bank accounts, and supervise internal and external legal processes — with structure, reliability and efficiency.",
-          initials: "BK",
-          placeholder: false,
-        },
+
       ],
     },
 
     centralStatement: {
-      kicker: isDe ? "Unser Leitmotiv" : "Our guiding principle",
-      lead: isDe
-        ? "Ziel der TEG ist die Stärkung des Wirtschaftsstandorts Deutschland durch:"
-        : "TEG's purpose is to strengthen Germany as a place of business through:",
-      bullet: isDe
-        ? "den Aufbau eines Nachwuchskanals für die Unternehmensführung deutscher Firmen."
-        : "building a leadership pipeline for the management of German companies.",
-    },
-
-    timeline: {
-      eyebrow: isDe ? "40 Jahre TEG" : "40 years of TEG",
-      title: isDe ? "Seit 1986 in München." : "In Munich since 1986.",
-      items: [
-        {
-          year: "1986",
-          kicker: isDe ? "Gründung" : "Founding",
-          label: isDe
-            ? "Eintragung in München. Mit-initiiert von Vorständen elf deutscher Unternehmen — BP, BMW, Siemens, Roland Berger, BCG, MBB (heute Airbus), Peat Marwick Mitchell (heute KPMG), Ruhrgas (heute E.ON), Bayerische Hypothekenbank (heute HypoVereinsbank), Infratest, Personal-Media-Partner."
-            : "Registered in Munich. Co-initiated by board members of eleven German companies — BP, BMW, Siemens, Roland Berger, BCG, MBB (today Airbus), Peat Marwick Mitchell (today KPMG), Ruhrgas (today E.ON), Bayerische Hypothekenbank (today HypoVereinsbank), Infratest, Personal-Media-Partner.",
-        },
-        {
-          year: "1988",
-          kicker: isDe ? "Heutige Form" : "Current form",
-          label: isDe
-            ? "Im Januar 1988 in der heutigen Form etabliert. Im selben Jahr Eröffnung eines Berliner Büros."
-            : "Established in its current form in January 1988. A Berlin office opens the same year.",
-        },
-        {
-          year: "2001",
-          kicker: isDe ? "Web-Kontinuität" : "Web continuity",
-          label: isDe
-            ? "Erste archivierte Web-Präsenz auf teg-ev.de. Bis 2026 sind 314 öffentliche Captures in der Wayback Machine dokumentiert."
-            : "First archived web presence on teg-ev.de. By 2026, 314 public captures are documented in the Wayback Machine.",
-        },
-        {
-          year: "2015",
-          kicker: isDe ? "Eventreihe" : "Event series",
-          label: isDe
-            ? "TEG organisiert das Startup Weekend Munich (suwm-teg.de). Beginn der wiederkehrenden Eventreihe aus Talks, Panels und Konferenzen, die heute die Außenwahrnehmung trägt."
-            : "TEG runs Startup Weekend Munich (suwm-teg.de). Start of the recurring event programme — talks, panels, conferences — that today carries TEG's external visibility.",
-        },
-        {
-          year: "2025",
-          kicker: isDe ? "Frontier Tech Conference" : "Frontier Tech Conference",
-          label: isDe
-            ? "Frontier Tech Conference bei MaibornWolff in München — 150 Teilnehmende."
-            : "Frontier Tech Conference at MaibornWolff in Munich — 150 participants.",
-        },
-        {
-          year: "2026",
-            kicker: isDe ? "O2 Tower + AI Conference" : "O2 Tower + AI conference",
-          label: isDe
-              ? "TEG Talk Corporate Entrepreneurship am 24. April im O2 Tower München bei Wayra Germany. Danach AI Consulting Conference am 10. Juni im Netlight Office München mit 150 Plätzen auf Bewerbung und Partnern wie BCG, McKinsey, Roland Berger, Accenture, PwC, IBM, MaibornWolff, Munich Re, Capgemini und LMU."
-              : "TEG Talk Corporate Entrepreneurship on 24 April at the O2 Tower in Munich, hosted by Wayra Germany. Followed by the AI Consulting Conference on 10 June at the Netlight office in Munich with 150 seats by application and partners including BCG, McKinsey, Roland Berger, Accenture, PwC, IBM, MaibornWolff, Munich Re, Capgemini, and LMU.",
-        },
-      ],
-      footnote: isDe
-        ? "Belege: TEG-Leistungsnachweis (Dok.-Ref. TEG-LN-2026-05-22), Wayback Machine (teg-ev.de, Erst-Capture 2001), öffentliche LinkedIn-Unternehmensseite. Vollständige Chronik in laufender Aufarbeitung."
-        : "Sources: TEG record of achievement (Doc. ref. TEG-LN-2026-05-22), Wayback Machine (teg-ev.de, first capture 2001), public LinkedIn company page. Full chronicle under ongoing review.",
+      question: isDe
+        ? "Wie stärken wir den Wirtschaftsstandort Deutschland?"
+        : "How do we strengthen Germany as a place of business?",
+      answer: isDe
+        ? "Durch den Aufbau eines Nachwuchskanals für die Unternehmensführung deutscher Firmen."
+        : "By building a leadership pipeline for the management of German companies.",
     },
 
     alumniIntro: {
@@ -292,14 +167,14 @@ const About: React.FC = () => {
         {
           original: "Deutsche BP",
           today: "heute bp",
-          logo: "/about/heritage/logos/bp.png",
+          logo: "/about/heritage/logos/bp.svg",
           founder: "Dr. Helmuth Buddenberg",
           logoClassName: "max-h-11",
         },
         {
           original: "BMW",
           today: "heute BMW Group",
-          logo: "/shared/logos/bmw.avif",
+          logo: "/about/heritage/logos/bmw.svg",
           founder: "Franz Köhne",
           logoClassName: "max-h-11",
         },
@@ -355,7 +230,7 @@ const About: React.FC = () => {
         {
           original: "Infratest",
           today: "heute Infratest dimap",
-          logo: "/about/heritage/logos/infratest.png",
+          logo: "/about/heritage/logos/infratest.svg",
           founder: null,
           logoClassName: "max-h-7",
         },
@@ -371,14 +246,14 @@ const About: React.FC = () => {
         {
           original: "Deutsche BP",
           today: "today bp",
-          logo: "/about/heritage/logos/bp.png",
+          logo: "/about/heritage/logos/bp.svg",
           founder: "Dr. Helmuth Buddenberg",
           logoClassName: "max-h-11",
         },
         {
           original: "BMW",
           today: "today BMW Group",
-          logo: "/shared/logos/bmw.avif",
+          logo: "/about/heritage/logos/bmw.svg",
           founder: "Franz Köhne",
           logoClassName: "max-h-11",
         },
@@ -434,7 +309,7 @@ const About: React.FC = () => {
         {
           original: "Infratest",
           today: "today Infratest dimap",
-          logo: "/about/heritage/logos/infratest.png",
+          logo: "/about/heritage/logos/infratest.svg",
           founder: null,
           logoClassName: "max-h-7",
         },
@@ -500,30 +375,6 @@ const About: React.FC = () => {
           image: "/for-companies/testimonials/roland-berger.avif",
         },
       ];
-
-  const heritageRegisterRows = isDe
-    ? [
-        { label: "Rechtsform", value: "Gemeinnützige Erwachsenenbildung · e.V." },
-        { label: "Register", value: "Amtsgericht München · VR 11822" },
-        { label: "Sitz", value: "München" },
-      ]
-    : [
-        { label: "Legal form", value: "Non-profit adult education association" },
-        { label: "Registry", value: "Munich local court · VR 11822" },
-        { label: "Seat", value: "Munich" },
-      ];
-
-  const founderInitials = (founderName: string) => {
-    const significantParts = founderName
-      .split(" ")
-      .map((part) => part.replace(/[^A-Za-zÄÖÜäöü]/g, ""))
-      .filter((part) => part.length > 1 && !["Dr", "Prof"].includes(part));
-
-    return significantParts
-      .slice(0, 2)
-      .map((part) => part.charAt(0).toUpperCase())
-      .join("");
-  };
 
   // ---------------- ALUMNI SECTION: PRESERVED BYTE-IDENTICAL ----------------
   const alumni = [
@@ -601,13 +452,11 @@ const About: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -16, filter: "blur(6px)" }}
                   transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
-                  className="max-w-[16ch] md:max-w-[18ch] font-bold leading-[0.92] tracking-[-0.02em] text-white text-[clamp(2.75rem,9vw,8rem)]"
+                  className="max-w-[30ch] font-bold leading-[0.92] tracking-[-0.02em] text-white text-[clamp(2.75rem,9vw,8rem)]"
                 >
-                  {isDe ? "Verantwortung für die" : "Responsibility for the"}
+                  {isDe ? "Verantwortung für die deutsche Wirtschaft" : "Responsibility for the German economy"}
                   <br />
-                  <span className="text-white/55 md:whitespace-nowrap md:text-[0.88em] md:tracking-[-0.03em]">{isDe ? "deutsche Wirtschaft." : "German economy."}</span>
-                  <br />
-                  <span className="text-[#F6D77B]">{isDe ? "Seit 1986." : "Since 1986."}</span>
+                  <span className="text-[#F6D77B]">{isDe ? "seit 1986." : "since 1986."}</span>
                 </motion.h1>
               ) : (
                 <motion.div
@@ -633,19 +482,23 @@ const About: React.FC = () => {
                 externalPlay={heroPlay}
                 items={[
                   {
-                    label: isDe ? "Über TEG" : "About TEG",
+                    label: isDe ? "Über Uns" : "About Us",
                     href: "#story",
                     variant: "solid",
-                    downArrow: true,
                   },
                   {
-                    label: content.hero.cta_students,
-                    href: "/for-students",
+                    label: isDe ? "Konferenzen & Events" : "Conferences & Events",
+                    href: "#events",
                     variant: "ghost",
                   },
                   {
-                    label: content.hero.cta_companies,
+                    label: isDe ? "Für Führungskräfte" : "For Executives",
                     href: "/for-companies",
+                    variant: "ghost",
+                  },
+                  {
+                    label: isDe ? "Für Studierende" : "For Students",
+                    href: "/for-students",
                     variant: "ghost",
                   },
                 ]}
@@ -654,13 +507,13 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Partner ticker — bottom edge */}
+        {/* Partner ticker — full viewport width */}
         <div className="relative z-10 border-t border-white/10 bg-[#040F1F]/70 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl items-center gap-6 overflow-hidden px-4 py-4 md:px-8 md:py-5">
-            <span className="hidden shrink-0 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#F6D77B]/85 md:inline">
+          <div className="flex w-full items-center gap-6 overflow-hidden px-4 py-4 md:px-8 md:py-5">
+            <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#F6D77B]/85">
               {isDe ? "Partner & Speaker" : "Partners & speakers"}
             </span>
-            <div className="relative flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+            <div className="flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
               <div className="flex w-max animate-[ticker_45s_linear_infinite] gap-10 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.32em] text-white/80 md:text-xs">
                 {[
                   "BCG", "McKinsey", "Roland Berger", "Accenture", "appliedAI", "IBM",
@@ -691,233 +544,16 @@ const About: React.FC = () => {
       </section>
 
       {/* ===================================================================
-          About page — reordered to the five Sinnabschnitte:
-            1. Heritage
-            2. Mission and program
-            3. Selection
-            4. Mentors and project responsibility
-            5. Company-like operating model
+          About page — section order:
+            1. Hero
+            2. Leitmotiv
+            3. Events
+            4. YBLA
+            5. Historie
+            6. Run TEG like a company
          =================================================================== */}
 
-      {/* §1 Heritage — Founder pedigree */}
-      <section
-        id="story"
-        className="section scroll-mt-24 border-y border-primary/10 bg-[linear-gradient(180deg,#f7f1e4_0%,#fffaf0_46%,#ffffff_100%)]"
-      >
-        <div className="mx-auto max-w-6xl px-4 md:px-8">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.03fr)_minmax(0,0.97fr)] lg:gap-16">
-            <div>
-              <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-primary/60">
-                {isDe ? "§1 Heritage · Seit 1986" : "§1 Heritage · Since 1986"}
-              </div>
-              <h2 className="max-w-3xl text-3xl font-bold leading-[1.05] text-primary md:text-4xl lg:text-5xl">
-                {isDe
-                  ? "Gegründet von Vorständen elf deutscher Top-Unternehmen."
-                  : "Founded by board members from eleven leading German companies."}
-              </h2>
-              <p className="mt-6 max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">
-                {isDe
-                  ? "Die TEG (The Entrepreneurial Group) ist eine gemeinnützige Organisation der Erwachsenenbildung mit Sitz in München. Sie wurde 1986 eingetragen und im Januar 1988 in ihrer heutigen Form etabliert, mitinitiiert von Vorständen elf deutscher Unternehmen: Dr. Helmuth Buddenberg (BP), Franz Köhne (BMW, Personalvorstand), Hans H. Schlitzberger (Siemens), Roland Berger (Roland Berger) sowie Vorstände von BCG, MBB (heute Airbus), Peat Marwick Mitchell (heute KPMG), Ruhrgas (heute E.ON), Bayerische Hypothekenbank (heute HypoVereinsbank/UniCredit), Infratest und Personal-Media-Partner (heute Teil von Roland Berger)."
-                  : "TEG (The Entrepreneurial Group) is a non-profit adult education organization based in Munich. It was registered in 1986 and established in its current form in January 1988, co-initiated by board members from eleven German companies: Dr. Helmuth Buddenberg (BP), Franz Köhne (BMW, HR board), Hans H. Schlitzberger (Siemens), Roland Berger (Roland Berger), as well as board members from BCG, MBB (today Airbus), Peat Marwick Mitchell (today KPMG), Ruhrgas (today E.ON), Bayerische Hypothekenbank (today HypoVereinsbank/UniCredit), Infratest, and Personal-Media-Partner (today part of Roland Berger)."}
-              </p>
-
-              <figure className="mt-8 overflow-hidden border border-primary/10 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
-                <div className="aspect-[948/695] overflow-hidden bg-[#efe5cf]">
-                  <img
-                    src="/about/heritage/zeitungsartikel.png"
-                    alt={isDe ? "Historischer Zeitungsartikel zur Gründung des TEG-Kuratoriums" : "Historic newspaper article about the founding of the TEG board"}
-                    className="h-full w-full object-cover object-center"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <figcaption className="border-t border-primary/10 bg-[#fffaf0] p-5 text-sm leading-relaxed text-foreground/76">
-                  <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary/55">
-                    {isDe ? "Pressebeleg" : "Press proof"}
-                  </div>
-                  <p className="mt-2">
-                    {isDe
-                      ? "Donaukurier, kurz nach der offiziellen Eintragung: \"Elf Unternehmen gründen neue Studentenvereinigung\". Der Artikel nennt die Gründerunternehmen und bestätigt das institutionelle Umfeld der ersten TEG-Struktur in München."
-                      : "Donaukurier, published shortly after the official registration: \"Eleven companies found a new student association.\" The article names the founding companies and confirms the institutional setting of TEG's first structure in Munich."}
-                  </p>
-                </figcaption>
-              </figure>
-
-              <div className="mt-8">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary/60">
-                  {isDe ? "Namentlich genannt" : "Named founders"}
-                </div>
-                <div className="mt-4 grid gap-4 md:grid-cols-2">
-                  {namedFounders.map((founder) => (
-                    <article
-                      key={founder.name}
-                      className="flex min-h-[112px] items-stretch gap-4 border border-primary/10 bg-white/85 p-4 shadow-[0_14px_34px_rgba(15,23,42,0.06)]"
-                    >
-                      {founder.image ? (
-                        <div className="h-20 w-16 shrink-0 overflow-hidden bg-primary/5">
-                          <img
-                            src={founder.image}
-                            alt={founder.name}
-                            className="h-full w-full object-cover object-top grayscale"
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </div>
-                      ) : (
-                        <div
-                          aria-label={founder.name}
-                          className="flex h-20 w-16 shrink-0 items-center justify-center bg-[#efe5cf] text-xl font-semibold tracking-[0.08em] text-primary"
-                        >
-                          {founderInitials(founder.name)}
-                        </div>
-                      )}
-                      <div className="min-w-0">
-                        <div className="text-[10px] font-semibold uppercase tracking-[0.24em] text-primary/50">
-                          {founder.company}
-                        </div>
-                        <h3 className="mt-2 text-lg font-semibold leading-tight text-primary">
-                          {founder.name}
-                        </h3>
-                        <p className="mt-1 text-sm leading-relaxed text-foreground/72">
-                          {founder.role}
-                        </p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div className="border border-primary/10 bg-white/90 p-6 shadow-[0_24px_70px_rgba(15,23,42,0.08)] md:p-8">
-                <div className="flex items-center justify-between gap-4 border-b border-primary/10 pb-4">
-                  <div>
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.24em] text-primary/55">
-                      {isDe ? "Kuratorium 1986" : "Board 1986"}
-                    </div>
-                    <p className="mt-2 text-sm leading-relaxed text-foreground/72">
-                      {isDe
-                        ? "Die erste TEG-Struktur wurde von Konzernen, Beratungen und Industriehäusern mitgetragen. Die heutige Entsprechung jeder Marke ist direkt in der Wand markiert."
-                        : "TEG's first structure was backed by corporates, consultancies, and industrial groups. Each tile marks the present-day equivalent where the company later changed."}
-                    </p>
-                  </div>
-                  <div className="shrink-0 text-right text-[11px] font-semibold uppercase tracking-[0.22em] text-primary/45">
-                    11 {isDe ? "Unternehmen" : "companies"}
-                  </div>
-                </div>
-
-                <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {heritageCompanies.map((company) => (
-                    <article
-                      key={company.original}
-                      className="flex min-h-[150px] flex-col justify-between border border-primary/10 bg-[#fffaf0] p-4"
-                    >
-                      <div className="flex h-12 items-center">
-                        {company.logo ? (
-                          <img
-                            src={company.logo}
-                            alt={company.original}
-                            className={`max-w-full object-contain object-left ${company.logoClassName}`}
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        ) : (
-                          <div
-                            aria-label="Personal-Media-Partner"
-                            className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/70"
-                          >
-                            PMP
-                          </div>
-                        )}
-                      </div>
-                      <div className="mt-4">
-                        <h3 className="text-sm font-semibold leading-snug text-primary">
-                          {company.original}
-                        </h3>
-                        <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-primary/50">
-                          {company.today}
-                        </p>
-                        {company.founder ? (
-                          <p className="mt-3 text-xs leading-relaxed text-foreground/70">
-                            {company.founder}
-                          </p>
-                        ) : null}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-
-                <dl className="mt-8 grid gap-4 border-t border-primary/10 pt-6 text-sm leading-relaxed">
-                  {heritageRegisterRows.map((row) => (
-                    <div key={row.label} className="grid gap-1 sm:grid-cols-[140px_minmax(0,1fr)] sm:gap-4">
-                      <dt className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/45">
-                        {row.label}
-                      </dt>
-                      <dd className="text-foreground/75">{row.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-
-                <p className="mt-6 border-t border-primary/10 pt-4 text-xs leading-relaxed text-foreground/62">
-                  {isDe
-                    ? "Eingetragen 1986 · in heutiger Form etabliert Januar 1988 · Amtsgericht München, VR 11822."
-                    : "Registered in 1986 · established in its current form in January 1988 · Munich local court, VR 11822."}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* §1 Heritage — Timeline (existing block, moved here) */}
-      <section className="section bg-white">
-        <div className="mx-auto max-w-6xl px-4 md:px-8">
-          <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] md:gap-16">
-            <div>
-              <div className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary/60">
-                {content.timeline.eyebrow}
-              </div>
-              <h2 className="mt-4 text-3xl font-bold leading-[1.05] text-primary md:text-4xl lg:text-5xl">
-                {content.timeline.title}
-              </h2>
-              <p className="mt-6 text-sm leading-[1.6] text-foreground/55">
-                {content.timeline.footnote}
-              </p>
-            </div>
-
-            <ol className="relative border-l border-primary/15">
-              {content.timeline.items.map((it, idx) => (
-                <motion.li
-                  key={it.year}
-                  initial={{ opacity: 0, x: 8 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: idx * 0.04 }}
-                  className="relative grid grid-cols-[auto_1fr] items-baseline gap-6 border-b border-primary/10 py-7 pl-8 last:border-b-0 md:gap-10"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="absolute left-[-5px] top-9 h-2 w-2 rounded-full bg-primary/30"
-                  />
-                  <div className="font-mono text-2xl font-semibold tracking-tight text-primary md:text-3xl">
-                    {it.year}
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary/55">
-                      {it.kicker}
-                    </div>
-                    <p className="mt-2 text-base leading-[1.55] text-foreground/80 md:text-[17px]">
-                      {it.label}
-                    </p>
-                  </div>
-                </motion.li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* §2 Mission and program — Leitmotiv (existing, moved) */}
+      {/* §2 Leitmotiv — Mission and program (existing, moved) */}
       <section className="relative isolate overflow-hidden bg-[#040F1F] py-24 text-white md:py-36 lg:py-44">
         <div
           aria-hidden="true"
@@ -936,72 +572,89 @@ const About: React.FC = () => {
           className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#F6D77B]/40 to-transparent"
         />
         <div className="relative mx-auto max-w-5xl px-4 md:px-8">
-          <div className="mb-10 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.32em] text-[#F6D77B]/85">
-            <span className="h-px w-10 bg-[#F6D77B]/60" />
-            {content.centralStatement.kicker}
-          </div>
+          {/* Question — visible as soon as section enters viewport */}
           <motion.h2
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="text-balance text-[clamp(1.65rem,3.2vw,3rem)] font-semibold leading-[1.22] tracking-[-0.012em] text-white"
           >
-            {content.centralStatement.lead}{" "}{content.centralStatement.bullet}
+            {content.centralStatement.question}
           </motion.h2>
+
+          {/* Answer — animates in from below after a short delay, giving the impression of a second scroll beat */}
+          <motion.p
+            initial={{ opacity: 0, y: 48 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{ duration: 1.0, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-8 text-balance text-[clamp(1.25rem,2.4vw,2.1rem)] font-medium leading-[1.35] tracking-[-0.008em] text-[#F6D77B]"
+          >
+            {content.centralStatement.answer}
+          </motion.p>
         </div>
       </section>
 
-      {/* §2 Mission and program — YBLA programme (existing, moved) */}
+      {/* §3 YBLA programme (existing, moved) */}
       <YblaJourney isDe={isDe} />
 
-      {/* §3 Selection — SKELETON (Auswahl der Teilnehmer to be built) */}
-      <section className="section border-y-2 border-dashed border-accent/50 bg-amber-50/40">
-        <div className="mx-auto max-w-6xl px-4 md:px-8">
-          <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-amber-700">
-            §3 Selection · Skeleton · Auswahl der Teilnehmer
-          </div>
-          <h2 className="text-3xl font-bold leading-[1.05] text-primary md:text-4xl">
-            Wer bei TEG mitmacht, wird ausgewählt.
-          </h2>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-foreground/80">
-            Exact copy (verbatim from the Nachweis): „Auswahl der Teilnehmer — die
-            Aufnahme erfolgt auf Grundlage einer persönlichkeitspsychologischen und
-            mathematisch-analytischen Eignungsdiagnostik. Bewertet werden
-            Leistungsbereitschaft, Eignung für Personalverantwortung und die
-            Fähigkeit, komplexe fachliche und wirtschaftliche Zusammenhänge zu
-            durchdringen."
-          </p>
-
-          <div className="mt-8 grid gap-6 border border-dashed border-primary/30 bg-white/70 p-6 md:grid-cols-2">
-            <div>
-              <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary/70">
-                Media
-              </div>
-              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/80">
-                <li>Three criterion cards in a row: „Leistungsbereitschaft", „Eignung für Personalverantwortung", „Komplexitätsverständnis".</li>
-                <li>Each card: short eyebrow, one-line definition, no numeric scoring.</li>
-                <li>Optional supporting line: yearly intake, application-only, written diagnostic plus interview.</li>
-                <li>No portrait photos in this section — selection is about the standard, not the people.</li>
-              </ul>
-            </div>
-            <div>
-              <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary/70">
-                Look and feel
-              </div>
-              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/80">
-                <li>Same calm white/navy register as Heritage. Restraint signals selectivity better than ornament.</li>
-                <li>Three-column card grid on desktop, stacked on mobile.</li>
-                <li>Thin border cards, primary-tinted eyebrow, two-line body, no icons.</li>
-                <li>No CTA in this section. This is a statement of standard, not a recruiting block.</li>
-                <li>Place directly after YBLA so the reader learns „what it is" before „who gets in".</li>
-              </ul>
-            </div>
-          </div>
+      {/* §3 Selection — Auswahl der Teilnehmer */}
+      <section className="relative isolate overflow-hidden bg-[#040F1F] py-20 text-white md:py-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(60% 50% at 50% 50%, rgba(246,215,123,0.07) 0%, rgba(4,15,31,0) 70%)",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#F6D77B]/40 to-transparent"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#F6D77B]/40 to-transparent"
+        />
+        <div className="relative mx-auto max-w-5xl px-4 md:px-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="text-balance text-[clamp(1.65rem,3.2vw,3rem)] font-semibold leading-[1.22] tracking-[-0.012em] text-white"
+          >
+            {isDe
+              ? "Wer bei TEG mitmacht, wird ausgewählt."
+              : "Membership at TEG is earned."}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 36 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.95, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-6 max-w-2xl text-[clamp(1rem,1.6vw,1.2rem)] leading-[1.65] text-white"
+          >
+            {isDe
+              ? "Jeder Bewerber durchläuft dasselbe Verfahren — unabhängig von Herkunft oder Netzwerk. Bewertet werden analytisches Denken, Leistungsbereitschaft und Führungscharakter: die Fähigkeit, Initiative zu ergreifen, zu führen und geführt zu werden."
+              : "Every applicant goes through the same process — regardless of background or network. We assess analytical thinking, drive, and leadership character: the ability to take initiative, to lead, and to be led."}
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 36 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.95, delay: 0.38, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-5 text-[clamp(0.95rem,1.4vw,1.1rem)] font-medium leading-[1.55] tracking-[-0.004em] text-[#F6D77B]"
+          >
+            {isDe
+              ? "Darum sind bei TEG fast alle sozialen Schichten vertreten — Kompetenz kennt keine Herkunft."
+              : "That is why TEG draws from almost every social background — competence has no pedigree."}
+          </motion.p>
         </div>
       </section>
 
-      {/* §4 Mentors and project responsibility — Alumni (PRESERVED BYTE-IDENTICAL, moved) */}
+      {/* §5 Historie — Alumni (PRESERVED BYTE-IDENTICAL, moved) */}
       <section className="section bg-primary text-white">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase tracking-wider">
@@ -1034,75 +687,17 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* §4 Mentors and project responsibility — Drei Belegformate (existing, moved) */}
-      <section
-        className="section border-y border-border bg-[linear-gradient(180deg,#f8f3e7_0%,#ffffff_100%)]"
-      >
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <h2 className="max-w-3xl text-3xl font-bold leading-[1.05] text-primary md:text-4xl lg:text-5xl">
-            {content.formats.title}
-          </h2>
-          <p className="mt-5 max-w-2xl text-base leading-[1.65] text-foreground/80 md:text-lg">
-            {content.formats.intro}
-          </p>
+      {/* §1 Heritage — immersive garden re-imagining of founder pedigree */}
+      <HeritageGardenSection
+        isDe={isDe}
+        companies={heritageCompanies}
+        founders={namedFounders}
+      />
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {content.formats.items.map((item, idx) => (
-              <motion.article
-                key={item.title}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx * 0.06 }}
-                className="flex flex-col overflow-hidden border border-primary/10 bg-white shadow-[0_18px_60px_rgba(15,23,42,0.06)]"
-              >
-                <div className="aspect-[5/3] overflow-hidden bg-primary/[0.04]">
-                  <img
-                    src={item.img}
-                    alt={item.alt}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">
-                    {item.kind}
-                  </div>
-                  <h3 className="mt-3 text-xl font-bold leading-tight text-primary">
-                    {item.title}
-                  </h3>
-                  <dl className="mt-4 space-y-2 text-sm leading-relaxed text-foreground/80">
-                    <div>
-                      <dt className="inline text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/55">
-                        {isDe ? "Wann · " : "When · "}
-                      </dt>
-                      <dd className="inline">{item.when}</dd>
-                    </div>
-                    <div>
-                      <dt className="inline text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/55">
-                        {isDe ? "Wo · " : "Where · "}
-                      </dt>
-                      <dd className="inline">{item.where}</dd>
-                    </div>
-                    <div>
-                      <dt className="inline text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/55">
-                        {isDe ? "Wer · " : "Who · "}
-                      </dt>
-                      <dd className="inline">{item.who}</dd>
-                    </div>
-                  </dl>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* §5 Company-like operating model — Scroll-locked bloom (existing, moved) */}
+      {/* §6 Company-like operating model — Scroll-locked bloom (existing, moved) */}
       <RunLikeCompanyReveal isDe={isDe} />
 
-      {/* §5 Company-like operating model — Team ensemble (existing, moved) */}
+      {/* §6 Company-like operating model — Team ensemble (existing, moved) */}
       <RunLikeCompanyEnsemble
         eyebrow={content.runLikeCompany.eyebrow}
         title={content.runLikeCompany.title}
@@ -1117,7 +712,7 @@ const About: React.FC = () => {
         isDe={isDe}
       />
 
-      {/* §5 Company-like operating model — Heute aktiv (existing, moved) */}
+      {/* §6 Company-like operating model — Heute aktiv (existing, moved) */}
       <section className="section bg-white">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 md:px-8 lg:grid-cols-2 lg:gap-16">
           <div>

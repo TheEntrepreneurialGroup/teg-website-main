@@ -9,9 +9,11 @@ import { useIntl } from "react-intl";
 interface NavbarProps {
   scrolled: boolean;
   switchLanguage: (lang: "en" | "de") => void;
+  isAboutPage?: boolean;
+  hideNavItems?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
+const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, hideNavItems }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const intl = useIntl();
 
@@ -44,59 +46,110 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `font-normal relative ${
-                scrolled || isActive ? "text-white" : "text-white"
-              } hover:text-primary-light transition-colors duration-300 ${
-                isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
-                  : ""
-              }`
-            }
-            onClick={() => trackButtonClick("About Us", "Navbar")}
-            end
-          >
-            {intl.formatMessage({
-              id: "navbar.about",
-            })}
-          </NavLink>
-          <NavLink
-            to="/for-companies"
-            className={({ isActive }) =>
-              `font-normal relative ${
-                scrolled || isActive ? "text-white" : "text-white"
-              } hover:text-primary-light transition-colors duration-300 ${
-                isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
-                  : ""
-              }`
-            }
-            onClick={() => trackButtonClick("TEG for Companies", "Navbar")}
-          >
-            {intl.formatMessage({
-              id: "navbar.forCompanies",
-            })}
-          </NavLink>
-          <NavLink
-            to="/for-students"
-            className={({ isActive }) =>
-              `font-normal relative ${
-                scrolled || isActive ? "text-white" : "text-white"
-              } hover:text-primary-light transition-colors duration-300 ${
-                isActive
-                  ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
-                  : ""
-              }`
-            }
-            onClick={() => trackButtonClick("TEG for Students", "Navbar")}
-          >
-            {intl.formatMessage({
-              id: "navbar.forStudents",
-            })}
-          </NavLink>
+        <nav
+          className={`hidden md:flex items-center space-x-8 transition-opacity duration-500 ${
+            hideNavItems ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
+        >
+          {isAboutPage ? (
+            <>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `font-normal relative ${
+                    scrolled || isActive ? "text-white" : "text-white"
+                  } hover:text-primary-light transition-colors duration-300 ${
+                    isActive
+                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
+                      : ""
+                  }`
+                }
+                onClick={() => trackButtonClick("About Us", "Navbar")}
+                end
+              >
+                {intl.formatMessage({ id: "navbar.aboutPage.about" })}
+              </NavLink>
+              <NavLink
+                to="/for-companies"
+                className={({ isActive }) =>
+                  `font-normal relative ${
+                    scrolled || isActive ? "text-white" : "text-white"
+                  } hover:text-primary-light transition-colors duration-300 ${
+                    isActive
+                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
+                      : ""
+                  }`
+                }
+                onClick={() => trackButtonClick("TEG for Companies", "Navbar")}
+              >
+                {intl.formatMessage({ id: "navbar.aboutPage.executives" })}
+              </NavLink>
+              <NavLink
+                to="/for-students"
+                className={({ isActive }) =>
+                  `font-normal relative ${
+                    scrolled || isActive ? "text-white" : "text-white"
+                  } hover:text-primary-light transition-colors duration-300 ${
+                    isActive
+                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
+                      : ""
+                  }`
+                }
+                onClick={() => trackButtonClick("TEG for Students", "Navbar")}
+              >
+                {intl.formatMessage({ id: "navbar.aboutPage.students" })}
+              </NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `font-normal relative ${
+                    scrolled || isActive ? "text-white" : "text-white"
+                  } hover:text-primary-light transition-colors duration-300 ${
+                    isActive
+                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
+                      : ""
+                  }`
+                }
+                onClick={() => trackButtonClick("About Us", "Navbar")}
+                end
+              >
+                {intl.formatMessage({ id: "navbar.about" })}
+              </NavLink>
+              <NavLink
+                to="/for-companies"
+                className={({ isActive }) =>
+                  `font-normal relative ${
+                    scrolled || isActive ? "text-white" : "text-white"
+                  } hover:text-primary-light transition-colors duration-300 ${
+                    isActive
+                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
+                      : ""
+                  }`
+                }
+                onClick={() => trackButtonClick("TEG for Companies", "Navbar")}
+              >
+                {intl.formatMessage({ id: "navbar.forCompanies" })}
+              </NavLink>
+              <NavLink
+                to="/for-students"
+                className={({ isActive }) =>
+                  `font-normal relative ${
+                    scrolled || isActive ? "text-white" : "text-white"
+                  } hover:text-primary-light transition-colors duration-300 ${
+                    isActive
+                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
+                      : ""
+                  }`
+                }
+                onClick={() => trackButtonClick("TEG for Students", "Navbar")}
+              >
+                {intl.formatMessage({ id: "navbar.forStudents" })}
+              </NavLink>
+            </>
+          )}
         </nav>
 
         {/* Language Switcher */}
@@ -137,55 +190,99 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage }) => {
             transition={{ duration: 0.3 }}
           >
             <nav className="flex flex-col items-start space-y-6">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `text-xl font-normal ${
-                    isActive ? "text-primary" : "text-foreground"
-                  } hover:text-primary transition-colors duration-300`
-                }
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  trackButtonClick("About us", "Navbar");
-                }}
-                end
-              >
-                {intl.formatMessage({
-                  id: "navbar.about",
-                })}
-              </NavLink>
-              <NavLink
-                to="/for-companies"
-                className={({ isActive }) =>
-                  `text-xl font-normal ${
-                    isActive ? "text-primary" : "text-foreground"
-                  } hover:text-primary transition-colors duration-300`
-                }
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  trackButtonClick("TEG for Companies", "Navbar");
-                }}
-              >
-                {intl.formatMessage({
-                  id: "navbar.forCompanies",
-                })}
-              </NavLink>
-              <NavLink
-                to="/for-students"
-                className={({ isActive }) =>
-                  `text-xl font-normal ${
-                    isActive ? "text-primary" : "text-foreground"
-                  } hover:text-primary transition-colors duration-300`
-                }
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  trackButtonClick("TEG for Students", "Navbar");
-                }}
-              >
-                {intl.formatMessage({
-                  id: "navbar.forStudents",
-                })}
-              </NavLink>
+              {isAboutPage ? (
+                <>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `text-xl font-normal ${
+                        isActive ? "text-primary" : "text-foreground"
+                      } hover:text-primary transition-colors duration-300`
+                    }
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      trackButtonClick("About us", "Navbar");
+                    }}
+                    end
+                  >
+                    {intl.formatMessage({ id: "navbar.aboutPage.about" })}
+                  </NavLink>
+                  <NavLink
+                    to="/for-companies"
+                    className={({ isActive }) =>
+                      `text-xl font-normal ${
+                        isActive ? "text-primary" : "text-foreground"
+                      } hover:text-primary transition-colors duration-300`
+                    }
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      trackButtonClick("TEG for Companies", "Navbar");
+                    }}
+                  >
+                    {intl.formatMessage({ id: "navbar.aboutPage.executives" })}
+                  </NavLink>
+                  <NavLink
+                    to="/for-students"
+                    className={({ isActive }) =>
+                      `text-xl font-normal ${
+                        isActive ? "text-primary" : "text-foreground"
+                      } hover:text-primary transition-colors duration-300`
+                    }
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      trackButtonClick("TEG for Students", "Navbar");
+                    }}
+                  >
+                    {intl.formatMessage({ id: "navbar.aboutPage.students" })}
+                  </NavLink>
+                </>
+              ) : (
+                <>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `text-xl font-normal ${
+                        isActive ? "text-primary" : "text-foreground"
+                      } hover:text-primary transition-colors duration-300`
+                    }
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      trackButtonClick("About us", "Navbar");
+                    }}
+                    end
+                  >
+                    {intl.formatMessage({ id: "navbar.about" })}
+                  </NavLink>
+                  <NavLink
+                    to="/for-companies"
+                    className={({ isActive }) =>
+                      `text-xl font-normal ${
+                        isActive ? "text-primary" : "text-foreground"
+                      } hover:text-primary transition-colors duration-300`
+                    }
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      trackButtonClick("TEG for Companies", "Navbar");
+                    }}
+                  >
+                    {intl.formatMessage({ id: "navbar.forCompanies" })}
+                  </NavLink>
+                  <NavLink
+                    to="/for-students"
+                    className={({ isActive }) =>
+                      `text-xl font-normal ${
+                        isActive ? "text-primary" : "text-foreground"
+                      } hover:text-primary transition-colors duration-300`
+                    }
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      trackButtonClick("TEG for Students", "Navbar");
+                    }}
+                  >
+                    {intl.formatMessage({ id: "navbar.forStudents" })}
+                  </NavLink>
+                </>
+              )}
             </nav>
           </div>
         )}

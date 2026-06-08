@@ -16,23 +16,19 @@ interface Props {
  * --------------------------------------------------------------------------
  * One-shot, deeply integrated brand statement.
  *
- *   [TEG-logo] schafft die neue Generation von Führungskräften
- *   für die Deutsche Wirtschaft.
+ *   TEG schafft die neue Generation von Führungskräften
  *
- * The TEG word-mark is rendered inline as part of the sentence (aligned to
+ * The TEG text is rendered inline as part of the sentence (aligned to
  * the cap height of the typography), and the whole block is the subject of
  * a single "garden / corporate" animation:
  *
- *   1. The logo germinates: a soft golden pulse, then the SVG scales in
- *      from a small seed with a blur-to-focus.
- *   2. Golden vines unfurl from the logo's anchor zone, threading behind
+ *   1. Golden vines unfurl from the TEG anchor zone, threading behind
  *      the words via SVG `pathLength` draw-on.
- *   3. Leaves bloom at the vine endpoints with a tiny spring + idle sway.
- *   4. Words of the sentence rise into place with a per-word stagger,
+ *   2. Leaves bloom at the vine endpoints with a tiny spring + idle sway.
+ *   3. Words of the sentence rise into place with a per-word stagger,
  *      synchronised with the vine growth.
- *   5. Idle state: gentle particle drift (spores rising), a slow logo
- *      breathing scale, and a subtle leaf sway — so the block stays
- *      alive without being noisy.
+ *   4. Idle state: gentle particle drift (spores rising), and a subtle
+ *      leaf sway — so the block stays alive without being noisy.
  *
  * Respects `prefers-reduced-motion`: collapses to a clean static reveal.
  * --------------------------------------------------------------------------
@@ -56,8 +52,8 @@ const TegGardenStatement: React.FC<Props> = ({
   const play = started;
 
   const tail = isDe
-    ? "schafft die neue Generation von Führungskräften für die Deutsche Wirtschaft."
-    : "is shaping the next generation of leaders for Germany’s economy.";
+    ? "schafft die neue Generation von Führungskräften"
+    : "is shaping the next generation of leaders";
   const words = tail.split(" ");
 
   // Hand-curated organic bezier vines that emerge from a virtual anchor
@@ -230,57 +226,23 @@ const TegGardenStatement: React.FC<Props> = ({
             : "max-w-[34ch] text-[clamp(1.05rem,1.55vw,1.4rem)] leading-[1.28] tracking-[-0.012em] font-semibold")
         }
       >
-        {/* Inline TEG logo block — sits on the typographic baseline */}
+        {/* Inline TEG text — integrated with same styling as other words */}
         <motion.span
-          initial={{ opacity: 0, scale: 0.55, filter: "blur(10px)" }}
+          initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
           animate={
             play
-              ? { opacity: 1, scale: 1, filter: "blur(0px)" }
-              : { opacity: 0, scale: 0.55, filter: "blur(10px)" }
+              ? { opacity: 1, y: 0, filter: "blur(0px)" }
+              : { opacity: 0, y: 10, filter: "blur(4px)" }
           }
           transition={{
-            duration: reduce ? 0.01 : 1.05,
+            duration: reduce ? 0.01 : 0.55,
             delay: reduce ? 0 : 0.1,
             ease: [0.16, 1, 0.3, 1],
           }}
-            className="relative mr-2 inline-block align-[-0.32em]"
+          className="inline-block"
         >
-          {/* Seed pulse halo */}
-          {!reduce && (
-            <motion.span
-              aria-hidden="true"
-              className="absolute -inset-3 -z-10 rounded-full bg-[#F6D77B]/40 blur-xl"
-              initial={{ opacity: 0, scale: 0.4 }}
-              animate={
-                play
-                  ? {
-                      opacity: [0, 0.85, 0.25, 0.4],
-                      scale: [0.4, 1.4, 1.05, 1.15],
-                    }
-                  : {}
-              }
-              transition={{ duration: 1.6, delay: 0.1, ease: "easeOut" }}
-            />
-          )}
-          <motion.img
-            src="/shared/brand/teg-favicon.avif"
-            alt="TEG"
-            draggable={false}
-            className="block h-[1.35em] w-[1.35em] select-none rounded-full ring-1 ring-[#F6D77B]/40 drop-shadow-[0_0_18px_rgba(246,215,123,0.55)]"
-            animate={
-              reduce
-                ? undefined
-                : play
-                  ? { scale: [1, 1.035, 1] }
-                  : undefined
-            }
-            transition={
-              reduce
-                ? undefined
-                : { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 2.4 }
-            }
-          />
-        </motion.span>
+          TEG
+        </motion.span>{" "}
 
         {words.map((w, i) => (
           <React.Fragment key={`${w}-${i}`}>
