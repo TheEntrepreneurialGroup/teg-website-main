@@ -3,7 +3,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import ForStudents from "./pages/ForStudents";
 import ForCompanies from "./pages/ForCompanies";
-import { Home } from "./pages/Home";
 import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Imprint from "./pages/Imprint";
@@ -98,8 +97,7 @@ function App() {
       <ScrollRestoration />
       <Routes>
         <Route path="/" element={<Layout switchLanguage={switchLanguage} />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route index element={<About />} />
           <Route path="for-students" element={<ForStudents />} />
           <Route path="for-companies" element={<ForCompanies />} />
         </Route>

@@ -11,9 +11,10 @@ interface NavbarProps {
   switchLanguage: (lang: "en" | "de") => void;
   isAboutPage?: boolean;
   hideNavItems?: boolean;
+  hidden?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, hideNavItems }) => {
+const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, hideNavItems, hidden }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const intl = useIntl();
 
@@ -23,7 +24,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 text-xl transition-[background-color,backdrop-filter,box-shadow,padding] duration-500 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 text-xl transition-[background-color,backdrop-filter,box-shadow,padding,opacity] duration-500 ease-out ${
+        hidden ? "opacity-0 pointer-events-none" : "opacity-100"
+      } ${
         scrolled
           ? "bg-primary-dark shadow-[0_8px_24px_-12px_rgba(0,0,0,0.55)] backdrop-blur-md"
           : "bg-transparent backdrop-blur-0 md:py-2"
@@ -54,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
           {isAboutPage ? (
             <>
               <NavLink
-                to="/about#story"
+                to="/#story"
                 className={({ isActive }) =>
                   `font-normal relative ${
                     scrolled || isActive ? "text-white" : "text-white"
@@ -187,7 +190,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
         {/* Mobile Menu Button */}
         <button
           className={`md:hidden h-full aspect-square ml-auto ${
-            mobileMenuOpen ? "text-foreground" : "text-white"
+            mobileMenuOpen ? "text-white" : "text-white"
           } z-50`}
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
@@ -198,21 +201,21 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div
-            className="fixed inset-0 bg-white flex flex-col items-start justify-center z-40 p-6"
+            className="fixed inset-0 bg-primary-dark flex flex-col items-start justify-center z-40 px-6 py-20"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.3 }}
           >
-            <nav className="flex flex-col items-start space-y-6">
+            <nav className="flex flex-col items-start space-y-6 w-full">
               {isAboutPage ? (
                 <>
                   <NavLink
-                    to="/about#story"
+                    to="/#story"
                     className={({ isActive }) =>
                       `text-xl font-normal ${
-                        isActive ? "text-primary" : "text-foreground"
-                      } hover:text-primary transition-colors duration-300`
+                        isActive ? "text-accent-light" : "text-white"
+                      } hover:text-accent-light transition-colors duration-300`
                     }
                     onClick={() => {
                       setMobileMenuOpen(false);
@@ -226,8 +229,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
                     to="/events"
                     className={({ isActive }) =>
                       `text-xl font-normal ${
-                        isActive ? "text-primary" : "text-foreground"
-                      } hover:text-primary transition-colors duration-300`
+                        isActive ? "text-accent-light" : "text-white"
+                      } hover:text-accent-light transition-colors duration-300`
                     }
                     onClick={() => {
                       setMobileMenuOpen(false);
@@ -240,8 +243,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
                     to="/for-companies"
                     className={({ isActive }) =>
                       `text-xl font-normal ${
-                        isActive ? "text-primary" : "text-foreground"
-                      } hover:text-primary transition-colors duration-300`
+                        isActive ? "text-accent-light" : "text-white"
+                      } hover:text-accent-light transition-colors duration-300`
                     }
                     onClick={() => {
                       setMobileMenuOpen(false);
@@ -254,8 +257,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
                     to="/for-students"
                     className={({ isActive }) =>
                       `text-xl font-normal ${
-                        isActive ? "text-primary" : "text-foreground"
-                      } hover:text-primary transition-colors duration-300`
+                        isActive ? "text-accent-light" : "text-white"
+                      } hover:text-accent-light transition-colors duration-300`
                     }
                     onClick={() => {
                       setMobileMenuOpen(false);
@@ -271,8 +274,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
                     to="/"
                     className={({ isActive }) =>
                       `text-xl font-normal ${
-                        isActive ? "text-primary" : "text-foreground"
-                      } hover:text-primary transition-colors duration-300`
+                        isActive ? "text-accent-light" : "text-white"
+                      } hover:text-accent-light transition-colors duration-300`
                     }
                     onClick={() => {
                       setMobileMenuOpen(false);
@@ -286,8 +289,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
                     to="/for-companies"
                     className={({ isActive }) =>
                       `text-xl font-normal ${
-                        isActive ? "text-primary" : "text-foreground"
-                      } hover:text-primary transition-colors duration-300`
+                        isActive ? "text-accent-light" : "text-white"
+                      } hover:text-accent-light transition-colors duration-300`
                     }
                     onClick={() => {
                       setMobileMenuOpen(false);
@@ -300,8 +303,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
                     to="/for-students"
                     className={({ isActive }) =>
                       `text-xl font-normal ${
-                        isActive ? "text-primary" : "text-foreground"
-                      } hover:text-primary transition-colors duration-300`
+                        isActive ? "text-accent-light" : "text-white"
+                      } hover:text-accent-light transition-colors duration-300`
                     }
                     onClick={() => {
                       setMobileMenuOpen(false);
@@ -313,6 +316,23 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, 
                 </>
               )}
             </nav>
+
+            {/* Mobile Language Switcher */}
+            <div className="flex items-center space-x-4 mt-10">
+              <button
+                onClick={() => switchLanguage("en")}
+                className="font-normal text-white hover:text-accent-light transition-colors duration-300"
+              >
+                EN
+              </button>
+              <span className="text-white/60">|</span>
+              <button
+                onClick={() => switchLanguage("de")}
+                className="font-normal text-white hover:text-accent-light transition-colors duration-300"
+              >
+                DE
+              </button>
+            </div>
           </div>
         )}
       </div>

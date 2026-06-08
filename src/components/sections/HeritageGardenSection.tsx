@@ -527,14 +527,17 @@ const HeritageGardenSection: React.FC<Props> = ({
                       </div>
                     )}
                   </div>
-                  <div className="relative mt-2 text-center">
-                    <div className="text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#F6D77B]/80">
-                      {copy.todayPrefix}
+                  {/* "Heute" label — only for HypoVereinsbank, Infratest, PMP */}
+                  {["Bayerische Hypotheken- und Wechsel-Bank", "Infratest", "Personal-Media-Partner"].includes(company.original) && (
+                    <div className="relative mt-2 text-center">
+                      <div className="text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#F6D77B]/80">
+                        {copy.todayPrefix}
+                      </div>
+                      <div className="mt-0.5 line-clamp-2 text-[11px] leading-tight text-white/85">
+                        {company.today.replace(/^heute\s+|^today\s+/i, "")}
+                      </div>
                     </div>
-                    <div className="mt-0.5 line-clamp-2 text-[11px] leading-tight text-white/85">
-                      {company.today.replace(/^heute\s+|^today\s+/i, "")}
-                    </div>
-                  </div>
+                  )}
                 </div>
 
                 {/* Hover detail card */}
@@ -594,9 +597,12 @@ const HeritageGardenSection: React.FC<Props> = ({
                     <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white">
                       {c.original}
                     </div>
-                    <div className="mt-0.5 text-[10px] leading-snug text-[#F6D77B]/80">
-                      {c.today}
-                    </div>
+                    {/* "Heute" label — only for HypoVereinsbank, Infratest, PMP */}
+                    {["Bayerische Hypotheken- und Wechsel-Bank", "Infratest", "Personal-Media-Partner"].includes(c.original) && (
+                      <div className="mt-0.5 text-[10px] leading-snug text-[#F6D77B]/80">
+                        {c.today}
+                      </div>
+                    )}
                     {c.founder ? (
                       <div className="mt-1 text-[10px] leading-snug text-white/65">
                         {copy.founderArrow} {c.founder}

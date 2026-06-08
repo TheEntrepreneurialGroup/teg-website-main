@@ -308,11 +308,7 @@ const RunLikeCompanyEnsemble: React.FC<RunLikeCompanyEnsembleProps> = ({
             style={{ opacity: headerOpacity, y: headerY } as any}
             className="absolute left-4 right-4 top-20 z-10 flex items-baseline gap-4 md:left-12 md:right-12 md:top-24 lg:left-16"
           >
-            <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#F6D77B]/85 md:text-[11px]">
-              <span className="h-px w-7 bg-[#F6D77B]/65" />
-              {eyebrow}
-            </div>
-            <h2 className="text-balance text-[15px] font-semibold leading-[1.1] text-white/90 md:text-[18px]">
+            <h2 className="text-balance text-[10px] font-semibold uppercase tracking-[0.32em] text-[#F6D77B]/85 md:text-[11px]">
               {title}
             </h2>
           </motion.div>
@@ -405,7 +401,7 @@ const RunLikeCompanyEnsemble: React.FC<RunLikeCompanyEnsembleProps> = ({
 
             {/* RIGHT */}
             <div className="col-span-12 flex min-h-0 self-stretch flex-col gap-4 md:col-span-5 md:gap-8 lg:col-span-5">
-              <div className="relative min-h-[120px] flex-1 md:min-h-0">
+              <div className="relative min-h-[120px] flex-1 max-md:hidden md:min-h-0">
                 <motion.div
                   key={active.slug + "-quote"}
                   initial={{ opacity: 0, y: 14 }}
