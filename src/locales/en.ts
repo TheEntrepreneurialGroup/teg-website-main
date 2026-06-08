@@ -330,6 +330,9 @@ const en = {
   "navbar.about": "About Us",
   "navbar.forCompanies": "For Companies",
   "navbar.forStudents": "For Students",
+  "navbar.aboutPage.about": "About Us",
+  "navbar.aboutPage.executives": "For Executives",
+  "navbar.aboutPage.students": "For Students",
 
   // For Companies Page
   "company.problemHero.title":
