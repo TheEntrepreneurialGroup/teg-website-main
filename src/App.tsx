@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import ForStudents from "./pages/ForStudents";
 import ForCompanies from "./pages/ForCompanies";
@@ -17,7 +14,6 @@ import Seo from "./components/Seo";
 import { trackLanguageSwitch, assignSessionId } from "./utils/analytics";
 import { getRouteSeoEntry } from "./seo/routes";
 import { siteConfig } from "./seo/siteConfig";
-import "./index.css";
 
 const messages: Record<string, Record<string, string>> = { en, de };
 
@@ -115,17 +111,3 @@ function App() {
 }
 
 export default App;
-
-const rootElement = document.getElementById("root");
-
-if (rootElement) {
-  createRoot(rootElement).render(
-    <StrictMode>
-      <HelmetProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </HelmetProvider>
-    </StrictMode>,
-  );
-}
