@@ -18,7 +18,7 @@ export const Home: React.FC = () => {
         title={intl.formatMessage({ id: "home.hero.title" })}
         subtitle={intl.formatMessage({ id: "home.hero.since" })}
         mobileTitle={intl.formatMessage({ id: "home.hero.mobileTitle" })}
-        bgImage="/shared/heroes/hero-home.avif"
+        bgImage="/shared/heroes/hero-home-new.jpg?v=2"
         buttonText1={intl.formatMessage({ id: "home.hero.buttonText1" })}
         buttonText2={intl.formatMessage({ id: "home.hero.buttonText2" })}
         buttonLink2="/for-students"
