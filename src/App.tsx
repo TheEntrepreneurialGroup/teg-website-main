@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Layout from "./components/Layout";
 import ForStudents from "./pages/ForStudents";
 import ForCompanies from "./pages/ForCompanies";
@@ -14,6 +17,7 @@ import Seo from "./components/Seo";
 import { trackLanguageSwitch, assignSessionId } from "./utils/analytics";
 import { getRouteSeoEntry } from "./seo/routes";
 import { siteConfig } from "./seo/siteConfig";
+import "./index.css";
 
 const messages: Record<string, Record<string, string>> = { en, de };
 
@@ -42,7 +46,9 @@ function RouteSeo({
   return (
     <Seo
       title={intl.formatMessage({ id: routeSeoEntry.titleMessageId })}
-      description={intl.formatMessage({ id: routeSeoEntry.descriptionMessageId })}
+      description={intl.formatMessage({
+        id: routeSeoEntry.descriptionMessageId,
+      })}
       locale={locale}
       indexable={routeSeoEntry.indexable}
       pathname={routeSeoEntry.path}
@@ -109,3 +115,17 @@ function App() {
 }
 
 export default App;
+
+const rootElement = document.getElementById("root");
+
+if (rootElement) {
+  createRoot(rootElement).render(
+    <StrictMode>
+      <HelmetProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </HelmetProvider>
+    </StrictMode>,
+  );
+}
