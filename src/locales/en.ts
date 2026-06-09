@@ -1,60 +1,4 @@
 const en = {
-  "home.hero.title":
-    "We are developing the future leaders of the German economy.",
-  "home.hero.mobileTitle":
-    "We are developing the future leaders of the German economy.",
-  "home.hero.since": "Since 1986.",
-  "home.hero.subtitle": "",
-  "home.hero.buttonText1": "TEG for Companies",
-  "home.hero.buttonLink1": "/for-companies",
-  "home.hero.buttonText2": "TEG for Students",
-  "home.hero.buttonLink2": "/for-students",
-  "home.conferenceBanner.cta": "Get your ticket here",
-  "home.conferenceBanner.speakers": "With speakers from:",
-  "home.conferenceBanner.aria":
-    "Open AI Consulting Conference 2026 ticket page on Luma",
-  "home.alumni.title": "Our Alumni: 39 Years of Excellence with Impact",
-  "home.alumni.stat1.value": "300+ Alumni",
-  "home.alumni.stat1.label":
-    "Our alumni form the backbone of the German economy, whether in top management positions, middle management, or leading specialist roles.",
-  "home.alumni.alumni.value": "300+",
-  "home.alumni.alumni.label": "Alumni",
-  "home.alumni.stat2.value": "41",
-  "home.alumni.stat2.label": "Top-level executives in corporations",
-  "home.alumni.stat3.value": "40",
-  "home.alumni.stat3.label": "Top-level executives in SMEs",
-  "home.alumni.stat4.value": "15",
-  "home.alumni.stat4.label": "Company founders",
-  "home.mission":
-    "We enable high-potential students to grow into confident, capable young leaders by providing real industry exposure, hands-on responsibility, and structured development toward future managerial roles.",
-  "home.vision":
-    "We want to create a Europe where ambitious young leaders drive transformative innovation, turning bold ideas into real-world impact. By connecting talent with opportunities, nurturing strategic thinking, and fostering hands-on leadership, we aim to awaken the continent from its deep-tech slumber and help Europe reclaim its position at the forefront of global innovation.",
-  "home.legacy.title": "Our Legacy",
-  "home.legacy.subtitle":
-    "Founded by 11 leading German companies and four outstanding students. Proven over four decades.",
-  "home.legacy.image1.caption": "11 companies that co-founded TEG",
-  "home.legacy.image2.caption":
-    "The 4 founding members who launched TEG at the end of 1986.",
-  "home.legacy.image3.caption":
-    'Newspaper article from Donaukurier: "11 companies establish new student initiative" published shortly after the official registration of the TEG curator board in January 1988.',
-  "home.legacy.feature1.title": "Track Record with Substance",
-  "home.legacy.feature1.description":
-    "For 39 years, our alumni have consistently risen to leadership positions in leading companies or founded successful firms.",
-  "home.legacy.feature2.title":
-    "Entrepreneurial Thinking with Corporate Responsibility",
-  "home.legacy.feature2.description":
-    "Every initiative has its story. We admire traditional, excellently organized companies as much as our own legacy. The visions of former TEG members are now reality. Our members take responsibility, lead companies with foresight, and solve concrete challenges for our ecosystem partners. They don't just shape; they build.",
-  "home.callToAction1.title": "Become a Partner: TEG & Your Company",
-  "home.callToAction1.description":
-    "Shape the next generation of leaders with us. Learn how your company can benefit from access to the TEG ecosystem – and gain direct access to a talent pool proven over 39 years.",
-  "home.callToAction1.buttonText": "TEG for Companies",
-  "home.callToAction1.buttonLink": "/for-companies",
-  "home.callToAction2.title": "Apply Now: TEG for Students",
-  "home.callToAction2.description":
-    "Join a selective community of up to 50 high potentials prepared for top leadership roles – through real responsibility, practical experience, and mentoring. The success of our alumni over 39 years shows what is possible.",
-  "home.callToAction2.buttonText": "TEG for Students",
-  "home.callToAction2.buttonLink": "/for-students",
-
   "home.partners.title": "Our Founding Partners",
   "home.partners.description":
     "Founded in 1986 by BMW, BCG, Roland Berger, KPMG, Siemens, and many others, TEG is today one of the most renowned talent incubators in the German-speaking region.",
@@ -62,29 +6,6 @@ const en = {
   "home.alumnis.title": "Our alumni show what is possible for you",
   "home.alumnis.description":
     "300+ alumni, one in three in top management. Among them 41 corporate executives, 40 medium-sized business executives, and 15 founders of successful companies.",
-
-  "home.card1.title": "Not a trend, a legacy",
-  "home.card1.description":
-    "Since 1986, TEG has connected ambitious students with leading companies. Over 39 years, we've developed a proven system that prepares high-potentials for top leadership roles – through real-world experience and sustainable mentoring.",
-  "home.card1.buttonText": "About us",
-  "home.card1.buttonLink": "/about",
-  "home.card1.imageAlt":
-    "Historic newspaper article about TEG's founding in 1986",
-
-  "home.card2.title": "New Generation of Leaders",
-  "home.card2.description":
-    "Shape the next generation of leaders with us. Discover how your company can benefit from access to the TEG ecosystem – and gain direct access to a talent pool proven over 39 years.",
-  "home.card2.buttonText": "Become a partner",
-  "home.card2.buttonLink": "/for-companies",
-  "home.card2.imageAlt":
-    "TEG members engaged in conversation at a networking event",
-
-  "home.card3.title": "Are you ready?",
-  "home.card3.description":
-    "Become part of a selective community of up to 50 high-potentials being prepared for top leadership roles – through real responsibility, practical experience, and mentoring. The success of our alumni over 39 years shows what's possible.",
-  "home.card3.buttonText": "Join us",
-  "home.card3.buttonLink": "/for-students",
-  "home.card3.imageAlt": "Students in professional exchange during a TEG event",
 
   "company.hero.title":
     "We develop your next leadership talents with certainty.",
@@ -144,6 +65,7 @@ const en = {
   "company.contact.directorTitle": "Director of Strategy and Partnerships",
   "company.contact.directorName": "Jonathan Babelotzky",
 
+  // Student Page Texts
   "student.hero.title":
     "Become a Leader. Shape the Future of Germany's Economy.",
   "student.hero.subtitle":
@@ -328,8 +250,12 @@ const en = {
   "navbar.about": "About Us",
   "navbar.forCompanies": "For Companies",
   "navbar.forStudents": "For Students",
-  "navbar.events": "Events",
+  "navbar.aboutPage.about": "About Us",
+  "navbar.aboutPage.events": "Conferences & Events",
+  "navbar.aboutPage.executives": "For Executives",
+  "navbar.aboutPage.students": "For Students",
 
+  // For Companies Page
   "company.problemHero.title":
     "Digital Markets, Outdated Structures: Germany's Companies Lag Behind",
   "company.problemHero.subtitle":
@@ -407,6 +333,138 @@ const en = {
   "company.runTeg.pillar2.title": "People & Culture",
   "company.runTeg.pillar3.title": "Marketing",
   "company.runTeg.pillar4.title": "Finance, Administration & Legal",
+
+  // About Us Page
+  "about.hero.title": "Leadership is not learned in a seminar.",
+  "about.hero.mobileTitle": "Leadership is not learned in a seminar.",
+  "about.hero.subtitle":
+    "TEG is the only student-run organization in Munich with its own office at the English Garden — not a simulation, but real roles, real budget, and real accountability since 1986.",
+  "about.hero.buttonText1": "TEG for Students",
+  "about.hero.buttonText2": "TEG for Companies",
+  "about.hero.chip1": "Since 1986 in Munich",
+  "about.hero.chip2": "Own office at the English Garden",
+  "about.hero.chip3": "300+ alumni in leadership positions",
+
+  "about.numbers.title": "TEG in Numbers",
+
+  "about.differentiator.title": "Not just a network. A real organization.",
+  "about.differentiator.intro":
+    "What sets TEG apart from other student organizations is not the claim — it is the structure. TEG runs itself like a company: with its own office, its own budget, real fixed costs and clear accountability.",
+  "about.differentiator.card1.title": "Office at the English Garden",
+  "about.differentiator.card1.desc":
+    "TEG is the only student-run organization in Munich with its own office. Not a seminar room on demand — a real operation with fixed costs and a budget.",
+  "about.differentiator.card1.benefit": "Real infrastructure",
+  "about.differentiator.card2.title": "Own budget",
+  "about.differentiator.card2.desc":
+    "Members generate the funds TEG needs to operate. What gets budgeted must get executed — with real consequences.",
+  "about.differentiator.card2.benefit": "Financial accountability",
+  "about.differentiator.card3.title": "10+ hours per week",
+  "about.differentiator.card3.desc":
+    "Membership is not a side activity. It is a parallel education with real commitment — project management, leadership, communication — over 3 semesters.",
+  "about.differentiator.card3.benefit": "Serious commitment",
+  "about.differentiator.card4.title": "Four operating units",
+  "about.differentiator.card4.desc":
+    "Strategy & Partnership, People & Culture, Marketing, Finance & Legal. TEG is organized into functional units — not project groups.",
+  "about.differentiator.card4.benefit": "Company structure",
+
+  "about.howWeWork.title": "Run TEG like a company — learn to run a company",
+  "about.howWeWork.module1.title": "Strategy & Partnership",
+  "about.howWeWork.module1.desc":
+    "Company partnerships, external speakers, public conferences and network development. Members negotiate directly with decision-makers from the German economy.",
+  "about.howWeWork.module2.title": "People & Culture",
+  "about.howWeWork.module2.desc":
+    "Recruiting, onboarding and development. Those who work here find, evaluate and develop people — with real consequences for organizational quality.",
+  "about.howWeWork.module3.title": "Marketing",
+  "about.howWeWork.module3.desc":
+    "LinkedIn presence, event communications and brand development. TEG is publicly visible — and that is the responsibility of members, not an agency.",
+  "about.howWeWork.module4.title": "Finance, Administration & Legal",
+  "about.howWeWork.module4.desc":
+    "Budget management, invoicing and internal documentation. TEG keeps real books — and members are responsible for them.",
+  "about.howWeWork.closing": "Leading one of these units is not an exercise. It's real.",
+
+  "about.inAction.title": "What members actually do",
+  "about.inAction.intro":
+    "No simulation, no case study. The following formats are real — organized, executed and followed up by TEG members.",
+  "about.inAction.scene1.title": "AI Consulting Conference",
+  "about.inAction.scene1.desc":
+    "TEG members plan, promote and host public conferences with external speakers. 150+ attendees. Fully in members' hands.",
+  "about.inAction.scene2.title": "TEG Talk",
+  "about.inAction.scene2.desc":
+    "Regular speaker format with executives and founders from the German economy. Invitation, briefing, moderation, follow-up: all done internally.",
+  "about.inAction.scene3.title": "Workshops & Career Contexts",
+  "about.inAction.scene3.desc":
+    "In-person workshops with real speakers, LMU Career Fair, Frontier Tech Conference. TEG shows up in contexts that matter.",
+
+  "about.testimonials.title": "What others say about TEG",
+
+  "about.history.title": "Since 1986",
+  "about.history.intro":
+    "TEG was founded in Munich in 1986 — by 11 leading German companies and four students. What began as an institutional initiative became one of the longest-running student-led organizations in the German-speaking world.",
+  "about.history.phase1.title": "1986 — Founding in Munich",
+  "about.history.phase1.desc":
+    "Eleven companies — including BMW, BCG, Roland Berger, KPMG and Siemens — co-founded TEG in Munich with four students. The supervisory board was registered in January 1988.",
+  "about.history.phase2.title": "1988 to 2015 — Expansion",
+  "about.history.phase2.desc":
+    "TEG expands to Berlin and Dresden. In Munich, Startup Weekend Munich is created as a TEG satellite. The organization evolves through different programmatic phases.",
+  "about.history.phase3.title": "Today — Return to substance",
+  "about.history.phase3.desc":
+    "300+ alumni. Own office. Four operating units. After 39 years, TEG returns to its historical strength: responsibility, execution and institutional seriousness.",
+
+  "about.reach.title": "Alumni with impact",
+  "about.reach.intro":
+    "The following alumni have publicly documented their TEG involvement on LinkedIn. Three career patterns, one common foundation: early responsibility.",
+  "about.reach.proof1.title": "Top Management",
+  "about.reach.proof1.desc":
+    "Ulrich Beck, David Riessner, Daniel Just, Dr. M. P. Wagner, Claudio Chiandussi — in leadership positions at corporations and international companies.",
+  "about.reach.proof2.title": "SMEs & Founding",
+  "about.reach.proof2.desc":
+    "Volker Maiborn (Founder), Maximilian Mann (SME Managing Director). From taking over a business to building a new company from scratch.",
+  "about.reach.proof3.title": "Middle Management & Interim",
+  "about.reach.proof3.desc":
+    "Arne Rieger, Bernd Amberger, Michael Kraupa — in leadership roles and interim mandates in German and international companies.",
+
+  "about.alumni.title": "What becomes possible after TEG",
+  "about.alumni.intro":
+    "TEG alumni can be found in five career paths today. What they share: early practice and real responsibility during their studies.",
+  "about.alumni.category1": "Top Management",
+  "about.alumni.category2": "Middle Management",
+  "about.alumni.category3": "Interim Management",
+  "about.alumni.category4": "SME Managing Director succession",
+  "about.alumni.category5": "Founders",
+  "about.alumni.note":
+    "All named alumni have publicly documented their TEG membership on LinkedIn.",
+
+  "about.dualBenefit.title": "Who is TEG for?",
+  "about.dualBenefit.students.title": "For students who want more",
+  "about.dualBenefit.students.point1":
+    "Real responsibility in a live organization — no seminar, no roleplay",
+  "about.dualBenefit.students.point2":
+    "First B2B conversations at C-level already in your first semester",
+  "about.dualBenefit.students.point3":
+    "Event leadership, conference organization, budget accountability — verifiable",
+  "about.dualBenefit.students.point4": "A network of people who deliver",
+  "about.dualBenefit.students.cta": "Apply now",
+  "about.dualBenefit.companies.title": "For companies that seek substance",
+  "about.dualBenefit.companies.point1":
+    "Talent that has already taken real responsibility in real business contexts",
+  "about.dualBenefit.companies.point2":
+    "Formats that TEG plans and hosts: panels, events, company visits",
+  "about.dualBenefit.companies.point3":
+    "No cold start: members already know company partners from concrete working contexts",
+  "about.dualBenefit.companies.point4":
+    "39 years of reliability in the Munich business network",
+  "about.dualBenefit.companies.cta": "Become a partner",
+
+  "about.cta.title": "The next step",
+  "about.cta.description":
+    "TEG is for people who want more than theory. Students who seek responsibility. Companies that know the next great hire is not a textbook process.",
+  "about.cta.studentsButton": "Apply now",
+  "about.cta.companiesButton": "Become a partner",
+
+  "seo.about.title":
+    "About TEG | We shape the next generation of leaders for the German economy",
+  "seo.about.description":
+    "Since 1986, TEG is a student-led organization where responsibility, execution and economic reality are not simulated but lived.",
 
   "seo.home.title":
     "TEG | Leadership development for students and companies",
