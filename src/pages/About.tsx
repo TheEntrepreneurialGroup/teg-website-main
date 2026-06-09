@@ -1,8 +1,6 @@
 ﻿import React from "react";
 import { useIntl } from "react-intl";
 import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
-import RunLikeCompanyEnsemble from "@/components/sections/RunLikeCompanyEnsemble";
-import RunLikeCompanyReveal from "@/components/sections/RunLikeCompanyReveal";
 import YblaJourney from "@/components/sections/YblaJourney";
 import TegGardenStatement from "@/components/sections/TegGardenStatement";
 import GardenCtaPair from "@/components/sections/GardenCtaPair";
@@ -51,7 +49,7 @@ const ComplimentVideoSection: React.FC = () => {
       {/* ── Video ───────────────────────────────────────────── */}
       <video
         ref={videoRef}
-        src="/shared/teg-compliment.mp4"
+        src="/shared/teg-compliment-compressed.mp4"
         autoPlay
         loop
         muted
@@ -234,73 +232,6 @@ const About: React.FC = () => {
       cta_companies: isDe ? "Für Unternehmen" : "For Companies",
     },
 
-    runLikeCompany: {
-      eyebrow: isDe ? "Wie wir arbeiten" : "How we work",
-      title: isDe ? "TEG Board - Unsere Vorstände" : "TEG Board - Unsere Vorstände",
-      intro: isDe
-        ? "TEG ist studentisch geführt, aber nicht als Club organisiert. Operative Units mit klaren Leads tragen Ergebnisverantwortung — von Strategie bis Operations."
-        : "TEG is student-led, but it is not run as a club. Operating units with named leads carry real ownership — from strategy to operations.",
-      stageLabel: isDe ? "Im Fokus" : "In focus",
-      stageHint: isDe
-        ? "Scrollen wechselt die Person. Klick auf ein Porträt springt direkt dorthin."
-        : "Scroll to change the person. Click any portrait to jump.",
-      placeholderName: isDe ? "N. N." : "N. N.",
-      placeholderRole: isDe ? "In Auswahl" : "Selection in progress",
-      navHint: "",
-      noQuoteLabel: isDe ? "Statement folgt." : "Statement to follow.",
-      members: [
-        {
-          slug: "jonathan",
-          name: "Jonathan Babelotzky",
-          unit: isDe ? "Vorstand" : "Board",
-          role: "Director of Strategy & Partnerships",
-          photo: "/about/team-leads/jonathan-babelotzky.png",
-          quote: isDe
-            ? "Als „Director of Strategy & Partnerships‘ achte ich teamübergreifend darauf, dass alles in die richtige gemeinsame Richtung geht - und koordiniere die Vereinbarung und Pflege von Partnerschaften."
-            : "As 'Director of Strategy & Partnerships' I make sure everything moves in the same direction across teams — and I coordinate the negotiation and care of our partnerships.",
-          initials: "JB",
-          placeholder: false,
-        },
-        {
-          slug: "ahmed",
-          name: "Ahmed Kaddour",
-          unit: isDe ? "Vorstand" : "Board",
-          role: "Director of Finance, Administration & Legal",
-          photo: "/about/team-leads/ahmed-kaddour.png",
-          quote: isDe
-            ? "Operative Exzellenz entsteht, wenn klare Verantwortlichkeiten, transparente Prozesse und verlässliche Menschen zusammenwirken. Als Director of Finance, Administration & Legal stelle ich sicher, dass TEG täglich funktioniert - von der internen Koordination bis zu externen Partnerschaften."
-            : "Operational excellence emerges when clear responsibilities, transparent processes, and reliable people align. As Director of Finance, Administration & Legal, I ensure TEG functions daily — from internal coordination to external partnerships.",
-          initials: "AK",
-          placeholder: false,
-        },
-        {
-          slug: "yassin",
-          name: "Yassin Aboushelib",
-          unit: isDe ? "Vorstand" : "Board",
-          role: "Director of Operations",
-          photo: "/about/team-leads/yassin-aboushelib.png",
-          quote: isDe
-            ? "„Complexity heißt nicht Maturity.“ Aus meiner Erfahrung in der Automobilindustrie habe ich gelernt, dass die leistungsfähigsten Organisationen nicht die komplexesten sind. Nachhaltige Exzellenz entsteht durch Klarheit, Transparenz und die Fähigkeit, Menschen, Prozesse und Technologie zu einem wirkungsvollen System zu verbinden. Genau diesen Anspruch verfolge ich bei TEG."
-            : "‘Complexity does not mean maturity.’ From my experience in the automotive industry, I have learned that the most capable organizations are not the most complex. Sustainable excellence emerges through clarity, transparency, and the ability to connect people, processes, and technology into an effective system. This is exactly the standard I pursue at TEG.",
-          initials: "YA",
-          placeholder: false,
-        },
-        {
-          slug: "finn",
-          name: "Finn Lux",
-          unit: isDe ? "Vorstand" : "Board",
-          role: "Director of Conferences",
-          photo: "/about/team-leads/finn.png",
-          quote: isDe
-            ? "Ich wollte früh im Studium irgendwohin, wo ich wirklich etwas lerne und Verantwortung übernehme. Bei TEG habe ich im ersten Semester eine eigene Konferenz mit Speakern von McKinsey, BCG und Roland Berger aufgebaut - und dabei mehr über Verhandlung, Führung und Umsetzung gelernt als in jedem Praktikum."
-            : "I wanted to go somewhere early in my studies where I would actually learn and take responsibility. At TEG I built my own conference in my first semester with speakers from McKinsey, BCG and Roland Berger — and learned more about negotiation, leadership and execution than any internship could teach me.",
-          initials: "FN",
-          placeholder: false,
-        },
-
-      ],
-    },
-
     centralStatement: {
       question: isDe
         ? "Wir stärken den Wirtschaftsstandort Deutschland"
@@ -394,10 +325,10 @@ const About: React.FC = () => {
     },
 
     alumniIntro: {
-      title: isDe ? "Ein kleiner Ausschnitt unserer Alumni" : "A small selection of our alumni",
+      title: isDe ? "Ein kleiner Ausschnitt unserer YBLA Absolventen" : "A small selection of our YBLA graduates",
       intro: isDe
-        ? "Drei Jahrzehnte Netzwerk. Eine kleine, öffentliche Auswahl - viele weitere bleiben lieber diskret."
-        : "Three decades of network. A small, public selection - many others prefer to remain discreet.",
+        ? "Drei Jahrzente YBLA formt Entscheider & Führungskräfte."
+        : "Three decades of YBLA shape decision-makers & executives.",
       stats: [
         { number: "300+", label: isDe ? "Alumni" : "Alumni" },
         { number: "41", label: isDe ? "Top-Level Führungskräfte in Konzernen" : "Top-level executives in corporations" },
@@ -1160,6 +1091,22 @@ const About: React.FC = () => {
           className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#F6D77B]/40 to-transparent"
         />
         <div className="relative mx-auto max-w-6xl px-4 md:px-8">
+          {/* 30% Top Management sign */}
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-12 text-center"
+          >
+            <div className="text-[clamp(2.6rem,6vw,5rem)] font-bold leading-none tracking-[-0.02em] text-[#F6D77B]">
+              30% Top Management
+            </div>
+            <div className="mt-3 text-[clamp(0.85rem,1.3vw,1.1rem)] font-medium leading-snug text-white/80">
+              Quote der YBLA Absolventen
+            </div>
+          </motion.div>
+
           {/* Stats row — no grid lines, pure typography */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
@@ -1236,9 +1183,6 @@ const About: React.FC = () => {
         founders={namedFounders}
       />
 
-      {/* §6 Company-like operating model — Scroll-locked bloom (existing, moved) */}
-      <RunLikeCompanyReveal isDe={isDe} />
-
       {/* §3 Selection — Auswahl der Teilnehmer (immersive full-bleed) */}
       <section className="relative isolate flex min-h-[70vh] w-full items-end overflow-hidden bg-[#040F1F] py-20 text-white md:min-h-[80vh] md:py-28 lg:min-h-screen">
         {/* Full-bleed background image */}
@@ -1294,21 +1238,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* §6 Company-like operating model — Team ensemble (existing, moved) */}
-      <RunLikeCompanyEnsemble
-        eyebrow={content.runLikeCompany.eyebrow}
-        title={content.runLikeCompany.title}
-        intro={content.runLikeCompany.intro}
-        stageLabel={content.runLikeCompany.stageLabel}
-        stageHint={content.runLikeCompany.stageHint}
-        placeholderName={content.runLikeCompany.placeholderName}
-        placeholderRole={content.runLikeCompany.placeholderRole}
-        navHint={content.runLikeCompany.navHint}
-        noQuoteLabel={content.runLikeCompany.noQuoteLabel}
-        members={content.runLikeCompany.members}
-        isDe={isDe}
-      />
 
       {/* §6b — Compliment video: full-width immersive */}
       <ComplimentVideoSection />

@@ -16,7 +16,7 @@ interface Props {
  * --------------------------------------------------------------------------
  * One-shot, deeply integrated brand statement.
  *
- *   TEG schafft die neue Generation von Führungskräften
+ *   TEG formt die neue Generation Führungspersönlichkeiten
  *
  * The TEG text is rendered inline as part of the sentence (aligned to
  * the cap height of the typography), and the whole block is the subject of
@@ -52,7 +52,7 @@ const TegGardenStatement: React.FC<Props> = ({
   const play = started;
 
   const tail = isDe
-    ? "schafft die neue Generation von Führungskräften"
+    ? "formt die neue Generation Führungspersönlichkeiten"
     : "is shaping the next generation of leaders";
   const words = tail.split(" ");
 

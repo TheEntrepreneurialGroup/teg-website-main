@@ -1,61 +1,4 @@
 const en = {
-  // Home Page Texts
-  "home.hero.title":
-    "We are developing the future leaders of the German economy.",
-  "home.hero.mobileTitle":
-    "We are developing the future leaders of the German economy.",
-  "home.hero.since": "Since 1986.",
-  "home.hero.subtitle": "",
-  "home.hero.buttonText1": "TEG for Companies",
-  "home.hero.buttonLink1": "/for-companies",
-  "home.hero.buttonText2": "TEG for Students",
-  "home.hero.buttonLink2": "/for-students",
-  "home.conferenceBanner.cta": "Get your ticket here",
-  "home.conferenceBanner.speakers": "With speakers from:",
-  "home.conferenceBanner.aria":
-    "Open AI Consulting Conference 2026 ticket page on Luma",
-  "home.alumni.title": "Our Alumni: 39 Years of Excellence with Impact",
-  "home.alumni.stat1.value": "300+ Alumni",
-  "home.alumni.stat1.label":
-    "Our alumni form the backbone of the German economy, whether in top management positions, middle management, or leading specialist roles.",
-  "home.alumni.alumni.value": "300+",
-  "home.alumni.alumni.label": "Alumni",
-  "home.alumni.stat2.value": "41",
-  "home.alumni.stat2.label": "Top-level executives in corporations",
-  "home.alumni.stat3.value": "40",
-  "home.alumni.stat3.label": "Top-level executives in SMEs",
-  "home.alumni.stat4.value": "15",
-  "home.alumni.stat4.label": "Company founders",
-  "home.mission":
-    "We enable high-potential students to grow into confident, capable young leaders by providing real industry exposure, hands-on responsibility, and structured development toward future managerial roles.",
-  "home.vision":
-    "We want to create a Europe where ambitious young leaders drive transformative innovation, turning bold ideas into real-world impact. By connecting talent with opportunities, nurturing strategic thinking, and fostering hands-on leadership, we aim to awaken the continent from its deep-tech slumber and help Europe reclaim its position at the forefront of global innovation.",
-  "home.legacy.title": "Our Legacy",
-  "home.legacy.subtitle":
-    "Founded by 11 leading German companies and four outstanding students. Proven over four decades.",
-  "home.legacy.image1.caption": "11 companies that co-founded TEG",
-  "home.legacy.image2.caption":
-    "The 4 founding members who launched TEG at the end of 1986.",
-  "home.legacy.image3.caption":
-    'Newspaper article from Donaukurier: "11 companies establish new student initiative" published shortly after the official registration of the TEG curator board in January 1988.',
-  "home.legacy.feature1.title": "Track Record with Substance",
-  "home.legacy.feature1.description":
-    "For 39 years, our alumni have consistently risen to leadership positions in leading companies or founded successful firms.",
-  "home.legacy.feature2.title":
-    "Entrepreneurial Thinking with Corporate Responsibility",
-  "home.legacy.feature2.description":
-    "Every initiative has its story. We admire traditional, excellently organized companies as much as our own legacy. The visions of former TEG members are now reality. Our members take responsibility, lead companies with foresight, and solve concrete challenges for our ecosystem partners. They don't just shape; they build.",
-  "home.callToAction1.title": "Become a Partner: TEG & Your Company",
-  "home.callToAction1.description":
-    "Shape the next generation of leaders with us. Learn how your company can benefit from access to the TEG ecosystem – and gain direct access to a talent pool proven over 39 years.",
-  "home.callToAction1.buttonText": "TEG for Companies",
-  "home.callToAction1.buttonLink": "/for-companies",
-  "home.callToAction2.title": "Apply Now: TEG for Students",
-  "home.callToAction2.description":
-    "Join a selective community of up to 50 high potentials prepared for top leadership roles – through real responsibility, practical experience, and mentoring. The success of our alumni over 39 years shows what is possible.",
-  "home.callToAction2.buttonText": "TEG for Students",
-  "home.callToAction2.buttonLink": "/for-students",
-
   "home.partners.title": "Our Founding Partners",
   "home.partners.description":
     "Founded in 1986 by BMW, BCG, Roland Berger, KPMG, Siemens, and many others, TEG is today one of the most renowned talent incubators in the German-speaking region.",
@@ -63,29 +6,6 @@ const en = {
   "home.alumnis.title": "Our alumni show what is possible for you",
   "home.alumnis.description":
     "300+ alumni, one in three in top management. Among them 41 corporate executives, 40 medium-sized business executives, and 15 founders of successful companies.",
-
-  "home.card1.title": "Not a trend, a legacy",
-  "home.card1.description":
-    "Since 1986, TEG has connected ambitious students with leading companies. Over 39 years, we've developed a proven system that prepares high-potentials for top leadership roles – through real-world experience and sustainable mentoring.",
-  "home.card1.buttonText": "About us",
-  "home.card1.buttonLink": "/about",
-  "home.card1.imageAlt":
-    "Historic newspaper article about TEG's founding in 1986",
-
-  "home.card2.title": "New Generation of Leaders",
-  "home.card2.description":
-    "Shape the next generation of leaders with us. Discover how your company can benefit from access to the TEG ecosystem – and gain direct access to a talent pool proven over 39 years.",
-  "home.card2.buttonText": "Become a partner",
-  "home.card2.buttonLink": "/for-companies",
-  "home.card2.imageAlt":
-    "TEG members engaged in conversation at a networking event",
-
-  "home.card3.title": "Are you ready?",
-  "home.card3.description":
-    "Become part of a selective community of up to 50 high-potentials being prepared for top leadership roles – through real responsibility, practical experience, and mentoring. The success of our alumni over 39 years shows what's possible.",
-  "home.card3.buttonText": "Join us",
-  "home.card3.buttonLink": "/for-students",
-  "home.card3.imageAlt": "Students in professional exchange during a TEG event",
 
   "company.hero.title":
     "We develop your next leadership talents with certainty.",
