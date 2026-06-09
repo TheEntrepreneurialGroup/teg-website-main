@@ -289,7 +289,7 @@ const About: React.FC = () => {
           slug: "finn",
           name: "Finn Lux",
           unit: isDe ? "Vorstand" : "Board",
-          role: "Director of Marketing",
+          role: "Director of Conferences",
           photo: "/about/team-leads/finn.png",
           quote: isDe
             ? "Ich wollte früh im Studium irgendwohin, wo ich wirklich etwas lerne und Verantwortung übernehme. Bei TEG habe ich im ersten Semester eine eigene Konferenz mit Speakern von McKinsey, BCG und Roland Berger aufgebaut - und dabei mehr über Verhandlung, Führung und Umsetzung gelernt als in jedem Praktikum."
@@ -686,7 +686,7 @@ const About: React.FC = () => {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2 }}
-          className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-4 pt-28 md:px-8 md:pt-32"
+          className="relative z-10 mx-auto flex w-full items-center justify-between px-2 pt-28 sm:px-4 md:pt-32"
         >
           <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.42em] text-white/70">
             <span className="inline-block h-px w-10 bg-[#F6D77B]" />
@@ -1141,62 +1141,6 @@ const About: React.FC = () => {
       {/* §3 YBLA programme (existing, moved) */}
       <YblaJourney isDe={isDe} />
 
-      {/* §3 Selection — Auswahl der Teilnehmer (immersive full-bleed) */}
-      <section className="relative isolate flex min-h-[70vh] w-full items-end overflow-hidden bg-[#040F1F] py-20 text-white md:min-h-[80vh] md:py-28 lg:min-h-screen">
-        {/* Full-bleed background image */}
-        <img
-          src="/shared/heroes/selection-bg.jpg"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          className="pointer-events-none absolute inset-0 -z-10 h-full w-full select-none object-cover object-center"
-        />
-        {/* Legibility overlays */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-[#040F1F] via-[#040F1F]/80 to-[#040F1F]/30"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-[#040F1F]/85 via-[#040F1F]/40 to-transparent"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#F6D77B]/40 to-transparent"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#F6D77B]/40 to-transparent"
-        />
-        <div className="relative mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16">
-          <div className="max-w-3xl">
-            <motion.h2
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-              className="text-balance text-[clamp(1.85rem,4vw,3.6rem)] font-semibold leading-[1.18] tracking-[-0.012em] text-white [text-shadow:0_2px_24px_rgba(4,15,31,0.6)]"
-            >
-              {isDe
-                ? "Wer bei TEG mitmacht, wird ausgewählt."
-                : "Membership at TEG is earned."}
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 36 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.95, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 max-w-2xl text-[clamp(1rem,1.6vw,1.25rem)] leading-[1.65] text-white/95 [text-shadow:0_1px_16px_rgba(4,15,31,0.55)]"
-            >
-              {isDe
-                ? "Jeder Bewerber durchläuft dasselbe Verfahren - unabhängig von Herkunft oder Netzwerk. Bewertet werden analytisches Denken, Leistungsbereitschaft und Führungscharakter: die Fähigkeit, Initiative zu ergreifen, zu führen und geführt zu werden."
-                : "Every applicant goes through the same process — regardless of background or network. We assess analytical thinking, drive, and leadership character: the ability to take initiative, to lead, and to be led."}
-            </motion.p>
-          </div>
-        </div>
-      </section>
-
       {/* §5 Historie — Alumni */}
       <section className="relative isolate overflow-hidden bg-[#040F1F] py-24 text-white md:py-36 lg:py-44">
         <div
@@ -1294,6 +1238,62 @@ const About: React.FC = () => {
 
       {/* §6 Company-like operating model — Scroll-locked bloom (existing, moved) */}
       <RunLikeCompanyReveal isDe={isDe} />
+
+      {/* §3 Selection — Auswahl der Teilnehmer (immersive full-bleed) */}
+      <section className="relative isolate flex min-h-[70vh] w-full items-end overflow-hidden bg-[#040F1F] py-20 text-white md:min-h-[80vh] md:py-28 lg:min-h-screen">
+        {/* Full-bleed background image */}
+        <img
+          src="/shared/heroes/selection-bg.jpg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full select-none object-cover object-center"
+        />
+        {/* Legibility overlays */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-[#040F1F] via-[#040F1F]/80 to-[#040F1F]/30"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-[#040F1F]/85 via-[#040F1F]/40 to-transparent"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#F6D77B]/40 to-transparent"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#F6D77B]/40 to-transparent"
+        />
+        <div className="relative mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16">
+          <div className="max-w-3xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="text-balance text-[clamp(1.85rem,4vw,3.6rem)] font-semibold leading-[1.18] tracking-[-0.012em] text-white [text-shadow:0_2px_24px_rgba(4,15,31,0.6)]"
+            >
+              {isDe
+                ? "Wer bei TEG mitmacht, wird ausgewählt."
+                : "Membership at TEG is earned."}
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 36 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.95, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 max-w-2xl text-[clamp(1rem,1.6vw,1.25rem)] leading-[1.65] text-white/95 [text-shadow:0_1px_16px_rgba(4,15,31,0.55)]"
+            >
+              {isDe
+                ? "Jeder Bewerber durchläuft dasselbe Verfahren - unabhängig von Herkunft oder Netzwerk. Bewertet werden analytisches Denken, Leistungsbereitschaft und Führungscharakter: die Fähigkeit, Initiative zu ergreifen, zu führen und geführt zu werden."
+                : "Every applicant goes through the same process — regardless of background or network. We assess analytical thinking, drive, and leadership character: the ability to take initiative, to lead, and to be led."}
+            </motion.p>
+          </div>
+        </div>
+      </section>
 
       {/* §6 Company-like operating model — Team ensemble (existing, moved) */}
       <RunLikeCompanyEnsemble
