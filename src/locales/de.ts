@@ -1,60 +1,4 @@
 const de = {
-  "home.hero.title":
-    "Wir formen die nächsten Führungspersönlichkeiten der deutschen Wirtschaft",
-  "home.hero.mobileTitle":
-    "Wir formen die nächsten Führungs- persönlichkeiten der deutschen Wirtschaft",
-  "home.hero.since": "Seit 1986.",
-  "home.hero.subtitle": "",
-  "home.hero.buttonText1": "TEG für Unternehmen",
-  "home.hero.buttonLink1": "/for-companies",
-  "home.hero.buttonText2": "TEG für Studierende",
-  "home.hero.buttonLink2": "/for-students",
-  "home.conferenceBanner.cta": "Sichere dir hier dein Ticket",
-  "home.conferenceBanner.speakers": "Mit Speakern von:",
-  "home.conferenceBanner.aria":
-    "Ticket für die AI Consulting Conference 2026 auf Luma öffnen",
-  "home.alumni.title": "Unsere Alumni: 39 Jahre Exzellenz mit Wirkung",
-  "home.alumni.stat1.value": "300+ Alumni",
-  "home.alumni.stat1.label":
-    "Unsere Alumni bilden das Rückgrat der deutschen Wirtschaft, ob in Top Management Positionen, im mittleren Management oder in führenden Fachrollen.",
-  "home.alumni.alumni.value": "300+",
-  "home.alumni.alumni.label": "Alumni",
-  "home.alumni.stat2.value": "41",
-  "home.alumni.stat2.label": "Top-Level Führungskräfte in Konzernen",
-  "home.alumni.stat3.value": "40",
-  "home.alumni.stat3.label": "Top-Level Führungskräfte im Mittelstand",
-  "home.alumni.stat4.value": "15",
-  "home.alumni.stat4.label": "Unternehmens\u00ADgründer",
-  "home.mission":
-    "Wir befähigen leistungsstarke Studierende, sich zu selbstbewussten und kompetenten jungen Führungskräften zu entwickeln, indem wir ihnen echten Unternehmenseinblick, praktische Verantwortung und eine strukturierte Entwicklung auf ihrem Weg in zukünftige Managementrollen bieten.",
-  "home.vision":
-    "Wir wollen ein Europa schaffen, in dem ambitionierte junge Führungskräfte transformative Innovationen vorantreiben und mutige Ideen in greifbare Ergebnisse verwandeln. Indem wir Talente mit Chancen verbinden, strategisches Denken fördern und praktische Führungserfahrung ermöglichen, möchten wir den Kontinent aus seinem Deep-Tech-Schlaf wecken und Europa wieder an die Spitze globaler Innovation bringen.",
-  "home.legacy.title": "Unser Vermächtnis",
-  "home.legacy.subtitle":
-    "Gegründet von 11 führenden deutschen Unternehmen und vier herausragenden Studierenden. Bewährt über vier Jahrzehnte.",
-  "home.legacy.image1.caption": "11 Unternehmen, die TEG mitbegründet haben",
-  "home.legacy.image2.caption":
-    "Die 4 Gründungsmitglieder, die TEG Ende 1986 ins Leben riefen.",
-  "home.legacy.image3.caption":
-    'Zeitungsartikel aus dem Donaukurier: "11 Unternehmen gründen neue Studierendeninitiative" erschienen kurz nach der offiziellen Eintragung des TEG-Kuratoriums im Januar 1988.',
-  "home.legacy.feature1.title": "Erfolgsbilanz mit Substanz",
-  "home.legacy.feature1.description":
-    "Seit 39 Jahren steigen unsere Alumni konsequent in Führungspositionen führender Unternehmen auf oder gründen erfolgreiche Firmen.",
-  "home.legacy.feature2.title":
-    "Unternehmerisches Denken mit Corporate-Verantwortung",
-  "home.legacy.feature2.description":
-    "Jede Initiative hat ihre Geschichte. Wir bewundern traditionsreiche, exzellent organisierte Unternehmen genauso sehr wie unsere eigene Legacy. Die Visionen früherer TEG-Mitglieder sind heute Realität. Unsere Mitglieder übernehmen Verantwortung, führen Unternehmen mit Weitblick und lösen konkrete Herausforderungen für unsere Partner im Ökosystem. Sie gestalten nicht nur, sie bauen.",
-  "home.callToAction1.title": "Partner werden: TEG & Ihr Unternehmen",
-  "home.callToAction1.description":
-    "Gestalten Sie mit uns die nächste Generation von Führungskräften. Erfahren Sie, wie Ihr Unternehmen vom Zugang zum TEG-Ökosystem profitieren kann – und erhalten Sie direkten Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
-  "home.callToAction1.buttonText": "TEG für Unternehmen",
-  "home.callToAction1.buttonLink": "/for-companies",
-  "home.callToAction2.title": "Jetzt bewerben: TEG für Studierende",
-  "home.callToAction2.description":
-    "Werde Teil einer selektiven Community von bis zu 50 High-Potentials, die auf Top-Führungsrollen vorbereitet werden – durch echte Verantwortung, Praxiserfahrung und Mentoring. Der Erfolg unserer Alumni über 39 Jahre zeigt, was möglich ist.",
-  "home.callToAction2.buttonText": "TEG für Studierende",
-  "home.callToAction2.buttonLink": "/for-students",
-
   "home.partners.title": "Unsere Gründer-Firmen",
   "home.partners.description":
     "1986 gegründet von BMW, BCG und Roland Berger, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
@@ -63,30 +7,7 @@ const de = {
   "home.alumnis.description":
     "300+ Alumni, jede:r im Dritte Top-Management. Darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen.",
 
-  "home.card1.title": "Keine Modeerscheinung, sondern ein Vermächtnis",
-  "home.card1.description":
-    "Seit 1986 verbindet TEG ambitionierte Studierende mit führenden Unternehmen. Über 39 Jahre haben wir ein bewährtes System entwickelt, das High-Potentials auf Top-Führungsrollen vorbereitet – durch echte Praxiserfahrung und nachhaltiges Mentoring.",
-  "home.card1.buttonText": "Über uns",
-  "home.card1.buttonLink": "/about",
-  "home.card1.imageAlt":
-    "Historischer Zeitungsartikel über die Gründung von TEG im Jahr 1986",
-
-  "home.card2.title": "Neue Generation von Führungskräften",
-  "home.card2.description":
-    "Gestalten Sie mit uns die nächste Generation von Führungskräften. Erfahren Sie, wie Ihr Unternehmen vom Zugang zum TEG-Ökosystem profitieren kann – und erhalten Sie direkten Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
-  "home.card2.buttonText": "Partner werden",
-  "home.card2.buttonLink": "/for-companies",
-  "home.card2.imageAlt":
-    "TEG-Mitglieder im Gespräch bei einem Networking-Event",
-
-  "home.card3.title": "Bist du bereit?",
-  "home.card3.description":
-    "Werde Teil einer selektiven Community von bis zu 50 High-Potentials, die auf Top-Führungsrollen vorbereitet werden – durch echte Verantwortung, Praxiserfahrung und Mentoring. Der Erfolg unserer Alumni über 39 Jahre zeigt, was möglich ist.",
-  "home.card3.buttonText": "Mitglied werden",
-  "home.card3.buttonLink": "/for-students",
-  "home.card3.imageAlt":
-    "Studierende im professionellen Austausch während einer TEG-Veranstaltung",
-
+  // Company Page Texts
   "company.hero.title": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
   "company.hero.mobileTitle": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
   "company.hero.subtitle":
@@ -144,8 +65,11 @@ const de = {
   "company.contact.greeting": "Ich freue mich von Ihnen zu hören!",
   "company.contact.email": "E-Mail",
   "company.contact.linkedin": "LinkedIn",
-  "company.contact.directorTitle": "Leitung Strategie & Partnerschaften",
+  "company.contact.directorTitle":
+    "Bereichsleiter Organisationsstrategie und Partnerschaften",
   "company.contact.directorName": "Jonathan Babelotzky",
+
+  // --------- Student Page Texts ---------- //
 
   "student.hero.title":
     "Werde Teil der nächsten Generation von Top-Managern, Führungs\u00ADkräften und B2B-Gründern.",
@@ -329,8 +253,12 @@ const de = {
   "navbar.about": "Über uns",
   "navbar.forCompanies": "Für Unternehmen",
   "navbar.forStudents": "Für Studierende",
-  "navbar.events": "Events",
+  "navbar.aboutPage.about": "Über Uns",
+  "navbar.aboutPage.events": "Konferenzen & Events",
+  "navbar.aboutPage.executives": "Für Führungskräfte",
+  "navbar.aboutPage.students": "Für Studierende",
 
+  // For Companies Page
   "company.problemHero.title":
     "Digitale Märkte, veraltete Strukturen: Deutschlands Unternehmen hinken hinterher",
   "company.problemHero.subtitle":
@@ -409,6 +337,138 @@ const de = {
   "company.runTeg.pillar2.title": "People & Culture",
   "company.runTeg.pillar3.title": "Marketing",
   "company.runTeg.pillar4.title": "Finance, Administration & Legal",
+
+  // About Us Page
+  "about.hero.title": "Verantwortung lernt man nicht im Seminar.",
+  "about.hero.mobileTitle": "Verantwortung lernt man nicht im Seminar.",
+  "about.hero.subtitle":
+    "TEG ist die einzige studentisch geführte Organisation in München mit eigenem Büro am Englischen Garten — kein Planspiel, sondern echte Rollen, eigenes Budget und reale Verantwortung seit 1986.",
+  "about.hero.buttonText1": "TEG für Studierende",
+  "about.hero.buttonText2": "TEG für Unternehmen",
+  "about.hero.chip1": "Seit 1986 in München",
+  "about.hero.chip2": "Eigenes Büro am Englischen Garten",
+  "about.hero.chip3": "300+ Alumni in Führungspositionen",
+
+  "about.numbers.title": "TEG in Zahlen",
+
+  "about.differentiator.title": "Nicht nur Netzwerk. Eine echte Organisation.",
+  "about.differentiator.intro":
+    "Was TEG von anderen studentischen Organisationen unterscheidet, ist nicht der Claim — es ist die Struktur. TEG führt sich selbst wie ein Unternehmen: mit eigenem Büro, eigenem Budget, echten Fixkosten und klaren Verantwortlichkeiten.",
+  "about.differentiator.card1.title": "Büro am Englischen Garten",
+  "about.differentiator.card1.desc":
+    "TEG ist die einzige studentisch betriebene Organisation in München mit eigenem Office. Kein Seminarraum auf Abruf — ein echter Betrieb mit Fixkosten und Budget.",
+  "about.differentiator.card1.benefit": "Echte Infrastruktur",
+  "about.differentiator.card2.title": "Eigenes Budget",
+  "about.differentiator.card2.desc":
+    "Mitglieder erwirtschaften die Mittel, die TEG zum Laufen braucht. Was budgetiert wird, muss auch umgesetzt werden — mit echten Konsequenzen.",
+  "about.differentiator.card2.benefit": "Finanzielle Verantwortung",
+  "about.differentiator.card3.title": "10+ Stunden pro Woche",
+  "about.differentiator.card3.desc":
+    "Mitgliedschaft ist keine Freizeitbeschäftigung. Es ist eine parallele Ausbildung mit echtem Arbeitseinsatz — Projektmanagement, Führung, Kommunikation — 3 Semester lang.",
+  "about.differentiator.card3.benefit": "Ernsthafter Einsatz",
+  "about.differentiator.card4.title": "Vier operative Bereiche",
+  "about.differentiator.card4.desc":
+    "Strategy & Partnership, People & Culture, Marketing, Finance & Legal. TEG ist in funktionale Einheiten gegliedert — nicht in Projektgruppen.",
+  "about.differentiator.card4.benefit": "Unternehmensstruktur",
+
+  "about.howWeWork.title": "Run TEG like a company — learn to run a company",
+  "about.howWeWork.module1.title": "Strategy & Partnership",
+  "about.howWeWork.module1.desc":
+    "Unternehmenspartnerschaften, externe Speaker, öffentliche Konferenzen und Netzwerkentwicklung. Mitglieder verhandeln direkt mit Entscheidern aus der deutschen Wirtschaft.",
+  "about.howWeWork.module2.title": "People & Culture",
+  "about.howWeWork.module2.desc":
+    "Recruiting, Onboarding und Entwicklung. Wer hier mitarbeitet, sucht, bewertet und entwickelt Menschen — mit echten Konsequenzen für die Qualität der Organisation.",
+  "about.howWeWork.module3.title": "Marketing",
+  "about.howWeWork.module3.desc":
+    "LinkedIn-Präsenz, Event-Kommunikation und Markenentwicklung. TEG ist öffentlich sichtbar — und das ist Aufgabe von Mitgliedern, keine Agenturarbeit.",
+  "about.howWeWork.module4.title": "Finance, Administration & Legal",
+  "about.howWeWork.module4.desc":
+    "Budgetverwaltung, Rechnungsstellung und interne Dokumentation. TEG führt echte Bücher — Mitglieder sind verantwortlich.",
+  "about.howWeWork.closing":
+    "Wer einen dieser Bereiche leitet, tut das nicht für eine Fallstudie. Er tut es wirklich.",
+
+  "about.inAction.title": "Was Mitglieder tatsächlich tun",
+  "about.inAction.intro":
+    "Keine Simulation, keine Fallstudie. Die folgenden Formate sind real — organisiert, durchgeführt und nachbereitet von TEG-Mitgliedern.",
+  "about.inAction.scene1.title": "AI Consulting Conference",
+  "about.inAction.scene1.desc":
+    "TEG-Mitglieder planen, bewerben und hosten öffentliche Konferenzen mit externen Speakern. 150+ Teilnehmer. Vollständig in Mitgliederhand.",
+  "about.inAction.scene2.title": "TEG Talk",
+  "about.inAction.scene2.desc":
+    "Regelmäßiges Speaker-Format mit Führungskräften und Gründern aus der deutschen Wirtschaft. Einladung, Briefing, Moderation, Nachbereitung: alles intern.",
+  "about.inAction.scene3.title": "Workshops & Karrierekontexte",
+  "about.inAction.scene3.desc":
+    "In-person-Workshops mit echten Speakern, LMU Karrieremesse, Frontier Tech Conference. TEG ist in Kontexten präsent, die Gewicht haben.",
+
+  "about.testimonials.title": "Was andere über TEG sagen",
+
+  "about.history.title": "Seit 1986",
+  "about.history.intro":
+    "TEG wurde 1986 in München gegründet — von 11 führenden deutschen Unternehmen und vier Studierenden. Was als institutionelle Initiative begann, entwickelte sich zu einer der langlebigsten studentisch geführten Organisationen im deutschsprachigen Raum.",
+  "about.history.phase1.title": "1986 — Gründung in München",
+  "about.history.phase1.desc":
+    "Elf Unternehmen — darunter BMW, BCG, Roland Berger, KPMG und Siemens — gründen gemeinsam mit vier Studierenden TEG. Das Kuratorium wird im Januar 1988 eingetragen.",
+  "about.history.phase2.title": "1988 bis 2015 — Ausbau",
+  "about.history.phase2.desc":
+    "TEG expandiert nach Berlin und Dresden. In München entsteht das Startup Weekend Munich als TEG-Satellit. Die Organisation durchläuft verschiedene inhaltliche Phasen.",
+  "about.history.phase3.title": "Heute — Rückkehr zur Substanz",
+  "about.history.phase3.desc":
+    "300+ Alumni. Eigenes Büro. Vier operative Bereiche. Nach 39 Jahren findet TEG zu seiner historischen Stärke zurück: Verantwortung, Umsetzung und institutionelle Ernsthaftigkeit.",
+  "about.reach.title": "Alumni mit Wirkung",
+  "about.reach.intro":
+    "Die folgenden Alumni haben ihr TEG-Engagement öffentlich auf LinkedIn dokumentiert. Drei Karrieremuster, eine gemeinsame Grundlage: frühe Verantwortung.",
+  "about.reach.proof1.title": "Top Management",
+  "about.reach.proof1.desc":
+    "Ulrich Beck, David Riessner, Daniel Just, Dr. M. P. Wagner, Claudio Chiandussi — in leitenden Positionen in Konzernen und internationalen Unternehmen.",
+  "about.reach.proof2.title": "Mittelstand & Gründung",
+  "about.reach.proof2.desc":
+    "Volker Maiborn (Gründer), Maximilian Mann (Geschäftsführer Mittelstand). Von der Übernahme einer Geschäftsführung bis zum Aufbau eines eigenen Unternehmens.",
+  "about.reach.proof3.title": "Mittleres Management & Interim",
+  "about.reach.proof3.desc":
+    "Arne Rieger, Bernd Amberger, Michael Kraupa — in Führungsrollen und Interim-Mandaten in der deutschen und internationalen Wirtschaft.",
+
+  "about.alumni.title": "Was nach TEG möglich ist",
+  "about.alumni.intro":
+    "TEG-Alumni finden sich heute in fünf Karrierepfaden. Was sie verbindet: frühe Praxis und echte Verantwortung während des Studiums.",
+  "about.alumni.category1": "Top Management",
+  "about.alumni.category2": "Mittleres Management",
+  "about.alumni.category3": "Interim Management",
+  "about.alumni.category4": "Übernahme GF Mittelstand",
+  "about.alumni.category5": "Gründer",
+  "about.alumni.note":
+    "Alle genannten Alumni haben ihre TEG-Mitgliedschaft öffentlich auf LinkedIn dokumentiert.",
+
+  "about.dualBenefit.title": "Für wen ist TEG?",
+  "about.dualBenefit.students.title": "Für Studierende, die mehr wollen",
+  "about.dualBenefit.students.point1":
+    "Eigene Verantwortung in einer laufenden Organisation — kein Seminar, kein Rollenspiel",
+  "about.dualBenefit.students.point2":
+    "Erste B2B-Gespräche auf C-Level-Niveau schon im ersten Semester",
+  "about.dualBenefit.students.point3":
+    "Eventleitung, Konferenzorganisation, Budgetverantwortung — nachweisbar",
+  "about.dualBenefit.students.point4": "Ein Netzwerk aus Menschen, die liefern",
+  "about.dualBenefit.students.cta": "Jetzt bewerben",
+  "about.dualBenefit.companies.title": "Für Unternehmen, die Substanz suchen",
+  "about.dualBenefit.companies.point1":
+    "Talente, die bereits in echten Geschäftskontexten Verantwortung getragen haben",
+  "about.dualBenefit.companies.point2":
+    "Formate, die TEG plant und hostet: Panels, Events, Unternehmensbesuche",
+  "about.dualBenefit.companies.point3":
+    "Kein Kaltstart: Mitglieder kennen Unternehmenspartner aus konkreten Arbeitskontexten",
+  "about.dualBenefit.companies.point4":
+    "39 Jahre Verlässlichkeit im Münchner Wirtschaftsnetzwerk",
+  "about.dualBenefit.companies.cta": "Partner werden",
+
+  "about.cta.title": "Der nächste Schritt",
+  "about.cta.description":
+    "TEG ist für Menschen, die mehr wollen als Theorie. Studierende, die Verantwortung suchen. Unternehmen, die wissen, dass der nächste gute Einstellungsentscheid kein Lehrbuchprozess ist.",
+  "about.cta.studentsButton": "Jetzt bewerben",
+  "about.cta.companiesButton": "Partner werden",
+
+  "seo.about.title":
+    "Über TEG | Wir formen die neue Generation von Führungskräften für die Deutsche Wirtschaft",
+  "seo.about.description":
+    "TEG ist seit 1986 eine studentisch geführte Organisation, in der Verantwortung, Umsetzung und wirtschaftliche Realität nicht simuliert, sondern gelebt werden.",
 
   "seo.home.title":
     "TEG | Führungskräfteentwicklung für Studierende und Unternehmen",

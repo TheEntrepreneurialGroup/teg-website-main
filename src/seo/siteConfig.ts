@@ -2,7 +2,7 @@ export const siteConfig = {
   siteName: "The Entrepreneurial Group",
   baseUrl: "https://www.teg-ev.de",
   defaultTitle: "TEG | The Entrepreneurial Group",
-  defaultOgImagePath: "/shared/heroes/hero-home.avif",
+  defaultOgImagePath: "/shared/heroes/hero-home-new.jpg?v=2",
   defaultDescription: {
     de: "TEG entwickelt seit 1986 ambitionierte Studierende zu zukünftigen Führungskräften und vernetzt sie mit führenden Unternehmen.",
     en: "Since 1986, TEG has developed ambitious students into future leaders and connected them with leading companies.",

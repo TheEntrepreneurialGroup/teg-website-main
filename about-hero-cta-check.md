@@ -1,0 +1,470 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - link "TEG Logo" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "TEG Logo" [ref=e10]
+      - navigation [ref=e11]:
+        - link "Über uns" [ref=e12] [cursor=pointer]:
+          - /url: /
+        - link "Für Unternehmen" [ref=e13] [cursor=pointer]:
+          - /url: /for-companies
+        - link "Für Studierende" [ref=e14] [cursor=pointer]:
+          - /url: /for-students
+      - generic [ref=e15]:
+        - button "EN" [ref=e16] [cursor=pointer]
+        - generic [ref=e17]: "|"
+        - button "DE" [ref=e18] [cursor=pointer]
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - img [ref=e22]
+        - generic [ref=e26]:
+          - generic [ref=e29]: TEG — München · Seit 1986
+          - generic [ref=e30]: Über uns
+        - generic [ref=e31]:
+          - generic [ref=e603]:
+            - img
+            - paragraph [ref=e604]:
+              - generic [ref=e605]: TEG
+              - generic [ref=e606]: schafft
+              - generic [ref=e607]: die
+              - generic [ref=e608]: neue
+              - generic [ref=e609]: Generation
+              - generic [ref=e610]: von
+              - generic [ref=e611]: Führungskräften
+              - generic [ref=e612]: für
+              - generic [ref=e613]: die
+              - generic [ref=e614]: Deutsche
+              - generic [ref=e615]: Wirtschaft.
+          - generic [ref=e581]:
+            - link "Über Uns" [ref=e582] [cursor=pointer]:
+              - /url: "#story"
+              - img
+              - generic [ref=e583]:
+                - generic [ref=e584]: Über Uns
+                - img [ref=e585]
+            - link "Konferenzen & Events" [ref=e587] [cursor=pointer]:
+              - /url: "#events"
+              - img
+              - generic [ref=e588]:
+                - generic [ref=e589]: Konferenzen & Events
+                - img [ref=e590]
+            - link "Für Führungskräfte" [ref=e592] [cursor=pointer]:
+              - /url: /for-companies
+              - generic [ref=e593]:
+                - generic [ref=e594]: Für Führungskräfte
+                - img [ref=e595]
+            - link "Für Studierende" [ref=e597] [cursor=pointer]:
+              - /url: /for-students
+              - generic [ref=e598]:
+                - generic [ref=e599]: Für Studierende
+                - img [ref=e600]
+        - generic [ref=e36]:
+          - generic [ref=e37]: Partner & Speaker
+          - generic [ref=e39]:
+            - generic [ref=e41]: BCG
+            - generic [ref=e44]: McKinsey
+            - generic [ref=e47]: Roland Berger
+            - generic [ref=e50]: Accenture
+            - generic [ref=e53]: appliedAI
+            - generic [ref=e56]: IBM
+            - generic [ref=e59]: MaibornWolff
+            - generic [ref=e62]: Hogan Lovells
+            - generic [ref=e65]: Munich Re
+            - generic [ref=e68]: Capgemini
+            - generic [ref=e71]: PwC
+            - generic [ref=e74]: Netlight
+            - generic [ref=e77]: Wayra
+            - generic [ref=e80]: LMU
+            - generic [ref=e83]: BCG
+            - generic [ref=e86]: McKinsey
+            - generic [ref=e89]: Roland Berger
+            - generic [ref=e92]: Accenture
+            - generic [ref=e95]: appliedAI
+            - generic [ref=e98]: IBM
+            - generic [ref=e101]: MaibornWolff
+            - generic [ref=e104]: Hogan Lovells
+            - generic [ref=e107]: Munich Re
+            - generic [ref=e110]: Capgemini
+            - generic [ref=e113]: PwC
+            - generic [ref=e116]: Netlight
+            - generic [ref=e119]: Wayra
+            - generic [ref=e122]: LMU
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - generic [ref=e128]: §1 Heritage · Seit 1986
+          - heading "Gegründet von Vorständen elf deutscher Top-Unternehmen." [level=2] [ref=e129]
+          - paragraph [ref=e130]: "Die TEG (The Entrepreneurial Group) ist eine gemeinnützige Organisation der Erwachsenenbildung mit Sitz in München. Sie wurde 1986 eingetragen und im Januar 1988 in ihrer heutigen Form etabliert, mitinitiiert von Vorständen elf deutscher Unternehmen: Dr. Helmuth Buddenberg (BP), Franz Köhne (BMW, Personalvorstand), Hans H. Schlitzberger (Siemens), Roland Berger (Roland Berger) sowie Vorstände von BCG, MBB (heute Airbus), Peat Marwick Mitchell (heute KPMG), Ruhrgas (heute E.ON), Bayerische Hypothekenbank (heute HypoVereinsbank/UniCredit), Infratest und Personal-Media-Partner (heute Teil von Roland Berger)."
+          - 'figure "Pressebeleg Donaukurier, kurz nach der offiziellen Eintragung: \"Elf Unternehmen gründen neue Studentenvereinigung\". Der Artikel nennt die Gründerunternehmen und bestätigt das institutionelle Umfeld der ersten TEG-Struktur in München." [ref=e131]':
+            - img "Historischer Zeitungsartikel zur Gründung des TEG-Kuratoriums" [ref=e133]
+            - generic [ref=e134]:
+              - generic [ref=e135]: Pressebeleg
+              - paragraph [ref=e136]: "Donaukurier, kurz nach der offiziellen Eintragung: \"Elf Unternehmen gründen neue Studentenvereinigung\". Der Artikel nennt die Gründerunternehmen und bestätigt das institutionelle Umfeld der ersten TEG-Struktur in München."
+          - generic [ref=e137]:
+            - generic [ref=e138]: Namentlich genannt
+            - generic [ref=e139]:
+              - article [ref=e140]:
+                - generic "Dr. Helmuth Buddenberg" [ref=e141]: HB
+                - generic [ref=e142]:
+                  - generic [ref=e143]: BP
+                  - heading "Dr. Helmuth Buddenberg" [level=3] [ref=e144]
+                  - paragraph [ref=e145]: Vorstandsvorsitzender Deutsche BP
+              - article [ref=e146]:
+                - generic "Franz Köhne" [ref=e147]: FK
+                - generic [ref=e148]:
+                  - generic [ref=e149]: BMW
+                  - heading "Franz Köhne" [level=3] [ref=e150]
+                  - paragraph [ref=e151]: BMW, Personalvorstand
+              - article [ref=e152]:
+                - generic "Hans H. Schlitzberger" [ref=e153]: HS
+                - generic [ref=e154]:
+                  - generic [ref=e155]: Siemens
+                  - heading "Hans H. Schlitzberger" [level=3] [ref=e156]
+                  - paragraph [ref=e157]: Siemens
+              - article [ref=e158]:
+                - img "Roland Berger" [ref=e160]
+                - generic [ref=e161]:
+                  - generic [ref=e162]: Roland Berger
+                  - heading "Roland Berger" [level=3] [ref=e163]
+                  - paragraph [ref=e164]: Gründer Roland Berger + Partner
+        - generic [ref=e166]:
+          - generic [ref=e167]:
+            - generic [ref=e168]:
+              - generic [ref=e169]: Kuratorium 1986
+              - paragraph [ref=e170]: Die erste TEG-Struktur wurde von Konzernen, Beratungen und Industriehäusern mitgetragen. Die heutige Entsprechung jeder Marke ist direkt in der Wand markiert.
+            - generic [ref=e171]: 11 Unternehmen
+          - generic [ref=e172]:
+            - article [ref=e173]:
+              - img "Deutsche BP" [ref=e175]
+              - generic [ref=e176]:
+                - heading "Deutsche BP" [level=3] [ref=e177]
+                - paragraph [ref=e178]: heute bp
+                - paragraph [ref=e179]: Dr. Helmuth Buddenberg
+            - article [ref=e180]:
+              - img "BMW" [ref=e182]
+              - generic [ref=e183]:
+                - heading "BMW" [level=3] [ref=e184]
+                - paragraph [ref=e185]: heute BMW Group
+                - paragraph [ref=e186]: Franz Köhne
+            - article [ref=e187]:
+              - img "Siemens" [ref=e189]
+              - generic [ref=e190]:
+                - heading "Siemens" [level=3] [ref=e191]
+                - paragraph [ref=e192]: heute Siemens
+                - paragraph [ref=e193]: Hans H. Schlitzberger
+            - article [ref=e194]:
+              - img "Roland Berger + Partner" [ref=e196]
+              - generic [ref=e197]:
+                - heading "Roland Berger + Partner" [level=3] [ref=e198]
+                - paragraph [ref=e199]: heute Roland Berger
+                - paragraph [ref=e200]: Roland Berger
+            - article [ref=e201]:
+              - img "The Boston Consulting Group" [ref=e203]
+              - generic [ref=e204]:
+                - heading "The Boston Consulting Group" [level=3] [ref=e205]
+                - paragraph [ref=e206]: heute Boston Consulting Group
+            - article [ref=e207]:
+              - img "MBB" [ref=e209]
+              - generic [ref=e210]:
+                - heading "MBB" [level=3] [ref=e211]
+                - paragraph [ref=e212]: heute Airbus
+            - article [ref=e213]:
+              - img "Peat, Marwick, Mitchell + Co" [ref=e215]
+              - generic [ref=e216]:
+                - heading "Peat, Marwick, Mitchell + Co" [level=3] [ref=e217]
+                - paragraph [ref=e218]: heute KPMG
+            - article [ref=e219]:
+              - img "Ruhrgas" [ref=e221]
+              - generic [ref=e222]:
+                - heading "Ruhrgas" [level=3] [ref=e223]
+                - paragraph [ref=e224]: heute E.ON
+            - article [ref=e225]:
+              - img "Bayerische Hypotheken- und Wechsel-Bank" [ref=e227]
+              - generic [ref=e228]:
+                - heading "Bayerische Hypotheken- und Wechsel-Bank" [level=3] [ref=e229]
+                - paragraph [ref=e230]: heute HypoVereinsbank / UniCredit
+            - article [ref=e231]:
+              - img "Infratest" [ref=e233]
+              - generic [ref=e234]:
+                - heading "Infratest" [level=3] [ref=e235]
+                - paragraph [ref=e236]: heute Infratest dimap
+            - article [ref=e237]:
+              - generic "Personal-Media-Partner" [ref=e239]: PMP
+              - generic [ref=e240]:
+                - heading "Personal-Media-Partner" [level=3] [ref=e241]
+                - paragraph [ref=e242]: heute Teil von Roland Berger
+          - generic [ref=e243]:
+            - generic [ref=e244]:
+              - term [ref=e245]: Rechtsform
+              - definition [ref=e246]: Gemeinnützige Erwachsenenbildung · e.V.
+            - generic [ref=e247]:
+              - term [ref=e248]: Register
+              - definition [ref=e249]: Amtsgericht München · VR 11822
+            - generic [ref=e250]:
+              - term [ref=e251]: Sitz
+              - definition [ref=e252]: München
+          - paragraph [ref=e253]: Eingetragen 1986 · in heutiger Form etabliert Januar 1988 · Amtsgericht München, VR 11822.
+      - generic [ref=e256]:
+        - generic [ref=e257]:
+          - generic [ref=e258]: 40 Jahre TEG
+          - heading "Seit 1986 in München." [level=2] [ref=e259]
+          - paragraph [ref=e260]: "Belege: TEG-Leistungsnachweis (Dok.-Ref. TEG-LN-2026-05-22), Wayback Machine (teg-ev.de, Erst-Capture 2001), öffentliche LinkedIn-Unternehmensseite. Vollständige Chronik in laufender Aufarbeitung."
+        - list [ref=e261]:
+          - listitem [ref=e262]:
+            - generic [ref=e264]: "1986"
+            - generic [ref=e265]:
+              - generic [ref=e266]: Gründung
+              - paragraph [ref=e267]: Eintragung in München. Mit-initiiert von Vorständen elf deutscher Unternehmen — BP, BMW, Siemens, Roland Berger, BCG, MBB (heute Airbus), Peat Marwick Mitchell (heute KPMG), Ruhrgas (heute E.ON), Bayerische Hypothekenbank (heute HypoVereinsbank), Infratest, Personal-Media-Partner.
+          - listitem [ref=e268]:
+            - generic [ref=e270]: "1988"
+            - generic [ref=e271]:
+              - generic [ref=e272]: Heutige Form
+              - paragraph [ref=e273]: Im Januar 1988 in der heutigen Form etabliert. Im selben Jahr Eröffnung eines Berliner Büros.
+          - listitem [ref=e274]:
+            - generic [ref=e276]: "2001"
+            - generic [ref=e277]:
+              - generic [ref=e278]: Web-Kontinuität
+              - paragraph [ref=e279]: Erste archivierte Web-Präsenz auf teg-ev.de. Bis 2026 sind 314 öffentliche Captures in der Wayback Machine dokumentiert.
+          - listitem [ref=e280]:
+            - generic [ref=e282]: "2015"
+            - generic [ref=e283]:
+              - generic [ref=e284]: Eventreihe
+              - paragraph [ref=e285]: TEG organisiert das Startup Weekend Munich (suwm-teg.de). Beginn der wiederkehrenden Eventreihe aus Talks, Panels und Konferenzen, die heute die Außenwahrnehmung trägt.
+          - listitem [ref=e286]:
+            - generic [ref=e288]: "2025"
+            - generic [ref=e289]:
+              - generic [ref=e290]: Frontier Tech Conference
+              - paragraph [ref=e291]: Frontier Tech Conference bei MaibornWolff in München — 150 Teilnehmende.
+          - listitem [ref=e292]:
+            - generic [ref=e294]: "2026"
+            - generic [ref=e295]:
+              - generic [ref=e296]: O2 Tower + AI Conference
+              - paragraph [ref=e297]: TEG Talk Corporate Entrepreneurship am 24. April im O2 Tower München bei Wayra Germany. Danach AI Consulting Conference am 10. Juni im Netlight Office München mit 150 Plätzen auf Bewerbung und Partnern wie BCG, McKinsey, Roland Berger, Accenture, PwC, IBM, MaibornWolff, Munich Re, Capgemini und LMU.
+      - generic [ref=e299]:
+        - generic [ref=e300]: Unser Leitmotiv
+        - 'heading "Ziel der TEG ist die Stärkung des Wirtschaftsstandorts Deutschland durch: den Aufbau eines Nachwuchskanals für die Unternehmensführung deutscher Firmen." [level=2] [ref=e302]'
+      - generic [ref=e304]:
+        - generic [ref=e305]: Unsere Kernaufgabe
+        - heading "Die YBLA" [level=2] [ref=e307]
+        - paragraph [ref=e308]: "Die Young Business Leadership Academy ist ein studienbegleitendes Qualifizierungsprogramm über 18 Monate für Studierende aller Fachrichtungen. Der Aufwand beträgt 10 bis 18 Wochenstunden außerhalb der Prüfungsphasen. Das Programm besteht aus drei Säulen: einer theoretischen Grundlage in Leadership und Unternehmensführung, praktischer Erfahrung in der Projektleitung, sowie einer Fachrolle innerhalb der Organisation."
+      - generic [ref=e310]:
+        - generic [ref=e311]: §3 Selection · Skeleton · Auswahl der Teilnehmer
+        - heading "Wer bei TEG mitmacht, wird ausgewählt." [level=2] [ref=e312]
+        - paragraph [ref=e313]: "Exact copy (verbatim from the Nachweis): „Auswahl der Teilnehmer — die Aufnahme erfolgt auf Grundlage einer persönlichkeitspsychologischen und mathematisch-analytischen Eignungsdiagnostik. Bewertet werden Leistungsbereitschaft, Eignung für Personalverantwortung und die Fähigkeit, komplexe fachliche und wirtschaftliche Zusammenhänge zu durchdringen.\""
+        - generic [ref=e314]:
+          - generic [ref=e315]:
+            - generic [ref=e316]: Media
+            - list [ref=e317]:
+              - listitem [ref=e318]: "Three criterion cards in a row: „Leistungsbereitschaft\", „Eignung für Personalverantwortung\", „Komplexitätsverständnis\"."
+              - listitem [ref=e319]: "Each card: short eyebrow, one-line definition, no numeric scoring."
+              - listitem [ref=e320]: "Optional supporting line: yearly intake, application-only, written diagnostic plus interview."
+              - listitem [ref=e321]: No portrait photos in this section — selection is about the standard, not the people.
+          - generic [ref=e322]:
+            - generic [ref=e323]: Look and feel
+            - list [ref=e324]:
+              - listitem [ref=e325]: Same calm white/navy register as Heritage. Restraint signals selectivity better than ornament.
+              - listitem [ref=e326]: Three-column card grid on desktop, stacked on mobile.
+              - listitem [ref=e327]: Thin border cards, primary-tinted eyebrow, two-line body, no icons.
+              - listitem [ref=e328]: No CTA in this section. This is a statement of standard, not a recruiting block.
+              - listitem [ref=e329]: Place directly after YBLA so the reader learns „what it is" before „who gets in".
+      - generic [ref=e331]:
+        - heading "Ein kleiner Ausschnitt unserer Alumni" [level=2] [ref=e332]
+        - paragraph [ref=e333]: Drei Jahrzehnte Netzwerk. Eine kleine, öffentliche Auswahl — viele weitere bleiben lieber diskret.
+        - generic [ref=e334]:
+          - generic [ref=e335]:
+            - img "Ulrich Beck" [ref=e337]
+            - generic [ref=e338]:
+              - generic [ref=e339]: Ulrich Beck
+              - generic [ref=e340]: Top-Management
+          - generic [ref=e341]:
+            - img "Claus Wattendrup" [ref=e343]
+            - generic [ref=e344]:
+              - generic [ref=e345]: Claus Wattendrup
+              - generic [ref=e346]: Top-Management
+          - generic [ref=e347]:
+            - img "Daniel Just" [ref=e349]
+            - generic [ref=e350]:
+              - generic [ref=e351]: Daniel Just
+              - generic [ref=e352]: Top-Management
+          - generic [ref=e353]:
+            - img "Dr. Michael Wagner" [ref=e355]
+            - generic [ref=e356]:
+              - generic [ref=e357]: Dr. Michael Wagner
+              - generic [ref=e358]: Top-Management
+          - generic [ref=e359]:
+            - img [ref=e361]
+            - generic [ref=e363]:
+              - generic [ref=e364]: David Riessner
+              - generic [ref=e365]: Top-Management
+          - generic [ref=e366]:
+            - img "Arne Rieger" [ref=e368]
+            - generic [ref=e369]:
+              - generic [ref=e370]: Arne Rieger
+              - generic [ref=e371]: Mittleres Management
+          - generic [ref=e372]:
+            - img "Bernd Amberger" [ref=e374]
+            - generic [ref=e375]:
+              - generic [ref=e376]: Bernd Amberger
+              - generic [ref=e377]: Mittleres Management
+          - generic [ref=e378]:
+            - img "Michael Kraupa" [ref=e380]
+            - generic [ref=e381]:
+              - generic [ref=e382]: Michael Kraupa
+              - generic [ref=e383]: Interim
+          - generic [ref=e384]:
+            - img "Maximilian Mann" [ref=e386]
+            - generic [ref=e387]:
+              - generic [ref=e388]: Maximilian Mann
+              - generic [ref=e389]: GF Mittelstand
+          - generic [ref=e390]:
+            - img "Volker Maiborn" [ref=e392]
+            - generic [ref=e393]:
+              - generic [ref=e394]: Volker Maiborn
+              - generic [ref=e395]: Gründer
+      - generic [ref=e397]:
+        - heading "Unser letztes Event — und unser nächstes." [level=2] [ref=e398]
+        - paragraph [ref=e399]: Was wir gerade in München gebaut haben, und worauf wir als Nächstes hinarbeiten.
+        - generic [ref=e400]:
+          - article [ref=e401]:
+            - img "TEG Talk Format mit Publikum" [ref=e403]
+            - generic [ref=e404]:
+              - generic [ref=e405]: Letztes Event · TEG Talk
+              - heading "TEG Talk Corporate Entrepreneurship" [level=3] [ref=e406]
+              - generic [ref=e407]:
+                - generic [ref=e408]:
+                  - term [ref=e409]: Wann ·
+                  - definition [ref=e410]: 24. April 2026
+                - generic [ref=e411]:
+                  - term [ref=e412]: Wo ·
+                  - definition [ref=e413]: O2 Tower München — bei Wayra Germany
+                - generic [ref=e414]:
+                  - term [ref=e415]: Wer ·
+                  - definition [ref=e416]: Georg Doll, Dr. Tobias Süß, Paul Sachse, Dr. Irene Lejeune, Dr. Hartwig Rüll
+          - article [ref=e417]:
+            - img "AI Consulting Conference 2026 — Konferenz-Poster" [ref=e419]
+            - generic [ref=e420]:
+              - generic [ref=e421]: Nächstes Event · Konferenz
+              - heading "AI Consulting Conference 2026" [level=3] [ref=e422]
+              - generic [ref=e423]:
+                - generic [ref=e424]:
+                  - term [ref=e425]: Wann ·
+                  - definition [ref=e426]: 10. Juni 2026 — 150 Plätze, nur auf Bewerbung
+                - generic [ref=e427]:
+                  - term [ref=e428]: Wo ·
+                  - definition [ref=e429]: Netlight Offices, Prannerstraße 4, München
+                - generic [ref=e430]:
+                  - term [ref=e431]: Wer ·
+                  - definition [ref=e432]: BCG, McKinsey, Roland Berger, Accenture, appliedAI, IBM, MaibornWolff, Hogan Lovells, Munich Re, Capgemini, PwC, LMU, Netlight
+      - region "Run TEG like a company" [ref=e433]:
+        - heading "Run TEG like a company." [level=2] [ref=e434]:
+          - generic [ref=e436]: Run
+          - img "TEG" [ref=e439]
+          - generic [ref=e441]: like
+          - generic [ref=e443]: a
+          - generic [ref=e445]: company.
+        - generic [ref=e446]: Scroll
+      - region "Das TEG-Ensemble" [ref=e448]:
+        - generic [ref=e449]:
+          - generic [ref=e450]:
+            - generic [ref=e451]:
+              - generic [ref=e452]: Wie wir arbeiten
+              - heading "Run TEG like a company." [level=2] [ref=e454]
+            - generic [ref=e455]:
+              - generic [ref=e457]:
+                - img "Jonathan Babelotzky" [ref=e580]
+                - generic:
+                  - generic:
+                    - generic: Vorstand
+                    - generic:
+                      - generic:
+                        - generic
+                        - generic
+                    - generic: Director of Strategy & Partnerships
+              - generic [ref=e462]:
+                - paragraph [ref=e466]:
+                  - text: “
+                  - generic [ref=e467]: Als
+                  - generic [ref=e468]: „Director
+                  - generic [ref=e469]: of
+                  - generic [ref=e470]: Strategy
+                  - generic [ref=e471]: "&"
+                  - generic [ref=e472]: Partnerships‘
+                  - generic [ref=e473]: achte
+                  - generic [ref=e474]: ich
+                  - generic [ref=e475]: teamübergreifend
+                  - generic [ref=e476]: darauf,
+                  - generic [ref=e477]: dass
+                  - generic [ref=e478]: alles
+                  - generic [ref=e479]: in
+                  - generic [ref=e480]: die
+                  - generic [ref=e481]: richtige
+                  - generic [ref=e482]: gemeinsame
+                  - generic [ref=e483]: Richtung
+                  - generic [ref=e484]: geht
+                  - generic [ref=e485]: —
+                  - generic [ref=e486]: und
+                  - generic [ref=e487]: koordiniere
+                  - generic [ref=e488]: die
+                  - generic [ref=e489]: Vereinbarung
+                  - generic [ref=e490]: und
+                  - generic [ref=e491]: Pflege
+                  - generic [ref=e492]: von
+                  - text: Partnerschaften.
+                - generic [ref=e493]:
+                  - generic [ref=e495]: Ensemble
+                  - generic [ref=e496]:
+                    - button "01 — Jonathan Babelotzky — Vorstand" [pressed] [ref=e497] [cursor=pointer]:
+                      - generic [ref=e498]:
+                        - generic: Vorstand
+                    - button "02 — Ahmed Kaddour — Vorstand" [ref=e502] [cursor=pointer]:
+                      - generic [ref=e503]:
+                        - generic: Vorstand
+                    - button "03 — Yassin Aboushelib — Vorstand" [ref=e507] [cursor=pointer]:
+                      - generic [ref=e508]:
+                        - generic: Vorstand
+                    - button "04 — Finn Lux — Vorstand" [ref=e512] [cursor=pointer]:
+                      - generic [ref=e513]:
+                        - generic: Vorstand
+                    - button "05 — Feristah Fenkci" [ref=e517] [cursor=pointer]
+                    - button "06 — Berkay Zobu" [ref=e522] [cursor=pointer]
+          - generic [ref=e530]:
+            - button "Go to 1" [ref=e531] [cursor=pointer]
+            - button "Go to 2" [ref=e533] [cursor=pointer]
+            - button "Go to 3" [ref=e535] [cursor=pointer]
+            - button "Go to 4" [ref=e537] [cursor=pointer]
+            - button "Go to 5" [ref=e539] [cursor=pointer]
+            - button "Go to 6" [ref=e541] [cursor=pointer]
+      - generic [ref=e544]:
+        - generic [ref=e545]:
+          - generic [ref=e546]: Heute aktiv
+          - heading "Der aktive Jahrgang trägt diese Formate." [level=2] [ref=e547]
+          - paragraph [ref=e548]: Aufnahme erfolgt jährlich auf Bewerbung. Wer Teil wird, übernimmt früh echte Verantwortung in einer der vier Units.
+        - figure "Aktiver TEG-Jahrgang, Wintersemester 2026." [ref=e549]:
+          - img "Aktiver TEG-Jahrgang 2026" [ref=e551]
+          - generic [ref=e552]: Aktiver TEG-Jahrgang, Wintersemester 2026.
+      - generic [ref=e554]:
+        - link "Für Studierende" [ref=e556] [cursor=pointer]:
+          - /url: /for-students
+        - link "Für Unternehmen" [ref=e558] [cursor=pointer]:
+          - /url: /for-companies
+  - contentinfo [ref=e559]:
+    - generic [ref=e561]:
+      - paragraph [ref=e562]: © 2026 The Entrepreneurial Group. All rights reserved.
+      - generic [ref=e563]:
+        - link "LinkedIn" [ref=e564] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/teg-ev/posts/?feedView=all
+          - img [ref=e565]
+        - link "Facebook" [ref=e569] [cursor=pointer]:
+          - /url: https://www.facebook.com/TheEntrepreneurialGroup
+          - img [ref=e570]
+        - link "Instagram" [ref=e572] [cursor=pointer]:
+          - /url: https://www.instagram.com/tegmunich/
+          - img [ref=e573]
+      - generic [ref=e576]:
+        - link "Contact" [ref=e577] [cursor=pointer]:
+          - /url: mailto:info+website@teg-ev.de
+        - link "Imprint" [ref=e578] [cursor=pointer]:
+          - /url: /imprint
+        - link "Privacy Policy" [ref=e579] [cursor=pointer]:
+          - /url: /privacy-policy

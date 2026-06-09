@@ -3,8 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import ForStudents from "./pages/ForStudents";
 import ForCompanies from "./pages/ForCompanies";
-import Events from "./pages/Events"; // NEU hinzugefügt
-import { Home } from "./pages/Home";
+import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Imprint from "./pages/Imprint";
 import { IntlProvider, useIntl } from "react-intl";
@@ -43,7 +42,9 @@ function RouteSeo({
   return (
     <Seo
       title={intl.formatMessage({ id: routeSeoEntry.titleMessageId })}
-      description={intl.formatMessage({ id: routeSeoEntry.descriptionMessageId })}
+      description={intl.formatMessage({
+        id: routeSeoEntry.descriptionMessageId,
+      })}
       locale={locale}
       indexable={routeSeoEntry.indexable}
       pathname={routeSeoEntry.path}
@@ -98,10 +99,9 @@ function App() {
       <ScrollRestoration />
       <Routes>
         <Route path="/" element={<Layout switchLanguage={switchLanguage} />}>
-          <Route index element={<Home />} />
+          <Route index element={<About />} />
           <Route path="for-students" element={<ForStudents />} />
           <Route path="for-companies" element={<ForCompanies />} />
-          <Route path="events" element={<Events />} /> {/* NEU hinzugefügt */}
         </Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/imprint" element={<Imprint />} />
