@@ -1,61 +1,4 @@
 const de = {
-  // Home Page Texts
-  "home.hero.title":
-    "Wir formen die nächsten Führungspersönlichkeiten der deutschen Wirtschaft",
-  "home.hero.mobileTitle":
-    "Wir formen die nächsten Führungs- persönlichkeiten der deutschen Wirtschaft",
-  "home.hero.since": "Seit 1986.",
-  "home.hero.subtitle": "",
-  "home.hero.buttonText1": "TEG für Unternehmen",
-  "home.hero.buttonLink1": "/for-companies",
-  "home.hero.buttonText2": "TEG für Studierende",
-  "home.hero.buttonLink2": "/for-students",
-  "home.conferenceBanner.cta": "Sichere dir hier dein Ticket",
-  "home.conferenceBanner.speakers": "Mit Speakern von:",
-  "home.conferenceBanner.aria":
-    "Ticket für die AI Consulting Conference 2026 auf Luma öffnen",
-  "home.alumni.title": "Unsere Alumni: 39 Jahre Exzellenz mit Wirkung",
-  "home.alumni.stat1.value": "300+ Alumni",
-  "home.alumni.stat1.label":
-    "Unsere Alumni bilden das Rückgrat der deutschen Wirtschaft, ob in Top Management Positionen, im mittleren Management oder in führenden Fachrollen.",
-  "home.alumni.alumni.value": "300+",
-  "home.alumni.alumni.label": "Alumni",
-  "home.alumni.stat2.value": "41",
-  "home.alumni.stat2.label": "Top-Level Führungskräfte in Konzernen",
-  "home.alumni.stat3.value": "40",
-  "home.alumni.stat3.label": "Top-Level Führungskräfte im Mittelstand",
-  "home.alumni.stat4.value": "15",
-  "home.alumni.stat4.label": "Unternehmens\u00ADgründer",
-  "home.mission":
-    "Wir befähigen leistungsstarke Studierende, sich zu selbstbewussten und kompetenten jungen Führungskräften zu entwickeln, indem wir ihnen echten Unternehmenseinblick, praktische Verantwortung und eine strukturierte Entwicklung auf ihrem Weg in zukünftige Managementrollen bieten.",
-  "home.vision":
-    "Wir wollen ein Europa schaffen, in dem ambitionierte junge Führungskräfte transformative Innovationen vorantreiben und mutige Ideen in greifbare Ergebnisse verwandeln. Indem wir Talente mit Chancen verbinden, strategisches Denken fördern und praktische Führungserfahrung ermöglichen, möchten wir den Kontinent aus seinem Deep-Tech-Schlaf wecken und Europa wieder an die Spitze globaler Innovation bringen.",
-  "home.legacy.title": "Unser Vermächtnis",
-  "home.legacy.subtitle":
-    "Gegründet von 11 führenden deutschen Unternehmen und vier herausragenden Studierenden. Bewährt über vier Jahrzehnte.",
-  "home.legacy.image1.caption": "11 Unternehmen, die TEG mitbegründet haben",
-  "home.legacy.image2.caption":
-    "Die 4 Gründungsmitglieder, die TEG Ende 1986 ins Leben riefen.",
-  "home.legacy.image3.caption":
-    'Zeitungsartikel aus dem Donaukurier: "11 Unternehmen gründen neue Studierendeninitiative" erschienen kurz nach der offiziellen Eintragung des TEG-Kuratoriums im Januar 1988.',
-  "home.legacy.feature1.title": "Erfolgsbilanz mit Substanz",
-  "home.legacy.feature1.description":
-    "Seit 39 Jahren steigen unsere Alumni konsequent in Führungspositionen führender Unternehmen auf oder gründen erfolgreiche Firmen.",
-  "home.legacy.feature2.title":
-    "Unternehmerisches Denken mit Corporate-Verantwortung",
-  "home.legacy.feature2.description":
-    "Jede Initiative hat ihre Geschichte. Wir bewundern traditionsreiche, exzellent organisierte Unternehmen genauso sehr wie unsere eigene Legacy. Die Visionen früherer TEG-Mitglieder sind heute Realität. Unsere Mitglieder übernehmen Verantwortung, führen Unternehmen mit Weitblick und lösen konkrete Herausforderungen für unsere Partner im Ökosystem. Sie gestalten nicht nur, sie bauen.",
-  "home.callToAction1.title": "Partner werden: TEG & Ihr Unternehmen",
-  "home.callToAction1.description":
-    "Gestalten Sie mit uns die nächste Generation von Führungskräften. Erfahren Sie, wie Ihr Unternehmen vom Zugang zum TEG-Ökosystem profitieren kann – und erhalten Sie direkten Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
-  "home.callToAction1.buttonText": "TEG für Unternehmen",
-  "home.callToAction1.buttonLink": "/for-companies",
-  "home.callToAction2.title": "Jetzt bewerben: TEG für Studierende",
-  "home.callToAction2.description":
-    "Werde Teil einer selektiven Community von bis zu 50 High-Potentials, die auf Top-Führungsrollen vorbereitet werden – durch echte Verantwortung, Praxiserfahrung und Mentoring. Der Erfolg unserer Alumni über 39 Jahre zeigt, was möglich ist.",
-  "home.callToAction2.buttonText": "TEG für Studierende",
-  "home.callToAction2.buttonLink": "/for-students",
-
   "home.partners.title": "Unsere Gründer-Firmen",
   "home.partners.description":
     "1986 gegründet von BMW, BCG und Roland Berger, KPMG, Siemens u.v.m., ist TEG heute eine der renommiertesten Talentschmieden im deutschsprachigen Raum.",
@@ -63,30 +6,6 @@ const de = {
   "home.alumnis.title": "Unsere Absolventen zeigen, was für Dich möglich ist",
   "home.alumnis.description":
     "300+ Alumni, jede:r im Dritte Top-Management. Darunter 41 Konzern-Führungskräfte, 40 Mittelstands-Executives und 15 Gründer erfolgreicher Unternehmen.",
-
-  "home.card1.title": "Keine Modeerscheinung, sondern ein Vermächtnis",
-  "home.card1.description":
-    "Seit 1986 verbindet TEG ambitionierte Studierende mit führenden Unternehmen. Über 39 Jahre haben wir ein bewährtes System entwickelt, das High-Potentials auf Top-Führungsrollen vorbereitet – durch echte Praxiserfahrung und nachhaltiges Mentoring.",
-  "home.card1.buttonText": "Über uns",
-  "home.card1.buttonLink": "/about",
-  "home.card1.imageAlt":
-    "Historischer Zeitungsartikel über die Gründung von TEG im Jahr 1986",
-
-  "home.card2.title": "Neue Generation von Führungskräften",
-  "home.card2.description":
-    "Gestalten Sie mit uns die nächste Generation von Führungskräften. Erfahren Sie, wie Ihr Unternehmen vom Zugang zum TEG-Ökosystem profitieren kann – und erhalten Sie direkten Zugang zu einem seit 39 Jahren bewährten Talent-Pool.",
-  "home.card2.buttonText": "Partner werden",
-  "home.card2.buttonLink": "/for-companies",
-  "home.card2.imageAlt":
-    "TEG-Mitglieder im Gespräch bei einem Networking-Event",
-
-  "home.card3.title": "Bist du bereit?",
-  "home.card3.description":
-    "Werde Teil einer selektiven Community von bis zu 50 High-Potentials, die auf Top-Führungsrollen vorbereitet werden – durch echte Verantwortung, Praxiserfahrung und Mentoring. Der Erfolg unserer Alumni über 39 Jahre zeigt, was möglich ist.",
-  "home.card3.buttonText": "Mitglied werden",
-  "home.card3.buttonLink": "/for-students",
-  "home.card3.imageAlt":
-    "Studierende im professionellen Austausch während einer TEG-Veranstaltung",
 
   // Company Page Texts
   "company.hero.title": "Euer Führungskräfte-Nachwuchs: Unsere Mission.",
