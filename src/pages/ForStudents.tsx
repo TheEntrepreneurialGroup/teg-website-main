@@ -137,7 +137,7 @@ const ForStudents: React.FC = () => {
               <h3 className="text-2xl font-bold text-[#0F2B57] mb-6 uppercase tracking-tight">Was ist die YBLA?</h3>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  Die <strong>YBLA</strong> ist ein exklusives Ausbildungsangebot innerhalb von TEG, das darauf ausgerichtet ist, dich auf die Herausforderungen moderner Führung vorzubereiten. Wir richten uns an alle Studiengänge, jedoch kommen die meisten teilnehmer aus: den <strong>Naturwissenschaften</strong>, der <strong>Technik</strong>, der <strong>Wirtschaft</strong>, den <strong>Rechtswissenschaften (Jura)</strong> sowie der <strong>Mathematik</strong>
+                  Die <strong>YBLA</strong> ist ein 18 Monate langes Ausbildungsangebot innerhalb von TEG, das darauf ausgerichtet ist, dich auf die Herausforderungen moderner Führung vorzubereiten. Wir richten uns an alle Studiengänge, jedoch kommen die meisten Teilnehmer aus: den <strong>Naturwissenschaften</strong>, der <strong>Technik</strong>, der <strong>Wirtschaft</strong>, den <strong>Rechtswissenschaften (Jura)</strong> sowie der <strong>Mathematik</strong>
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -178,7 +178,7 @@ const ForStudents: React.FC = () => {
                   <span className="text-[#B7860B]">10+ STUNDEN COMMITMENT</span> PRO WOCHE
                 </h2>
                 <div className="space-y-6 text-slate-600 text-lg md:text-xl leading-relaxed">
-                  <p>Deine Mitgliedschaft ist eine 3-semestrige Grundausbildung parallel zum Studium.</p>
+                  <p>Deine Mitgliedschaft ist eine 18 Monate lange Grundausbildung parallel zum Studium.</p>
                   <p className="font-bold text-[#0F2B57] border-l-4 border-[#B7860B] pl-6 py-2">
                     Durch Praxis-Projekte erlernst du Kompetenzen auf einem Level deutlich über dem normalen Berufseinstieg.
                   </p>
@@ -351,7 +351,14 @@ const ForStudents: React.FC = () => {
       <section id="apply-section" className="py-16 px-4 bg-white">
         <div className="container-custom bg-[#091C3A] p-10 md:p-14 text-center rounded-xl shadow-lg relative mx-auto overflow-hidden">
           <h2 className="text-2xl md:text-4xl font-bold uppercase tracking-tighter mb-8 text-white">Bewirb dich jetzt, und werde Teil von TEG!</h2>
-          <motion.a href="#apply" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-flex items-center gap-3 bg-[#B7860B] text-white px-10 py-4 font-bold uppercase text-[10px] tracking-[0.2em] rounded-sm shadow-lg transition-all">
+          <motion.a 
+            href="https://tally.so/r/yPDXd4" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.95 }} 
+            className="inline-flex items-center gap-3 bg-[#B7860B] text-white px-10 py-4 font-bold uppercase text-[10px] tracking-[0.2em] rounded-sm shadow-lg transition-all"
+          >
             Jetzt Bewerben <MousePointer2 size={16} />
           </motion.a>
         </div>
