@@ -1,343 +1,211 @@
-import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import Logo from "./Logo";
-
-import { trackButtonClick } from "../utils/analytics";
 import { useIntl } from "react-intl";
+import Logo from "./Logo";
+import { trackButtonClick } from "../utils/analytics";
 
 interface NavbarProps {
   scrolled: boolean;
   switchLanguage: (lang: "en" | "de") => void;
-  isAboutPage?: boolean;
-  hideNavItems?: boolean;
   hidden?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ scrolled, switchLanguage, isAboutPage, hideNavItems, hidden }) => {
+const Navbar: React.FC<NavbarProps> = ({
+  scrolled,
+  switchLanguage,
+  hidden,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const intl = useIntl();
+  const location = useLocation();
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+  const navItems = [
+    {
+      to: "/",
+      label: intl.formatMessage({ id: "navbar.aboutPage.about" }),
+      trackingLabel: "About Us",
+      end: true,
+    },
+    {
+      to: "/events",
+      label: intl.formatMessage({ id: "navbar.aboutPage.events" }),
+      trackingLabel: "Events",
+    },
+    {
+      to: "/for-companies",
+      label: intl.formatMessage({ id: "navbar.aboutPage.executives" }),
+      trackingLabel: "TEG for Companies",
+    },
+    {
+      to: "/for-students",
+      label: intl.formatMessage({ id: "navbar.aboutPage.students" }),
+      trackingLabel: "TEG for Students",
+    },
+  ];
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [mobileMenuOpen]);
+
+  const switchMobileLanguage = (language: "en" | "de") => {
+    switchLanguage(language);
+    setMobileMenuOpen(false);
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 text-xl transition-[background-color,backdrop-filter,box-shadow,padding,opacity] duration-500 ease-out ${
-        hidden ? "opacity-0 pointer-events-none" : "opacity-100"
-      } ${
-        scrolled
-          ? "bg-primary-dark shadow-[0_8px_24px_-12px_rgba(0,0,0,0.55)] backdrop-blur-md"
-          : "bg-transparent backdrop-blur-0 md:py-2"
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {/* Soft gradient veil when transparent — keeps logo + nav legible over imagery */}
-      <div
-        aria-hidden="true"
-        className={`pointer-events-none absolute inset-x-0 top-0 h-full bg-gradient-to-b from-black/45 via-black/15 to-transparent transition-opacity duration-500 ${
-          scrolled ? "opacity-0" : "opacity-100"
+    <>
+      <motion.header
+        className={`fixed inset-x-0 top-0 z-[60] text-xl transition-[background-color,backdrop-filter,box-shadow,opacity] duration-300 ${
+          hidden ? "pointer-events-none opacity-0" : "opacity-100"
+        } ${
+          scrolled || mobileMenuOpen
+            ? "bg-primary-dark/95 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.55)] backdrop-blur-md"
+            : "bg-transparent"
         }`}
-      />
-      <div className="relative">
-      <div className="container-custom flex justify-between items-center w-full p-2">
-        <Link to="/" className="flex items-center p-0">
-          <Logo />
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav
-          className={`hidden md:flex items-center space-x-8 transition-opacity duration-500 ${
-            hideNavItems ? "opacity-0 pointer-events-none" : "opacity-100"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div
+          aria-hidden="true"
+          className={`pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-transparent transition-opacity duration-300 ${
+            scrolled || mobileMenuOpen ? "opacity-0" : "opacity-100"
           }`}
-        >
-          {isAboutPage ? (
-            <>
-              <NavLink
-                to="/#story"
-                className={({ isActive }) =>
-                  `font-normal relative ${
-                    scrolled || isActive ? "text-white" : "text-white"
-                  } hover:text-primary-light transition-colors duration-300 ${
-                    isActive
-                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
-                      : ""
-                  }`
-                }
-                onClick={() => trackButtonClick("About Us", "Navbar")}
-                end
-              >
-                {intl.formatMessage({ id: "navbar.aboutPage.about" })}
-              </NavLink>
-              <NavLink
-                to="/events"
-                className={({ isActive }) =>
-                  `font-normal relative ${
-                    scrolled || isActive ? "text-white" : "text-white"
-                  } hover:text-primary-light transition-colors duration-300 ${
-                    isActive
-                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
-                      : ""
-                  }`
-                }
-                onClick={() => trackButtonClick("Events", "Navbar")}
-              >
-                {intl.formatMessage({ id: "navbar.aboutPage.events" })}
-              </NavLink>
-              <NavLink
-                to="/for-companies"
-                className={({ isActive }) =>
-                  `font-normal relative ${
-                    scrolled || isActive ? "text-white" : "text-white"
-                  } hover:text-primary-light transition-colors duration-300 ${
-                    isActive
-                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
-                      : ""
-                  }`
-                }
-                onClick={() => trackButtonClick("TEG for Companies", "Navbar")}
-              >
-                {intl.formatMessage({ id: "navbar.aboutPage.executives" })}
-              </NavLink>
-              <NavLink
-                to="/for-students"
-                className={({ isActive }) =>
-                  `font-normal relative ${
-                    scrolled || isActive ? "text-white" : "text-white"
-                  } hover:text-primary-light transition-colors duration-300 ${
-                    isActive
-                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
-                      : ""
-                  }`
-                }
-                onClick={() => trackButtonClick("TEG for Students", "Navbar")}
-              >
-                {intl.formatMessage({ id: "navbar.aboutPage.students" })}
-              </NavLink>
-            </>
-          ) : (
-            <>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `font-normal relative ${
-                    scrolled || isActive ? "text-white" : "text-white"
-                  } hover:text-primary-light transition-colors duration-300 ${
-                    isActive
-                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
-                      : ""
-                  }`
-                }
-                onClick={() => trackButtonClick("About Us", "Navbar")}
-                end
-              >
-                {intl.formatMessage({ id: "navbar.about" })}
-              </NavLink>
-              <NavLink
-                to="/for-companies"
-                className={({ isActive }) =>
-                  `font-normal relative ${
-                    scrolled || isActive ? "text-white" : "text-white"
-                  } hover:text-primary-light transition-colors duration-300 ${
-                    isActive
-                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
-                      : ""
-                  }`
-                }
-                onClick={() => trackButtonClick("TEG for Companies", "Navbar")}
-              >
-                {intl.formatMessage({ id: "navbar.forCompanies" })}
-              </NavLink>
-              <NavLink
-                to="/for-students"
-                className={({ isActive }) =>
-                  `font-normal relative ${
-                    scrolled || isActive ? "text-white" : "text-white"
-                  } hover:text-primary-light transition-colors duration-300 ${
-                    isActive
-                      ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-white"
-                      : ""
-                  }`
-                }
-                onClick={() => trackButtonClick("TEG for Students", "Navbar")}
-              >
-                {intl.formatMessage({ id: "navbar.forStudents" })}
-              </NavLink>
-            </>
-          )}
-        </nav>
+        />
 
-        {/* Language Switcher */}
-        <div className="hidden md:flex items-center space-x-4 mx-4">
-          <button
-            onClick={() => switchLanguage("en")}
-            className="font-normal text-white hover:text-primary-light transition-colors duration-300"
+        <div className="container-custom relative flex h-20 w-full items-center justify-between md:h-24">
+          <Link
+            to="/"
+            className="relative z-10 flex items-center"
+            aria-label="TEG Startseite"
           >
-            EN
-          </button>
-          <span className="text-white">|</span>
+            <Logo />
+          </Link>
+
+          <nav className="hidden items-center gap-8 md:flex">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.end}
+                className={({ isActive }) =>
+                  `relative py-2 font-normal text-white transition-colors duration-300 hover:text-primary-light ${
+                    isActive
+                      ? "after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white"
+                      : ""
+                  }`
+                }
+                onClick={() => trackButtonClick(item.trackingLabel, "Navbar")}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <div className="hidden items-center gap-4 md:flex">
+            <button
+              onClick={() => switchLanguage("en")}
+              className="font-normal text-white transition-colors duration-300 hover:text-primary-light"
+            >
+              EN
+            </button>
+            <span className="text-white/60">|</span>
+            <button
+              onClick={() => switchLanguage("de")}
+              className="font-normal text-white transition-colors duration-300 hover:text-primary-light"
+            >
+              DE
+            </button>
+          </div>
+
           <button
-            onClick={() => switchLanguage("de")}
-            className="font-normal text-white hover:text-primary-light transition-colors duration-300"
+            className="relative z-[70] ml-auto grid h-11 w-11 place-items-center text-white md:hidden"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            aria-label={mobileMenuOpen ? "Menü schließen" : "Navigation öffnen"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
-            DE
+            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
+      </motion.header>
 
-        {/* Mobile Menu Button */}
-        <button
-          className={`md:hidden h-full aspect-square ml-auto ${
-            mobileMenuOpen ? "text-white" : "text-white"
-          } z-50`}
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {/* Mobile Navigation */}
+      <AnimatePresence>
         {mobileMenuOpen && (
-          <div
-            className="fixed inset-0 bg-primary-dark flex flex-col items-start justify-center z-40 px-6 py-20"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.3 }}
+          <motion.div
+            id="mobile-navigation"
+            className="fixed inset-0 z-50 flex min-h-dvh flex-col bg-primary-dark px-6 pb-10 pt-28 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
           >
-            <nav className="flex flex-col items-start space-y-6 w-full">
-              {isAboutPage ? (
-                <>
-                  <NavLink
-                    to="/#story"
-                    className={({ isActive }) =>
-                      `text-xl font-normal ${
-                        isActive ? "text-accent-light" : "text-white"
-                      } hover:text-accent-light transition-colors duration-300`
-                    }
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      trackButtonClick("About us", "Navbar");
-                    }}
-                    end
-                  >
-                    {intl.formatMessage({ id: "navbar.aboutPage.about" })}
-                  </NavLink>
-                  <NavLink
-                    to="/events"
-                    className={({ isActive }) =>
-                      `text-xl font-normal ${
-                        isActive ? "text-accent-light" : "text-white"
-                      } hover:text-accent-light transition-colors duration-300`
-                    }
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      trackButtonClick("Events", "Navbar");
-                    }}
-                  >
-                    {intl.formatMessage({ id: "navbar.aboutPage.events" })}
-                  </NavLink>
-                  <NavLink
-                    to="/for-companies"
-                    className={({ isActive }) =>
-                      `text-xl font-normal ${
-                        isActive ? "text-accent-light" : "text-white"
-                      } hover:text-accent-light transition-colors duration-300`
-                    }
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      trackButtonClick("TEG for Companies", "Navbar");
-                    }}
-                  >
-                    {intl.formatMessage({ id: "navbar.aboutPage.executives" })}
-                  </NavLink>
-                  <NavLink
-                    to="/for-students"
-                    className={({ isActive }) =>
-                      `text-xl font-normal ${
-                        isActive ? "text-accent-light" : "text-white"
-                      } hover:text-accent-light transition-colors duration-300`
-                    }
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      trackButtonClick("TEG for Students", "Navbar");
-                    }}
-                  >
-                    {intl.formatMessage({ id: "navbar.aboutPage.students" })}
-                  </NavLink>
-                </>
-              ) : (
-                <>
-                  <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                      `text-xl font-normal ${
-                        isActive ? "text-accent-light" : "text-white"
-                      } hover:text-accent-light transition-colors duration-300`
-                    }
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      trackButtonClick("About us", "Navbar");
-                    }}
-                    end
-                  >
-                    {intl.formatMessage({ id: "navbar.about" })}
-                  </NavLink>
-                  <NavLink
-                    to="/for-companies"
-                    className={({ isActive }) =>
-                      `text-xl font-normal ${
-                        isActive ? "text-accent-light" : "text-white"
-                      } hover:text-accent-light transition-colors duration-300`
-                    }
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      trackButtonClick("TEG for Companies", "Navbar");
-                    }}
-                  >
-                    {intl.formatMessage({ id: "navbar.forCompanies" })}
-                  </NavLink>
-                  <NavLink
-                    to="/for-students"
-                    className={({ isActive }) =>
-                      `text-xl font-normal ${
-                        isActive ? "text-accent-light" : "text-white"
-                      } hover:text-accent-light transition-colors duration-300`
-                    }
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      trackButtonClick("TEG for Students", "Navbar");
-                    }}
-                  >
-                    {intl.formatMessage({ id: "navbar.forStudents" })}
-                  </NavLink>
-                </>
-              )}
-            </nav>
+            <motion.nav
+              className="flex flex-1 flex-col justify-center gap-7"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.25 }}
+            >
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.end}
+                  className={({ isActive }) =>
+                    `border-b border-white/10 pb-4 text-2xl font-normal transition-colors ${
+                      isActive ? "text-accent-light" : "text-white"
+                    }`
+                  }
+                  onClick={() => trackButtonClick(item.trackingLabel, "Navbar")}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </motion.nav>
 
-            {/* Mobile Language Switcher */}
-            <div className="flex items-center space-x-4 mt-10">
+            <div className="flex items-center gap-4 border-t border-white/10 pt-6">
               <button
-                onClick={() => switchLanguage("en")}
-                className="font-normal text-white hover:text-accent-light transition-colors duration-300"
+                onClick={() => switchMobileLanguage("en")}
+                className="font-normal text-white transition-colors hover:text-accent-light"
               >
                 EN
               </button>
-              <span className="text-white/60">|</span>
+              <span className="text-white/50">|</span>
               <button
-                onClick={() => switchLanguage("de")}
-                className="font-normal text-white hover:text-accent-light transition-colors duration-300"
+                onClick={() => switchMobileLanguage("de")}
+                className="font-normal text-white transition-colors hover:text-accent-light"
               >
                 DE
               </button>
             </div>
-          </div>
+          </motion.div>
         )}
-      </div>
-      </div>
-    </header>
+      </AnimatePresence>
+    </>
   );
 };
 
