@@ -65,19 +65,19 @@ const ForStudents: React.FC = () => {
   return (
     <div className="bg-white min-h-screen text-slate-900 font-sans overflow-x-hidden">
       {/* SEKTION 1: HERO & INTRO */}
-      <div className="relative h-[45vh] w-full overflow-hidden bg-slate-900 text-left">
+      <div className="relative min-h-[470px] w-full overflow-hidden bg-slate-900 text-left md:h-[45vh] md:min-h-0">
         <img
           src="/for-students/commitment/ancient-group.avif"
           alt="Hero"
-          className="w-full h-full absolute inset-0 object-cover object-top opacity-50"
+          className="absolute inset-0 h-full w-full object-cover object-top opacity-50"
         />
-        <div className="absolute inset-0 flex items-center">
+        <div className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-20 xl:pt-24">
           <div className="container-custom px-4 md:px-8 mx-auto w-full">
-            <div className="bg-slate-900 p-8 max-w-2xl border-l-8 border-white text-left shadow-2xl">
+            <div className="max-w-2xl border-l-8 border-white bg-slate-900 p-6 text-left shadow-2xl sm:p-8">
               <span className="text-white text-xs font-bold uppercase tracking-[0.2em] block mb-2 opacity-80">
                 GEGRÜNDET 1986
               </span>
-              <h1 className="text-white text-3xl md:text-4xl font-bold uppercase tracking-tight leading-tight">
+              <h1 className="text-2xl font-bold uppercase leading-tight tracking-tight text-white sm:text-3xl md:text-4xl">
                 Gestalte die Wirtschaft von morgen
               </h1>
               <p className="text-white/60 mt-4 text-base leading-relaxed">
