@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({
           }`}
         />
 
-        <div className="container-custom relative flex h-20 w-full items-center justify-between md:h-24">
+        <div className="container-custom relative flex h-20 w-full items-center justify-between xl:h-24">
           <Link
             to="/"
             className="relative z-10 flex items-center"
@@ -105,7 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <Logo />
           </Link>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-8 xl:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
@@ -125,7 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({
             ))}
           </nav>
 
-          <div className="hidden items-center gap-4 md:flex">
+          <div className="hidden items-center gap-4 xl:flex">
             <button
               onClick={() => switchLanguage("en")}
               className="font-normal text-white transition-colors duration-300 hover:text-primary-light"
@@ -142,7 +142,7 @@ const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           <button
-            className="relative z-[70] ml-auto grid h-11 w-11 place-items-center text-white md:hidden"
+            className="relative z-[70] ml-auto grid h-11 w-11 place-items-center text-white xl:hidden"
             onClick={() => setMobileMenuOpen((open) => !open)}
             aria-label={mobileMenuOpen ? "Menü schließen" : "Navigation öffnen"}
             aria-expanded={mobileMenuOpen}
@@ -157,7 +157,7 @@ const Navbar: React.FC<NavbarProps> = ({
         {mobileMenuOpen && (
           <motion.div
             id="mobile-navigation"
-            className="fixed inset-0 z-50 flex min-h-dvh flex-col bg-primary-dark px-6 pb-10 pt-28 md:hidden"
+            className="fixed inset-0 z-50 flex min-h-dvh flex-col bg-primary-dark px-6 pb-10 pt-28 xl:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

@@ -71,7 +71,7 @@ const ForStudents: React.FC = () => {
           alt="Hero"
           className="w-full h-full absolute inset-0 object-cover object-top opacity-50"
         />
-        <div className="absolute inset-0 flex items-center">
+        <div className="absolute inset-0 flex items-center pt-20 xl:pt-24">
           <div className="container-custom px-4 md:px-8 mx-auto w-full">
             <div className="bg-slate-900 p-8 max-w-2xl border-l-8 border-white text-left shadow-2xl">
               <span className="text-white text-xs font-bold uppercase tracking-[0.2em] block mb-2 opacity-80">
