@@ -19,6 +19,7 @@ interface HeroTwoButtonsProps {
 
 const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
   title,
+  mobileTitle,
   subtitle,
   bgImage,
   buttonText1,
@@ -49,7 +50,7 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
   return (
     <section
       className={cn(
-        "relative flex flex-col md:block md:w-full md:h-[75vh] md:min-h-[600px] md:overflow-hidden",
+        "relative flex flex-col md:block md:h-[75vh] md:min-h-[600px] md:w-full md:overflow-hidden",
         className,
       )}
     >
@@ -57,7 +58,7 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
         src={bgImage}
         alt="Hero"
         className={cn(
-          "w-full h-auto md:absolute md:inset-0 md:w-full md:h-full md:object-cover md:z-0",
+          "h-80 w-full object-cover object-center md:absolute md:inset-0 md:z-0 md:h-full md:w-full",
           imageClassName ?? "object-center",
         )}
       />
@@ -71,7 +72,8 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
         <div className="relative z-20 h-full w-full flex flex-col justify-start items-start">
           <div className="flex flex-col justify-start w-full">
             <h1 className="mb-2 text-3xl font-semibold text-primary md:w-full md:text-left md:text-gray-100">
-              {title}
+              <span className="md:hidden">{mobileTitle ?? title}</span>
+              <span className="hidden md:inline">{title}</span>
             </h1>
             <p className="w-full text-left text-xl text-foreground md:text-gray-100 md:font-normal">
               {subtitle}
@@ -83,7 +85,7 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
               onClick={() => handleLink(buttonLink1)}
               size="lg"
               align="left"
-              className="w-[250px] md:w-auto"
+              className="w-full min-w-0 md:w-auto md:min-w-[250px]"
             />
             {buttonText2 && buttonLink2 && (
               <PrimaryButton
@@ -91,7 +93,7 @@ const HeroTwoButtons: React.FC<HeroTwoButtonsProps> = ({
                 onClick={() => handleLink(buttonLink2)}
                 size="lg"
                 align="left"
-                className="w-[250px] md:w-auto"
+                className="w-full min-w-0 md:w-auto md:min-w-[250px]"
               />
             )}
           </div>
