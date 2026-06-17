@@ -34,22 +34,63 @@ const Events: React.FC = () => {
   const [[upcomingPage, upcomingDir], setUpcomingPage] = useState([0, 0]);
   const [[pastPage, pastDir], setPastPage] = useState([0, 0]);
 
-  const lumaLink = "https://luma.com/71152vc3?utm_source=tg_ws";
+  const biotechLumaLink = "https://luma.com/teg-qdjm";
   const upcomingEvents: EventData[] = [
+    {
+      id: "biotech-medtech-panel-2026",
+      title: "Herausforderungen & Innovation in Biotech & Medtech",
+      date: "03.07.2026",
+      location: "IZB Faculty Club, Martinsried",
+      category: "Upcoming Highlight",
+      topic: "Zukunft der Münchner Biotech- und Medtech-Szene",
+      description:
+        "Ein interaktiver Panel Talk zur Zukunft der Life-Sciences, Biotech- und Medtech-Industrie in München.",
+      longText:
+        "Founder, C-Level und Senior Professionals teilen ihre Sichtweisen und Prognosen dazu, wie sich Münchens Life-Sciences-, Biotech- und Medtech-Standort entwickeln wird. Forschung und Wirtschaft treffen aufeinander, um über Hürden, Innovationen und kommende Challenges zu diskutieren. Im Mittelpunkt stehen keine abstrakten Theorien, sondern Fakten, Erfahrungen und ein offener Austausch für alle, die Naturwissenschaften und Wirtschaft zusammen denken.",
+      image: "/events/converted/biotech-medtech-panel-2026.webp",
+      imageFit: "contain",
+      externalLink: biotechLumaLink,
+      speakers: [
+        {
+          name: "Dr. Thilo Kaltenbach",
+          company: "Roland Berger",
+          position: "Senior Partner, Global Pharma & Healthcare",
+        },
+        {
+          name: "Dr. Dominik Schumacher",
+          company: "Tubulis GmbH",
+          position: "CEO & Founder",
+        },
+        {
+          name: "Prof. Andreas Ladurner",
+          company: "Eisbach Bio GmbH / LMU Munich",
+          position:
+            "CSO, Founder and Managing Director; Chair of Physiological Chemistry",
+        },
+        {
+          name: "Prof. med. Ralf Huss",
+          company: "BioM Biotech Cluster Development",
+          position: "Geschäftsführer",
+        },
+      ],
+    },
+  ];
+
+  const pastEvents: EventData[] = [
     {
       id: "ai-2026",
       title: "AI Consulting Conference 2026",
       date: "10.06.2026",
       location: "Netlight, München",
-      category: "Upcoming Highlight",
+      category: "Conference",
       topic: "Beyond Hype. Into Business.",
       description:
         "Ein kuratierter Konferenztag darüber, wie KI Consulting, Geschäftsmodelle und Karrieren konkret verändert.",
       longText:
-        "Die AI Consulting Conference bringt Perspektiven aus Strategieberatung, Tech-Consulting, Industrie, angewandter KI, Forschung und Recht zusammen. Im Fokus stehen reale KI-Use-Cases, AI-Assets in Beratungsarbeit, Industry Briefings, Applied-AI-Workshops, Governance, Haftung und die Zukunft der Beraterkarriere.",
+        "Die AI Consulting Conference brachte Perspektiven aus Strategieberatung, Tech-Consulting, Industrie, angewandter KI, Forschung und Recht zusammen. Im Fokus standen reale KI-Use-Cases, AI-Assets in Beratungsarbeit, Industry Briefings, Applied-AI-Workshops, Governance, Haftung und die Zukunft der Beraterkarriere.",
       image: "/events/converted/ai-consulting-conference-2026.webp",
       imageFit: "contain",
-      externalLink: lumaLink,
+      externalLink: "https://luma.com/71152vc3?utm_source=tg_ws",
       speakers: [
         {
           name: "Florian Bauer",
@@ -73,9 +114,6 @@ const Events: React.FC = () => {
         },
       ],
     },
-  ];
-
-  const pastEvents: EventData[] = [
     {
       id: "teg-talk-24-04-2026",
       title: "TEG Talk: Corporate Entrepreneurship",
@@ -353,7 +391,7 @@ const Events: React.FC = () => {
                 </button>
               </>
             )}
-            <div className="relative min-h-[960px] sm:min-h-[900px] md:min-h-0 md:h-[680px] lg:h-[528px]">
+            <div className="relative min-h-[1180px] sm:min-h-[980px] md:min-h-0 md:h-[680px] lg:h-[528px]">
               <AnimatePresence initial={false} custom={upcomingDir}>
                 <motion.div
                   key={upcomingPage}
@@ -364,33 +402,39 @@ const Events: React.FC = () => {
                   exit="exit"
                   className="absolute inset-0 grid grid-rows-[minmax(240px,0.95fr)_auto] md:grid-rows-none md:grid-cols-12 border border-slate-200 shadow-2xl bg-white/90 backdrop-blur-sm overflow-hidden rounded-xl"
                 >
-                  <div className="md:col-span-7 h-full min-h-0">
+                  <div
+                    className={`h-full min-h-0 min-w-0 overflow-hidden md:col-span-7 ${
+                      upcomingEvents[upcomingPage].imageFit === "contain"
+                        ? "flex items-center justify-center bg-[#062d18] p-3 md:p-6"
+                        : ""
+                    }`}
+                  >
                     <img
                       src={upcomingEvents[upcomingPage].image}
-                      className={`w-full h-full ${
+                      className={`${
                         upcomingEvents[upcomingPage].imageFit === "contain"
-                          ? "object-contain bg-[#0a1e3b]"
-                          : "object-cover"
+                          ? "h-full max-h-full w-auto max-w-full object-contain object-center"
+                          : "h-full w-full object-cover"
                       }`}
                       alt=""
                     />
                   </div>
-                  <div className="md:col-span-5 p-6 sm:p-8 flex flex-col justify-center">
-                    <p className="text-blue-600 font-bold text-[10px] uppercase mb-4">
+                  <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 md:col-span-5 md:p-7 lg:p-8">
+                    <p className="mb-4 text-[10px] font-bold uppercase text-blue-600 md:mb-3">
                       {upcomingEvents[upcomingPage].category}
                     </p>
-                    <h3 className="text-[clamp(1.6rem,8vw,3rem)] md:text-3xl font-bold mb-5 md:mb-6 uppercase tracking-tighter leading-none break-words">
+                    <h3 className="mb-5 break-words text-[clamp(1.6rem,8vw,3rem)] font-bold uppercase leading-none tracking-tighter md:mb-5 md:text-[2.35rem] lg:text-4xl">
                       {upcomingEvents[upcomingPage].title}
                     </h3>
                     {upcomingEvents[upcomingPage].topic && (
-                      <p className="text-slate-900 text-xs font-bold uppercase tracking-widest mb-4 leading-relaxed">
+                      <p className="mb-4 text-xs font-bold uppercase leading-relaxed tracking-widest text-slate-900 md:mb-3">
                         {upcomingEvents[upcomingPage].topic}
                       </p>
                     )}
-                    <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                    <p className="mb-6 text-sm leading-relaxed text-slate-500 md:mb-5">
                       {upcomingEvents[upcomingPage].description}
                     </p>
-                    <div className="space-y-3 mb-6 md:mb-8 text-slate-500 text-sm">
+                    <div className="mb-6 space-y-3 text-sm text-slate-500 md:mb-6">
                       <p className="flex items-center">
                         <Calendar size={16} className="mr-3" />{" "}
                         {upcomingEvents[upcomingPage].date}
@@ -400,14 +444,26 @@ const Events: React.FC = () => {
                         {upcomingEvents[upcomingPage].location}
                       </p>
                     </div>
-                    <button
-                      onClick={() =>
-                        setSelectedEvent(upcomingEvents[upcomingPage])
-                      }
-                      className="bg-slate-900 text-white px-6 md:px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-blue-600 transition-all w-fit"
-                    >
-                      Details ansehen
-                    </button>
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                      <button
+                        onClick={() =>
+                          setSelectedEvent(upcomingEvents[upcomingPage])
+                        }
+                        className="w-full whitespace-nowrap bg-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-600 sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest"
+                      >
+                        Details ansehen
+                      </button>
+                      {upcomingEvents[upcomingPage].externalLink && (
+                        <a
+                          href={upcomingEvents[upcomingPage].externalLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full whitespace-nowrap border border-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900 transition-all hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest"
+                        >
+                          Anmelden
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -461,13 +517,19 @@ const Events: React.FC = () => {
                           onClick={() => setSelectedEvent(event)}
                           className="border border-slate-100 cursor-pointer bg-white h-full group rounded-lg shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col"
                         >
-                          <div className="h-44 sm:h-48 shrink-0 overflow-hidden">
+                          <div
+                            className={`h-44 shrink-0 overflow-hidden sm:h-48 ${
+                              event.imageFit === "contain"
+                                ? "flex items-center justify-center bg-[#062d18] p-3"
+                                : ""
+                            }`}
+                          >
                             <img
                               src={event.image}
-                              className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                              className={`transition-transform duration-500 group-hover:scale-105 ${
                                 event.imageFit === "contain"
-                                  ? "object-contain bg-[#0a1e3b]"
-                                  : "object-cover"
+                                  ? "h-full max-h-full w-auto max-w-full object-contain object-center"
+                                  : "h-full w-full object-cover"
                               }`}
                               alt=""
                             />
@@ -576,7 +638,7 @@ const Events: React.FC = () => {
 
       <AnimatePresence>
         {selectedEvent && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-slate-900/90 backdrop-blur-md">
+          <div className="fixed inset-0 z-[100] flex items-stretch justify-stretch bg-slate-900/90 p-0 backdrop-blur-md sm:items-center sm:justify-center sm:p-4 md:p-6">
             <button
               onClick={() => setSelectedEvent(null)}
               aria-label="Event schließen"
@@ -588,20 +650,26 @@ const Events: React.FC = () => {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
-              className="bg-white w-full max-w-[92rem] max-h-[88vh] md:h-[calc(100vh-48px)] md:max-h-[760px] overflow-y-auto md:overflow-hidden grid md:grid-cols-12 relative rounded-sm shadow-2xl"
+              className="relative grid h-dvh w-full max-w-[92rem] overflow-y-auto bg-white shadow-2xl sm:h-auto sm:max-h-[92vh] sm:rounded-sm md:h-[calc(100vh-48px)] md:max-h-[760px] md:grid-cols-12 md:overflow-hidden"
             >
-              <div className="h-44 sm:h-56 md:h-full md:col-span-4">
+              <div
+                className={`h-56 min-w-0 overflow-hidden sm:h-64 md:col-span-4 md:h-full ${
+                  selectedEvent.imageFit === "contain"
+                    ? "flex items-center justify-center bg-[#062d18] p-3 md:p-5"
+                    : ""
+                }`}
+              >
                 <img
                   src={selectedEvent.image}
-                  className={`w-full h-full ${
+                  className={`${
                     selectedEvent.imageFit === "contain"
-                      ? "object-contain bg-[#0a1e3b]"
-                      : "object-cover"
+                      ? "h-full max-h-full w-auto max-w-full object-contain object-center"
+                      : "h-full w-full object-cover"
                   }`}
                   alt=""
                 />
               </div>
-              <div className="md:col-span-8 p-6 sm:p-8 md:p-7 lg:p-8 flex flex-col justify-center">
+              <div className="flex min-w-0 flex-col justify-start p-5 sm:p-8 md:col-span-8 md:justify-center md:p-7 lg:p-8">
                 <p className="text-blue-600 font-bold text-[10px] uppercase mb-2 tracking-widest">
                   {selectedEvent.category || "Past Event"}
                 </p>
@@ -657,7 +725,7 @@ const Events: React.FC = () => {
                     onClick={() =>
                       window.open(selectedEvent.externalLink, "_blank")
                     }
-                    className="bg-blue-600 text-white py-3 px-6 font-bold uppercase text-[10px] tracking-widest hover:bg-blue-700 transition-all w-fit"
+                    className="w-full bg-blue-600 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-700 sm:w-fit sm:px-6 sm:py-3 sm:tracking-widest"
                   >
                     Event ansehen
                   </button>
