@@ -9,8 +9,7 @@ import { useScrollIntent } from "@/hooks/useScrollIntent";
 
 /* ─────────────────────────────────────────────────────────────
    ComplimentVideoSection
-   Full-width autoplay video with an immersive garden-like overlay:
-   • muted by default, minimal sound-toggle button
+   Full-width image with an immersive garden-like overlay:
    • attribution line bottom-left
    • subtle animated garden particles in the overlay
 ───────────────────────────────────────────────────────────── */
@@ -26,34 +25,18 @@ const gardenParticles = Array.from({ length: NUM_PARTICLES }, (_, i) => ({
 }));
 
 const ComplimentVideoSection: React.FC = () => {
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = React.useState(true);
-  const [showHint, setShowHint] = React.useState(false);
-
-  const toggleSound = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    const next = !muted;
-    video.muted = next;
-    setMuted(next);
-    // Show a brief "Sound on/off" hint
-    setShowHint(true);
-    setTimeout(() => setShowHint(false), 1600);
-  };
-
   return (
     <section
       className="relative w-full overflow-hidden"
       style={{ background: "#0a0f1a" }}
     >
-      {/* ── Video ───────────────────────────────────────────── */}
-      <video
-        ref={videoRef}
-        src="/shared/teg-compliment-compressed.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
+      {/* ── Image ───────────────────────────────────────────── */}
+      <img
+        src="/shared/ybla-meeting.jpeg"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
         className="block w-full object-cover"
         style={{ maxHeight: "90vh", minHeight: "320px" }}
       />
@@ -111,64 +94,6 @@ const ComplimentVideoSection: React.FC = () => {
         </p>
       </div>
 
-      {/* ── Sound toggle ────────────────────────────────────── */}
-      <div
-        className="absolute bottom-6 right-6 md:bottom-8 md:right-10"
-        style={{ zIndex: 10 }}
-      >
-        <AnimatePresence>
-          {showHint && (
-            <motion.span
-              key="hint"
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -4 }}
-              className="pointer-events-none absolute -top-8 right-0 whitespace-nowrap rounded-sm px-2 py-1 text-xs font-medium text-white/90"
-              style={{ background: "rgba(6,18,10,0.72)" }}
-            >
-              {muted ? "Ton aus" : "Ton an"}
-            </motion.span>
-          )}
-        </AnimatePresence>
-        <button
-          type="button"
-          onClick={toggleSound}
-          aria-label={muted ? "Ton einschalten" : "Ton ausschalten"}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-black/35 backdrop-blur-sm transition-colors hover:bg-black/55 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60"
-        >
-          {muted ? (
-            /* Muted icon */
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-5 w-5 text-white"
-            >
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-              <line x1="23" y1="9" x2="17" y2="15" />
-              <line x1="17" y1="9" x2="23" y2="15" />
-            </svg>
-          ) : (
-            /* Unmuted icon */
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-5 w-5 text-white"
-            >
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-            </svg>
-          )}
-        </button>
-      </div>
     </section>
   );
 };
