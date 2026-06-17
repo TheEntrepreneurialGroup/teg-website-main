@@ -402,33 +402,39 @@ const Events: React.FC = () => {
                   exit="exit"
                   className="absolute inset-0 grid grid-rows-[minmax(240px,0.95fr)_auto] md:grid-rows-none md:grid-cols-12 border border-slate-200 shadow-2xl bg-white/90 backdrop-blur-sm overflow-hidden rounded-xl"
                 >
-                  <div className="md:col-span-7 h-full min-h-0 min-w-0 overflow-hidden">
+                  <div
+                    className={`h-full min-h-0 min-w-0 overflow-hidden md:col-span-7 ${
+                      upcomingEvents[upcomingPage].imageFit === "contain"
+                        ? "flex items-center justify-center bg-[#062d18] p-3 md:p-6"
+                        : ""
+                    }`}
+                  >
                     <img
                       src={upcomingEvents[upcomingPage].image}
-                      className={`w-full h-full max-w-full ${
+                      className={`${
                         upcomingEvents[upcomingPage].imageFit === "contain"
-                          ? "object-contain object-center bg-[#062d18]"
-                          : "object-cover"
+                          ? "h-full max-h-full w-auto max-w-full object-contain object-center"
+                          : "h-full w-full object-cover"
                       }`}
                       alt=""
                     />
                   </div>
-                  <div className="md:col-span-5 min-w-0 p-6 sm:p-8 flex flex-col justify-center">
-                    <p className="text-blue-600 font-bold text-[10px] uppercase mb-4">
+                  <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 md:col-span-5 md:p-7 lg:p-8">
+                    <p className="mb-4 text-[10px] font-bold uppercase text-blue-600 md:mb-3">
                       {upcomingEvents[upcomingPage].category}
                     </p>
-                    <h3 className="text-[clamp(1.6rem,8vw,3rem)] md:text-3xl font-bold mb-5 md:mb-6 uppercase tracking-tighter leading-none break-words">
+                    <h3 className="mb-5 break-words text-[clamp(1.6rem,8vw,3rem)] font-bold uppercase leading-none tracking-tighter md:mb-5 md:text-[2.35rem] lg:text-4xl">
                       {upcomingEvents[upcomingPage].title}
                     </h3>
                     {upcomingEvents[upcomingPage].topic && (
-                      <p className="text-slate-900 text-xs font-bold uppercase tracking-widest mb-4 leading-relaxed">
+                      <p className="mb-4 text-xs font-bold uppercase leading-relaxed tracking-widest text-slate-900 md:mb-3">
                         {upcomingEvents[upcomingPage].topic}
                       </p>
                     )}
-                    <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                    <p className="mb-6 text-sm leading-relaxed text-slate-500 md:mb-5">
                       {upcomingEvents[upcomingPage].description}
                     </p>
-                    <div className="space-y-3 mb-6 md:mb-8 text-slate-500 text-sm">
+                    <div className="mb-6 space-y-3 text-sm text-slate-500 md:mb-6">
                       <p className="flex items-center">
                         <Calendar size={16} className="mr-3" />{" "}
                         {upcomingEvents[upcomingPage].date}
@@ -511,13 +517,19 @@ const Events: React.FC = () => {
                           onClick={() => setSelectedEvent(event)}
                           className="border border-slate-100 cursor-pointer bg-white h-full group rounded-lg shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col"
                         >
-                          <div className="h-44 sm:h-48 shrink-0 overflow-hidden">
+                          <div
+                            className={`h-44 shrink-0 overflow-hidden sm:h-48 ${
+                              event.imageFit === "contain"
+                                ? "flex items-center justify-center bg-[#062d18] p-3"
+                                : ""
+                            }`}
+                          >
                             <img
                               src={event.image}
-                              className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                              className={`transition-transform duration-500 group-hover:scale-105 ${
                                 event.imageFit === "contain"
-                                  ? "object-contain object-center bg-[#062d18]"
-                                  : "object-cover"
+                                  ? "h-full max-h-full w-auto max-w-full object-contain object-center"
+                                  : "h-full w-full object-cover"
                               }`}
                               alt=""
                             />
@@ -640,13 +652,19 @@ const Events: React.FC = () => {
               exit={{ y: 50, opacity: 0 }}
               className="relative grid h-dvh w-full max-w-[92rem] overflow-y-auto bg-white shadow-2xl sm:h-auto sm:max-h-[92vh] sm:rounded-sm md:h-[calc(100vh-48px)] md:max-h-[760px] md:grid-cols-12 md:overflow-hidden"
             >
-              <div className="h-56 min-w-0 overflow-hidden sm:h-64 md:col-span-4 md:h-full">
+              <div
+                className={`h-56 min-w-0 overflow-hidden sm:h-64 md:col-span-4 md:h-full ${
+                  selectedEvent.imageFit === "contain"
+                    ? "flex items-center justify-center bg-[#062d18] p-3 md:p-5"
+                    : ""
+                }`}
+              >
                 <img
                   src={selectedEvent.image}
-                  className={`w-full h-full max-w-full ${
+                  className={`${
                     selectedEvent.imageFit === "contain"
-                      ? "object-contain object-center bg-[#062d18]"
-                      : "object-cover"
+                      ? "h-full max-h-full w-auto max-w-full object-contain object-center"
+                      : "h-full w-full object-cover"
                   }`}
                   alt=""
                 />
