@@ -391,7 +391,7 @@ const Events: React.FC = () => {
                 </button>
               </>
             )}
-            <div className="relative min-h-[960px] sm:min-h-[900px] md:min-h-0 md:h-[680px] lg:h-[528px]">
+            <div className="relative min-h-[1180px] sm:min-h-[980px] md:min-h-0 md:h-[680px] lg:h-[528px]">
               <AnimatePresence initial={false} custom={upcomingDir}>
                 <motion.div
                   key={upcomingPage}
@@ -407,7 +407,7 @@ const Events: React.FC = () => {
                       src={upcomingEvents[upcomingPage].image}
                       className={`w-full h-full max-w-full ${
                         upcomingEvents[upcomingPage].imageFit === "contain"
-                          ? "object-contain bg-[#0a1e3b]"
+                          ? "object-contain object-center bg-[#062d18]"
                           : "object-cover"
                       }`}
                       alt=""
@@ -438,14 +438,26 @@ const Events: React.FC = () => {
                         {upcomingEvents[upcomingPage].location}
                       </p>
                     </div>
-                    <button
-                      onClick={() =>
-                        setSelectedEvent(upcomingEvents[upcomingPage])
-                      }
-                      className="bg-slate-900 text-white px-6 md:px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-blue-600 transition-all w-fit"
-                    >
-                      Details ansehen
-                    </button>
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                      <button
+                        onClick={() =>
+                          setSelectedEvent(upcomingEvents[upcomingPage])
+                        }
+                        className="w-full whitespace-nowrap bg-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-600 sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest"
+                      >
+                        Details ansehen
+                      </button>
+                      {upcomingEvents[upcomingPage].externalLink && (
+                        <a
+                          href={upcomingEvents[upcomingPage].externalLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full whitespace-nowrap border border-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900 transition-all hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest"
+                        >
+                          Anmelden
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -504,7 +516,7 @@ const Events: React.FC = () => {
                               src={event.image}
                               className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
                                 event.imageFit === "contain"
-                                  ? "object-contain bg-[#0a1e3b]"
+                                  ? "object-contain object-center bg-[#062d18]"
                                   : "object-cover"
                               }`}
                               alt=""
@@ -614,7 +626,7 @@ const Events: React.FC = () => {
 
       <AnimatePresence>
         {selectedEvent && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-slate-900/90 backdrop-blur-md">
+          <div className="fixed inset-0 z-[100] flex items-stretch justify-stretch bg-slate-900/90 p-0 backdrop-blur-md sm:items-center sm:justify-center sm:p-4 md:p-6">
             <button
               onClick={() => setSelectedEvent(null)}
               aria-label="Event schließen"
@@ -626,20 +638,20 @@ const Events: React.FC = () => {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
-              className="bg-white w-full max-w-[92rem] max-h-[88vh] md:h-[calc(100vh-48px)] md:max-h-[760px] overflow-y-auto md:overflow-hidden grid md:grid-cols-12 relative rounded-sm shadow-2xl"
+              className="relative grid h-dvh w-full max-w-[92rem] overflow-y-auto bg-white shadow-2xl sm:h-auto sm:max-h-[92vh] sm:rounded-sm md:h-[calc(100vh-48px)] md:max-h-[760px] md:grid-cols-12 md:overflow-hidden"
             >
-              <div className="h-44 sm:h-56 md:h-full md:col-span-4 min-w-0 overflow-hidden">
+              <div className="h-56 min-w-0 overflow-hidden sm:h-64 md:col-span-4 md:h-full">
                 <img
                   src={selectedEvent.image}
                   className={`w-full h-full max-w-full ${
                     selectedEvent.imageFit === "contain"
-                      ? "object-contain bg-[#0a1e3b]"
+                      ? "object-contain object-center bg-[#062d18]"
                       : "object-cover"
                   }`}
                   alt=""
                 />
               </div>
-              <div className="md:col-span-8 min-w-0 p-6 sm:p-8 md:p-7 lg:p-8 flex flex-col justify-center">
+              <div className="flex min-w-0 flex-col justify-start p-5 sm:p-8 md:col-span-8 md:justify-center md:p-7 lg:p-8">
                 <p className="text-blue-600 font-bold text-[10px] uppercase mb-2 tracking-widest">
                   {selectedEvent.category || "Past Event"}
                 </p>
@@ -695,7 +707,7 @@ const Events: React.FC = () => {
                     onClick={() =>
                       window.open(selectedEvent.externalLink, "_blank")
                     }
-                    className="bg-blue-600 text-white py-3 px-6 font-bold uppercase text-[10px] tracking-widest hover:bg-blue-700 transition-all w-fit"
+                    className="w-full bg-blue-600 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-700 sm:w-fit sm:px-6 sm:py-3 sm:tracking-widest"
                   >
                     Event ansehen
                   </button>
