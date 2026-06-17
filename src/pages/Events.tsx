@@ -20,6 +20,7 @@ interface EventData {
   description: string;
   longText: string;
   image: string;
+  cardImage?: string;
   imageFit?: "cover" | "contain";
   externalLink?: string;
   speakers?: {
@@ -391,7 +392,7 @@ const Events: React.FC = () => {
                 </button>
               </>
             )}
-            <div className="relative min-h-[1180px] sm:min-h-[980px] md:min-h-0 md:h-[680px] lg:h-[528px]">
+            <div className="relative">
               <AnimatePresence initial={false} custom={upcomingDir}>
                 <motion.div
                   key={upcomingPage}
@@ -400,13 +401,13 @@ const Events: React.FC = () => {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  className="absolute inset-0 grid grid-rows-[minmax(240px,0.95fr)_auto] md:grid-rows-none md:grid-cols-12 border border-slate-200 shadow-2xl bg-white/90 backdrop-blur-sm overflow-hidden rounded-xl"
+                  className="relative grid overflow-hidden rounded-xl border border-slate-200 bg-white/90 shadow-2xl backdrop-blur-sm md:grid-cols-12"
                 >
                   <div
-                    className={`h-full min-h-0 min-w-0 overflow-hidden md:col-span-7 ${
+                    className={`min-h-0 min-w-0 overflow-hidden md:col-span-4 ${
                       upcomingEvents[upcomingPage].imageFit === "contain"
-                        ? "flex items-center justify-center bg-[#062d18] p-3 md:p-6"
-                        : ""
+                        ? "flex aspect-[1131/1360] items-center justify-center bg-[#062d18] p-3 md:aspect-auto md:p-5"
+                        : "aspect-[16/10] md:aspect-auto"
                     }`}
                   >
                     <img
@@ -414,12 +415,12 @@ const Events: React.FC = () => {
                       className={`${
                         upcomingEvents[upcomingPage].imageFit === "contain"
                           ? "h-full max-h-full w-auto max-w-full object-contain object-center"
-                          : "h-full w-full object-cover"
+                          : "h-full w-full object-cover object-center"
                       }`}
                       alt=""
                     />
                   </div>
-                  <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 md:col-span-5 md:p-7 lg:p-8">
+                  <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 md:col-span-8 md:p-8 lg:p-10">
                     <p className="mb-4 text-[10px] font-bold uppercase text-blue-600 md:mb-3">
                       {upcomingEvents[upcomingPage].category}
                     </p>
@@ -525,7 +526,7 @@ const Events: React.FC = () => {
                             }`}
                           >
                             <img
-                              src={event.image}
+                              src={event.cardImage || event.image}
                               className={`transition-transform duration-500 group-hover:scale-105 ${
                                 event.imageFit === "contain"
                                   ? "h-full max-h-full w-auto max-w-full object-contain object-center"
