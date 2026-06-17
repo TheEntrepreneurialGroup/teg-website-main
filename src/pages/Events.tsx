@@ -34,22 +34,63 @@ const Events: React.FC = () => {
   const [[upcomingPage, upcomingDir], setUpcomingPage] = useState([0, 0]);
   const [[pastPage, pastDir], setPastPage] = useState([0, 0]);
 
-  const lumaLink = "https://luma.com/71152vc3?utm_source=tg_ws";
+  const biotechLumaLink = "https://luma.com/teg-qdjm";
   const upcomingEvents: EventData[] = [
+    {
+      id: "biotech-medtech-panel-2026",
+      title: "Herausforderungen & Innovation in Biotech & Medtech",
+      date: "03.07.2026",
+      location: "IZB Faculty Club, Martinsried",
+      category: "Upcoming Highlight",
+      topic: "Zukunft der Münchner Biotech- und Medtech-Szene",
+      description:
+        "Ein interaktiver Panel Talk zur Zukunft der Life-Sciences, Biotech- und Medtech-Industrie in München.",
+      longText:
+        "Founder, C-Level und Senior Professionals teilen ihre Sichtweisen und Prognosen dazu, wie sich Münchens Life-Sciences-, Biotech- und Medtech-Standort entwickeln wird. Forschung und Wirtschaft treffen aufeinander, um über Hürden, Innovationen und kommende Challenges zu diskutieren. Im Mittelpunkt stehen keine abstrakten Theorien, sondern Fakten, Erfahrungen und ein offener Austausch für alle, die Naturwissenschaften und Wirtschaft zusammen denken.",
+      image: "/events/converted/biotech-medtech-panel-2026.webp",
+      imageFit: "contain",
+      externalLink: biotechLumaLink,
+      speakers: [
+        {
+          name: "Dr. Thilo Kaltenbach",
+          company: "Roland Berger",
+          position: "Senior Partner, Global Pharma & Healthcare",
+        },
+        {
+          name: "Dr. Dominik Schumacher",
+          company: "Tubulis GmbH",
+          position: "CEO & Founder",
+        },
+        {
+          name: "Prof. Andreas Ladurner",
+          company: "Eisbach Bio GmbH / LMU Munich",
+          position:
+            "CSO, Founder and Managing Director; Chair of Physiological Chemistry",
+        },
+        {
+          name: "Prof. med. Ralf Huss",
+          company: "BioM Biotech Cluster Development",
+          position: "Geschäftsführer",
+        },
+      ],
+    },
+  ];
+
+  const pastEvents: EventData[] = [
     {
       id: "ai-2026",
       title: "AI Consulting Conference 2026",
       date: "10.06.2026",
       location: "Netlight, München",
-      category: "Upcoming Highlight",
+      category: "Conference",
       topic: "Beyond Hype. Into Business.",
       description:
         "Ein kuratierter Konferenztag darüber, wie KI Consulting, Geschäftsmodelle und Karrieren konkret verändert.",
       longText:
-        "Die AI Consulting Conference bringt Perspektiven aus Strategieberatung, Tech-Consulting, Industrie, angewandter KI, Forschung und Recht zusammen. Im Fokus stehen reale KI-Use-Cases, AI-Assets in Beratungsarbeit, Industry Briefings, Applied-AI-Workshops, Governance, Haftung und die Zukunft der Beraterkarriere.",
+        "Die AI Consulting Conference brachte Perspektiven aus Strategieberatung, Tech-Consulting, Industrie, angewandter KI, Forschung und Recht zusammen. Im Fokus standen reale KI-Use-Cases, AI-Assets in Beratungsarbeit, Industry Briefings, Applied-AI-Workshops, Governance, Haftung und die Zukunft der Beraterkarriere.",
       image: "/events/converted/ai-consulting-conference-2026.webp",
       imageFit: "contain",
-      externalLink: lumaLink,
+      externalLink: "https://luma.com/71152vc3?utm_source=tg_ws",
       speakers: [
         {
           name: "Florian Bauer",
@@ -73,9 +114,6 @@ const Events: React.FC = () => {
         },
       ],
     },
-  ];
-
-  const pastEvents: EventData[] = [
     {
       id: "teg-talk-24-04-2026",
       title: "TEG Talk: Corporate Entrepreneurship",
@@ -364,10 +402,10 @@ const Events: React.FC = () => {
                   exit="exit"
                   className="absolute inset-0 grid grid-rows-[minmax(240px,0.95fr)_auto] md:grid-rows-none md:grid-cols-12 border border-slate-200 shadow-2xl bg-white/90 backdrop-blur-sm overflow-hidden rounded-xl"
                 >
-                  <div className="md:col-span-7 h-full min-h-0">
+                  <div className="md:col-span-7 h-full min-h-0 min-w-0 overflow-hidden">
                     <img
                       src={upcomingEvents[upcomingPage].image}
-                      className={`w-full h-full ${
+                      className={`w-full h-full max-w-full ${
                         upcomingEvents[upcomingPage].imageFit === "contain"
                           ? "object-contain bg-[#0a1e3b]"
                           : "object-cover"
@@ -375,7 +413,7 @@ const Events: React.FC = () => {
                       alt=""
                     />
                   </div>
-                  <div className="md:col-span-5 p-6 sm:p-8 flex flex-col justify-center">
+                  <div className="md:col-span-5 min-w-0 p-6 sm:p-8 flex flex-col justify-center">
                     <p className="text-blue-600 font-bold text-[10px] uppercase mb-4">
                       {upcomingEvents[upcomingPage].category}
                     </p>
@@ -590,10 +628,10 @@ const Events: React.FC = () => {
               exit={{ y: 50, opacity: 0 }}
               className="bg-white w-full max-w-[92rem] max-h-[88vh] md:h-[calc(100vh-48px)] md:max-h-[760px] overflow-y-auto md:overflow-hidden grid md:grid-cols-12 relative rounded-sm shadow-2xl"
             >
-              <div className="h-44 sm:h-56 md:h-full md:col-span-4">
+              <div className="h-44 sm:h-56 md:h-full md:col-span-4 min-w-0 overflow-hidden">
                 <img
                   src={selectedEvent.image}
-                  className={`w-full h-full ${
+                  className={`w-full h-full max-w-full ${
                     selectedEvent.imageFit === "contain"
                       ? "object-contain bg-[#0a1e3b]"
                       : "object-cover"
@@ -601,7 +639,7 @@ const Events: React.FC = () => {
                   alt=""
                 />
               </div>
-              <div className="md:col-span-8 p-6 sm:p-8 md:p-7 lg:p-8 flex flex-col justify-center">
+              <div className="md:col-span-8 min-w-0 p-6 sm:p-8 md:p-7 lg:p-8 flex flex-col justify-center">
                 <p className="text-blue-600 font-bold text-[10px] uppercase mb-2 tracking-widest">
                   {selectedEvent.category || "Past Event"}
                 </p>
