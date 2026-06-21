@@ -10,11 +10,13 @@ import YblaJourney from "@/components/sections/YblaJourney";
 import TegGardenStatement from "@/components/sections/TegGardenStatement";
 import GardenCtaPair from "@/components/sections/GardenCtaPair";
 import HeritageGardenSection from "@/components/sections/HeritageGardenSection";
+import OptimizedImage from "@/components/OptimizedImage";
 import { useScrollIntent } from "@/hooks/useScrollIntent";
 
 /* ─────────────────────────────────────────────────────────────
    ComplimentVideoSection
-   Full-width image with an immersive garden-like overlay:
+   Full-width autoplay video with an immersive garden-like overlay:
+   • muted by default, minimal sound-toggle button
    • attribution line bottom-left
    • subtle animated garden particles in the overlay
 ───────────────────────────────────────────────────────────── */
@@ -30,20 +32,72 @@ const gardenParticles = Array.from({ length: NUM_PARTICLES }, (_, i) => ({
 }));
 
 const ComplimentVideoSection: React.FC = () => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const fallbackRef = React.useRef<HTMLImageElement>(null);
+  const [muted, setMuted] = React.useState(true);
+  const [showHint, setShowHint] = React.useState(false);
+  const [videoEnded, setVideoEnded] = React.useState(false);
+
+  const toggleSound = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    const next = !muted;
+    video.muted = next;
+    setMuted(next);
+    setShowHint(true);
+    setTimeout(() => setShowHint(false), 1600);
+  };
+
+  const replayVideo = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.currentTime = 0;
+    video.play();
+    setVideoEnded(false);
+  };
+
   return (
     <section
       className="relative w-full overflow-hidden"
       style={{ background: "#0a0f1a" }}
     >
-      {/* ── Image ───────────────────────────────────────────── */}
-      <img
-        src="/shared/ybla-meeting.jpeg"
-        alt=""
-        aria-hidden="true"
-        loading="lazy"
-        decoding="async"
+      {/* ── Video ───────────────────────────────────────────── */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        playsInline
+        onEnded={() => {
+          // Show fallback image immediately via DOM, then update state
+          if (fallbackRef.current) fallbackRef.current.style.display = "block";
+          if (videoRef.current) videoRef.current.style.display = "none";
+          setVideoEnded(true);
+        }}
         className="block w-full object-cover"
-        style={{ maxHeight: "90vh", minHeight: "320px" }}
+        style={{
+          maxHeight: "90vh",
+          minHeight: "320px",
+          display: videoEnded ? "none" : "block",
+        }}
+      >
+        <source
+          src="/shared/teg-compliment-compressed.webm"
+          type="video/webm"
+        />
+        <source src="/shared/teg-compliment-compressed.mp4" type="video/mp4" />
+      </video>
+
+      {/* ── Fallback image (shown after video ends) ────────── */}
+      <img
+        ref={fallbackRef}
+        src="/shared/teg-compliment-fallback.jpeg"
+        alt=""
+        className="block w-full object-cover"
+        style={{
+          maxHeight: "90vh",
+          minHeight: "320px",
+          display: videoEnded ? "block" : "none",
+        }}
       />
 
       {/* ── Garden particle overlay ──────────────────────────── */}
@@ -99,6 +153,86 @@ const ComplimentVideoSection: React.FC = () => {
         </p>
       </div>
 
+      {/* ── Sound toggle (video) / Replay button (image) ──── */}
+      <div
+        className="absolute bottom-6 right-6 md:bottom-8 md:right-10"
+        style={{ zIndex: 10 }}
+      >
+        <AnimatePresence>
+          {showHint && !videoEnded && (
+            <motion.span
+              key="hint"
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              className="pointer-events-none absolute -top-8 right-0 whitespace-nowrap rounded-sm px-2 py-1 text-xs font-medium text-white/90"
+              style={{ background: "rgba(6,18,10,0.72)" }}
+            >
+              {muted ? "Ton aus" : "Ton an"}
+            </motion.span>
+          )}
+        </AnimatePresence>
+        {videoEnded ? (
+          /* ── Replay button ──────────────────────────────── */
+          <button
+            type="button"
+            onClick={replayVideo}
+            aria-label="Video erneut abspielen"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-black/35 backdrop-blur-sm transition-colors hover:bg-black/55 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5 text-white"
+            >
+              <polyline points="1 4 1 10 7 10" />
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+            </svg>
+          </button>
+        ) : (
+          /* ── Sound toggle ───────────────────────────────── */
+          <button
+            type="button"
+            onClick={toggleSound}
+            aria-label={muted ? "Ton einschalten" : "Ton ausschalten"}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-black/35 backdrop-blur-sm transition-colors hover:bg-black/55 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60"
+          >
+            {muted ? (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5 text-white"
+              >
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <line x1="23" y1="9" x2="17" y2="15" />
+                <line x1="17" y1="9" x2="23" y2="15" />
+              </svg>
+            ) : (
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5 text-white"
+              >
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+              </svg>
+            )}
+          </button>
+        )}
+      </div>
     </section>
   );
 };
@@ -958,7 +1092,7 @@ const About: React.FC = () => {
                         "radial-gradient(60% 55% at 50% 50%, rgba(246,215,123,0.18) 0%, rgba(4,15,31,0) 72%)",
                     }}
                   />
-                  <img
+                  <OptimizedImage
                     src={format.img}
                     alt={format.alt}
                     loading="lazy"
@@ -1239,7 +1373,7 @@ const About: React.FC = () => {
       {/* §3 Selection — Auswahl der Teilnehmer (immersive full-bleed) */}
       <section className="relative isolate flex min-h-[70vh] w-full items-end overflow-hidden bg-[#040F1F] py-20 text-white md:min-h-[80vh] md:py-28 lg:min-h-screen">
         {/* Full-bleed background image */}
-        <img
+        <OptimizedImage
           src="/shared/heroes/selection-bg.jpg"
           alt=""
           aria-hidden="true"

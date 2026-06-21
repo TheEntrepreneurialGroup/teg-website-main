@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
+import OptimizedImage from "@/components/OptimizedImage";
 
 /**
  * HeritageGardenSection
@@ -60,15 +61,16 @@ const HeritageGardenSection: React.FC<Props> = ({
     ? {
         headline: (
           <>
-            Gegründet <span className="text-[#F6D77B]">1986</span> von Vorständen
-            elf deutscher Top‑Unternehmen.
+            Gegründet <span className="text-[#F6D77B]">1986</span> von
+            Vorständen elf deutscher Top‑Unternehmen.
           </>
         ),
         intro:
           "Eine gemeinnützige Münchner Initiative der Erwachsenenbildung - institutionell verwurzelt seit 1986, in heutiger Form etabliert im Januar 1988.",
         pressTag: "Pressebeleg · Donaukurier",
         kuratoriumTag: "Kuratorium 1986",
-        kuratoriumLine: "Vorständer elf Deutscher Top-Unternehmen gründen TEG.\nDennoch keine lineare Gründungsphase!",
+        kuratoriumLine:
+          "Vorständer elf Deutscher Top-Unternehmen gründen TEG.\nDennoch keine lineare Gründungsphase!",
         todayPrefix: "heute",
         founderArrow: "via",
         articleAlt:
@@ -85,7 +87,8 @@ const HeritageGardenSection: React.FC<Props> = ({
           "A non‑profit Munich initiative for adult education — institutionally rooted since 1986 and established in its current form in January 1988.",
         pressTag: "Press proof · Donaukurier",
         kuratoriumTag: "Founding board 1986",
-        kuratoriumLine: "Board members of eleven German top companies found TEG.\nYet no linear founding phase!",
+        kuratoriumLine:
+          "Board members of eleven German top companies found TEG.\nYet no linear founding phase!",
         todayPrefix: "today",
         founderArrow: "via",
         articleAlt:
@@ -365,7 +368,7 @@ const HeritageGardenSection: React.FC<Props> = ({
             />
             <div className="relative overflow-hidden border border-[#F6D77B]/30 bg-[#efe5cf] shadow-[0_40px_120px_rgba(0,0,0,0.55)]">
               <div className="aspect-[948/695] w-full overflow-hidden">
-                <img
+                <OptimizedImage
                   src="/about/heritage/zeitungsartikel.png"
                   alt={copy.articleAlt}
                   className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
@@ -376,9 +379,7 @@ const HeritageGardenSection: React.FC<Props> = ({
             </div>
 
             {/* Floating press tag */}
-            <figcaption
-              className="absolute -bottom-3 right-4 max-w-[12rem] border border-[#F6D77B]/40 bg-[#040F1F]/95 px-3 py-2 shadow-[0_20px_60px_rgba(0,0,0,0.55)] backdrop-blur-sm md:right-8"
-            >
+            <figcaption className="absolute -bottom-3 right-4 max-w-[12rem] border border-[#F6D77B]/40 bg-[#040F1F]/95 px-3 py-2 shadow-[0_20px_60px_rgba(0,0,0,0.55)] backdrop-blur-sm md:right-8">
               <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#F6D77B]/85">
                 {copy.pressTag}
               </div>
@@ -528,7 +529,11 @@ const HeritageGardenSection: React.FC<Props> = ({
                     )}
                   </div>
                   {/* "Heute" label — only for HypoVereinsbank, Infratest, PMP */}
-                  {["Bayerische Hypotheken- und Wechsel-Bank", "Infratest", "Personal-Media-Partner"].includes(company.original) && (
+                  {[
+                    "Bayerische Hypotheken- und Wechsel-Bank",
+                    "Infratest",
+                    "Personal-Media-Partner",
+                  ].includes(company.original) && (
                     <div className="relative mt-2 text-center">
                       <div className="text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#F6D77B]/80">
                         {copy.todayPrefix}
@@ -543,7 +548,9 @@ const HeritageGardenSection: React.FC<Props> = ({
                 {/* Hover detail card */}
                 <div
                   className="pointer-events-none absolute left-1/2 top-[145px] z-20 w-[200px] -translate-x-1/2 origin-top scale-95 border border-[#F6D77B]/30 bg-[#040F1F]/95 px-3 py-2.5 text-center opacity-0 shadow-[0_18px_50px_rgba(0,0,0,0.6)] backdrop-blur transition-all duration-300 group-hover:scale-100 group-hover:opacity-100"
-                  style={{ transform: `translate(-50%, 0) rotate(${-pos.rot}deg)` }}
+                  style={{
+                    transform: `translate(-50%, 0) rotate(${-pos.rot}deg)`,
+                  }}
                 >
                   <div className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-white">
                     {company.original}
@@ -598,7 +605,11 @@ const HeritageGardenSection: React.FC<Props> = ({
                       {c.original}
                     </div>
                     {/* "Heute" label — only for HypoVereinsbank, Infratest, PMP */}
-                    {["Bayerische Hypotheken- und Wechsel-Bank", "Infratest", "Personal-Media-Partner"].includes(c.original) && (
+                    {[
+                      "Bayerische Hypotheken- und Wechsel-Bank",
+                      "Infratest",
+                      "Personal-Media-Partner",
+                    ].includes(c.original) && (
                       <div className="mt-0.5 text-[10px] leading-snug text-[#F6D77B]/80">
                         {c.today}
                       </div>
@@ -614,7 +625,6 @@ const HeritageGardenSection: React.FC<Props> = ({
             </ul>
           </div>
         </div>
-
       </div>
     </section>
   );
