@@ -1,6 +1,11 @@
 ﻿import React from "react";
 import { useIntl } from "react-intl";
-import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useInView,
+  useReducedMotion,
+} from "framer-motion";
 import YblaJourney from "@/components/sections/YblaJourney";
 import TegGardenStatement from "@/components/sections/TegGardenStatement";
 import GardenCtaPair from "@/components/sections/GardenCtaPair";
@@ -184,22 +189,6 @@ const About: React.FC = () => {
   const reduce = useReducedMotion();
   const heroPlay = useScrollIntent(heroInView, reduce);
 
-  // Lock the page from scrolling while the animation plays, then release.
-  // Animation longest path: vines finish at ≈3.45 s → unlock at 3 600 ms.
-  React.useEffect(() => {
-    if (!heroPlay) return;
-    if (reduce) return; // reduced-motion: no lock, animation is instant
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const t = window.setTimeout(() => {
-      document.body.style.overflow = prev;
-    }, 3600);
-    return () => {
-      window.clearTimeout(t);
-      document.body.style.overflow = prev;
-    };
-  }, [heroPlay, reduce]);
-
   // -----------------------------------------------------------------------
   // Content — every line below is grounded in a real, persistent source:
   //   • outputs/about-us-2026-05-25/notion/linkedin-self-description-verbatim.md
@@ -218,14 +207,32 @@ const About: React.FC = () => {
         : "TEG is one of Germany's oldest student-led entrepreneurial initiatives. In Munich, ambitious students meet board members, partners and founders — and build projects, partnerships, talks and conferences with them.",
       pillars: isDe
         ? [
-            { title: "Echte Unternehmen", desc: "Reale B2B-Projekte und Revenue-First-Ventures, keine Pitch-Decks." },
-            { title: "Mittelstand & DAX als Partner", desc: "B2B-Partnerschaften mit Mittelstand- und DAX-Häusern." },
-            { title: "40+ C-Level Alumni", desc: "Ein Netzwerk, das Studierende heute mit Vorständen verbindet." },
+            {
+              title: "Echte Unternehmen",
+              desc: "Reale B2B-Projekte und Revenue-First-Ventures, keine Pitch-Decks.",
+            },
+            {
+              title: "Mittelstand & DAX als Partner",
+              desc: "B2B-Partnerschaften mit Mittelstand- und DAX-Häusern.",
+            },
+            {
+              title: "40+ C-Level Alumni",
+              desc: "Ein Netzwerk, das Studierende heute mit Vorständen verbindet.",
+            },
           ]
         : [
-            { title: "Real business creation", desc: "Real B2B projects and revenue-first ventures, not pitch decks." },
-            { title: "Mittelstand & DAX partners", desc: "B2B partnerships with Mittelstand and DAX-listed companies." },
-            { title: "40+ C-level alumni", desc: "A network that connects today's students with company boards." },
+            {
+              title: "Real business creation",
+              desc: "Real B2B projects and revenue-first ventures, not pitch decks.",
+            },
+            {
+              title: "Mittelstand & DAX partners",
+              desc: "B2B partnerships with Mittelstand and DAX-listed companies.",
+            },
+            {
+              title: "40+ C-level alumni",
+              desc: "A network that connects today's students with company boards.",
+            },
           ],
       tagline: "Create What's Next.",
       cta_students: isDe ? "Für Studierende" : "For Students",
@@ -245,7 +252,9 @@ const About: React.FC = () => {
     },
 
     formats: {
-      eyebrow: isDe ? "Industrieübergreifender Austausch" : "Cross-Industry Exchange",
+      eyebrow: isDe
+        ? "Industrieübergreifender Austausch"
+        : "Cross-Industry Exchange",
       title: isDe ? "Unsere 3 Formate" : "Our 3 Formats",
       intro: isDe
         ? "TEG veranstaltet keine Massenevents. Jede Veranstaltung ist auf eine definierte Zielgruppe zugeschnitten. Unsere Teilnehmer sind handverlesene führende Persönlichkeiten."
@@ -325,15 +334,30 @@ const About: React.FC = () => {
     },
 
     alumniIntro: {
-      title: isDe ? "Ein kleiner Ausschnitt unserer YBLA Absolventen" : "A small selection of our YBLA graduates",
+      title: isDe
+        ? "Ein kleiner Ausschnitt unserer YBLA Absolventen"
+        : "A small selection of our YBLA graduates",
       intro: isDe
         ? "Drei Jahrzente YBLA formt Entscheider & Führungskräfte."
         : "Three decades of YBLA shape decision-makers & executives.",
       stats: [
         { number: "300+", label: isDe ? "Alumni" : "Alumni" },
-        { number: "41", label: isDe ? "Top-Level Führungskräfte in Konzernen" : "Top-level executives in corporations" },
-        { number: "40", label: isDe ? "Top-Level Führungskräfte im Mittelstand" : "Top-level executives in SMEs" },
-        { number: "15", label: isDe ? "Unternehmensgründer" : "Entrepreneurs / Founders" },
+        {
+          number: "41",
+          label: isDe
+            ? "Top-Level Führungskräfte in Konzernen"
+            : "Top-level executives in corporations",
+        },
+        {
+          number: "40",
+          label: isDe
+            ? "Top-Level Führungskräfte im Mittelstand"
+            : "Top-level executives in SMEs",
+        },
+        {
+          number: "15",
+          label: isDe ? "Unternehmensgründer" : "Entrepreneurs / Founders",
+        },
       ],
     },
 
@@ -347,7 +371,9 @@ const About: React.FC = () => {
         : "New members are admitted once a year through an application process. Those who join take real responsibility early in one of the four units.",
       img: "/shared/images/tegtalk-group-WS26.avif",
       alt: isDe ? "Aktiver TEG-Jahrgang 2026" : "Active TEG cohort 2026",
-      caption: isDe ? "Aktiver TEG-Jahrgang, Wintersemester 2026." : "Active TEG cohort, winter semester 2026.",
+      caption: isDe
+        ? "Aktiver TEG-Jahrgang, Wintersemester 2026."
+        : "Active TEG cohort, winter semester 2026.",
     },
   };
 
@@ -567,21 +593,60 @@ const About: React.FC = () => {
 
   // ---------------- ALUMNI SECTION: PRESERVED BYTE-IDENTICAL ----------------
   const alumni = [
-    { name: "Ulrich Beck", role: "Top-Management", img: "/about/alumni/ulrich_beck.jpg" },
-    { name: "Claus Wattendrup", role: "Top-Management", img: "/about/alumni/claus_wattendrup.jpg" },
-    { name: "Daniel Just", role: "Top-Management", img: "/about/alumni/daniel_just.jpg" },
-    { name: "Dr. Michael Wagner", role: "Top-Management", img: "/about/alumni/drmpwagner.jpg" },
-    { name: "David Riessner", role: "Top-Management", img: "/about/alumni/david_riessner.jpg" },
-    { name: "Arne Rieger", role: "Mittleres Management", img: "/about/alumni/arne_rieger.jpg" },
-    { name: "Bernd Amberger", role: "Mittleres Management", img: "/about/alumni/bernd_amberger.jpg" },
-    { name: "Michael Kraupa", role: "Interim", img: "/about/alumni/michael_kraupa.jpg" },
-    { name: "Maximilian Mann", role: "GF Mittelstand", img: "/about/alumni/maximilian_mann.jpg" },
-    { name: "Volker Maiborn", role: "Gründer", img: "/about/alumni/volker_maiborn.jpg" }
+    {
+      name: "Ulrich Beck",
+      role: "Top-Management",
+      img: "/about/alumni/ulrich_beck.jpg",
+    },
+    {
+      name: "Claus Wattendrup",
+      role: "Top-Management",
+      img: "/about/alumni/claus_wattendrup.jpg",
+    },
+    {
+      name: "Daniel Just",
+      role: "Top-Management",
+      img: "/about/alumni/daniel_just.jpg",
+    },
+    {
+      name: "Dr. Michael Wagner",
+      role: "Top-Management",
+      img: "/about/alumni/drmpwagner.jpg",
+    },
+    {
+      name: "David Riessner",
+      role: "Top-Management",
+      img: "/about/alumni/david_riessner.jpg",
+    },
+    {
+      name: "Arne Rieger",
+      role: "Mittleres Management",
+      img: "/about/alumni/arne_rieger.jpg",
+    },
+    {
+      name: "Bernd Amberger",
+      role: "Mittleres Management",
+      img: "/about/alumni/bernd_amberger.jpg",
+    },
+    {
+      name: "Michael Kraupa",
+      role: "Interim",
+      img: "/about/alumni/michael_kraupa.jpg",
+    },
+    {
+      name: "Maximilian Mann",
+      role: "GF Mittelstand",
+      img: "/about/alumni/maximilian_mann.jpg",
+    },
+    {
+      name: "Volker Maiborn",
+      role: "Gründer",
+      img: "/about/alumni/volker_maiborn.jpg",
+    },
   ];
 
   return (
     <div className="w-full bg-background animate-in fade-in duration-200 ease-out">
-
       {/* 1. Hero — Immersive full-bleed module */}
       <section className="relative isolate flex min-h-[92vh] w-full flex-col overflow-hidden bg-[#061D38] text-white">
         {/* Background image */}
@@ -613,21 +678,6 @@ const About: React.FC = () => {
         />
 
         {/* Top kicker bar */}
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="relative z-10 mx-auto flex w-full items-center justify-between px-2 pt-28 sm:px-4 md:pt-32"
-        >
-          <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.42em] text-white/70">
-            <span className="inline-block h-px w-10 bg-[#F6D77B]" />
-            <span>TEG — München · {isDe ? "Seit" : "Since"} 1986</span>
-          </div>
-          <div className="hidden text-[10px] font-semibold uppercase tracking-[0.42em] text-white/55 md:block">
-            {isDe ? "Über uns" : "About"}
-          </div>
-        </motion.div>
-
         {/* Headline block */}
         <div
           ref={heroRef}
@@ -641,12 +691,20 @@ const About: React.FC = () => {
                   initial={{ opacity: 0, y: 32 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -16, filter: "blur(6px)" }}
-                  transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
+                  transition={{
+                    duration: 1.1,
+                    ease: [0.16, 1, 0.3, 1],
+                    delay: 0.25,
+                  }}
                   className="max-w-[30ch] font-bold leading-[0.92] tracking-[-0.02em] text-white text-[clamp(2.75rem,9vw,8rem)]"
                 >
-                  {isDe ? "Verantwortung für die deutsche Wirtschaft" : "Responsibility for the German economy"}
+                  {isDe
+                    ? "Verantwortung für die deutsche Wirtschaft"
+                    : "Responsibility for the German economy"}
                   <br />
-                  <span className="text-[#F6D77B]">{isDe ? "seit 1986." : "since 1986."}</span>
+                  <span className="text-[#F6D77B]">
+                    {isDe ? "seit 1986." : "since 1986."}
+                  </span>
                 </motion.h1>
               ) : (
                 <motion.div
@@ -677,7 +735,9 @@ const About: React.FC = () => {
                     variant: "solid",
                   },
                   {
-                    label: isDe ? "Konferenzen & Events" : "Conferences & Events",
+                    label: isDe
+                      ? "Konferenzen & Events"
+                      : "Conferences & Events",
                     href: "/events",
                     variant: "solid",
                   },
@@ -706,19 +766,46 @@ const About: React.FC = () => {
             <div className="flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
               <div className="flex w-max animate-[ticker_45s_linear_infinite] gap-10 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.32em] text-white/80 md:text-xs">
                 {[
-                  "BCG", "McKinsey", "Roland Berger", "Accenture", "appliedAI", "IBM",
-                  "MaibornWolff", "Hogan Lovells", "Munich Re", "Capgemini", "PwC",
-                  "Netlight", "Wayra", "LMU",
-                ].concat([
-                  "BCG", "McKinsey", "Roland Berger", "Accenture", "appliedAI", "IBM",
-                  "MaibornWolff", "Hogan Lovells", "Munich Re", "Capgemini", "PwC",
-                  "Netlight", "Wayra", "LMU",
-                ]).map((name, i) => (
-                  <span key={`${name}-${i}`} className="inline-flex items-center gap-10">
-                    <span>{name}</span>
-                    <span className="inline-block h-1 w-1 rounded-full bg-[#F6D77B]/60" />
-                  </span>
-                ))}
+                  "BCG",
+                  "McKinsey",
+                  "Roland Berger",
+                  "Accenture",
+                  "appliedAI",
+                  "IBM",
+                  "MaibornWolff",
+                  "Hogan Lovells",
+                  "Munich Re",
+                  "Capgemini",
+                  "PwC",
+                  "Netlight",
+                  "Wayra",
+                  "LMU",
+                ]
+                  .concat([
+                    "BCG",
+                    "McKinsey",
+                    "Roland Berger",
+                    "Accenture",
+                    "appliedAI",
+                    "IBM",
+                    "MaibornWolff",
+                    "Hogan Lovells",
+                    "Munich Re",
+                    "Capgemini",
+                    "PwC",
+                    "Netlight",
+                    "Wayra",
+                    "LMU",
+                  ])
+                  .map((name, i) => (
+                    <span
+                      key={`${name}-${i}`}
+                      className="inline-flex items-center gap-10"
+                    >
+                      <span>{name}</span>
+                      <span className="inline-block h-1 w-1 rounded-full bg-[#F6D77B]/60" />
+                    </span>
+                  ))}
               </div>
             </div>
           </div>
@@ -766,7 +853,6 @@ const About: React.FC = () => {
 
         {/* Full-width inner layout: side accent bar + content */}
         <div className="relative mx-auto w-full max-w-screen-xl px-6 sm:px-10 lg:px-16">
-
           {/* Gold accent vertical bar — decorative, visible md+ */}
           <div
             aria-hidden="true"
@@ -775,7 +861,6 @@ const About: React.FC = () => {
 
           {/* Content grid: headline left, pillars right on wide screens */}
           <div className="grid gap-12 md:grid-cols-[1fr_auto] md:items-start md:gap-16 lg:gap-24">
-
             {/* Left — main statement */}
             <div className="md:pl-8 lg:pl-12">
               {/* Eyebrow label */}
@@ -805,7 +890,11 @@ const About: React.FC = () => {
                 initial={{ scaleX: 0, opacity: 0 }}
                 whileInView={{ scaleX: 1, opacity: 1 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.2,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 style={{ transformOrigin: "left" }}
                 className="mt-8 h-px w-24 bg-[#F6D77B]/60"
               />
@@ -813,18 +902,27 @@ const About: React.FC = () => {
 
             {/* Right — two pillars stacked */}
             <div className="flex flex-col gap-8 md:min-w-[340px] lg:min-w-[440px] md:pt-10">
-
               {/* Pillar 1 */}
               <motion.div
                 initial={{ opacity: 0, x: 32 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.85,
+                  delay: 0.15,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="relative border border-[#F6D77B]/18 bg-white/[0.03] p-6 lg:p-8"
               >
                 {/* Gold corner accent */}
-                <div aria-hidden="true" className="absolute left-0 top-0 h-6 w-px bg-[#F6D77B]/70" />
-                <div aria-hidden="true" className="absolute left-0 top-0 h-px w-6 bg-[#F6D77B]/70" />
+                <div
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 h-6 w-px bg-[#F6D77B]/70"
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 h-px w-6 bg-[#F6D77B]/70"
+                />
                 <p className="text-[clamp(1rem,1.6vw,1.2rem)] font-medium leading-[1.5] tracking-[-0.006em] text-[#F6D77B]">
                   {content.centralStatement.answer}
                 </p>
@@ -835,16 +933,25 @@ const About: React.FC = () => {
                 initial={{ opacity: 0, x: 32 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.85, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.85,
+                  delay: 0.3,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="relative border border-[#F6D77B]/18 bg-white/[0.03] p-6 lg:p-8"
               >
-                <div aria-hidden="true" className="absolute left-0 top-0 h-6 w-px bg-[#F6D77B]/70" />
-                <div aria-hidden="true" className="absolute left-0 top-0 h-px w-6 bg-[#F6D77B]/70" />
+                <div
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 h-6 w-px bg-[#F6D77B]/70"
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 h-px w-6 bg-[#F6D77B]/70"
+                />
                 <p className="text-[clamp(1rem,1.6vw,1.2rem)] font-medium leading-[1.5] tracking-[-0.006em] text-[#F6D77B]">
                   {content.centralStatement.third}
                 </p>
               </motion.div>
-
             </div>
           </div>
         </div>
@@ -887,7 +994,11 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.95, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.95,
+                delay: 0.18,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="mt-7 text-[clamp(1rem,1.55vw,1.2rem)] leading-[1.65] text-white/80"
             >
               {content.formats.intro}
@@ -968,64 +1079,58 @@ const About: React.FC = () => {
                       /* ── Icon lookup ────────────────────────────── */
                       const lower = trait.toLowerCase();
                       const icon =
-                        lower.includes("gäste") || lower.includes("guests")
-                          ? /* people / guests */
-                            (
-                              <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="h-3 w-3 shrink-0 text-[#F6D77B]"
-                              >
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                              </svg>
-                            )
-                          : lower.includes("ohne mikrofon") ||
-                              lower.includes("without microphone")
-                            ? /* crossed microphone */
-                              (
-                                <svg
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  className="h-3 w-3 shrink-0 text-[#F6D77B]"
-                                >
-                                  <rect x="9" y="2" width="6" height="11" rx="3" />
-                                  <path d="M5 10a7 7 0 0 0 14 0" />
-                                  <line x1="12" y1="19" x2="12" y2="23" />
-                                  <line x1="8" y1="23" x2="16" y2="23" />
-                                  <line x1="2" y1="2" x2="22" y2="22" />
-                                </svg>
-                              )
-                            : lower.includes("mit mikrofon") ||
-                                lower.includes("with microphone")
-                              ? /* microphone */
-                                (
-                                  <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="h-3 w-3 shrink-0 text-[#F6D77B]"
-                                  >
-                                    <rect x="9" y="2" width="6" height="11" rx="3" />
-                                    <path d="M5 10a7 7 0 0 0 14 0" />
-                                    <line x1="12" y1="19" x2="12" y2="23" />
-                                    <line x1="8" y1="23" x2="16" y2="23" />
-                                  </svg>
-                                )
-                              : null;
+                        lower.includes("gäste") || lower.includes("guests") ? (
+                          /* people / guests */
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-3 w-3 shrink-0 text-[#F6D77B]"
+                          >
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                          </svg>
+                        ) : lower.includes("ohne mikrofon") ||
+                          lower.includes("without microphone") ? (
+                          /* crossed microphone */
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-3 w-3 shrink-0 text-[#F6D77B]"
+                          >
+                            <rect x="9" y="2" width="6" height="11" rx="3" />
+                            <path d="M5 10a7 7 0 0 0 14 0" />
+                            <line x1="12" y1="19" x2="12" y2="23" />
+                            <line x1="8" y1="23" x2="16" y2="23" />
+                            <line x1="2" y1="2" x2="22" y2="22" />
+                          </svg>
+                        ) : lower.includes("mit mikrofon") ||
+                          lower.includes("with microphone") ? (
+                          /* microphone */
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-3 w-3 shrink-0 text-[#F6D77B]"
+                          >
+                            <rect x="9" y="2" width="6" height="11" rx="3" />
+                            <path d="M5 10a7 7 0 0 0 14 0" />
+                            <line x1="12" y1="19" x2="12" y2="23" />
+                            <line x1="8" y1="23" x2="16" y2="23" />
+                          </svg>
+                        ) : null;
                       return (
                         <li
                           key={trait}
@@ -1035,26 +1140,24 @@ const About: React.FC = () => {
                             /* Summit (right-aligned): indicator on the right, toward the image */
                             <>
                               <span>{trait}</span>
-                              {icon ?? (
-                                t > 0 ? (
+                              {icon ??
+                                (t > 0 ? (
                                   <span
                                     aria-hidden="true"
                                     className="hidden h-1.5 w-1.5 shrink-0 rounded-full bg-[#F6D77B]/70 sm:inline-block"
                                   />
-                                ) : null
-                              )}
+                                ) : null)}
                             </>
                           ) : (
                             /* Left-aligned: indicator on the left */
                             <>
-                              {icon ?? (
-                                t > 0 ? (
+                              {icon ??
+                                (t > 0 ? (
                                   <span
                                     aria-hidden="true"
                                     className="hidden h-1.5 w-1.5 shrink-0 rounded-full bg-[#F6D77B]/70 sm:inline-block"
                                   />
-                                ) : null
-                              )}
+                                ) : null)}
                               <span>{trait}</span>
                             </>
                           )}
@@ -1140,7 +1243,11 @@ const About: React.FC = () => {
             initial={{ opacity: 0, y: 36 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.95, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.95,
+              delay: 0.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="mt-6 max-w-2xl text-[clamp(1rem,1.6vw,1.2rem)] leading-[1.65] text-white/80"
           >
             {content.alumniIntro.intro}
@@ -1154,21 +1261,42 @@ const About: React.FC = () => {
             className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
           >
             {alumni.map((alum, idx) => (
-              <div key={idx} className="bg-primary-dark/80 group overflow-hidden border border-border/20 transition-colors duration-300 hover:bg-primary-dark hover:border-accent/40 flex flex-col">
+              <div
+                key={idx}
+                className="bg-primary-dark/80 group overflow-hidden border border-border/20 transition-colors duration-300 hover:bg-primary-dark hover:border-accent/40 flex flex-col"
+              >
                 {alum.img ? (
                   <div className="w-full aspect-[4/5] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                    <img src={alum.img} alt={alum.name} className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    <img
+                      src={alum.img}
+                      alt={alum.name}
+                      className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                    />
                   </div>
                 ) : (
                   <div className="w-full aspect-[4/5] bg-gray-800/20 flex flex-col items-center justify-center text-border/30">
-                    <svg className="w-12 h-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    <svg
+                      className="w-12 h-12 mb-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1}
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
                     </svg>
                   </div>
                 )}
                 <div className="p-4 flex flex-col border-t border-border/10 flex-grow">
-                  <div className="font-bold text-white text-base mb-1 leading-tight">{alum.name}</div>
-                  <div className="text-accent text-xs uppercase tracking-wide font-medium mt-auto">{alum.role}</div>
+                  <div className="font-bold text-white text-base mb-1 leading-tight">
+                    {alum.name}
+                  </div>
+                  <div className="text-accent text-xs uppercase tracking-wide font-medium mt-auto">
+                    {alum.role}
+                  </div>
                 </div>
               </div>
             ))}
@@ -1228,7 +1356,11 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.95, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.95,
+                delay: 0.2,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="mt-6 max-w-2xl text-[clamp(1rem,1.6vw,1.25rem)] leading-[1.65] text-white/95 [text-shadow:0_1px_16px_rgba(4,15,31,0.55)]"
             >
               {isDe
