@@ -105,6 +105,9 @@ function App() {
           <Route path="for-companies" element={<ForCompanies />} />
           <Route path="events" element={<Events />} />
         </Route>
+        <Route path="/about" element={<Layout switchLanguage={switchLanguage} />}>
+          <Route index element={<About />} />
+        </Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/imprint" element={<Imprint />} />
       </Routes>
