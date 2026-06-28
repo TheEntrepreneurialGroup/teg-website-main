@@ -22,14 +22,27 @@ import { useScrollIntent } from "@/hooks/useScrollIntent";
 ───────────────────────────────────────────────────────────── */
 const NUM_PARTICLES = 18;
 
-const gardenParticles = Array.from({ length: NUM_PARTICLES }, (_, i) => ({
-  id: i,
-  x: Math.random() * 100,
-  delay: Math.random() * 6,
-  duration: 7 + Math.random() * 8,
-  size: 3 + Math.random() * 5,
-  opacity: 0.18 + Math.random() * 0.28,
-}));
+function createSeededRandom(seed: number) {
+  let state = seed;
+  return () => {
+    state = (state * 16807) % 2147483647;
+    return (state - 1) / 2147483646;
+  };
+}
+
+const gardenParticles = Array.from({ length: NUM_PARTICLES }, (_, i) => {
+  const random = createSeededRandom(i + 1);
+  return {
+    id: i,
+    x: random() * 100,
+    delay: random() * 6,
+    duration: 7 + random() * 8,
+    size: 3 + random() * 5,
+    opacity: 0.18 + random() * 0.28,
+    driftY: 260 + random() * 200,
+    driftX: (random() - 0.5) * 40,
+  };
+});
 
 const ComplimentVideoSection: React.FC = () => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
@@ -122,9 +135,9 @@ const ComplimentVideoSection: React.FC = () => {
               filter: "blur(1px)",
             }}
             animate={{
-              y: [0, -(260 + Math.random() * 200)],
+              y: [0, -p.driftY],
               opacity: [0, p.opacity, p.opacity * 0.6, 0],
-              x: [0, (Math.random() - 0.5) * 40],
+              x: [0, p.driftX],
             }}
             transition={{
               duration: p.duration,
