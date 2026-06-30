@@ -575,7 +575,7 @@ const ForCompanies: React.FC = () => {
             <div className="flex gap-4 mb-10 text-left text-left text-left">
               <div className="w-[3px] bg-[#B7860B] text-left" />
               <p className="italic text-2xl text-slate-200 leading-tight text-left">
-                “Falls sie Fragen haben, oder sich engagieren möchten, medlen
+                “Falls sie Fragen haben, oder sich engagieren möchten, melden
                 sie sich gerne!”
               </p>
             </div>
