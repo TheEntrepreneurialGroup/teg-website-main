@@ -447,7 +447,7 @@ const ForCompanies: React.FC = () => {
           </h2>
           <div className="w-full flex justify-center text-center text-center text-center">
             <motion.a
-              href="/about-us"
+              href="/about"
               whileHover={{ scale: 1.01 }}
               className="w-full max-w-5xl bg-[#B7860B] text-[#0F2B57] py-4 md:py-6 font-black uppercase tracking-[0.2em] shadow-xl flex items-center justify-center gap-4 text-center"
             >
