@@ -254,9 +254,9 @@ const ForCompanies: React.FC = () => {
                 </h3>
                 <div className="mb-20">
                   <p className="text-slate-400 text-xl md:text-3xl leading-[1.4] font-medium italic max-w-2xl text-left">
-                    Formen sie jetzt mit uns die Zukunft des Wirtschaftstandorts
-                    Deutschland und geben sie ihre Erfahrung an die nächste
-                    Generation weiter.
+                    Formen Sie jetzt mit uns die Zukunft des
+                    Wirtschaftsstandorts Deutschland und geben Sie Ihre
+                    Erfahrung an die nächste Generation weiter.
                   </p>
                 </div>
                 <motion.a
@@ -559,27 +559,24 @@ const ForCompanies: React.FC = () => {
       </section>
 
       {/* 8. CONTACT */}
-      <section
-        id="contact"
-        className="pb-32 pt-20 bg-white px-4 text-left text-left text-left"
-      >
+      <section id="contact" className="pb-32 pt-20 bg-white px-4 text-left">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row overflow-hidden rounded-sm shadow-2xl min-h-[450px]">
-          <div className="md:w-1/2 w-full h-80 md:h-auto bg-slate-50 flex items-start text-left text-left">
+          <div className="md:w-1/2 w-full h-80 md:h-auto bg-slate-50 flex items-start text-left">
             <img
               src="/for-companies/contact/jonathan.avif"
               alt="Jonathan"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="md:w-1/2 w-full bg-[#0F2B57] p-10 md:p-16 flex flex-col justify-center text-white text-left text-left text-left">
-            <div className="flex gap-4 mb-10 text-left text-left text-left">
+          <div className="md:w-1/2 w-full bg-[#0F2B57] p-10 md:p-16 flex flex-col justify-center text-white text-left">
+            <div className="flex gap-4 mb-10 text-left">
               <div className="w-[3px] bg-[#B7860B] text-left" />
               <p className="italic text-2xl text-slate-200 leading-tight text-left">
-                “Falls sie Fragen haben, oder sich engagieren möchten, melden
-                sie sich gerne!”
+                “Falls Sie Fragen haben oder sich engagieren möchten, melden Sie
+                sich gerne!”
               </p>
             </div>
-            <div className="mb-12 text-left text-left">
+            <div className="mb-12 text-left">
               <h3 className="text-2xl font-bold mb-1 text-white uppercase tracking-tight">
                 Jonathan Babelotzky
               </h3>
@@ -588,16 +585,16 @@ const ForCompanies: React.FC = () => {
                 Bereichsleiter Strategie und Partnerschaften
               </p>
             </div>
-            <div className="flex gap-12 text-left text-left text-left text-left text-left">
+            <div className="flex gap-12 text-left">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/jonathan-babelotzky/"
                 className="flex items-center gap-3 text-white hover:text-[#B7860B] text-xs font-black uppercase transition-colors text-left"
               >
                 <Linkedin size={32} /> LinkedIn
               </a>
               <a
-                href="mailto:jonathan@teg-ev.de"
-                className="flex items-center gap-3 text-white hover:text-[#B7860B] text-xs font-black uppercase transition-colors text-left text-left text-left text-left"
+                href="mailto:jonathan.babelotzky@teg-ev.de"
+                className="flex items-center gap-3 text-white hover:text-[#B7860B] text-xs font-black uppercase transition-colors text-left"
               >
                 <Mail size={32} /> Email
               </a>

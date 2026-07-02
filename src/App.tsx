@@ -60,7 +60,7 @@ function App() {
 
   useEffect(() => {
     assignSessionId();
-  });
+  }, []);
 
   useEffect(() => {
     if (document.getElementById("umami-health-script")) {
@@ -105,7 +105,10 @@ function App() {
           <Route path="for-companies" element={<ForCompanies />} />
           <Route path="events" element={<Events />} />
         </Route>
-        <Route path="/about" element={<Layout switchLanguage={switchLanguage} />}>
+        <Route
+          path="/about"
+          element={<Layout switchLanguage={switchLanguage} />}
+        >
           <Route index element={<About />} />
         </Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

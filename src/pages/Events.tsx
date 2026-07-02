@@ -558,36 +558,6 @@ const Events: React.FC = () => {
         </div>
       </section>
 
-      {/* Speaker references will be added back once confirmed testimonials are available.
-      <section className="bg-slate-50 py-24 border-t border-slate-200">
-        <div className="container-custom px-4 md:px-8">
-          <h2 className="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] text-center mb-16">
-            Referenzen ehemaliger Speaker
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="p-8 bg-white border border-slate-200 relative"
-              >
-                <Quote
-                  className="text-blue-600/10 absolute top-4 right-4"
-                  size={40}
-                />
-                <p className="text-slate-600 italic text-sm mb-6">
-                  "Die Zusammenarbeit war hochprofessionell. Die Qualität der
-                  Studierenden setzt Maßstäbe."
-                </p>
-                <p className="font-bold uppercase text-[10px] tracking-widest">
-                  Referenz Speaker {i}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      */}
-
       <section className="pt-8 pb-16 md:pt-10 md:pb-24 bg-white">
         <div className="container-custom px-4 md:px-16">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row overflow-hidden rounded-sm shadow-2xl min-h-[450px]">

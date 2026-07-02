@@ -151,7 +151,7 @@ const ForStudents: React.FC = () => {
                   Ausbildungsangebot innerhalb von TEG, das darauf ausgerichtet
                   ist, dich auf die Herausforderungen moderner Führung
                   vorzubereiten. Wir richten uns an alle Studiengänge, jedoch
-                  kommen die meisten teilnehmer aus: den{" "}
+                  kommen die meisten Teilnehmer aus: den{" "}
                   <strong>Naturwissenschaften</strong>, der{" "}
                   <strong>Technik</strong>, der <strong>Wirtschaft</strong>, den{" "}
                   <strong>Rechtswissenschaften (Jura)</strong> sowie der{" "}
@@ -196,8 +196,8 @@ const ForStudents: React.FC = () => {
                 <p className="pt-4 font-bold text-[#0F2B57]">
                   Dein Beitrag bleibt nicht undokumentiert: Hast du die 3
                   Semester erfolgreich absolviert, wirst du TEGler auf
-                  Lebenszeit. Weiterhin erhälst du ein Abschlusszeugnis, welches
-                  deine Leistungen und Führungsreife bestätigt.
+                  Lebenszeit. Weiterhin erhältst du ein Abschlusszeugnis,
+                  welches deine Leistungen und Führungsreife bestätigt.
                 </p>
               </div>
             </div>

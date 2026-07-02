@@ -6,14 +6,11 @@ import { trackOutboundClick } from "../utils/analytics";
 const Imprint: React.FC = () => {
   return (
     <div className="bg-white text-foreground">
-      {" "}
-      {/* Or use bg-secondary-light */}
       <section className="py-20">
         <div className="container-custom">
           <SectionTitle text="Imprint / Legal Notice" as="h1" />
 
           <div className="max-w-3xl mx-auto mt-12 text-muted-foreground">
-            {/* Contact Information Block */}
             <div className="mb-6 p-6 border border-border  bg-muted">
               <h3 className="text-lg font-normal mb-2 text-primary">
                 Contact Info:
@@ -43,7 +40,6 @@ const Imprint: React.FC = () => {
               </p>
             </div>
 
-            {/* Representation Block */}
             <div className="mb-6 p-6 border border-border  bg-muted">
               <h3 className="text-lg font-normal mb-2 text-primary">
                 Board of Directors authorized to represent:
@@ -53,7 +49,6 @@ const Imprint: React.FC = () => {
               </p>
             </div>
 
-            {/* Register Entry Block */}
             <div className="mb-6 p-6 border border-border  bg-muted">
               <h3 className="text-lg font-normal mb-2 text-primary">
                 Register Entry:
@@ -62,7 +57,6 @@ const Imprint: React.FC = () => {
               <p className="mb-1">Register number: VR 11822</p>
             </div>
 
-            {/* Scope of Imprint */}
             <div className="mb-6 p-6 border border-border  bg-muted">
               <p className="text-sm">
                 The imprint applies according to § 5 TMG for our telemedia
@@ -70,7 +64,6 @@ const Imprint: React.FC = () => {
               </p>
             </div>
 
-            {/* Disclaimer & Copyright Section */}
             <div className="mt-10 pt-6 border-t border-secondary-dark">
               <h3 className="text-lg font-normal mb-3 text-primary">
                 Disclaimer:
