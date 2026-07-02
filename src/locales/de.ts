@@ -482,6 +482,9 @@ const de = {
     "TEG für Unternehmen | Zugang zu zukünftigen Führungskräften",
   "seo.companies.description":
     "Werden Sie TEG-Partner und gewinnen Sie Zugang zu einem seit 1986 gewachsenen Talent-Pool aus ambitionierten zukünftigen Führungskräften.",
+  "seo.events.title": "TEG Events | The Entrepreneurial Group",
+  "seo.events.description":
+    "Entdecken Sie kommende und vergangene TEG-Events mit Workshops, Talks und Formaten rund um Unternehmertum, Technologie und Leadership.",
   "seo.imprint.title": "Impressum | TEG",
   "seo.imprint.description":
     "Impressum und rechtliche Angaben von The Entrepreneurial Group e. V.",

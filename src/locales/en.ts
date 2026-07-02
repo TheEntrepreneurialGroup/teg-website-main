@@ -380,7 +380,8 @@ const en = {
   "about.howWeWork.module4.title": "Finance, Administration & Legal",
   "about.howWeWork.module4.desc":
     "Budget management, invoicing and internal documentation. TEG keeps real books — and members are responsible for them.",
-  "about.howWeWork.closing": "Leading one of these units is not an exercise. It's real.",
+  "about.howWeWork.closing":
+    "Leading one of these units is not an exercise. It's real.",
 
   "about.inAction.title": "What members actually do",
   "about.inAction.intro":
@@ -466,18 +467,19 @@ const en = {
   "seo.about.description":
     "Since 1986, TEG is a student-led organization where responsibility, execution and economic reality are not simulated but lived.",
 
-  "seo.home.title":
-    "TEG | Leadership development for students and companies",
+  "seo.home.title": "TEG | Leadership development for students and companies",
   "seo.home.description":
     "Since 1986, TEG has developed ambitious students into future leaders and connected them with leading companies in Germany.",
   "seo.students.title":
     "TEG for Students | Responsibility, network, and leadership development",
   "seo.students.description":
     "Join TEG and build leadership skills through real responsibility, mentoring, events, and access to a strong alumni network.",
-  "seo.companies.title":
-    "TEG for Companies | Access future leadership talent",
+  "seo.companies.title": "TEG for Companies | Access future leadership talent",
   "seo.companies.description":
     "Become a TEG partner and gain access to a talent pool of ambitious future leaders built over decades.",
+  "seo.events.title": "TEG Events | The Entrepreneurial Group",
+  "seo.events.description":
+    "Explore upcoming and past TEG events with workshops, talks and formats around entrepreneurship, technology and leadership.",
   "seo.imprint.title": "Imprint | TEG",
   "seo.imprint.description":
     "Imprint and legal information for The Entrepreneurial Group e. V.",

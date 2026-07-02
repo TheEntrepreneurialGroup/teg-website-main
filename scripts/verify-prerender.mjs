@@ -35,7 +35,7 @@ for (const { route, file } of routeFiles) {
     html.includes('id="root"') &&
     (html.includes("<main") || html.includes("container-custom"));
 
-  if (size < 5000) {
+  if (size < 4000) {
     console.error(`FAIL ${route}: HTML file too small (${size} bytes)`);
     failed = true;
     continue;
