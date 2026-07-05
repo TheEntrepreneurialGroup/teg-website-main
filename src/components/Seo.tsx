@@ -10,6 +10,14 @@ interface SeoProps {
   openGraphImagePath?: string;
 }
 
+function normalizeCanonicalPath(pathname: string) {
+  if (pathname === "/") {
+    return pathname;
+  }
+
+  return pathname.endsWith("/") ? pathname : `${pathname}/`;
+}
+
 export default function Seo({
   title,
   description,
@@ -18,7 +26,9 @@ export default function Seo({
   pathname,
   openGraphImagePath,
 }: SeoProps) {
-  const canonicalUrl = siteConfig.buildAbsoluteUrl(pathname);
+  const canonicalUrl = siteConfig.buildAbsoluteUrl(
+    normalizeCanonicalPath(pathname),
+  );
   const ogImageUrl = siteConfig.buildAbsoluteUrl(
     openGraphImagePath ?? siteConfig.defaultOgImagePath,
   );
@@ -34,7 +44,10 @@ export default function Seo({
       />
       <meta property="og:site_name" content={siteConfig.siteName} />
       <meta property="og:type" content="website" />
-      <meta property="og:locale" content={locale === "de" ? "de_DE" : "en_US"} />
+      <meta
+        property="og:locale"
+        content={locale === "de" ? "de_DE" : "en_US"}
+      />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />

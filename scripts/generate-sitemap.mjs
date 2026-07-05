@@ -2,12 +2,20 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { routeSeoEntries } from "../src/seo/routeSeoEntries.mjs";
 
-const baseUrl = "https://www.teg-ev.de";
+const baseUrl = "https://teg-ev.de";
+
+function normalizeCanonicalPath(pathname) {
+  if (pathname === "/") {
+    return pathname;
+  }
+
+  return pathname.endsWith("/") ? pathname : `${pathname}/`;
+}
 
 const urlEntries = routeSeoEntries
   .filter((route) => route.indexable)
   .map(
-    (route) => `  <url>\n    <loc>${new URL(route.path, baseUrl).toString()}</loc>\n    <changefreq>${route.changeFrequency}</changefreq>\n    <priority>${route.priority.toFixed(1)}</priority>\n  </url>`,
+    (route) => `  <url>\n    <loc>${new URL(normalizeCanonicalPath(route.path), baseUrl).toString()}</loc>\n    <changefreq>${route.changeFrequency}</changefreq>\n    <priority>${route.priority.toFixed(1)}</priority>\n  </url>`,
   )
   .join("\n");
 

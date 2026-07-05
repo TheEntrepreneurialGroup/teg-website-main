@@ -27,15 +27,15 @@ const Imprint: React.FC = () => {
               <p className="mb-1">
                 <strong>Internet:</strong>{" "}
                 <a
-                  href="https://www.teg-ev.de"
+                  href="https://teg-ev.de"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline"
                   onClick={() =>
-                    trackOutboundClick("https://www.teg-ev.de", "Imprint")
+                    trackOutboundClick("https://teg-ev.de", "Imprint")
                   }
                 >
-                  https://www.teg-ev.de
+                  https://teg-ev.de
                 </a>
               </p>
             </div>

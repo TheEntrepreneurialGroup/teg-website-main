@@ -1,6 +1,6 @@
 export const siteConfig = {
   siteName: "The Entrepreneurial Group",
-  baseUrl: "https://www.teg-ev.de",
+  baseUrl: "https://teg-ev.de",
   defaultTitle: "TEG | The Entrepreneurial Group",
   defaultOgImagePath: "/shared/heroes/hero-home-new.webp?v=3",
   defaultDescription: {
