@@ -335,7 +335,7 @@ const About: React.FC = () => {
         {
           index: "01",
           name: isDe ? "Industrie-Panel" : "Industry Panel",
-          img: "/about/formats/industry-panel.png",
+          img: "/about/formats/industry-panel.webp",
           alt: isDe
             ? "Branchen-Panel mit fünf Führungskräften im Gespräch auf der Bühne"
             : "Industry panel with five executives in conversation on stage",
@@ -359,7 +359,7 @@ const About: React.FC = () => {
         {
           index: "02",
           name: "Summit",
-          img: "/about/formats/summit.png",
+          img: "/about/formats/summit.webp",
           alt: isDe
             ? "Vortragender präsentiert vor der Folie Multi Stakeholder Management"
             : "Speaker presenting in front of a Multi Stakeholder Management slide",
@@ -383,7 +383,7 @@ const About: React.FC = () => {
         {
           index: "03",
           name: isDe ? "Konferenz" : "Conference",
-          img: "/about/formats/konferenz.png",
+          img: "/about/formats/konferenz.webp",
           alt: isDe
             ? "Konferenzsaal mit Publikum und Sprecher vor der Leinwand"
             : "Conference hall with audience and speaker in front of the screen",
@@ -688,7 +688,7 @@ const About: React.FC = () => {
     {
       name: "David Riessner",
       role: "Top-Management",
-      img: "/about/alumni/david_riessner.jpg",
+      img: "/about/alumni/david_riessner.webp",
     },
     {
       name: "Arne Rieger",
@@ -713,7 +713,7 @@ const About: React.FC = () => {
     {
       name: "Volker Maiborn",
       role: "Gründer",
-      img: "/about/alumni/volker_maiborn.jpg",
+      img: "/about/alumni/volker_maiborn.webp",
     },
   ];
 
@@ -1387,7 +1387,7 @@ const About: React.FC = () => {
       <section className="relative isolate flex min-h-[70vh] w-full items-end overflow-hidden bg-[#040F1F] py-20 text-white md:min-h-[80vh] md:py-28 lg:min-h-screen">
         {/* Full-bleed background image */}
         <OptimizedImage
-          src="/shared/heroes/selection-bg.jpg"
+          src="/shared/heroes/selection-bg.webp"
           alt=""
           aria-hidden="true"
           loading="lazy"

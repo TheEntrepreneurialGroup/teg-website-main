@@ -33,7 +33,7 @@ for (const { route, file } of routeFiles) {
   const hasJsonLd =
     route !== "/events" ||
     /<script[^>]+type=["']application\/ld\+json["'][^>]*>/i.test(html);
-  const hasBundle = /\/assets\/bootstrap-[^"]+\.js/.test(html);
+  const hasBundle = /\/assets\/(App|bootstrap)-[^"]+\.js/.test(html);
   const hasPrerenderedMarkup =
     html.includes('id="root"') &&
     (html.includes("<main") || html.includes("container-custom"));
