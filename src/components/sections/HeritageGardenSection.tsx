@@ -66,11 +66,11 @@ const HeritageGardenSection: React.FC<Props> = ({
           </>
         ),
         intro:
-          "Eine gemeinnützige Münchner Initiative der Erwachsenenbildung - institutionell verwurzelt seit 1986, in heutiger Form etabliert im Januar 1988.",
+          "Eine gemeinnützige Münchner Initiative der Erwachsenenbildung – institutionell verwurzelt seit 1986, in heutiger Form etabliert im Januar 1988.",
         pressTag: "Pressebeleg · Donaukurier",
         kuratoriumTag: "Kuratorium 1986",
         kuratoriumLine:
-          "Vorständer elf Deutscher Top-Unternehmen gründen TEG.\nDennoch keine lineare Gründungsphase!",
+          "Vorstände elf deutscher Top-Unternehmen gründeten TEG.\nDennoch keine lineare Gründungsphase!",
         todayPrefix: "heute",
         founderArrow: "via",
         articleAlt:

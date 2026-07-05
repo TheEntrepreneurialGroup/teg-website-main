@@ -117,21 +117,21 @@ const ForCompanies: React.FC = () => {
     },
     {
       quote:
-        "Unternehmer zu sein heißt Verantwortung zu übernehmen. TEG eröffnet Studenten die Möglichkeit eigene Ideen umzusetzen und an diesen Herausforderungen zu wachsen.",
+        "Unternehmer zu sein heißt, Verantwortung zu übernehmen. TEG eröffnet Studierenden die Möglichkeit, eigene Ideen umzusetzen und an diesen Herausforderungen zu wachsen.",
       author: "Prof. Dr. h.c. Roland Berger",
-      position: "Unternehmer und Gründer Roland Berger GMBH",
+      position: "Unternehmer und Gründer, Roland Berger GmbH",
       img: "/for-companies/testimonials/roland-berger.avif",
     },
     {
       quote:
-        "Nachdem ich das Team zufälligerweise an einem Samstagabend um 23 Uhr arbeitend in ihrem Büro gesehen habe, dachte ich mir, dass diese Initiative es wert ist, unterstützt zu werden.",
+        "Nachdem ich das Team zufällig an einem Samstagabend um 23 Uhr bei der Arbeit in seinem Büro gesehen habe, dachte ich mir, dass diese Initiative es wert ist, unterstützt zu werden.",
       author: "Dr. Bernd Wiemann",
       position: "CEO Vodafone Pilotentwicklung",
       img: "/for-companies/testimonials/bernd-wiedemann.avif",
     },
     {
       quote:
-        "Die Studenten zeichnen sich durch ein hohes Maß an Professionalität und Engagement aus. Solche Initiativen sind essentiell für die Ausbildung zukünftiger Führungskräfte.",
+        "Die Studierenden zeichnen sich durch ein hohes Maß an Professionalität und Engagement aus. Solche Initiativen sind essenziell für die Ausbildung zukünftiger Führungskräfte.",
       author: "Bodo Donauer",
       position: "Ehem. Leiter Fahrwerkentwicklung, BMW Group",
       img: "/for-companies/testimonials/bodo-donauer.avif",
