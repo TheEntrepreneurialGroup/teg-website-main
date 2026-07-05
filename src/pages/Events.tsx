@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useIntl } from "react-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Calendar,
@@ -9,316 +10,17 @@ import {
   Mail,
   Linkedin,
 } from "lucide-react";
-
-interface EventData {
-  id: string | number;
-  title: string;
-  date: string;
-  location: string;
-  category?: string;
-  topic?: string;
-  description: string;
-  longText: string;
-  image: string;
-  cardImage?: string;
-  imageFit?: "cover" | "contain";
-  externalLink?: string;
-  speakers?: {
-    name: string;
-    company: string;
-    position: string;
-  }[];
-}
+import EventsJsonLd from "@/components/EventsJsonLd";
+import { type EventData, upcomingEvents, pastEvents } from "@/data/events";
 
 const Events: React.FC = () => {
+  const intl = useIntl();
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
   const [[upcomingPage, upcomingDir], setUpcomingPage] = useState([0, 0]);
   const [[pastPage, pastDir], setPastPage] = useState([0, 0]);
 
-  const biotechLumaLink = "https://luma.com/teg-qdjm";
-  const upcomingEvents: EventData[] = [
-    {
-      id: "biotech-medtech-panel-2026",
-      title: "Herausforderungen & Innovation in Biotech & Medtech",
-      date: "03.07.2026",
-      location: "IZB Faculty Club, Martinsried",
-      category: "Upcoming Highlight",
-      topic: "Zukunft der Münchner Biotech- und Medtech-Szene",
-      description:
-        "Ein interaktiver Panel Talk zur Zukunft der Life-Sciences, Biotech- und Medtech-Industrie in München.",
-      longText:
-        "Founder, C-Level und Senior Professionals teilen ihre Sichtweisen und Prognosen dazu, wie sich Münchens Life-Sciences-, Biotech- und Medtech-Standort entwickeln wird. Forschung und Wirtschaft treffen aufeinander, um über Hürden, Innovationen und kommende Challenges zu diskutieren. Im Mittelpunkt stehen keine abstrakten Theorien, sondern Fakten, Erfahrungen und ein offener Austausch für alle, die Naturwissenschaften und Wirtschaft zusammen denken.",
-      image: "/events/converted/biotech-medtech-panel-2026.webp",
-      imageFit: "contain",
-      externalLink: biotechLumaLink,
-      speakers: [
-        {
-          name: "Dr. Thilo Kaltenbach",
-          company: "Roland Berger",
-          position: "Senior Partner, Global Pharma & Healthcare",
-        },
-        {
-          name: "Dr. Dominik Schumacher",
-          company: "Tubulis GmbH",
-          position: "CEO & Founder",
-        },
-        {
-          name: "Prof. Andreas Ladurner",
-          company: "Eisbach Bio GmbH / LMU Munich",
-          position:
-            "CSO, Founder and Managing Director; Chair of Physiological Chemistry",
-        },
-        {
-          name: "Prof. med. Ralf Huss",
-          company: "BioM Biotech Cluster Development",
-          position: "Geschäftsführer",
-        },
-      ],
-    },
-  ];
-
-  const pastEvents: EventData[] = [
-    {
-      id: "ai-2026",
-      title: "AI Consulting Conference 2026",
-      date: "10.06.2026",
-      location: "Netlight, München",
-      category: "Conference",
-      topic: "Beyond Hype. Into Business.",
-      description:
-        "Ein kuratierter Konferenztag darüber, wie KI Consulting, Geschäftsmodelle und Karrieren konkret verändert.",
-      longText:
-        "Die AI Consulting Conference brachte Perspektiven aus Strategieberatung, Tech-Consulting, Industrie, angewandter KI, Forschung und Recht zusammen. Im Fokus standen reale KI-Use-Cases, AI-Assets in Beratungsarbeit, Industry Briefings, Applied-AI-Workshops, Governance, Haftung und die Zukunft der Beraterkarriere.",
-      image: "/events/converted/ai-consulting-conference-2026.webp",
-      imageFit: "contain",
-      externalLink: "https://luma.com/71152vc3?utm_source=tg_ws",
-      speakers: [
-        {
-          name: "Florian Bauer",
-          company: "McKinsey & Company",
-          position: "Senior Partner, Technology & AI Leader DACH",
-        },
-        {
-          name: "Marcus Hartmann",
-          company: "Roland Berger",
-          position: "Senior Partner",
-        },
-        {
-          name: "Andrea Martin",
-          company: "IBM",
-          position: "CTO DACH",
-        },
-        {
-          name: "Dr. Andreas Liebl",
-          company: "appliedAI Initiative",
-          position: "CEO",
-        },
-      ],
-    },
-    {
-      id: "teg-talk-24-04-2026",
-      title: "TEG Talk: Corporate Entrepreneurship",
-      date: "24.04.2026",
-      location: "O2 Tower / Wayra Germany, München",
-      category: "TEG Talk",
-      topic: "Leiten. Verantworten. Gründen.",
-      description:
-        "Wie unternehmerisches Denken in großen Organisationen Wirkung entfaltet.",
-      longText:
-        "Ein Abend über Corporate Entrepreneurship, technologische Verantwortung und Innovation in etablierten Strukturen. Im Fokus standen Software-defined Mobility, politische Verantwortung, Healthtech, KI und die Frage, wie aus Strategie konkrete Umsetzung wird.",
-      image: "/events/converted/teg-talk-24-04-2026.webp",
-      externalLink: "https://luma.com/fuk94geg",
-      speakers: [
-        {
-          name: "Georg Doll",
-          company: "Microsoft",
-          position: "CTO Automotive & Mobility",
-        },
-        {
-          name: "Dr. Tobias Süß",
-          company: "HENSOLDT",
-          position: "Director Political Affairs",
-        },
-        {
-          name: "Dr. Hartwig Rüll",
-          company: "Siemens / Semiconductor & Communication",
-          position: "Strategy and technology leader",
-        },
-        {
-          name: "Dr. Irene Lejeune",
-          company: "CE Consumer Electronics",
-          position: "Co-Founder",
-        },
-      ],
-    },
-    {
-      id: "charging-ahead-2026",
-      title: "Charging Ahead: Deutschland vs. China",
-      date: "20.01.2026",
-      location: "smartvillage Bogenhausen, München",
-      category: "Industry Panel",
-      topic: "E-Mobility, Automotive Strategy and China Competition",
-      description:
-        "Ein Panel zur Frage, wo deutsche OEMs im globalen E-Mobility-Wettlauf stehen.",
-      longText:
-        "Gemeinsam mit Expertinnen und Experten aus Industrie und Wissenschaft diskutierte TEG Software, User Experience, Entwicklungsgeschwindigkeit, Markenidentität, autonome Systeme, Regulierung und nachhaltige Antriebstechnologien. Das Format verband strategische Industrieperspektiven mit akademischer Tiefe und offenem Networking.",
-      image: "/events/converted/charging-ahead-2026-alt.webp",
-      speakers: [
-        {
-          name: "Jennifer Treiber-Ruckenbrod",
-          company: "MINI",
-          position: "Global CMO",
-        },
-        {
-          name: "Janik Juelch",
-          company: "XPENG Deutschland",
-          position: "Customer Experience & Sponsoring Manager",
-        },
-        {
-          name: "Prof. Dr. Johannes Betz",
-          company: "Technical University of Munich",
-          position: "Professor für Autonomes Fahren",
-        },
-        {
-          name: "Prof. Dr. Malte Jaensch",
-          company: "Technical University of Munich",
-          position: "Professor für nachhaltige mobile Antriebssysteme",
-        },
-      ],
-    },
-    {
-      id: "frontier-tech-conference-2025",
-      title: "Frontier Tech Conference 2025",
-      date: "10.12.2025",
-      location: "MaibornWolff, München",
-      category: "Conference",
-      topic: "The unsexy skills to turn research into companies",
-      description:
-        "Tech Meets Reality, Ideas Meet Execution: Deep-Tech-Gründung jenseits der Theorie.",
-      longText:
-        "TEG und PushQuantum brachten STEM-Studierende, Forschende, Founder und Professionals zusammen, um die operative Seite von Deep-Tech-Unternehmen zu verstehen: Team Execution, Finanzierung, Skalierung, Markteintritt und reale Use Cases von Quantum bis Aerospace, Automotive und Robotics.",
-      image: "/events/converted/frontier-tech-conference-2025.webp",
-      externalLink: "https://luma.com/cyr1ctl9",
-      speakers: [
-        {
-          name: "Jan Goetz",
-          company: "IQM Quantum Computers",
-          position: "CEO & Co-Founder",
-        },
-        {
-          name: "Thomas Luschmann",
-          company: "Peak Quantum",
-          position: "Co-Founder & Managing Director",
-        },
-        {
-          name: "Stephen DiAdamo",
-          company: "Qoro Quantum",
-          position: "Co-Founder & CTO",
-        },
-        {
-          name: "Tobias Kalkowsky",
-          company: "UnternehmerTUM / Digital Product School",
-          position: "Agile Coach & Lecturer",
-        },
-      ],
-    },
-    {
-      id: "enterprise-sales-2025",
-      title: "Enterprise Sales: B2B",
-      date: "20.11.2025",
-      location: "München Innenstadt",
-      category: "Business Event",
-      topic: "Wie verkaufe ich an große Unternehmen?",
-      description: "Sales als Brücke zwischen Produkt, Vertrauen und Wirkung.",
-      longText:
-        "Das Event zeigte, wie Gründerinnen, Gründer und Young Professionals komplexe B2B-Sales-Prozesse strukturieren, Entscheider auf Augenhöhe erreichen und Vertrauen als Wachstumsfaktor nutzen. Neben Praxisvorträgen ging es um mentale Blockaden, Enterprise-Methodik, technische Exzellenz und AI-gestützte Sales Execution.",
-      image: "/events/converted/enterprise-sales-2025.webp",
-      externalLink: "https://luma.com/x3umz079",
-      speakers: [
-        {
-          name: "Georg Schwienbacher",
-          company: "Georg Schwienbacher Consulting",
-          position: "CEO",
-        },
-        {
-          name: "Christopher Stützel",
-          company: "Staffbase",
-          position: "Large Enterprise Account Executive",
-        },
-        {
-          name: "Heinz-Georg Geissler",
-          company: "Bundesverband der Vertriebsmanager e.V.",
-          position: "Leiter der Geschäftsstelle",
-        },
-        {
-          name: "Achim A.",
-          company: "Sinalis AI",
-          position: "Founder",
-        },
-      ],
-    },
-    {
-      id: "teg-talk-24-10-2025",
-      title: "TEG Talk: Leadership Insights",
-      date: "24.10.2025",
-      location: "Microsoft Office, München",
-      category: "TEG Talk",
-      topic: "Leadership, Entrepreneurship and responsible company building",
-      description: "Vier Perspektiven auf Führung, Unternehmertum und Wirkung.",
-      longText:
-        "Bei Microsoft München verband der TEG Talk Gründungserfahrung, Corporate Leadership und verantwortungsvolles Unternehmertum. Besonders im Fokus stand die Geschichte von Philipp Baaske: vom Physiker und Labor-Spin-off zum weltweit erfolgreichen Life-Science-Unternehmen.",
-      image: "/shared/images/tegtalk-group-WS26.avif",
-      externalLink: "https://luma.com/by6x0unh",
-      speakers: [
-        {
-          name: "Philipp Baaske",
-          company: "NanoTemper Technologies / LMU München",
-          position: "Executive Chairman; Vice President Entrepreneurship",
-        },
-        {
-          name: "Osman Agirbas",
-          company: "Interhyp Group",
-          position: "Managing Director",
-        },
-        {
-          name: "Ulrich Beck",
-          company: "Airbus Group / TEG Alumnus",
-          position: "Former VP Finance",
-        },
-        {
-          name: "Rene Pajta",
-          company: "Microsoft",
-          position: "Speaker",
-        },
-      ],
-    },
-    {
-      id: "fireside-chat-2025",
-      title: "From Student to Manager",
-      date: "07.10.2025",
-      location: "Atreus, München",
-      category: "Fireside Chat",
-      topic: "Karrierewege in die Führung",
-      description:
-        "Ein Abend über Leadership, Executive Search und frühe Weichenstellungen.",
-      longText:
-        "Der Fireside Chat zeigte, wie Studierende und Young Professionals früh Verantwortung entwickeln können. Diskutiert wurden Auswahlkriterien für Führungskräfte, Top-Management-Pfade, Transformation, Interim Management, Leadership Placement und die Rolle von Vision, Anpassungsfähigkeit und Kommunikation.",
-      image: "/events/converted/fireside-chat-2025.webp",
-      externalLink: "https://luma.com/jsc8kfna",
-      speakers: [
-        {
-          name: "Petra Becker",
-          company: "Atreus",
-          position: "Direktorin & Executive Interim Managerin",
-        },
-        {
-          name: "Laray Mbendjamen",
-          company: "Heidrick & Struggles",
-          position: "Engagement Manager",
-        },
-      ],
-    },
-  ];
+  const eventImageAlt = (title: string) =>
+    intl.formatMessage({ id: "events.imageAlt" }, { title });
 
   const variants = {
     enter: (direction: number) => ({
@@ -344,35 +46,39 @@ const Events: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen text-slate-900 overflow-x-hidden">
-      <div className="relative h-[45vh] w-full overflow-hidden bg-slate-900">
+      <EventsJsonLd
+        pageTitle={intl.formatMessage({ id: "seo.events.title" })}
+        pageDescription={intl.formatMessage({ id: "seo.events.description" })}
+      />
+      <header className="relative h-[45vh] w-full overflow-hidden bg-slate-900">
         <img
           src="/shared/heroes/hero-subpage.avif"
-          alt="Hero"
+          alt={intl.formatMessage({ id: "events.hero.imageAlt" })}
           className="w-full h-full object-cover opacity-50"
         />
         <div className="absolute inset-0 flex items-center pt-20 xl:pt-24">
           <div className="container-custom px-4 md:px-8">
             <div className="bg-slate-900 p-8 max-w-2xl border-l-8 border-white">
               <span className="text-white text-xs font-bold uppercase tracking-[0.2em] block mb-2">
-                Gegründet 1986
+                {intl.formatMessage({ id: "events.hero.eyebrow" })}
               </span>
               <h1 className="text-white text-4xl font-bold uppercase tracking-tight">
-                Events & Netzwerk.
+                {intl.formatMessage({ id: "events.hero.title" })}
               </h1>
               <p className="text-white/60 mt-4 text-base leading-relaxed">
-                Schnittstelle zwischen High-Potentials und Wirtschaft.
+                {intl.formatMessage({ id: "events.hero.subtitle" })}
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="container-custom relative px-4 md:px-16">
           <div className="flex justify-between items-end mb-10">
             <h2 className="text-xs font-bold text-blue-600 uppercase tracking-widest flex items-center">
-              <span className="w-8 h-[1px] bg-blue-600 mr-3"></span> Upcoming
-              Highlights
+              <span className="w-8 h-[1px] bg-blue-600 mr-3"></span>{" "}
+              {intl.formatMessage({ id: "events.upcoming.title" })}
             </h2>
           </div>
           <div className="relative group">
@@ -417,7 +123,7 @@ const Events: React.FC = () => {
                           ? "h-full max-h-full w-auto max-w-full object-contain object-center"
                           : "h-full w-full object-cover object-center"
                       }`}
-                      alt=""
+                      alt={eventImageAlt(upcomingEvents[upcomingPage].title)}
                     />
                   </div>
                   <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 md:col-span-8 md:p-8 lg:p-10">
@@ -452,7 +158,7 @@ const Events: React.FC = () => {
                         }
                         className="w-full whitespace-nowrap bg-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-600 sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest"
                       >
-                        Details ansehen
+                        {intl.formatMessage({ id: "events.details" })}
                       </button>
                       {upcomingEvents[upcomingPage].externalLink && (
                         <a
@@ -461,7 +167,7 @@ const Events: React.FC = () => {
                           rel="noopener noreferrer"
                           className="w-full whitespace-nowrap border border-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900 transition-all hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest"
                         >
-                          Anmelden
+                          {intl.formatMessage({ id: "events.register" })}
                         </a>
                       )}
                     </div>
@@ -478,12 +184,11 @@ const Events: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-10 md:gap-16 items-center">
             <div className="md:col-span-1">
               <h2 className="text-3xl font-bold uppercase tracking-tighter mb-4">
-                Past Events
+                {intl.formatMessage({ id: "events.past.title" })}
               </h2>
               <div className="h-1 w-16 bg-blue-600 mb-6" />
               <p className="text-slate-500 text-sm leading-relaxed">
-                Unsere Historie spiegelt die Qualität unserer Partnerschaften
-                wider.
+                {intl.formatMessage({ id: "events.past.description" })}
               </p>
             </div>
             <div className="md:col-span-2 relative group min-h-[800px] md:min-h-[460px]">
@@ -532,7 +237,7 @@ const Events: React.FC = () => {
                                   ? "h-full max-h-full w-auto max-w-full object-contain object-center"
                                   : "h-full w-full object-cover"
                               }`}
-                              alt=""
+                              alt={eventImageAlt(event.title)}
                             />
                           </div>
                           <div className="flex flex-1 flex-col p-6 sm:p-7 pt-5 pb-8">
@@ -612,7 +317,7 @@ const Events: React.FC = () => {
           <div className="fixed inset-0 z-[100] flex items-stretch justify-stretch bg-slate-900/90 p-0 backdrop-blur-md sm:items-center sm:justify-center sm:p-4 md:p-6">
             <button
               onClick={() => setSelectedEvent(null)}
-              aria-label="Event schließen"
+              aria-label={intl.formatMessage({ id: "events.close" })}
               className="absolute right-4 top-4 md:right-6 md:top-6 z-20 p-3 bg-white text-slate-900 border border-slate-200 rounded-full shadow-xl hover:bg-blue-600 hover:text-white transition-all"
             >
               <X size={20} />
@@ -637,12 +342,13 @@ const Events: React.FC = () => {
                       ? "h-full max-h-full w-auto max-w-full object-contain object-center"
                       : "h-full w-full object-cover"
                   }`}
-                  alt=""
+                  alt={eventImageAlt(selectedEvent.title)}
                 />
               </div>
               <div className="flex min-w-0 flex-col justify-start p-5 sm:p-8 md:col-span-8 md:justify-center md:p-7 lg:p-8">
                 <p className="text-blue-600 font-bold text-[10px] uppercase mb-2 tracking-widest">
-                  {selectedEvent.category || "Past Event"}
+                  {selectedEvent.category ||
+                    intl.formatMessage({ id: "events.pastEventFallback" })}
                 </p>
                 <h2 className="text-[1.2rem] sm:text-2xl lg:text-3xl font-bold mb-3 uppercase tracking-normal leading-tight break-words">
                   {selectedEvent.title}
@@ -672,7 +378,7 @@ const Events: React.FC = () => {
                   selectedEvent.speakers.length > 0 && (
                     <div className="mb-4">
                       <p className="text-slate-900 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
-                        Speaker
+                        {intl.formatMessage({ id: "events.speakers" })}
                       </p>
                       <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-3">
                         {selectedEvent.speakers.map((speaker) => (
@@ -698,7 +404,7 @@ const Events: React.FC = () => {
                     }
                     className="w-full bg-blue-600 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-700 sm:w-fit sm:px-6 sm:py-3 sm:tracking-widest"
                   >
-                    Event ansehen
+                    {intl.formatMessage({ id: "events.viewEvent" })}
                   </button>
                 )}
               </div>

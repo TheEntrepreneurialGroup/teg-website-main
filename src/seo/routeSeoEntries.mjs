@@ -40,7 +40,7 @@ export const routeSeoEntries = [
     titleMessageId: "seo.events.title",
     descriptionMessageId: "seo.events.description",
     indexable: true,
-    openGraphImagePath: "/shared/heroes/hero-subpage.avif",
+    openGraphImagePath: "/events/converted/biotech-medtech-panel-2026.webp",
     priority: 0.8,
     changeFrequency: "weekly",
   },

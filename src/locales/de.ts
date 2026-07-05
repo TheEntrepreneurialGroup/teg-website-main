@@ -482,9 +482,27 @@ const de = {
     "TEG für Unternehmen | Zugang zu zukünftigen Führungskräften",
   "seo.companies.description":
     "Werden Sie TEG-Partner und gewinnen Sie Zugang zu einem seit 1986 gewachsenen Talent-Pool aus ambitionierten zukünftigen Führungskräften.",
-  "seo.events.title": "TEG Events | The Entrepreneurial Group",
+  "seo.events.title":
+    "TEG Events München | Konferenzen, Panel Talks und Networking",
   "seo.events.description":
-    "Entdecken Sie kommende und vergangene TEG-Events mit Workshops, Talks und Formaten rund um Unternehmertum, Technologie und Leadership.",
+    "Kommende und vergangene TEG-Events in München: Panel Talks, Konferenzen und Networking-Formate mit Führungskräften aus Wirtschaft, Tech und Forschung.",
+
+  "events.hero.eyebrow": "Gegründet 1986",
+  "events.hero.title": "Events & Netzwerk.",
+  "events.hero.subtitle":
+    "Schnittstelle zwischen High-Potentials und Wirtschaft.",
+  "events.hero.imageAlt": "TEG Events und Networking in München",
+  "events.upcoming.title": "Upcoming Highlights",
+  "events.past.title": "Past Events",
+  "events.past.description":
+    "Unsere Historie spiegelt die Qualität unserer Partnerschaften wider.",
+  "events.details": "Details ansehen",
+  "events.register": "Anmelden",
+  "events.viewEvent": "Event ansehen",
+  "events.close": "Event schließen",
+  "events.speakers": "Speaker",
+  "events.pastEventFallback": "Past Event",
+  "events.imageAlt": "{title} – TEG Event",
   "seo.imprint.title": "Impressum | TEG",
   "seo.imprint.description":
     "Impressum und rechtliche Angaben von The Entrepreneurial Group e. V.",
