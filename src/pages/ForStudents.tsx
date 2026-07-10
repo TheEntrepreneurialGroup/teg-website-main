@@ -563,13 +563,15 @@ const ForStudents: React.FC = () => {
               </p>
             </div>
             <div className="mb-10">
-              <h3 className="text-xl font-bold mb-1">Yassin Aboushelib</h3>
+              <h3 className="text-xl font-bold mb-1 text-white">
+                Yassin Aboushelib
+              </h3>
               <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
                 {" "}
                 Leitung People & Operations
               </p>
             </div>
-            <div className="flex gap-10">
+            <div className="flex flex-wrap gap-6">
               <a
                 href="https://linkedin.com"
                 className="flex items-center gap-2 text-[#B7860B] hover:text-white text-[10px] font-bold uppercase tracking-widest"
@@ -578,9 +580,10 @@ const ForStudents: React.FC = () => {
               </a>
               <a
                 href="mailto:yassin@teg.de"
-                className="flex items-center gap-2 text-[#B7860B] hover:text-white text-[10px] font-bold uppercase tracking-widest"
+                aria-label="E-Mail an Yassin: yassin@teg.de"
+                className="flex items-center gap-2 text-[#B7860B] hover:text-white text-xs font-bold"
               >
-                <Mail size={16} /> Email
+                <Mail size={16} /> yassin@teg.de
               </a>
             </div>
           </div>
