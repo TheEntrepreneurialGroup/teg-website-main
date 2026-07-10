@@ -579,11 +579,11 @@ const ForStudents: React.FC = () => {
                 <Linkedin size={16} /> LinkedIn
               </a>
               <a
-                href="mailto:yassin@teg.de"
-                aria-label="E-Mail an Yassin: yassin@teg.de"
+                href="mailto:yassin.aboushelib@teg-ev.de"
+                aria-label="E-Mail an Yassin: yassin.aboushelib@teg-ev.de"
                 className="flex items-center gap-2 text-[#B7860B] hover:text-white text-xs font-bold"
               >
-                <Mail size={16} /> yassin@teg.de
+                <Mail size={16} /> yassin.aboushelib@teg-ev.de
               </a>
             </div>
           </div>
