@@ -30,7 +30,10 @@ for (const { route, file } of routeFiles) {
   const hasDescription = /<meta[^>]+name=["']description["'][^>]*>/i.test(
     html,
   );
-  const hasBundle = /\/assets\/bootstrap-[^"]+\.js/.test(html);
+  const hasJsonLd =
+    route !== "/events" ||
+    /<script[^>]+type=["']application\/ld\+json["'][^>]*>/i.test(html);
+  const hasBundle = /\/assets\/(App|bootstrap)-[^"]+\.js/.test(html);
   const hasPrerenderedMarkup =
     html.includes('id="root"') &&
     (html.includes("<main") || html.includes("container-custom"));
@@ -43,6 +46,12 @@ for (const { route, file } of routeFiles) {
 
   if (!hasTitle || !hasDescription) {
     console.error(`FAIL ${route}: missing SEO title or description meta tag`);
+    failed = true;
+    continue;
+  }
+
+  if (!hasJsonLd) {
+    console.error(`FAIL ${route}: missing JSON-LD structured data`);
     failed = true;
     continue;
   }

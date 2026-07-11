@@ -1,4 +1,4 @@
-"""Compress images to WebP with quality 80, keeping originals as fallbacks."""
+"""Compress source images to WebP. Only list assets that still have lossless originals."""
 from PIL import Image
 import os, sys
 
@@ -8,8 +8,6 @@ BASE = r"c:\Users\Corbi\...Corbi\Cormass\repo\TEG\teg-website-main\public"
 IMAGES = [
     # Heroes
     (r"shared\heroes\hero-about.jpg", 80),
-    (r"shared\heroes\hero-home-new.jpg", 80),
-    (r"shared\heroes\selection-bg.jpg", 80),
     # (r"shared\heroes\hero-subpage.avif", 80),  # already AVIF, skip
     # Team leads
     (r"about\team-leads\feristah-fenkci.png", 82),
@@ -18,14 +16,7 @@ IMAGES = [
     (r"about\team-leads\berkay.png", 82),
     (r"about\team-leads\ahmed-kaddour.png", 82),
     (r"about\team-leads\finn.png", 82),
-    # Heritage & formats
-    (r"about\heritage\zeitungsartikel.png", 82),
-    (r"about\formats\industry-panel.png", 82),
-    (r"about\formats\konferenz.png", 82),
-    (r"about\formats\summit.png", 82),
-    # Alumni
-    (r"about\alumni\david_riessner.jpg", 82),
-    (r"about\alumni\volker_maiborn.jpg", 82),
+    # Add new source images here before converting them to WebP in the app.
 ]
 
 saved_total = 0

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "node ./scripts/generate-sitemap.mjs && node ./scripts/verify-prerender.mjs",
+    "postbuild": "node ./scripts/cleanup-dist-assets.mjs && node ./scripts/generate-sitemap.mjs && node ./scripts/verify-prerender.mjs",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

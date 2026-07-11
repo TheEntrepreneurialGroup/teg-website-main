@@ -66,11 +66,11 @@ const HeritageGardenSection: React.FC<Props> = ({
           </>
         ),
         intro:
-          "Eine gemeinnützige Münchner Initiative der Erwachsenenbildung - institutionell verwurzelt seit 1986, in heutiger Form etabliert im Januar 1988.",
+          "Eine gemeinnützige Münchner Initiative der Erwachsenenbildung – institutionell verwurzelt seit 1986, in heutiger Form etabliert im Januar 1988.",
         pressTag: "Pressebeleg · Donaukurier",
         kuratoriumTag: "Kuratorium 1986",
         kuratoriumLine:
-          "Vorständer elf Deutscher Top-Unternehmen gründen TEG.\nDennoch keine lineare Gründungsphase!",
+          "Vorstände elf deutscher Top-Unternehmen gründeten TEG.\nDennoch keine lineare Gründungsphase!",
         todayPrefix: "heute",
         founderArrow: "via",
         articleAlt:
@@ -369,7 +369,7 @@ const HeritageGardenSection: React.FC<Props> = ({
             <div className="relative overflow-hidden border border-[#F6D77B]/30 bg-[#efe5cf] shadow-[0_40px_120px_rgba(0,0,0,0.55)]">
               <div className="aspect-[948/695] w-full overflow-hidden">
                 <OptimizedImage
-                  src="/about/heritage/zeitungsartikel.png"
+                  src="/about/heritage/zeitungsartikel.webp"
                   alt={copy.articleAlt}
                   className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
                   loading="lazy"

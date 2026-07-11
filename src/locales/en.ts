@@ -477,9 +477,26 @@ const en = {
   "seo.companies.title": "TEG for Companies | Access future leadership talent",
   "seo.companies.description":
     "Become a TEG partner and gain access to a talent pool of ambitious future leaders built over decades.",
-  "seo.events.title": "TEG Events | The Entrepreneurial Group",
+  "seo.events.title":
+    "TEG Events Munich | Conferences, Panel Talks and Networking",
   "seo.events.description":
-    "Explore upcoming and past TEG events with workshops, talks and formats around entrepreneurship, technology and leadership.",
+    "Upcoming and past TEG events in Munich: panel talks, conferences, and networking formats with leaders from business, tech, and research.",
+
+  "events.hero.eyebrow": "Founded in 1986",
+  "events.hero.title": "Events & Network.",
+  "events.hero.subtitle": "The bridge between high potentials and industry.",
+  "events.hero.imageAlt": "TEG events and networking in Munich",
+  "events.upcoming.title": "Upcoming Highlights",
+  "events.past.title": "Past Events",
+  "events.past.description":
+    "Our history reflects the quality of our partnerships.",
+  "events.details": "View details",
+  "events.register": "Register",
+  "events.viewEvent": "View event",
+  "events.close": "Close event",
+  "events.speakers": "Speakers",
+  "events.pastEventFallback": "Past Event",
+  "events.imageAlt": "{title} – TEG event",
   "seo.imprint.title": "Imprint | TEG",
   "seo.imprint.description":
     "Imprint and legal information for The Entrepreneurial Group e. V.",

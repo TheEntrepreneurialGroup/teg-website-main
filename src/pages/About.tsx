@@ -316,10 +316,10 @@ const About: React.FC = () => {
         ? "Wir stärken den Wirtschaftsstandort Deutschland"
         : "We strengthen Germany as a place of business",
       answer: isDe
-        ? "Durch die Ermöglichung eines industrieübergreifenden Austausch Deutscher Führungskräfte."
+        ? "Durch den industrieübergreifenden Austausch deutscher Führungskräfte."
         : "By enabling cross-industry exchange among German executives.",
       third: isDe
-        ? "Als auch durch den Aufbau eines Nachwuchskanals für die Unternehmensführung deutscher Firmen."
+        ? "Und durch den Aufbau eines Nachwuchskanals für die Unternehmensführung deutscher Firmen."
         : "And by building a leadership pipeline for the management of German companies.",
     },
 
@@ -335,7 +335,7 @@ const About: React.FC = () => {
         {
           index: "01",
           name: isDe ? "Industrie-Panel" : "Industry Panel",
-          img: "/about/formats/industry-panel.png",
+          img: "/about/formats/industry-panel.webp",
           alt: isDe
             ? "Branchen-Panel mit fünf Führungskräften im Gespräch auf der Bühne"
             : "Industry panel with five executives in conversation on stage",
@@ -359,12 +359,12 @@ const About: React.FC = () => {
         {
           index: "02",
           name: "Summit",
-          img: "/about/formats/summit.png",
+          img: "/about/formats/summit.webp",
           alt: isDe
             ? "Vortragender präsentiert vor der Folie Multi Stakeholder Management"
             : "Speaker presenting in front of a Multi Stakeholder Management slide",
           lede: isDe
-            ? "Eine Handvoll Präsentationen von Entscheidern der gleichen beruflichen Funktion. Wer kommt, sitzt unter Gleichges(t)ellten."
+            ? "Eine Handvoll Präsentationen von Entscheidern derselben beruflichen Funktion. Wer kommt, sitzt unter Gleichges(t)ellten."
             : "A handful of presentations from decision-makers in the same professional function. Those who attend sit among their peers.",
           traits: isDe
             ? [
@@ -383,7 +383,7 @@ const About: React.FC = () => {
         {
           index: "03",
           name: isDe ? "Konferenz" : "Conference",
-          img: "/about/formats/konferenz.png",
+          img: "/about/formats/konferenz.webp",
           alt: isDe
             ? "Konferenzsaal mit Publikum und Sprecher vor der Leinwand"
             : "Conference hall with audience and speaker in front of the screen",
@@ -410,7 +410,7 @@ const About: React.FC = () => {
         ? "Ein kleiner Ausschnitt unserer YBLA Absolventen"
         : "A small selection of our YBLA graduates",
       intro: isDe
-        ? "Drei Jahrzente YBLA formt Entscheider & Führungskräfte."
+        ? "Drei Jahrzehnte YBLA bilden Entscheider und Führungskräfte aus."
         : "Three decades of YBLA shape decision-makers & executives.",
       stats: [
         { number: "300+", label: isDe ? "Alumni" : "Alumni" },
@@ -688,7 +688,7 @@ const About: React.FC = () => {
     {
       name: "David Riessner",
       role: "Top-Management",
-      img: "/about/alumni/david_riessner.jpg",
+      img: "/about/alumni/david_riessner.webp",
     },
     {
       name: "Arne Rieger",
@@ -713,7 +713,7 @@ const About: React.FC = () => {
     {
       name: "Volker Maiborn",
       role: "Gründer",
-      img: "/about/alumni/volker_maiborn.jpg",
+      img: "/about/alumni/volker_maiborn.webp",
     },
   ];
 
@@ -802,7 +802,7 @@ const About: React.FC = () => {
                 externalPlay={heroPlay}
                 items={[
                   {
-                    label: isDe ? "Über Uns" : "About Us",
+                    label: isDe ? "Über uns" : "About Us",
                     href: "#story",
                     variant: "solid",
                   },
@@ -1278,7 +1278,7 @@ const About: React.FC = () => {
               30% Top Management
             </div>
             <div className="mt-3 text-[clamp(0.85rem,1.3vw,1.1rem)] font-medium leading-snug text-white/80">
-              Quote der YBLA Absolventen
+              Anteil der YBLA-Absolventen im Top-Management
             </div>
           </motion.div>
 
@@ -1387,7 +1387,7 @@ const About: React.FC = () => {
       <section className="relative isolate flex min-h-[70vh] w-full items-end overflow-hidden bg-[#040F1F] py-20 text-white md:min-h-[80vh] md:py-28 lg:min-h-screen">
         {/* Full-bleed background image */}
         <OptimizedImage
-          src="/shared/heroes/selection-bg.jpg"
+          src="/shared/heroes/selection-bg.webp"
           alt=""
           aria-hidden="true"
           loading="lazy"

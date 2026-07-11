@@ -52,7 +52,7 @@ const TegGardenStatement: React.FC<Props> = ({
   const play = started;
 
   const tail = isDe
-    ? "formt die neue Generation Führungspersönlichkeiten"
+    ? "formt die neue Generation von Führungspersönlichkeiten"
     : "is shaping the next generation of leaders";
   const words = tail.split(" ");
 
@@ -119,7 +119,13 @@ const TegGardenStatement: React.FC<Props> = ({
             <stop offset="0%" stopColor="#FFE8A8" stopOpacity="1" />
             <stop offset="100%" stopColor="#F6D77B" stopOpacity="0.6" />
           </radialGradient>
-          <filter id="teg-vine-glow" x="-20%" y="-20%" width="140%" height="140%">
+          <filter
+            id="teg-vine-glow"
+            x="-20%"
+            y="-20%"
+            width="140%"
+            height="140%"
+          >
             <feGaussianBlur stdDeviation="2.5" />
           </filter>
         </defs>
@@ -161,25 +167,44 @@ const TegGardenStatement: React.FC<Props> = ({
           <motion.g
             key={`leaf-${i}`}
             initial={{ scale: 0, opacity: 0 }}
-            animate={play ? { scale: 1, opacity: 0.95 } : { scale: 0, opacity: 0 }}
+            animate={
+              play ? { scale: 1, opacity: 0.95 } : { scale: 0, opacity: 0 }
+            }
             transition={{
               duration: reduce ? 0.01 : 0.55,
               delay: reduce ? 0 : 1.9 + i * 0.12,
               ease: [0.16, 1, 0.3, 1],
             }}
-            style={{ transformOrigin: `${p.x}px ${p.y}px`, transformBox: "fill-box" } as React.CSSProperties}
+            style={
+              {
+                transformOrigin: `${p.x}px ${p.y}px`,
+                transformBox: "fill-box",
+              } as React.CSSProperties
+            }
           >
             <motion.path
               d="M 0 0 c -3 -7, 1 -15, 9 -16 c 7 1, 11 9, 7 17 c -3 5, -10 5, -16 -1 z"
               fill="url(#teg-leaf-grad)"
               transform={`translate(${p.x} ${p.y}) rotate(${p.r})`}
-              animate={reduce ? undefined : { rotate: [p.r, p.r + 5, p.r - 4, p.r] }}
+              animate={
+                reduce ? undefined : { rotate: [p.r, p.r + 5, p.r - 4, p.r] }
+              }
               transition={
                 reduce
                   ? undefined
-                  : { duration: 7, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }
+                  : {
+                      duration: 7,
+                      repeat: Infinity,
+                      delay: i * 0.4,
+                      ease: "easeInOut",
+                    }
               }
-              style={{ transformOrigin: `${p.x}px ${p.y}px`, transformBox: "fill-box" } as React.CSSProperties}
+              style={
+                {
+                  transformOrigin: `${p.x}px ${p.y}px`,
+                  transformBox: "fill-box",
+                } as React.CSSProperties
+              }
             />
             <circle cx={p.x} cy={p.y} r={1.6} fill="#FFE8A8" />
           </motion.g>
@@ -243,7 +268,6 @@ const TegGardenStatement: React.FC<Props> = ({
         >
           TEG
         </motion.span>{" "}
-
         {words.map((w, i) => (
           <React.Fragment key={`${w}-${i}`}>
             <motion.span

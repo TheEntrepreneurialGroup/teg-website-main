@@ -6,34 +6,23 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
 }
 
 /**
- * OptimizedImage — serves WebP with original-format fallback.
- *
- * `src` should point to the original image (e.g. .jpg, .png).
- * The component automatically derives the WebP path by swapping the extension
- * and renders a <picture> element so the browser only downloads the best format.
- * If the WebP fails to load, the <img> tag provides the original as fallback.
+ * OptimizedImage — renders a single optimized asset (WebP/AVIF).
+ * Pass the final optimized path directly, e.g. `/about/formats/summit.webp`.
  */
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,
   ...rest
 }) => {
-  // Derive WebP path: /about/formats/industry-panel.png → /about/formats/industry-panel.webp
-  const webpSrc = src.replace(/\.[^.]+$/, ".webp");
-
   return (
-    <picture>
-      <source srcSet={webpSrc} type="image/webp" />
-      <img
-        src={src}
-        alt={alt}
-        {...rest}
-        onError={(e) => {
-          // If the original also fails, hide broken icon
-          (e.target as HTMLImageElement).style.display = "none";
-        }}
-      />
-    </picture>
+    <img
+      src={src}
+      alt={alt}
+      {...rest}
+      onError={(e) => {
+        (e.target as HTMLImageElement).style.display = "none";
+      }}
+    />
   );
 };
 

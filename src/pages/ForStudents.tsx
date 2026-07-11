@@ -196,8 +196,8 @@ const ForStudents: React.FC = () => {
                 <p className="pt-4 font-bold text-[#0F2B57]">
                   Dein Beitrag bleibt nicht undokumentiert: Hast du die 3
                   Semester erfolgreich absolviert, wirst du TEGler auf
-                  Lebenszeit. Weiterhin erhältst du ein Abschlusszeugnis,
-                  welches deine Leistungen und Führungsreife bestätigt.
+                  Lebenszeit. Weiterhin erhältst du ein Abschlusszeugnis, das
+                  deine Leistungen und Führungsreife bestätigt.
                 </p>
               </div>
             </div>
@@ -233,8 +233,8 @@ const ForStudents: React.FC = () => {
                     parallel zum Studium.
                   </p>
                   <p className="font-bold text-[#0F2B57] border-l-4 border-[#B7860B] pl-6 py-2">
-                    Durch Praxis-Projekte erlernst du Kompetenzen auf einem
-                    Level deutlich über dem normalen Berufseinstieg.
+                    Durch Praxisprojekte erlernst du Kompetenzen auf einem Level
+                    deutlich über dem normalen Berufseinstieg.
                   </p>
                 </div>
               </div>
