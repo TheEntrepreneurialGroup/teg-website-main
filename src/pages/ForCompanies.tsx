@@ -8,6 +8,10 @@ import {
   ArrowUpRight,
   Mic2,
 } from "lucide-react";
+import { trackButtonClick } from "../utils/analytics";
+
+const ACTION_CTA_CLASS =
+  "bg-[#B7860B] text-[#0A1628] px-12 py-5 font-black uppercase tracking-widest text-sm flex items-center gap-4 shadow-[0_0_40px_rgba(183,134,11,0.3)] inline-flex";
 
 // --- HILFSKOMPONENTE: COUNTER ---
 const Counter = ({ value }: { value: string }) => {
@@ -184,6 +188,16 @@ const ForCompanies: React.FC = () => {
             der Nächsten <br />
             Generation.
           </h2>
+          <motion.a
+            href="#contact"
+            onClick={() =>
+              trackButtonClick("Gespräch vereinbaren", "For Companies — Hero")
+            }
+            whileHover={{ scale: 1.05 }}
+            className={`${ACTION_CTA_CLASS} mt-10`}
+          >
+            Gespräch vereinbaren <ArrowUpRight size={20} />
+          </motion.a>
         </div>
       </section>
 
@@ -362,6 +376,21 @@ const ForCompanies: React.FC = () => {
               </AnimatePresence>
             </div>
           </div>
+          <div className="mt-16 flex justify-center">
+            <motion.a
+              href="#contact"
+              onClick={() =>
+                trackButtonClick(
+                  "Als Speaker einbringen",
+                  "For Companies — Leadership Forge",
+                )
+              }
+              whileHover={{ scale: 1.05 }}
+              className={ACTION_CTA_CLASS}
+            >
+              Als Speaker einbringen <Mic2 size={20} />
+            </motion.a>
+          </div>
         </div>
       </section>
 
@@ -533,6 +562,21 @@ const ForCompanies: React.FC = () => {
                 );
               })}
             </div>
+          </div>
+          <div className="mt-12 flex justify-center">
+            <motion.a
+              href="#contact"
+              onClick={() =>
+                trackButtonClick(
+                  "Jetzt Gespräch vereinbaren",
+                  "For Companies — Testimonials",
+                )
+              }
+              whileHover={{ scale: 1.05 }}
+              className={ACTION_CTA_CLASS}
+            >
+              Jetzt Gespräch vereinbaren <ArrowUpRight size={20} />
+            </motion.a>
           </div>
         </div>
       </section>
