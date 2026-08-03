@@ -7,4 +7,5 @@ export const PRERENDER_ROUTES = [
   "/privacy-policy",
   "/imprint",
   "/about",
+  "/request-demo",
 ];

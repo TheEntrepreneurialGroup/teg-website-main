@@ -491,6 +491,10 @@ const de = {
   "seo.privacy.title": "Datenschutzerklärung | TEG",
   "seo.privacy.description":
     "Informationen zur Verarbeitung personenbezogener Daten auf der Website von The Entrepreneurial Group e. V.",
+  "seo.requestDemo.title":
+    "Location-Host | German Supply Chain Conference 2026 | TEG",
+  "seo.requestDemo.description":
+    "Hosten Sie die German Supply Chain Conference 2026 in München. Positive PR und Recruiting-Zugang für Logistik-Standorte. Unverbindliches Gespräch mit TEG.",
 };
 
 export default de;

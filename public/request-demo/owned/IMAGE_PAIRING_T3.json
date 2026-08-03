@@ -1,0 +1,205 @@
+{
+  "task_id": "t3",
+  "title": "Multi-pass computer-vision image pairing — Location-Host Immersive Gardens",
+  "generated": "2026-07-29",
+  "hero_bg": {
+    "path": "/request-demo/hero-bg.jpg",
+    "status": "FROZEN — do not change"
+  },
+  "linkedin_scrape_status": {
+    "owned_dir": "public/request-demo/owned/",
+    "linkedin_dir": "public/events/linkedin/",
+    "scraped_images_present": false,
+    "note": "t2 folders exist but were empty at CV time. Final bind (t6) should re-check for official teg-ev post frames; pairings below use only local TEG-owned media that passed multi-pass CV."
+  },
+  "method": {
+    "passes_per_asset": 2,
+    "pass1": "Subject, people density, TEG ownership signals, first-glance genre",
+    "pass2": "Reject stock/AI glamour, check thesis fit vs content intercept, prefer real event photography over graphic posters, demote metadata-first card-* stock",
+    "reject_rule": "No stock card-benefit/host/why-teg as primary heroes without CV superiority proof (none found)."
+  },
+  "rejects": [
+    {
+      "path": "/request-demo/card-benefit.jpg",
+      "pass1": "Young professionals networking with coffee/lanyards in bright atrium.",
+      "pass2": "Generic stock/AI diversity lobby; no TEG branding, venue, or conference scale. Weaker than acc-bild for talent density.",
+      "decision": "REJECT as primary hero"
+    },
+    {
+      "path": "/request-demo/card-host.jpg",
+      "pass1": "Terrazzo reception, moss wall, green lanyards, conference room beyond.",
+      "pass2": "AI/stock foyer metaphor; not TEG-owned event documentation; fails Location-Host proof vs cooles-bild smartvillage frame.",
+      "decision": "REJECT as primary hero"
+    },
+    {
+      "path": "/request-demo/card-why-teg.jpg",
+      "pass1": "Empty wood-paneled theater, podium, teal stage lighting, no people.",
+      "pass2": "Generic empty venue stock; zero selection/community/heritage signal. Inferior to zeitungsartikel founding press.",
+      "decision": "REJECT as primary hero"
+    },
+    {
+      "path": "/request-demo/card-pain.jpg",
+      "pass1": "Modern logistics HQ + loading docks, forklifts, green vans, sculpture, lavender at golden hour — only logistics-sector visual in LP assets.",
+      "pass2": "Polished aspirational AI/stock campus; shows ideal employer brand, not Kosten/Lärm/Verkehr stigma or hiring pressure. Contradicts pain thesis if used as glamour hero.",
+      "decision": "REJECT as aspirational primary hero; optional muted full-bleed under dark text overlay ONLY if implementer needs sector width-fill (text-led composition)"
+    },
+    {
+      "path": "/for-companies/how-to-lead.a.team.jpeg",
+      "pass1": "Small workshop circle, young audience, exercise slide.",
+      "pass2": "Authentic TEG training vibe but low density; intercepts S2 if used as talent hero vs packed conference floor.",
+      "decision": "DEMOTE — spare authentic workshop, not journey primary"
+    },
+    {
+      "path": "/shared/ybla-meeting.jpeg",
+      "pass1": "U-shape seminar, CROSS ROADS leadership talk, laptops.",
+      "pass2": "Real TEG programming but boardroom scale ≠ Konferenz ca. 125; reserve for other pages.",
+      "decision": "DEMOTE — not S2 density winner"
+    },
+    {
+      "path": "/events/converted/enterprise-sales-2025.webp",
+      "pass1": "Large mixed-age group photo, TEG banner, beer-bench after-format.",
+      "pass2": "Strong community proof but informal; intercepts trust/talent if used as primary trust hero vs founding press.",
+      "decision": "DEMOTE — optional proof-strip texture only, not S4/S6 primary"
+    },
+    {
+      "path": "/events/converted/fireside-chat-2025.webp",
+      "pass1": "Three people with flower bouquets, formal attire, applause.",
+      "pass2": "Hospitality/thanks moment (host courtesy) without sales booth; soft secondary for host warmth, not host mechanics primary.",
+      "decision": "DEMOTE — optional S3 secondary/overlay only"
+    }
+  ],
+  "final_pairings": [
+    {
+      "section": "S1_Pain",
+      "thesis": "Solvable logistics employer-image + talent-access pains only (Kosten/Lärm/Verkehr associations; scarce young SC talent; hiring/Vergütungsdruck when pipeline thin). No TEG package language.",
+      "image_path": null,
+      "composition": "text-led",
+      "fallback_if_media_required": {
+        "path": "/request-demo/card-pain.jpg",
+        "usage": "Full-bleed background ONLY under heavy dark/soft gradient; crop/desaturate if needed; never as bright aspirational card hero",
+        "alt_de": "Logistikstandort mit Büro- und Umschlagbereich — Sektorhintergrund, nicht Idealkampus"
+      },
+      "rationale_one_sentence": "No authentic TEG logistics-pain photo exists and card-pain fails pass-2 as polished HQ glamour, so S1 stays text-led (optional muted card-pain under dark overlay only for sector width, never as bright hero).",
+      "cv_passes": {
+        "pass1": "Only logistics-sector still in repo is card-pain (glass HQ + docks at sunset).",
+        "pass2": "Reject aspirational docks/sculpture/lavender as pain signal; prefer non-aspirational text-led composition until LI scrape yields non-glamour industry dialogue frame."
+      },
+      "rebind_if": "t2 delivers official teg-ev frame showing dense industry dialogue energy without empty-dock glamour — prefer that over card-pain fallback."
+    },
+    {
+      "section": "S2_Talent",
+      "thesis": "ca. 125 curated Young Professionals one day on site as recruiting access only.",
+      "image_path": "/for-companies/acc-bild.jpeg",
+      "composition": "media-above or full-bleed with text below/side (single text column)",
+      "alt_de": "Dicht besetzte TEG-Konferenz: Publikum mit Namensschildern, reservierte Plätze und Bühnenprogramm",
+      "rationale_one_sentence": "acc-bild.jpeg wins both CV passes as the densest real TEG conference floor (RESERVIERT seats, badges, packed rows, KI-Beratung laptop) and beats stock lobby card-benefit for curated talent scarcity.",
+      "cv_passes": {
+        "pass1": "Packed audience, reserved seat cards, lanyards, speaker stage, laptop slide visible.",
+        "pass2": "Selection/scale proof (reserviert ≠ open mass); real mixed ages/roles; still best density vs how-to-lead, ybla-meeting, card-benefit."
+      },
+      "rejected_alternatives": ["/request-demo/card-benefit.jpg", "/for-companies/how-to-lead.a.team.jpeg", "/shared/ybla-meeting.jpeg"]
+    },
+    {
+      "section": "S3_Host",
+      "thesis": "Host role: München-area venue, Branding/Begrüßung, optional culture without sales pressure; TEG supplies Auswahl/Agenda/Publikum.",
+      "image_path": "/for-companies/cooles-bild.jpeg",
+      "composition": "full-width immersive; media dominant",
+      "alt_de": "TEG Industry Panel im smartvillage: Gastgeber-Branding, Corporate-Entrepreneurship-Banner und gemischtes Publikum unter Kronleuchtern",
+      "rationale_one_sentence": "cooles-bild.jpeg is the best owned Location-Host frame: live panel under chandeliers with TEG Corporate Entrepreneurship roll-up, smartvillage+ host branding, senior speakers and young audience in one shot.",
+      "cv_passes": {
+        "pass1": "Premium venue, panel on stage, audience backs, dual host/TEG brand presence.",
+        "pass2": "Matches LinkedIn Charging Ahead host thank-you narrative; superior to stock card-host foyer; training-session proves company-office host but is Frontier Tech (reserve for S6); fireside is thanks-only."
+      },
+      "near_tie_alternate": {
+        "path": "/events/converted/charging-ahead-2026-alt.webp",
+        "note": "Same Charging Ahead / smartvillage event, slightly wider panel faces; use if cooles crop feels tight. Prefer cooles for clearer smartvillage+ roll-up."
+      },
+      "rejected_alternatives": ["/request-demo/card-host.jpg"]
+    },
+    {
+      "section": "S4_Trust",
+      "thesis": "Gemeinnütziger Münchner Verein seit 1986, Auswahl statt Massenverkauf, educational conference craft.",
+      "image_path": "/about/heritage/zeitungsartikel.webp",
+      "composition": "document crop, large readable heritage clip; soft garden framing",
+      "alt_de": "Historischer Zeitungsartikel: Elf Unternehmen gründen die Studentenvereinigung TEG e. V.",
+      "rationale_one_sentence": "zeitungsartikel.webp is the only primary visual that proves institutional trust and 1986 pedigree via named founding firms, beating empty stock theater card-why-teg on both CV passes.",
+      "cv_passes": {
+        "pass1": "German press headline Mehr Praxisbezug gefordert / Elf Unternehmen gründen… TEG eV; BMW, Siemens, Roland Berger, BCG, etc.",
+        "pass2": "Authentic heritage document vs empty hall stock; training-session proves live craft but belongs to Frontier Tech conference proof, not sole trust hero."
+      },
+      "rejected_alternatives": ["/request-demo/card-why-teg.jpg"]
+    },
+    {
+      "section": "S5_Proof_strip",
+      "thesis": "Single proof layer: ca. 125 / 1 Tag / 8.12.2026 München / Host offen + Conference Team Leads Corbinian Massinger & Leonard Beckmann; optional Jonathan Babelotzky Head of Strategie & Partners once.",
+      "image_path": null,
+      "composition": "metrics band / compact fact strip — no competing photo hero",
+      "rationale_one_sentence": "Proof strip is fact-led (headcount, date, venue, organisers); no dedicated photo so it does not restate S2 talent density or S4 heritage imagery.",
+      "optional_texture": {
+        "path": "/events/converted/enterprise-sales-2025.webp",
+        "usage": "Very soft desaturated edge texture only if design needs people presence — never a second proof card grid"
+      }
+    },
+    {
+      "section": "S6_Conference_Frontier_Tech_2025",
+      "thesis": "First of two stacked past Konferenz formats (Immersive Gardens vertical, not 6-tile bento).",
+      "image_path": "/events/converted/frontier-tech-conference-2025.webp",
+      "composition": "full-width photographic garden block",
+      "alt_de": "Frontier Tech Conference 2025: volles Publikum und Vortrag in industriellem Veranstaltungsraum",
+      "rationale_one_sentence": "frontier-tech-conference-2025.webp is authentic Konferenz immersion (packed young professionals, suited speaker, industrial venue, PushQuantum cue) and is the photographic lead for the 2025 conference stack.",
+      "cv_passes": {
+        "pass1": "Full young audience, industrial hall, speaker with mic, projector art slide.",
+        "pass2": "Photographic > graphic; pairs with training-session only as alternate interaction crop (raised hands + MaibornWolff slide) — primary remains hall immersion."
+      },
+      "supporting_caption_facts": "MaibornWolff Munich host; PushQuantum co-brand; Dec 10 2025 — from training-session.jpeg slide OCR",
+      "alternate_interaction_crop": "/for-students/commitment/training-session.jpeg"
+    },
+    {
+      "section": "S6_Conference_AI_Consulting_2026",
+      "thesis": "Second stacked past Konferenz: AI Consulting @ Netlight.",
+      "image_path": "/events/converted/ai-consulting-conference-2026.webp",
+      "composition": "full-width graphic poster block with framing copy (not photographic immersion)",
+      "alt_de": "Plakat AI Consulting Conference 2026: 10. Juni 2026, Netlight Offices München, Gastgeber Netlight",
+      "rationale_one_sentence": "ai-consulting-conference-2026.webp is the only local asset that names Gastgeber Netlight and the 10. Juni 2026 conference facts; pass-2 accepts it as host-model graphic proof despite not being photography until a better Netlight recap appears.",
+      "cv_passes": {
+        "pass1": "Designed poster: date, Netlight Offices München, Gastgeber Netlight logo, partner/speaker logos, Presented by TEG e.V.",
+        "pass2": "Graphic not photographic immersion — keep for verifiable host facts; rebind if t2/official LI delivers photographic Netlight recap superior to poster."
+      },
+      "rebind_if": "Official teg-ev LinkedIn photo of AI Consulting @ Netlight floor/audience — prefer that over poster for gardens photography parity with Frontier Tech."
+    }
+  ],
+  "one_sentence_map": {
+    "S1_Pain": "Text-led (no aspirational HQ hero); optional muted card-pain under dark overlay only as sector context — CV pass-2 rejects polished docks as pain signal.",
+    "S2_Talent": "Use /for-companies/acc-bild.jpeg — densest real reserved-seat conference audience for curated talent access.",
+    "S3_Host": "Use /for-companies/cooles-bild.jpeg — smartvillage Location-Host stage with TEG branding and live panel.",
+    "S4_Trust": "Use /about/heritage/zeitungsartikel.webp — founding press proves 1986 institutional trust.",
+    "S5_Proof": "No primary image — fact strip only (ca. 125, date, München, organisers).",
+    "S6_Frontier_Tech": "Use /events/converted/frontier-tech-conference-2025.webp — photographic Konferenz immersion.",
+    "S6_AI_Consulting": "Use /events/converted/ai-consulting-conference-2026.webp — Netlight host poster until photographic LI recap exists.",
+    "Hero": "hero-bg untouched."
+  },
+  "stock_card_primary_heroes": {
+    "card-pain": false,
+    "card-benefit": false,
+    "card-host": false,
+    "card-why-teg": false,
+    "cv_superiority_proof_for_any_card_star": "none — all four lose multi-pass to owned TEG media or text-led pain"
+  },
+  "implementer_wire_hints": {
+    "REQUEST_DEMO_LOCAL_ASSETS_preferred": [
+      "/for-companies/acc-bild.jpeg",
+      "/for-companies/cooles-bild.jpeg",
+      "/about/heritage/zeitungsartikel.webp",
+      "/events/converted/frontier-tech-conference-2025.webp",
+      "/events/converted/ai-consulting-conference-2026.webp",
+      "/request-demo/hero-bg.jpg"
+    ],
+    "demote_from_required_primary": [
+      "/request-demo/card-pain.jpg",
+      "/request-demo/card-benefit.jpg",
+      "/request-demo/card-host.jpg",
+      "/request-demo/card-why-teg.jpg"
+    ],
+    "do_not_embed": "LinkedIn post UI/cards 1:1"
+  }
+}

@@ -12,7 +12,8 @@
     "format:check": "prettier --check .",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "npm run lint && tsc --noEmit"
+    "test": "npm run lint && tsc --noEmit && node ./scripts/verify-request-demo.mjs",
+    "test:request-demo": "node ./scripts/verify-request-demo.mjs"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
