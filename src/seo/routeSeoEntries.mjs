@@ -63,6 +63,15 @@ export const routeSeoEntries = [
     changeFrequency: "yearly",
   },
   {
+    path: "/supplychain",
+    titleMessageId: "seo.requestDemo.title",
+    descriptionMessageId: "seo.requestDemo.description",
+    indexable: true,
+    openGraphImagePath: "/request-demo/hero-bg.jpg",
+    priority: 0.8,
+    changeFrequency: "weekly",
+  },
+  {
     path: "/request-demo",
     titleMessageId: "seo.requestDemo.title",
     descriptionMessageId: "seo.requestDemo.description",

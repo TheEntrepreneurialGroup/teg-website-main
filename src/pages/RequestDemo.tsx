@@ -1,13 +1,45 @@
 /**
  * TEG Supply Chain Conference 2026 — Location-Host landing page.
- * Hero shell frozen (form, hero-bg, CTAs). Post-hero: vertical Immersive
- * Gardens journey (one thesis per full-width section, no 2×2 text grids).
- * Forms are presentational only — no third-party lead API POST.
+ * Hero: scroll-scrub video + Immersive Gardens “Gespräch Buchen” CTA
+ * (scrolls to bottom in-house scheduler). Post-hero: “Das TEG Konferenz
+ * Format”, then vertical Immersive Gardens journey (one thesis per
+ * full-width section, no 2×2 text grids). Black sponsor bar archived.
  */
-import React, { FormEvent, useId, useState } from "react";
+import React, {
+  FormEvent,
+  useCallback,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+} from "react";
+import {
+  formatVideoPhase,
+  formatVideoScrubActive,
+  formatVideoShouldLoad,
+  headerGlassEligible,
+  heroFormOpacity,
+  heroOverlayOpacity,
+  heroPinProgress,
+  progressToVideoTime,
+} from "./heroScrollScrub.mjs";
 import "./request-demo.css";
 
 const ASSET = "/request-demo";
+
+/** Calendly 30-min with Corbinian (replaces custom in-house scheduler). */
+const CALENDLY_URL =
+  "https://calendly.com/corbinian-massinger-teg-ev/30min?hide_event_type_details=1&hide_gdpr_banner=1";
+const CALENDLY_SCRIPT = "https://assets.calendly.com/assets/external/widget.js";
+const HOSTS_PHOTO = `${ASSET}/leo-corbi.webp`;
+
+/** Scroll-scrubbed hero zoom video (does not autoplay). */
+const HERO_ZOOM_VIDEO = `${ASSET}/hero-zoom.mp4`;
+/** Extra scroll runway while hero is pinned (video scrub distance). */
+const HERO_SCROLL_RUNWAY_VH = 220;
+/** Format-section sticky scrub video (loaded after header crosses format heading). */
+const FORMAT_SCRUB_VIDEO = `${ASSET}/format-scrub.mp4`;
+const FORMAT_SCROLL_RUNWAY_VH = 220;
 
 type FormState = {
   firstName: string;
@@ -17,6 +49,14 @@ type FormState = {
   email: string;
   phone: string;
   privacy: boolean;
+};
+
+type SlotDto = {
+  start: string;
+  end: string;
+  date: string;
+  time_label: string;
+  end_time_label: string;
 };
 
 const emptyForm = (): FormState => ({
@@ -29,7 +69,19 @@ const emptyForm = (): FormState => ({
   privacy: true,
 });
 
-/** Presentational form — local thank-you only, no Qualtrics/Marketo POST. */
+function formatDateDe(iso: string): string {
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString("de-DE", {
+    weekday: "short",
+    day: "2-digit",
+    month: "short",
+  });
+}
+
+/**
+ * Meeting form — same .rd-form-grid layout as before.
+ * Adds two floating-label selects (free date / free time) from the calendar API.
+ */
 export function DemoRequestForm({
   idPrefix,
   onLocalSubmit,
@@ -39,6 +91,16 @@ export function DemoRequestForm({
 }) {
   const [form, setForm] = useState<FormState>(emptyForm);
   const [submitted, setSubmitted] = useState(false);
+  const [dates, setDates] = useState<string[]>([]);
+  const [times, setTimes] = useState<SlotDto[]>([]);
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedStart, setSelectedStart] = useState("");
+  const [loadingSlots, setLoadingSlots] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [receiptMeta, setReceiptMeta] = useState<{
+    slotLabel?: string;
+    to?: string;
+  } | null>(null);
   const reactId = useId();
   const pid = `${idPrefix}-${reactId}`;
 
@@ -49,13 +111,88 @@ export function DemoRequestForm({
       setForm((prev) => ({ ...prev, [key]: value }));
     };
 
-  const handleSubmit = (e: FormEvent) => {
+  const loadDates = useCallback(async () => {
+    setLoadingSlots(true);
+    try {
+      const res = await fetch("/api/booking/free-dates");
+      const data = await res.json();
+      if (res.ok) setDates(data.dates || []);
+    } catch {
+      /* keep form usable; selects stay empty */
+    } finally {
+      setLoadingSlots(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    void loadDates();
+  }, [loadDates]);
+
+  const onDateChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const day = e.target.value;
+    setSelectedDate(day);
+    setSelectedStart("");
+    setTimes([]);
+    setSubmitError(null);
+    if (!day) return;
+    setLoadingSlots(true);
+    try {
+      const res = await fetch(
+        `/api/booking/free-times?date=${encodeURIComponent(day)}`,
+      );
+      const data = await res.json();
+      if (res.ok) setTimes(data.times || []);
+    } catch {
+      setTimes([]);
+    } finally {
+      setLoadingSlots(false);
+    }
+  };
+
+  const onTimeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedStart(e.target.value);
+    setSubmitError(null);
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Show thank-you first. Do NOT call onLocalSubmit synchronously — that
-    // would unmount modal forms (closeModal) before success is visible.
-    setSubmitted(true);
-    if (onLocalSubmit) {
-      window.setTimeout(() => onLocalSubmit(), 2800);
+    setSubmitError(null);
+
+    const slot = times.find((t) => t.start === selectedStart);
+    if (!selectedDate || !slot) {
+      setSubmitError("Bitte freies Datum und Uhrzeit wählen.");
+      return;
+    }
+
+    // Book on calendar; then show the same success shell as before
+    try {
+      const res = await fetch("/api/booking/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: `${form.firstName} ${form.lastName}`.trim(),
+          email: form.email,
+          company: form.company,
+          phone: form.phone,
+          notes: form.jobTitle ? `Position: ${form.jobTitle}` : "",
+          start: slot.start,
+          end: slot.end,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || data.message || "Buchung fehlgeschlagen");
+      }
+      setReceiptMeta({
+        slotLabel: `${formatDateDe(slot.date)} · ${slot.time_label}–${slot.end_time_label}`,
+        to: data.receipt?.to || form.email,
+      });
+      setSubmitted(true);
+      if (onLocalSubmit) {
+        window.setTimeout(() => onLocalSubmit(), 2800);
+      }
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : String(err));
     }
   };
 
@@ -67,6 +204,12 @@ export function DemoRequestForm({
           Wir haben Ihr Interesse an einem persönlichen Gespräch notiert. Das
           Organisationsteam von TEG meldet sich unverbindlich bei Ihnen, ohne
           Paket-Verkaufsdruck.
+          {receiptMeta?.slotLabel
+            ? ` Ihr Termin: ${receiptMeta.slotLabel}.`
+            : ""}
+          {receiptMeta?.to
+            ? ` Eine Bestätigung geht an ${receiptMeta.to}.`
+            : ""}
         </p>
       </div>
     );
@@ -75,12 +218,68 @@ export function DemoRequestForm({
   return (
     <form
       className="rd-form-grid"
-      onSubmit={handleSubmit}
+      onSubmit={(ev) => void handleSubmit(ev)}
       data-testid={`${idPrefix}-form`}
+      data-booking-journey="date-time-details-receipt"
       noValidate
       action="#"
       method="dialog"
     >
+      {/* Calendar free slots — same floating-label field chrome as text inputs */}
+      <div
+        className={`rd-field${selectedDate ? " select-filled" : ""}`}
+        data-testid={`${idPrefix}-step-date`}
+      >
+        <select
+          id={`${pid}-date`}
+          name="meetingDate"
+          value={selectedDate}
+          onChange={(ev) => void onDateChange(ev)}
+          aria-label="Freies Datum*"
+          data-testid={`${idPrefix}-date-select`}
+          required
+        >
+          <option value="">
+            {loadingSlots && !dates.length ? "Lädt…" : "Bitte wählen"}
+          </option>
+          {dates.map((d) => (
+            <option key={d} value={d}>
+              {formatDateDe(d)}
+            </option>
+          ))}
+        </select>
+        <label htmlFor={`${pid}-date`}>Datum*</label>
+      </div>
+      <div
+        className={`rd-field${selectedStart ? " select-filled" : ""}`}
+        data-testid={`${idPrefix}-step-time`}
+      >
+        <select
+          id={`${pid}-time`}
+          name="meetingTime"
+          value={selectedStart}
+          onChange={onTimeChange}
+          aria-label="Freie Uhrzeit*"
+          data-testid={`${idPrefix}-time-select`}
+          required
+          disabled={!selectedDate || loadingSlots}
+        >
+          <option value="">
+            {!selectedDate
+              ? "Zuerst Datum"
+              : loadingSlots
+                ? "Lädt…"
+                : "Bitte wählen"}
+          </option>
+          {times.map((t) => (
+            <option key={t.start} value={t.start}>
+              {t.time_label}–{t.end_time_label}
+            </option>
+          ))}
+        </select>
+        <label htmlFor={`${pid}-time`}>Uhrzeit*</label>
+      </div>
+
       <div className="rd-field">
         <input
           id={`${pid}-first`}
@@ -183,6 +382,23 @@ export function DemoRequestForm({
           .
         </label>
       </div>
+      {submitError && (
+        <p
+          className="rd-field rd-field--full"
+          role="alert"
+          data-testid={`${idPrefix}-error`}
+          style={{
+            gridColumn: "1 / -1",
+            border: 0,
+            minHeight: 0,
+            marginTop: 12,
+            color: "#b91c1c",
+            fontSize: 14,
+          }}
+        >
+          {submitError}
+        </p>
+      )}
       <button
         type="submit"
         className="rd-submit"
@@ -195,10 +411,12 @@ export function DemoRequestForm({
 }
 
 /**
- * Partner / network logos — SVG wordmarks only with invert on dark bar.
+ * ARCHIVED 2026-08-04 — black sponsor / network card (rd-brands).
+ * Code retained for easy restore; not rendered on /request-demo.
+ * Partner logos: SVG wordmarks only with invert on dark bar.
  * Photo/AVIF marks (bmw.avif, mckinsey.avif) invert into white blobs; excluded.
  */
-const BRAND_LOGOS = [
+const ARCHIVED_BRAND_LOGOS = [
   { src: "/shared/logos/siemens.svg", alt: "Siemens", invert: true },
   { src: "/shared/logos/airbus.svg", alt: "Airbus", invert: true },
   {
@@ -212,6 +430,33 @@ const BRAND_LOGOS = [
     invert: true,
   },
 ];
+
+/** Flip to true to restore the black sponsor card under the hero. */
+const SHOW_ARCHIVED_BRANDS_SECTION = false;
+
+/** Archived black sponsor card — code kept; gated by SHOW_ARCHIVED_BRANDS_SECTION. */
+function ArchivedBrandsSection() {
+  return (
+    <section className="rd-brands" aria-label="TEG Netzwerk">
+      <div className="rd-brands-inner">
+        <div className="rd-brands-label">
+          Formate &amp; Partner im TEG-Netzwerk
+        </div>
+        <div className="rd-brands-logos">
+          {ARCHIVED_BRAND_LOGOS.map((logo) => (
+            <img
+              key={logo.src}
+              src={logo.src}
+              alt={logo.alt}
+              height={28}
+              className={logo.invert ? "rd-logo-invert" : undefined}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /** Single proof-strip facts (merged PROOF_CARDS + STATS + testimonial). */
 const PROOF_FACTS = [
@@ -234,83 +479,615 @@ const PROOF_FACTS = [
 
 /**
  * Final CV-approved journey media (t3 + t6 LI rebind).
- * S1 text-led; S5 fact strip only; card-*.jpg demoted (not primary heroes).
+ * card-*.jpg demoted (not primary heroes).
  * Local TEG photography preferred over scraped LinkedIn recap graphics.
  */
 const JOURNEY_MEDIA = {
   hero: {
     src: `${ASSET}/hero-bg.jpg`,
-    alt: "German Supply Chain Conference, Konferenzlocation",
+    alt: "Automation & Politics X Supply Chain Conference — Konferenzlocation mit Bühnen-LED",
     width: 1280,
     height: 720,
-  },
-  /** S2 Talent — densest reserved-seat conference floor */
-  talent: {
-    src: "/for-companies/acc-bild.jpeg",
-    alt: "Dicht besetzte TEG-Konferenz: Publikum mit Namensschildern, reservierte Plätze und Bühnenprogramm",
-    width: 1092,
-    height: 692,
-  },
-  /** S3 Host — smartvillage Location-Host panel (pure photo, not LI collage) */
-  host: {
-    src: "/for-companies/cooles-bild.jpeg",
-    alt: "TEG Industry Panel im smartvillage: Gastgeber-Branding, Corporate-Entrepreneurship-Banner und gemischtes Publikum unter Kronleuchtern",
-    width: 1170,
-    height: 758,
-  },
-  /** S4 Trust — founding press 1986 */
-  trust: {
-    src: "/about/heritage/zeitungsartikel.webp",
-    alt: "Historischer Zeitungsartikel: Elf Unternehmen gründen die Studentenvereinigung TEG e. V.",
-    width: 1200,
-    height: 900,
+    videoSrc: HERO_ZOOM_VIDEO,
   },
 } as const;
 
+/** AI Consulting Conference 2026 — Dropbox _DSC3377.zip slideshow (2.5s). */
+const AI_CONSULTING_SLIDES = [
+  {
+    src: `${ASSET}/ai-consulting-2026/slide-01.webp`,
+    alt: "AI Consulting Conference 2026 — Foto 1",
+    width: 1919,
+    height: 1280,
+  },
+  {
+    src: `${ASSET}/ai-consulting-2026/slide-02.webp`,
+    alt: "AI Consulting Conference 2026 — Foto 2",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    src: `${ASSET}/ai-consulting-2026/slide-03.webp`,
+    alt: "AI Consulting Conference 2026 — Foto 3",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    src: `${ASSET}/ai-consulting-2026/slide-04.webp`,
+    alt: "AI Consulting Conference 2026 — Foto 4",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    src: `${ASSET}/ai-consulting-2026/slide-05.webp`,
+    alt: "AI Consulting Conference 2026 — Foto 5",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    src: `${ASSET}/ai-consulting-2026/slide-06.webp`,
+    alt: "AI Consulting Conference 2026 — Foto 6",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    src: `${ASSET}/ai-consulting-2026/slide-07.webp`,
+    alt: "AI Consulting Conference 2026 — Foto 7",
+    width: 1920,
+    height: 1280,
+  },
+  {
+    src: `${ASSET}/ai-consulting-2026/slide-08.webp`,
+    alt: "AI Consulting Conference 2026 — Foto 8",
+    width: 1920,
+    height: 1280,
+  },
+] as const;
+
+const SLIDESHOW_INTERVAL_MS = 2500;
+
 /**
- * Exactly two stacked past conferences (Immersive Gardens vertical blocks).
- * Soft LinkedIn deep-links only — never embed LinkedIn UI 1:1.
- * S6 media: photographic Frontier Tech hall; AI Consulting Netlight host poster
- * (LI video frame too blurry; LI recap carousels keep chrome — rejected t6 CV).
+ * Exactly two full-viewport past conferences (heading only — no body copy).
+ * AI Consulting: 10. Juni 2026, Netlight / Netlight Studios, Prannerstraße 4, München.
+ * Frontier Tech: 10. Dezember 2025, MaibornWolff Drygalski-Allee 25, co-hosted TEG + PushQuantum.
  */
 const PAST_CONFERENCES = [
   {
-    src: "/events/converted/ai-consulting-conference-2026.webp",
+    id: "ai-consulting-2026",
     title: "AI Consulting Conference 2026",
-    meta: "10. Juni 2026 · Netlight Offices · München · Gastgeber Netlight",
-    href: "https://www.linkedin.com/feed/update/urn:li:activity:7481229528170704896",
-    alt: "Plakat AI Consulting Conference 2026: 10. Juni 2026, Netlight Offices München, Gastgeber Netlight",
-    width: 1200,
-    height: 1200,
+    slides: AI_CONSULTING_SLIDES,
+    /** Fallback single poster if slides empty */
+    src: AI_CONSULTING_SLIDES[0].src,
+    alt: "AI Consulting Conference 2026",
+    width: AI_CONSULTING_SLIDES[0].width,
+    height: AI_CONSULTING_SLIDES[0].height,
   },
   {
-    src: "/events/converted/frontier-tech-conference-2025.webp",
+    id: "frontier-tech-2025",
     title: "Frontier Tech Conference 2025",
-    meta: "10. Dezember 2025 · MaibornWolff · mit PushQuantum",
-    href: "https://www.linkedin.com/feed/update/urn:li:activity:7408770978320896000",
-    alt: "Frontier Tech Conference 2025: volles Publikum und Vortrag in industriellem Veranstaltungsraum",
+    slides: null,
+    src: "/events/converted/frontier-tech-conference-2025.webp",
+    alt: "Frontier Tech Conference 2025",
     width: 1600,
     height: 1067,
   },
 ] as const;
 
-const RequestDemo: React.FC = () => {
-  const [modalOpen, setModalOpen] = useState(false);
+type SlideItem = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
 
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
+/** Crossfade slideshow for past-conference media (interval ms fixed). */
+const ConferenceSlideshow: React.FC<{
+  slides: readonly SlideItem[];
+  intervalMs?: number;
+}> = ({ slides, intervalMs = SLIDESHOW_INTERVAL_MS }) => {
+  const [active, setActive] = useState(0);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduceMotion(mq.matches);
+    const onChange = () => setReduceMotion(mq.matches);
+    mq.addEventListener?.("change", onChange);
+    return () => mq.removeEventListener?.("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (slides.length <= 1 || reduceMotion) return;
+    const id = window.setInterval(() => {
+      setActive((i) => (i + 1) % slides.length);
+    }, intervalMs);
+    return () => window.clearInterval(id);
+  }, [slides.length, intervalMs, reduceMotion]);
+
+  return (
+    <div
+      className="rd-conference-slideshow"
+      data-testid="ai-consulting-slideshow"
+      data-slide-count={slides.length}
+      data-interval-ms={intervalMs}
+      aria-roledescription="carousel"
+      aria-label="AI Consulting Conference 2026 Fotos"
+    >
+      {slides.map((slide, i) => (
+        <img
+          key={slide.src}
+          className={
+            i === active
+              ? "rd-conference-slide rd-conference-slide--active"
+              : "rd-conference-slide"
+          }
+          src={slide.src}
+          alt={slide.alt}
+          width={slide.width}
+          height={slide.height}
+          loading={i === 0 ? "eager" : "lazy"}
+          decoding="async"
+          aria-hidden={i === active ? undefined : true}
+        />
+      ))}
+    </div>
+  );
+};
+
+const BOOKING_SECTION_ID = "termin-buchen";
+/** No-friction nudge: reveal hero CTA after this idle (no scroll) at top. */
+const HERO_CTA_IDLE_MS = 5000;
+
+const RequestDemo: React.FC = () => {
+  const [headerScrolled, setHeaderScrolled] = useState(false);
+  const [heroProgress, setHeroProgress] = useState(0);
+  /** Idle nudge revealed after HERO_CTA_IDLE_MS with no scroll at top. */
+  const [ctaRevealed, setCtaRevealed] = useState(false);
+  const heroPinRef = useRef<HTMLDivElement>(null);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const videoReadyRef = useRef(false);
+  const ctaRevealedRef = useRef(false);
+  const formatHeadingRef = useRef<HTMLHeadingElement>(null);
+  const formatPinRef = useRef<HTMLDivElement>(null);
+  const formatVideoRef = useRef<HTMLVideoElement>(null);
+  const formatVideoReadyRef = useRef(false);
+  const [formatPhase, setFormatPhase] = useState<
+    "idle" | "loaded-static" | "scrub"
+  >("idle");
+
+  /** Jump past scrub pin + journey to the bottom in-house booking block. */
+  const scrollToBooking = useCallback((e?: React.MouseEvent) => {
+    e?.preventDefault();
+    const el = document.getElementById(BOOKING_SECTION_ID);
+    if (!el) return;
+    const pageEl = document.querySelector(".rd-page");
+    const headerH =
+      parseFloat(
+        getComputedStyle(pageEl || document.body).getPropertyValue(
+          "--rd-header-h",
+        ),
+      ) || 92;
+    // Absolute Y accounts for tall sticky hero pin (scrollIntoView alone can undershoot)
+    const y = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
+    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+    try {
+      window.history.replaceState(null, "", `#${BOOKING_SECTION_ID}`);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  // Load Calendly embed script once (inline widget reads data-url on mount)
+  useEffect(() => {
+    const existing = document.querySelector<HTMLScriptElement>(
+      `script[src="${CALENDLY_SCRIPT}"]`,
+    );
+    if (existing) return;
+    const s = document.createElement("script");
+    s.src = CALENDLY_SCRIPT;
+    s.async = true;
+    document.body.appendChild(s);
+  }, []);
+
+  /**
+   * Low-friction CTA: hidden until the visitor sits still at the hero top
+   * for 5s (likely hasn't discovered scroll). Any scroll/wheel/touch resets
+   * the timer; leaving the top cancels until they return to the top.
+   */
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | null = null;
+
+    const atHeroTop = () =>
+      (typeof window !== "undefined" ? window.scrollY : 0) <= 12;
+
+    const clearIdle = () => {
+      if (timer !== null) {
+        clearTimeout(timer);
+        timer = null;
+      }
+    };
+
+    const armIdle = () => {
+      clearIdle();
+      if (ctaRevealedRef.current) return;
+      if (!atHeroTop()) return;
+      timer = setTimeout(() => {
+        timer = null;
+        if (!atHeroTop() || ctaRevealedRef.current) return;
+        ctaRevealedRef.current = true;
+        setCtaRevealed(true);
+      }, HERO_CTA_IDLE_MS);
+    };
+
+    const onScrollActivity = () => {
+      if (!atHeroTop()) {
+        clearIdle();
+        return;
+      }
+      if (!ctaRevealedRef.current) armIdle();
+    };
+
+    armIdle();
+    window.addEventListener("scroll", onScrollActivity, { passive: true });
+    window.addEventListener("wheel", onScrollActivity, { passive: true });
+    window.addEventListener("touchmove", onScrollActivity, { passive: true });
+    window.addEventListener("keydown", onScrollActivity);
+
+    return () => {
+      clearIdle();
+      window.removeEventListener("scroll", onScrollActivity);
+      window.removeEventListener("wheel", onScrollActivity);
+      window.removeEventListener("touchmove", onScrollActivity);
+      window.removeEventListener("keydown", onScrollActivity);
+    };
+  }, []);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    const pin = heroPinRef.current;
+    if (!video || !pin) return;
+
+    let alive = true;
+    let seeking = false;
+    let targetT = 0;
+    let lastUi = -1;
+    /** Last applied glass flag — update immediately on finished-edge cross. */
+    let lastGlass = false;
+    let raf = 0;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.preload = "auto";
+    video.pause();
+
+    const markReady = () => {
+      videoReadyRef.current = true;
+      video.pause();
+      seeking = false;
+    };
+    if (video.readyState >= 1) markReady();
+    video.addEventListener("loadedmetadata", markReady);
+    video.addEventListener("loadeddata", markReady);
+    video.addEventListener("canplay", markReady);
+
+    const onSeeked = () => {
+      seeking = false;
+      // Immediately apply latest target if scroll moved during seek
+      if (
+        videoReadyRef.current &&
+        Math.abs(video.currentTime - targetT) > 1 / 90
+      ) {
+        seeking = true;
+        try {
+          video.currentTime = targetT;
+        } catch {
+          seeking = false;
+        }
+      }
+    };
+    video.addEventListener("seeked", onSeeked);
+
+    const tick = () => {
+      if (!alive) return;
+      raf = 0;
+
+      const rect = pin.getBoundingClientRect();
+      const progress = heroPinProgress(
+        rect.top,
+        pin.offsetHeight,
+        window.innerHeight,
+      );
+
+      // DOM attribute always live (no React batching lag)
+      pin.dataset.progress = progress.toFixed(3);
+
+      // Poster still stays under the video as first-paint fallback only.
+      // Never hide the video during seeks — displayed frame must update live.
+      const fallback = pin.querySelector<HTMLElement>(".rd-hero-bg-fallback");
+      if (fallback) {
+        fallback.style.opacity = videoReadyRef.current ? "0" : "1";
+      }
+      // Video layer stays fully visible once metadata is ready (all-intra seeks).
+      video.style.opacity = videoReadyRef.current ? "1" : "0";
+
+      // Green wash: linear fade-out, gone by 50% playtime
+      const overlay = pin.querySelector<HTMLElement>(".rd-hero-overlay");
+      if (overlay) {
+        overlay.style.opacity = String(heroOverlayOpacity(progress));
+      }
+
+      // Hero CTA: hidden until idle reveal; then solid→fade with scrub (40–50%)
+      const formLayer = pin.querySelector<HTMLElement>(".rd-hero-inner");
+      if (formLayer) {
+        const formOp = ctaRevealedRef.current ? heroFormOpacity(progress) : 0;
+        formLayer.style.opacity = String(formOp);
+        formLayer.style.pointerEvents =
+          formOp <= 0.01 || !ctaRevealedRef.current ? "none" : "auto";
+      }
+
+      if (videoReadyRef.current) {
+        const duration = video.duration;
+        if (Number.isFinite(duration) && duration > 0) {
+          if (!video.paused) video.pause();
+          targetT = progressToVideoTime(progress, duration);
+          if (!seeking && Math.abs(video.currentTime - targetT) > 1 / 90) {
+            seeking = true;
+            try {
+              video.currentTime = targetT;
+            } catch {
+              seeking = false;
+            }
+          }
+        }
+      }
+
+      // Glass header: only after sticky hero scrub finishes (progress ≥ 1).
+      // Apply immediately on the finished edge — never skip via UI throttle.
+      const glassOn = headerGlassEligible(progress);
+      if (glassOn !== lastGlass) {
+        lastGlass = glassOn;
+        setHeaderScrolled(glassOn);
+      }
+
+      // Other React UI (progress display) stays throttled.
+      if (Math.abs(progress - lastUi) >= 0.01) {
+        lastUi = progress;
+        setHeroProgress(progress);
+      }
+
+      // Always keep rAF alive while the pin intersects the viewport
+      const visible = rect.bottom > 0 && rect.top < window.innerHeight + 4;
+      if (visible || seeking || progress < 1) {
+        raf = window.requestAnimationFrame(tick);
+      }
+    };
+
+    const kick = () => {
+      if (!raf) raf = window.requestAnimationFrame(tick);
+    };
+
+    window.addEventListener("scroll", kick, { passive: true });
+    window.addEventListener("wheel", kick, { passive: true });
+    window.addEventListener("touchmove", kick, { passive: true });
+    window.addEventListener("resize", kick);
+    kick();
+
+    return () => {
+      alive = false;
+      window.removeEventListener("scroll", kick);
+      window.removeEventListener("wheel", kick);
+      window.removeEventListener("touchmove", kick);
+      window.removeEventListener("resize", kick);
+      video.removeEventListener("loadedmetadata", markReady);
+      video.removeEventListener("loadeddata", markReady);
+      video.removeEventListener("canplay", markReady);
+      video.removeEventListener("seeked", onSeeked);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  // Format section: load when header crosses "Das TEG Konferenz Format";
+  // static until header hits video top; then sticky scrub like hero.
+  useEffect(() => {
+    const heading = formatHeadingRef.current;
+    const pin = formatPinRef.current;
+    const video = formatVideoRef.current;
+    if (!heading || !pin || !video) return;
+
+    let alive = true;
+    let seeking = false;
+    let seekStartedAt = 0;
+    let targetT = 0;
+    let raf = 0;
+    let lastPhase: "idle" | "loaded-static" | "scrub" = "idle";
+    let srcAttached = false;
+    /** One-shot first-frame hold after metadata (do not re-zero on canplay). */
+    let heldFirstFrame = false;
+
+    const headerEl = () =>
+      document.querySelector<HTMLElement>(".rd-header") || null;
+
+    const attachSrc = () => {
+      if (srcAttached) return;
+      video.src = FORMAT_SCRUB_VIDEO;
+      video.load();
+      srcAttached = true;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      video.pause();
+    };
+
+    // Mirror hero: ready flag only — never reset currentTime here (canplay
+    // re-fires after seeks and would pin scrub time back to 0).
+    const markReady = () => {
+      formatVideoReadyRef.current = true;
+      video.pause();
+      seeking = false;
+      if (!heldFirstFrame) {
+        heldFirstFrame = true;
+        targetT = 0;
+        try {
+          if (video.currentTime > 0.001) {
+            seeking = true;
+            seekStartedAt = performance.now();
+            video.currentTime = 0;
+          }
+        } catch {
+          seeking = false;
+        }
+      }
+    };
+
+    const onSeeked = () => {
+      seeking = false;
+      if (
+        formatVideoReadyRef.current &&
+        Math.abs(video.currentTime - targetT) > 1 / 90
+      ) {
+        seeking = true;
+        seekStartedAt = performance.now();
+        try {
+          video.currentTime = targetT;
+        } catch {
+          seeking = false;
+        }
+      }
+    };
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.preload = "auto";
+    video.pause();
+    if (video.readyState >= 1) markReady();
+    video.addEventListener("loadedmetadata", markReady);
+    video.addEventListener("loadeddata", markReady);
+    video.addEventListener("canplay", markReady);
+    video.addEventListener("seeked", onSeeked);
+
+    const tick = () => {
+      if (!alive) return;
+      raf = 0;
+      const header = headerEl();
+      const media = pin.querySelector<HTMLElement>(".rd-format-video-media");
+      if (!header || !media) {
+        raf = window.requestAnimationFrame(tick);
+        return;
+      }
+      const headerBottom = header.getBoundingClientRect().bottom;
+      const headingTop = heading.getBoundingClientRect().top;
+      // Prefer pin top as the section's upper edge (stable under sticky child).
+      const videoTop = pin.getBoundingClientRect().top;
+      const phase = formatVideoPhase(headerBottom, headingTop, videoTop);
+
+      if (phase !== lastPhase) {
+        lastPhase = phase;
+        setFormatPhase(phase);
+        pin.dataset.formatPhase = phase;
+      }
+
+      if (formatVideoShouldLoad(phase)) {
+        attachSrc();
+        if (video.readyState >= 1 && !formatVideoReadyRef.current) markReady();
+      }
+
+      if (!video.paused) video.pause();
+      // Opacity: visible once ready and past idle (asset loaded)
+      video.style.opacity =
+        formatVideoShouldLoad(phase) && formatVideoReadyRef.current ? "1" : "0";
+
+      // Recover stuck seeking (sparse network / browser no seeked)
+      if (seeking && performance.now() - seekStartedAt > 280) {
+        seeking = false;
+      }
+
+      if (formatVideoScrubActive(phase) && formatVideoReadyRef.current) {
+        // Same pin progress as hero (sticky runway container rect)
+        const progress = heroPinProgress(
+          pin.getBoundingClientRect().top,
+          pin.offsetHeight,
+          window.innerHeight,
+        );
+        pin.dataset.progress = progress.toFixed(3);
+        const duration = video.duration;
+        if (Number.isFinite(duration) && duration > 0) {
+          targetT = progressToVideoTime(progress, duration);
+          if (!seeking && Math.abs(video.currentTime - targetT) > 1 / 90) {
+            seeking = true;
+            seekStartedAt = performance.now();
+            try {
+              video.currentTime = targetT;
+            } catch {
+              seeking = false;
+            }
+          }
+        }
+      } else if (formatVideoShouldLoad(phase) && formatVideoReadyRef.current) {
+        // Static: hold first frame until scrub gate
+        targetT = 0;
+        if (!seeking && video.currentTime > 0.02) {
+          seeking = true;
+          seekStartedAt = performance.now();
+          try {
+            video.currentTime = 0;
+          } catch {
+            seeking = false;
+          }
+        }
+        pin.dataset.progress = "0.000";
+      } else {
+        pin.dataset.progress = "0.000";
+      }
+
+      const pinRect = pin.getBoundingClientRect();
+      const visible =
+        pinRect.bottom > 0 && pinRect.top < window.innerHeight + 4;
+      if (visible || seeking || lastPhase !== "idle") {
+        raf = window.requestAnimationFrame(tick);
+      }
+    };
+
+    const kick = () => {
+      if (!raf) raf = window.requestAnimationFrame(tick);
+    };
+
+    window.addEventListener("scroll", kick, { passive: true });
+    window.addEventListener("wheel", kick, { passive: true });
+    window.addEventListener("touchmove", kick, { passive: true });
+    window.addEventListener("resize", kick);
+    kick();
+
+    return () => {
+      alive = false;
+      window.removeEventListener("scroll", kick);
+      window.removeEventListener("wheel", kick);
+      window.removeEventListener("touchmove", kick);
+      window.removeEventListener("resize", kick);
+      video.removeEventListener("loadedmetadata", markReady);
+      video.removeEventListener("loadeddata", markReady);
+      video.removeEventListener("canplay", markReady);
+      video.removeEventListener("seeked", onSeeked);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
+  }, []);
 
   return (
     <div className="rd-page" data-testid="request-demo-page">
-      <header className="rd-header" role="banner">
+      <header
+        className={`rd-header${headerScrolled ? " rd-header--scrolled" : ""}`}
+        role="banner"
+        data-scrolled={headerScrolled ? "true" : "false"}
+      >
         <div className="rd-header-inner">
           <a href="https://teg-ev.de/" aria-label="TEG e.V. Startseite">
             <img
               className="rd-logo"
               src={`${ASSET}/teg-logo-white.svg`}
               alt="TEG e.V., The Entrepreneurial Group"
-              width={224}
-              height={64}
+              width={246}
+              height={70}
             />
           </a>
           <div className="rd-header-actions">
@@ -320,7 +1097,9 @@ const RequestDemo: React.FC = () => {
             <button
               type="button"
               className="rd-btn-header-demo"
-              onClick={openModal}
+              onClick={scrollToBooking}
+              data-booking-cta="scroll-to-termin-buchen"
+              data-testid="header-gespraech-buchen"
             >
               Gespräch buchen
             </button>
@@ -329,291 +1108,295 @@ const RequestDemo: React.FC = () => {
       </header>
 
       <main>
-        {/* Hero — frozen structure; only headcount ca. 150 → ca. 125 */}
-        <section className="rd-hero" aria-label="Hero">
-          <img
-            className="rd-hero-bg"
-            src={JOURNEY_MEDIA.hero.src}
-            alt={JOURNEY_MEDIA.hero.alt}
-            width={JOURNEY_MEDIA.hero.width}
-            height={JOURNEY_MEDIA.hero.height}
-          />
-          <div className="rd-hero-overlay" aria-hidden="true" />
-          <div className="rd-hero-inner">
-            <div>
-              <h4 className="rd-eyebrow">
-                German Supply Chain Conference 2026
-              </h4>
-              <h1 className="rd-h1">
-                Hosten Sie die Konferenz. Gewinnen Sie Talente.
-              </h1>
-              <p className="rd-hero-copy">
-                Ihr Standort. Ein Tag mit ca. 125 ausgewählten Young
-                Professionals aus Supply Chain und angrenzenden Bereichen:
-                positive PR und direkter Recruiting-Zugang in einem etablierten
-                TEG-Format. 8. Dezember 2026, München.
-              </p>
+        {/* Sticky hero: pin until scroll-scrubbed zoom video finishes */}
+        <div
+          className="rd-hero-scroll"
+          ref={heroPinRef}
+          data-testid="hero-scroll-pin"
+          data-progress={heroProgress.toFixed(3)}
+          style={
+            {
+              "--rd-hero-runway": `${HERO_SCROLL_RUNWAY_VH}vh`,
+            } as React.CSSProperties
+          }
+        >
+          <section className="rd-hero" aria-label="Hero">
+            <video
+              ref={heroVideoRef}
+              className="rd-hero-bg rd-hero-bg-video"
+              src={JOURNEY_MEDIA.hero.videoSrc}
+              poster={JOURNEY_MEDIA.hero.src}
+              muted
+              playsInline
+              preload="auto"
+              autoPlay={false}
+              controls={false}
+              disablePictureInPicture
+              aria-label={JOURNEY_MEDIA.hero.alt}
+              data-testid="hero-zoom-video"
+            />
+            {/* Static fallback under video if first frame not ready */}
+            <img
+              className="rd-hero-bg rd-hero-bg-fallback"
+              src={JOURNEY_MEDIA.hero.src}
+              alt=""
+              width={JOURNEY_MEDIA.hero.width}
+              height={JOURNEY_MEDIA.hero.height}
+              aria-hidden="true"
+            />
+            <div
+              className="rd-hero-overlay"
+              aria-hidden="true"
+              data-testid="hero-overlay"
+            />
+            <div
+              className={
+                "rd-hero-inner rd-hero-inner--cta-only" +
+                (ctaRevealed ? " rd-hero-inner--cta-revealed" : "")
+              }
+              data-testid="hero-form-layer"
+              data-cta-revealed={ctaRevealed ? "true" : "false"}
+              aria-hidden={!ctaRevealed}
+            >
+              <button
+                type="button"
+                className="rd-garden-cta"
+                onClick={scrollToBooking}
+                data-booking-cta="scroll-to-termin-buchen"
+                data-testid="hero-gespraech-buchen"
+                aria-label="Gespräch buchen — zum Termin am Seitenende"
+                tabIndex={ctaRevealed ? 0 : -1}
+              >
+                <span className="rd-garden-cta-halo" aria-hidden="true" />
+                <span className="rd-garden-cta-label">
+                  Gespräch Buchen
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 16 16"
+                    className="rd-garden-cta-arrow"
+                  >
+                    <path
+                      d="M3 6l5 5 5-5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
             </div>
-            <div className="rd-form-card">
-              <h3 className="rd-form-title">Persönliches Gespräch</h3>
-              <DemoRequestForm idPrefix="hero" />
-            </div>
+          </section>
+        </div>
+
+        {/*
+          ARCHIVED 2026-08-04: black sponsor card.
+          Restore: set SHOW_ARCHIVED_BRANDS_SECTION to true (or render <ArchivedBrandsSection />).
+        */}
+        {SHOW_ARCHIVED_BRANDS_SECTION ? <ArchivedBrandsSection /> : null}
+
+        {/* Post-hero: TEG conference format thesis */}
+        <section
+          className="rd-format"
+          aria-label="Das TEG Konferenz Format"
+          data-section="format"
+          data-testid="format-section"
+        >
+          <div className="rd-format-inner">
+            <p className="rd-garden-kicker">Konferenzformat</p>
+            <h2
+              className="rd-format-title"
+              ref={formatHeadingRef}
+              data-testid="format-heading"
+            >
+              Das TEG Konferenz Format
+            </h2>
+            <p className="rd-format-lead">
+              Das TEG Konferenz Format ist ein ganztägiges, industriebezogenes
+              Summit: rund 150 Verantwortliche und Entscheidungsträger der
+              jeweiligen Industrie als Gäste und 10–20 Vorstände aus der
+              Industrie als Speaker.
+            </p>
+            <p className="rd-format-body">
+              Im Mittelpunkt steht kuratierter Wissensübertrag, der unterhaltsam
+              vermittelt wird, inklusive reichlicher Tagesverpflegung. So sollen
+              Lernen und Netzwerken der Fach- und Führungsverantwortlichen nach
+              bestem Wissen und Gewissen möglich werden.
+            </p>
           </div>
         </section>
 
-        {/* Slim network strip — not a content thesis */}
-        <section className="rd-brands" aria-label="TEG Netzwerk">
-          <div className="rd-brands-inner">
-            <div className="rd-brands-label">
-              Formate &amp; Partner im TEG-Netzwerk
-            </div>
-            <div className="rd-brands-logos">
-              {BRAND_LOGOS.map((logo) => (
-                <img
-                  key={logo.src}
-                  src={logo.src}
-                  alt={logo.alt}
-                  height={28}
-                  className={logo.invert ? "rd-logo-invert" : undefined}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Format sticky scrub: load when header crosses heading; scrub when
+            header crosses this section top (same pin math as hero). */}
+        <div
+          className="rd-format-video-scroll"
+          ref={formatPinRef}
+          data-testid="format-video-pin"
+          data-format-phase={formatPhase}
+          style={
+            {
+              "--rd-format-runway": `${FORMAT_SCROLL_RUNWAY_VH}vh`,
+            } as React.CSSProperties
+          }
+        >
+          <section
+            className="rd-format-video-media"
+            aria-label="TEG Konferenz Format Video"
+            data-section="format-video"
+            data-testid="format-video-section"
+          >
+            {/* Always mounted so scrub ref/listeners stay stable; src attaches
+                only after header crosses the format heading (idle → load). */}
+            <video
+              ref={formatVideoRef}
+              className="rd-format-video-el"
+              muted
+              playsInline
+              preload="none"
+              autoPlay={false}
+              controls={false}
+              disablePictureInPicture
+              data-testid="format-scrub-video"
+              data-format-phase={formatPhase}
+              aria-label="TEG Konferenz Format — scroll-gekoppeltes Video"
+              style={{ opacity: formatPhase === "idle" ? 0 : undefined }}
+            />
+            {formatPhase === "idle" ? (
+              <div
+                className="rd-format-video-placeholder"
+                data-testid="format-video-placeholder"
+                aria-hidden="true"
+              />
+            ) : null}
+          </section>
+        </div>
 
-        {/* ——— Vertical Immersive Gardens journey (one thesis per section) ——— */}
+        {/* ——— Vertical journey: proof + two full-screen past conferences ——— */}
         <div className="rd-journey" data-testid="rd-journey">
-          {/* S1 Pain — solvable employer-brand + talent-access only; no TEG package */}
+          {/* S1 Pain shell retained as empty marker for layout continuity */}
           <section
-            className="rd-garden rd-garden--pain"
-            aria-label="Der blinde Fleck"
+            className="rd-garden rd-garden--pain rd-garden--pain-collapsed"
+            aria-label="Pain section"
             data-section="pain"
-          >
-            <div className="rd-garden-text">
-              <p className="rd-garden-kicker">Der blinde Fleck</p>
-              <h2 className="rd-garden-title">
-                Wenn Logistik nur Kosten, Lärm und Verkehr heißt
-              </h2>
-              <p className="rd-garden-lead">
-                Viele Logistikunternehmen haben wenig positive Öffentlichkeit.
-                Das Image aus Kosten, Lärm und Verkehr prägt, wie Nachwuchs und
-                digital-affine Supply-Chain-Talente den Standort sehen — lange
-                bevor ein Inserat wirkt.
-              </p>
-              <ul className="rd-garden-list">
-                <li>
-                  Image-Stigma: Kosten, Lärm, Verkehr statt Arbeitgebermarke und
-                  Karriereort.
-                </li>
-                <li>
-                  Talentzugang: kuratierte Young Professionals und SC-nahe
-                  Profile sind umkämpft und selten am Standort greifbar.
-                </li>
-                <li>
-                  Pipeline-Druck: dünne Bewerberlage treibt Hiring-Aufwand und
-                  Vergütungsdruck — aus Mangel an Sichtbarkeit und Zugang.
-                </li>
-              </ul>
-              <p className="rd-garden-close">
-                Wer in der Öffentlichkeit unsichtbar bleibt, zahlt später im
-                Recruiting.
-              </p>
-            </div>
-          </section>
+            data-testid="pain-section"
+          />
 
-          {/* S2 Talent — ca. 125 curated YPs, recruiting access only */}
-          <section
-            className="rd-garden rd-garden--talent"
-            aria-label="Recruiting-Zugang"
-            data-section="talent"
-          >
-            <div className="rd-garden-media">
-              <img
-                src={JOURNEY_MEDIA.talent.src}
-                alt={JOURNEY_MEDIA.talent.alt}
-                width={JOURNEY_MEDIA.talent.width}
-                height={JOURNEY_MEDIA.talent.height}
-                loading="lazy"
-              />
-            </div>
-            <div className="rd-garden-text">
-              <p className="rd-garden-kicker">Recruiting-Zugang</p>
-              <h2 className="rd-garden-title">
-                Ca. 125 Young Professionals — ein Tag bei Ihnen
-              </h2>
-              <p className="rd-garden-lead">
-                Ausgewählte Masterstudierende und junge Erwachsene kurz vor der
-                ersten Fach- oder Führungsrolle, mit Bezug zu Supply Chain und
-                angrenzenden Funktionen, verbringen einen Konferenztag an Ihrem
-                Standort. Zugang durch Bewerbung und Auswahl — kein offener
-                Massenverkauf.
-              </p>
-              <p className="rd-garden-body">
-                Für Ihren Recruiting-Trichter zählt der persönliche Kontakt vor
-                Ort: Gespräche, Einblicke, Namen und Gesichter — ohne dass die
-                Konferenz selbst zum Assessment-Center wird.
-              </p>
-            </div>
-          </section>
-
-          {/* S3 Host mechanics — venue / branding / TEG supplies program */}
-          <section
-            className="rd-garden rd-garden--host"
-            aria-label="Ihre Rolle als Gastgeber"
-            data-section="host"
-          >
-            <div className="rd-garden-media">
-              <img
-                src={JOURNEY_MEDIA.host.src}
-                alt={JOURNEY_MEDIA.host.alt}
-                width={JOURNEY_MEDIA.host.width}
-                height={JOURNEY_MEDIA.host.height}
-                loading="lazy"
-              />
-            </div>
-            <div className="rd-garden-text">
-              <p className="rd-garden-kicker">Ihre Rolle als Gastgeber</p>
-              <h2 className="rd-garden-title">
-                Raum und Präsenz. Format und Publikum bringt TEG
-              </h2>
-              <p className="rd-garden-lead">
-                Sie stellen einen geeigneten Konferenzort in oder um München für
-                den Veranstaltungstag. Ihr Unternehmen wird als Location-Host
-                wahrgenommen — mit Branding und Begrüßung im Format.
-              </p>
-              <p className="rd-garden-body">
-                Optional: Einblicke in Betrieb und Kultur, ohne Verkaufsdruck.
-                TEG liefert Auswahl, Agenda und das kuratierte Publikum.
-              </p>
-            </div>
-          </section>
-
-          {/* S4 Trust — since 1986, selection, educational craft */}
-          <section
-            className="rd-garden rd-garden--trust"
-            aria-label="Warum TEG"
-            data-section="trust"
-          >
-            <div className="rd-garden-media rd-garden-media--doc">
-              <img
-                src={JOURNEY_MEDIA.trust.src}
-                alt={JOURNEY_MEDIA.trust.alt}
-                width={JOURNEY_MEDIA.trust.width}
-                height={JOURNEY_MEDIA.trust.height}
-                loading="lazy"
-              />
-            </div>
-            <div className="rd-garden-text">
-              <p className="rd-garden-kicker">Warum TEG</p>
-              <h2 className="rd-garden-title">
-                Gemeinnützig. Seit 1986. Auswahl statt Massenverkauf
-              </h2>
-              <p className="rd-garden-lead">
-                TEG e. V. ist ein gemeinnütziger Münchner Verein für
-                Erwachsenenbildung und Führungskräftenachwuchs — kein ad-hoc
-                Eventanbieter. Qualität im Raum entsteht durch Bewerbung und
-                Auswahl, nicht durch Ticketvolumen.
-              </p>
-              <p className="rd-garden-body">
-                Das Konferenzformat verbindet Vorträge, Panels und Workshops mit
-                bildendem Anspruch: ein Tag, der Inhalt und Begegnung trägt —
-                handwerklich geführt, nicht als Messe umetikettiert.
-              </p>
-            </div>
-          </section>
-
-          {/* S5 Single proof strip — facts + organisers */}
-          <section
-            className="rd-proof-strip"
-            aria-label="Konferenz auf einen Blick"
-            data-section="proof"
-          >
-            <div className="rd-proof-strip-inner">
-              <p className="rd-proof-kicker">
-                German Supply Chain Conference 2026
-              </p>
-              <h2 className="rd-proof-title">
-                Fakten. Offen. Ansprechpartner.
-              </h2>
-              <ul className="rd-proof-metrics">
-                {PROOF_FACTS.map((f) => (
-                  <li key={f.metric} className="rd-proof-metric">
-                    <span className="rd-proof-number">{f.metric}</span>
-                    <span className="rd-proof-label">{f.label}</span>
-                    <span className="rd-proof-meta">{f.meta}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="rd-proof-people">
-                <p>
-                  <strong>Conference Team Leads:</strong> Corbinian Massinger
-                  &amp; Leonard Beckmann
-                </p>
-                <p>
-                  <strong>Head of Strategie &amp; Partners:</strong> Jonathan
-                  Babelotzky
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* S6 Two stacked past conferences — not a 6-tile bento */}
+          {/* Two full-viewport past conferences — heading only; 27% aside for future copy */}
           <section
             className="rd-past-conferences"
             aria-label="Bisherige TEG-Konferenzen"
             data-section="past-conferences"
           >
-            <div className="rd-past-conferences-intro">
-              <p className="rd-garden-kicker">Konferenzformat</p>
-              <h2 className="rd-garden-title">
-                Das Konferenzformat ist eines der größten TEG-Eventformate
-              </h2>
-              <p className="rd-garden-lead">
-                Hier die beiden letzten Konferenzen — als Beleg für den
-                Gastgeber-Tag bei Unternehmen vor Ort.
-              </p>
-            </div>
-
-            {PAST_CONFERENCES.map((conf) => (
+            {PAST_CONFERENCES.map((conf, index) => (
               <article
-                key={conf.title}
-                className="rd-past-conference"
+                key={conf.id}
+                className={
+                  index % 2 === 0
+                    ? "rd-past-conference rd-past-conference--media-left"
+                    : "rd-past-conference rd-past-conference--media-right"
+                }
                 data-conference={conf.title}
+                data-conference-id={conf.id}
               >
-                <div className="rd-garden-media">
-                  <img
-                    src={conf.src}
-                    alt={conf.alt}
-                    width={conf.width}
-                    height={conf.height}
-                    loading="lazy"
-                  />
+                <div className="rd-garden-media rd-past-conference-media">
+                  {conf.slides ? (
+                    <ConferenceSlideshow
+                      slides={conf.slides}
+                      intervalMs={SLIDESHOW_INTERVAL_MS}
+                    />
+                  ) : (
+                    <img
+                      src={conf.src}
+                      alt={conf.alt}
+                      width={conf.width}
+                      height={conf.height}
+                      loading="lazy"
+                    />
+                  )}
+                  <h2 className="rd-past-conference-title">{conf.title}</h2>
                 </div>
-                <div className="rd-garden-text">
-                  <h3 className="rd-past-conference-title">{conf.title}</h3>
-                  <p className="rd-past-conference-meta">{conf.meta}</p>
-                  <a
-                    className="rd-past-conference-link"
-                    href={conf.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Beitrag auf LinkedIn
-                  </a>
-                </div>
+                {/* Reserved 27% column for future text — no placeholder copy */}
+                <div
+                  className="rd-past-conference-aside"
+                  data-testid="past-conference-aside"
+                  aria-hidden="true"
+                />
               </article>
             ))}
           </section>
         </div>
 
-        {/* Bottom conversion form — sparse CTAs: header + hero + bottom + modal only */}
-        <section className="rd-cta-band-wrap" aria-label="Gesprächsformular">
+        {/* Proof strip directly above the booking calendar */}
+        <section
+          className="rd-proof-strip"
+          aria-label="Konferenz auf einen Blick"
+          data-section="proof"
+        >
+          <div className="rd-proof-strip-inner">
+            <h2 className="rd-proof-title">
+              Automation &amp; Politics X Supply Chain conference
+            </h2>
+            <ul className="rd-proof-metrics">
+              {PROOF_FACTS.map((f) => (
+                <li key={f.metric} className="rd-proof-metric">
+                  <span className="rd-proof-number">{f.metric}</span>
+                  <span className="rd-proof-label">{f.label}</span>
+                  <span className="rd-proof-meta">{f.meta}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="rd-proof-people">
+              <p>
+                <strong>Conference Team Leads:</strong> Corbinian Massinger
+                &amp; Leonard Beckmann
+              </p>
+              <p>
+                <strong>Head of Strategie &amp; Partners:</strong> Jonathan
+                Babelotzky
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Bottom booking: Calendly (full height) + host photo to the right */}
+        <section
+          id={BOOKING_SECTION_ID}
+          className="rd-cta-band-wrap rd-cta-band-wrap--scheduler"
+          aria-label="Termin buchen"
+          data-testid="bottom-conversion-form"
+        >
           <div
-            className="rd-form-card"
-            style={{ maxWidth: 720, margin: "0 auto" }}
+            className="rd-calendly-layout"
+            data-testid="calendly-booking-layout"
           >
-            <h3 className="rd-form-title">Unverbindliches Gespräch</h3>
-            <DemoRequestForm idPrefix="bottom" />
+            <div className="rd-calendly-main">
+              <div
+                className="calendly-inline-widget"
+                data-url={CALENDLY_URL}
+                data-testid="calendly-inline-widget"
+                style={{ minWidth: 320, height: "100%" }}
+              />
+            </div>
+            <aside
+              className="rd-calendly-aside"
+              data-testid="calendly-hosts-photo"
+            >
+              <figure className="rd-calendly-hosts-photo">
+                <img
+                  src={HOSTS_PHOTO}
+                  alt="Leonard Beckmann und Corbinian Massinger"
+                  width={960}
+                  height={720}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <p className="rd-calendly-hosts-caption">
+                Mit <strong>Corbinian Massinger</strong> &amp;{" "}
+                <strong>Leonard Beckmann</strong>
+              </p>
+            </aside>
           </div>
         </section>
       </main>
@@ -624,34 +1407,6 @@ const RequestDemo: React.FC = () => {
         <a href="/imprint">Impressum</a>
         <a href="https://teg-ev.de/">teg-ev.de</a>
       </footer>
-
-      {modalOpen ? (
-        <div
-          className="rd-modal-backdrop"
-          role="presentation"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) closeModal();
-          }}
-        >
-          <div
-            className="rd-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Persönliches Gespräch"
-          >
-            <button
-              type="button"
-              className="rd-modal-close"
-              onClick={closeModal}
-              aria-label="Schließen"
-            >
-              ×
-            </button>
-            <h3 className="rd-form-title">Persönliches Gespräch</h3>
-            <DemoRequestForm idPrefix="modal" onLocalSubmit={closeModal} />
-          </div>
-        </div>
-      ) : null}
     </div>
   );
 };
@@ -665,11 +1420,10 @@ export default RequestDemo;
 export const REQUEST_DEMO_LOCAL_ASSETS = [
   `${ASSET}/teg-logo-white.svg`,
   JOURNEY_MEDIA.hero.src,
-  JOURNEY_MEDIA.talent.src,
-  JOURNEY_MEDIA.host.src,
-  JOURNEY_MEDIA.trust.src,
-  PAST_CONFERENCES[0].src,
+  HERO_ZOOM_VIDEO,
+  ...AI_CONSULTING_SLIDES.map((s) => s.src),
   PAST_CONFERENCES[1].src,
+  HOSTS_PHOTO,
 ] as const;
 
 /** Demoted stock cards — not journey primary heroes (t3/t6 multi-pass CV). */
@@ -682,7 +1436,6 @@ export const REQUEST_DEMO_DEMOTED_CARD_ASSETS = [
 
 /** Locked conversion phrases — keep in sync with scripts/verify-request-demo.mjs REQUIRED_COPY. */
 export const LOCATION_LP_REQUIRED_PHRASES = [
-  "Hosten Sie die Konferenz",
   "Persönliches Gespräch",
   "Supply Chain",
   "Gastgeber",
@@ -691,10 +1444,10 @@ export const LOCATION_LP_REQUIRED_PHRASES = [
   "2026",
   "Gespräch buchen",
   "TEG e. V.",
-  "Unverbindliches Gespräch",
   "German Supply Chain Conference",
   "Privacy Optin",
   "Gespräch anfragen",
+  "Politics X Supply Chain Conference",
 ] as const;
 
 export const LOCATION_LP_BANNED_PHRASES = [

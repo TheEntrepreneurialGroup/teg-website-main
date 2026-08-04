@@ -114,6 +114,9 @@ function App() {
         </Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/imprint" element={<Imprint />} />
+        {/* Supply Chain Conference location-host LP (production path) */}
+        <Route path="/supplychain" element={<RequestDemo />} />
+        {/* Dev / legacy alias — same page as /supplychain */}
         <Route path="/request-demo" element={<RequestDemo />} />
       </Routes>
     </IntlProvider>
