@@ -1282,20 +1282,16 @@ const RequestDemo: React.FC = () => {
             data-testid="pain-section"
           />
 
-          {/* Two full-viewport past conferences — heading only; 27% aside for future copy */}
+          {/* Two full-viewport past conferences — media/slideshow edge-to-edge */}
           <section
             className="rd-past-conferences"
             aria-label="Bisherige TEG-Konferenzen"
             data-section="past-conferences"
           >
-            {PAST_CONFERENCES.map((conf, index) => (
+            {PAST_CONFERENCES.map((conf) => (
               <article
                 key={conf.id}
-                className={
-                  index % 2 === 0
-                    ? "rd-past-conference rd-past-conference--media-left"
-                    : "rd-past-conference rd-past-conference--media-right"
-                }
+                className="rd-past-conference"
                 data-conference={conf.title}
                 data-conference-id={conf.id}
               >
@@ -1316,12 +1312,6 @@ const RequestDemo: React.FC = () => {
                   )}
                   <h2 className="rd-past-conference-title">{conf.title}</h2>
                 </div>
-                {/* Reserved 27% column for future text — no placeholder copy */}
-                <div
-                  className="rd-past-conference-aside"
-                  data-testid="past-conference-aside"
-                  aria-hidden="true"
-                />
               </article>
             ))}
           </section>

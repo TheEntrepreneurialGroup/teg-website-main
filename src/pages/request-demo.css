@@ -1290,53 +1290,39 @@
   }
 }
 
-/* ——— Past conferences: full-viewport, 73% image + 27% reserved whitespace ——— */
+/* ——— Past conferences: full-viewport edge-to-edge media / slideshow ——— */
 .rd-past-conferences {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: var(--rd-bg);
+  background: #0a1c1a;
 }
 
 .rd-past-conference {
-  --rd-past-media: 73%;
-  --rd-past-aside: 27%;
   position: relative;
-  display: grid;
+  display: block;
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   isolation: isolate;
   overflow: hidden;
-  background: var(--rd-bg);
-}
-
-/* First: image left, 27% whitespace right */
-.rd-past-conference--media-left {
-  grid-template-columns: var(--rd-past-media) var(--rd-past-aside);
-  grid-template-areas: "media aside";
-}
-
-/* Second: 27% whitespace left, image right (crossed layout) */
-.rd-past-conference--media-right {
-  grid-template-columns: var(--rd-past-aside) var(--rd-past-media);
-  grid-template-areas: "aside media";
+  background: #0a1c1a;
 }
 
 .rd-past-conference + .rd-past-conference {
   margin-top: 0;
-  border-top: 1px solid rgba(33, 33, 33, 0.06);
 }
 
 .rd-past-conference-media,
 .rd-past-conference .rd-garden-media {
-  grid-area: media;
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 0;
   width: 100%;
   height: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100%;
   flex: none;
   display: flex;
   flex-direction: column;
@@ -1356,7 +1342,7 @@
   object-position: center;
 }
 
-/* AI Consulting crossfade slideshow (2.5s interval) */
+/* Crossfade slideshow fills entire section (no side whitespace) */
 .rd-conference-slideshow {
   position: absolute;
   inset: 0;
@@ -1399,19 +1385,10 @@
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(8, 14, 18, 0.15) 0%,
-    rgba(8, 14, 18, 0.25) 45%,
-    rgba(8, 14, 18, 0.72) 100%
+    rgba(8, 14, 18, 0.12) 0%,
+    rgba(8, 14, 18, 0.2) 45%,
+    rgba(8, 14, 18, 0.68) 100%
   );
-}
-
-/* Empty 27% column reserved for future text descriptions */
-.rd-past-conference-aside {
-  grid-area: aside;
-  width: 100%;
-  min-height: 100%;
-  background: var(--rd-bg);
-  box-sizing: border-box;
 }
 
 /* Single heading on the image — no meta, body, or link */
@@ -1419,8 +1396,8 @@
   position: relative;
   z-index: 2;
   margin: 0;
-  padding: clamp(40px, 8vh, 96px) clamp(20px, 3.5vw, 56px);
-  max-width: min(18ch, 100%);
+  padding: clamp(40px, 8vh, 96px) clamp(24px, 7vw, 80px);
+  max-width: min(20ch, 100%);
   font-size: clamp(26px, 3.4vw, 44px);
   font-weight: 700;
   letter-spacing: -0.6px;
@@ -1514,9 +1491,13 @@
   flex-direction: column;
   gap: 14px;
   min-width: 0;
+  align-self: stretch;
+  height: 100%;
+  min-height: 100%;
   justify-content: flex-start;
 }
 
+/* Host photo: ≥80% of layout / viewport height on every breakpoint */
 .rd-calendly-hosts-photo {
   margin: 0;
   padding: 0;
@@ -1526,26 +1507,32 @@
   background: #f3f4f6;
   border: 1px solid #e8e8e8;
   flex: 1 1 auto;
-  min-height: 0;
+  /* Match calendly column: at least 80% of the band height / viewport */
+  min-height: min(80vh, 720px);
+  min-height: min(80dvh, 720px);
+  height: 80%;
+  max-height: 100%;
 }
 
 .rd-calendly-hosts-photo img {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: clamp(220px, 40vh, 420px);
+  min-height: min(80vh, 720px);
+  min-height: min(80dvh, 720px);
   object-fit: cover;
   object-position: center top;
 }
 
 .rd-calendly-hosts-caption {
   margin: 0;
+  flex: 0 0 auto;
   font-size: 14px;
   line-height: 1.45;
   color: #374151;
 }
 
-/* Tablet / phone: stack Calendly full-width, photo below */
+/* Tablet / phone: stack Calendly full-width, photo still ≥80vh */
 @media (max-width: 900px) {
   .rd-calendly-layout {
     grid-template-columns: 1fr;
@@ -1567,16 +1554,27 @@
 
   .rd-calendly-aside {
     order: 2;
-    max-width: min(420px, 100%);
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%;
     width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+    min-height: 0;
+  }
+
+  .rd-calendly-hosts-photo {
+    height: 80vh;
+    height: 80dvh;
+    min-height: 80vh;
+    min-height: 80dvh;
+    max-height: none;
   }
 
   .rd-calendly-hosts-photo img {
-    min-height: 240px;
-    aspect-ratio: 4 / 3;
-    height: auto;
+    height: 100%;
+    min-height: 80vh;
+    min-height: 80dvh;
+    aspect-ratio: auto;
   }
 }
 
@@ -1590,6 +1588,14 @@
   .rd-calendly-main .calendly-inline-widget iframe {
     min-height: 70vh;
     min-height: 70dvh;
+  }
+
+  .rd-calendly-hosts-photo,
+  .rd-calendly-hosts-photo img {
+    height: 80vh;
+    height: 80dvh;
+    min-height: 80vh;
+    min-height: 80dvh;
   }
 }
 
@@ -2158,24 +2164,17 @@
     flex-direction: column;
   }
 
-  /* Stack on narrow viewports: image full width, aside strip below */
-  .rd-past-conference--media-left,
-  .rd-past-conference--media-right {
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(72vh, auto) minmax(18vh, auto);
-    grid-template-areas:
-      "media"
-      "aside";
+  .rd-past-conference {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
   }
 
   .rd-past-conference-media,
   .rd-past-conference .rd-garden-media {
-    min-height: 72vh;
-    min-height: 72dvh;
-  }
-
-  .rd-past-conference-aside {
-    min-height: 18vh;
+    min-height: 100%;
+    height: 100%;
   }
 
   .rd-past-conference-title {
@@ -2219,6 +2218,8 @@
   .rd-past-conference {
     min-height: 100vh;
     min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
   }
 
   .rd-garden-title {
@@ -2231,8 +2232,8 @@
 
   .rd-past-conference .rd-garden-media,
   .rd-past-conference-media {
-    min-height: 68vh;
-    min-height: 68dvh;
+    min-height: 100%;
+    height: 100%;
   }
 
   .rd-proof-title {
