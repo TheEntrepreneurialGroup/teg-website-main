@@ -7,7 +7,9 @@ export type AppRoutePath =
   | "/for-companies"
   | "/events"
   | "/imprint"
-  | "/privacy-policy";
+  | "/privacy-policy"
+  | "/supplychain"
+  | "/request-demo";
 
 export interface RouteSeoEntry {
   path: AppRoutePath;

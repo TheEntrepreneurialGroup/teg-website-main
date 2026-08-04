@@ -1,0 +1,2251 @@
+/* Qualtrics request-demo LP clone — self-contained styles (avoid fighting TEG global CSS) */
+
+.rd-page {
+  --rd-purple: rgb(95, 26, 229);
+  --rd-text: rgb(33, 33, 33);
+  --rd-muted: rgb(35, 40, 39);
+  --rd-bg: rgb(237, 242, 244);
+  --rd-white: #ffffff;
+  --rd-cyan: rgb(4, 201, 206);
+  --rd-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Logo banner: baseline 84px band / 64px logo → +10% vertical size */
+  --rd-header-h: 92.4px; /* 84 * 1.1 */
+  --rd-logo-h: 70.4px; /* 64 * 1.1 */
+  font-family: var(--rd-font);
+  color: var(--rd-text);
+  background: var(--rd-bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* Keep overflow visible so sticky hero pin works relative to the viewport */
+  -webkit-font-smoothing: antialiased;
+}
+
+.rd-page *,
+.rd-page *::before,
+.rd-page *::after {
+  box-sizing: border-box;
+}
+
+/* ——— Header (sticky; glassmorphic only after hero scrub finishes) ——— */
+.rd-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--rd-header-h);
+  min-height: var(--rd-header-h);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition:
+    background 0.28s ease,
+    backdrop-filter 0.28s ease,
+    -webkit-backdrop-filter 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+  border-bottom: 1px solid transparent;
+}
+
+/* Glassmorphic bar after leaving the hero first screen */
+.rd-header--scrolled {
+  background: rgba(8, 28, 26, 0.52);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.rd-header-inner {
+  width: 100%;
+  max-width: 1538px;
+  margin: 0 auto;
+  /* top/bottom padding = (band − logo) / 2 → ~11px each after +10% scale */
+  padding: calc((var(--rd-header-h) - var(--rd-logo-h)) / 2)
+    clamp(24px, 7vw, 133px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  min-height: var(--rd-header-h);
+}
+
+.rd-logo {
+  display: block;
+  height: var(--rd-logo-h);
+  width: auto;
+  max-height: 100%;
+}
+
+.rd-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Header sits over the dark teal hero — light chrome required for contrast */
+.rd-link-login {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.rd-link-login:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rd-btn-header-demo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.rd-btn-header-demo:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ——— Hero scroll pin: sticky until zoom video is fully scrubbed ——— */
+.rd-hero-scroll {
+  --rd-hero-runway: 220vh;
+  position: relative;
+  /* Viewport + runway: sticky releases only after full scroll scrub */
+  height: calc(100vh + var(--rd-hero-runway));
+  height: calc(100dvh + var(--rd-hero-runway));
+  margin-top: calc(-1 * var(--rd-header-h));
+  box-sizing: border-box;
+  /* Isolate layout; never overflow:hidden on this ancestor of sticky */
+  overflow: visible;
+}
+
+/* ——— Format sticky scrub (header-edge gated, same pin math as hero) ——— */
+.rd-format-video-scroll {
+  --rd-format-runway: 220vh;
+  position: relative;
+  height: calc(100vh + var(--rd-format-runway));
+  height: calc(100dvh + var(--rd-format-runway));
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.rd-format-video-media {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  background: #0a1c1a;
+  padding-top: var(--rd-header-h);
+  box-sizing: border-box;
+}
+
+.rd-format-video-el,
+.rd-format-video-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+  background: #0a1c1a;
+}
+
+.rd-format-video-el {
+  z-index: 1;
+}
+
+.rd-garden--pain-collapsed {
+  min-height: 0 !important;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+}
+
+/* ——— Hero (sticky full viewport while pin scrolls) ——— */
+.rd-hero {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding-top: var(--rd-header-h);
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* Stay painted as fixed background during pin */
+  will-change: transform;
+  transform: translateZ(0);
+  background: #0a1c1a;
+}
+
+.rd-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+.rd-hero-bg-fallback {
+  z-index: 0;
+  transform-origin: 28% 32%;
+  will-change: transform;
+  transition: opacity 0.12s linear;
+}
+
+.rd-hero-bg-video {
+  z-index: 1;
+  /* Video is scroll-scrubbed only — never autoplay presentation */
+  pointer-events: none;
+  /* When seeks lag, fallback image (below) carries continuous zoom */
+}
+
+/* Green wash from the right; opacity driven by scroll (gone by 50% video) */
+.rd-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    255deg,
+    rgba(30, 120, 100, 0.02) 0%,
+    rgba(20, 110, 90, 0.22) 30%,
+    rgba(10, 90, 70, 0.55) 58%,
+    rgba(0, 70, 60, 0.9) 100%
+  );
+  pointer-events: none;
+  /* Opacity set every frame in JS — no CSS transition (avoids lag vs scrub) */
+  will-change: opacity;
+}
+
+.rd-hero-inner {
+  position: relative;
+  z-index: 3;
+  /* Opacity set every frame in JS (solid→gone 40–50%) — no CSS lag */
+  will-change: opacity;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 1538px;
+  margin: 0 auto;
+  /* Tighter vertical padding so form card fits one viewport with date+time row */
+  padding: clamp(16px, 3vh, 56px) clamp(24px, 7vw, 133px)
+    clamp(12px, 2.5vh, 36px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+/* Title removed — garden CTA eye-level center of hero viewport */
+.rd-hero-inner--form-only,
+.rd-hero-inner--cta-only {
+  grid-template-columns: 1fr;
+  /* Fill sticky hero band and center the CTA at eye level */
+  flex: 1 1 auto;
+  align-self: stretch;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  justify-items: center;
+  align-items: center;
+  /* Optical center of the painted hero (header band already padded on .rd-hero) */
+  padding: 0 clamp(24px, 7vw, 133px);
+}
+
+.rd-hero-inner--form-only .rd-form-card {
+  width: min(100%, 461px);
+}
+
+/* Hidden until idle reveal; opacity also driven by scroll scrub in JS */
+.rd-hero-inner--cta-only {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rd-hero-inner--cta-only.rd-hero-inner--cta-revealed .rd-garden-cta {
+  animation: rd-garden-cta-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes rd-garden-cta-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rd-hero-inner--cta-only.rd-hero-inner--cta-revealed .rd-garden-cta {
+    animation: none;
+  }
+}
+
+/*
+ * Immersive Gardens CTA — gold bud button (matches About GardenCta solid).
+ * +25% size in all directions vs base (210×56 / 28px pad / 0.95rem).
+ * Scrolls visitor to #termin-buchen (bottom Calendly).
+ */
+.rd-garden-cta {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 210 * 1.25 · 56 * 1.25 · 28 * 1.25 */
+  min-width: 262.5px;
+  height: 70px;
+  padding: 0 35px;
+  margin: 0;
+  border: 1.5px solid rgba(198, 158, 60, 0.9);
+  border-radius: 9999px;
+  background: #c69e3c;
+  color: #0b1730;
+  font-family: inherit;
+  /* 0.95rem * 1.25 */
+  font-size: 1.1875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 0 22px -10px rgba(198, 158, 60, 0.55);
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  overflow: visible;
+}
+
+.rd-garden-cta:hover {
+  background: #d9ae50;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 34px -8px rgba(198, 158, 60, 0.6);
+}
+
+.rd-garden-cta:focus-visible {
+  outline: 2px solid rgba(246, 215, 123, 0.7);
+  outline-offset: 4px;
+}
+
+.rd-garden-cta-halo {
+  pointer-events: none;
+  position: absolute;
+  /* -6px * 1.25 */
+  inset: -7.5px;
+  z-index: -1;
+  border-radius: 9999px;
+  background: rgba(198, 158, 60, 0.3);
+  filter: blur(17.5px);
+  opacity: 0.55;
+}
+
+.rd-garden-cta-label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  /* 10px * 1.25 */
+  gap: 12.5px;
+  line-height: 1;
+}
+
+.rd-garden-cta-arrow {
+  /* 14px * 1.25 */
+  width: 17.5px;
+  height: 17.5px;
+  flex-shrink: 0;
+  color: #0b1730;
+  transition: transform 0.3s ease;
+}
+
+.rd-garden-cta:hover .rd-garden-cta-arrow {
+  transform: translateY(2px);
+}
+
+@media (max-width: 640px) {
+  .rd-hero-inner--cta-only {
+    justify-items: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .rd-garden-cta {
+    /* 280 * 1.25 */
+    width: min(100%, 350px);
+    min-width: min(100%, 262.5px);
+  }
+}
+
+/* Primary hero title: conference name only, forced single line */
+.rd-hero-conference {
+  margin: 0;
+  font-size: clamp(15px, 2.45vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #fff;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+/* Keep single line on narrow stacked hero — scale with viewport width */
+@media (max-width: 1100px) {
+  .rd-hero-conference {
+    font-size: clamp(13px, 3.6vw, 32px);
+  }
+}
+
+@media (max-width: 640px) {
+  .rd-hero-conference {
+    font-size: clamp(11px, 3.4vw, 18px);
+  }
+}
+
+/* Legacy hooks kept for any residual references */
+.rd-eyebrow {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.rd-h1 {
+  margin: 0 0 32px;
+  font-size: clamp(36px, 3.5vw, 50px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: #fff;
+  max-width: 724px;
+}
+
+.rd-hero-copy {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #fff;
+  max-width: 580px;
+}
+
+/* ——— Form card (shared hero + bottom + modal title shell) ——— */
+.rd-form-card {
+  background: var(--rd-white);
+  border-radius: 24px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  color: var(--rd-text);
+  box-sizing: border-box;
+}
+
+.rd-form-title {
+  margin: 0 0 28px;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -0.32px;
+  color: var(--rd-text);
+  line-height: 1.2;
+}
+
+.rd-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 0;
+}
+
+.rd-field {
+  position: relative;
+  min-height: 54px;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.35);
+}
+
+.rd-field--full {
+  grid-column: 1 / -1;
+}
+
+.rd-field input,
+.rd-field select {
+  width: 100%;
+  height: 54px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--rd-text);
+  padding: 24px 8px 10px 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.rd-field select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23212121' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 24px;
+}
+
+.rd-field label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(33, 33, 33, 0.65);
+  pointer-events: none;
+  transition:
+    top 0.15s ease,
+    font-size 0.15s ease,
+    transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.rd-field input:focus + label,
+.rd-field input:not(:placeholder-shown) + label,
+.rd-field select:focus + label,
+.rd-field.select-filled label {
+  top: 6px;
+  transform: none;
+  font-size: 10px;
+  line-height: 1;
+}
+
+/* Select always has a value — keep label floated and value below it */
+.rd-field.select-filled select,
+.rd-field:has(select) select {
+  padding-top: 22px;
+  padding-bottom: 8px;
+  line-height: 1.2;
+}
+
+.rd-field:has(select) label,
+.rd-field.select-filled label {
+  top: 6px;
+  transform: none;
+  font-size: 10px;
+}
+
+.rd-field input:focus,
+.rd-field select:focus {
+  border-bottom-color: var(--rd-purple);
+}
+
+.rd-field:focus-within {
+  border-bottom-color: var(--rd-purple);
+}
+
+.rd-privacy-row {
+  grid-column: 1 / -1;
+  margin-top: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Visually subtle but present marketing/privacy opt-in (matches live "Privacy Optin") */
+.rd-privacy-checkbox {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  accent-color: var(--rd-purple);
+  cursor: pointer;
+}
+
+.rd-privacy {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--rd-text);
+  cursor: pointer;
+}
+
+.rd-privacy a {
+  color: var(--rd-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/*
+ * Hero form only: date+time adds one grid row (~2×54px).
+ * Compact vertical metrics so the card stays proportional to the first viewport.
+ * Bottom conversion form keeps the roomier shared defaults above.
+ */
+.rd-hero .rd-form-card {
+  padding: 20px 24px 22px;
+  max-height: calc(100dvh - var(--rd-header-h) - 32px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  align-self: center;
+  width: 100%;
+  max-width: 461px;
+  justify-self: end;
+}
+
+.rd-hero .rd-form-title {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 2vw, 28px);
+}
+
+.rd-hero .rd-field {
+  min-height: 42px;
+}
+
+.rd-hero .rd-field input,
+.rd-hero .rd-field select {
+  height: 42px;
+  padding: 18px 8px 6px 0;
+  font-size: 15px;
+}
+
+.rd-hero .rd-field.select-filled select,
+.rd-hero .rd-field:has(select) select {
+  padding-top: 16px;
+  padding-bottom: 4px;
+}
+
+.rd-hero .rd-field label {
+  font-size: 11px;
+}
+
+.rd-hero .rd-field input:focus + label,
+.rd-hero .rd-field input:not(:placeholder-shown) + label,
+.rd-hero .rd-field select:focus + label,
+.rd-hero .rd-field.select-filled label,
+.rd-hero .rd-field:has(select) label {
+  top: 4px;
+  font-size: 9px;
+}
+
+.rd-hero .rd-privacy-row {
+  margin-top: 10px;
+}
+
+.rd-hero .rd-privacy {
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.rd-hero .rd-submit {
+  margin-top: 12px;
+  height: 48px;
+  font-size: 16px;
+  padding: 10px 22px;
+}
+
+@media (max-height: 820px) {
+  .rd-hero .rd-form-card {
+    padding: 14px 18px 16px;
+  }
+
+  .rd-hero .rd-form-title {
+    margin-bottom: 8px;
+    font-size: 20px;
+  }
+
+  .rd-hero .rd-field {
+    min-height: 36px;
+  }
+
+  .rd-hero .rd-field input,
+  .rd-hero .rd-field select {
+    height: 36px;
+    padding: 14px 6px 4px 0;
+    font-size: 14px;
+  }
+
+  .rd-hero .rd-submit {
+    margin-top: 8px;
+    height: 44px;
+    font-size: 15px;
+  }
+}
+
+.rd-submit {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 12px 24px;
+  min-width: 115px;
+  border-radius: 9999px;
+  border: 1px solid rgb(240, 244, 249);
+  background: var(--rd-purple);
+  color: rgb(240, 244, 249);
+  font-size: 18px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.rd-submit:hover {
+  filter: brightness(1.05);
+}
+
+.rd-form-success {
+  padding: 24px 0;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--rd-text);
+}
+
+/*
+ * ARCHIVED 2026-08-04 — black sponsor / network card styles.
+ * Kept for restore of ArchivedBrandsSection in RequestDemo.tsx; not mounted.
+ */
+.rd-brands {
+  position: relative;
+  z-index: 3;
+  max-width: 1538px;
+  /* Sit fully below full-viewport hero (no negative margin peek into first screen) */
+  margin: 24px auto 0;
+  padding: 0 clamp(24px, 7vw, 133px);
+}
+
+.rd-brands-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: rgb(20, 28, 32);
+  border-radius: 12px;
+  padding: 18px 28px;
+  color: #fff;
+}
+
+.rd-brands-label {
+  flex: 0 0 130px;
+  font-size: 11px;
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rd-brands-logos {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.rd-brands-logos img,
+.rd-brands-logos .rd-inline-svg {
+  display: block;
+  height: 24px;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+  opacity: 0.92;
+}
+
+/* SVG wordmarks only: safe white invert on dark bar (never on photo/AVIF marks) */
+.rd-brands-logos img.rd-logo-invert {
+  filter: brightness(0) invert(1);
+}
+
+.rd-brands-logos .rd-inline-svg svg {
+  height: 24px;
+  width: auto;
+  max-width: 100px;
+  fill: #fff;
+}
+
+/* ——— Post-hero: Das TEG Konferenz Format ——— */
+.rd-format {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin: 0;
+  padding: clamp(56px, 8vh, 96px) 0 clamp(48px, 6vh, 80px);
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 12% 20%,
+      rgba(4, 201, 206, 0.1) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 92% 85%,
+      rgba(0, 70, 60, 0.08) 0%,
+      transparent 50%
+    ),
+    var(--rd-white);
+  border-bottom: 1px solid rgba(20, 28, 32, 0.08);
+}
+
+.rd-format-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 7vw, 133px);
+}
+
+.rd-format-title {
+  margin: 0 0 22px;
+  font-size: clamp(30px, 3.6vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.9px;
+  line-height: 1.1;
+  color: var(--rd-text);
+  max-width: 16ch;
+}
+
+.rd-format-lead {
+  margin: 0 0 18px;
+  font-size: clamp(17px, 1.2vw, 19px);
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--rd-text);
+  max-width: 40em;
+}
+
+.rd-format-body {
+  margin: 0;
+  font-size: clamp(17px, 1.2vw, 19px);
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--rd-text);
+  max-width: 40em;
+}
+
+/* ==========================================================================
+   Immersive Gardens — pure vertical post-hero journey
+   One thesis per full-width section. Media + single text column only.
+   Never two text fields side-by-side. No 2×2 product grid / bento.
+   ========================================================================== */
+
+.rd-journey {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ——— Garden section base: ~viewport-height, full-width stack ——— */
+.rd-garden {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Large photography block — full width, media above text */
+.rd-garden-media {
+  position: relative;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: clamp(280px, 52vh, 640px);
+  background: rgb(18, 24, 28);
+  overflow: hidden;
+}
+
+.rd-garden-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rd-garden:hover .rd-garden-media img {
+  transform: scale(1.03);
+}
+
+/* Soft bottom gradient so type below feels continuous with photo */
+.rd-garden-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 14, 18, 0) 45%,
+    rgba(8, 14, 18, 0.18) 78%,
+    rgba(8, 14, 18, 0.42) 100%
+  );
+}
+
+/* Document / portrait heritage clip — contain, not crop hard */
+.rd-garden-media--doc {
+  min-height: clamp(320px, 58vh, 720px);
+  background: rgb(245, 242, 236);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 56px);
+}
+
+.rd-garden-media--doc img {
+  width: auto;
+  max-width: min(520px, 100%);
+  height: auto;
+  max-height: min(68vh, 780px);
+  min-height: 0;
+  object-fit: contain;
+  box-shadow:
+    0 24px 48px -20px rgba(0, 0, 0, 0.35),
+    0 8px 16px -8px rgba(0, 0, 0, 0.18);
+  border-radius: 4px;
+}
+
+.rd-garden-media--doc::after {
+  display: none;
+}
+
+.rd-garden:hover .rd-garden-media--doc img {
+  transform: none;
+}
+
+/* Single text column — never paired horizontally with another text field */
+.rd-garden-text {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 720px;
+  margin: 0;
+  padding: clamp(40px, 6vw, 88px) clamp(24px, 7vw, 133px)
+    clamp(56px, 8vh, 104px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rd-garden-kicker {
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(33, 33, 33, 0.62);
+}
+
+.rd-garden-title {
+  margin: 0 0 22px;
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.12;
+  color: var(--rd-text);
+  max-width: 18ch;
+}
+
+.rd-garden-lead {
+  margin: 0 0 18px;
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--rd-text);
+  max-width: 38em;
+}
+
+.rd-garden-body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(33, 33, 33, 0.88);
+  max-width: 38em;
+}
+
+.rd-garden-list {
+  margin: 8px 0 22px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 38em;
+}
+
+.rd-garden-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(33, 33, 33, 0.9);
+}
+
+.rd-garden-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rd-cyan);
+}
+
+.rd-garden-close {
+  margin: 8px 0 0;
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--rd-text);
+  max-width: 32em;
+}
+
+/* ——— S1 Pain: text-led, full-bleed quiet garden (no photography hero) ——— */
+.rd-garden--pain {
+  justify-content: center;
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 20% 30%,
+      rgba(4, 201, 206, 0.08) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 90% 80%,
+      rgba(0, 70, 60, 0.1) 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      165deg,
+      rgb(232, 236, 234) 0%,
+      rgb(237, 242, 244) 45%,
+      rgb(228, 234, 232) 100%
+    );
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.rd-garden--pain .rd-garden-text {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: clamp(72px, 12vh, 140px);
+  padding-bottom: clamp(72px, 12vh, 140px);
+  text-align: left;
+}
+
+.rd-garden--pain .rd-garden-title {
+  max-width: 16ch;
+}
+
+/* ——— S2 Talent: media above, text left-aligned under frame ——— */
+.rd-garden--talent {
+  background: var(--rd-white);
+}
+
+.rd-garden--talent .rd-garden-text {
+  align-self: flex-start;
+  max-width: 680px;
+}
+
+/* ——— S3 Host: media above, text shifted right (still single column) ——— */
+.rd-garden--host {
+  background: rgb(245, 247, 246);
+}
+
+.rd-garden--host .rd-garden-text {
+  align-self: flex-end;
+  max-width: 680px;
+  margin-left: auto;
+}
+
+/* ——— S4 Trust: doc media + text, muted heritage wash ——— */
+.rd-garden--trust {
+  background: linear-gradient(
+    180deg,
+    rgb(250, 248, 244) 0%,
+    rgb(237, 242, 244) 100%
+  );
+}
+
+.rd-garden--trust .rd-garden-text {
+  align-self: center;
+  max-width: 680px;
+  text-align: left;
+}
+
+/* ——— Desktop: optional media | text row (one text field only) ——— */
+@media (min-width: 960px) {
+  /* Alternating split: photography left / text right (talent) */
+  .rd-garden--talent {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .rd-garden--talent .rd-garden-media {
+    flex: 1 1 54%;
+    min-height: 100%;
+    width: auto;
+  }
+
+  .rd-garden--talent .rd-garden-text {
+    flex: 1 1 46%;
+    align-self: center;
+    justify-content: center;
+    max-width: none;
+    padding: clamp(48px, 6vw, 96px) clamp(40px, 5vw, 88px);
+  }
+
+  .rd-garden--talent .rd-garden-media::after {
+    background: linear-gradient(
+      90deg,
+      rgba(8, 14, 18, 0) 60%,
+      rgba(255, 255, 255, 0.12) 100%
+    );
+  }
+
+  /* Host: text left / photography right (single text, reversed media) */
+  .rd-garden--host {
+    flex-direction: row-reverse;
+    align-items: stretch;
+  }
+
+  .rd-garden--host .rd-garden-media {
+    flex: 1 1 54%;
+    min-height: 100%;
+    width: auto;
+  }
+
+  .rd-garden--host .rd-garden-text {
+    flex: 1 1 46%;
+    align-self: center;
+    justify-content: center;
+    max-width: none;
+    margin-left: 0;
+    padding: clamp(48px, 6vw, 96px) clamp(40px, 5vw, 88px);
+  }
+
+  .rd-garden--host .rd-garden-media::after {
+    background: linear-gradient(
+      270deg,
+      rgba(8, 14, 18, 0) 60%,
+      rgba(245, 247, 246, 0.15) 100%
+    );
+  }
+
+  /* Trust: keep vertical stack (doc + prose) for reading comfort */
+  .rd-garden--trust {
+    flex-direction: column;
+  }
+
+  .rd-garden--trust .rd-garden-media--doc {
+    min-height: clamp(380px, 48vh, 560px);
+  }
+}
+
+/* ——— S5 Proof strip: single metrics band (no competing 4-card stats) ——— */
+.rd-proof-strip {
+  width: 100%;
+  background: rgb(20, 28, 32);
+  color: #fff;
+  padding: clamp(56px, 8vh, 96px) 0;
+}
+
+.rd-proof-strip-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 7vw, 133px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.rd-proof-kicker {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Conference name — primary section title (was small kicker) */
+.rd-proof-title {
+  margin: 0 0 44px;
+  font-size: clamp(34px, 5.2vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: #fff;
+  max-width: 22ch;
+}
+
+.rd-proof-metrics {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.rd-proof-metric {
+  flex: 1 1 160px;
+  min-width: 140px;
+  max-width: 100%;
+  padding: 28px 20px 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rd-proof-number {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 300;
+  letter-spacing: -0.8px;
+  line-height: 1.1;
+  color: var(--rd-cyan);
+}
+
+.rd-proof-label {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.rd-proof-meta {
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.68);
+  max-width: 18em;
+}
+
+.rd-proof-people {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rd-proof-people p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.rd-proof-people strong {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Proof metrics: stack as pure vertical list on narrow viewports */
+@media (max-width: 720px) {
+  .rd-proof-metrics {
+    flex-direction: column;
+  }
+
+  .rd-proof-metric {
+    flex: 1 1 auto;
+    padding: 20px 0;
+  }
+}
+
+/* ——— Past conferences: full-viewport edge-to-edge media / slideshow ——— */
+.rd-past-conferences {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #0a1c1a;
+}
+
+.rd-past-conference {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  isolation: isolate;
+  overflow: hidden;
+  background: #0a1c1a;
+}
+
+.rd-past-conference + .rd-past-conference {
+  margin-top: 0;
+}
+
+.rd-past-conference-media,
+.rd-past-conference .rd-garden-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: #0a1c1a;
+}
+
+.rd-past-conference-media img,
+.rd-past-conference .rd-garden-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Crossfade slideshow fills entire section (no side whitespace) */
+.rd-conference-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a1c1a;
+}
+
+.rd-conference-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+
+.rd-conference-slide--active {
+  opacity: 1;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rd-conference-slide {
+    transition: none;
+  }
+}
+
+.rd-past-conference-media::after,
+.rd-past-conference .rd-garden-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 14, 18, 0.12) 0%,
+    rgba(8, 14, 18, 0.2) 45%,
+    rgba(8, 14, 18, 0.68) 100%
+  );
+}
+
+/* Single heading on the image — no meta, body, or link */
+.rd-past-conference-title {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: clamp(40px, 8vh, 96px) clamp(24px, 7vw, 80px);
+  max-width: min(20ch, 100%);
+  font-size: clamp(26px, 3.4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* ——— Bottom conversion form shell (same .rd-form-card chrome as hero) ——— */
+/* Anchor target for hero/header “Gespräch Buchen” — clear sticky header */
+#termin-buchen {
+  scroll-margin-top: calc(var(--rd-header-h) + 12px);
+}
+
+/* Anchor target for hero/header “Gespräch Buchen” — clear sticky header */
+#termin-buchen {
+  scroll-margin-top: calc(var(--rd-header-h) + 12px);
+}
+
+.rd-cta-band-wrap {
+  max-width: 1538px;
+  margin: 0 auto;
+  padding: clamp(48px, 8vh, 96px) clamp(24px, 7vw, 133px);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Constrain width only — field/grid/privacy/submit inherit shared form rules */
+.rd-form-card--bottom {
+  max-width: min(100%, 720px);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* ——— Calendly booking band: full-height widget + host photo (right) ——— */
+.rd-cta-band-wrap--scheduler {
+  width: 100%;
+  max-width: min(100%, 1920px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(12px, 2.2vw, 40px);
+  padding-right: clamp(12px, 2.2vw, 40px);
+  padding-top: clamp(32px, 5vh, 64px);
+  padding-bottom: clamp(32px, 5vh, 64px);
+  box-sizing: border-box;
+}
+
+.rd-calendly-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 28%);
+  gap: clamp(16px, 2.5vw, 36px);
+  align-items: stretch;
+  width: 100%;
+  min-height: min(92vh, 900px);
+  min-height: min(92dvh, 900px);
+  box-sizing: border-box;
+}
+
+.rd-calendly-main {
+  position: relative;
+  min-width: 0;
+  min-height: min(92vh, 900px);
+  min-height: min(92dvh, 900px);
+  height: 100%;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.rd-calendly-main .calendly-inline-widget {
+  min-width: 320px;
+  width: 100%;
+  height: 100% !important;
+  min-height: min(92vh, 900px);
+  min-height: min(92dvh, 900px);
+}
+
+.rd-calendly-main .calendly-inline-widget iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: min(92vh, 900px);
+  min-height: min(92dvh, 900px);
+}
+
+.rd-calendly-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  align-self: stretch;
+  height: 100%;
+  min-height: 100%;
+  justify-content: flex-start;
+}
+
+/* Host photo: ≥80% of layout / viewport height on every breakpoint */
+.rd-calendly-hosts-photo {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f3f4f6;
+  border: 1px solid #e8e8e8;
+  flex: 1 1 auto;
+  /* Match calendly column: at least 80% of the band height / viewport */
+  min-height: min(80vh, 720px);
+  min-height: min(80dvh, 720px);
+  height: 80%;
+  max-height: 100%;
+}
+
+.rd-calendly-hosts-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: min(80vh, 720px);
+  min-height: min(80dvh, 720px);
+  object-fit: cover;
+  object-position: center top;
+}
+
+.rd-calendly-hosts-caption {
+  margin: 0;
+  flex: 0 0 auto;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #374151;
+}
+
+/* Tablet / phone: stack Calendly full-width, photo still ≥80vh */
+@media (max-width: 900px) {
+  .rd-calendly-layout {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 20px;
+  }
+
+  .rd-calendly-main {
+    min-height: min(85vh, 780px);
+    min-height: min(85dvh, 780px);
+    order: 1;
+  }
+
+  .rd-calendly-main .calendly-inline-widget,
+  .rd-calendly-main .calendly-inline-widget iframe {
+    min-height: min(85vh, 780px);
+    min-height: min(85dvh, 780px);
+  }
+
+  .rd-calendly-aside {
+    order: 2;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+    min-height: 0;
+  }
+
+  .rd-calendly-hosts-photo {
+    height: 80vh;
+    height: 80dvh;
+    min-height: 80vh;
+    min-height: 80dvh;
+    max-height: none;
+  }
+
+  .rd-calendly-hosts-photo img {
+    height: 100%;
+    min-height: 80vh;
+    min-height: 80dvh;
+    aspect-ratio: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .rd-calendly-main {
+    min-height: 70vh;
+    min-height: 70dvh;
+  }
+
+  .rd-calendly-main .calendly-inline-widget,
+  .rd-calendly-main .calendly-inline-widget iframe {
+    min-height: 70vh;
+    min-height: 70dvh;
+  }
+
+  .rd-calendly-hosts-photo,
+  .rd-calendly-hosts-photo img {
+    height: 80vh;
+    height: 80dvh;
+    min-height: 80vh;
+    min-height: 80dvh;
+  }
+}
+
+/* Keep teg-sched rules for any residual styles; card base unused by Calendly layout */
+.teg-sched {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.teg-sched-card {
+  display: grid;
+  grid-template-columns: minmax(240px, 30%) minmax(0, 1fr);
+  min-height: clamp(560px, 72vh, 820px);
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.teg-sched-rail {
+  position: relative;
+  padding: 28px 24px 24px;
+  border-right: 1px solid #e8e8e8;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.teg-sched-back {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  color: #0069ff;
+  margin-bottom: 4px;
+}
+
+.teg-sched-hosts {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.01em;
+}
+
+.teg-sched-event-title {
+  margin: 0;
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 700;
+  color: #0a2540;
+  line-height: 1.2;
+}
+
+.teg-sched-meta {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.teg-sched-meta-icon {
+  display: inline-block;
+  width: 1.4em;
+  margin-right: 6px;
+}
+
+/* Host photo under location blurb, left rail next to calendar */
+.teg-sched-hosts-photo {
+  margin: 16px 0 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f3f4f6;
+  border: 1px solid #e8e8e8;
+}
+
+.teg-sched-hosts-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.teg-sched-hosts-foot {
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.45;
+}
+
+.teg-sched-main {
+  padding: clamp(20px, 2.2vw, 36px) clamp(20px, 2.5vw, 40px) 32px;
+  min-width: 0;
+  background: #fff;
+}
+
+.teg-sched-main-heading {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0a2540;
+}
+
+.teg-sched-datetime-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.85fr);
+  gap: clamp(16px, 2vw, 28px) clamp(20px, 3vw, 48px);
+  align-items: start;
+  width: 100%;
+}
+
+.teg-sched-month-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.teg-sched-month-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0069ff;
+  text-transform: capitalize;
+}
+
+.teg-sched-nav-btn {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: #0069ff;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.teg-sched-nav-btn:hover {
+  background: #f0f6ff;
+}
+
+.teg-sched-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 8px;
+  width: 100%;
+  max-width: min(100%, 560px);
+}
+
+.teg-sched-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: clamp(4px, 0.6vw, 10px);
+  width: 100%;
+  max-width: min(100%, 560px);
+}
+
+.teg-sched-day {
+  aspect-ratio: 1;
+  /* Grow with available column width on desktop; cap so grid stays tidy */
+  max-width: min(56px, 100%);
+  max-height: min(56px, 100%);
+  margin: 0 auto;
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 500;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.teg-sched-day--available {
+  background: #e8f1ff;
+  color: #0069ff;
+}
+
+.teg-sched-day--available:hover {
+  background: #d6e8ff;
+}
+
+.teg-sched-day--selected {
+  background: #0069ff !important;
+  color: #fff !important;
+  box-shadow: 0 0 0 1px #0069ff;
+}
+
+.teg-sched-day--blocked {
+  color: #c4c4c4;
+  cursor: not-allowed;
+  background: transparent;
+}
+
+.teg-sched-day--empty {
+  pointer-events: none;
+}
+
+.teg-sched-tz,
+.teg-sched-hint {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.teg-sched-hint--center {
+  text-align: center;
+  padding: 48px 12px;
+}
+
+.teg-sched-slots-date {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: capitalize;
+}
+
+.teg-sched-slot-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: min(52vh, 480px);
+  overflow: auto;
+}
+
+.teg-sched-slot-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.teg-sched-slot {
+  flex: 1;
+  min-height: 46px;
+  border: 1px solid #0069ff;
+  border-radius: 8px;
+  background: #fff;
+  color: #0069ff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.teg-sched-slot:hover {
+  background: #f5f9ff;
+}
+
+.teg-sched-slot--on {
+  background: #4b5563;
+  border-color: #4b5563;
+  color: #fff;
+}
+
+.teg-sched-next {
+  min-width: 96px;
+  border: 0;
+  border-radius: 8px;
+  background: #0069ff;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 16px;
+}
+
+.teg-sched-next:hover {
+  filter: brightness(1.05);
+}
+
+.teg-sched-details {
+  max-width: min(100%, 520px);
+}
+
+.teg-sched-label {
+  display: block;
+  margin: 14px 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.teg-sched-input,
+.teg-sched-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #c5cdd8;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #111;
+}
+
+.teg-sched-input:focus,
+.teg-sched-textarea:focus {
+  outline: 2px solid #0069ff55;
+  border-color: #0069ff;
+}
+
+.teg-sched-legal {
+  margin: 16px 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #6b7280;
+}
+
+.teg-sched-legal a {
+  color: #0069ff;
+}
+
+.teg-sched-error {
+  color: #b91c1c;
+  font-size: 14px;
+}
+
+.teg-sched-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 999px;
+  background: #0069ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.teg-sched-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.teg-sched-success {
+  display: block;
+  padding: 48px 32px;
+  text-align: center;
+  min-height: 280px;
+}
+
+.teg-sched-success-title {
+  margin: 0 0 12px;
+  font-size: 28px;
+  color: #0a2540;
+}
+
+.teg-sched-success-meta {
+  color: #4b5563;
+  font-size: 15px;
+}
+
+/* Wide desktop / landscape monitors — fill nearly the full content band */
+@media (min-width: 1200px) {
+  .rd-cta-band-wrap--scheduler {
+    max-width: min(98vw, 1920px);
+    padding-left: clamp(16px, 2vw, 48px);
+    padding-right: clamp(16px, 2vw, 48px);
+  }
+
+  .teg-sched-card {
+    grid-template-columns: minmax(280px, 28%) minmax(0, 1fr);
+    min-height: clamp(600px, 76vh, 900px);
+  }
+
+  .teg-sched-weekdays,
+  .teg-sched-days {
+    max-width: min(100%, 640px);
+  }
+
+  .teg-sched-day {
+    max-width: min(60px, 100%);
+    max-height: min(60px, 100%);
+  }
+
+  .teg-sched-slot-list {
+    max-height: min(56vh, 560px);
+  }
+}
+
+/* Extra-wide / ultrawide landscape */
+@media (min-width: 1600px) {
+  .rd-cta-band-wrap--scheduler {
+    max-width: min(96vw, 2000px);
+  }
+
+  .teg-sched-card {
+    grid-template-columns: minmax(300px, 26%) minmax(0, 1fr);
+  }
+
+  .teg-sched-weekdays,
+  .teg-sched-days {
+    max-width: min(100%, 720px);
+  }
+
+  .teg-sched-day {
+    max-width: min(64px, 100%);
+    max-height: min(64px, 100%);
+  }
+}
+
+/* Short landscape (tablets / laptops) — keep side-by-side, cap height */
+@media (min-width: 901px) and (max-height: 720px) and (orientation: landscape) {
+  .teg-sched-card {
+    min-height: min(520px, 86vh);
+  }
+
+  .teg-sched-slot-list {
+    max-height: min(48vh, 360px);
+  }
+
+  .teg-sched-main {
+    padding-top: 16px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .rd-cta-band-wrap--scheduler {
+    max-width: 100%;
+    padding-left: clamp(12px, 4vw, 24px);
+    padding-right: clamp(12px, 4vw, 24px);
+  }
+
+  .teg-sched-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .teg-sched-rail {
+    border-right: 0;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .teg-sched-datetime-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teg-sched-weekdays,
+  .teg-sched-days {
+    max-width: 100%;
+  }
+
+  .teg-sched-day {
+    max-width: min(48px, 100%);
+    max-height: min(48px, 100%);
+  }
+
+  .teg-sched-hosts-foot {
+    margin-top: 12px;
+    padding-top: 0;
+  }
+}
+
+/* ——— Footer ——— */
+.rd-footer {
+  max-width: 1538px;
+  margin: 0 auto;
+  padding: 32px clamp(24px, 7vw, 133px) 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--rd-text);
+}
+
+.rd-footer a {
+  color: var(--rd-text);
+  text-decoration: none;
+}
+
+.rd-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ——— Modal (local demo form, no Qualtrics POST) ——— */
+.rd-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.rd-modal {
+  background: #fff;
+  border-radius: 24px;
+  width: min(461px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 24px 28px 32px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.rd-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: 0;
+  background: transparent;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--rd-text);
+  width: 36px;
+  height: 36px;
+}
+
+.rd-modal .rd-form-grid {
+  grid-template-columns: 1fr;
+}
+
+.rd-modal .rd-submit {
+  width: 100%;
+}
+
+/* ——— Responsive: pure vertical stack ——— */
+@media (max-width: 1100px) {
+  .rd-hero-inner {
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding-top: clamp(24px, 4vh, 48px);
+  }
+
+  /* Stacked form can grow past one screen; keep min full-viewport via .rd-hero */
+  .rd-hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+@media (max-width: 959px) {
+  .rd-garden--trust {
+    flex-direction: column;
+  }
+
+  .rd-past-conference {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .rd-past-conference-media,
+  .rd-past-conference .rd-garden-media {
+    min-height: 100%;
+    height: 100%;
+  }
+
+  .rd-past-conference-title {
+    max-width: min(22ch, 100%);
+    padding: clamp(32px, 6vh, 64px) clamp(20px, 5vw, 40px);
+  }
+}
+
+@media (max-width: 640px) {
+  .rd-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rd-brands-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+
+  .rd-brands-label {
+    flex: none;
+  }
+
+  .rd-format-title {
+    max-width: none;
+  }
+
+  .rd-header-actions {
+    display: none;
+  }
+
+  .rd-garden {
+    min-height: auto;
+  }
+
+  .rd-garden--pain {
+    min-height: min(100dvh, 900px);
+  }
+
+  .rd-past-conference {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .rd-garden-title {
+    max-width: none;
+  }
+
+  .rd-garden-media {
+    min-height: 240px;
+  }
+
+  .rd-past-conference .rd-garden-media,
+  .rd-past-conference-media {
+    min-height: 100%;
+    height: 100%;
+  }
+
+  .rd-proof-title {
+    max-width: none;
+  }
+}
+
+/* Reduced motion: skip photo scale */
+@media (prefers-reduced-motion: reduce) {
+  .rd-garden-media img,
+  .rd-garden:hover .rd-garden-media img {
+    transition: none;
+    transform: none;
+  }
+}
