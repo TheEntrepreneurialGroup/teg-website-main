@@ -192,10 +192,10 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  /* Stay painted as fixed background during pin */
-  will-change: transform;
-  transform: translateZ(0);
+  /* Avoid translateZ/will-change:transform — iOS Safari can drop video layers */
   background: #0a1c1a;
+  -webkit-transform: none;
+  transform: none;
 }
 
 .rd-hero-bg {
@@ -209,17 +209,18 @@
 }
 
 .rd-hero-bg-fallback {
+  /* Always under the video; never rely on hiding this for scrub UX */
   z-index: 0;
-  transform-origin: 28% 32%;
-  will-change: transform;
-  transition: opacity 0.12s linear;
+  opacity: 1;
+  /* No transform — keep a stable paint layer under the video on iOS */
 }
 
 .rd-hero-bg-video {
   z-index: 1;
   /* Video is scroll-scrubbed only — never autoplay presentation */
   pointer-events: none;
-  /* When seeks lag, fallback image (below) carries continuous zoom */
+  /* Fallback image sits below when seek frames blank on iOS */
+  background: transparent;
 }
 
 /* Green wash from the right; opacity driven by scroll (gone by 50% video) */
@@ -230,9 +231,9 @@
   background: linear-gradient(
     255deg,
     rgba(30, 120, 100, 0.02) 0%,
-    rgba(20, 110, 90, 0.22) 30%,
-    rgba(10, 90, 70, 0.55) 58%,
-    rgba(0, 70, 60, 0.9) 100%
+    rgba(20, 110, 90, 0.18) 30%,
+    rgba(10, 90, 70, 0.42) 58%,
+    rgba(0, 70, 60, 0.62) 100%
   );
   pointer-events: none;
   /* Opacity set every frame in JS — no CSS transition (avoids lag vs scrub) */

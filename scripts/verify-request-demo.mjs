@@ -170,6 +170,33 @@ if (
   ok("App.tsx wires /supplychain + /request-demo → RequestDemo");
 }
 
+// ——— 1b. eruda mobile console is DEV-only (REMOVE_BEFORE_PRODUCTION) ———
+const bootstrapFile = path.join(root, "src", "bootstrap.tsx");
+const bootstrapSrc = await readFile(bootstrapFile, "utf8");
+const pkg = JSON.parse(
+  await readFile(path.join(root, "package.json"), "utf8"),
+);
+const erudaInDeps = Boolean(pkg.dependencies?.eruda);
+const erudaInDevDeps = Boolean(pkg.devDependencies?.eruda);
+if (erudaInDeps) {
+  fail("eruda must be devDependency only — never production dependencies");
+} else if (bootstrapSrc.includes("eruda") && !bootstrapSrc.includes("import.meta.env.DEV")) {
+  fail("eruda usage must be gated by import.meta.env.DEV");
+} else if (
+  bootstrapSrc.includes("eruda") &&
+  !/if\s*\(\s*import\.meta\.env\.DEV\s*\)[\s\S]*?import\(\s*["']eruda["']\s*\)/.test(
+    bootstrapSrc,
+  )
+) {
+  fail("eruda dynamic import must live inside import.meta.env.DEV block");
+} else if (bootstrapSrc.includes("eruda") && !erudaInDevDeps) {
+  fail("eruda referenced in bootstrap but missing from devDependencies");
+} else if (bootstrapSrc.includes("eruda")) {
+  ok("eruda is DEV-only (devDependency + import.meta.env.DEV gate)");
+} else {
+  ok("eruda not present (already removed for production)");
+}
+
 // ——— 2. Required conversion copy ———
 const pageSrc = await readFile(pageFile, "utf8");
 for (const phrase of REQUIRED_COPY) {

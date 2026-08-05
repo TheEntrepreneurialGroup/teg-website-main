@@ -473,7 +473,7 @@ const PROOF_FACTS = [
   {
     metric: "8.12.2026",
     label: "München",
-    meta: "Location-Host noch offen",
+    meta: "Bei der MaibornWolff GmbH",
   },
 ] as const;
 
@@ -754,17 +754,49 @@ const RequestDemo: React.FC = () => {
     /** Last applied glass flag — update immediately on finished-edge cross. */
     let lastGlass = false;
     let raf = 0;
+    /**
+     * iOS Safari often blanks the video layer while seeking a paused clip.
+     * Keep the poster/fallback painted underneath until at least one seek has
+     * completed (and never fully remove it — black/empty frames still cover it
+     * only when the video layer is opaque; we keep fallback opacity 1 under).
+     */
+    let hasSeekedFrame = false;
 
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
     video.preload = "auto";
     video.pause();
 
+    /** Prime decoder so first paint isn't an empty layer (esp. iOS). */
+    const kickDecode = () => {
+      if (!alive || !videoReadyRef.current) return;
+      const p = video.play();
+      if (p && typeof p.then === "function") {
+        p.then(() => {
+          if (!alive) return;
+          video.pause();
+          try {
+            if (video.currentTime < 0.001) video.currentTime = 0;
+          } catch {
+            /* ignore */
+          }
+        }).catch(() => {
+          /* autoplay policy — ignore */
+        });
+      } else {
+        video.pause();
+      }
+    };
+
     const markReady = () => {
+      const wasReady = videoReadyRef.current;
       videoReadyRef.current = true;
       video.pause();
       seeking = false;
+      if (!wasReady) kickDecode();
     };
     if (video.readyState >= 1) markReady();
     video.addEventListener("loadedmetadata", markReady);
@@ -773,6 +805,7 @@ const RequestDemo: React.FC = () => {
 
     const onSeeked = () => {
       seeking = false;
+      hasSeekedFrame = true;
       // Immediately apply latest target if scroll moved during seek
       if (
         videoReadyRef.current &&
@@ -802,19 +835,23 @@ const RequestDemo: React.FC = () => {
       // DOM attribute always live (no React batching lag)
       pin.dataset.progress = progress.toFixed(3);
 
-      // Poster still stays under the video as first-paint fallback only.
-      // Never hide the video during seeks — displayed frame must update live.
+      // Fallback stays UNDER the video at full opacity so iOS blank seeks
+      // never leave only the teal wash. Video paints on top when frames exist.
       const fallback = pin.querySelector<HTMLElement>(".rd-hero-bg-fallback");
       if (fallback) {
-        fallback.style.opacity = videoReadyRef.current ? "0" : "1";
+        fallback.style.opacity = "1";
+        fallback.style.visibility = "visible";
       }
-      // Video layer stays fully visible once metadata is ready (all-intra seeks).
+      // Video visible once metadata ready (all-intra seeks).
       video.style.opacity = videoReadyRef.current ? "1" : "0";
 
-      // Green wash: linear fade-out, gone by 50% playtime
+      // Green wash: fade out by 50% — cap peak so scrub never becomes
+      // "gradient only" if the video layer blanks on mobile.
       const overlay = pin.querySelector<HTMLElement>(".rd-hero-overlay");
       if (overlay) {
-        overlay.style.opacity = String(heroOverlayOpacity(progress));
+        const raw = heroOverlayOpacity(progress);
+        const cap = hasSeekedFrame ? 0.72 : 0.35;
+        overlay.style.opacity = String(Math.min(cap, raw));
       }
 
       // Hero CTA: hidden until idle reveal; then solid→fade with scrub (40–50%)
@@ -1121,6 +1158,16 @@ const RequestDemo: React.FC = () => {
           }
         >
           <section className="rd-hero" aria-label="Hero">
+            {/* Fallback UNDER video — stays painted on iOS when seek blanks the video layer */}
+            <img
+              className="rd-hero-bg rd-hero-bg-fallback"
+              src={JOURNEY_MEDIA.hero.src}
+              alt=""
+              width={JOURNEY_MEDIA.hero.width}
+              height={JOURNEY_MEDIA.hero.height}
+              aria-hidden="true"
+              decoding="async"
+            />
             <video
               ref={heroVideoRef}
               className="rd-hero-bg rd-hero-bg-video"
@@ -1134,15 +1181,6 @@ const RequestDemo: React.FC = () => {
               disablePictureInPicture
               aria-label={JOURNEY_MEDIA.hero.alt}
               data-testid="hero-zoom-video"
-            />
-            {/* Static fallback under video if first frame not ready */}
-            <img
-              className="rd-hero-bg rd-hero-bg-fallback"
-              src={JOURNEY_MEDIA.hero.src}
-              alt=""
-              width={JOURNEY_MEDIA.hero.width}
-              height={JOURNEY_MEDIA.hero.height}
-              aria-hidden="true"
             />
             <div
               className="rd-hero-overlay"
@@ -1405,24 +1443,20 @@ export default RequestDemo;
 
 /**
  * Required primary section assets (journey + frozen hero).
- * Stock card-pain/benefit/host/why-teg deliberately omitted — CV-demoted.
+ * Unused stock/scrape assets removed from public/request-demo.
  */
 export const REQUEST_DEMO_LOCAL_ASSETS = [
   `${ASSET}/teg-logo-white.svg`,
   JOURNEY_MEDIA.hero.src,
   HERO_ZOOM_VIDEO,
+  FORMAT_SCRUB_VIDEO,
   ...AI_CONSULTING_SLIDES.map((s) => s.src),
   PAST_CONFERENCES[1].src,
   HOSTS_PHOTO,
 ] as const;
 
-/** Demoted stock cards — not journey primary heroes (t3/t6 multi-pass CV). */
-export const REQUEST_DEMO_DEMOTED_CARD_ASSETS = [
-  `${ASSET}/card-pain.jpg`,
-  `${ASSET}/card-benefit.jpg`,
-  `${ASSET}/card-host.jpg`,
-  `${ASSET}/card-why-teg.jpg`,
-] as const;
+/** Previously demoted stock cards — deleted from public/ (not shipped). */
+export const REQUEST_DEMO_DEMOTED_CARD_ASSETS = [] as const;
 
 /** Locked conversion phrases — keep in sync with scripts/verify-request-demo.mjs REQUIRED_COPY. */
 export const LOCATION_LP_REQUIRED_PHRASES = [
