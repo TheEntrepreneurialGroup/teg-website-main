@@ -29,23 +29,6 @@ if (typeof window !== "undefined") {
   }
 
   if (import.meta.env.DEV) {
-    /**
-     * DEV-ONLY mobile console (iOS Safari / Firefox on iOS).
-     * REMOVE_BEFORE_PRODUCTION: eruda floating panel.
-     * Safeguards: (1) only runs under import.meta.env.DEV so Vite strips
-     * the dynamic import from production bundles; (2) scripts/verify-request-demo.mjs
-     * asserts eruda is never referenced outside a DEV-gated block.
-     */
-    void import("eruda")
-      .then((mod) => {
-        const eruda = (
-          mod as { default?: { init: () => void }; init?: () => void }
-        ).default;
-        eruda?.init?.();
-      })
-      .catch(() => {
-        /* devDependency missing — ignore */
-      });
     createRoot(target).render(<Root />);
   } else {
     hydrateRoot(target, <Root />);
