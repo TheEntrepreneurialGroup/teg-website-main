@@ -23,7 +23,16 @@ export default defineConfig({
     include: ["lucide-react"],
   },
   server: {
+    // Listen on all interfaces so phones on the same LAN can load the app
+    host: true,
+    port: 5173,
+    strictPort: true,
     allowedHosts: true,
+    // HMR over LAN: client uses the page hostname (phone opens via 192.168.x.x)
+    hmr: {
+      protocol: "ws",
+      clientPort: 5173,
+    },
     watch: {
       ignored: ["**/.playwright-mcp/**", "**/respl/screenshots/**"],
     },

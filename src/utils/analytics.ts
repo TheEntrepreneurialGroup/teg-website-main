@@ -1,3 +1,7 @@
+import { createSessionId } from "./sessionId.mjs";
+
+export { createSessionId } from "./sessionId.mjs";
+
 /**
  * Track a CTA or button click.
  */
@@ -41,7 +45,7 @@ export const trackLanguageSwitch = (lang: string, location: string) => {
 export const assignSessionId = () => {
   let id = localStorage.getItem("teg-session-id");
   if (!id) {
-    id = crypto.randomUUID();
+    id = createSessionId();
     localStorage.setItem("teg-session-id", id);
   }
 
