@@ -13,43 +13,7 @@
     <title>TEG - The Entrepreneurial Group</title>
   </head>
   <body>
-    <!--
-      Brief boot placeholder only. React replaces #root on mount.
-      Diagnostic text appears only if JS has not mounted after ~2.5s
-      (real load failure) — not on normal Cloudflare/iOS boots.
-    -->
-    <div id="root">
-      <p
-        id="boot-fallback"
-        style="
-          margin: 0;
-          padding: 24px 20px;
-          font-family: system-ui, -apple-system, sans-serif;
-          font-size: 15px;
-          line-height: 1.4;
-          color: #333;
-          background: #0a1c1a;
-          color: #e8f0ee;
-          min-height: 100vh;
-          min-height: 100dvh;
-          box-sizing: border-box;
-        "
-      >
-        TEG lädt…
-      </p>
-    </div>
-    <script>
-      // Only show troubleshooting if the app never mounts (stuck boot).
-      window.setTimeout(function () {
-        var el = document.getElementById("boot-fallback");
-        if (!el || !el.isConnected) return;
-        el.innerHTML =
-          "TEG lädt…<br><span style=\"font-size:13px;color:#a8c0b8\">" +
-          "Dauert länger als erwartet. Prüfe Dev-Server / Tunnel, oder iOS " +
-          "„Lokales Netzwerk“ für den Browser (nur bei LAN-IP nötig)." +
-          "</span>";
-      }, 2500);
-    </script>
+    <div id="root"></div>
     <script prerender type="module" src="/src/bootstrap.tsx"></script>
   </body>
 </html>
