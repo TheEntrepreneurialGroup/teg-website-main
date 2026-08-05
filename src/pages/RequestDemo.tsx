@@ -19,7 +19,6 @@ import {
   formatVideoShouldLoad,
   headerGlassEligible,
   heroFormOpacity,
-  heroOverlayOpacity,
   heroPinProgress,
   progressToVideoTime,
 } from "./heroScrollScrub.mjs";
@@ -754,14 +753,6 @@ const RequestDemo: React.FC = () => {
     /** Last applied glass flag — update immediately on finished-edge cross. */
     let lastGlass = false;
     let raf = 0;
-    /**
-     * iOS Safari often blanks the video layer while seeking a paused clip.
-     * Keep the poster/fallback painted underneath until at least one seek has
-     * completed (and never fully remove it — black/empty frames still cover it
-     * only when the video layer is opaque; we keep fallback opacity 1 under).
-     */
-    let hasSeekedFrame = false;
-
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
@@ -805,7 +796,6 @@ const RequestDemo: React.FC = () => {
 
     const onSeeked = () => {
       seeking = false;
-      hasSeekedFrame = true;
       // Immediately apply latest target if scroll moved during seek
       if (
         videoReadyRef.current &&
@@ -844,15 +834,6 @@ const RequestDemo: React.FC = () => {
       }
       // Video visible once metadata ready (all-intra seeks).
       video.style.opacity = videoReadyRef.current ? "1" : "0";
-
-      // Green wash: fade out by 50% — cap peak so scrub never becomes
-      // "gradient only" if the video layer blanks on mobile.
-      const overlay = pin.querySelector<HTMLElement>(".rd-hero-overlay");
-      if (overlay) {
-        const raw = heroOverlayOpacity(progress);
-        const cap = hasSeekedFrame ? 0.72 : 0.35;
-        overlay.style.opacity = String(Math.min(cap, raw));
-      }
 
       // Hero CTA: hidden until idle reveal; then solid→fade with scrub (40–50%)
       const formLayer = pin.querySelector<HTMLElement>(".rd-hero-inner");
@@ -1181,11 +1162,6 @@ const RequestDemo: React.FC = () => {
               disablePictureInPicture
               aria-label={JOURNEY_MEDIA.hero.alt}
               data-testid="hero-zoom-video"
-            />
-            <div
-              className="rd-hero-overlay"
-              aria-hidden="true"
-              data-testid="hero-overlay"
             />
             <div
               className={

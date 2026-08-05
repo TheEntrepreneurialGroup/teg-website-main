@@ -223,26 +223,9 @@
   background: transparent;
 }
 
-/* Green wash from the right; opacity driven by scroll (gone by 50% video) */
-.rd-hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(
-    255deg,
-    rgba(30, 120, 100, 0.02) 0%,
-    rgba(20, 110, 90, 0.18) 30%,
-    rgba(10, 90, 70, 0.42) 58%,
-    rgba(0, 70, 60, 0.62) 100%
-  );
-  pointer-events: none;
-  /* Opacity set every frame in JS — no CSS transition (avoids lag vs scrub) */
-  will-change: opacity;
-}
-
 .rd-hero-inner {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   /* Opacity set every frame in JS (solid→gone 40–50%) — no CSS lag */
   will-change: opacity;
   flex: 1 1 auto;
