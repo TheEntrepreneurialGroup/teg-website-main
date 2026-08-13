@@ -1,7 +1,7 @@
 /**
  * TEG Supply Chain Conference 2026 — Location-Host landing page.
- * Hero: scroll-scrub video + Immersive Gardens “Gespräch Buchen” CTA
- * (scrolls to bottom in-house scheduler). Post-hero: “Das TEG Konferenz
+ * Hero: scroll-scrub video + hero overlay (scroll hint + Gespräch Buchen).
+ * Overlay is visible immediately. Post-hero: “Das TEG Konferenz
  * Format”, then vertical Immersive Gardens journey (one thesis per
  * full-width section, no 2×2 text grids). Black sponsor bar archived.
  */
@@ -634,18 +634,14 @@ const ConferenceSlideshow: React.FC<{
 };
 
 const BOOKING_SECTION_ID = "termin-buchen";
-/** No-friction nudge: reveal hero CTA after this idle (no scroll) at top. */
-const HERO_CTA_IDLE_MS = 5000;
 
 const RequestDemo: React.FC = () => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [heroProgress, setHeroProgress] = useState(0);
-  /** Idle nudge revealed after HERO_CTA_IDLE_MS with no scroll at top. */
-  const [ctaRevealed, setCtaRevealed] = useState(false);
+  const [headerCtaVisible, setHeaderCtaVisible] = useState(false);
   const heroPinRef = useRef<HTMLDivElement>(null);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   const videoReadyRef = useRef(false);
-  const ctaRevealedRef = useRef(false);
   const formatHeadingRef = useRef<HTMLHeadingElement>(null);
   const formatPinRef = useRef<HTMLDivElement>(null);
   const formatVideoRef = useRef<HTMLVideoElement>(null);
@@ -688,59 +684,6 @@ const RequestDemo: React.FC = () => {
     document.body.appendChild(s);
   }, []);
 
-  /**
-   * Low-friction CTA: hidden until the visitor sits still at the hero top
-   * for 5s (likely hasn't discovered scroll). Any scroll/wheel/touch resets
-   * the timer; leaving the top cancels until they return to the top.
-   */
-  useEffect(() => {
-    let timer: ReturnType<typeof setTimeout> | null = null;
-
-    const atHeroTop = () =>
-      (typeof window !== "undefined" ? window.scrollY : 0) <= 12;
-
-    const clearIdle = () => {
-      if (timer !== null) {
-        clearTimeout(timer);
-        timer = null;
-      }
-    };
-
-    const armIdle = () => {
-      clearIdle();
-      if (ctaRevealedRef.current) return;
-      if (!atHeroTop()) return;
-      timer = setTimeout(() => {
-        timer = null;
-        if (!atHeroTop() || ctaRevealedRef.current) return;
-        ctaRevealedRef.current = true;
-        setCtaRevealed(true);
-      }, HERO_CTA_IDLE_MS);
-    };
-
-    const onScrollActivity = () => {
-      if (!atHeroTop()) {
-        clearIdle();
-        return;
-      }
-      if (!ctaRevealedRef.current) armIdle();
-    };
-
-    armIdle();
-    window.addEventListener("scroll", onScrollActivity, { passive: true });
-    window.addEventListener("wheel", onScrollActivity, { passive: true });
-    window.addEventListener("touchmove", onScrollActivity, { passive: true });
-    window.addEventListener("keydown", onScrollActivity);
-
-    return () => {
-      clearIdle();
-      window.removeEventListener("scroll", onScrollActivity);
-      window.removeEventListener("wheel", onScrollActivity);
-      window.removeEventListener("touchmove", onScrollActivity);
-      window.removeEventListener("keydown", onScrollActivity);
-    };
-  }, []);
-
   useEffect(() => {
     const video = heroVideoRef.current;
     const pin = heroPinRef.current;
@@ -752,6 +695,8 @@ const RequestDemo: React.FC = () => {
     let lastUi = -1;
     /** Last applied glass flag — update immediately on finished-edge cross. */
     let lastGlass = false;
+    /** Header gold CTA stays off while the hero overlay button is visible. */
+    let lastHeaderCta = false;
     let raf = 0;
     video.muted = true;
     video.defaultMuted = true;
@@ -835,13 +780,18 @@ const RequestDemo: React.FC = () => {
       // Video visible once metadata ready (all-intra seeks).
       video.style.opacity = videoReadyRef.current ? "1" : "0";
 
-      // Hero CTA: hidden until idle reveal; then solid→fade with scrub (40–50%)
+      // Hero overlay: solid at rest, gone after the first two video frames
       const formLayer = pin.querySelector<HTMLElement>(".rd-hero-inner");
+      const formOp = heroFormOpacity(progress);
+      const heroCtaVisible = formOp > 0.01;
       if (formLayer) {
-        const formOp = ctaRevealedRef.current ? heroFormOpacity(progress) : 0;
         formLayer.style.opacity = String(formOp);
-        formLayer.style.pointerEvents =
-          formOp <= 0.01 || !ctaRevealedRef.current ? "none" : "auto";
+        formLayer.style.pointerEvents = heroCtaVisible ? "auto" : "none";
+      }
+      const headerCtaOn = !heroCtaVisible;
+      if (headerCtaOn !== lastHeaderCta) {
+        lastHeaderCta = headerCtaOn;
+        setHeaderCtaVisible(headerCtaOn);
       }
 
       if (videoReadyRef.current) {
@@ -1118,6 +1068,10 @@ const RequestDemo: React.FC = () => {
               onClick={scrollToBooking}
               data-booking-cta="scroll-to-termin-buchen"
               data-testid="header-gespraech-buchen"
+              data-visible={headerCtaVisible ? "true" : "false"}
+              hidden={!headerCtaVisible}
+              aria-hidden={!headerCtaVisible}
+              tabIndex={headerCtaVisible ? 0 : -1}
             >
               Gespräch buchen
             </button>
@@ -1164,42 +1118,42 @@ const RequestDemo: React.FC = () => {
               data-testid="hero-zoom-video"
             />
             <div
-              className={
-                "rd-hero-inner rd-hero-inner--cta-only" +
-                (ctaRevealed ? " rd-hero-inner--cta-revealed" : "")
-              }
+              className="rd-hero-inner rd-hero-inner--cta-only rd-hero-inner--cta-revealed"
               data-testid="hero-form-layer"
-              data-cta-revealed={ctaRevealed ? "true" : "false"}
-              aria-hidden={!ctaRevealed}
+              data-cta-revealed="true"
             >
-              <button
-                type="button"
-                className="rd-garden-cta"
-                onClick={scrollToBooking}
-                data-booking-cta="scroll-to-termin-buchen"
-                data-testid="hero-gespraech-buchen"
-                aria-label="Gespräch buchen — zum Termin am Seitenende"
-                tabIndex={ctaRevealed ? 0 : -1}
-              >
-                <span className="rd-garden-cta-halo" aria-hidden="true" />
-                <span className="rd-garden-cta-label">
-                  Gespräch Buchen
-                  <svg
-                    aria-hidden="true"
-                    viewBox="0 0 16 16"
-                    className="rd-garden-cta-arrow"
-                  >
-                    <path
-                      d="M3 6l5 5 5-5"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </button>
+              <div className="rd-hero-overlay" data-testid="hero-overlay">
+                <p className="rd-hero-overlay-hint">
+                  NACH UNTEN SCROLLEN UM MEHR ZU ERFAHREN
+                </p>
+                <button
+                  type="button"
+                  className="rd-garden-cta"
+                  onClick={scrollToBooking}
+                  data-booking-cta="scroll-to-termin-buchen"
+                  data-testid="hero-gespraech-buchen"
+                  aria-label="Gespräch buchen — zum Termin am Seitenende"
+                >
+                  <span className="rd-garden-cta-halo" aria-hidden="true" />
+                  <span className="rd-garden-cta-label">
+                    Gespräch Buchen
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 16 16"
+                      className="rd-garden-cta-arrow"
+                    >
+                      <path
+                        d="M3 6l5 5 5-5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
             </div>
           </section>
         </div>

@@ -60,14 +60,24 @@ export function heroOverlayOpacity(progress) {
 }
 
 /**
- * Form opacity: solid until 40%, fast fade 40%→50%, gone at 50%+.
+ * Hero zoom asset (hero-zoom.mp4): 24 fps, 241 frames, ~10.04s.
+ * Overlay fades across the first two encoded frames, then stays gone.
+ */
+export const HERO_ZOOM_FRAME_COUNT = 241;
+export const HERO_OVERLAY_FADE_FRAMES = 2;
+export const HERO_OVERLAY_FADE_END =
+  HERO_OVERLAY_FADE_FRAMES / HERO_ZOOM_FRAME_COUNT;
+
+/**
+ * Overlay opacity: solid at rest (progress 0), linear to 0 across the
+ * first two video keyframes, gone for the rest of the scrub.
  * @param {number} progress - 0..1 scroll/video progress
  */
 export function heroFormOpacity(progress) {
   const p = progress <= 0 ? 0 : progress >= 1 ? 1 : progress;
-  if (p <= 0.4) return 1;
-  if (p >= 0.5) return 0;
-  return 1 - (p - 0.4) / 0.1;
+  if (p <= 0) return 1;
+  if (p >= HERO_OVERLAY_FADE_END) return 0;
+  return 1 - p / HERO_OVERLAY_FADE_END;
 }
 
 /**

@@ -12,6 +12,7 @@ import {
   headerGlassEligible,
   heroOverlayOpacity,
   heroFormOpacity,
+  HERO_OVERLAY_FADE_END,
   headerBottomCrossedTop,
   formatVideoPhase,
   formatVideoScrubActive,
@@ -93,17 +94,20 @@ if (Math.abs(heroOverlayOpacity(0.25) - 0.5) > 1e-9) {
 if (heroOverlayOpacity(0.5) !== 0 || heroOverlayOpacity(0.9) !== 0) {
   fail("overlay at ≥50% must be 0");
 }
-// Form: solid to 40%, gone at 50%, mid fade at 45%
-if (heroFormOpacity(0) !== 1 || heroFormOpacity(0.4) !== 1) {
-  fail("form must stay solid through 40%");
+// Overlay UI: solid at rest, gone after the first two video keyframes
+if (heroFormOpacity(0) !== 1) {
+  fail("form at rest (progress 0) must be 1");
 }
-if (Math.abs(heroFormOpacity(0.45) - 0.5) > 1e-9) {
-  fail("form at 45% must be 0.5 (fast 40→50 fade)");
+if (Math.abs(heroFormOpacity(HERO_OVERLAY_FADE_END / 2) - 0.5) > 1e-9) {
+  fail("form at one keyframe must be 0.5");
 }
-if (heroFormOpacity(0.5) !== 0 || heroFormOpacity(0.8) !== 0) {
-  fail("form at ≥50% must be 0");
+if (heroFormOpacity(HERO_OVERLAY_FADE_END) !== 0) {
+  fail("form at two keyframes must be 0");
 }
-if (!failed) ok("hero overlay/form opacity curves (0→50% / 40→50%)");
+if (heroFormOpacity(0.01) !== 0 || heroFormOpacity(0.4) !== 0) {
+  fail("form must stay 0 after the two-keyframe fade");
+}
+if (!failed) ok("hero overlay fades out across the first two video keyframes");
 
 // Mid-range monotonic under continuous “scroll” samples
 let prev = -1;
