@@ -100,17 +100,25 @@
   height: 40px;
   padding: 8px 20px;
   border-radius: 9999px;
-  border: 1px solid #ffffff;
-  background: transparent;
-  color: #ffffff;
+  border: 1px solid #c69e3c;
+  background: #c69e3c;
+  color: #0b1730;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   font-family: inherit;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .rd-btn-header-demo:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #d9ae50;
+  border-color: #d9ae50;
+}
+
+.rd-btn-header-demo[hidden] {
+  display: none;
 }
 
 /* ——— Hero scroll pin: sticky until zoom video is fully scrubbed ——— */
@@ -243,17 +251,17 @@
   min-height: 0;
 }
 
-/* Title removed — garden CTA eye-level center of hero viewport */
+/* Title removed — overlay sits at optical center of the hero viewport */
 .rd-hero-inner--form-only,
 .rd-hero-inner--cta-only {
   grid-template-columns: 1fr;
-  /* Fill sticky hero band and center the CTA at eye level */
+  /* Fill sticky hero band and center the overlay at eye level */
   flex: 1 1 auto;
   align-self: stretch;
   width: 100%;
   max-width: none;
   min-height: 0;
-  justify-items: center;
+  justify-items: stretch;
   align-items: center;
   /* Optical center of the painted hero (header band already padded on .rd-hero) */
   padding: 0 clamp(24px, 7vw, 133px);
@@ -263,31 +271,46 @@
   width: min(100%, 461px);
 }
 
-/* Hidden until idle reveal; opacity also driven by scroll scrub in JS */
+/* Visible immediately; opacity also driven by scroll scrub in JS */
 .rd-hero-inner--cta-only {
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.rd-hero-inner--cta-only.rd-hero-inner--cta-revealed .rd-garden-cta {
-  animation: rd-garden-cta-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+/* Hero overlay: hint left, gold CTA right, same vertical center, no frame */
+.rd-hero-overlay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 3vw, 40px);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
 }
 
-@keyframes rd-garden-cta-in {
-  from {
-    opacity: 0;
-    transform: scale(0.92) translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+.rd-hero-overlay-hint {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: clamp(0.72rem, 1.15vw, 0.95rem);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .rd-hero-inner--cta-only.rd-hero-inner--cta-revealed .rd-garden-cta {
-    animation: none;
-  }
+.rd-hero-overlay .rd-garden-cta {
+  flex: 0 0 auto;
 }
 
 /*
@@ -370,9 +393,25 @@
   transform: translateY(2px);
 }
 
+@media (max-width: 720px) {
+  .rd-hero-overlay {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .rd-hero-overlay-hint {
+    flex: 0 1 auto;
+    max-width: 22em;
+    text-align: center;
+  }
+}
+
 @media (max-width: 640px) {
   .rd-hero-inner--cta-only {
-    justify-items: center;
+    justify-items: stretch;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
@@ -2134,6 +2173,11 @@
     grid-template-columns: 1fr;
     align-items: start;
     padding-top: clamp(24px, 4vh, 48px);
+  }
+
+  .rd-hero-inner--cta-only {
+    align-items: center;
+    padding-top: 0;
   }
 
   /* Stacked form can grow past one screen; keep min full-viewport via .rd-hero */
