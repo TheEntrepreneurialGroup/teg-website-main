@@ -763,7 +763,7 @@ const Events: React.FC = () => {
                               <img
                                 src={speaker.photo}
                                 alt={speaker.name}
-                                className="mb-3 h-28 w-28 rounded-full object-cover object-top shadow-sm sm:h-32 sm:w-32"
+                                className="mb-3 h-28 w-28 rounded-full object-cover object-center shadow-sm sm:h-32 sm:w-32"
                               />
                               <p className="text-slate-900 text-[18px] font-bold leading-snug break-words">
                                 {speaker.name}
