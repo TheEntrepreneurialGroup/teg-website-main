@@ -63,16 +63,12 @@ const Events: React.FC = () => {
           photo: "/events/speakers/kroeber.jpg",
         },
         {
+          name: "Stephan Lustig",
+          photo: "/events/speakers/lustig.jpg",
+        },
+        {
           name: "Oskar Schneider",
           photo: "/events/speakers/schneider.jpg",
-        },
-        {
-          name: "Prof. Dr. Lisandra Flach",
-          photo: "/events/speakers/flach.jpg",
-        },
-        {
-          name: "Prof. Dr. Achim J. Lilienthal",
-          photo: "/events/speakers/lilienthal.jpg",
         },
         {
           name: "Michael Risch",
@@ -83,8 +79,12 @@ const Events: React.FC = () => {
           photo: "/events/speakers/topf.jpg",
         },
         {
-          name: "Stephan Lustig",
-          photo: "/events/speakers/lustig.jpg",
+          name: "Prof. Dr. Lisandra Flach",
+          photo: "/events/speakers/flach.jpg",
+        },
+        {
+          name: "Prof. Dr. Achim J. Lilienthal",
+          photo: "/events/speakers/lilienthal.jpg",
         },
       ],
     },
@@ -711,7 +711,7 @@ const Events: React.FC = () => {
                   alt=""
                 />
               </div>
-              <div className="flex min-w-0 flex-col justify-start p-5 sm:p-8 md:col-span-8 md:justify-center md:p-7 lg:p-8">
+              <div className="flex min-h-0 min-w-0 flex-col justify-start p-5 sm:p-8 md:col-span-8 md:h-full md:overflow-hidden md:p-7 lg:p-8">
                 <p className="text-blue-600 font-bold text-[1.3125rem] uppercase mb-2 tracking-widest">
                   {selectedEvent.category || "Past Event"}
                 </p>
@@ -747,14 +747,14 @@ const Events: React.FC = () => {
                   )}
                 {selectedEvent.speakers &&
                   selectedEvent.speakers.length > 0 && (
-                    <div className="mb-4">
-                      <p className="text-slate-900 text-[1.3125rem] font-bold uppercase tracking-[0.12em] mb-3">
+                    <div className="mb-4 flex min-h-0 flex-1 flex-col">
+                      <p className="text-slate-900 text-[1.3125rem] font-bold uppercase tracking-[0.12em] mb-3 shrink-0">
                         Speaker
                       </p>
                       <div
                         className={
                           selectedEvent.detailsSpeakersOnly
-                            ? "grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-3 gap-4"
+                            ? "min-h-0 flex-1 overflow-y-auto overscroll-contain pr-1 grid grid-cols-2 sm:grid-cols-3 gap-4 max-h-[52vh] md:max-h-none"
                             : "grid sm:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-3"
                         }
                       >
