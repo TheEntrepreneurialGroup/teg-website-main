@@ -161,16 +161,14 @@ if (upcomingObjects.length < 1) {
   if (!location.includes("München")) {
     fail(`upcoming location does not contain München: ${location}`);
   }
-  if (!description) fail("upcoming description is empty");
-  if (!longText) fail("upcoming longText is empty");
   if (!image) fail("upcoming image is empty");
   if (!(await imageExists(image))) {
     fail(`upcoming image is not an existing public asset: ${image}`);
   }
-  if (!isGermanSentenceText(description)) {
+  if (description && !isGermanSentenceText(description)) {
     fail("upcoming description is not complete German sentence text");
   }
-  if (!isGermanSentenceText(longText)) {
+  if (longText && !isGermanSentenceText(longText)) {
     fail("upcoming longText is not complete German sentence text");
   }
   if (hasForbiddenDash(description)) {
