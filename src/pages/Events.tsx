@@ -59,6 +59,10 @@ const Events: React.FC = () => {
       detailsSpeakersOnly: true,
       speakers: [
         {
+          name: "Jochen Kröber",
+          photo: "/events/speakers/kroeber.jpg",
+        },
+        {
           name: "Oskar Schneider",
           photo: "/events/speakers/schneider.jpg",
         },
