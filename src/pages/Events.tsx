@@ -38,11 +38,28 @@ const Events: React.FC = () => {
   const biotechLumaLink = "https://luma.com/teg-qdjm";
   const upcomingEvents: EventData[] = [
     {
+      id: "supplychainconference2026",
+      title: "Supply Chain Conference",
+      date: "8.12.2026",
+      location: "MaibornWolff GmbH, München",
+      category: "Upcoming Highlight",
+      topic: "Automation & Politics X Supply Chain",
+      description:
+        "Die Supply Chain Conference bringt Führungskräfte und Young Professionals für einen Konferenztag nach München. Vorträge, Panels und Workshops verbinden Automatisierung, Politik und Lieferketten.",
+      longText:
+        "Die Konferenz findet am 8. Dezember 2026 bei der MaibornWolff GmbH in München statt. TEG lädt rund 125 ausgewählte Teilnehmerinnen und Teilnehmer ein. Das ganztägige Format verbindet Vorträge, Panels und Workshops zu Automatisierung, Politik und Lieferketten. Im Mittelpunkt stehen Wissenstransfer und der Austausch zwischen Führungskräften und Young Professionals.",
+      image: "/request-demo/hero-bg.jpg",
+      externalLink: "/supplychain",
+    },
+  ];
+
+  const pastEvents: EventData[] = [
+    {
       id: "biotech-medtech-panel-2026",
       title: "Herausforderungen & Innovation in Biotech & Medtech",
       date: "03.07.2026",
       location: "IZB Faculty Club, Martinsried",
-      category: "Upcoming Highlight",
+      category: "Industry Panel",
       topic: "Zukunft der Münchner Biotech- und Medtech-Szene",
       description:
         "Ein interaktiver Panel Talk zur Zukunft der Life-Sciences, Biotech- und Medtech-Industrie in München.",
@@ -75,9 +92,6 @@ const Events: React.FC = () => {
         },
       ],
     },
-  ];
-
-  const pastEvents: EventData[] = [
     {
       id: "ai-2026",
       title: "AI Consulting Conference 2026",

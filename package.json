@@ -12,9 +12,10 @@
     "format:check": "prettier --check .",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "npm run lint && tsc --noEmit && node ./scripts/verify-request-demo.mjs && node ./scripts/verify-hero-scrub.mjs",
+    "test": "npm run lint && tsc --noEmit && node ./scripts/verify-request-demo.mjs && node ./scripts/verify-hero-scrub.mjs && node ./scripts/verify-events-data.mjs",
     "test:request-demo": "node ./scripts/verify-request-demo.mjs",
-    "test:hero-scrub": "node ./scripts/verify-hero-scrub.mjs"
+    "test:hero-scrub": "node ./scripts/verify-hero-scrub.mjs",
+    "test:events-data": "node ./scripts/verify-events-data.mjs"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
