@@ -30,6 +30,7 @@ interface EventData {
     company?: string;
     position?: string;
     photo?: string;
+    photoPosition?: string;
   }[];
   detailsSpeakersOnly?: boolean;
 }
@@ -61,6 +62,8 @@ const Events: React.FC = () => {
         {
           name: "Jochen Kröber",
           photo: "/events/speakers/kroeber.jpg",
+          // Portrait source (3:4) — square crop must stay near the top so the head is not cut off.
+          photoPosition: "object-top",
         },
         {
           name: "Stephan Lustig",
@@ -395,30 +398,33 @@ const Events: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen text-slate-900 overflow-x-hidden">
-      <div className="relative min-h-[470px] w-full overflow-hidden bg-slate-900 md:h-[45vh] md:min-h-0">
+      <div className="relative h-[45vh] w-full overflow-hidden bg-slate-900">
         <img
           src="/shared/heroes/hero-subpage.avif"
           alt="Hero"
           className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 flex items-start pt-24 md:items-center md:pt-20 xl:pt-24">
+        <div className="absolute inset-0 flex items-center pt-20 xl:pt-24">
           <div className="container-custom px-4 md:px-8">
             <div className="bg-slate-900 p-8 max-w-2xl border-l-8 border-white">
-              <span className="text-white text-[1.3125rem] font-bold uppercase tracking-[0.12em] block mb-2">
+              <span className="text-white text-xs font-bold uppercase tracking-[0.2em] block mb-2">
                 Gegründet 1986
               </span>
-              <h1 className="text-white text-[2.5rem] font-bold uppercase tracking-tight">
+              <h1 className="text-white text-4xl font-bold uppercase tracking-tight">
                 Events & Netzwerk.
               </h1>
+              <p className="text-white/60 mt-4 text-base leading-relaxed">
+                Schnittstelle zwischen High-Potentials und Wirtschaft.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
       <section className="relative py-16 md:py-24 overflow-hidden">
-        <div className="container-custom relative px-[8px] md:px-16">
+        <div className="container-custom relative px-4 md:px-16">
           <div className="flex justify-between items-end mb-10">
-            <h2 className="text-[1.3125rem] font-bold text-blue-600 uppercase tracking-widest flex items-center">
+            <h2 className="text-xs font-bold text-blue-600 uppercase tracking-widest flex items-center">
               <span className="w-8 h-[1px] bg-blue-600 mr-3"></span> Upcoming
               Highlights
             </h2>
@@ -480,29 +486,29 @@ const Events: React.FC = () => {
                       />
                     )}
                   </div>
-                  <div className="flex min-w-0 flex-col justify-center px-4 py-5 sm:p-8 md:col-span-8 md:p-8 lg:p-10">
-                    <p className="mb-4 text-[1.3125rem] font-bold uppercase text-blue-600 md:mb-3">
+                  <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 md:col-span-8 md:p-8 lg:p-10">
+                    <p className="mb-4 text-[10px] font-bold uppercase text-blue-600 md:mb-3">
                       {upcomingEvents[upcomingPage].category}
                     </p>
-                    <h3 className="mb-5 break-words text-[clamp(1.85rem,6vw,2.75rem)] font-bold uppercase leading-none tracking-tighter md:mb-5 md:text-[2.6rem] lg:text-[2.75rem]">
+                    <h3 className="mb-5 break-words text-[clamp(1.6rem,8vw,3rem)] font-bold uppercase leading-none tracking-tighter md:mb-5 md:text-[2.35rem] lg:text-4xl">
                       {upcomingEvents[upcomingPage].title}
                     </h3>
                     {upcomingEvents[upcomingPage].topic && (
-                      <p className="mb-4 text-[1.3125rem] font-bold uppercase leading-relaxed tracking-wider text-slate-900 md:mb-3">
+                      <p className="mb-4 text-xs font-bold uppercase leading-relaxed tracking-widest text-slate-900 md:mb-3">
                         {upcomingEvents[upcomingPage].topic}
                       </p>
                     )}
                     {upcomingEvents[upcomingPage].description && (
-                      <p className="mb-4 text-2xl leading-relaxed text-slate-500 md:mb-4">
+                      <p className="mb-6 text-sm leading-relaxed text-slate-500 md:mb-5">
                         {upcomingEvents[upcomingPage].description}
                       </p>
                     )}
                     {upcomingEvents[upcomingPage].longText && (
-                      <p className="mb-6 text-2xl leading-relaxed text-slate-500 md:mb-5">
+                      <p className="mb-6 text-sm leading-relaxed text-slate-500 md:mb-5">
                         {upcomingEvents[upcomingPage].longText}
                       </p>
                     )}
-                    <div className="mb-6 space-y-3 text-2xl text-slate-500 md:mb-6">
+                    <div className="mb-6 space-y-3 text-sm text-slate-500 md:mb-6">
                       <p className="flex items-center">
                         <Calendar size={16} className="mr-3" />{" "}
                         {upcomingEvents[upcomingPage].date}
@@ -517,7 +523,7 @@ const Events: React.FC = () => {
                         onClick={() =>
                           setSelectedEvent(upcomingEvents[upcomingPage])
                         }
-                        className="w-full bg-slate-900 px-4 py-[14px] text-center text-[1.125rem] font-bold uppercase tracking-[0.04em] text-white transition-all hover:bg-blue-600 sm:w-fit sm:whitespace-nowrap sm:px-[18px] sm:text-[1.3125rem] sm:tracking-[0.08em] md:px-8 md:py-4 md:tracking-wider"
+                        className="w-full whitespace-nowrap bg-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-600 sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest"
                       >
                         Details ansehen
                       </button>
@@ -530,7 +536,7 @@ const Events: React.FC = () => {
                           }
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full border border-slate-900 px-4 py-[14px] text-center text-[1.125rem] font-bold uppercase tracking-[0.04em] text-slate-900 transition-all hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:w-fit sm:whitespace-nowrap sm:px-[18px] sm:text-[1.3125rem] sm:tracking-[0.08em] md:px-8 md:py-4 md:tracking-wider"
+                          className="w-full whitespace-nowrap border border-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900 transition-all hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest"
                         >
                           In Kontakt treten
                         </a>
@@ -548,11 +554,11 @@ const Events: React.FC = () => {
         <div className="container-custom px-4 md:px-16 relative z-10">
           <div className="grid md:grid-cols-3 gap-10 md:gap-16 items-center">
             <div className="md:col-span-1">
-              <h2 className="text-[2.15rem] font-bold uppercase tracking-tighter mb-4">
+              <h2 className="text-3xl font-bold uppercase tracking-tighter mb-4">
                 Past Events
               </h2>
               <div className="h-1 w-16 bg-blue-600 mb-6" />
-              <p className="text-slate-500 text-2xl leading-relaxed">
+              <p className="text-slate-500 text-sm leading-relaxed">
                 Unsere Historie spiegelt die Qualität unserer Partnerschaften
                 wider.
               </p>
@@ -607,14 +613,14 @@ const Events: React.FC = () => {
                             />
                           </div>
                           <div className="flex flex-1 flex-col p-6 sm:p-7 pt-5 pb-8">
-                            <p className="text-blue-600 font-bold text-[1.3125rem] uppercase mb-2">
+                            <p className="text-blue-600 font-bold text-[10px] uppercase mb-2">
                               {event.date}
                             </p>
                             <div>
-                              <h4 className="font-bold uppercase text-[clamp(1.425rem,2.7vw,1.6875rem)] tracking-widest leading-snug break-words">
+                              <h4 className="font-bold uppercase text-[clamp(0.72rem,1.2vw,0.875rem)] tracking-widest leading-snug break-words">
                                 {event.title}
                               </h4>
-                              <p className="text-slate-500 text-[clamp(1.3125rem,2.1vw,1.5rem)] leading-relaxed mt-3 break-words">
+                              <p className="text-slate-500 text-[clamp(0.68rem,1vw,0.75rem)] leading-relaxed mt-3 break-words">
                                 {event.topic || event.description}
                               </p>
                             </div>
@@ -643,16 +649,16 @@ const Events: React.FC = () => {
             <div className="md:w-1/2 w-full bg-[#0a1e3b] p-12 md:p-16 flex flex-col justify-center text-white">
               <div className="flex gap-6 mb-10">
                 <div className="w-[2px] bg-amber-500" />
-                <p className="italic text-2xl text-slate-200 leading-tight">
+                <p className="italic text-xl text-slate-200 leading-tight">
                   “Ich freue mich von Ihnen <br /> zu hören!”
                 </p>
               </div>
 
               <div className="mb-12">
-                <h3 className="text-[1.65rem] font-bold mb-2 tracking-tight">
+                <h3 className="text-2xl font-bold mb-2 tracking-tight">
                   Jonathan Babelotzky
                 </h3>
-                <p className="text-slate-400 text-2xl leading-relaxed font-medium">
+                <p className="text-slate-400 text-sm leading-relaxed font-medium">
                   Leitung Strategie &amp; Partnerschaften
                 </p>
               </div>
@@ -662,13 +668,13 @@ const Events: React.FC = () => {
                   href="https://www.linkedin.com/in/jonathan-babelotzky/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-amber-500 hover:text-white transition-all text-2xl font-bold tracking-wider"
+                  className="flex items-center gap-2 text-amber-500 hover:text-white transition-all text-sm font-bold tracking-wider"
                 >
                   <Linkedin size={18} /> LinkedIn
                 </a>
                 <a
                   href="mailto:jonathan.babelotzky@teg-ev.de"
-                  className="flex items-center gap-2 text-amber-500 hover:text-white transition-all text-2xl font-bold tracking-wider"
+                  className="flex items-center gap-2 text-amber-500 hover:text-white transition-all text-sm font-bold tracking-wider"
                 >
                   <Mail size={18} /> Email
                 </a>
@@ -712,13 +718,13 @@ const Events: React.FC = () => {
                 />
               </div>
               <div className="flex min-h-0 min-w-0 flex-col justify-start p-5 sm:p-8 md:col-span-8 md:h-full md:overflow-hidden md:p-7 lg:p-8">
-                <p className="text-blue-600 font-bold text-[1.3125rem] uppercase mb-2 tracking-widest">
+                <p className="text-blue-600 font-bold text-[10px] uppercase mb-2 tracking-widest">
                   {selectedEvent.category || "Past Event"}
                 </p>
-                <h2 className="text-[1.4rem] sm:text-2xl lg:text-[2rem] font-bold mb-3 uppercase tracking-normal leading-tight break-words">
+                <h2 className="text-[1.2rem] sm:text-2xl lg:text-3xl font-bold mb-3 uppercase tracking-normal leading-tight break-words">
                   {selectedEvent.title}
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-2 mb-3 text-slate-500 text-2xl">
+                <div className="grid sm:grid-cols-2 gap-2 mb-3 text-slate-500 text-sm">
                   <p className="flex items-center">
                     <Calendar size={16} className="mr-3 shrink-0" />
                     {selectedEvent.date}
@@ -729,26 +735,26 @@ const Events: React.FC = () => {
                   </p>
                 </div>
                 {!selectedEvent.detailsSpeakersOnly && selectedEvent.topic && (
-                  <p className="text-slate-900 text-[1.3125rem] font-bold uppercase tracking-wider mb-2 leading-relaxed break-words">
+                  <p className="text-slate-900 text-xs font-bold uppercase tracking-widest mb-2 leading-relaxed break-words">
                     {selectedEvent.topic}
                   </p>
                 )}
                 {!selectedEvent.detailsSpeakersOnly &&
                   selectedEvent.description && (
-                    <p className="text-slate-600 text-2xl italic mb-3 border-l-4 border-slate-100 pl-4 leading-relaxed">
+                    <p className="text-slate-600 text-sm italic mb-3 border-l-4 border-slate-100 pl-4 leading-relaxed">
                       {selectedEvent.description}
                     </p>
                   )}
                 {!selectedEvent.detailsSpeakersOnly &&
                   selectedEvent.longText && (
-                    <p className="text-slate-500 text-2xl mb-4 leading-relaxed">
+                    <p className="text-slate-500 text-sm mb-4 leading-relaxed">
                       {selectedEvent.longText}
                     </p>
                   )}
                 {selectedEvent.speakers &&
                   selectedEvent.speakers.length > 0 && (
                     <div className="mb-4 flex min-h-0 flex-1 flex-col">
-                      <p className="text-slate-900 text-[1.3125rem] font-bold uppercase tracking-[0.12em] mb-3 shrink-0">
+                      <p className="text-slate-900 text-[10px] font-bold uppercase tracking-[0.2em] mb-3 shrink-0">
                         Speaker
                       </p>
                       <div
@@ -767,9 +773,11 @@ const Events: React.FC = () => {
                               <img
                                 src={speaker.photo}
                                 alt={speaker.name}
-                                className="mb-3 h-28 w-28 rounded-full object-cover object-center shadow-sm sm:h-32 sm:w-32"
+                                className={`mb-3 h-28 w-28 rounded-full object-cover shadow-sm sm:h-32 sm:w-32 ${
+                                  speaker.photoPosition ?? "object-center"
+                                }`}
                               />
-                              <p className="text-slate-900 text-[18px] font-bold leading-snug break-words">
+                              <p className="text-slate-900 text-[13px] font-bold leading-snug break-words">
                                 {speaker.name}
                               </p>
                             </div>
@@ -778,11 +786,11 @@ const Events: React.FC = () => {
                               key={`${selectedEvent.id}-${speaker.name}`}
                               className="border-l-2 border-blue-600 pl-3"
                             >
-                              <p className="text-slate-900 text-[22.5px] font-bold leading-snug break-words">
+                              <p className="text-slate-900 text-[13px] font-bold leading-snug break-words">
                                 {speaker.name}
                               </p>
                               {(speaker.position || speaker.company) && (
-                                <p className="text-slate-500 text-[19.5px] leading-relaxed break-words">
+                                <p className="text-slate-500 text-[11px] leading-relaxed break-words">
                                   {[speaker.position, speaker.company]
                                     .filter(Boolean)
                                     .join(", ")}
@@ -799,7 +807,7 @@ const Events: React.FC = () => {
                     onClick={() =>
                       window.open(selectedEvent.externalLink, "_blank")
                     }
-                    className="w-full bg-blue-600 px-[18px] py-[14px] text-center text-[1.3125rem] font-bold uppercase tracking-[0.08em] text-white transition-all hover:bg-blue-700 sm:w-fit sm:px-6 sm:py-3 sm:tracking-wider"
+                    className="w-full bg-blue-600 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-700 sm:w-fit sm:px-6 sm:py-3 sm:tracking-widest"
                   >
                     Event ansehen
                   </button>
