@@ -256,6 +256,7 @@ const de = {
   "navbar.aboutPage.about": "Über Uns",
   "navbar.aboutPage.events": "Konferenzen & Events",
   "navbar.aboutPage.executives": "Für Führungskräfte",
+  "navbar.aboutPage.cases": "Cases",
   "navbar.aboutPage.students": "Für Studierende",
 
   // For Companies Page
@@ -482,6 +483,9 @@ const de = {
     "TEG für Unternehmen | Zugang zu zukünftigen Führungskräften",
   "seo.companies.description":
     "Werden Sie TEG-Partner und gewinnen Sie Zugang zu einem seit 1986 gewachsenen Talent-Pool aus ambitionierten zukünftigen Führungskräften.",
+  "seo.cases.title": "Cases für Hosts und Sponsoren | TEG",
+  "seo.cases.description":
+    "Drei Cases für TEG-Events: Recruiting-Zugang, Event-Branding, Showcasing im Sales Channel. Auf Konferenzen zusätzlich eigene Workshops.",
   "seo.events.title": "TEG Events | The Entrepreneurial Group",
   "seo.events.description":
     "Entdecken Sie kommende und vergangene TEG-Events mit Workshops, Talks und Formaten rund um Unternehmertum, Technologie und Leadership.",

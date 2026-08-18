@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import ForStudents from "./pages/ForStudents";
 import ForCompanies from "./pages/ForCompanies";
+import Cases from "./pages/Cases";
 import About from "./pages/About";
 import Events from "./pages/Events";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -104,6 +105,7 @@ function App() {
           <Route index element={<About />} />
           <Route path="for-students" element={<ForStudents />} />
           <Route path="for-companies" element={<ForCompanies />} />
+          <Route path="cases" element={<Cases />} />
           <Route path="events" element={<Events />} />
         </Route>
         <Route

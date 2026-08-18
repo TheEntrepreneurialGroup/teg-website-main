@@ -429,6 +429,31 @@ const ForCompanies: React.FC = () => {
         </div>
       </section>
 
+      {/* HOSTS AND SPONSORS → /cases */}
+      <section className="py-24 bg-[#0A1628] text-left">
+        <div className="container-custom px-4 md:px-8 mx-auto">
+          <span className="text-[#B7860B] font-black uppercase tracking-[0.4em] text-[10px] mb-6 block">
+            Hosts und Sponsoren
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight text-white mb-6">
+            Drei Cases für TEG-Events
+          </h2>
+          <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-10">
+            Location-Hosts und Sponsoren nutzen dasselbe Konferenzformat über
+            Recruiting-Zugang, Event-Branding und Showcasing im Sales Channel.
+            Mentor- und Speaker-Engagement bleibt auf dieser Seite.
+          </p>
+          <a
+            href="/cases"
+            className="bg-[#B7860B] text-[#0A1628] px-10 py-4 font-black uppercase tracking-widest text-sm inline-flex items-center gap-3"
+          >
+            Cases ansehen <ArrowUpRight size={20} />
+          </a>
+        </div>
+      </section>
+
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#B7860B]/40 to-transparent bg-[#0A1628]" />
+
       {/* 5. ABOUT US LINK */}
       <section className="py-20 bg-white text-center overflow-hidden">
         <div className="container-custom px-4 md:px-8 mx-auto flex flex-col items-center text-center">
