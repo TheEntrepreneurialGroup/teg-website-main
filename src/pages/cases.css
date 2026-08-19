@@ -1,0 +1,663 @@
+/* Cases: Immersive Garden homepage mapping + TEG garden atmosphere.
+   Visual master: https://immersive-g.com/ — sparse stage, stacked type,
+   selectable project rows, one-click into a case, backstage after a second click.
+   Light theme: warm paper ground, dark ink, gold accent. The three department
+   cases stay as hairline rows; the workshop format is a separate inverted
+   color block. */
+
+.cases-page {
+  --cases-bg: #f6f3ec;
+  --cases-panel: #06120a;
+  --cases-gold: #b7860b;
+  --cases-ink: #0a1628;
+  --cases-muted: rgba(10, 22, 40, 0.62);
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background: var(--cases-bg);
+  color: var(--cases-ink);
+  font-family: Montserrat, sans-serif;
+}
+
+.cases-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  isolation: isolate;
+}
+
+.cases-stage-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 92rem;
+  margin: 0 auto;
+  padding: calc(5.5rem + 4vh) clamp(1.25rem, 5.5vw, 5.5rem)
+    clamp(1.25rem, 3.2vh, 2.4rem);
+}
+
+.cases-kicker {
+  margin: 0 0 clamp(1rem, 2.2vh, 1.6rem);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--cases-gold);
+}
+
+.cases-title {
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+  color: var(--cases-ink);
+}
+
+.cases-title-line {
+  display: block;
+}
+
+.cases-title-line--primary {
+  font-size: clamp(2.6rem, 8.4vw, 7.4rem);
+}
+
+.cases-title-line--secondary {
+  margin-top: 0.08em;
+  font-size: clamp(1.55rem, 4.4vw, 3.6rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  color: rgba(10, 22, 40, 0.72);
+}
+
+.cases-group-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(10, 22, 40, 0.45);
+}
+
+.cases-tiles {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  margin-top: clamp(1.6rem, 5vh, 4.2rem);
+  min-height: 0;
+}
+
+.cases-tile {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.3rem 1.1rem;
+  width: 100%;
+  margin: 0;
+  padding: clamp(0.85rem, 1.8vh, 1.25rem) 0;
+  border: 0;
+  border-top: 1px solid rgba(10, 22, 40, 0.14);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.cases-tile:last-of-type {
+  border-bottom: 1px solid rgba(10, 22, 40, 0.14);
+}
+
+.cases-tile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--cases-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cases-tile:hover,
+.cases-tile:focus-visible {
+  color: #06120a;
+  border-top-color: rgba(183, 134, 11, 0.5);
+  outline: none;
+}
+
+.cases-tile:hover::after,
+.cases-tile:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.cases-tile-index {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--cases-gold);
+}
+
+.cases-tile-title {
+  font-size: clamp(1.15rem, 2.5vw, 2.15rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.cases-tile-kicker {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(10, 22, 40, 0.4);
+  transition: color 0.35s ease;
+}
+
+/* Department rows: kicker sits left under the title so the hover preview
+   image on the right never covers it. */
+.cases-tile .cases-tile-kicker {
+  grid-column: 2;
+}
+
+.cases-tile:hover .cases-tile-kicker,
+.cases-tile:focus-visible .cases-tile-kicker {
+  color: var(--cases-gold);
+}
+
+/* Workshop format: inverted flat color block, clearly set off from the
+   hairline department rows. */
+.cases-workshop {
+  margin-top: clamp(1.4rem, 3.2vh, 2.4rem);
+}
+
+.cases-workshop-tile {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.85rem 1.1rem;
+  width: 100%;
+  margin: 0;
+  padding: clamp(1.05rem, 2.4vh, 1.6rem) clamp(1rem, 2.2vw, 1.8rem);
+  border: 0;
+  background: var(--cases-panel);
+  color: #f4f1ea;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  transition: background 0.35s ease;
+}
+
+.cases-workshop-tile:hover,
+.cases-workshop-tile:focus-visible {
+  background: #0b2113;
+  outline: none;
+}
+
+.cases-workshop-tile .cases-tile-index {
+  color: #d8b45a;
+}
+
+.cases-workshop-tile .cases-tile-kicker {
+  color: rgba(244, 241, 234, 0.5);
+}
+
+.cases-workshop-tile:hover .cases-tile-kicker,
+.cases-workshop-tile:focus-visible .cases-tile-kicker {
+  color: #d8b45a;
+}
+
+.cases-rail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin-top: clamp(1.1rem, 2.4vh, 1.8rem);
+}
+
+.cases-rail-btn,
+.cases-rail-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cases-muted);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cases-rail-btn:hover,
+.cases-rail-link:hover,
+.cases-rail-btn:focus-visible,
+.cases-rail-link:focus-visible {
+  color: var(--cases-gold);
+  outline: none;
+}
+
+.cases-rail-cta {
+  color: var(--cases-gold);
+}
+
+.cases-preview {
+  pointer-events: none;
+  position: absolute;
+  top: 18%;
+  right: 4%;
+  z-index: 1;
+  width: min(38vw, 520px);
+  aspect-ratio: 4 / 5;
+  opacity: 0;
+  transform: translate3d(12px, 8px, 0) scale(1.02);
+  transition:
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cases-preview.is-on {
+  opacity: 0.88;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.cases-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85);
+  -webkit-mask-image: radial-gradient(
+    72% 72% at 50% 48%,
+    #000 46%,
+    transparent 88%
+  );
+  mask-image: radial-gradient(72% 72% at 50% 48%, #000 46%, transparent 88%);
+}
+
+.cases-overlay-root {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  background: rgba(240, 236, 226, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.cases-overlay {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--cases-bg);
+  color: var(--cases-ink);
+}
+
+.cases-overlay-media {
+  display: none;
+  min-width: 0;
+  overflow: hidden;
+  background: #e9e4d7;
+}
+
+.cases-overlay-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cases-overlay-media.is-contain img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cases-overlay-body {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  overflow: hidden;
+}
+
+.cases-overlay-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.25rem;
+}
+
+.cases-overlay-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid rgba(10, 22, 40, 0.24);
+  background: transparent;
+  color: var(--cases-ink);
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.cases-overlay-close:hover,
+.cases-overlay-close:focus-visible {
+  color: #06120a;
+  background: var(--cases-gold);
+  border-color: var(--cases-gold);
+  outline: none;
+}
+
+.cases-overlay-kicker {
+  margin: 0 0 0.7rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--cases-gold);
+}
+
+.cases-overlay-title {
+  margin: 0 0 1rem;
+  max-width: 18ch;
+  font-size: clamp(1.55rem, 3.2vw, 2.7rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.cases-overlay-lead {
+  margin: 0 0 1.5rem;
+  max-width: 38em;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--cases-muted);
+}
+
+.cases-chapter {
+  width: 100%;
+  margin: 0;
+  padding: 0.95rem 0;
+  border: 0;
+  border-top: 1px solid rgba(10, 22, 40, 0.14);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cases-chapter:focus-visible {
+  outline: 1px solid var(--cases-gold);
+  outline-offset: 4px;
+}
+
+.cases-chapter-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cases-chapter-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.cases-chapter-mark {
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--cases-gold);
+}
+
+.cases-chapter-body {
+  padding: 0.85rem 0 0.35rem;
+  max-width: 40em;
+  overflow: hidden;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(10, 22, 40, 0.78);
+}
+
+.cases-chapter-body p + p,
+.cases-chapter-body ul + p,
+.cases-chapter-body p + ul {
+  margin-top: 0.85rem;
+}
+
+.cases-chapter-body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cases-chapter-body li {
+  position: relative;
+  padding-left: 0.9rem;
+  margin: 0 0 0.65rem;
+}
+
+.cases-chapter-body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 1px;
+  background: var(--cases-gold);
+}
+
+.cases-package {
+  margin-right: 0.45rem;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cases-gold);
+}
+
+.cases-speaker {
+  margin: 0 0 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid rgba(183, 134, 11, 0.5);
+}
+
+.cases-speaker strong {
+  display: block;
+  font-weight: 600;
+  color: var(--cases-ink);
+}
+
+.cases-overlay-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(10, 22, 40, 0.14);
+}
+
+.cases-overlay-nav a,
+.cases-overlay-nav button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cases-muted);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cases-overlay-nav a:hover,
+.cases-overlay-nav button:hover,
+.cases-overlay-nav a:focus-visible,
+.cases-overlay-nav button:focus-visible {
+  color: var(--cases-gold);
+  outline: none;
+}
+
+.cases-overlay-nav .is-gold {
+  color: var(--cases-gold);
+}
+
+.cases-calendly {
+  width: 100%;
+  margin-top: 1.25rem;
+  border: 1px solid rgba(10, 22, 40, 0.12);
+  background: #fff;
+}
+
+.cases-footnote {
+  margin: 1.25rem 0 0;
+  max-width: 44em;
+  font-size: 0.72rem;
+  line-height: 1.55;
+  color: rgba(10, 22, 40, 0.45);
+}
+
+@media (min-width: 900px) {
+  .cases-overlay {
+    grid-template-columns: minmax(18rem, 0.42fr) minmax(0, 1fr);
+  }
+
+  .cases-overlay-media {
+    display: block;
+  }
+
+  .cases-overlay-media.is-contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+  }
+
+  .cases-overlay-close {
+    top: 1.35rem;
+    right: 1.35rem;
+  }
+
+  .cases-tile {
+    grid-template-columns: 3rem minmax(0, 1fr);
+  }
+
+  .cases-workshop-tile {
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+  }
+}
+
+@media (max-width: 899px) {
+  .cases-preview {
+    display: none;
+  }
+
+  .cases-tile,
+  .cases-workshop-tile {
+    grid-template-columns: 2.1rem minmax(0, 1fr);
+  }
+
+  .cases-workshop-tile .cases-tile-kicker {
+    grid-column: 2;
+    margin-top: -0.15rem;
+  }
+
+  .cases-overlay-body {
+    padding-top: 4rem;
+  }
+}
+
+/* Very large screens (beamer, TV): the small premium type keeps its exact
+   size on regular displays — every clamp() minimum equals the base size and
+   the vw term only overtakes it from ~1800px viewport width — then grows
+   gently with the viewport, capped at roughly 1.5x so the look stays quiet. */
+@media (min-width: 1680px) {
+  .cases-kicker,
+  .cases-tile-index,
+  .cases-rail-btn,
+  .cases-rail-link {
+    font-size: clamp(0.6875rem, 0.6vw, 1.05rem);
+  }
+
+  .cases-group-label,
+  .cases-tile-kicker,
+  .cases-overlay-kicker,
+  .cases-overlay-nav a,
+  .cases-overlay-nav button {
+    font-size: clamp(0.625rem, 0.55vw, 0.95rem);
+  }
+
+  .cases-tile-title {
+    font-size: clamp(2.15rem, 1.6vw, 2.75rem);
+  }
+
+  .cases-overlay-title {
+    font-size: clamp(2.7rem, 2.25vw, 3.4rem);
+  }
+
+  .cases-overlay-lead {
+    font-size: clamp(0.98rem, 0.85vw, 1.4rem);
+  }
+
+  .cases-chapter-title {
+    font-size: clamp(0.95rem, 0.83vw, 1.35rem);
+  }
+
+  .cases-chapter-mark {
+    font-size: clamp(1.1rem, 0.95vw, 1.55rem);
+  }
+
+  .cases-chapter-body {
+    font-size: clamp(0.92rem, 0.8vw, 1.3rem);
+  }
+
+  .cases-package {
+    font-size: clamp(0.5625rem, 0.5vw, 0.85rem);
+  }
+
+  .cases-footnote {
+    font-size: clamp(0.72rem, 0.63vw, 1.05rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cases-tile::after,
+  .cases-preview,
+  .cases-tile,
+  .cases-workshop-tile,
+  .cases-tile-kicker {
+    transition: none;
+  }
+}

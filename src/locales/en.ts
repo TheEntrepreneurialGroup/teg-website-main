@@ -253,6 +253,7 @@ const en = {
   "navbar.aboutPage.about": "About Us",
   "navbar.aboutPage.events": "Conferences & Events",
   "navbar.aboutPage.executives": "For Executives",
+  "navbar.aboutPage.cases": "Cases",
   "navbar.aboutPage.students": "For Students",
 
   // For Companies Page
@@ -477,6 +478,9 @@ const en = {
   "seo.companies.title": "TEG for Companies | Access future leadership talent",
   "seo.companies.description":
     "Become a TEG partner and gain access to a talent pool of ambitious future leaders built over decades.",
+  "seo.cases.title": "Cases for hosts and sponsors | TEG",
+  "seo.cases.description":
+    "Three cases for TEG events: recruiting access, event branding, showcasing in the sales channel. Conferences can also include a partner workshop.",
   "seo.events.title": "TEG Events | The Entrepreneurial Group",
   "seo.events.description":
     "Explore upcoming and past TEG events with workshops, talks and formats around entrepreneurship, technology and leadership.",

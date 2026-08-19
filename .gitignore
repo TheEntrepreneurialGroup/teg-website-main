@@ -78,3 +78,8 @@ packages/react-devtools-timeline/dist
 *.png
 public/shared/*.mp4
 temp_media_dir/
+
+# Agent session artifacts and local runtime data
+/terminals/
+/mcps/
+/server/data/

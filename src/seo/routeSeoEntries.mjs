@@ -36,6 +36,15 @@ export const routeSeoEntries = [
     changeFrequency: "weekly",
   },
   {
+    path: "/cases",
+    titleMessageId: "seo.cases.title",
+    descriptionMessageId: "seo.cases.description",
+    indexable: true,
+    openGraphImagePath: "/shared/heroes/hero-subpage.avif",
+    priority: 0.8,
+    changeFrequency: "weekly",
+  },
+  {
     path: "/events",
     titleMessageId: "seo.events.title",
     descriptionMessageId: "seo.events.description",

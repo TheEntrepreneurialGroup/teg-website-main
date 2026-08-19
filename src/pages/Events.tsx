@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Calendar,
@@ -21,28 +22,145 @@ interface EventData {
   longText: string;
   image: string;
   cardImage?: string;
+  video?: string;
   imageFit?: "cover" | "contain";
   externalLink?: string;
+  contactLink?: string;
   speakers?: {
     name: string;
-    company: string;
-    position: string;
+    company?: string;
+    position?: string;
+    photo?: string;
+    photoPosition?: string;
   }[];
+  detailsSpeakersOnly?: boolean;
 }
 
 const Events: React.FC = () => {
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
   const [[upcomingPage, upcomingDir], setUpcomingPage] = useState([0, 0]);
   const [[pastPage, pastDir], setPastPage] = useState([0, 0]);
+  const speakerGridRef = useRef<HTMLDivElement | null>(null);
+
+  // On touch devices the speaker grid has no visible scrollbar, so users don't
+  // realize more rows exist. Auto-advance one row every few seconds and loop
+  // back to the top; pause while the user scrolls manually.
+  useEffect(() => {
+    const grid = speakerGridRef.current;
+    if (!selectedEvent || !grid) return;
+    const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (!isTouch || reducedMotion) return;
+    if (grid.scrollHeight <= grid.clientHeight) return;
+
+    let paused = false;
+    let resumeTimer: number | undefined;
+
+    const advanceRow = () => {
+      if (paused) return;
+      const children = Array.from(grid.children) as HTMLElement[];
+      if (children.length === 0) return;
+      const firstTop = children[0].offsetTop;
+      const secondRow = children.find((child) => child.offsetTop > firstTop);
+      const rowStride = secondRow
+        ? secondRow.offsetTop - firstTop
+        : grid.clientHeight;
+      const maxScroll = grid.scrollHeight - grid.clientHeight;
+      if (grid.scrollTop >= maxScroll - 4) {
+        grid.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        grid.scrollTo({
+          top: Math.min(grid.scrollTop + rowStride, maxScroll),
+          behavior: "smooth",
+        });
+      }
+    };
+
+    const interval = window.setInterval(advanceRow, 3500);
+
+    const pause = () => {
+      paused = true;
+      if (resumeTimer) window.clearTimeout(resumeTimer);
+    };
+    const scheduleResume = () => {
+      if (resumeTimer) window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(() => {
+        paused = false;
+      }, 6000);
+    };
+    grid.addEventListener("touchstart", pause, { passive: true });
+    grid.addEventListener("touchend", scheduleResume, { passive: true });
+
+    return () => {
+      window.clearInterval(interval);
+      if (resumeTimer) window.clearTimeout(resumeTimer);
+      grid.removeEventListener("touchstart", pause);
+      grid.removeEventListener("touchend", scheduleResume);
+    };
+  }, [selectedEvent]);
 
   const biotechLumaLink = "https://luma.com/teg-qdjm";
   const upcomingEvents: EventData[] = [
+    {
+      id: "supplychainconference2026",
+      title: "Supply Chain Conference",
+      date: "8. Dezember 2026",
+      location: "MaibornWolff GmbH, München",
+      category: "Upcoming Highlight",
+      topic: "Automation & Politics X Supply Chain",
+      description:
+        "TEG lädt ausgewählte Führungskräfte und Young Professionals zu einem Konferenztag nach München. Speaker stehen vor einem kuratierten Publikum und verbinden Geopolitik, Automatisierung und die Praxis der Lieferkette.",
+      longText: "",
+      image: "/events/converted/frontier-tech-conference-2025.webp",
+      video: "/events/scc-events-hero-v3.mp4",
+      imageFit: "cover",
+      externalLink: "/supplychain",
+      contactLink: "https://calendly.com/corbinian-massinger-teg-ev/30min",
+      detailsSpeakersOnly: true,
+      speakers: [
+        {
+          name: "Jochen Kröber",
+          photo: "/events/speakers/kroeber.jpg",
+          // Portrait source (3:4) — square crop must stay near the top so the head is not cut off.
+          photoPosition: "object-top",
+        },
+        {
+          name: "Stephan Lustig",
+          photo: "/events/speakers/lustig.jpg",
+        },
+        {
+          name: "Oskar Schneider",
+          photo: "/events/speakers/schneider.jpg",
+        },
+        {
+          name: "Michael Risch",
+          photo: "/events/speakers/risch.jpg",
+        },
+        {
+          name: "Felix Richard Topf",
+          photo: "/events/speakers/topf.jpg",
+        },
+        {
+          name: "Prof. Dr. Lisandra Flach",
+          photo: "/events/speakers/flach.jpg",
+        },
+        {
+          name: "Prof. Dr. Achim J. Lilienthal",
+          photo: "/events/speakers/lilienthal.jpg",
+        },
+      ],
+    },
+  ];
+
+  const pastEvents: EventData[] = [
     {
       id: "biotech-medtech-panel-2026",
       title: "Herausforderungen & Innovation in Biotech & Medtech",
       date: "03.07.2026",
       location: "IZB Faculty Club, Martinsried",
-      category: "Upcoming Highlight",
+      category: "Industry Panel",
       topic: "Zukunft der Münchner Biotech- und Medtech-Szene",
       description:
         "Ein interaktiver Panel Talk zur Zukunft der Life-Sciences, Biotech- und Medtech-Industrie in München.",
@@ -75,9 +193,6 @@ const Events: React.FC = () => {
         },
       ],
     },
-  ];
-
-  const pastEvents: EventData[] = [
     {
       id: "ai-2026",
       title: "AI Consulting Conference 2026",
@@ -370,7 +485,7 @@ const Events: React.FC = () => {
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="container-custom relative px-4 md:px-16">
           <div className="flex justify-between items-end mb-10">
-            <h2 className="text-xs font-bold text-blue-600 uppercase tracking-widest flex items-center">
+            <h2 className="text-xs min-[1680px]:text-[clamp(0.75rem,0.65vw,1.1rem)] font-bold text-blue-600 uppercase tracking-widest flex items-center">
               <span className="w-8 h-[1px] bg-blue-600 mr-3"></span> Upcoming
               Highlights
             </h2>
@@ -410,32 +525,48 @@ const Events: React.FC = () => {
                         : "aspect-[16/10] md:aspect-auto"
                     }`}
                   >
-                    <img
-                      src={upcomingEvents[upcomingPage].image}
-                      className={`${
-                        upcomingEvents[upcomingPage].imageFit === "contain"
-                          ? "h-full max-h-full w-auto max-w-full object-contain object-center"
-                          : "h-full w-full object-cover object-center"
-                      }`}
-                      alt=""
-                    />
+                    {upcomingEvents[upcomingPage].video ? (
+                      <video
+                        src={upcomingEvents[upcomingPage].video}
+                        poster={upcomingEvents[upcomingPage].image}
+                        className="h-full w-full object-cover object-center"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={upcomingEvents[upcomingPage].image}
+                        className={`${
+                          upcomingEvents[upcomingPage].imageFit === "contain"
+                            ? "h-full max-h-full w-auto max-w-full object-contain object-center"
+                            : "h-full w-full object-cover object-center"
+                        }`}
+                        alt=""
+                      />
+                    )}
                   </div>
                   <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 md:col-span-8 md:p-8 lg:p-10">
-                    <p className="mb-4 text-[10px] font-bold uppercase text-blue-600 md:mb-3">
-                      {upcomingEvents[upcomingPage].category}
-                    </p>
-                    <h3 className="mb-5 break-words text-[clamp(1.6rem,8vw,3rem)] font-bold uppercase leading-none tracking-tighter md:mb-5 md:text-[2.35rem] lg:text-4xl">
+                    <h3 className="mb-5 break-words text-[clamp(1.6rem,8vw,3rem)] font-bold uppercase leading-none tracking-tighter md:mb-5 md:text-[2.35rem] lg:text-4xl min-[1680px]:text-[clamp(2.25rem,1.7vw,2.9rem)]">
                       {upcomingEvents[upcomingPage].title}
                     </h3>
                     {upcomingEvents[upcomingPage].topic && (
-                      <p className="mb-4 text-xs font-bold uppercase leading-relaxed tracking-widest text-slate-900 md:mb-3">
+                      <p className="mb-4 text-xs min-[1680px]:text-[clamp(0.75rem,0.65vw,1.1rem)] font-bold uppercase leading-relaxed tracking-widest text-slate-900 md:mb-3">
                         {upcomingEvents[upcomingPage].topic}
                       </p>
                     )}
-                    <p className="mb-6 text-sm leading-relaxed text-slate-500 md:mb-5">
-                      {upcomingEvents[upcomingPage].description}
-                    </p>
-                    <div className="mb-6 space-y-3 text-sm text-slate-500 md:mb-6">
+                    {upcomingEvents[upcomingPage].description && (
+                      <p className="mb-6 text-sm min-[1680px]:text-[clamp(0.875rem,0.75vw,1.3rem)] leading-relaxed text-slate-500 md:mb-5">
+                        {upcomingEvents[upcomingPage].description}
+                      </p>
+                    )}
+                    {upcomingEvents[upcomingPage].longText && (
+                      <p className="mb-6 text-sm min-[1680px]:text-[clamp(0.875rem,0.75vw,1.3rem)] leading-relaxed text-slate-500 md:mb-5">
+                        {upcomingEvents[upcomingPage].longText}
+                      </p>
+                    )}
+                    <div className="mb-6 space-y-3 text-sm min-[1680px]:text-[clamp(0.875rem,0.75vw,1.3rem)] text-slate-500 md:mb-6">
                       <p className="flex items-center">
                         <Calendar size={16} className="mr-3" />{" "}
                         {upcomingEvents[upcomingPage].date}
@@ -450,18 +581,22 @@ const Events: React.FC = () => {
                         onClick={() =>
                           setSelectedEvent(upcomingEvents[upcomingPage])
                         }
-                        className="w-full whitespace-nowrap bg-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-600 sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest"
+                        className="w-full whitespace-nowrap bg-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-600 sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest min-[1680px]:text-[clamp(0.75rem,0.65vw,1.05rem)]"
                       >
                         Details ansehen
                       </button>
-                      {upcomingEvents[upcomingPage].externalLink && (
+                      {(upcomingEvents[upcomingPage].contactLink ||
+                        upcomingEvents[upcomingPage].externalLink) && (
                         <a
-                          href={upcomingEvents[upcomingPage].externalLink}
+                          href={
+                            upcomingEvents[upcomingPage].contactLink ||
+                            upcomingEvents[upcomingPage].externalLink
+                          }
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full whitespace-nowrap border border-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900 transition-all hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest"
+                          className="w-full whitespace-nowrap border border-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900 transition-all hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest min-[1680px]:text-[clamp(0.75rem,0.65vw,1.05rem)]"
                         >
-                          Anmelden
+                          In Kontakt treten
                         </a>
                       )}
                     </div>
@@ -477,11 +612,11 @@ const Events: React.FC = () => {
         <div className="container-custom px-4 md:px-16 relative z-10">
           <div className="grid md:grid-cols-3 gap-10 md:gap-16 items-center">
             <div className="md:col-span-1">
-              <h2 className="text-3xl font-bold uppercase tracking-tighter mb-4">
+              <h2 className="text-3xl min-[1680px]:text-[clamp(1.875rem,1.4vw,2.5rem)] font-bold uppercase tracking-tighter mb-4">
                 Past Events
               </h2>
               <div className="h-1 w-16 bg-blue-600 mb-6" />
-              <p className="text-slate-500 text-sm leading-relaxed">
+              <p className="text-slate-500 text-sm min-[1680px]:text-[clamp(0.875rem,0.75vw,1.3rem)] leading-relaxed">
                 Unsere Historie spiegelt die Qualität unserer Partnerschaften
                 wider.
               </p>
@@ -536,14 +671,14 @@ const Events: React.FC = () => {
                             />
                           </div>
                           <div className="flex flex-1 flex-col p-6 sm:p-7 pt-5 pb-8">
-                            <p className="text-blue-600 font-bold text-[10px] uppercase mb-2">
+                            <p className="text-blue-600 font-bold text-[10px] min-[1680px]:text-[clamp(0.625rem,0.55vw,0.95rem)] uppercase mb-2">
                               {event.date}
                             </p>
                             <div>
-                              <h4 className="font-bold uppercase text-[clamp(0.72rem,1.2vw,0.875rem)] tracking-widest leading-snug break-words">
+                              <h4 className="font-bold uppercase text-[clamp(0.72rem,1.2vw,0.875rem)] min-[1680px]:text-[clamp(0.875rem,0.72vw,1.25rem)] tracking-widest leading-snug break-words">
                                 {event.title}
                               </h4>
-                              <p className="text-slate-500 text-[clamp(0.68rem,1vw,0.75rem)] leading-relaxed mt-3 break-words">
+                              <p className="text-slate-500 text-[clamp(0.68rem,1vw,0.75rem)] min-[1680px]:text-[clamp(0.75rem,0.62vw,1.05rem)] leading-relaxed mt-3 break-words">
                                 {event.topic || event.description}
                               </p>
                             </div>
@@ -640,14 +775,14 @@ const Events: React.FC = () => {
                   alt=""
                 />
               </div>
-              <div className="flex min-w-0 flex-col justify-start p-5 sm:p-8 md:col-span-8 md:justify-center md:p-7 lg:p-8">
-                <p className="text-blue-600 font-bold text-[10px] uppercase mb-2 tracking-widest">
+              <div className="flex min-h-0 min-w-0 flex-col justify-start p-5 sm:p-8 md:col-span-8 md:h-full md:overflow-hidden md:p-7 lg:p-8">
+                <p className="text-blue-600 font-bold text-[10px] min-[1680px]:text-[clamp(0.625rem,0.55vw,0.95rem)] uppercase mb-2 tracking-widest">
                   {selectedEvent.category || "Past Event"}
                 </p>
-                <h2 className="text-[1.2rem] sm:text-2xl lg:text-3xl font-bold mb-3 uppercase tracking-normal leading-tight break-words">
+                <h2 className="text-[1.2rem] sm:text-2xl lg:text-3xl min-[1680px]:text-[clamp(1.875rem,1.4vw,2.5rem)] font-bold mb-3 uppercase tracking-normal leading-tight break-words">
                   {selectedEvent.title}
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-2 mb-3 text-slate-500 text-sm">
+                <div className="grid sm:grid-cols-2 gap-2 mb-3 text-slate-500 text-sm min-[1680px]:text-[clamp(0.875rem,0.75vw,1.3rem)]">
                   <p className="flex items-center">
                     <Calendar size={16} className="mr-3 shrink-0" />
                     {selectedEvent.date}
@@ -657,50 +792,94 @@ const Events: React.FC = () => {
                     {selectedEvent.location}
                   </p>
                 </div>
-                {selectedEvent.topic && (
-                  <p className="text-slate-900 text-xs font-bold uppercase tracking-widest mb-2 leading-relaxed break-words">
+                {!selectedEvent.detailsSpeakersOnly && selectedEvent.topic && (
+                  <p className="text-slate-900 text-xs min-[1680px]:text-[clamp(0.75rem,0.65vw,1.1rem)] font-bold uppercase tracking-widest mb-2 leading-relaxed break-words">
                     {selectedEvent.topic}
                   </p>
                 )}
-                <p className="text-slate-600 text-sm italic mb-3 border-l-4 border-slate-100 pl-4 leading-relaxed">
-                  {selectedEvent.description}
-                </p>
-                <p className="text-slate-500 text-sm mb-4 leading-relaxed">
-                  {selectedEvent.longText}
-                </p>
+                {!selectedEvent.detailsSpeakersOnly &&
+                  selectedEvent.description && (
+                    <p className="text-slate-600 text-sm min-[1680px]:text-[clamp(0.875rem,0.75vw,1.3rem)] italic mb-3 border-l-4 border-slate-100 pl-4 leading-relaxed">
+                      {selectedEvent.description}
+                    </p>
+                  )}
+                {!selectedEvent.detailsSpeakersOnly &&
+                  selectedEvent.longText && (
+                    <p className="text-slate-500 text-sm min-[1680px]:text-[clamp(0.875rem,0.75vw,1.3rem)] mb-4 leading-relaxed">
+                      {selectedEvent.longText}
+                    </p>
+                  )}
                 {selectedEvent.speakers &&
                   selectedEvent.speakers.length > 0 && (
-                    <div className="mb-4">
-                      <p className="text-slate-900 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
+                    <div className="mb-4 flex min-h-0 flex-1 flex-col">
+                      <p className="text-slate-900 text-[10px] min-[1680px]:text-[clamp(0.625rem,0.55vw,0.95rem)] font-bold uppercase tracking-[0.2em] mb-3 shrink-0">
                         Speaker
                       </p>
-                      <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-3">
-                        {selectedEvent.speakers.map((speaker) => (
-                          <div
-                            key={`${selectedEvent.id}-${speaker.name}`}
-                            className="border-l-2 border-blue-600 pl-3"
-                          >
-                            <p className="text-slate-900 text-[13px] font-bold leading-snug break-words">
-                              {speaker.name}
-                            </p>
-                            <p className="text-slate-500 text-[11px] leading-relaxed break-words">
-                              {speaker.position}, {speaker.company}
-                            </p>
-                          </div>
-                        ))}
+                      <div
+                        ref={speakerGridRef}
+                        className={
+                          selectedEvent.detailsSpeakersOnly
+                            ? "min-h-0 flex-1 overflow-y-auto overscroll-contain pr-1 grid grid-cols-2 sm:grid-cols-3 gap-4 max-h-[52vh] md:max-h-none"
+                            : "grid sm:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-3"
+                        }
+                      >
+                        {selectedEvent.speakers.map((speaker) =>
+                          speaker.photo ? (
+                            <div
+                              key={`${selectedEvent.id}-${speaker.name}`}
+                              className="flex flex-col items-center text-center"
+                            >
+                              <img
+                                src={speaker.photo}
+                                alt={speaker.name}
+                                className={`mb-3 h-28 w-28 rounded-full object-cover shadow-sm sm:h-32 sm:w-32 ${
+                                  speaker.photoPosition ?? "object-center"
+                                }`}
+                              />
+                              <p className="text-slate-900 text-[13px] min-[1680px]:text-[clamp(0.8125rem,0.7vw,1.2rem)] font-bold leading-snug break-words">
+                                {speaker.name}
+                              </p>
+                            </div>
+                          ) : (
+                            <div
+                              key={`${selectedEvent.id}-${speaker.name}`}
+                              className="border-l-2 border-blue-600 pl-3"
+                            >
+                              <p className="text-slate-900 text-[13px] min-[1680px]:text-[clamp(0.8125rem,0.7vw,1.2rem)] font-bold leading-snug break-words">
+                                {speaker.name}
+                              </p>
+                              {(speaker.position || speaker.company) && (
+                                <p className="text-slate-500 text-[11px] min-[1680px]:text-[clamp(0.6875rem,0.6vw,1.05rem)] leading-relaxed break-words">
+                                  {[speaker.position, speaker.company]
+                                    .filter(Boolean)
+                                    .join(", ")}
+                                </p>
+                              )}
+                            </div>
+                          ),
+                        )}
                       </div>
                     </div>
                   )}
-                {selectedEvent.externalLink && (
-                  <button
-                    onClick={() =>
-                      window.open(selectedEvent.externalLink, "_blank")
-                    }
-                    className="w-full bg-blue-600 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-700 sm:w-fit sm:px-6 sm:py-3 sm:tracking-widest"
+                <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  {selectedEvent.externalLink && (
+                    <button
+                      onClick={() =>
+                        window.open(selectedEvent.externalLink, "_blank")
+                      }
+                      className="w-full whitespace-nowrap bg-blue-600 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-700 sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest min-[1680px]:text-[clamp(0.75rem,0.65vw,1.05rem)]"
+                    >
+                      Event ansehen
+                    </button>
+                  )}
+                  <Link
+                    to="/cases"
+                    onClick={() => setSelectedEvent(null)}
+                    className="w-full whitespace-nowrap border border-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900 transition-all hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest min-[1680px]:text-[clamp(0.75rem,0.65vw,1.05rem)]"
                   >
-                    Event ansehen
-                  </button>
-                )}
+                    Cases ansehen
+                  </Link>
+                </div>
               </div>
             </motion.div>
           </div>
