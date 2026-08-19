@@ -548,9 +548,6 @@ const Events: React.FC = () => {
                     )}
                   </div>
                   <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 md:col-span-8 md:p-8 lg:p-10">
-                    <p className="mb-4 text-[10px] min-[1680px]:text-[clamp(0.625rem,0.55vw,0.95rem)] font-bold uppercase text-blue-600 md:mb-3">
-                      {upcomingEvents[upcomingPage].category}
-                    </p>
                     <h3 className="mb-5 break-words text-[clamp(1.6rem,8vw,3rem)] font-bold uppercase leading-none tracking-tighter md:mb-5 md:text-[2.35rem] lg:text-4xl min-[1680px]:text-[clamp(2.25rem,1.7vw,2.9rem)]">
                       {upcomingEvents[upcomingPage].title}
                     </h3>
