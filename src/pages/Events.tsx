@@ -504,9 +504,6 @@ const Events: React.FC = () => {
               <h1 className="text-white text-4xl font-bold uppercase tracking-tight">
                 Events & Netzwerk.
               </h1>
-              <p className="text-white/60 mt-4 text-base leading-relaxed">
-                Schnittstelle zwischen High-Potentials und Wirtschaft.
-              </p>
             </div>
           </div>
         </div>
