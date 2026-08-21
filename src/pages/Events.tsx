@@ -121,33 +121,63 @@ const Events: React.FC = () => {
       detailsSpeakersOnly: true,
       speakers: [
         {
+          name: "Peter Dressler",
+          company: "Infineon Technologies",
+          position: "Former Vice President Supply Chain",
+          photo: "/events/speakers/dressler.jpg",
+        },
+        {
           name: "Jochen Kröber",
+          company: "Horváth",
+          position:
+            "Associate Partner & Head of Supply Chain Management & Production",
           photo: "/events/speakers/kroeber.jpg",
           // Portrait source (3:4) — square crop must stay near the top so the head is not cut off.
           photoPosition: "object-top",
         },
         {
-          name: "Stephan Lustig",
+          name: "Dr. Stefan Lustig",
+          company: "Lustig Beverage Consulting",
+          position:
+            "Selbstständiger Berater & Inhaber; ehem. Geschäftsführer Supply Chain, Paulaner",
           photo: "/events/speakers/lustig.jpg",
         },
         {
-          name: "Oskar Schneider",
+          name: "Hansjörg Briegel",
+          company: "Intel Corporation",
+          position: "Vice President ER&D Ecosystem Development",
+          photo: "/events/speakers/briegel.jpg",
+        },
+        {
+          name: "Norbert Vas",
+          company: "Britax Childcare Group",
+          position: "ehm. Chief Operating Officer",
+          photo: "/events/speakers/vas.jpg",
+        },
+        {
+          name: "Dr. Oskar Schneider",
+          company: "Horváth",
+          position: "Senior AI Expert",
           photo: "/events/speakers/schneider.jpg",
         },
         {
           name: "Michael Risch",
+          company: "Michael Risch Unternehmensberatung",
+          position: "Senior Project Manager & Interim Manager",
           photo: "/events/speakers/risch.jpg",
         },
         {
-          name: "Felix Richard Topf",
-          photo: "/events/speakers/topf.jpg",
-        },
-        {
           name: "Prof. Dr. Lisandra Flach",
+          company: "ifo Institute / LMU Munich",
+          position:
+            "Director, ifo Center for International Economics & Professor of Economics",
           photo: "/events/speakers/flach.jpg",
         },
         {
           name: "Prof. Dr. Achim J. Lilienthal",
+          company: "Technical University of Munich",
+          position:
+            "Professor (Perception for Intelligent Systems) & Deputy Director MIRMI",
           photo: "/events/speakers/lilienthal.jpg",
         },
       ],
@@ -839,6 +869,16 @@ const Events: React.FC = () => {
                               <p className="text-slate-900 text-[13px] min-[1680px]:text-[clamp(0.8125rem,0.7vw,1.2rem)] font-bold leading-snug break-words">
                                 {speaker.name}
                               </p>
+                              {speaker.position && (
+                                <p className="text-slate-500 text-[11px] min-[1680px]:text-[clamp(0.6875rem,0.6vw,1.05rem)] mt-1 leading-snug break-words">
+                                  {speaker.position}
+                                </p>
+                              )}
+                              {speaker.company && (
+                                <p className="text-slate-400 text-[11px] min-[1680px]:text-[clamp(0.6875rem,0.6vw,1.05rem)] leading-snug break-words">
+                                  {speaker.company}
+                                </p>
+                              )}
                             </div>
                           ) : (
                             <div
