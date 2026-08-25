@@ -1,0 +1,7 @@
+/marketing
+  Content-Type: application/pdf
+  Content-Disposition: attachment; filename="Information.pdf"
+
+/Information.pdf
+  Content-Type: application/pdf
+  Content-Disposition: attachment; filename="Information.pdf"

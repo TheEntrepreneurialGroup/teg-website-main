@@ -114,7 +114,7 @@ const Events: React.FC = () => {
         "TEG lädt ausgewählte Führungskräfte und Young Professionals zu einem Konferenztag nach München. Speaker stehen vor einem kuratierten Publikum und verbinden Geopolitik, Automatisierung und die Praxis der Lieferkette.",
       longText: "",
       image: "/events/converted/frontier-tech-conference-2025.webp",
-      video: "/events/scc-events-hero-v3.mp4",
+      video: "/events/scc-events-hero-v4.mp4",
       imageFit: "cover",
       externalLink: "/supplychain",
       contactLink: "https://calendly.com/corbinian-massinger-teg-ev/30min",
