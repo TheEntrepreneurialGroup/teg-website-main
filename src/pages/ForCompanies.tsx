@@ -6,8 +6,8 @@ import {
   ChevronRight,
   ChevronLeft,
   ArrowUpRight,
-  Mic2,
 } from "lucide-react";
+import GardenCtaPair from "@/components/sections/GardenCtaPair";
 
 // --- HILFSKOMPONENTE: COUNTER ---
 const Counter = ({ value }: { value: string }) => {
@@ -173,25 +173,38 @@ const ForCompanies: React.FC = () => {
           alt="Hero"
           className="w-full h-full absolute inset-0 object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/90 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#040F1F]/90 via-transparent to-transparent" />
         <div className="relative z-10 container-custom px-4 md:px-8 mx-auto w-full pb-20">
-          <span className="text-[#B7860B] font-black uppercase tracking-[0.4em] text-[10px] mb-2 block">
+          <span className="text-[#F6D77B] font-black uppercase tracking-[0.4em] text-[10px] mb-2 block">
             Your Legacy
           </span>
           <h2 className="text-6xl md:text-[8rem] font-black uppercase tracking-tighter leading-[0.75] text-white -ml-1">
             Tritt in den <br />
-            <span className="text-[#B7860B]">Austausch mit</span> <br />
+            <span className="text-[#F6D77B]">Austausch mit</span> <br />
             der Nächsten <br />
             Generation.
           </h2>
+          <div className="mt-10">
+            <GardenCtaPair
+              instant
+              items={[
+                {
+                  label: "Gespräch vereinbaren",
+                  href: "#contact",
+                  variant: "solid",
+                  trackingSource: "For Companies — Hero",
+                },
+              ]}
+            />
+          </div>
         </div>
       </section>
 
       {/* GOLDENER LINIEN VERLAUF 1 */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#B7860B]/40 to-transparent bg-[#0A1628]" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#F6D77B]/40 to-transparent bg-[#040F1F]" />
 
       {/* 2. MISSION (IMPACT) */}
-      <section className="py-32 bg-[#0A1628] relative overflow-hidden border-t border-white/5">
+      <section className="py-32 bg-[#040F1F] relative overflow-hidden border-t border-white/5">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[12rem] md:text-[20rem] font-black text-white/[0.02] select-none pointer-events-none uppercase tracking-tighter">
           Impact
         </div>
@@ -200,7 +213,7 @@ const ForCompanies: React.FC = () => {
             <div className="lg:col-span-6 space-y-12 text-left">
               <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85] text-white">
                 Von den Besten <br />
-                <span className="text-[#B7860B]">an die Besten.</span>
+                <span className="text-[#F6D77B]">an die Besten.</span>
               </h2>
               <div className="flex flex-wrap gap-x-20 gap-y-6">
                 {[
@@ -212,7 +225,7 @@ const ForCompanies: React.FC = () => {
                     <div className="text-4xl font-black text-white">
                       <Counter value={s.v} />
                     </div>
-                    <div className="text-[10px] font-black uppercase tracking-widest text-[#B7860B]">
+                    <div className="text-[10px] font-black uppercase tracking-widest text-[#F6D77B]">
                       {s.l}
                     </div>
                   </div>
@@ -224,23 +237,23 @@ const ForCompanies: React.FC = () => {
                   alt="Mission"
                   className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#040F1F]/40 to-transparent" />
               </div>
             </div>
             <div className="lg:col-span-6 pt-12 md:pt-24 text-left">
               <div className="relative text-left">
-                <span className="text-[#B7860B] font-black uppercase tracking-[0.5em] text-[10px] mb-8 block">
+                <span className="text-[#F6D77B] font-black uppercase tracking-[0.5em] text-[10px] mb-8 block">
                   The Responsibility
                 </span>
                 <h3 className="text-5xl md:text-[5.5rem] font-black text-white leading-[0.95] mb-12 tracking-[0.02em] uppercase">
                   Die Zukunft <br />
-                  <span className="text-[#B7860B] tracking-[0.05em]">
+                  <span className="text-[#F6D77B] tracking-[0.05em]">
                     unserer
                   </span>{" "}
                   <br />
                   <motion.span
                     animate={{
-                      color: ["#FFFFFF", "#B7860B", "#D4AF37", "#FFFFFF"],
+                      color: ["#FFFFFF", "#F6D77B", "#C69E3C", "#FFFFFF"],
                     }}
                     transition={{
                       duration: 6,
@@ -263,17 +276,17 @@ const ForCompanies: React.FC = () => {
                   href="#contact"
                   className="group flex items-center gap-8 cursor-pointer text-left"
                 >
-                  <div className="w-24 h-24 rounded-full bg-[#B7860B] group-hover:bg-white transition-all duration-700 flex items-center justify-center shadow-2xl">
+                  <div className="w-24 h-24 rounded-full bg-[#C69E3C] group-hover:bg-white transition-all duration-700 flex items-center justify-center shadow-2xl">
                     <ArrowUpRight
                       size={40}
-                      className="text-[#0A1628] group-hover:rotate-45 transition-all duration-500"
+                      className="text-[#0B1730] group-hover:rotate-45 transition-all duration-500"
                     />
                   </div>
                   <div className="flex flex-col text-left">
-                    <span className="text-3xl font-black uppercase tracking-tighter text-white group-hover:text-[#B7860B] transition-colors">
+                    <span className="text-3xl font-black uppercase tracking-tighter text-white group-hover:text-[#F6D77B] transition-colors">
                       Mentor werden
                     </span>
-                    <span className="text-[#B7860B] text-[10px] font-bold uppercase tracking-widest mt-1">
+                    <span className="text-[#F6D77B] text-[10px] font-bold uppercase tracking-widest mt-1">
                       Jetzt starten
                     </span>
                   </div>
@@ -285,14 +298,14 @@ const ForCompanies: React.FC = () => {
       </section>
 
       {/* GOLDENER LINIEN VERLAUF 2 */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#B7860B]/40 to-transparent bg-[#0A1628]" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#F6D77B]/40 to-transparent bg-[#040F1F]" />
 
       {/* 3. LEADERSHIP FORGE (SLIDER) */}
-      <section className="py-24 bg-[#0A1628] text-white relative overflow-hidden text-left">
+      <section className="py-24 bg-[#040F1F] text-white relative overflow-hidden text-left">
         <div className="container-custom px-4 md:px-8 mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-7 relative group text-left">
-              <div className="relative aspect-video w-full overflow-hidden shadow-[30px_30px_0px_0px_#B7860B]">
+              <div className="relative aspect-video w-full overflow-hidden shadow-[30px_30px_0px_0px_#C69E3C]">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentSlide}
@@ -310,7 +323,7 @@ const ForCompanies: React.FC = () => {
                 >
                   <ChevronLeft
                     size={36}
-                    className="text-[#B7860B] group-hover/btn:scale-110 transition-transform"
+                    className="text-[#C69E3C] group-hover/btn:scale-110 transition-transform"
                   />
                 </button>
                 <button
@@ -319,7 +332,7 @@ const ForCompanies: React.FC = () => {
                 >
                   <ChevronRight
                     size={36}
-                    className="text-[#B7860B] group-hover/btn:scale-110 transition-transform"
+                    className="text-[#C69E3C] group-hover/btn:scale-110 transition-transform"
                   />
                 </button>
               </div>
@@ -334,7 +347,7 @@ const ForCompanies: React.FC = () => {
                   className="flex flex-col"
                 >
                   <div className="mb-12 text-left text-left">
-                    <span className="text-[#B7860B] text-xl italic font-serif mb-2 block">
+                    <span className="text-[#C69E3C] text-xl italic font-serif mb-2 block">
                       {academySlides[currentSlide].category}
                     </span>
                     <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] text-white">
@@ -344,10 +357,10 @@ const ForCompanies: React.FC = () => {
                   <div className="space-y-12">
                     {academySlides[currentSlide].points.map((point, i) => (
                       <div key={i} className="flex gap-8 group text-left">
-                        <span className="text-4xl font-black text-[#B7860B] opacity-40">
+                        <span className="text-4xl font-black text-[#C69E3C] opacity-40">
                           {point.num}
                         </span>
-                        <div className="relative pl-6 border-l-2 border-[#B7860B]/30 pb-1">
+                        <div className="relative pl-6 border-l-2 border-[#C69E3C]/30 pb-1">
                           <h4 className="text-xl font-bold uppercase tracking-tight mb-2 text-white">
                             {point.title}
                           </h4>
@@ -362,6 +375,20 @@ const ForCompanies: React.FC = () => {
               </AnimatePresence>
             </div>
           </div>
+          <div className="mt-16 flex justify-center">
+            <GardenCtaPair
+              instant
+              className="justify-center"
+              items={[
+                {
+                  label: "Als Speaker einbringen",
+                  href: "#contact",
+                  variant: "solid",
+                  trackingSource: "For Companies — Leadership Forge",
+                },
+              ]}
+            />
+          </div>
         </div>
       </section>
 
@@ -373,20 +400,20 @@ const ForCompanies: React.FC = () => {
             alt="Speaker Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/90 to-[#0A1628]/70 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040F1F] via-[#040F1F]/90 to-[#040F1F]/70 backdrop-blur-[1px]" />
         </div>
         <div className="container-custom px-4 md:px-8 mx-auto relative z-10 text-left">
           <div className="max-w-5xl">
             <div className="flex items-center gap-6 mb-8 text-left">
-              <div className="w-16 h-[2px] bg-[#B7860B]" />
-              <span className="text-[#B7860B] font-black uppercase tracking-[0.3em] text-sm text-left">
+              <div className="w-16 h-[2px] bg-[#F6D77B]" />
+              <span className="text-[#F6D77B] font-black uppercase tracking-[0.3em] text-sm text-left">
                 Leave your impact
               </span>
             </div>
             <h2 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-12 text-left">
               Engagieren sie sich <br />
               <span
-                className="text-transparent border-b-4 border-[#B7860B] pb-2 text-left"
+                className="text-transparent border-b-4 border-[#F6D77B] pb-2 text-left"
                 style={{ WebkitTextStroke: "1px white" }}
               >
                 als Speaker.
@@ -398,17 +425,21 @@ const ForCompanies: React.FC = () => {
                   Formen sie jetzt als Speaker mit ihrer Erfahrung und ihrem
                   Input die Generation ambitionierter künftiger Führungskräfte!
                 </p>
-                <motion.a
-                  href="#contact"
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-[#B7860B] text-[#0A1628] px-12 py-5 font-black uppercase tracking-widest text-sm flex items-center gap-4 shadow-[0_0_40px_rgba(183,134,11,0.3)] inline-flex"
-                >
-                  Jetzt Speaker werden <Mic2 size={20} />
-                </motion.a>
+                <GardenCtaPair
+                  instant
+                  items={[
+                    {
+                      label: "Jetzt Speaker werden",
+                      href: "#contact",
+                      variant: "solid",
+                      trackingSource: "For Companies — Speaker",
+                    },
+                  ]}
+                />
               </div>
               <div className="flex flex-col gap-8 text-left text-left text-left">
                 <div className="group cursor-default border-l border-white/10 pl-8">
-                  <span className="text-[#B7860B] font-black text-xs uppercase tracking-widest block mb-2 text-left">
+                  <span className="text-[#C69E3C] font-black text-xs uppercase tracking-widest block mb-2 text-left">
                     Audienz
                   </span>
                   <p className="text-white text-lg font-bold tracking-tight uppercase">
@@ -416,7 +447,7 @@ const ForCompanies: React.FC = () => {
                   </p>
                 </div>
                 <div className="group cursor-default border-l border-white/10 pl-8">
-                  <span className="text-[#B7860B] font-black text-xs uppercase tracking-widest block mb-2 text-left text-left">
+                  <span className="text-[#C69E3C] font-black text-xs uppercase tracking-widest block mb-2 text-left text-left">
                     Format
                   </span>
                   <p className="text-white text-lg font-bold tracking-tight uppercase text-left">
@@ -457,27 +488,32 @@ const ForCompanies: React.FC = () => {
       {/* 5. ABOUT US LINK */}
       <section className="py-20 bg-white text-center overflow-hidden">
         <div className="container-custom px-4 md:px-8 mx-auto flex flex-col items-center text-center">
-          <span className="text-[#B7860B] font-black uppercase tracking-[0.4em] text-[10px] mb-6 block text-center">
+          <span className="text-[#F6D77B] font-black uppercase tracking-[0.4em] text-[10px] mb-6 block text-center">
             Establishing Entrepreneurs Since 1986
           </span>
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[1.0] mb-12 text-[#0F2B57] text-center">
+          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[1.0] mb-12 text-[#061D38] text-center">
             Vom Hörsaal zum{" "}
             <motion.span
-              animate={{ color: ["#0F2B57", "#B7860B", "#D4AF37", "#0F2B57"] }}
+              animate={{ color: ["#061D38", "#F6D77B", "#C69E3C", "#061D38"] }}
               transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
               className="inline-block text-center"
             >
               Top-Management.
             </motion.span>
           </h2>
-          <div className="w-full flex justify-center text-center text-center text-center">
-            <motion.a
-              href="/about"
-              whileHover={{ scale: 1.01 }}
-              className="w-full max-w-5xl bg-[#B7860B] text-[#0F2B57] py-4 md:py-6 font-black uppercase tracking-[0.2em] shadow-xl flex items-center justify-center gap-4 text-center"
-            >
-              Mehr über uns erfahren <ArrowUpRight size={24} />
-            </motion.a>
+          <div className="flex justify-center">
+            <GardenCtaPair
+              instant
+              className="justify-center"
+              items={[
+                {
+                  label: "Mehr über uns erfahren",
+                  href: "/about#ybla",
+                  variant: "solid",
+                  trackingSource: "For Companies — About Link",
+                },
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -486,12 +522,12 @@ const ForCompanies: React.FC = () => {
       <section className="py-12 bg-white relative overflow-hidden border-t border-slate-100 text-left text-left text-left">
         <div className="container-custom px-4 md:px-8 mx-auto relative z-10 text-left">
           <div className="flex items-center gap-4 mb-16 text-left text-left">
-            <span className="text-[#B7860B] font-black uppercase tracking-[0.4em] text-[10px] whitespace-nowrap text-left text-left text-left">
+            <span className="text-[#F6D77B] font-black uppercase tracking-[0.4em] text-[10px] whitespace-nowrap text-left text-left text-left">
               Testimonials
             </span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-[#0F2B57] whitespace-nowrap text-left text-left text-left text-left text-left">
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-[#061D38] whitespace-nowrap text-left text-left text-left text-left text-left">
               WAS{" "}
-              <span className="text-[#B7860B] text-left text-left">ANDERE</span>{" "}
+              <span className="text-[#F6D77B] text-left text-left">ANDERE</span>{" "}
               ÜBER UNS SAGEN.
             </h2>
             <div className="h-[1px] bg-slate-200 flex-grow" />
@@ -499,20 +535,20 @@ const ForCompanies: React.FC = () => {
           <div className="relative h-[550px] flex items-center justify-center text-center text-center">
             <button
               onClick={prevRef}
-              className="absolute left-0 md:left-4 z-50 w-12 h-12 bg-white shadow-xl rounded-full flex items-center justify-center border border-[#B7860B]/30 hover:bg-[#B7860B] group transition-all text-center text-center"
+              className="absolute left-0 md:left-4 z-50 w-12 h-12 bg-white shadow-xl rounded-full flex items-center justify-center border border-[#C69E3C]/30 hover:bg-[#C69E3C] group transition-all text-center text-center"
             >
               <ChevronLeft
                 size={24}
-                className="text-[#B7860B] group-hover:text-white"
+                className="text-[#C69E3C] group-hover:text-white"
               />
             </button>
             <button
               onClick={nextRef}
-              className="absolute right-0 md:right-4 z-50 w-12 h-12 bg-white shadow-xl rounded-full flex items-center justify-center border border-[#B7860B]/30 hover:bg-[#B7860B] group transition-all text-center text-center"
+              className="absolute right-0 md:right-4 z-50 w-12 h-12 bg-white shadow-xl rounded-full flex items-center justify-center border border-[#C69E3C]/30 hover:bg-[#C69E3C] group transition-all text-center text-center"
             >
               <ChevronRight
                 size={24}
-                className="text-[#B7860B] group-hover:text-white"
+                className="text-[#C69E3C] group-hover:text-white"
               />
             </button>
             <div className="relative w-full max-w-6xl h-full flex items-center justify-center text-center text-center">
@@ -534,9 +570,9 @@ const ForCompanies: React.FC = () => {
                       zIndex: isActive ? 30 : 10,
                     }}
                     transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-                    className="absolute w-full max-w-[400px] bg-[#F8FAFC] p-10 shadow-2xl border-t-4 border-[#B7860B] flex flex-col items-center text-center text-center text-center"
+                    className="absolute w-full max-w-[400px] bg-[#F8FAFC] p-10 shadow-2xl border-t-4 border-[#C69E3C] flex flex-col items-center text-center text-center text-center"
                   >
-                    <div className="w-24 h-24 rounded-full mb-8 overflow-hidden border-2 border-[#B7860B]/20 bg-slate-200 text-center">
+                    <div className="w-24 h-24 rounded-full mb-8 overflow-hidden border-2 border-[#C69E3C]/20 bg-slate-200 text-center">
                       <img
                         src={test.img}
                         className="w-full h-full object-cover text-center"
@@ -547,10 +583,10 @@ const ForCompanies: React.FC = () => {
                       "{test.quote}"
                     </p>
                     <div className="text-center text-center">
-                      <h4 className="text-lg font-black text-[#0F2B57] uppercase tracking-tight text-center">
+                      <h4 className="text-lg font-black text-[#061D38] uppercase tracking-tight text-center">
                         {test.author}
                       </h4>
-                      <p className="text-[#B7860B] font-bold uppercase tracking-widest text-[9px] mt-1 text-center">
+                      <p className="text-[#C69E3C] font-bold uppercase tracking-widest text-[9px] mt-1 text-center">
                         {test.position}
                       </p>
                     </div>
@@ -558,6 +594,20 @@ const ForCompanies: React.FC = () => {
                 );
               })}
             </div>
+          </div>
+          <div className="mt-12 flex justify-center">
+            <GardenCtaPair
+              instant
+              className="justify-center"
+              items={[
+                {
+                  label: "Jetzt Gespräch vereinbaren",
+                  href: "#contact",
+                  variant: "solid",
+                  trackingSource: "For Companies — Testimonials",
+                },
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -593,9 +643,9 @@ const ForCompanies: React.FC = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="md:w-1/2 w-full bg-[#0F2B57] p-10 md:p-16 flex flex-col justify-center text-white text-left">
+          <div className="md:w-1/2 w-full bg-[#040F1F] p-10 md:p-16 flex flex-col justify-center text-white text-left">
             <div className="flex gap-4 mb-10 text-left">
-              <div className="w-[3px] bg-[#B7860B] text-left" />
+              <div className="w-[3px] bg-[#F6D77B] text-left" />
               <p className="italic text-2xl text-slate-200 leading-tight text-left">
                 “Falls Sie Fragen haben oder sich engagieren möchten, melden Sie
                 sich gerne!”
@@ -605,7 +655,7 @@ const ForCompanies: React.FC = () => {
               <h3 className="text-2xl font-bold mb-1 text-white uppercase tracking-tight">
                 Jonathan Babelotzky
               </h3>
-              <p className="text-[#B7860B] text-[10px] font-black uppercase tracking-[0.2em] text-left">
+              <p className="text-[#F6D77B] text-[10px] font-black uppercase tracking-[0.2em] text-left">
                 {" "}
                 Bereichsleiter Strategie und Partnerschaften
               </p>
@@ -613,13 +663,13 @@ const ForCompanies: React.FC = () => {
             <div className="flex gap-12 text-left">
               <a
                 href="https://www.linkedin.com/in/jonathan-babelotzky/"
-                className="flex items-center gap-3 text-white hover:text-[#B7860B] text-xs font-black uppercase transition-colors text-left"
+                className="flex items-center gap-3 text-white hover:text-[#F6D77B] text-xs font-black uppercase transition-colors text-left"
               >
                 <Linkedin size={32} /> LinkedIn
               </a>
               <a
                 href="mailto:jonathan.babelotzky@teg-ev.de"
-                className="flex items-center gap-3 text-white hover:text-[#B7860B] text-xs font-black uppercase transition-colors text-left"
+                className="flex items-center gap-3 text-white hover:text-[#F6D77B] text-xs font-black uppercase transition-colors text-left"
               >
                 <Mail size={32} /> Email
               </a>
