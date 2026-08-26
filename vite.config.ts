@@ -51,7 +51,7 @@ export default defineConfig({
     include: ["lucide-react"],
   },
   server: {
-    // Listen on all interfaces so phones on the same LAN can load the app
+    // Listen on all interfaces so phones on the same LAN can load the app.
     host: true,
     port: 5173,
     strictPort: true,
