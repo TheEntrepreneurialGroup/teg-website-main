@@ -107,47 +107,77 @@ const Events: React.FC = () => {
       id: "supplychainconference2026",
       title: "Supply Chain Conference",
       date: "8. Dezember 2026",
-      location: "MaibornWolff GmbH, München",
+      location: "München",
       category: "Upcoming Highlight",
       topic: "Automation & Politics X Supply Chain",
       description:
         "TEG lädt ausgewählte Führungskräfte und Young Professionals zu einem Konferenztag nach München. Speaker stehen vor einem kuratierten Publikum und verbinden Geopolitik, Automatisierung und die Praxis der Lieferkette.",
       longText: "",
       image: "/events/converted/frontier-tech-conference-2025.webp",
-      video: "/events/scc-events-hero-v3.mp4",
+      video: "/events/scc-events-hero-v4.mp4",
       imageFit: "cover",
       externalLink: "/supplychain",
       contactLink: "https://calendly.com/corbinian-massinger-teg-ev/30min",
       detailsSpeakersOnly: true,
       speakers: [
         {
+          name: "Peter Dressler",
+          company: "Infineon Technologies",
+          position: "Former Vice President Supply Chain",
+          photo: "/events/speakers/dressler.jpg",
+        },
+        {
           name: "Jochen Kröber",
+          company: "Horváth",
+          position:
+            "Associate Partner & Head of Supply Chain Management & Production",
           photo: "/events/speakers/kroeber.jpg",
           // Portrait source (3:4) — square crop must stay near the top so the head is not cut off.
           photoPosition: "object-top",
         },
         {
-          name: "Stephan Lustig",
+          name: "Dr. Stefan Lustig",
+          company: "Lustig Beverage Consulting",
+          position:
+            "Selbstständiger Berater & Inhaber; ehem. Geschäftsführer Supply Chain, Paulaner",
           photo: "/events/speakers/lustig.jpg",
         },
         {
-          name: "Oskar Schneider",
+          name: "Hansjörg Briegel",
+          company: "Intel Corporation",
+          position: "Vice President ER&D Ecosystem Development",
+          photo: "/events/speakers/briegel.jpg",
+        },
+        {
+          name: "Norbert Vas",
+          company: "Britax Childcare Group",
+          position: "ehm. Chief Operating Officer",
+          photo: "/events/speakers/vas.jpg",
+        },
+        {
+          name: "Dr. Oskar Schneider",
+          company: "Horváth",
+          position: "Senior AI Expert",
           photo: "/events/speakers/schneider.jpg",
         },
         {
           name: "Michael Risch",
+          company: "Michael Risch Unternehmensberatung",
+          position: "Senior Project Manager & Interim Manager",
           photo: "/events/speakers/risch.jpg",
         },
         {
-          name: "Felix Richard Topf",
-          photo: "/events/speakers/topf.jpg",
-        },
-        {
           name: "Prof. Dr. Lisandra Flach",
+          company: "ifo Institute / LMU Munich",
+          position:
+            "Director, ifo Center for International Economics & Professor of Economics",
           photo: "/events/speakers/flach.jpg",
         },
         {
           name: "Prof. Dr. Achim J. Lilienthal",
+          company: "Technical University of Munich",
+          position:
+            "Professor (Perception for Intelligent Systems) & Deputy Director MIRMI",
           photo: "/events/speakers/lilienthal.jpg",
         },
       ],
@@ -474,9 +504,6 @@ const Events: React.FC = () => {
               <h1 className="text-white text-4xl font-bold uppercase tracking-tight">
                 Events & Netzwerk.
               </h1>
-              <p className="text-white/60 mt-4 text-base leading-relaxed">
-                Schnittstelle zwischen High-Potentials und Wirtschaft.
-              </p>
             </div>
           </div>
         </div>
@@ -839,6 +866,16 @@ const Events: React.FC = () => {
                               <p className="text-slate-900 text-[13px] min-[1680px]:text-[clamp(0.8125rem,0.7vw,1.2rem)] font-bold leading-snug break-words">
                                 {speaker.name}
                               </p>
+                              {speaker.position && (
+                                <p className="text-slate-500 text-[11px] min-[1680px]:text-[clamp(0.6875rem,0.6vw,1.05rem)] mt-1 leading-snug break-words">
+                                  {speaker.position}
+                                </p>
+                              )}
+                              {speaker.company && (
+                                <p className="text-slate-400 text-[11px] min-[1680px]:text-[clamp(0.6875rem,0.6vw,1.05rem)] leading-snug break-words">
+                                  {speaker.company}
+                                </p>
+                              )}
                             </div>
                           ) : (
                             <div

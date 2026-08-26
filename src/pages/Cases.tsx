@@ -383,14 +383,6 @@ const CASES: CasePanel[] = [
           },
         ],
       },
-      {
-        id: "paket",
-        title: "Paketlogik",
-        kind: "text",
-        paragraphs: [
-          "Ob ein Workshop enthalten ist, regelt das jeweilige Paket. Zur Orientierung dient die Frontier Tech Conference: Gold umfasste Keynote, Workshop und Stand. Silber enthielt den Stand sowie wahlweise Keynote oder Workshop. Bronze enthielt eine dieser drei Leistungen.",
-        ],
-      },
     ],
   },
   {
@@ -454,10 +446,12 @@ const CASES: CasePanel[] = [
 ];
 
 const DEPARTMENT_TILES = CASES.filter(
-  (item) => item.id === "hr" || item.id === "marketing" || item.id === "sales",
+  (item) =>
+    item.id === "hr" ||
+    item.id === "marketing" ||
+    item.id === "sales" ||
+    item.id === "workshops",
 );
-
-const WORKSHOP_TILE = CASES.find((item) => item.id === "workshops")!;
 
 function caseById(id: CaseId): CasePanel {
   return CASES.find((item) => item.id === id) ?? CASES[0];
@@ -666,26 +660,6 @@ const Cases: React.FC = () => {
                 <span className="cases-tile-kicker">{item.kicker}</span>
               </button>
             ))}
-          </div>
-
-          <div className="cases-workshop">
-            <button
-              type="button"
-              className="cases-workshop-tile"
-              onMouseEnter={() => setHovered(WORKSHOP_TILE.id)}
-              onMouseLeave={() => setHovered(null)}
-              onFocus={() => setHovered(WORKSHOP_TILE.id)}
-              onBlur={() => setHovered(null)}
-              onClick={() =>
-                openPanel(WORKSHOP_TILE.id, WORKSHOP_TILE.tileTitle)
-              }
-            >
-              <span className="cases-tile-index">{WORKSHOP_TILE.index}</span>
-              <span className="cases-tile-title">
-                {WORKSHOP_TILE.tileTitle}
-              </span>
-              <span className="cases-tile-kicker">{WORKSHOP_TILE.kicker}</span>
-            </button>
           </div>
 
           <div className="cases-rail">

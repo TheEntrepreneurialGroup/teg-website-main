@@ -1,9 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { vitePrerenderPlugin } from "vite-prerender-plugin";
-
+import fs from "fs";
 import path from "path";
 import { PRERENDER_ROUTES } from "./src/seo/prerenderRoutes.mjs";
+
+const marketingPdfPath = path.resolve(__dirname, "public/Pitch.pdf");
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,6 +15,32 @@ export default defineConfig({
       renderTarget: "#root",
       additionalPrerenderRoutes: PRERENDER_ROUTES,
     }),
+    {
+      name: "marketing-pdf-download",
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          const url = req.url?.split("?")[0];
+          if (url !== "/marketing" && url !== "/marketing/") {
+            next();
+            return;
+          }
+
+          if (!fs.existsSync(marketingPdfPath)) {
+            res.statusCode = 404;
+            res.end("Pitch.pdf not found");
+            return;
+          }
+
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/pdf");
+          res.setHeader(
+            "Content-Disposition",
+            'attachment; filename="Pitch.pdf"',
+          );
+          fs.createReadStream(marketingPdfPath).pipe(res);
+        });
+      },
+    },
   ],
   resolve: {
     alias: {
@@ -23,7 +51,7 @@ export default defineConfig({
     include: ["lucide-react"],
   },
   server: {
-    // Listen on all interfaces so phones on the same LAN can load the app
+    // Listen on all interfaces so phones on the same LAN can load the app.
     host: true,
     port: 5173,
     strictPort: true,

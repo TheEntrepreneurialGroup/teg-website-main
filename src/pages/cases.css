@@ -1,9 +1,8 @@
 /* Cases: Immersive Garden homepage mapping + TEG garden atmosphere.
    Visual master: https://immersive-g.com/ — sparse stage, stacked type,
    selectable project rows, one-click into a case, backstage after a second click.
-   Light theme: warm paper ground, dark ink, gold accent. The three department
-   cases stay as hairline rows; the workshop format is a separate inverted
-   color block. */
+   Light theme: warm paper ground, dark ink, gold accent. Department cases
+   and the workshop row share the same hairline tile treatment. */
 
 .cases-page {
   --cases-bg: #f6f3ec;
@@ -175,49 +174,6 @@
 .cases-tile:hover .cases-tile-kicker,
 .cases-tile:focus-visible .cases-tile-kicker {
   color: var(--cases-gold);
-}
-
-/* Workshop format: inverted flat color block, clearly set off from the
-   hairline department rows. */
-.cases-workshop {
-  margin-top: clamp(1.4rem, 3.2vh, 2.4rem);
-}
-
-.cases-workshop-tile {
-  position: relative;
-  display: grid;
-  grid-template-columns: 2.6rem minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: 0.85rem 1.1rem;
-  width: 100%;
-  margin: 0;
-  padding: clamp(1.05rem, 2.4vh, 1.6rem) clamp(1rem, 2.2vw, 1.8rem);
-  border: 0;
-  background: var(--cases-panel);
-  color: #f4f1ea;
-  text-align: left;
-  cursor: pointer;
-  appearance: none;
-  transition: background 0.35s ease;
-}
-
-.cases-workshop-tile:hover,
-.cases-workshop-tile:focus-visible {
-  background: #0b2113;
-  outline: none;
-}
-
-.cases-workshop-tile .cases-tile-index {
-  color: #d8b45a;
-}
-
-.cases-workshop-tile .cases-tile-kicker {
-  color: rgba(244, 241, 234, 0.5);
-}
-
-.cases-workshop-tile:hover .cases-tile-kicker,
-.cases-workshop-tile:focus-visible .cases-tile-kicker {
-  color: #d8b45a;
 }
 
 .cases-rail {
@@ -573,10 +529,6 @@
   .cases-tile {
     grid-template-columns: 3rem minmax(0, 1fr);
   }
-
-  .cases-workshop-tile {
-    grid-template-columns: 3rem minmax(0, 1fr) auto;
-  }
 }
 
 @media (max-width: 899px) {
@@ -584,14 +536,8 @@
     display: none;
   }
 
-  .cases-tile,
-  .cases-workshop-tile {
+  .cases-tile {
     grid-template-columns: 2.1rem minmax(0, 1fr);
-  }
-
-  .cases-workshop-tile .cases-tile-kicker {
-    grid-column: 2;
-    margin-top: -0.15rem;
   }
 
   .cases-overlay-body {
@@ -656,7 +602,6 @@
   .cases-tile::after,
   .cases-preview,
   .cases-tile,
-  .cases-workshop-tile,
   .cases-tile-kicker {
     transition: none;
   }
