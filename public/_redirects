@@ -5,6 +5,6 @@
 /private/ping    https://analytics.teg-ev.de/private/ping       200
 
 # Force-download the marketing PDF (must stay above the SPA catch-all)
-/marketing     /Information.pdf    200!
+/marketing     /Pitch.pdf    200!
 
 /*    /index.html   200

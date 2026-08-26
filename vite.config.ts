@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 import { PRERENDER_ROUTES } from "./src/seo/prerenderRoutes.mjs";
 
-const marketingPdfPath = path.resolve(__dirname, "public/Information.pdf");
+const marketingPdfPath = path.resolve(__dirname, "public/Pitch.pdf");
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -27,7 +27,7 @@ export default defineConfig({
 
           if (!fs.existsSync(marketingPdfPath)) {
             res.statusCode = 404;
-            res.end("Information.pdf not found");
+            res.end("Pitch.pdf not found");
             return;
           }
 
@@ -35,7 +35,7 @@ export default defineConfig({
           res.setHeader("Content-Type", "application/pdf");
           res.setHeader(
             "Content-Disposition",
-            'attachment; filename="Information.pdf"',
+            'attachment; filename="Pitch.pdf"',
           );
           fs.createReadStream(marketingPdfPath).pipe(res);
         });
