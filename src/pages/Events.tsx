@@ -107,7 +107,7 @@ const Events: React.FC = () => {
       id: "supplychainconference2026",
       title: "Supply Chain Conference",
       date: "8. Dezember 2026",
-      location: "MaibornWolff GmbH, München",
+      location: "München",
       category: "Upcoming Highlight",
       topic: "Automation & Politics X Supply Chain",
       description:

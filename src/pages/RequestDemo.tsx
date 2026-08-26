@@ -472,7 +472,7 @@ const PROOF_FACTS = [
   {
     metric: "8.12.2026",
     label: "München",
-    meta: "Bei der MaibornWolff GmbH",
+    meta: "Location-Host folgt",
   },
 ] as const;
 
