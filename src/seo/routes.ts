@@ -5,7 +5,6 @@ export type AppRoutePath =
   | "/about"
   | "/for-students"
   | "/for-companies"
-  | "/cases"
   | "/events"
   | "/imprint"
   | "/privacy-policy"
