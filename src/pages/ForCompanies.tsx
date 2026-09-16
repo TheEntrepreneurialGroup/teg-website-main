@@ -1,1 +1,1 @@
-PLACEHOLDER_LOAD_FROM_/tmp/mcp_content_src__pages__ForCompanies.tsx
+file:///Users/corbinmassin/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/b59015c3-7c41-41cb-8770-46595dd9164d/files/ForCompanies.tsx
