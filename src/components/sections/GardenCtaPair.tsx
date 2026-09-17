@@ -2,11 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useScrollIntent } from "@/hooks/useScrollIntent";
+import { trackButtonClick } from "@/utils/analytics";
 
 export interface CtaSpec {
   label: string;
   href: string;
   variant: "solid" | "ghost";
+  /** Umami source label, e.g. "Landing — Alumni". */
+  trackingSource?: string;
 }
 
 interface Props {
@@ -16,6 +19,8 @@ interface Props {
   externalPlay?: boolean;
   /** Delay offset for the first button's bloom (seconds). */
   baseDelay?: number;
+  /** Show labels immediately — no scroll-intent or bloom delay. */
+  instant?: boolean;
 }
 
 /**
@@ -31,12 +36,22 @@ const GardenCta: React.FC<{
   reduce: boolean | null;
   index: number;
   baseDelay: number;
-}> = ({ spec, play, reduce, index, baseDelay }) => {
+  instant?: boolean;
+}> = ({ spec, play, reduce, index, baseDelay, instant = false }) => {
   const isSolid = spec.variant === "solid";
   const delay = baseDelay + index * 0.16;
 
+  const isExternal = /^https?:\/\//.test(spec.href);
   const isHash = spec.href.startsWith("#");
+
+  const trackClick = () => {
+    if (spec.trackingSource) {
+      trackButtonClick(spec.label, spec.trackingSource);
+    }
+  };
+
   const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    trackClick();
     if (!isHash) return;
     const id = spec.href.slice(1);
     const el = document.getElementById(id);
@@ -49,7 +64,7 @@ const GardenCta: React.FC<{
   const inner = (
     <>
       {/* Soft halo (toned down) */}
-      {!reduce && (
+      {!reduce && !instant && (
         <motion.span
           aria-hidden="true"
           className={
@@ -70,7 +85,7 @@ const GardenCta: React.FC<{
       )}
 
       {/* Gold perimeter — solid button only */}
-      {isSolid && (
+      {isSolid && !instant && (
         <svg
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"
@@ -116,57 +131,100 @@ const GardenCta: React.FC<{
         </svg>
       )}
 
-      <motion.span
-        className="relative z-10 flex items-center gap-2.5"
-        initial={{ opacity: 0, y: 6 }}
-        animate={play ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
-        transition={{
-          duration: reduce ? 0.01 : 0.6,
-          delay: reduce ? 0 : delay + 0.1,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-      >
-        <span className="leading-none">{spec.label}</span>
-        {isHash ? (
-          /* Down chevron — visitor stays on page (scrolls to section) */
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 16 16"
-            className={
-              "h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-y-0.5 " +
-              (isSolid ? "text-[#0B1730]" : "text-[#C69E3C]")
-            }
-          >
-            <path
-              d="M3 6l5 5 5-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        ) : (
-          /* Right arrow — visitor navigates to another page */
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 16 16"
-            className={
-              "h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-0.5 " +
-              (isSolid ? "text-[#0B1730]" : "text-white")
-            }
-          >
-            <path
-              d="M3 8h9M8 4l4 4-4 4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        )}
-      </motion.span>
+      {instant ? (
+        <span className="relative z-10 flex items-center gap-2.5">
+          <span className="leading-none">{spec.label}</span>
+          {isHash ? (
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              className={
+                "h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-y-0.5 " +
+                (isSolid ? "text-[#0B1730]" : "text-[#C69E3C]")
+              }
+            >
+              <path
+                d="M3 6l5 5 5-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          ) : (
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              className={
+                "h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-0.5 " +
+                (isSolid ? "text-[#0B1730]" : "text-white")
+              }
+            >
+              <path
+                d="M3 8h9M8 4l4 4-4 4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          )}
+        </span>
+      ) : (
+        <motion.span
+          className="relative z-10 flex items-center gap-2.5"
+          initial={{ opacity: 0, y: 6 }}
+          animate={play ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
+          transition={{
+            duration: reduce ? 0.01 : 0.6,
+            delay: reduce ? 0 : delay + 0.1,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          <span className="leading-none">{spec.label}</span>
+          {isHash ? (
+            /* Down chevron — visitor stays on page (scrolls to section) */
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              className={
+                "h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-y-0.5 " +
+                (isSolid ? "text-[#0B1730]" : "text-[#C69E3C]")
+              }
+            >
+              <path
+                d="M3 6l5 5 5-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          ) : (
+            /* Right arrow — visitor navigates to another page */
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              className={
+                "h-3.5 w-3.5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-0.5 " +
+                (isSolid ? "text-[#0B1730]" : "text-white")
+              }
+            >
+              <path
+                d="M3 8h9M8 4l4 4-4 4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          )}
+        </motion.span>
+      )}
     </>
   );
 
@@ -177,16 +235,38 @@ const GardenCta: React.FC<{
     ? " bg-[#C69E3C] text-[#0B1730] hover:bg-[#D9AE50] shadow-[0_0_18px_-10px_rgba(198,158,60,0.5)]"
     : " bg-[#0f2b57] text-white hover:bg-[#163d75]";
 
+  if (isExternal) {
+    return (
+      <a
+        href={spec.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={trackClick}
+        className={baseClass + surfaceClass}
+      >
+        {inner}
+      </a>
+    );
+  }
+
   if (isHash) {
     return (
-      <a href={spec.href} onClick={handleHashClick} className={baseClass + surfaceClass}>
+      <a
+        href={spec.href}
+        onClick={handleHashClick}
+        className={baseClass + surfaceClass}
+      >
         {inner}
       </a>
     );
   }
 
   return (
-    <Link to={spec.href} className={baseClass + surfaceClass}>
+    <Link
+      to={spec.href}
+      onClick={trackClick}
+      className={baseClass + surfaceClass}
+    >
       {inner}
     </Link>
   );
@@ -203,17 +283,25 @@ const GardenCtaPair: React.FC<Props> = ({
   className = "",
   externalPlay,
   baseDelay = 1.55,
+  instant = false,
 }) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.35 });
   const reduce = useReducedMotion();
   const internalPlay = useScrollIntent(inView, reduce);
-  const play = externalPlay !== undefined ? externalPlay : internalPlay;
+  const play = instant
+    ? true
+    : externalPlay !== undefined
+      ? externalPlay
+      : internalPlay;
+  const resolvedBaseDelay = instant ? 0 : baseDelay;
 
   return (
     <div
       ref={ref}
-      className={"relative flex flex-col gap-3 sm:flex-row sm:flex-wrap " + className}
+      className={
+        "relative flex flex-col gap-3 sm:flex-row sm:flex-wrap " + className
+      }
     >
       {items.map((item, i) => (
         <GardenCta
@@ -222,7 +310,8 @@ const GardenCtaPair: React.FC<Props> = ({
           play={play}
           reduce={reduce}
           index={i}
-          baseDelay={baseDelay}
+          baseDelay={resolvedBaseDelay}
+          instant={instant}
         />
       ))}
     </div>

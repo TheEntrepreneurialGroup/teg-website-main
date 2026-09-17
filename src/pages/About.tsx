@@ -13,6 +13,8 @@ import HeritageGardenSection from "@/components/sections/HeritageGardenSection";
 import OptimizedImage from "@/components/OptimizedImage";
 import { useScrollIntent } from "@/hooks/useScrollIntent";
 
+const APPLY_FORM_URL = "https://tally.so/r/yPDXd4";
+
 /* ─────────────────────────────────────────────────────────────
    ComplimentVideoSection
    Full-width autoplay video with an immersive garden-like overlay:
@@ -44,7 +46,7 @@ const gardenParticles = Array.from({ length: NUM_PARTICLES }, (_, i) => {
   };
 });
 
-const ComplimentVideoSection: React.FC = () => {
+const ComplimentVideoSection: React.FC<{ isDe: boolean }> = ({ isDe }) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const fallbackRef = React.useRef<HTMLImageElement>(null);
   const [muted, setMuted] = React.useState(true);
@@ -65,6 +67,8 @@ const ComplimentVideoSection: React.FC = () => {
     const video = videoRef.current;
     if (!video) return;
     video.currentTime = 0;
+    if (fallbackRef.current) fallbackRef.current.style.display = "none";
+    if (videoRef.current) videoRef.current.style.display = "block";
     video.play();
     setVideoEnded(false);
   };
@@ -149,9 +153,46 @@ const ComplimentVideoSection: React.FC = () => {
         ))}
       </div>
 
+      {/* ── Action CTAs — only after video ends (static image) ── */}
+      <AnimatePresence>
+        {videoEnded && (
+          <motion.div
+            key="video-ctas"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="pointer-events-none absolute inset-x-0 bottom-14 z-20 flex justify-center px-4 sm:bottom-16 md:bottom-20"
+          >
+            <div className="pointer-events-auto w-full max-w-md sm:max-w-none">
+              <GardenCtaPair
+                instant
+                className="w-full justify-center"
+                items={[
+                  {
+                    label: isDe ? "Jetzt bewerben" : "Apply now",
+                    href: APPLY_FORM_URL,
+                    variant: "solid",
+                    trackingSource: "Landing — Video",
+                  },
+                  {
+                    label: isDe
+                      ? "Gespräch vereinbaren"
+                      : "Schedule a conversation",
+                    href: "/for-companies#contact",
+                    variant: "ghost",
+                    trackingSource: "Landing — Video",
+                  },
+                ]}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* ── Attribution ─────────────────────────────────────── */}
       <div
-        className="pointer-events-none absolute bottom-6 left-6 md:bottom-8 md:left-10"
+        className="pointer-events-none absolute bottom-3 left-4 md:bottom-8 md:left-10 max-w-[42%] sm:max-w-none"
         style={{ zIndex: 10 }}
       >
         <p
@@ -167,10 +208,7 @@ const ComplimentVideoSection: React.FC = () => {
       </div>
 
       {/* ── Sound toggle (video) / Replay button (image) ──── */}
-      <div
-        className="absolute bottom-6 right-6 md:bottom-8 md:right-10"
-        style={{ zIndex: 10 }}
-      >
+      <div className="absolute bottom-6 right-6 z-30 md:bottom-8 md:right-10">
         <AnimatePresence>
           {showHint && !videoEnded && (
             <motion.span
@@ -1373,6 +1411,36 @@ const About: React.FC = () => {
               </div>
             ))}
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{
+              duration: 0.85,
+              delay: 0.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mt-16"
+          >
+            <GardenCtaPair
+              instant
+              items={[
+                {
+                  label: isDe ? "Jetzt bewerben" : "Apply now",
+                  href: APPLY_FORM_URL,
+                  variant: "solid",
+                  trackingSource: "Landing — Alumni",
+                },
+                {
+                  label: isDe ? "Partner werden" : "Become a partner",
+                  href: "/for-companies#contact",
+                  variant: "ghost",
+                  trackingSource: "Landing — Alumni",
+                },
+              ]}
+            />
+          </motion.div>
         </div>
       </section>
 
@@ -1439,12 +1507,35 @@ const About: React.FC = () => {
                 ? "Jeder Bewerber durchläuft dasselbe Verfahren - unabhängig von Herkunft oder Netzwerk. Bewertet werden analytisches Denken, Leistungsbereitschaft und Führungscharakter: die Fähigkeit, Initiative zu ergreifen, zu führen und geführt zu werden."
                 : "Every applicant goes through the same process — regardless of background or network. We assess analytical thinking, drive, and leadership character: the ability to take initiative, to lead, and to be led."}
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.85,
+                delay: 0.35,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="mt-10"
+            >
+              <GardenCtaPair
+                instant
+                items={[
+                  {
+                    label: isDe ? "Jetzt bewerben" : "Apply now",
+                    href: APPLY_FORM_URL,
+                    variant: "solid",
+                    trackingSource: "Landing — Selection",
+                  },
+                ]}
+              />
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* §6b — Compliment video: full-width immersive */}
-      <ComplimentVideoSection />
+      <ComplimentVideoSection isDe={isDe} />
     </div>
   );
 };

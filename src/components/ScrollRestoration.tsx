@@ -12,12 +12,26 @@ const ScrollRestoration: React.FC = () => {
     if (prevPath.current) {
       scrollPositions.set(prevPath.current, window.scrollY);
     }
+
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      const scrollToHash = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      };
+      requestAnimationFrame(scrollToHash);
+      prevPath.current = location.pathname;
+      return;
+    }
+
     // Restore scroll position for current path, or scroll to top
     const y = scrollPositions.get(location.pathname) ?? 0;
     window.scrollTo(0, y);
     prevPath.current = location.pathname;
     // Optionally, clean up positions for unmounted routes
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return null;
 };
