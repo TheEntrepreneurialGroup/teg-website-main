@@ -429,14 +429,14 @@ const ForCompanies: React.FC = () => {
         </div>
       </section>
 
-      {/* HOSTS AND SPONSORS → /cases */}
+      {/* HOSTS AND SPONSORS → /events */}
       <section className="py-24 bg-[#0A1628] text-left">
         <div className="container-custom px-4 md:px-8 mx-auto">
           <span className="text-[#B7860B] font-black uppercase tracking-[0.4em] text-[10px] mb-6 block">
             Hosts und Sponsoren
           </span>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight text-white mb-6">
-            Drei Cases für TEG-Events
+            TEG-Events für Hosts und Sponsoren
           </h2>
           <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-10">
             Location-Hosts und Sponsoren nutzen dasselbe Konferenzformat über
@@ -444,10 +444,10 @@ const ForCompanies: React.FC = () => {
             Mentor- und Speaker-Engagement bleibt auf dieser Seite.
           </p>
           <a
-            href="/cases"
+            href="/events"
             className="bg-[#B7860B] text-[#0A1628] px-10 py-4 font-black uppercase tracking-widest text-sm inline-flex items-center gap-3"
           >
-            Cases ansehen <ArrowUpRight size={20} />
+            Events ansehen <ArrowUpRight size={20} />
           </a>
         </div>
       </section>

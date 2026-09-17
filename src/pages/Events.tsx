@@ -910,11 +910,11 @@ const Events: React.FC = () => {
                     </button>
                   )}
                   <Link
-                    to="/cases"
+                    to="/for-companies"
                     onClick={() => setSelectedEvent(null)}
                     className="w-full whitespace-nowrap border border-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900 transition-all hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest min-[1680px]:text-[clamp(0.75rem,0.65vw,1.05rem)]"
                   >
-                    Cases ansehen
+                    Für Unternehmen
                   </Link>
                 </div>
               </div>

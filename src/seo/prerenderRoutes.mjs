@@ -3,7 +3,6 @@ export const PRERENDER_ROUTES = [
   "/",
   "/for-students",
   "/for-companies",
-  "/cases",
   "/events",
   "/privacy-policy",
   "/imprint",

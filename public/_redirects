@@ -7,4 +7,8 @@
 # Force-download the marketing PDF (must stay above the SPA catch-all)
 /marketing     /Pitch.pdf    200!
 
+# Retired hosts/sponsors cases page → company partnerships
+/cases         /for-companies    301
+/cases/        /for-companies    301
+
 /*    /index.html   200
