@@ -21,10 +21,12 @@ interface EventData {
   description: string;
   longText: string;
   image: string;
+  imageAlt?: string;
   cardImage?: string;
   video?: string;
   imageFit?: "cover" | "contain";
   externalLink?: string;
+  externalLinkLabel?: string;
   contactLink?: string;
   speakers?: {
     name: string;
@@ -103,6 +105,42 @@ const Events: React.FC = () => {
 
   const biotechLumaLink = "https://luma.com/teg-qdjm";
   const upcomingEvents: EventData[] = [
+    {
+      id: "teg-talk-22-10-2026",
+      title: "TEG Talk: Leadership und Wachstum",
+      date: "22. Oktober 2026, 18:30–22:00 Uhr",
+      location: "Adresse nach Anmeldung auf Luma",
+      category: "TEG Talk",
+      topic: "Karrierewege, Führung und Unternehmertum",
+      description:
+        "Wie gelingt der Weg in eine Führungsposition? Vier erfahrene Speaker teilen ihre Perspektiven auf Leadership, Karriere und unternehmerisches Wachstum.",
+      longText:
+        "Triff CEOs, Manager und Gründer und tausche dich über ihre Erfahrungen aus. Anmeldung über Luma.",
+      image: "/events/teg-talk-leadership-2026.webp",
+      imageAlt: "Ein Speaker beim vergangenen TEG Talk im April 2026",
+      externalLink: "https://luma.com/grj0f2nv",
+      externalLinkLabel: "Jetzt anmelden",
+      speakers: [
+        {
+          name: "Heiner Thorborg",
+          position: "Executive Search für C-Level-Positionen",
+        },
+        {
+          name: "Florian Bogenschütz",
+          company: "Wayra",
+          position: "CEO",
+        },
+        {
+          name: "Jan Hiesserich",
+          company: "GFT Technologies",
+          position: "Group Chief Strategy, ehemals Palantir",
+        },
+        {
+          name: "Daniel Smeds",
+          position: "Mehrfacher Startup-Gründer, CEO und Investor",
+        },
+      ],
+    },
     {
       id: "supplychainconference2026",
       title: "Supply Chain Conference",
@@ -234,8 +272,8 @@ const Events: React.FC = () => {
         "Ein kuratierter Konferenztag darüber, wie KI Consulting, Geschäftsmodelle und Karrieren konkret verändert.",
       longText:
         "Die AI Consulting Conference brachte Perspektiven aus Strategieberatung, Tech-Consulting, Industrie, angewandter KI, Forschung und Recht zusammen. Im Fokus standen reale KI-Use-Cases, AI-Assets in Beratungsarbeit, Industry Briefings, Applied-AI-Workshops, Governance, Haftung und die Zukunft der Beraterkarriere.",
-      image: "/events/converted/ai-consulting-conference-2026.webp",
-      imageFit: "contain",
+      image: "/for-companies/acc-bild.jpeg",
+      imageAlt: "Publikum bei der AI Consulting Conference",
       externalLink: "https://luma.com/71152vc3?utm_source=tg_ws",
       speakers: [
         {
@@ -522,12 +560,14 @@ const Events: React.FC = () => {
               <>
                 <button
                   onClick={() => paginateUpcoming(-1)}
+                  aria-label="Vorheriges Event"
                   className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-20 p-4 bg-white/80 backdrop-blur-md border border-slate-200 rounded-full hover:bg-slate-900 hover:text-white transition-all shadow-lg"
                 >
                   <ChevronLeft size={24} />
                 </button>
                 <button
                   onClick={() => paginateUpcoming(1)}
+                  aria-label="Nächstes Event"
                   className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-20 p-4 bg-white/80 backdrop-blur-md border border-slate-200 rounded-full hover:bg-slate-900 hover:text-white transition-all shadow-lg"
                 >
                   <ChevronRight size={24} />
@@ -570,7 +610,7 @@ const Events: React.FC = () => {
                             ? "h-full max-h-full w-auto max-w-full object-contain object-center"
                             : "h-full w-full object-cover object-center"
                         }`}
-                        alt=""
+                        alt={upcomingEvents[upcomingPage].imageAlt || ""}
                       />
                     )}
                   </div>
@@ -623,7 +663,8 @@ const Events: React.FC = () => {
                           rel="noopener noreferrer"
                           className="w-full whitespace-nowrap border border-slate-900 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-slate-900 transition-all hover:border-blue-600 hover:bg-blue-600 hover:text-white sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest min-[1680px]:text-[clamp(0.75rem,0.65vw,1.05rem)]"
                         >
-                          In Kontakt treten
+                          {upcomingEvents[upcomingPage].externalLinkLabel ||
+                            "In Kontakt treten"}
                         </a>
                       )}
                     </div>
@@ -694,7 +735,7 @@ const Events: React.FC = () => {
                                   ? "h-full max-h-full w-auto max-w-full object-contain object-center"
                                   : "h-full w-full object-cover"
                               }`}
-                              alt=""
+                              alt={event.imageAlt || ""}
                             />
                           </div>
                           <div className="flex flex-1 flex-col p-6 sm:p-7 pt-5 pb-8">
@@ -799,7 +840,7 @@ const Events: React.FC = () => {
                       ? "h-full max-h-full w-auto max-w-full object-contain object-center"
                       : "h-full w-full object-cover"
                   }`}
-                  alt=""
+                  alt={selectedEvent.imageAlt || ""}
                 />
               </div>
               <div className="flex min-h-0 min-w-0 flex-col justify-start p-5 sm:p-8 md:col-span-8 md:h-full md:overflow-hidden md:p-7 lg:p-8">
@@ -906,7 +947,7 @@ const Events: React.FC = () => {
                       }
                       className="w-full whitespace-nowrap bg-blue-600 px-[18px] py-[14px] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all hover:bg-blue-700 sm:w-fit md:px-8 md:py-4 md:text-xs md:tracking-widest min-[1680px]:text-[clamp(0.75rem,0.65vw,1.05rem)]"
                     >
-                      Event ansehen
+                      {selectedEvent.externalLinkLabel || "Event ansehen"}
                     </button>
                   )}
                   <Link

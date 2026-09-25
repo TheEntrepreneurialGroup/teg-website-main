@@ -1,6 +1,6 @@
 /**
  * Parses shipped src/pages/Events.tsx event arrays.
- * Asserts the upcoming listing is the Supply Chain Conference, the
+ * Asserts the next TEG Talk leads the upcoming listings, the
  * placeholder is gone, Biotech stays in pastEvents, and upcoming body
  * copy is complete German sentences without hyphen or em dash.
  */
@@ -146,8 +146,8 @@ if (upcomingObjects.length < 1) {
   const category = fieldString(first, "category");
 
   if (!title) fail("upcoming title is empty");
-  if (!/Supply Chain/i.test(title) || !/Conference/i.test(title)) {
-    fail("upcoming title must contain Supply Chain and Conference");
+  if (title !== "TEG Talk: Leadership und Wachstum") {
+    fail("The next TEG Talk must be the first upcoming event");
   }
   if (title === PLACEHOLDER_TITLE) {
     fail("upcoming title is still the placeholder");
@@ -155,11 +155,11 @@ if (upcomingObjects.length < 1) {
   if (title === BIOTECH_TITLE) {
     fail("upcoming title is the Biotech title");
   }
-  if (date !== "8.12.2026" && date !== "8. Dezember 2026") {
-    fail(`upcoming date is not 8.12.2026 or 8. Dezember 2026: ${date}`);
+  if (date !== "22. Oktober 2026, 18:30–22:00 Uhr") {
+    fail(`Unexpected TEG Talk date: ${date}`);
   }
-  if (!location.includes("München")) {
-    fail(`upcoming location does not contain München: ${location}`);
+  if (location !== "Adresse nach Anmeldung auf Luma") {
+    fail(`The location must reflect Luma registration visibility: ${location}`);
   }
   if (!image) fail("upcoming image is empty");
   if (!(await imageExists(image))) {
@@ -189,6 +189,10 @@ if (upcomingObjects.length < 1) {
       fail(`${name} is not allowed to contain a hyphen`);
     }
   }
+}
+
+if (!upcomingIds.includes("supplychainconference2026")) {
+  fail("Supply Chain Conference must remain upcoming");
 }
 
 if (!pastIds.includes(BIOTECH_ID)) {
