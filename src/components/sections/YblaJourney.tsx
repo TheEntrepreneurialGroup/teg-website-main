@@ -24,7 +24,11 @@ const YblaJourney: React.FC<YblaJourneyProps> = ({ isDe }) => {
           "Ausbildung der nächsten Führungsgenerationen: Wir bereiten junge Menschen auf Leitungsaufgaben im heimischen Wirtschaftsraum vor. Zentral dafür ist unsere YBLA. Ein intensives 18-monatiges Programm für Studierende und Berufseinsteiger. Zugrunde liegt ein erfolgreiches Schulungskonzept welches Theorie, Praxis und Projektverantwortung vereint. Unsere Auswahl ist strikt herkunftsblind: Wer Potenzial zeigt, unsere mathematisch-analytische und psychologische Eignungsdiagnostik besteht und sich konsequent anstrengt, erarbeitet sich seinen Weg.",
         stats: [
           { value: "18", unit: "Monate", note: "Programmdauer" },
-          { value: "10–18", unit: "h / Woche", note: "außerhalb der Prüfungsphasen" },
+          {
+            value: "10–18",
+            unit: "h / Woche",
+            note: "außerhalb der Prüfungsphasen",
+          },
         ],
       }
     : {
@@ -40,7 +44,10 @@ const YblaJourney: React.FC<YblaJourneyProps> = ({ isDe }) => {
       };
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#040F1F] py-24 text-white md:py-32 lg:py-40">
+    <section
+      id="ybla"
+      className="relative isolate overflow-hidden bg-[#040F1F] py-24 text-white md:py-32 lg:py-40"
+    >
       {/* ambient glow */}
       <div
         aria-hidden="true"
@@ -69,7 +76,6 @@ const YblaJourney: React.FC<YblaJourneyProps> = ({ isDe }) => {
       </div>
 
       <div className="relative mx-auto w-full max-w-screen-xl px-6 md:px-12 lg:px-16">
-
         {/* ── kicker ── */}
         <motion.div
           initial={{ opacity: 0, x: -16 }}
@@ -83,7 +89,6 @@ const YblaJourney: React.FC<YblaJourneyProps> = ({ isDe }) => {
 
         {/* ── headline + intro + stats row ── */}
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-16 xl:gap-24">
-
           {/* left: title + intro */}
           <div className="lg:w-[55%] xl:w-[58%]">
             <motion.h2
@@ -138,9 +143,7 @@ const YblaJourney: React.FC<YblaJourneyProps> = ({ isDe }) => {
               </div>
             </motion.div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
