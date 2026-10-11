@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, animate, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
   Linkedin,
@@ -18,29 +18,7 @@ import {
   X,
   MessageCircle,
 } from "lucide-react";
-
-// Hilfskomponente für die hochzählenden Zahlen
-const Counter = ({ value }: { value: string }) => {
-  const [displayValue, setDisplayValue] = useState(0);
-  const numericValue = parseInt(value.replace(/\D/g, ""));
-  const suffix = value.replace(/[0-9]/g, "");
-
-  useEffect(() => {
-    const controls = animate(0, numericValue, {
-      duration: 2,
-      ease: "easeOut",
-      onUpdate: (latest) => setDisplayValue(Math.floor(latest)),
-    });
-    return () => controls.stop();
-  }, [numericValue]);
-
-  return (
-    <>
-      {displayValue}
-      {suffix}
-    </>
-  );
-};
+import Counter from "../components/blocks/Counter";
 
 const ForStudents: React.FC = () => {
   const scrollingLogos = [

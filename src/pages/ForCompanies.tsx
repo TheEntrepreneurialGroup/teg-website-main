@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, animate } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
   Linkedin,
@@ -8,29 +8,7 @@ import {
   ArrowUpRight,
   Mic2,
 } from "lucide-react";
-
-// --- HILFSKOMPONENTE: COUNTER ---
-const Counter = ({ value }: { value: string }) => {
-  const [displayValue, setDisplayValue] = useState(0);
-  const numericValue = parseInt(value.replace(/\D/g, ""));
-  const suffix = value.replace(/[0-9]/g, "");
-
-  useEffect(() => {
-    const controls = animate(0, numericValue, {
-      duration: 2,
-      ease: "easeOut",
-      onUpdate: (latest) => setDisplayValue(Math.floor(latest)),
-    });
-    return () => controls.stop();
-  }, [numericValue]);
-
-  return (
-    <>
-      {displayValue}
-      {suffix}
-    </>
-  );
-};
+import Counter from "../components/blocks/Counter";
 
 const ForCompanies: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
