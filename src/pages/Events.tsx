@@ -118,7 +118,7 @@ const Events: React.FC = () => {
         "Triff CEOs, Manager und Gründer und tausche dich über ihre Erfahrungen aus. Anmeldung über Luma.",
       image: "/events/teg-talk-leadership-2026.webp",
       imageAlt: "Ein Speaker beim vergangenen TEG Talk im April 2026",
-      externalLink: "https://luma.com/grj0f2nv",
+      externalLink: "https://luma.com/uecrvr40",
       externalLinkLabel: "Jetzt anmelden",
       speakers: [
         {
