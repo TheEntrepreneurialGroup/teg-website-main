@@ -607,7 +607,7 @@ const ForCompanies: React.FC = () => {
               </h3>
               <p className="text-[#B7860B] text-[10px] font-black uppercase tracking-[0.2em] text-left">
                 {" "}
-                Bereichsleiter Strategie und Partnerschaften
+                Leitung Strategie und Partnerschaften
               </p>
             </div>
             <div className="flex gap-12 text-left">
