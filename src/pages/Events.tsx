@@ -234,8 +234,8 @@ const Events: React.FC = () => {
         "Ein interaktiver Panel Talk zur Zukunft der Life-Sciences, Biotech- und Medtech-Industrie in München.",
       longText:
         "Founder, C-Level und Senior Professionals teilen ihre Sichtweisen und Prognosen dazu, wie sich Münchens Life-Sciences-, Biotech- und Medtech-Standort entwickeln wird. Forschung und Wirtschaft treffen aufeinander, um über Hürden, Innovationen und kommende Challenges zu diskutieren. Im Mittelpunkt stehen keine abstrakten Theorien, sondern Fakten, Erfahrungen und ein offener Austausch für alle, die Naturwissenschaften und Wirtschaft zusammen denken.",
-      image: "/events/converted/biotech-medtech-panel-2026.webp",
-      imageFit: "contain",
+      image: "/events/converted/biotech-medtech-panel-2026-photo.webp",
+      imageFit: "cover",
       externalLink: biotechLumaLink,
       speakers: [
         {
