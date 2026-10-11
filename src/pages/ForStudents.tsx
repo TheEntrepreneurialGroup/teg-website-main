@@ -17,6 +17,7 @@ import {
   Rocket,
   X,
   MessageCircle,
+  Video,
 } from "lucide-react";
 import Counter from "../components/blocks/Counter";
 
@@ -90,6 +91,36 @@ const ForStudents: React.FC = () => {
                     >
                       Zur WhatsApp-Gruppe <ChevronRight size={14} />
                     </a>
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="h-7 flex items-center shrink-0">
+                    <Video size={20} className="text-[#B7860B]" />
+                  </span>
+                  <span>
+                    Online-Sprechstunden zur Bewerbung
+                    <span className="mt-1 flex flex-col gap-1">
+                      {[
+                        {
+                          label: "Mo., 19. Oktober, 20–21 Uhr",
+                          href: "https://luma.com/ob8f4f61",
+                        },
+                        {
+                          label: "Fr., 23. Oktober, 20–21 Uhr (Last Minute)",
+                          href: "https://luma.com/vk3famb0",
+                        },
+                      ].map((slot) => (
+                        <a
+                          key={slot.href}
+                          href={slot.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-[#B7860B] hover:text-[#0F2B57] text-xs font-bold uppercase tracking-[0.2em] transition-colors"
+                        >
+                          {slot.label} <ChevronRight size={14} />
+                        </a>
+                      ))}
+                    </span>
                   </span>
                 </li>
               </ul>
