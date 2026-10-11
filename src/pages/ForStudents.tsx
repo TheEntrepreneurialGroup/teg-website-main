@@ -252,7 +252,7 @@ const ForStudents: React.FC = () => {
               },
               {
                 name: "Hansjörg Briegel",
-                role: "VP ER&D Ecosystem Development, Intel",
+                role: "Vice President ER&D Ecosystem Development, Intel",
                 photo: "/for-students/referenten/briegel.webp",
               },
               {
@@ -262,7 +262,7 @@ const ForStudents: React.FC = () => {
               },
               {
                 name: "Uli Beck",
-                role: "ehem. VP Finance Airbus, Aufsichtsrat Rovsing",
+                role: "ehem. Vice President Finance Airbus, Aufsichtsrat Rovsing",
                 photo: "/for-students/referenten/beck.webp",
               },
               {
@@ -311,6 +311,13 @@ const ForStudents: React.FC = () => {
             ))}
           </div>
           <p className="text-slate-500 mt-8 text-center">und weitere …</p>
+          <p className="text-slate-400 text-sm leading-relaxed max-w-2xl mx-auto text-center mt-10 pt-8 border-t border-slate-100">
+            Einige Führungskräfte, die bei uns referieren, waren in ihrer
+            Studienzeit selbst bei TEG engagiert und haben an Workshops im
+            Rahmen unserer Ausbildungsformate teilgenommen. Heute geben sie ihr
+            Wissen und ihre Lebenserfahrung in 4- bis 8-stündigen intensiven
+            Workshops an die nächste Generation TEGler weiter.
+          </p>
         </div>
       </section>
 
@@ -865,7 +872,7 @@ const careerPaths: Record<string, CareerPath> = {
     steps: [
       "Teamleitung Vertrieb",
       "Head of Sales",
-      "VP Sales",
+      "Vice President Sales",
       "Chief Commercial Officer",
     ],
   },
@@ -873,7 +880,12 @@ const careerPaths: Record<string, CareerPath> = {
     title: "Engineering & Software",
     icon: Code2,
     desc: "Code schreiben können viele – du entscheidest, was gebaut wird, und führst das Team, das es baut. Vom Tech Lead bis zum CTO verantwortest du Architektur, Tempo und die Produkte des Unternehmens.",
-    steps: ["Engineering Lead", "Head of Engineering", "VP Engineering", "CTO"],
+    steps: [
+      "Engineering Lead",
+      "Head of Engineering",
+      "Vice President Engineering",
+      "CTO",
+    ],
   },
   strategie: {
     title: "Unternehmensstrategie",
@@ -889,7 +901,7 @@ const careerPaths: Record<string, CareerPath> = {
     title: "Forschung & Entwicklung",
     icon: FlaskConical,
     desc: "Ob du ein Labor leitest oder die Entwicklung eines ganzen Geschäftsbereichs verantwortest: Du setzt die Richtung, an der geforscht wird, und bringst die Ergebnisse dahin, wo sie zu Produkten werden.",
-    steps: ["Laborleitung", "Head of R&D", "VP R&D"],
+    steps: ["Laborleitung", "Head of R&D", "Vice President R&D"],
   },
   recht: {
     title: "Recht & Compliance",
