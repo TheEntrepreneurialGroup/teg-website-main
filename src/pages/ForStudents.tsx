@@ -18,6 +18,7 @@ import {
   X,
   MessageCircle,
   Video,
+  Mic,
 } from "lucide-react";
 import Counter from "../components/blocks/Counter";
 
@@ -76,6 +77,29 @@ const ForStudents: React.FC = () => {
                     Bewerbung zur kommenden YBLA offen bis{" "}
                     <strong className="text-[#0F2B57]">24. Oktober</strong>
                   </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="h-7 flex items-center shrink-0">
+                    <Mic size={20} className="text-[#B7860B]" />
+                  </span>
+                  <div>
+                    Lerne uns kennen beim{" "}
+                    <strong className="text-[#0F2B57]">
+                      TEG Talk am 22. Oktober
+                    </strong>{" "}
+                    mit Jan Hiesserich, leitet als Group Chief Strategy Officer
+                    einen Konzern mit 35 Tochterunternehmen, Heiner Thorborg,
+                    besetzt als Headhunter C-Level-Positionen bei Konzernen wie
+                    Amazon, BMW oder Microsoft, + 2 weitere.
+                    <a
+                      href="https://luma.com/uecrvr40"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 flex items-center gap-1 text-[#B7860B] hover:text-[#0F2B57] text-xs font-bold uppercase tracking-[0.2em] transition-colors"
+                    >
+                      Zum Event <ChevronRight size={14} />
+                    </a>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="h-7 flex items-center shrink-0">
