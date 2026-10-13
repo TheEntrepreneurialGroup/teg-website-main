@@ -474,9 +474,10 @@ const en = {
     "TEG for Students | Responsibility, network, and leadership development",
   "seo.students.description":
     "Join TEG and build leadership skills through real responsibility, mentoring, events, and access to a strong alumni network.",
-  "seo.companies.title": "TEG for Companies | Access future leadership talent",
+  "seo.companies.title":
+    "TEG for Executives | Events and Young Business Leadership Academy",
   "seo.companies.description":
-    "Become a TEG partner and gain access to a talent pool of ambitious future leaders built over decades.",
+    "Talks, panels and conferences with executives from corporations and SMEs, organised by participants of the Young Business Leadership Academy. In Munich since 1986.",
   "seo.events.title": "TEG Events | The Entrepreneurial Group",
   "seo.events.description":
     "Explore upcoming and past TEG events with workshops, talks and formats around entrepreneurship, technology and leadership.",

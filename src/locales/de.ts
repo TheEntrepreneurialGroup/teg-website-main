@@ -479,9 +479,9 @@ const de = {
   "seo.students.description":
     "Werde Teil von TEG und entwickle Führungskompetenz durch echte Verantwortung, Mentoring, Events und Zugang zu einem starken Alumni-Netzwerk.",
   "seo.companies.title":
-    "TEG für Unternehmen | Zugang zu zukünftigen Führungskräften",
+    "TEG für Führungskräfte | Veranstaltungen und Young Business Leadership Academy",
   "seo.companies.description":
-    "Werden Sie TEG-Partner und gewinnen Sie Zugang zu einem seit 1986 gewachsenen Talent-Pool aus ambitionierten zukünftigen Führungskräften.",
+    "Talks, Panels und Konferenzen mit Führungskräften aus Konzernen und Mittelstand, organisiert von den Teilnehmern der Young Business Leadership Academy. Seit 1986 in München.",
   "seo.events.title": "TEG Events | The Entrepreneurial Group",
   "seo.events.description":
     "Entdecken Sie kommende und vergangene TEG-Events mit Workshops, Talks und Formaten rund um Unternehmertum, Technologie und Leadership.",
