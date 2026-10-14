@@ -21,6 +21,7 @@ import {
   Mic,
 } from "lucide-react";
 import Counter from "../components/blocks/Counter";
+import StudentFaq from "../components/sections/StudentFaq";
 
 const ForStudents: React.FC = () => {
   const scrollingLogos = [
@@ -573,6 +574,9 @@ const ForStudents: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <StudentFaq />
 
       {/* KONTAKT */}
       <section className="pb-24 pt-16 bg-white px-4 text-left text-left text-left text-left">
