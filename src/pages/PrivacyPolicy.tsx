@@ -9,7 +9,7 @@ const PrivacyPolicy: React.FC = () => {
           <SectionTitle text="Datenschutzerklärung" as="h1" />
 
           <div className="prose prose-lg mt-12 max-w-none text-muted-foreground">
-            <p>Stand: 2. Juli 2026</p>
+            <p>Stand: 14. Oktober 2026</p>
 
             <h2>1. Verantwortlicher</h2>
             <p>
@@ -208,18 +208,32 @@ const PrivacyPolicy: React.FC = () => {
             <h2>8. Externe Links und Drittanbieter</h2>
             <p>
               Unsere Website enthält Links zu externen Angeboten, insbesondere
-              zu Luma, Tally, LinkedIn, Facebook, Instagram und weiteren
-              Webseiten. Wenn Sie einen solchen Link anklicken, verlassen Sie
-              unsere Website. Für die anschließende Verarbeitung
-              personenbezogener Daten ist grundsätzlich der jeweilige Anbieter
-              verantwortlich.
+              zu Luma, LinkedIn, Facebook, Instagram und weiteren Webseiten.
+              Wenn Sie einen solchen Link anklicken, verlassen Sie unsere
+              Website. Für die anschließende Verarbeitung personenbezogener
+              Daten ist grundsätzlich der jeweilige Anbieter verantwortlich.
             </p>
             <p>
-              Bei Event-Anmeldungen über Luma, Bewerbungen über Tally oder der
-              Nutzung von Social-Media-Angeboten können personenbezogene Daten
-              an die jeweiligen Anbieter übermittelt und dort verarbeitet
-              werden. Bitte informieren Sie sich vor Nutzung dieser Angebote in
-              den Datenschutzhinweisen der jeweiligen Anbieter.
+              Bei Event-Anmeldungen über Luma oder der Nutzung von
+              Social-Media-Angeboten können personenbezogene Daten an die
+              jeweiligen Anbieter übermittelt und dort verarbeitet werden. Bitte
+              informieren Sie sich vor Nutzung dieser Angebote in den
+              Datenschutzhinweisen der jeweiligen Anbieter.
+            </p>
+            <p>
+              Bewerbungen für die Young Business Leadership Academy nehmen wir
+              über unser eigenes Bewerbungsportal unter application.myteg-ev.de
+              entgegen. Verantwortlich ist auch dort The Entrepreneurial Group
+              e. V. Für die Verarbeitung Ihrer Daten im Bewerbungsportal gilt
+              die dortige{" "}
+              <a
+                href="https://application.myteg-ev.de/rechtliches/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Datenschutzerklärung des Bewerbungsportals
+              </a>
+              .
             </p>
 
             <h2>9. Cookies und lokaler Speicher</h2>

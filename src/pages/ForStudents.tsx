@@ -538,7 +538,7 @@ const ForStudents: React.FC = () => {
             Bewirb dich jetzt, und werde Teil von TEG!
           </h2>
           <motion.a
-            href="https://tally.so/r/yPDXd4"
+            href="https://application.myteg-ev.de/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
