@@ -574,7 +574,7 @@ const Events: React.FC = () => {
                 </button>
               </>
             )}
-            <div className="relative">
+            <div className="relative grid">
               <AnimatePresence initial={false} custom={upcomingDir}>
                 <motion.div
                   key={upcomingPage}
@@ -583,7 +583,7 @@ const Events: React.FC = () => {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  className="relative grid overflow-hidden rounded-xl border border-slate-200 bg-white/90 shadow-2xl backdrop-blur-sm md:grid-cols-12"
+                  className="relative col-start-1 row-start-1 self-start grid overflow-hidden rounded-xl border border-slate-200 bg-white/90 shadow-2xl backdrop-blur-sm md:grid-cols-12"
                 >
                   <div
                     className={`min-h-0 min-w-0 overflow-hidden md:col-span-4 ${
