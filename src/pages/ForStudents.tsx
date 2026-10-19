@@ -77,6 +77,14 @@ const ForStudents: React.FC = () => {
                   <span>
                     Bewerbung zur kommenden YBLA offen bis{" "}
                     <strong className="text-[#0F2B57]">24. Oktober</strong>
+                    <a
+                      href="https://application.myteg-ev.de/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 flex items-center gap-1 text-[#B7860B] hover:text-[#0F2B57] text-xs font-bold uppercase tracking-[0.2em] transition-colors"
+                    >
+                      Zur Bewerbung <ChevronRight size={14} />
+                    </a>
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
