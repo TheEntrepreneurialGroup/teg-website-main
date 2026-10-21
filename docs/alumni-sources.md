@@ -6,6 +6,10 @@ Miriam is interspersed among the executive examples; Kate and Veronika are
 interspersed among the functional management examples. All portraits use the
 existing grayscale/colour-on-hover card treatment.
 
+Cards use the same career-category labels as the existing alumni:
+Miriam — “Top-Management”; Kate and Veronika — “Mittleres Management”.
+These describe career paths; the dated roles below document the evidence.
+
 ## Miriam Neubauer
 
 - TEG membership (2009–2013), board/finance role (2010–2012), and former
@@ -14,8 +18,8 @@ existing grayscale/colour-on-hover card treatment.
 - Portrait source:
   <https://profile-images.xing.com/images/e33779d98ac1f55f3055f14c65afc5fc-6/miriam-neubauer.256x256.jpg>
 - Local asset: `public/about/alumni/miriam_neubauer.webp`.
-- The public label explicitly says “Former” / “Ehem.”; it does not present
-  either heycater or Catena Capital as a current executive position.
+- The executive category is supported by her former CPO/COO role; the card
+  does not identify heycater or Catena Capital as a current employer.
 
 ## Kate Grusemann
 

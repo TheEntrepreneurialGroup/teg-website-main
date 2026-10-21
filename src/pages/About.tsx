@@ -678,7 +678,7 @@ const About: React.FC = () => {
     },
     {
       name: "Miriam Neubauer",
-      role: isDe ? "Ehem. CPO/COO · heycater!" : "Former CPO/COO · heycater!",
+      role: "Top-Management",
       img: "/about/alumni/miriam_neubauer.webp",
     },
     {
@@ -703,7 +703,7 @@ const About: React.FC = () => {
     },
     {
       name: "Kate Grusemann",
-      role: "Director Customer Success · Pricefx",
+      role: "Mittleres Management",
       img: "/about/alumni/kate_grusemann.webp",
     },
     {
@@ -713,7 +713,7 @@ const About: React.FC = () => {
     },
     {
       name: "Veronika Vasileva",
-      role: "Global Partner Business Manager · NVIDIA",
+      role: "Mittleres Management",
       img: "/about/alumni/veronika_vasileva.webp",
     },
     {
