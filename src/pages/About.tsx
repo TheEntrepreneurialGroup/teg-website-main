@@ -663,7 +663,8 @@ const About: React.FC = () => {
         },
       ];
 
-  // ---------------- ALUMNI SECTION: PRESERVED BYTE-IDENTICAL ----------------
+  // Keep executive examples first, followed by functional management,
+  // interim management, SME leadership, and founders.
   const alumni = [
     {
       name: "Ulrich Beck",
@@ -674,6 +675,11 @@ const About: React.FC = () => {
       name: "Claus Wattendrup",
       role: "Top-Management",
       img: "/about/alumni/claus_wattendrup.jpg",
+    },
+    {
+      name: "Miriam Neubauer",
+      role: "Top-Management",
+      img: "/about/alumni/miriam_neubauer.webp",
     },
     {
       name: "Daniel Just",
@@ -696,9 +702,19 @@ const About: React.FC = () => {
       img: "/about/alumni/arne_rieger.jpg",
     },
     {
+      name: "Kate Grusemann",
+      role: "Mittleres Management",
+      img: "/about/alumni/kate_grusemann.webp",
+    },
+    {
       name: "Bernd Amberger",
       role: "Mittleres Management",
       img: "/about/alumni/bernd_amberger.jpg",
+    },
+    {
+      name: "Veronika Vasileva",
+      role: "Mittleres Management",
+      img: "/about/alumni/veronika_vasileva.webp",
     },
     {
       name: "Michael Kraupa",
