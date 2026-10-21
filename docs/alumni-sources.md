@@ -2,23 +2,23 @@
 
 The About page preserves the existing career order: executive leadership,
 functional management, interim management, SME leadership, then founders.
-Miriam is interspersed among the executive examples; Kate and Veronika are
+Miriam is listed among the founder examples; Kate and Veronika are
 interspersed among the functional management examples. All portraits use the
 existing grayscale/colour-on-hover card treatment.
 
 Cards use the same career-category labels as the existing alumni:
-Miriam — “Top-Management”; Kate and Veronika — “Mittleres Management”.
+Miriam — “Gründerin”; Kate and Veronika — “Mittleres Management”.
 These describe career paths; the dated roles below document the evidence.
 
 ## Miriam Neubauer
 
 - TEG membership (2009–2013), board/finance role (2010–2012), and former
-  heycater CPO/COO role (2016–2017):
+  heycater co-founder and CPO/COO role (2016–2017):
   <https://www.xing.com/profile/Miriam_Neubauer>
 - Portrait source:
   <https://profile-images.xing.com/images/e33779d98ac1f55f3055f14c65afc5fc-6/miriam-neubauer.256x256.jpg>
 - Local asset: `public/about/alumni/miriam_neubauer.webp`.
-- The executive category is supported by her former CPO/COO role; the card
+- The founder category is supported by her heycater co-founder role; the card
   does not identify heycater or Catena Capital as a current employer.
 
 ## Kate Grusemann

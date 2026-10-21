@@ -677,11 +677,6 @@ const About: React.FC = () => {
       img: "/about/alumni/claus_wattendrup.jpg",
     },
     {
-      name: "Miriam Neubauer",
-      role: "Top-Management",
-      img: "/about/alumni/miriam_neubauer.webp",
-    },
-    {
       name: "Daniel Just",
       role: "Top-Management",
       img: "/about/alumni/daniel_just.jpg",
@@ -730,6 +725,11 @@ const About: React.FC = () => {
       name: "Volker Maiborn",
       role: "Gründer",
       img: "/about/alumni/volker_maiborn.jpg",
+    },
+    {
+      name: "Miriam Neubauer",
+      role: "Gründerin",
+      img: "/about/alumni/miriam_neubauer.webp",
     },
   ];
 
