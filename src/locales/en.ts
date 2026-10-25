@@ -147,7 +147,8 @@ const en = {
   "student.events.list.brunch.description":
     "Get to know TEG at a relaxed brunch and meet members and alumni.",
   "student.events.list.brunch.linkLabel": "Open event page",
-  "student.events.list.talk.title": "TEG Talk 24.04. | 18:30 - 22:00",
+  "student.events.list.talk.title":
+    "TEG Management Series April 2026 | 24.04. | 18:30 - 22:00",
   "student.events.list.talk.description":
     "Featuring speakers such as the Microsoft CTO, Siemens' Strategy Director, and the founder of the world's first company for trading electronic components, plus two additional industry perspectives.",
   "student.events.list.talk.linkLabel": "Open event page",
@@ -389,7 +390,7 @@ const en = {
   "about.inAction.scene1.title": "AI Consulting Conference",
   "about.inAction.scene1.desc":
     "TEG members plan, promote and host public conferences with external speakers. 150+ attendees. Fully in members' hands.",
-  "about.inAction.scene2.title": "TEG Talk",
+  "about.inAction.scene2.title": "TEG Management Series",
   "about.inAction.scene2.desc":
     "Regular speaker format with executives and founders from the German economy. Invitation, briefing, moderation, follow-up: all done internally.",
   "about.inAction.scene3.title": "Workshops & Career Contexts",
@@ -478,9 +479,9 @@ const en = {
     "TEG for Executives | Events and Young Business Leadership Academy",
   "seo.companies.description":
     "Talks, panels and conferences with executives from corporations and SMEs, organised by participants of the Young Business Leadership Academy. In Munich since 1986.",
-  "seo.events.title": "TEG Events | The Entrepreneurial Group",
+  "seo.events.title": "TEG Events: Conferences and Evening Events",
   "seo.events.description":
-    "Explore upcoming and past TEG events with workshops, talks and formats around entrepreneurship, technology and leadership.",
+    "Conferences and evening events by TEG in Munich: the TEG Management Series, industry panels and conference days with executives from corporations, Mittelstand and academia.",
   "seo.imprint.title": "Imprint | TEG",
   "seo.imprint.description":
     "Imprint and legal information for The Entrepreneurial Group e. V.",
@@ -491,6 +492,13 @@ const en = {
     "Location Host | German Supply Chain Conference 2026 | TEG",
   "seo.requestDemo.description":
     "Host the German Supply Chain Conference 2026 in Munich. Positive PR and recruiting access for logistics location partners — book an informal meeting with TEG.",
+  "seo.supplyChainConference.title":
+    "Supply Chain Management Conference 2026 | TEG",
+  "seo.supplyChainConference.description":
+    "8 December 2026 in Munich: a conference day on automation and geopolitics in the supply chain, with 125 participants, 100 of them executives.",
+  "seo.aviationConference.title": "Aviation Management Conference 2027 | TEG",
+  "seo.aviationConference.description":
+    "TEG Aviation Management Conference on 19 May 2027. Programme, speakers and registration will be announced soon.",
 };
 
 export default en;

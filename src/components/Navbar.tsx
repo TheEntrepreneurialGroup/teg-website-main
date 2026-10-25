@@ -10,12 +10,17 @@ interface NavbarProps {
   scrolled: boolean;
   switchLanguage: (lang: "en" | "de") => void;
   hidden?: boolean;
+  /** Black header with the round TEG mark, matching the editorial events pages. */
+  editorial?: boolean;
 }
+
+const EDITORIAL_BG = "bg-[#17191c]";
 
 const Navbar: React.FC<NavbarProps> = ({
   scrolled,
   switchLanguage,
   hidden,
+  editorial,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const intl = useIntl();
@@ -81,9 +86,11 @@ const Navbar: React.FC<NavbarProps> = ({
         className={`fixed inset-x-0 top-0 z-[60] text-xl transition-[background-color,backdrop-filter,box-shadow,opacity] duration-300 ${
           hidden ? "pointer-events-none opacity-0" : "opacity-100"
         } ${
-          scrolled || mobileMenuOpen
-            ? "bg-primary-dark/95 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.55)] backdrop-blur-md"
-            : "bg-transparent"
+          editorial
+            ? `${EDITORIAL_BG} border-b border-white/10 font-['Libre_Franklin']`
+            : scrolled || mobileMenuOpen
+              ? "bg-primary-dark/95 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.55)] backdrop-blur-md"
+              : "bg-transparent"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -92,7 +99,9 @@ const Navbar: React.FC<NavbarProps> = ({
         <div
           aria-hidden="true"
           className={`pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-transparent transition-opacity duration-300 ${
-            scrolled || mobileMenuOpen ? "opacity-0" : "opacity-100"
+            editorial || scrolled || mobileMenuOpen
+              ? "opacity-0"
+              : "opacity-100"
           }`}
         />
 
@@ -102,7 +111,22 @@ const Navbar: React.FC<NavbarProps> = ({
             className="relative z-10 flex items-center"
             aria-label="TEG Startseite"
           >
-            <Logo />
+            {editorial ? (
+              <span className="flex items-center gap-3.5 text-[15px] leading-tight text-white">
+                <img
+                  src="/events/teg-mark.webp"
+                  alt=""
+                  className="h-9 w-9"
+                  width={36}
+                  height={36}
+                />
+                <span className="hidden font-medium tracking-[0.01em] min-[420px]:inline">
+                  <b className="font-bold">TEG</b> Management Conferences
+                </span>
+              </span>
+            ) : (
+              <Logo />
+            )}
           </Link>
 
           <nav className="hidden items-center gap-8 xl:flex">
@@ -157,7 +181,9 @@ const Navbar: React.FC<NavbarProps> = ({
         {mobileMenuOpen && (
           <motion.div
             id="mobile-navigation"
-            className="fixed inset-0 z-50 flex min-h-dvh flex-col bg-primary-dark px-6 pb-10 pt-28 xl:hidden"
+            className={`fixed inset-0 z-50 flex min-h-dvh flex-col px-6 pb-10 pt-28 xl:hidden ${
+              editorial ? EDITORIAL_BG : "bg-primary-dark"
+            }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

@@ -13,7 +13,10 @@ const pastSpeakers = [
     name: "Hansjörg Briegel",
     role: "Vice President Ecosystem Development, Intel",
   },
-  { name: "Jan Goetz", role: "CEO & Co-Founder, IQM Quantum Computers" },
+  {
+    name: "Jan Goetz",
+    role: "Co-Founder & Managing Director, IQM Quantum Computers",
+  },
   { name: "Osman Agirbas", role: "Managing Director, Interhyp Group" },
 ];
 

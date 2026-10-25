@@ -92,14 +92,14 @@ const ForStudents: React.FC = () => {
                     <Mic size={20} className="text-[#B7860B]" />
                   </span>
                   <div>
-                    Lerne uns kennen beim{" "}
+                    Lerne uns kennen bei der{" "}
                     <strong className="text-[#0F2B57]">
-                      TEG Talk am 22. Oktober
+                      TEG Management Series Oktober 2026
                     </strong>{" "}
-                    mit Jan Hiesserich, leitet als Group Chief Strategy Officer
-                    einen Konzern mit 35 Tochterunternehmen, Heiner Thorborg,
-                    besetzt als Headhunter C-Level-Positionen bei Konzernen wie
-                    Amazon, BMW oder Microsoft, + 2 weitere.
+                    am 22. Oktober mit Jan Hiesserich, leitet als Group Chief
+                    Strategy Officer einen Konzern mit 35 Tochterunternehmen,
+                    Heiner Thorborg, besetzt als Headhunter C-Level-Positionen
+                    bei Konzernen wie Amazon, BMW oder Microsoft, + 2 weitere.
                     <a
                       href="https://luma.com/uecrvr40"
                       target="_blank"

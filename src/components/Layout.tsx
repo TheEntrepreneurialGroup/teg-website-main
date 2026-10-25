@@ -11,6 +11,8 @@ const Layout: React.FC<{
   const [mergeActive, setMergeActive] = useState(false);
   const location = useLocation();
   const isAboutPage = location.pathname === "/";
+  // The events pages open on a white hero and use the black editorial navbar.
+  const editorialNavbar = location.pathname.startsWith("/events");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +44,7 @@ const Layout: React.FC<{
     <div className="flex flex-col min-h-screen">
       <Navbar
         scrolled={scrolled}
+        editorial={editorialNavbar}
         switchLanguage={switchLanguage}
         hidden={mergeActive}
       />
@@ -50,7 +53,7 @@ const Layout: React.FC<{
           <Outlet />
         </AnimatePresence>
       </main>
-      <Footer />
+      <Footer editorial={editorialNavbar} />
     </div>
   );
 };

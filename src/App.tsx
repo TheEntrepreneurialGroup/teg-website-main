@@ -5,6 +5,8 @@ import ForStudents from "./pages/ForStudents";
 import ForCompanies from "./pages/ForCompanies";
 import About from "./pages/About";
 import Events from "./pages/Events";
+import SupplyChainConference from "./pages/SupplyChainConference";
+import AviationConference from "./pages/AviationConference";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Imprint from "./pages/Imprint";
 import RequestDemo from "./pages/RequestDemo";
@@ -105,6 +107,11 @@ function App() {
           <Route path="for-students" element={<ForStudents />} />
           <Route path="for-companies" element={<ForCompanies />} />
           <Route path="events" element={<Events />} />
+          <Route
+            path="events/supply-chain"
+            element={<SupplyChainConference />}
+          />
+          <Route path="events/aviation" element={<AviationConference />} />
         </Route>
         <Route
           path="/about"

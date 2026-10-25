@@ -1,57 +1,62 @@
 /**
- * Parses shipped src/pages/Events.tsx event arrays.
- * Asserts the next TEG Talk leads the upcoming listings, the
- * placeholder is gone, Biotech stays in pastEvents, and upcoming body
- * copy is complete German sentences without hyphen or em dash.
+ * Parses src/pages/eventsData.ts and asserts the /events split:
+ * conferences and evening events are separate lists, the Supply Chain
+ * Conference is upcoming, every upcoming conference links to a routed and
+ * prerendered sub-page (its only link on /events),
+ * Biotech stays a past evening event, no prior event got lost, every
+ * referenced image exists, and copy uses no em or en dash as a separator.
  */
 import { readFile, access } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { PRERENDER_ROUTES } from "../src/seo/prerenderRoutes.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
-const pageFile = path.join(root, "src", "pages", "Events.tsx");
+const dataFile = path.join(root, "src", "pages", "eventsData.ts");
+const appFile = path.join(root, "src", "App.tsx");
 const publicRoot = path.join(root, "public");
 
-const BIOTECH_TITLE = "Herausforderungen & Innovation in Biotech & Medtech";
+const SUPPLY_CHAIN_ID = "supplychainconference2026";
+const SUPPLY_CHAIN_PAGE = "/events/supply-chain";
 const BIOTECH_ID = "biotech-medtech-panel-2026";
-const PLACEHOLDER_ID = "upcoming-placeholder";
-const PLACEHOLDER_TITLE = "Nächstes Event folgt in Kürze";
-const PRIOR_PAST_IDS = [
-  "ai-2026",
+const CONFERENCE_IDS = ["ai-2026", "frontier-tech-conference-2025"];
+const EVENING_IDS = [
+  "teg-talk-22-10-2026",
+  BIOTECH_ID,
   "teg-talk-24-04-2026",
   "charging-ahead-2026",
-  "frontier-tech-conference-2025",
   "enterprise-sales-2025",
   "teg-talk-24-10-2025",
   "fireside-chat-2025",
 ];
 
 const failures = [];
+const fail = (message) => failures.push(message);
 
-function fail(message) {
-  failures.push(message);
-}
-
-function sliceConstArray(source, constName, nextConstName) {
-  const startToken = `const ${constName}`;
-  const endToken = `const ${nextConstName}`;
-  const start = source.indexOf(startToken);
-  const end = source.indexOf(endToken);
-  if (start < 0 || end < 0 || end <= start) {
-    fail(`Could not locate ${constName} array in ${pageFile}`);
+function sliceArray(source, constName) {
+  const start = source.indexOf(`export const ${constName}`);
+  if (start < 0) {
+    fail(`Could not locate ${constName} in ${dataFile}`);
     return "";
   }
-  return source.slice(start, end);
+  const bracket = source.indexOf("[", source.indexOf("=", start));
+  let depth = 0;
+  for (let i = bracket; i < source.length; i += 1) {
+    if (source[i] === "[") depth += 1;
+    else if (source[i] === "]") {
+      depth -= 1;
+      if (depth === 0) return source.slice(bracket, i + 1);
+    }
+  }
+  return "";
 }
 
-function extractTopLevelObjects(arraySource) {
-  const bracket = arraySource.indexOf("[");
-  if (bracket < 0) return [];
+function topLevelObjects(arraySource) {
   const objects = [];
   let depth = 0;
   let start = -1;
-  for (let i = bracket + 1; i < arraySource.length; i += 1) {
+  for (let i = 1; i < arraySource.length; i += 1) {
     const ch = arraySource[i];
     if (ch === "{") {
       if (depth === 0) start = i;
@@ -67,188 +72,105 @@ function extractTopLevelObjects(arraySource) {
   return objects;
 }
 
-function fieldString(objectSource, field) {
-  const block = new RegExp(`${field}:\\s*\`([\\s\\S]*?)\``);
-  const quoted = new RegExp(`${field}:\\s*"((?:\\\\.|[^"\\\\])*)"`);
-  const single = new RegExp(`${field}:\\s*'((?:\\\\.|[^'\\\\])*)'`);
-  const ident = new RegExp(`${field}:\\s*([A-Za-z_][A-Za-z0-9_]*)`);
-  const blockMatch = objectSource.match(block);
-  if (blockMatch) return blockMatch[1].replace(/\s+/g, " ").trim();
-  const quotedMatch = objectSource.match(quoted);
-  if (quotedMatch) return quotedMatch[1];
-  const singleMatch = objectSource.match(single);
-  if (singleMatch) return singleMatch[1];
-  const identMatch = objectSource.match(ident);
-  if (identMatch) return identMatch[1];
-  return "";
-}
+const field = (obj, name) =>
+  obj.match(new RegExp(`\\b${name}:\\s*"((?:\\\\.|[^"\\\\])*)"`))?.[1] ?? "";
 
-async function imageExists(imagePath) {
-  if (!imagePath.startsWith("/")) return false;
+async function exists(publicPath) {
   try {
-    await access(path.join(publicRoot, imagePath.replace(/^\//, "")));
+    await access(path.join(publicRoot, publicPath.replace(/^\//, "")));
     return true;
   } catch {
     return false;
   }
 }
 
-function isGermanSentenceText(value) {
-  return /[.?]/.test(value) && value.trim().length > 0;
+const source = await readFile(dataFile, "utf8");
+const lists = Object.fromEntries(
+  [
+    "upcomingConferences",
+    "pastConferences",
+    "upcomingEveningEvents",
+    "pastEveningEvents",
+  ].map((name) => [name, topLevelObjects(sliceArray(source, name))]),
+);
+const ids = Object.fromEntries(
+  Object.entries(lists).map(([name, objs]) => [
+    name,
+    objs.map((o) => field(o, "id")),
+  ]),
+);
+
+const supply = lists.upcomingConferences.find(
+  (o) => field(o, "id") === SUPPLY_CHAIN_ID,
+);
+if (!supply) {
+  fail("Supply Chain Conference must be an upcoming conference");
+} else if (field(supply, "page") !== SUPPLY_CHAIN_PAGE) {
+  fail(`Supply Chain Conference must link to ${SUPPLY_CHAIN_PAGE}`);
 }
 
-function hasForbiddenDash(value) {
-  return /[—–-]/.test(value);
+const appSource = await readFile(appFile, "utf8");
+for (const conf of lists.upcomingConferences) {
+  const id = field(conf, "id");
+  const page = field(conf, "page");
+  if (!page.startsWith("/events/")) {
+    fail(`${id}: page must be a sub-page of /events, got "${page}"`);
+    continue;
+  }
+  if (!appSource.includes(`path="${page.slice(1)}"`)) {
+    fail(`${id}: App.tsx does not register ${page}`);
+  }
+  if (!PRERENDER_ROUTES.includes(page)) {
+    fail(`${id}: PRERENDER_ROUTES is missing ${page}`);
+  }
 }
 
-const source = await readFile(pageFile, "utf8");
-const upcomingSource = sliceConstArray(source, "upcomingEvents", "pastEvents");
-const pastSource = sliceConstArray(source, "pastEvents", "variants");
-const upcomingObjects = extractTopLevelObjects(upcomingSource);
-const pastObjects = extractTopLevelObjects(pastSource);
-
-const pastAfterToken = source.indexOf("const pastEvents");
-const biotechInFile = source.indexOf(BIOTECH_TITLE);
-if (biotechInFile < 0) {
-  fail("Biotech title is missing from Events.tsx");
-} else if (pastAfterToken < 0 || biotechInFile < pastAfterToken) {
-  fail("Biotech title does not appear after const pastEvents");
+if (!ids.pastEveningEvents.includes(BIOTECH_ID)) {
+  fail("Biotech panel must be a past evening event");
+}
+for (const id of CONFERENCE_IDS) {
+  if (!ids.pastConferences.includes(id)) {
+    fail(`Past conference ${id} is missing`);
+  }
+}
+for (const id of EVENING_IDS) {
+  if (!ids.pastEveningEvents.includes(id)) {
+    fail(`Past evening event ${id} is missing`);
+  }
 }
 
-const upcomingIds = upcomingObjects.map((obj) => fieldString(obj, "id"));
-const pastIds = pastObjects.map((obj) => fieldString(obj, "id"));
-const upcomingTitles = upcomingObjects.map((obj) => fieldString(obj, "title"));
-
-if (upcomingTitles.includes(BIOTECH_TITLE)) {
-  fail("Biotech title is still the upcoming listing identity");
+const conferenceIds = [...ids.upcomingConferences, ...ids.pastConferences];
+const eveningIds = [...ids.upcomingEveningEvents, ...ids.pastEveningEvents];
+for (const id of conferenceIds) {
+  if (eveningIds.includes(id))
+    fail(`${id} is listed as conference and evening`);
 }
-if (upcomingIds.includes(BIOTECH_ID)) {
-  fail("biotech-medtech-panel-2026 is still an upcomingEvents id");
-}
-if (upcomingIds.includes(PLACEHOLDER_ID)) {
-  fail("upcoming-placeholder is still an upcomingEvents id");
-}
-if (upcomingTitles.includes(PLACEHOLDER_TITLE)) {
-  fail("placeholder title is still the upcoming listing identity");
-}
+const allIds = [...conferenceIds, ...eveningIds];
+if (new Set(allIds).size !== allIds.length) fail("Duplicate event ids");
 
-if (upcomingObjects.length < 1) {
-  fail("upcomingEvents has no records");
-} else {
-  const first = upcomingObjects[0];
-  const title = fieldString(first, "title");
-  const date = fieldString(first, "date");
-  const location = fieldString(first, "location");
-  const description = fieldString(first, "description");
-  const longText = fieldString(first, "longText");
-  const image = fieldString(first, "image");
-  const topic = fieldString(first, "topic");
-  const category = fieldString(first, "category");
-
-  if (!title) fail("upcoming title is empty");
-  if (title !== "TEG Talk: Leadership und Wachstum") {
-    fail("The next TEG Talk must be the first upcoming event");
-  }
-  if (title === PLACEHOLDER_TITLE) {
-    fail("upcoming title is still the placeholder");
-  }
-  if (title === BIOTECH_TITLE) {
-    fail("upcoming title is the Biotech title");
-  }
-  if (date !== "22. Oktober 2026, 18:30–22:00 Uhr") {
-    fail(`Unexpected TEG Talk date: ${date}`);
-  }
-  if (location !== "Adresse nach Anmeldung auf Luma") {
-    fail(`The location must reflect Luma registration visibility: ${location}`);
-  }
-  if (!image) fail("upcoming image is empty");
-  if (!(await imageExists(image))) {
-    fail(`upcoming image is not an existing public asset: ${image}`);
-  }
-  if (description && !isGermanSentenceText(description)) {
-    fail("upcoming description is not complete German sentence text");
-  }
-  if (longText && !isGermanSentenceText(longText)) {
-    fail("upcoming longText is not complete German sentence text");
-  }
-  if (hasForbiddenDash(description)) {
-    fail("upcoming description contains a hyphen or em dash");
-  }
-  if (hasForbiddenDash(longText)) {
-    fail("upcoming longText contains a hyphen or em dash");
-  }
-
-  const headlineFields = { title, topic, category };
-  for (const [name, value] of Object.entries(headlineFields)) {
-    if (
-      hasForbiddenDash(value) &&
-      name !== "title" &&
-      name !== "topic" &&
-      name !== "category"
-    ) {
-      fail(`${name} is not allowed to contain a hyphen`);
+for (const [name, objs] of Object.entries(lists)) {
+  for (const obj of objs) {
+    const id = field(obj, "id");
+    if (!field(obj, "title")) fail(`${name}/${id}: title is empty`);
+    if (!field(obj, "date")) fail(`${name}/${id}: date is empty`);
+    for (const [, img] of obj.matchAll(/\b(?:image|src):\s*"([^"]+)"/g)) {
+      if (!(await exists(img))) fail(`${name}/${id}: missing asset ${img}`);
     }
-  }
-}
-
-if (!upcomingIds.includes("supplychainconference2026")) {
-  fail("Supply Chain Conference must remain upcoming");
-}
-
-if (!pastIds.includes(BIOTECH_ID)) {
-  fail("Biotech id is not a member of pastEvents");
-}
-if (!pastObjects.some((obj) => fieldString(obj, "title") === BIOTECH_TITLE)) {
-  fail("Biotech title is not a member of pastEvents");
-}
-
-for (const priorId of PRIOR_PAST_IDS) {
-  if (!pastIds.includes(priorId)) {
-    fail(`Prior past event ${priorId} is missing from pastEvents`);
-  }
-}
-
-const expectedPastCount = PRIOR_PAST_IDS.length + 1;
-if (pastObjects.length !== expectedPastCount) {
-  fail(
-    `pastEvents length is ${pastObjects.length}, expected previous count plus one (${expectedPastCount})`,
-  );
-}
-
-const collapsed = source.replace(/\s+/g, " ");
-const jsxMarkers = [
-  "Upcoming Highlights",
-  "Past Events",
-  "Details ansehen",
-  "Gegründet 1986",
-  "Events & Netzwerk.",
-];
-for (const marker of jsxMarkers) {
-  if (!collapsed.includes(marker)) {
-    fail(`Page markup marker missing: ${marker}`);
+    for (const key of ["description", "lede", "note"]) {
+      if (/[—–]/.test(field(obj, key))) {
+        fail(`${name}/${id}: ${key} contains an em or en dash`);
+      }
+    }
   }
 }
 
 if (failures.length > 0) {
   console.error("verify-events-data FAILED");
-  for (const message of failures) {
-    console.error(`- ${message}`);
-  }
+  for (const message of failures) console.error(`- ${message}`);
   process.exit(1);
 }
 
-const first = upcomingObjects[0];
 console.log("verify-events-data OK");
-console.log(`upcomingEvents count: ${upcomingObjects.length}`);
-console.log(`upcoming first id: ${upcomingIds[0]}`);
-console.log(`upcoming first title: ${upcomingTitles[0]}`);
-console.log(`upcoming date: ${fieldString(first, "date")}`);
-console.log(`upcoming location: ${fieldString(first, "location")}`);
-console.log(`upcoming image: ${fieldString(first, "image")}`);
-console.log(`pastEvents count: ${pastObjects.length}`);
-console.log(`past first id: ${pastIds[0]}`);
-console.log(`biotech in pastEvents: yes`);
-console.log(`biotech in upcomingEvents: no`);
-console.log(`placeholder in upcomingEvents: no`);
-console.log(`description has dash: no`);
-console.log(`longText has dash: no`);
+for (const [name, list] of Object.entries(ids)) {
+  console.log(`${name}: ${list.length} (${list.join(", ") || "none"})`);
+}
