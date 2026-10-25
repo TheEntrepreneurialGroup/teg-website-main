@@ -726,11 +726,6 @@ const About: React.FC = () => {
       role: "Gründer",
       img: "/about/alumni/volker_maiborn.jpg",
     },
-    {
-      name: "Miriam Neubauer",
-      role: "Gründerin",
-      img: "/about/alumni/miriam_neubauer.webp",
-    },
   ];
 
   return (
