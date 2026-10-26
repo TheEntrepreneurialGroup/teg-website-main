@@ -1116,3 +1116,325 @@
     max-width: 260px;
   }
 }
+
+/* Phones: smaller type for the landing pages as well. */
+@media (max-width: 720px) {
+  .ev.landing .section-title {
+    font-size: clamp(26px, 7.2vw, 34px);
+  }
+  .ev.landing .section-intro,
+  .ev.landing .cover .lede,
+  .ev.landing .selection-panel p {
+    font-size: 15.5px;
+  }
+  .ev.landing .pillars h2 {
+    font-size: 24px;
+  }
+  .ev.landing .pillars p,
+  .ev.landing .paths p,
+  .ev.landing .exec-workshop p,
+  .ev.landing .exec-ways p,
+  .ev.landing .format-panel p {
+    font-size: 15px;
+  }
+  .ev.landing .pillar-n {
+    font-size: 48px;
+  }
+  .ev.landing .bridge {
+    font-size: 19px;
+    padding-left: 20px;
+  }
+  .ev.landing .format-panel h3,
+  .ev.landing .exec-workshop h3,
+  .ev.landing .exec-ways h3,
+  .ev.landing .paths h3 {
+    font-size: 22px;
+  }
+  .ev.landing .exec-workshop li {
+    font-size: 14.5px;
+  }
+  .ev.landing .exec-lead-quote blockquote,
+  .ev.landing .exec-contact blockquote {
+    font-size: 22px;
+  }
+  .ev.landing .exec-quotes blockquote {
+    font-size: 15px;
+  }
+  .ev.landing .ticker li {
+    font-size: 18px;
+  }
+  .ev.landing .year {
+    font-size: 80px;
+  }
+  .ev.landing .split-title {
+    font-size: 26px;
+  }
+}
+
+/* Phones: each section, or each item of a list, fits on one screen. */
+@media (max-width: 720px) {
+  .ev.landing .chapter-section > .wrap,
+  .ev.landing .mission > .wrap,
+  .ev.landing .join-us > .wrap,
+  .ev.landing .exec-voices > .wrap,
+  .ev.landing .exec-contact > .wrap {
+    padding-block: 56px;
+  }
+  .ev.landing .chapter-head {
+    gap: 12px;
+  }
+  .ev.landing .section-intro {
+    margin-top: 12px;
+  }
+
+  /* Cover: a shorter photo leaves room for the headline and text. */
+  .ev.landing .cover-photo {
+    max-height: 40svh;
+  }
+  .ev.landing .selection-photo {
+    height: 300px;
+  }
+  .ev.landing .cover-text {
+    margin-top: -72px;
+    gap: 16px;
+    padding: 24px 20px 40px var(--gutter);
+  }
+
+  /* What we do: number beside the title instead of above it. */
+  .ev.landing .mission .pillars article,
+  .ev.landing .mission .pillars article + article {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 14px;
+    row-gap: 10px;
+    padding: 22px 0;
+  }
+  .ev.landing .pillar-n {
+    font-size: 34px;
+  }
+  .ev.landing .pillars h2 {
+    margin: 0;
+    font-size: 21px;
+    align-self: center;
+  }
+  .ev.landing .pillars p,
+  .ev.landing .pillars .text-link {
+    grid-column: 1 / -1;
+  }
+  .ev.landing .pillars p {
+    margin: 0;
+  }
+  .ev.landing .bridge {
+    margin-top: 20px;
+    font-size: 17px;
+  }
+
+  /* Formats: smaller photos and panels. */
+  .ev.landing .format-cards {
+    gap: 40px;
+    margin-top: 32px;
+  }
+  .ev.landing .format-card img {
+    aspect-ratio: 16 / 9;
+  }
+  .ev.landing .format-panel {
+    margin-top: -36px;
+    padding: 18px 18px 0 0;
+  }
+  .ev.landing .format-panel h3 {
+    margin-top: 6px;
+  }
+  .ev.landing .format-panel p {
+    margin-top: 8px;
+  }
+  .ev.landing .format-panel ul {
+    margin-top: 12px;
+    padding-top: 10px;
+    gap: 4px;
+    font-size: 13px;
+  }
+  .ev.landing .format-more {
+    margin-top: 32px;
+  }
+
+  /* Academy facts. */
+  .ev.landing .academy {
+    padding-block: 56px;
+  }
+  .ev.landing .fact-row {
+    margin-top: 40px;
+    row-gap: 20px;
+  }
+  .ev.landing .fact-row dd {
+    font-size: 16px;
+  }
+  .ev.landing .fact-row dd span {
+    font-size: 12.5px;
+  }
+
+  /* Graduates: figures in three columns, portraits in three columns. */
+  /* Five figures: the bordeaux share leads across the full width, the other
+     four sit in a 2 x 2 grid, so no figure is left alone in a row. */
+  .ev.landing .grad-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 28px 0 32px;
+    row-gap: 4px;
+  }
+  .ev.landing .grad-stats div:nth-child(2) {
+    order: -1;
+    grid-column: 1 / -1;
+  }
+  .ev.landing .grad-stats div {
+    padding: 14px 10px 0 0;
+  }
+  .ev.landing .grad-stats dt {
+    font-size: 24px;
+  }
+  .ev.landing .grad-stats dd {
+    font-size: 12px;
+  }
+  .ev.landing .portraits {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 10px;
+  }
+  .ev.landing .portraits img {
+    margin-bottom: 6px;
+  }
+  .ev.landing .portraits b {
+    font-size: 12.5px;
+    line-height: 1.3;
+  }
+  .ev.landing .portraits span {
+    font-size: 11px;
+  }
+
+  /* Founding. */
+  .ev.landing .founding-text {
+    padding: 56px var(--gutter) 32px;
+  }
+  .ev.landing .founding-article {
+    padding: 32px var(--gutter) 48px;
+  }
+  .ev.landing .founders-named {
+    margin-top: 24px;
+    gap: 12px 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ev.landing .founders-named b {
+    font-size: 14px;
+  }
+  .ev.landing .founders-named span {
+    font-size: 12.5px;
+  }
+  .ev.landing .board-line {
+    margin-top: 24px;
+    padding-top: 14px;
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  /* Join: two short paths. */
+  .ev.landing .paths {
+    margin-top: 28px;
+  }
+  .ev.landing .paths article,
+  .ev.landing .paths article + article {
+    padding: 22px 0;
+    gap: 10px;
+  }
+
+  /* For executives. */
+  .ev.landing .exec-list-title {
+    margin-top: 32px;
+  }
+  .ev.landing .exec-speakers {
+    gap: 10px;
+  }
+  .ev.landing .exec-speakers b {
+    font-size: 14.5px;
+  }
+  .ev.landing .exec-speakers span {
+    font-size: 13px;
+  }
+  .ev.landing .exec-more {
+    margin-top: 32px;
+  }
+  .ev.landing .exec-workshop {
+    margin-top: 32px;
+    gap: 20px;
+  }
+  .ev.landing .exec-workshop-photo img {
+    aspect-ratio: 16 / 9;
+  }
+  .ev.landing .exec-workshop-text {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 14px;
+    gap: 10px 14px;
+  }
+  .ev.landing .exec-workshop-text > :not(.pillar-n):not(h3) {
+    grid-column: 1 / -1;
+  }
+  .ev.landing .exec-workshop h3 {
+    margin: 0;
+    align-self: center;
+  }
+  .ev.landing .exec-workshop li {
+    padding: 8px 0;
+    font-size: 13.5px;
+  }
+  .ev.landing .exec-ways {
+    margin-top: 36px;
+  }
+  .ev.landing .exec-ways article,
+  .ev.landing .exec-ways article + article {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 14px;
+    padding: 20px 0;
+  }
+  .ev.landing .exec-ways p {
+    grid-column: 1 / -1;
+  }
+  .ev.landing .exec-ways h3 {
+    margin: 0;
+    align-self: center;
+  }
+
+  /* Voices: a small portrait above the lead quote instead of a large photo. */
+  .ev.landing .exec-lead-quote {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .ev.landing .exec-lead-quote img {
+    width: 72px;
+    max-width: none;
+    margin-bottom: 18px;
+  }
+  .ev.landing .exec-lead-quote figcaption {
+    margin-top: 16px;
+  }
+  .ev.landing .exec-quotes {
+    margin-top: 36px;
+    padding-top: 24px;
+    gap: 28px;
+  }
+  .ev.landing .exec-quotes figure {
+    gap: 12px;
+  }
+  .ev.landing .exec-quotes figcaption img {
+    width: 40px;
+    height: 40px;
+  }
+  .ev.landing .exec-contact > .wrap {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+  .ev.landing .exec-contact-photo {
+    max-width: none;
+  }
+  .ev.landing .exec-contact blockquote {
+    font-size: 19px;
+  }
+  .ev.landing .exec-contact-name {
+    margin: 16px 0 12px;
+  }
+}

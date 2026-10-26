@@ -47,12 +47,17 @@ interface CalendlyApi {
   initInlineWidget: (options: {
     url: string;
     parentElement: HTMLElement;
+    resize?: boolean;
   }) => void;
 }
 
+const NARROW_QUERY = "(max-width: 720px)";
+
 /**
  * Calendly inline booking. Initialised explicitly so it also renders after
- * client-side navigation, when widget.js has already scanned the page.
+ * client-side navigation, when widget.js has already scanned the page. On
+ * phones Calendly resizes the frame to its content, so the calendar keeps
+ * its natural height instead of a fixed box with empty space.
  */
 export const CalendlyInline: React.FC<{ url: string; title: string }> = ({
   url,
@@ -68,7 +73,11 @@ export const CalendlyInline: React.FC<{ url: string; title: string }> = ({
         .Calendly;
       if (!calendly || !ref.current) return;
       parent.innerHTML = "";
-      calendly.initInlineWidget({ url, parentElement: parent });
+      calendly.initInlineWidget({
+        url,
+        parentElement: parent,
+        resize: window.matchMedia(NARROW_QUERY).matches,
+      });
     };
     let script = document.querySelector<HTMLScriptElement>(
       `script[src="${CALENDLY_SCRIPT}"]`,
