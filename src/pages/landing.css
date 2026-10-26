@@ -100,17 +100,36 @@
   object-fit: cover;
   object-position: 50% 35%;
 }
+/* Narrow screens: the photo opens the page at full width and the black
+   text panel rises over its lower edge (the Selection move), so the
+   photo is the first thing seen instead of following a long text. */
 @media (max-width: 960px) {
   .ev.landing .cover {
     grid-template-columns: minmax(0, 1fr);
     min-height: 0;
   }
-  .ev.landing .cover-text {
-    padding: 56px var(--gutter) 48px;
-  }
   .ev.landing .cover-photo {
+    order: -1;
     min-height: 0;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5;
+    max-height: 64svh;
+    width: 100%;
+  }
+  .ev.landing .cover-text {
+    position: relative;
+    z-index: 1;
+    gap: 22px;
+    margin: -112px var(--gutter) 0 0;
+    padding: 32px 24px 56px var(--gutter);
+    background: var(--stage);
+  }
+  .ev.landing .cover h1 {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+}
+@media (min-width: 600px) and (max-width: 960px) {
+  .ev.landing .cover-photo {
+    aspect-ratio: 16 / 10;
   }
 }
 
@@ -147,11 +166,23 @@
 @media (max-width: 860px) {
   .ev.landing .facts-strip dl {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 36px;
+    row-gap: 32px;
+    padding-block: 40px 48px;
+  }
+  .ev.landing .facts-strip div {
+    padding: 0 0 0 20px;
   }
   .ev.landing .facts-strip div:nth-child(3) {
     padding-left: 0;
     border-left: 0;
+  }
+  .ev.landing .facts-strip dt {
+    font-size: 30px;
+    white-space: nowrap;
+  }
+  .ev.landing .facts-strip dd {
+    margin-top: 8px;
+    font-size: 14px;
   }
 }
 
