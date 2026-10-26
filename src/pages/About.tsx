@@ -227,6 +227,7 @@ const de = {
     title: "Wer bei TEG mitmacht, wird ausgewählt.",
     text: "Alle sechs Monate wählen wir aus über hundert Bewerbungen 8 bis 15 Teilnehmer für die Academy aus. Jeder Bewerber durchläuft dasselbe Verfahren, unabhängig von Herkunft oder Netzwerk. Bewertet werden analytisches Denken, Leistungsbereitschaft und Führungscharakter: die Fähigkeit, Initiative zu ergreifen, zu führen und geführt zu werden.",
     photoAlt: "Teilnehmer der TEG bei einer Veranstaltung",
+    link: "Zur Bewerbung",
   },
   video: {
     label: "Im Video:",
@@ -397,6 +398,7 @@ const en: Copy = {
     title: "Membership at TEG is earned.",
     text: "Every six months we select 8 to 15 participants for the Academy from over a hundred applications. Every applicant goes through the same process, regardless of background or network. We assess analytical thinking, drive and leadership character: the ability to take initiative, to lead and to be led.",
     photoAlt: "TEG members at an event",
+    link: "How to apply",
   },
   video: {
     label: "In the video:",
@@ -663,6 +665,9 @@ const About: React.FC = () => {
           <div className="selection-panel">
             <h2 className="section-title">{t.selection.title}</h2>
             <p>{t.selection.text}</p>
+            <Link className="text-link" to="/for-students">
+              {t.selection.link} <ArrowRight size={15} />
+            </Link>
           </div>
         </div>
       </section>

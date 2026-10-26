@@ -506,11 +506,22 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+/* Editorial overlap, defined with one quiet means: the plate keeps the
+   original offset (flush left, rising 56px into the photo, the photo running
+   on at the right). Only its upper part, the overlap and the title, carries
+   a faint grey-white tone that turns into the page white below, plus a
+   hairline along the top edge. No shadow, no side lines. */
+.ev.landing .format-card {
+  display: grid;
+  /* Cards in a row end on the same line. */
+  grid-template-rows: auto 1fr;
+}
 .ev.landing .format-panel {
   position: relative;
   margin: -56px 12% 0 0;
-  padding: 28px 28px 0 0;
-  background: var(--paper);
+  padding: 24px 24px 26px;
+  background: linear-gradient(180deg, #f2f3f5 0, #f2f3f5 96px, #fff 150px);
+  border-top: 1px solid rgba(23, 25, 28, 0.08);
 }
 .ev.landing .format-index {
   font: 600 14px/1 var(--font);
@@ -639,14 +650,21 @@
 }
 
 /* 7. Graduates: large figures, then a uniform portrait wall. */
+/* Key figures as in an annual report: each figure has its own short rule
+   above it, separated by the column gap, instead of one long rule crossed
+   by dividers. The share in top management carries the accent. */
 .ev.landing .grad-stats {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: 28px;
   margin: 64px 0 72px;
-  border-top: 2px solid var(--ink);
 }
 .ev.landing .grad-stats div {
-  padding: 24px 24px 0 0;
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
+}
+.ev.landing .grad-stats div:nth-child(2) {
+  border-top-color: var(--accent);
 }
 .ev.landing .grad-stats dt {
   font: 500 clamp(32px, 3.4vw, 44px) / 1 var(--font);
@@ -665,7 +683,7 @@
 @media (max-width: 960px) {
   .ev.landing .grad-stats {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    row-gap: 8px;
+    row-gap: 28px;
   }
 }
 @media (max-width: 560px) {
@@ -727,22 +745,37 @@
 .ev.landing .selection .wrap {
   padding-bottom: 128px;
 }
+/* Same edge cue as the format plates: a faint grey-white only where the
+   panel lies on the photo, turning into the page white below, and a
+   hairline along the top edge. */
 .ev.landing .selection-panel {
+  --overlap: 160px;
+  --panel-tone: linear-gradient(
+    180deg,
+    #f2f3f5 0,
+    #f2f3f5 var(--overlap),
+    #fff calc(var(--overlap) + 64px)
+  );
   position: relative;
-  margin-top: -160px;
+  margin-top: calc(-1 * var(--overlap));
   max-width: 640px;
   padding: 56px 56px 0 0;
-  background: var(--paper);
+  background: var(--panel-tone);
+  border-top: 1px solid rgba(23, 25, 28, 0.08);
 }
 .ev.landing .selection-panel::before {
-  /* Extends the panel's white to the left page edge. */
+  /* Extends the panel to the left page edge. */
   content: "";
   position: absolute;
-  top: 0;
+  top: -1px;
   bottom: 0;
   right: 100%;
   width: var(--edge);
-  background: var(--paper);
+  background: var(--panel-tone);
+  border-top: 1px solid rgba(23, 25, 28, 0.08);
+}
+.ev.landing .selection-panel .text-link {
+  margin-top: 28px;
 }
 .ev.landing .selection-panel p {
   margin: 24px 0 0;
@@ -752,8 +785,8 @@
 }
 @media (max-width: 720px) {
   .ev.landing .selection-panel {
-    margin-top: -64px;
-    padding: 36px 24px 0 0;
+    --overlap: 64px;
+    padding: 28px 24px 0 0;
   }
   .ev.landing .selection .wrap {
     padding-bottom: 80px;
@@ -1237,8 +1270,8 @@
     aspect-ratio: 16 / 9;
   }
   .ev.landing .format-panel {
-    margin-top: -36px;
-    padding: 18px 18px 0 0;
+    margin: -40px 12% 0 0;
+    padding: 18px 18px 20px;
   }
   .ev.landing .format-panel h3 {
     margin-top: 6px;
@@ -1271,20 +1304,19 @@
     font-size: 12.5px;
   }
 
-  /* Graduates: figures in three columns, portraits in three columns. */
-  /* Five figures: the bordeaux share leads across the full width, the other
+  /* Graduates, five figures: the bordeaux share leads across the full width, the other
      four sit in a 2 x 2 grid, so no figure is left alone in a row. */
   .ev.landing .grad-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin: 28px 0 32px;
-    row-gap: 4px;
+    gap: 20px 18px;
   }
   .ev.landing .grad-stats div:nth-child(2) {
     order: -1;
     grid-column: 1 / -1;
   }
   .ev.landing .grad-stats div {
-    padding: 14px 10px 0 0;
+    padding-top: 12px;
   }
   .ev.landing .grad-stats dt {
     font-size: 24px;
