@@ -5,7 +5,7 @@
  */
 import React from "react";
 import { Link } from "react-router-dom";
-import "./events-editorial.css";
+import "./editorial.css";
 import {
   CalendlyInline,
   ContactCard,

@@ -1,0 +1,1087 @@
+/*
+ * Landing pages (About, For executives). Builds on editorial.css (tokens, .wrap, .band,
+ * .terms) and adds the art direction a landing page needs:
+ * a split cover, chapters in a black/white/stone rhythm, large
+ * photography and one bordeaux display figure. No gradients; motion is slow
+ * and optional.
+ */
+.ev.landing {
+  --gutter: max(16px, min(48px, 4vw));
+  /* Left edge of .wrap content, so full-bleed layouts still align to it. */
+  --edge: max(var(--gutter), calc((100vw - var(--max)) / 2));
+  --accent-on-dark: #d07a87;
+}
+
+/* Black sections share the stage tokens. */
+.ev.landing .dark {
+  background: var(--stage);
+  color: var(--on-stage);
+  --ink: var(--on-stage);
+  --ink-muted: #a9adb3;
+  --line: #33363b;
+}
+
+.ev.landing .section-title {
+  margin: 0;
+  font: 500 clamp(32px, 4vw, 48px) / 1.1 var(--font);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 22ch;
+}
+.ev.landing .section-intro {
+  margin: 20px 0 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  max-width: 60ch;
+}
+.ev.landing .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 500 15px/1 var(--font);
+  color: var(--ink);
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--ink-muted);
+}
+.ev.landing .text-link:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.ev.landing .text-link svg {
+  transition: transform 0.15s;
+}
+.ev.landing .text-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* 1. Cover: text on black, photo running to the right edge. */
+.ev.landing .cover {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: min(92vh, 900px);
+  padding-top: 80px;
+}
+@media (min-width: 1280px) {
+  .ev.landing .cover {
+    padding-top: 96px;
+  }
+}
+.ev.landing .cover-text {
+  display: grid;
+  align-content: end;
+  gap: 28px;
+  padding: 72px 56px 80px var(--edge);
+}
+.ev.landing .cover h1 {
+  margin: 0;
+  font: 500 clamp(40px, 4.2vw, 64px) / 1.05 var(--font);
+  max-width: 13ch;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.ev.landing .cover .lede {
+  color: var(--ink-muted);
+  max-width: 44ch;
+}
+.ev.landing .cover .more {
+  margin-top: 8px;
+}
+.ev.landing .cover-photo {
+  position: relative;
+  min-height: 420px;
+}
+.ev.landing .cover-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+@media (max-width: 960px) {
+  .ev.landing .cover {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+  .ev.landing .cover-text {
+    padding: 56px var(--gutter) 48px;
+  }
+  .ev.landing .cover-photo {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* 2. Facts strip directly under the cover. */
+.ev.landing .facts-strip {
+  border-top: 1px solid var(--line);
+}
+.ev.landing .facts-strip dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding-block: 48px 56px;
+}
+.ev.landing .facts-strip div {
+  padding: 0 32px;
+  border-left: 1px solid var(--line);
+}
+.ev.landing .facts-strip div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.ev.landing .facts-strip dt {
+  font: 500 clamp(36px, 4vw, 52px) / 1 var(--font);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.ev.landing .facts-strip dd {
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink-muted);
+  max-width: 24ch;
+}
+@media (max-width: 860px) {
+  .ev.landing .facts-strip dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 36px;
+  }
+  .ev.landing .facts-strip div:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+/* 3. Partners and speakers: one long line that drifts slowly to the left;
+   without motion it wraps as a static list. */
+.ev.landing .network {
+  border-bottom: 1px solid var(--line);
+  padding-block: 40px 44px;
+  overflow: hidden;
+}
+.ev.landing .network-title {
+  margin: 0 0 20px;
+  font: 500 15px/1.4 var(--font);
+  color: var(--ink-muted);
+}
+.ev.landing .ticker {
+  overflow: hidden;
+}
+.ev.landing .ticker-track {
+  display: flex;
+  width: max-content;
+  animation: about-ticker 260s linear infinite;
+}
+.ev.landing .ticker ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ev.landing .ticker li {
+  font: 500 clamp(20px, 2vw, 26px) / 1.3 var(--font);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.ev.landing .ticker li::after {
+  content: "·";
+  margin: 0 0.7em;
+  color: var(--ink-muted);
+}
+@keyframes about-ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ev.landing .ticker {
+    padding-inline: var(--edge);
+  }
+  .ev.landing .ticker-track {
+    width: auto;
+    animation: none;
+  }
+  .ev.landing .ticker ul {
+    flex-wrap: wrap;
+  }
+  .ev.landing .ticker ul + ul {
+    display: none;
+  }
+}
+
+/* What we do: the two goals side by side, then the sentence that links
+   them. Sits between the partner line and the first chapter. */
+.ev.landing .mission > .wrap {
+  padding-block: 128px;
+}
+.ev.landing .pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 2px solid var(--ink);
+}
+.ev.landing .pillars article {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 16px;
+  padding: 40px 56px 0 0;
+}
+.ev.landing .pillars article + article {
+  padding: 40px 0 0 56px;
+  border-left: 1px solid var(--line);
+}
+.ev.landing .pillar-n {
+  font: 500 clamp(56px, 6vw, 88px) / 0.85 var(--font);
+  letter-spacing: -0.05em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.ev.landing .pillars h2 {
+  margin: 12px 0 0;
+  font: 500 clamp(26px, 2.6vw, 34px) / 1.12 var(--font);
+  letter-spacing: -0.02em;
+}
+.ev.landing .pillars p {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  max-width: 52ch;
+}
+.ev.landing .bridge {
+  margin: 88px 0 0;
+  padding-left: 28px;
+  border-left: 3px solid var(--accent);
+  font: 500 clamp(22px, 2.2vw, 30px) / 1.35 var(--font);
+  letter-spacing: -0.01em;
+  max-width: 44ch;
+}
+@media (max-width: 860px) {
+  .ev.landing .mission > .wrap {
+    padding-block: 80px;
+  }
+  .ev.landing .pillars {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ev.landing .pillars article,
+  .ev.landing .pillars article + article {
+    padding: 32px 0 40px;
+    border-left: 0;
+  }
+  .ev.landing .pillars article + article {
+    border-top: 1px solid var(--line);
+  }
+  .ev.landing .bridge {
+    margin-top: 40px;
+  }
+}
+
+/* Closing call to action on black. */
+.ev.landing .join-us > .wrap {
+  padding-block: 128px;
+}
+.ev.landing .paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 56px;
+  border-top: 1px solid var(--line);
+}
+.ev.landing .paths article {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 14px;
+  padding: 36px 56px 0 0;
+}
+.ev.landing .paths article + article {
+  padding: 36px 0 0 56px;
+  border-left: 1px solid var(--line);
+}
+.ev.landing .paths h3 {
+  margin: 0;
+  font: 500 24px/1.2 var(--font);
+  letter-spacing: -0.01em;
+}
+.ev.landing .paths p {
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  max-width: 48ch;
+}
+@media (max-width: 860px) {
+  .ev.landing .join-us > .wrap {
+    padding-block: 80px;
+  }
+  .ev.landing .paths {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ev.landing .paths article,
+  .ev.landing .paths article + article {
+    padding: 32px 0;
+    border-left: 0;
+  }
+  .ev.landing .paths article + article {
+    border-top: 1px solid var(--line);
+  }
+}
+
+/* Section spacing for the chapters. */
+.ev.landing .chapter-section > .wrap {
+  padding-block: 128px;
+}
+@media (max-width: 720px) {
+  .ev.landing .chapter-section > .wrap {
+    padding-block: 80px;
+  }
+}
+
+/* Chapter header: label and title left, intro right, bottoms aligned. */
+.ev.landing .chapter-head {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 32px 72px;
+  align-items: end;
+}
+.ev.landing .chapter-head .section-intro {
+  margin: 0;
+}
+@media (max-width: 860px) {
+  .ev.landing .chapter-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Founding (last chapter): mirror of the cover. The article sits on stone
+   and runs to the left page edge; the text column ends on the content edge. */
+.ev.landing .founding {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.ev.landing .founding-article {
+  margin: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 16px;
+  background: var(--stone);
+  padding: 96px 64px 96px var(--edge);
+}
+.ev.landing .founding-article img {
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  background: var(--paper);
+  padding: 16px;
+  box-shadow:
+    0 1px 2px rgba(23, 25, 28, 0.08),
+    0 24px 48px -24px rgba(23, 25, 28, 0.35);
+}
+.ev.landing .founding-article figcaption {
+  width: 100%;
+  max-width: 620px;
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+.ev.landing .founding-text {
+  padding: 128px var(--edge) 128px 72px;
+}
+.ev.landing .split-title {
+  margin: 0;
+  font: 500 clamp(30px, 3.2vw, 44px) / 1.12 var(--font);
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
+.ev.landing .year {
+  display: block;
+  margin-bottom: 20px;
+  font: 500 clamp(88px, 11vw, 168px) / 0.8 var(--font);
+  letter-spacing: -0.06em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.ev.landing .founders-named {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 32px;
+}
+.ev.landing .founders-named li {
+  display: grid;
+  gap: 2px;
+  padding-left: 16px;
+  border-left: 2px solid var(--accent);
+}
+.ev.landing .founders-named b {
+  font-weight: 600;
+}
+.ev.landing .founders-named span {
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+.ev.landing .board-line {
+  margin: 40px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink-muted);
+}
+.ev.landing .board-line span {
+  color: var(--ink);
+  font-weight: 600;
+}
+@media (max-width: 960px) {
+  .ev.landing .founding {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ev.landing .founding-article {
+    order: 2;
+    padding: 48px var(--gutter);
+  }
+  .ev.landing .founding-text {
+    padding: 80px var(--gutter) 56px;
+  }
+}
+@media (max-width: 560px) {
+  .ev.landing .founders-named {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* 5. Formats: three photo cards, each with a white panel set over the
+   photo's lower edge (the same move as the Selection chapter). */
+.ev.landing .format-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px 28px;
+  margin-top: 72px;
+}
+@media (max-width: 960px) {
+  .ev.landing .format-cards {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 620px;
+  }
+}
+.ev.landing .format-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.ev.landing .format-panel {
+  position: relative;
+  margin: -56px 12% 0 0;
+  padding: 28px 28px 0 0;
+  background: var(--paper);
+}
+.ev.landing .format-index {
+  font: 600 14px/1 var(--font);
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.ev.landing .format-panel h3 {
+  margin: 12px 0 0;
+  font: 500 clamp(26px, 2.4vw, 32px) / 1.1 var(--font);
+  letter-spacing: -0.02em;
+}
+.ev.landing .format-panel p {
+  margin: 14px 0 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+.ev.landing .format-panel ul {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.ev.landing .format-panel li span {
+  font-weight: 600;
+}
+.ev.landing .format-more {
+  margin-top: 64px;
+}
+
+/* 6. Academy: a black panel reaches down over the top of the full-width
+   workshop film (the Selection move, mirrored), so the controls stay free. */
+.ev.landing .academy {
+  padding-block: 128px 112px;
+}
+.ev.landing .academy-film {
+  margin-top: -120px;
+}
+.ev.landing .academy-film video {
+  display: block;
+  width: 100%;
+  max-height: 86vh;
+  object-fit: cover;
+  background: #000;
+}
+.ev.landing .academy-panel {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  padding: 0 64px 56px 0;
+  background: var(--stage);
+}
+.ev.landing .academy-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  width: var(--edge);
+  background: var(--stage);
+}
+.ev.landing .academy-panel .section-intro {
+  margin-bottom: 28px;
+}
+/* Caption directly under the film, so it reads as a credit for the video. */
+.ev.landing .film-caption {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+.ev.landing .film-caption b {
+  color: var(--ink);
+  font-weight: 600;
+}
+.ev.landing .fact-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 80px 0 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.ev.landing .fact-row div {
+  padding: 0 28px;
+  border-left: 1px solid var(--line);
+}
+.ev.landing .fact-row div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.ev.landing .fact-row dt {
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+.ev.landing .fact-row dd {
+  margin: 10px 0 0;
+  font: 500 20px/1.3 var(--font);
+}
+.ev.landing .fact-row dd span {
+  display: block;
+  margin-top: 6px;
+  font: 400 14px/1.45 var(--font);
+  color: var(--ink-muted);
+}
+@media (max-width: 860px) {
+  .ev.landing .academy {
+    padding-top: 80px;
+  }
+  .ev.landing .academy-panel {
+    padding: 0 0 40px;
+  }
+  .ev.landing .academy-film {
+    margin-top: 0;
+  }
+  .ev.landing .fact-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 28px;
+  }
+  .ev.landing .fact-row div:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+/* 7. Graduates: large figures, then a uniform portrait wall. */
+.ev.landing .grad-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 64px 0 72px;
+  border-top: 2px solid var(--ink);
+}
+.ev.landing .grad-stats div {
+  padding: 24px 24px 0 0;
+}
+.ev.landing .grad-stats dt {
+  font: 500 clamp(32px, 3.4vw, 44px) / 1 var(--font);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.ev.landing .grad-stats div:nth-child(2) dt {
+  color: var(--accent);
+}
+.ev.landing .grad-stats dd {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+@media (max-width: 960px) {
+  .ev.landing .grad-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 8px;
+  }
+}
+@media (max-width: 560px) {
+  .ev.landing .grad-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.ev.landing .portraits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 36px 20px;
+}
+@media (max-width: 1040px) {
+  .ev.landing .portraits {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 720px) {
+  .ev.landing .portraits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+  }
+}
+.ev.landing .portraits li {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+  min-width: 0;
+}
+.ev.landing .portraits img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(1) contrast(1.04);
+  background: var(--line);
+  margin-bottom: 12px;
+}
+.ev.landing .portraits b {
+  font-weight: 600;
+  font-size: 15px;
+}
+.ev.landing .portraits span {
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+/* 8. Selection: full-bleed photo with a white panel set over its edge. */
+.ev.landing .selection-photo {
+  display: block;
+  width: 100%;
+  height: clamp(360px, 62vh, 680px);
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+.ev.landing .selection .wrap {
+  padding-bottom: 128px;
+}
+.ev.landing .selection-panel {
+  position: relative;
+  margin-top: -160px;
+  max-width: 640px;
+  padding: 56px 56px 0 0;
+  background: var(--paper);
+}
+.ev.landing .selection-panel::before {
+  /* Extends the panel's white to the left page edge. */
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  width: var(--edge);
+  background: var(--paper);
+}
+.ev.landing .selection-panel p {
+  margin: 24px 0 0;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 54ch;
+}
+@media (max-width: 720px) {
+  .ev.landing .selection-panel {
+    margin-top: -64px;
+    padding: 36px 24px 0 0;
+  }
+  .ev.landing .selection .wrap {
+    padding-bottom: 80px;
+  }
+}
+
+/* Graduates follow the Selection chapter, whose panel already ends with
+   generous space; avoid doubling it. */
+.ev.landing .selection + .chapter-section > .wrap {
+  padding-top: 0;
+}
+
+/* ---------------------------------------------------------------------
+ * Motion: slow, small and optional. Everything here is switched off for
+ * visitors who prefer reduced motion.
+ * ------------------------------------------------------------------- */
+.ev.landing {
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Cover: only the photo settles in; the text stands still. */
+@keyframes about-settle {
+  from {
+    transform: scale(1.06);
+  }
+}
+.ev.landing .cover-photo {
+  overflow: hidden;
+}
+.ev.landing .cover-photo img {
+  animation: about-settle 2.6s var(--ease-soft) both;
+}
+/* Reveal on scroll (see useReveal in About.tsx). */
+.ev.landing [data-reveal] {
+  transition:
+    opacity 0.9s var(--ease-soft),
+    transform 0.9s var(--ease-soft);
+}
+.ev.landing [data-reveal].is-hidden {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+/* Format photos lean in slightly on hover. */
+.ev.landing .format-photo {
+  overflow: hidden;
+}
+.ev.landing .format-photo img {
+  transition: transform 1.2s var(--ease-soft);
+}
+.ev.landing .format-card:hover .format-photo img {
+  transform: scale(1.03);
+}
+
+/* Graduates: black and white, warming up partly on hover. */
+.ev.landing .portraits img {
+  transition: filter 0.8s var(--ease-soft);
+}
+.ev.landing .portraits li:hover img {
+  filter: grayscale(0.45) contrast(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ev.landing .cover-photo img {
+    animation: none;
+  }
+  .ev.landing [data-reveal],
+  .ev.landing .format-photo img,
+  .ev.landing .portraits img {
+    transition: none;
+  }
+  .ev.landing .format-card:hover .format-photo img {
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------------
+ * For executives page (.exec)
+ * ------------------------------------------------------------------- */
+/* Cropped to the panel on stage, without the front rows of the audience. */
+.ev.landing.exec .cover-photo img {
+  object-position: 50% 60%;
+}
+.ev.landing .exec-list-title {
+  margin: 64px 0 16px;
+  font: 500 15px/1.4 var(--font);
+  color: var(--ink-muted);
+}
+.ev.landing .exec-speakers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px 32px;
+}
+@media (max-width: 1040px) {
+  .ev.landing .exec-speakers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .ev.landing .exec-speakers {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.ev.landing .exec-speakers li {
+  display: grid;
+  gap: 4px;
+  padding-left: 16px;
+  border-left: 2px solid var(--accent);
+}
+.ev.landing .exec-speakers b {
+  font-weight: 600;
+}
+.ev.landing .exec-speakers span {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+.ev.landing .exec-more {
+  margin-top: 56px;
+}
+.ev.landing.exec .selection-panel p + p {
+  margin-top: 16px;
+}
+
+/* Ways to get involved: the workshop first and large, the rest below. */
+.ev.landing .exec-workshop {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: 64px;
+  align-items: start;
+  margin-top: 72px;
+}
+.ev.landing .exec-workshop-photo {
+  overflow: hidden;
+}
+.ev.landing .exec-workshop-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.ev.landing .exec-workshop-text,
+.ev.landing .exec-ways article {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+.ev.landing .exec-workshop h3,
+.ev.landing .exec-ways h3 {
+  margin: 8px 0 0;
+  font: 500 clamp(26px, 2.6vw, 34px) / 1.12 var(--font);
+  letter-spacing: -0.02em;
+}
+.ev.landing .exec-workshop p,
+.ev.landing .exec-ways p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+.ev.landing .exec-workshop .exec-also {
+  margin-top: 8px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.ev.landing .exec-workshop ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.ev.landing .exec-workshop li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.ev.landing .exec-ways {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 80px;
+  border-top: 2px solid var(--ink);
+}
+.ev.landing .exec-ways article {
+  padding: 36px 40px 0 0;
+}
+.ev.landing .exec-ways article + article {
+  padding-left: 40px;
+  border-left: 1px solid var(--line);
+}
+@media (max-width: 960px) {
+  .ev.landing .exec-workshop {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .ev.landing .exec-ways {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ev.landing .exec-ways article,
+  .ev.landing .exec-ways article + article {
+    padding: 32px 0;
+    border-left: 0;
+  }
+  .ev.landing .exec-ways article + article {
+    border-top: 1px solid var(--line);
+  }
+}
+
+/* Voices on black: one large quote, three smaller ones. */
+.ev.landing .exec-voices > .wrap {
+  padding-block: 128px;
+}
+.ev.landing .exec-lead-quote {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: 64px;
+  align-items: center;
+}
+.ev.landing .exec-lead-quote img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(1) contrast(1.04);
+}
+.ev.landing .exec-lead-quote blockquote {
+  margin: 0;
+  font: 500 clamp(26px, 3vw, 40px) / 1.25 var(--font);
+  letter-spacing: -0.015em;
+}
+.ev.landing .exec-lead-quote figcaption,
+.ev.landing .exec-quotes figcaption span {
+  display: grid;
+  gap: 4px;
+  margin-top: 28px;
+  font-size: 15px;
+  color: var(--ink-muted);
+}
+.ev.landing .exec-lead-quote figcaption b,
+.ev.landing .exec-quotes figcaption b {
+  color: var(--ink);
+  font-weight: 600;
+}
+.ev.landing .exec-quotes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px;
+  margin-top: 96px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+.ev.landing .exec-quotes figure {
+  margin: 0;
+  display: grid;
+  align-content: space-between;
+  gap: 24px;
+}
+.ev.landing .exec-quotes blockquote {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.ev.landing .exec-quotes figcaption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ev.landing .exec-quotes figcaption img {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(1);
+}
+.ev.landing .exec-quotes figcaption span {
+  margin-top: 0;
+  font-size: 14px;
+}
+@media (max-width: 960px) {
+  .ev.landing .exec-voices > .wrap {
+    padding-block: 80px;
+  }
+  .ev.landing .exec-lead-quote {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .ev.landing .exec-lead-quote img {
+    max-width: 280px;
+  }
+  .ev.landing .exec-quotes {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 64px;
+  }
+}
+
+/* Logos drift by like the partner line on the About page. */
+.ev.landing .exec-logos {
+  padding-block: 48px;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.ev.landing .exec-logos li {
+  display: flex;
+  align-items: center;
+  padding-right: 88px;
+}
+.ev.landing .exec-logos li::after {
+  content: none;
+}
+.ev.landing .exec-logos img {
+  height: 40px;
+  width: auto;
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+
+/* Contact */
+.ev.landing .exec-contact > .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 72px;
+  align-items: end;
+  padding-block: 128px;
+}
+.ev.landing .exec-contact-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
+}
+.ev.landing .exec-contact blockquote {
+  margin: 0;
+  font: 500 clamp(26px, 3vw, 40px) / 1.25 var(--font);
+  letter-spacing: -0.015em;
+  max-width: 24ch;
+}
+.ev.landing .exec-contact-name {
+  display: grid;
+  gap: 4px;
+  margin: 32px 0 24px;
+}
+.ev.landing .exec-contact-name b {
+  font-weight: 600;
+}
+.ev.landing .exec-contact-name span {
+  font-size: 15px;
+  color: var(--ink-muted);
+}
+@media (max-width: 860px) {
+  .ev.landing .exec-contact > .wrap {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-block: 80px;
+  }
+  .ev.landing .exec-contact-photo {
+    max-width: 260px;
+  }
+}

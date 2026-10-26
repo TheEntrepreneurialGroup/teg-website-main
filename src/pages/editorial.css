@@ -1,5 +1,5 @@
 /*
- * Editorial style for /events and the conference sub-pages.
+ * Editorial style shared by the About page, /events and the conference pages.
  * Ported from the Claude Design artifact "TEG Management Conferences":
  * one typeface, one accent, white bands separated by hairlines, no gradients.
  * Everything is scoped under .ev so the rest of the site keeps its styles.

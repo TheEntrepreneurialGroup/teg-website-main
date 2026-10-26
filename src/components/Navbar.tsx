@@ -3,25 +3,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useIntl } from "react-intl";
-import Logo from "./Logo";
 import { trackButtonClick } from "../utils/analytics";
 
 interface NavbarProps {
-  scrolled: boolean;
   switchLanguage: (lang: "en" | "de") => void;
-  hidden?: boolean;
-  /** Black header with the round TEG mark, matching the editorial events pages. */
-  editorial?: boolean;
 }
 
-const EDITORIAL_BG = "bg-[#17191c]";
+/** Same black as the editorial pages (--stage in editorial.css). */
+const NAV_BG = "bg-[#17191c]";
 
-const Navbar: React.FC<NavbarProps> = ({
-  scrolled,
-  switchLanguage,
-  hidden,
-  editorial,
-}) => {
+const Navbar: React.FC<NavbarProps> = ({ switchLanguage }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const intl = useIntl();
   const location = useLocation();
@@ -83,50 +74,40 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <motion.header
-        className={`fixed inset-x-0 top-0 z-[60] text-xl transition-[background-color,backdrop-filter,box-shadow,opacity] duration-300 ${
-          hidden ? "pointer-events-none opacity-0" : "opacity-100"
-        } ${
-          editorial
-            ? `${EDITORIAL_BG} border-b border-white/10 font-['Libre_Franklin']`
-            : scrolled || mobileMenuOpen
-              ? "bg-primary-dark/95 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.55)] backdrop-blur-md"
-              : "bg-transparent"
-        }`}
+        className={`fixed inset-x-0 top-0 z-[60] border-b border-white/10 font-['Libre_Franklin'] text-xl antialiased ${NAV_BG}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div
-          aria-hidden="true"
-          className={`pointer-events-none absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-transparent transition-opacity duration-300 ${
-            editorial || scrolled || mobileMenuOpen
-              ? "opacity-0"
-              : "opacity-100"
-          }`}
-        />
-
         <div className="container-custom relative flex h-20 w-full items-center justify-between xl:h-24">
           <Link
             to="/"
             className="relative z-10 flex items-center"
             aria-label="TEG Startseite"
           >
-            {editorial ? (
-              <span className="flex items-center gap-3.5 text-[15px] leading-tight text-white">
-                <img
-                  src="/events/teg-mark.webp"
-                  alt=""
-                  className="h-9 w-9"
-                  width={36}
-                  height={36}
-                />
-                <span className="hidden font-medium tracking-[0.01em] min-[420px]:inline">
+            <span className="flex items-center gap-3.5 text-[15px] leading-tight text-white">
+              <img
+                src="/events/teg-mark.webp"
+                alt=""
+                className="h-9 w-9"
+                width={36}
+                height={36}
+              />
+              {/* Name set as a two-line lockup so it stays compact next to
+                  the menu; the events pages use the shorter conference name. */}
+              {location.pathname.startsWith("/events") ? (
+                <span className="font-medium tracking-[0.01em]">
                   <b className="font-bold">TEG</b> Management Conferences
                 </span>
-              </span>
-            ) : (
-              <Logo />
-            )}
+              ) : (
+                <span className="grid text-[14px] font-medium leading-[1.25]">
+                  <span>
+                    <b className="font-bold">TEG</b> Executive Education
+                  </span>
+                  <span>&amp; Management Conferences</span>
+                </span>
+              )}
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-8 xl:flex">
@@ -136,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 to={item.to}
                 end={item.end}
                 className={({ isActive }) =>
-                  `relative py-2 font-normal text-white transition-colors duration-300 hover:text-primary-light ${
+                  `relative whitespace-nowrap py-2 font-normal text-white transition-colors duration-200 hover:text-white/70 ${
                     isActive
                       ? "after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white"
                       : ""
@@ -152,14 +133,14 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="hidden items-center gap-4 xl:flex">
             <button
               onClick={() => switchLanguage("en")}
-              className="font-normal text-white transition-colors duration-300 hover:text-primary-light"
+              className="font-normal text-white transition-colors duration-200 hover:text-white/70"
             >
               EN
             </button>
             <span className="text-white/60">|</span>
             <button
               onClick={() => switchLanguage("de")}
-              className="font-normal text-white transition-colors duration-300 hover:text-primary-light"
+              className="font-normal text-white transition-colors duration-200 hover:text-white/70"
             >
               DE
             </button>
@@ -181,9 +162,7 @@ const Navbar: React.FC<NavbarProps> = ({
         {mobileMenuOpen && (
           <motion.div
             id="mobile-navigation"
-            className={`fixed inset-0 z-50 flex min-h-dvh flex-col px-6 pb-10 pt-28 xl:hidden ${
-              editorial ? EDITORIAL_BG : "bg-primary-dark"
-            }`}
+            className={`fixed inset-0 z-50 flex min-h-dvh flex-col px-6 pb-10 pt-28 font-['Libre_Franklin'] xl:hidden ${NAV_BG}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -203,7 +182,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   end={item.end}
                   className={({ isActive }) =>
                     `border-b border-white/10 pb-4 text-2xl font-normal transition-colors ${
-                      isActive ? "text-accent-light" : "text-white"
+                      isActive ? "text-white" : "text-white/70"
                     }`
                   }
                   onClick={() => trackButtonClick(item.trackingLabel, "Navbar")}
@@ -216,14 +195,14 @@ const Navbar: React.FC<NavbarProps> = ({
             <div className="flex items-center gap-4 border-t border-white/10 pt-6">
               <button
                 onClick={() => switchMobileLanguage("en")}
-                className="font-normal text-white transition-colors hover:text-accent-light"
+                className="font-normal text-white transition-colors hover:text-white/70"
               >
                 EN
               </button>
               <span className="text-white/50">|</span>
               <button
                 onClick={() => switchMobileLanguage("de")}
-                className="font-normal text-white transition-colors hover:text-accent-light"
+                className="font-normal text-white transition-colors hover:text-white/70"
               >
                 DE
               </button>

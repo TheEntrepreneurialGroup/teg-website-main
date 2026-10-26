@@ -4,7 +4,7 @@
  * then extend it along the lines of SupplyChainConference.tsx.
  */
 import React from "react";
-import "./events-editorial.css";
+import "./editorial.css";
 import {
   ContactCard,
   ContactPerson,
