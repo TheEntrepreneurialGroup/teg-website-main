@@ -4,3 +4,25 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Earlier URLs of the conference pages (already shared), exact paths only so
+# the image folder /events/supply-chain/... keeps working.
+[[redirects]]
+  from = "/events/supply-chain"
+  to = "/conferences/supplychain-management-conference"
+  status = 301
+
+[[redirects]]
+  from = "/events/supply-chain/"
+  to = "/conferences/supplychain-management-conference"
+  status = 301
+
+[[redirects]]
+  from = "/events/aviation"
+  to = "/conferences/aviation-management-conference"
+  status = 301
+
+[[redirects]]
+  from = "/events/aviation/"
+  to = "/conferences/aviation-management-conference"
+  status = 301

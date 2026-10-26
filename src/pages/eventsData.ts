@@ -54,13 +54,13 @@ export const upcomingConferences: UpcomingConference[] = [
     theme: "Automatisierung und Geopolitik in der Lieferkette",
     location: "München",
     details: ["ganztägig", "125 Teilnehmer, davon 100 Führungskräfte"],
-    page: "/events/supply-chain",
+    page: "/conferences/supplychain-management-conference",
   },
   {
     id: "aviation-management-conference-2027",
     title: "Aviation Management Conference",
     date: "19. Mai 2027",
-    page: "/events/aviation",
+    page: "/conferences/aviation-management-conference",
   },
 ];
 

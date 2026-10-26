@@ -45,7 +45,7 @@ export const routeSeoEntries = [
     changeFrequency: "weekly",
   },
   {
-    path: "/events/supply-chain",
+    path: "/conferences/supplychain-management-conference",
     titleMessageId: "seo.supplyChainConference.title",
     descriptionMessageId: "seo.supplyChainConference.description",
     indexable: true,
@@ -54,7 +54,7 @@ export const routeSeoEntries = [
     changeFrequency: "weekly",
   },
   {
-    path: "/events/aviation",
+    path: "/conferences/aviation-management-conference",
     titleMessageId: "seo.aviationConference.title",
     descriptionMessageId: "seo.aviationConference.description",
     indexable: true,

@@ -66,6 +66,14 @@ const Navbar: React.FC<NavbarProps> = ({ switchLanguage }) => {
     };
   }, [mobileMenuOpen]);
 
+  // The events overview and the conference pages share the conference name
+  // and the "Konferenzen & Events" menu entry.
+  const isConferencePage = ["/events", "/conferences"].some((prefix) =>
+    location.pathname.startsWith(prefix),
+  );
+  const isActive = (to: string, routeActive: boolean) =>
+    routeActive || (to === "/events" && isConferencePage);
+
   const switchMobileLanguage = (language: "en" | "de") => {
     switchLanguage(language);
     setMobileMenuOpen(false);
@@ -95,7 +103,7 @@ const Navbar: React.FC<NavbarProps> = ({ switchLanguage }) => {
               />
               {/* Name set as a two-line lockup so it stays compact next to
                   the menu; the events pages use the shorter conference name. */}
-              {location.pathname.startsWith("/events") ? (
+              {isConferencePage ? (
                 <span className="font-medium tracking-[0.01em]">
                   <b className="font-bold">TEG</b> Management Conferences
                 </span>
@@ -116,9 +124,9 @@ const Navbar: React.FC<NavbarProps> = ({ switchLanguage }) => {
                 key={item.to}
                 to={item.to}
                 end={item.end}
-                className={({ isActive }) =>
+                className={({ isActive: routeActive }) =>
                   `relative whitespace-nowrap py-2 font-normal text-white transition-colors duration-200 hover:text-white/70 ${
-                    isActive
+                    isActive(item.to, routeActive)
                       ? "after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white"
                       : ""
                   }`
@@ -180,9 +188,11 @@ const Navbar: React.FC<NavbarProps> = ({ switchLanguage }) => {
                   key={item.to}
                   to={item.to}
                   end={item.end}
-                  className={({ isActive }) =>
+                  className={({ isActive: routeActive }) =>
                     `border-b border-white/10 pb-4 text-2xl font-normal transition-colors ${
-                      isActive ? "text-white" : "text-white/70"
+                      isActive(item.to, routeActive)
+                        ? "text-white"
+                        : "text-white/70"
                     }`
                   }
                   onClick={() => trackButtonClick(item.trackingLabel, "Navbar")}

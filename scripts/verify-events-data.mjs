@@ -18,7 +18,7 @@ const appFile = path.join(root, "src", "App.tsx");
 const publicRoot = path.join(root, "public");
 
 const SUPPLY_CHAIN_ID = "supplychainconference2026";
-const SUPPLY_CHAIN_PAGE = "/events/supply-chain";
+const SUPPLY_CHAIN_PAGE = "/conferences/supplychain-management-conference";
 const BIOTECH_ID = "biotech-medtech-panel-2026";
 const CONFERENCE_IDS = ["ai-2026", "frontier-tech-conference-2025"];
 const EVENING_IDS = [
@@ -113,8 +113,8 @@ const appSource = await readFile(appFile, "utf8");
 for (const conf of lists.upcomingConferences) {
   const id = field(conf, "id");
   const page = field(conf, "page");
-  if (!page.startsWith("/events/")) {
-    fail(`${id}: page must be a sub-page of /events, got "${page}"`);
+  if (!page.startsWith("/conferences/")) {
+    fail(`${id}: page must live under /conferences/, got "${page}"`);
     continue;
   }
   if (!appSource.includes(`path="${page.slice(1)}"`)) {

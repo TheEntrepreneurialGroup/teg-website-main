@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import ForStudents from "./pages/ForStudents";
 import ForCompanies from "./pages/ForCompanies";
@@ -108,10 +108,32 @@ function App() {
           <Route path="for-companies" element={<ForCompanies />} />
           <Route path="events" element={<Events />} />
           <Route
-            path="events/supply-chain"
+            path="conferences/supplychain-management-conference"
             element={<SupplyChainConference />}
           />
-          <Route path="events/aviation" element={<AviationConference />} />
+          <Route
+            path="conferences/aviation-management-conference"
+            element={<AviationConference />}
+          />
+          {/* Earlier URLs of the conference pages, already shared. */}
+          <Route
+            path="events/supply-chain"
+            element={
+              <Navigate
+                to="/conferences/supplychain-management-conference"
+                replace
+              />
+            }
+          />
+          <Route
+            path="events/aviation"
+            element={
+              <Navigate
+                to="/conferences/aviation-management-conference"
+                replace
+              />
+            }
+          />
         </Route>
         <Route
           path="/about"
