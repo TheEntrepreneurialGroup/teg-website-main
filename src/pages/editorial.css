@@ -709,11 +709,15 @@
 @media (max-width: 1040px) {
   .ev .evening.no-thumb {
     grid-template-columns: 180px minmax(0, 1fr);
+    grid-template-areas: "meta body";
   }
 }
 @media (max-width: 640px) {
   .ev .evening.no-thumb {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "meta"
+      "body";
   }
 }
 
@@ -732,19 +736,38 @@
   border-bottom: 1px solid var(--line);
   align-items: start;
 }
+/* Narrower screens keep the photo: under the date on tablets, on top on
+   phones. */
 @media (max-width: 1040px) {
   .ev .evening {
     grid-template-columns: 180px minmax(0, 1fr);
+    grid-template-areas:
+      "meta body"
+      "thumb body";
+    row-gap: 16px;
+  }
+  .ev .evening .meta {
+    grid-area: meta;
   }
   .ev .evening .thumb {
-    display: none;
+    grid-area: thumb;
+  }
+  .ev .evening .body {
+    grid-area: body;
   }
 }
 @media (max-width: 640px) {
   .ev .evening {
     grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
-    padding: 24px 0;
+    grid-template-areas:
+      "thumb"
+      "meta"
+      "body";
+    gap: 14px;
+    padding: 28px 0;
+  }
+  .ev .evening .thumb img {
+    aspect-ratio: 16 / 10;
   }
 }
 .ev .evening .meta {
