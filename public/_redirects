@@ -11,4 +11,9 @@
 /cases         /for-companies    301
 /cases/        /for-companies    301
 
+# Short LinkedIn alias. 301 so SEO and analytics stay on the canonical page.
+# Must stay above the SPA catch-all; netlify.toml rules run after this file.
+/conferences/scm      /conferences/supplychain-management-conference/    301
+/conferences/scm/     /conferences/supplychain-management-conference/    301
+
 /*    /index.html   200
