@@ -165,15 +165,27 @@
     ),
     #ffffff;
 }
-/* Publikum: mist bloom on the right, beside the bars. */
+/* Publikum: mist bloom top right, beside the heading and above the bars,
+   so it never runs into the scales. Fades out inside the section. */
 .ev.scmc .band.bloom-right {
   background:
     radial-gradient(
-      ellipse min(420px, 60vw) 240px at calc(100% + 80px) 50%,
+      ellipse min(440px, 34vw) 140px at calc(100% + 80px) 160px,
       var(--bloom-mist),
       transparent 100%
     ),
     #ffffff;
+}
+@media (max-width: 720px) {
+  .ev.scmc .band.bloom-right {
+    background:
+      radial-gradient(
+        ellipse 46vw 130px at calc(100% + 40px) 150px,
+        var(--bloom-mist),
+        transparent 100%
+      ),
+      #ffffff;
+  }
 }
 @media (max-width: 720px) {
   .ev.scmc .bloom {
