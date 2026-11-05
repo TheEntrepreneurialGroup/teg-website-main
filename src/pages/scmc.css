@@ -258,7 +258,7 @@
 
 /* Hero rhythm. Without a lede the shared 40px gap reads unevenly, so each
    step is set on its own: the date line binds to the wordmark, the CTAs sit
-   one step below it, and the key figures open a new block under the rule. */
+   one step below it, and the key figures follow after a wider gap. */
 .ev.scmc .hero .wrap {
   gap: 0;
   padding-bottom: 48px;
@@ -278,8 +278,9 @@
   margin-top: 48px;
 }
 .ev.scmc .hero .facts {
-  margin-top: 56px;
-  padding-top: 20px;
+  margin-top: 48px;
+  padding-top: 0;
+  border-top: 0;
 }
 @media (max-width: 720px) {
   .ev.scmc .hero .wrap {
@@ -291,9 +292,12 @@
   .ev.scmc .hero .cta {
     margin-top: 32px;
   }
+  /* On phones the figures sit close under the stacked CTAs, so a light
+     rule keeps them apart; on desktop the gap alone does that. */
   .ev.scmc .hero .facts {
     margin-top: 36px;
     padding-top: 16px;
+    border-top: 1px solid var(--line);
   }
 }
 
