@@ -133,7 +133,7 @@
   color: var(--blue);
 }
 
-/* Corner blooms: hero and the Teilnahme band only. Each bloom is an
+/* Corner blooms: hero, Publikum and Teilnahme. Each bloom is an
    ellipse that fades to transparent inside its own section, so nothing is
    cut off where the next section starts. They sit in open space beside the
    content rather than behind it. */
@@ -155,16 +155,22 @@
     ),
     #ffffff;
 }
-.ev.scmc .band.bloom {
+/* Teilnahme: periwinkle bloom bottom left. */
+.ev.scmc .band.bloom-left {
+  background:
+    radial-gradient(
+      ellipse min(360px, 55vw) 200px at -60px calc(100% - 220px),
+      var(--bloom-peri),
+      transparent 100%
+    ),
+    #ffffff;
+}
+/* Publikum: mist bloom on the right, beside the bars. */
+.ev.scmc .band.bloom-right {
   background:
     radial-gradient(
       ellipse min(420px, 60vw) 240px at calc(100% + 80px) 50%,
       var(--bloom-mist),
-      transparent 100%
-    ),
-    radial-gradient(
-      ellipse min(360px, 55vw) 200px at -60px calc(100% - 220px),
-      var(--bloom-peri),
       transparent 100%
     ),
     #ffffff;

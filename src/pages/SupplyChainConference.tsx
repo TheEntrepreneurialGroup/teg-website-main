@@ -320,7 +320,7 @@ const SupplyChainConference: React.FC = () => (
       </div>
     </section>
 
-    <section className="band" id="publikum">
+    <section className="band bloom bloom-right" id="publikum">
       <div className="wrap">
         <div className="head">
           <p className="eyebrow-sc">125 Gäste · 100 Führungskräfte</p>
@@ -379,7 +379,7 @@ const SupplyChainConference: React.FC = () => (
       </div>
     </section>
 
-    <section className="band bloom" id="teilnahme">
+    <section className="band bloom bloom-left" id="teilnahme">
       <div className="wrap join">
         <div className="join-text">
           <p className="eyebrow-sc">Anmeldung über Luma</p>
