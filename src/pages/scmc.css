@@ -454,7 +454,7 @@
 }
 .ev.scmc .bar .fill {
   height: 100%;
-  background: var(--grad);
+  background: var(--navy);
 }
 .ev.scmc .bar .lab {
   grid-column: 2;
