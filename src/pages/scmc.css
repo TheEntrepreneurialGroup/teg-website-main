@@ -484,24 +484,30 @@
   gap: 2px;
   align-content: start;
 }
-/* Icon tile beside each fact: navy line icon on an ice square. */
-.ev.scmc .facts-list div {
-  grid-template-columns: 38px minmax(0, 1fr);
-  column-gap: 14px;
-}
+/* Icon tile beside each fact: navy line icon on an ice square.
+   Shown on mobile only; hidden on desktop. */
 .ev.scmc .facts-list .fi {
-  grid-row: 1 / span 2;
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  border-radius: 2px;
-  background: var(--ice);
-  color: var(--navy);
+  display: none;
 }
-.ev.scmc .facts-list dt,
-.ev.scmc .facts-list dd {
-  grid-column: 2;
+@media (max-width: 720px) {
+  .ev.scmc .facts-list div {
+    grid-template-columns: 38px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+  .ev.scmc .facts-list .fi {
+    grid-row: 1 / span 2;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 2px;
+    background: var(--ice);
+    color: var(--navy);
+  }
+  .ev.scmc .facts-list dt,
+  .ev.scmc .facts-list dd {
+    grid-column: 2;
+  }
 }
 .ev.scmc .facts-list dt {
   font: 700 11.5px/1.4 var(--f-display);
