@@ -63,6 +63,15 @@ export const routeSeoEntries = [
     changeFrequency: "weekly",
   },
   {
+    path: "/conferences/enterprise-sales-summit",
+    titleMessageId: "seo.enterpriseSalesSummit.title",
+    descriptionMessageId: "seo.enterpriseSalesSummit.description",
+    indexable: true,
+    openGraphImagePath: "/events/enterprise-sales/og-cover.jpg",
+    priority: 0.7,
+    changeFrequency: "weekly",
+  },
+  {
     path: "/imprint",
     titleMessageId: "seo.imprint.title",
     descriptionMessageId: "seo.imprint.description",

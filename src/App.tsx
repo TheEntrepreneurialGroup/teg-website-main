@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Events from "./pages/Events";
 import SupplyChainConference from "./pages/SupplyChainConference";
 import AviationConference from "./pages/AviationConference";
+import EnterpriseSalesSummit from "./pages/EnterpriseSalesSummit";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Imprint from "./pages/Imprint";
 import { IntlProvider, useIntl } from "react-intl";
@@ -113,6 +114,10 @@ function App() {
           <Route
             path="conferences/aviation-management-conference"
             element={<AviationConference />}
+          />
+          <Route
+            path="conferences/enterprise-sales-summit"
+            element={<EnterpriseSalesSummit />}
           />
           {/* Earlier URLs of the conference pages, already shared. */}
           <Route

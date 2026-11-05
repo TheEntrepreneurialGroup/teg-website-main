@@ -6,6 +6,7 @@ export const PRERENDER_ROUTES = [
   "/events",
   "/conferences/supplychain-management-conference",
   "/conferences/aviation-management-conference",
+  "/conferences/enterprise-sales-summit",
   "/privacy-policy",
   "/imprint",
   "/about",

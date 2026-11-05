@@ -499,6 +499,10 @@ const de = {
   "seo.aviationConference.title": "Aviation Management Conference 2027 | TEG",
   "seo.aviationConference.description":
     "Aviation Management Conference der TEG am 19. Mai 2027. Programm, Speaker und Anmeldung folgen in Kürze.",
+  "seo.enterpriseSalesSummit.title":
+    "Enterprise Sales Summit 2027 in München | TEG",
+  "seo.enterpriseSalesSummit.description":
+    "Vier Vorträge zu Enterprise Sales, Signal-Based Outbound, Buying Committees und Pipeline Management. 19. Januar 2027 in München. Jetzt informieren.",
 };
 
 export default de;

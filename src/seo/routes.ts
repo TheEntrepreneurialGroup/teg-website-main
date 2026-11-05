@@ -8,6 +8,7 @@ export type AppRoutePath =
   | "/events"
   | "/conferences/supplychain-management-conference"
   | "/conferences/aviation-management-conference"
+  | "/conferences/enterprise-sales-summit"
   | "/imprint"
   | "/privacy-policy";
 

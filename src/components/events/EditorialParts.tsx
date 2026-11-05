@@ -102,7 +102,8 @@ export const CalendlyInline: React.FC<{ url: string; title: string }> = ({
 export interface ContactPerson {
   name: string;
   role: string;
-  photo: string;
+  /** Omitted until a portrait is at hand. */
+  photo?: string;
   email: string;
   phone?: string;
   linkedin?: string;
@@ -112,7 +113,9 @@ export const ContactCard: React.FC<{ person: ContactPerson }> = ({
   person,
 }) => (
   <article className="contact">
-    <img src={person.photo} alt={person.name} loading="lazy" />
+    {person.photo && (
+      <img src={person.photo} alt={person.name} loading="lazy" />
+    )}
     <h3>{person.name}</h3>
     <p className="role">{person.role}</p>
     <div className="line">

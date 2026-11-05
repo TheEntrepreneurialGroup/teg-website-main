@@ -495,6 +495,10 @@ const en = {
   "seo.aviationConference.title": "Aviation Management Conference 2027 | TEG",
   "seo.aviationConference.description":
     "TEG Aviation Management Conference on 19 May 2027. Programme, speakers and registration will be announced soon.",
+  "seo.enterpriseSalesSummit.title":
+    "Enterprise Sales Summit 2027 in Munich | TEG",
+  "seo.enterpriseSalesSummit.description":
+    "Four talks on enterprise sales, signal-based outbound, buying committees and pipeline management. 19 January 2027 in Munich.",
 };
 
 export default en;

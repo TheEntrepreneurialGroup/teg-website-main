@@ -43,6 +43,8 @@ export interface EveningEvent {
   image?: string;
   imageAlt?: string;
   link?: string;
+  /** Internal sub-page; on /events the whole row links there. */
+  page?: string;
   guests?: EventGuest[];
 }
 
@@ -107,6 +109,9 @@ export const upcomingEveningEvents: EveningEvent[] = [
     id: "enterprise-sales-summit-2027",
     title: "Enterprise Sales Summit",
     date: "19. Januar 2027",
+    location: "München",
+    topic: "Rethinking the Sales Funnel: was heute wirklich Kunden bringt",
+    page: "/conferences/enterprise-sales-summit",
   },
 ];
 

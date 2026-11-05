@@ -177,6 +177,7 @@ const Events: React.FC = () => (
                     event.topic ??
                     event.description ??
                     "Speaker und Ort folgen in Kürze",
+                  page: event.page,
                 }}
               />
             ))}

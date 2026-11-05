@@ -1,0 +1,363 @@
+/*
+ * Enterprise Sales Summit: the summit's deep-navy hero with its live-text
+ * wordmark (in place of the raster artwork), and navy as the
+ * page's one accent. Below the hero everything stays in the shared
+ * editorial style.
+ */
+.ev.ess {
+  --accent: #10306a;
+  --navy: #0c1d3b;
+  --sky: #6aaefc;
+  --on-navy: #ffffff;
+  --on-navy-muted: #b9c8e2;
+}
+
+/* Hero: the navy of the event artwork, brightening towards the top right. */
+.ev.ess .hero {
+  background:
+    radial-gradient(
+      ellipse 70% 60% at 100% 0%,
+      rgba(42, 96, 170, 0.55),
+      transparent 100%
+    ),
+    linear-gradient(160deg, #0b1a35 0%, #10295a 55%, #143a78 100%);
+  border-bottom: 0;
+  color: var(--on-navy);
+}
+.ev.ess .hero .wrap {
+  gap: 0;
+  padding-block: 72px 96px;
+}
+.ev.ess .hero .when {
+  color: var(--on-navy);
+}
+.ev.ess .hero .when span + span {
+  color: var(--on-navy-muted);
+}
+
+.ev.ess .hero-mark {
+  width: min(760px, 100%);
+  margin-top: 48px;
+  container-type: inline-size;
+}
+/* Wordmark as on the SCMC page: "Enterprise Sales" heavy and in colour,
+   "Summit" light, both lines at one size, sized to the container. */
+.ev.ess .wordmark {
+  margin: 0;
+  display: grid;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  color: var(--on-navy);
+  font-size: 7.4cqi;
+  line-height: 1.05;
+}
+.ev.ess .wordmark > span {
+  display: block;
+  white-space: nowrap;
+  font-weight: 300;
+  letter-spacing: 0.024em;
+}
+.ev.ess .wordmark .wm-bold {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background: linear-gradient(90deg, #4f8ff7 0%, #6aaefc 50%, #8cd6ec 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ev.ess .wordmark .year {
+  color: var(--sky);
+  margin-left: 0.15em;
+}
+
+.ev.ess .claim {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  display: grid;
+  gap: 8px;
+}
+.ev.ess .claim p {
+  margin: 0;
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.2;
+}
+.ev.ess .tagline {
+  font-size: clamp(26px, 3.4vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: var(--on-navy);
+}
+.ev.ess .promise {
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 600;
+  color: var(--on-navy-muted);
+}
+
+.ev.ess .lede-block {
+  margin-top: 40px;
+  display: grid;
+  gap: 16px;
+  max-width: 64ch;
+}
+.ev.ess .hero .lede {
+  color: var(--on-navy);
+}
+.ev.ess .hero .actions {
+  margin-top: 40px;
+}
+.ev.ess .hero .btn {
+  gap: 10px;
+}
+.ev.ess .hero .btn.primary {
+  background: var(--on-navy);
+  color: var(--navy);
+}
+.ev.ess .hero .btn.ghost {
+  color: var(--on-navy);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.ev.ess .hero .btn.ghost:hover {
+  border-color: var(--on-navy);
+}
+.ev.ess .btn.primary {
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .ev.ess .hero .wrap {
+    padding-block: 28px 32px;
+  }
+  .ev.ess .hero-mark {
+    margin-top: 24px;
+  }
+  /* "Enterprise Sales" stays on one line and fills the phone width. */
+  .ev.ess .wordmark {
+    font-size: 9.4cqi;
+  }
+  .ev.ess .hero .when {
+    font-size: 14px;
+    gap: 4px 18px;
+  }
+  .ev.ess .claim {
+    margin-top: 22px;
+    padding-top: 16px;
+    gap: 4px;
+  }
+  .ev.ess .tagline {
+    font-size: 22px;
+  }
+  .ev.ess .promise {
+    font-size: 17px;
+  }
+  .ev.ess .lede-block {
+    margin-top: 18px;
+    gap: 10px;
+  }
+  .ev.ess .hero .lede {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .ev.ess .hero .actions {
+    margin-top: 22px;
+    gap: 8px;
+  }
+  .ev.ess .hero .btn {
+    font-size: 14px;
+  }
+  .ev.ess .hero .btn {
+    padding-inline: 14px;
+  }
+}
+
+/* Section headings one step below the house size, as on the SCMC page. */
+.ev.ess .h2 {
+  font-size: clamp(30px, 4vw, 44px);
+}
+@media (max-width: 720px) {
+  .ev.ess .h2 {
+    font-size: clamp(24px, 6.6vw, 30px);
+  }
+}
+
+/* Warum / Für wen: heading left, text right. */
+.ev.ess .why {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 64px;
+  align-items: start;
+}
+.ev.ess .why-text {
+  display: grid;
+  gap: 16px;
+}
+.ev.ess .why-text p {
+  margin: 0;
+  max-width: 62ch;
+}
+.ev.ess .why-lead {
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+.ev.ess .audience {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+.ev.ess .audience li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 600;
+}
+@media (max-width: 860px) {
+  .ev.ess .why {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+@media (max-width: 720px) {
+  .ev.ess .why-text,
+  .ev.ess .why-text p {
+    font-size: 15px;
+  }
+  .ev.ess .why-lead {
+    font-size: 19px;
+  }
+  .ev.ess .audience li {
+    padding: 9px 0;
+  }
+}
+
+/* Topics: four numbered blocks, the number in navy. */
+.ev.ess .topic .n {
+  color: var(--accent);
+  font-weight: 600;
+}
+.ev.ess .topic h3 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+.ev.ess .topic p {
+  margin: 14px 0 0;
+  color: var(--ink-muted);
+  max-width: 58ch;
+}
+@media (max-width: 720px) {
+  .ev.ess .topics {
+    gap: 36px;
+  }
+  .ev.ess .topic {
+    padding-top: 18px;
+  }
+  .ev.ess .topic h3 {
+    font-size: 19px;
+  }
+  .ev.ess .topic p {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+}
+
+/* Speakers: photo beside name, role and bio; two per row on desktop. */
+.ev.ess .bios {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 64px 48px;
+}
+.ev.ess .bio {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.ev.ess .bio > img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--line);
+}
+.ev.ess .bio h3 {
+  font: 600 22px/1.25 var(--font);
+  margin: 0;
+}
+.ev.ess .bio-text {
+  display: grid;
+  gap: 12px;
+}
+.ev.ess .bio-text p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.ev.ess .bio .role {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-muted);
+  margin-top: -6px;
+}
+/* Each speaker's companies, never as a sponsor strip. */
+.ev.ess .affiliations {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+.ev.ess .affiliations a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.ev.ess .affiliations a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--ink-muted);
+}
+.ev.ess .affiliations img {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+@media (max-width: 1040px) {
+  .ev.ess .bios {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 760px;
+  }
+}
+@media (max-width: 720px) {
+  .ev.ess .bios {
+    gap: 48px;
+  }
+  .ev.ess .bio {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .ev.ess .bio > img {
+    width: min(240px, 70%);
+  }
+  .ev.ess .bio h3 {
+    font-size: 19px;
+  }
+  .ev.ess .bio-text p {
+    font-size: 14px;
+  }
+  .ev.ess .bio .role {
+    font-size: 13px;
+  }
+}
+
+.ev.ess .terms {
+  border-top: 1px solid var(--line);
+}
