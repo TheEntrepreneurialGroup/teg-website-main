@@ -2,10 +2,17 @@
  * Supply Chain Management Conference 2026 — participant sub-page of /events.
  * Ported from the Claude Design artifact "TEG Management Conferences".
  * The location-host landing page stays at /supplychain (RequestDemo).
+ *
+ * Styled with the conference sub-brand from the "SCMC 2026 Page Style Guide"
+ * (scmc.css, scoped under .scmc): Montserrat display type, the poster
+ * gradient, ice washes and corner blooms. The closing TEG sections keep the
+ * house style.
  */
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "./editorial.css";
+import "./scmc.css";
 import {
   CalendlyInline,
   ContactCard,
@@ -16,6 +23,10 @@ import {
 
 const ASSET = "/events/supply-chain";
 const LUMA_URL = "https://luma.com/scmconference";
+const VENUE = "MaibornWolff Kraftwerk, Drygalski-Allee 25, München";
+/** Montserrat 800 is not part of the site-wide font request. */
+const DISPLAY_FONT_URL =
+  "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap";
 const MAIL_SUBJECT = "Supply Chain Management Conference";
 /** Same 30-minute slot with Corbinian as on the location-host page. */
 const CALENDLY_URL =
@@ -28,7 +39,13 @@ const partners = [
   { name: "MHP – A Porsche Company", logo: `${ASSET}/partners/mhp.webp` },
 ];
 
-const speakers = [
+const speakers: {
+  name: string;
+  role: string;
+  photo: string;
+  /** Talk title from the poster set, where one is announced. */
+  talk?: string;
+}[] = [
   {
     name: "Hansjörg Briegel",
     role: "VP Forschung und Entwicklung Intel, Ecosystem Development",
@@ -38,11 +55,13 @@ const speakers = [
     name: "Peter Dressler",
     role: "VP Supply Chain Infineon (2008–2024)",
     photo: "dressler",
+    talk: "Globale Umbrüche und die Zukunftsfähigkeit Infineons",
   },
   {
     name: "Jochen Kröber",
     role: "Partner Horváth, Head of Supply Chain Management & Production",
     photo: "kroeber",
+    talk: "Digital Twins",
   },
   {
     name: "Stephan Lustig",
@@ -58,6 +77,7 @@ const speakers = [
     name: "Dr. Julian Popp",
     role: "Partner MHP, VP Supply Chain Körber",
     photo: "popp",
+    talk: "Supply Chain aus KI, Robotern und autonomen Systemen",
   },
   {
     name: "Prof. Dr. Lisandra Flach",
@@ -74,32 +94,37 @@ const speakers = [
 const sectors = [
   {
     pct: "30 %",
+    share: 30,
     name: "Logistikdienstleister",
     ex: "DHL, Kühne+Nagel, DB Schenker, Dachser",
   },
   {
     pct: "26 %",
+    share: 26,
     name: "Maschinen- und Anlagenbau",
     ex: "Siemens, Krones, Trumpf, GEA",
   },
   {
     pct: "24 %",
+    share: 24,
     name: "Halbleiterindustrie",
     ex: "Infineon, Intel, Bosch, TSMC",
   },
   {
     pct: "20 %",
+    share: 20,
     name: "Getränkeindustrie",
     ex: "Paulaner, AB InBev, Coca-Cola, Krombacher",
   },
 ];
 
-const topics = [
+/** Each point is plain text or [before, emphasis, after?]. */
+const topics: { n: string; title: string; points: (string | string[])[] }[] = [
   {
     n: "01",
     title: "Automatisierung",
     points: [
-      "Wen Automatisierung tatsächlich entlastet",
+      ["Wen Automatisierung ", "tatsächlich entlastet"],
       "KI, Roboter und autonome Systeme in Planung, Lager und Fertigung",
       "Verantwortung bei Fehlern: Goal-Misalignment und Sim-to-Real Gap",
     ],
@@ -108,7 +133,11 @@ const topics = [
     n: "02",
     title: "Geopolitik",
     points: [
-      "Abhängigkeit von China oder Second Sourcing: Kosten gegen Risiko",
+      [
+        "Abhängigkeit von China oder ",
+        "Second Sourcing",
+        ": Kosten gegen Risiko",
+      ],
       "CSDDD- und LkSG-Pflichten bei fehlender Transparenz über Sub-Tier-Lieferanten",
       "Profitabilität unter den Umweltauflagen der EU",
     ],
@@ -156,28 +185,53 @@ const pastConferences = [
   },
 ];
 
+/** Poster convention: first name (and titles) navy, last name gradient. */
+const SplitName: React.FC<{ name: string }> = ({ name }) => {
+  const cut = name.lastIndexOf(" ");
+  return (
+    <>
+      <span className="first">{name.slice(0, cut + 1)}</span>
+      <span className="last grad-text">{name.slice(cut + 1)}</span>
+    </>
+  );
+};
+
+const Point: React.FC<{ point: string | string[] }> = ({ point }) =>
+  typeof point === "string" ? (
+    <>{point}</>
+  ) : (
+    <>
+      {point[0]}
+      <strong>{point[1]}</strong>
+      {point[2]}
+    </>
+  );
+
 const mailto = (subject: string) =>
   `mailto:leonard.beckmann@teg-ev.de?subject=${encodeURIComponent(
     `${subject} ${MAIL_SUBJECT}`,
   )}`;
 
 const SupplyChainConference: React.FC = () => (
-  <div className="ev" lang="de">
-    <section className="hero">
+  <div className="ev scmc" lang="de">
+    <Helmet>
+      <link rel="stylesheet" href={DISPLAY_FONT_URL} />
+    </Helmet>
+
+    <section className="hero bloom">
       <div className="wrap">
-        <p className="when">
-          <span>8. Dezember 2026</span>
-          <span>München</span>
-          <span>ganztägig</span>
+        <p className="meta-block">
+          <b>08. Dezember 2026 · ganztägig</b>
+          {VENUE}
         </p>
         <div className="hero-mark">
-          <h1>
-            <img
-              src={`${ASSET}/wordmark.webp`}
-              alt="Supply Chain Management Conference"
-              width={2275}
-              height={754}
-            />
+          <h1
+            className="wordmark"
+            aria-label="Supply Chain Management Conference"
+          >
+            <span className="wm-bold grad-text">Supply Chain</span>
+            <span className="wm-light">Management</span>
+            <span className="wm-light">Conference</span>
           </h1>
           <p className="lede">
             Ein Tag zu zwei Fragen, die in vielen Konzernen offen sind: Wer
@@ -189,7 +243,7 @@ const SupplyChainConference: React.FC = () => (
         <div className="cta">
           <div className="actions">
             <a className="btn primary" href="#teilnahme">
-              Anmelden
+              Anmelden <span aria-hidden="true">→</span>
             </a>
             <a className="btn ghost" href="#fokus">
               Programm ansehen
@@ -202,24 +256,33 @@ const SupplyChainConference: React.FC = () => (
         </div>
         <dl className="facts">
           <div>
-            <dt>125</dt>
-            <dd>Teilnehmer, davon 100 Führungskräfte</dd>
-          </div>
-          <div>
-            <dt>über 20</dt>
-            <dd>Speaker</dd>
-          </div>
-          <div>
             <dt>1 Tag</dt>
-            <dd>Panels, Einzelvorträge und Workshops in kleinen Gruppen</dd>
+            <dd>
+              <span className="u">Ganztägig</span>
+              Panels, Einzelvorträge und Workshops
+            </dd>
+          </div>
+          <div>
+            <dt>20+</dt>
+            <dd>
+              <span className="u">Speaker</span>
+              aus Industrie und Beratung
+            </dd>
+          </div>
+          <div>
+            <dt>125</dt>
+            <dd>
+              <span className="u">Gäste</span>
+              davon 100 Führungskräfte
+            </dd>
           </div>
         </dl>
       </div>
     </section>
 
-    <section className="partners" aria-label="Unterstützt von">
+    <section className="partners" aria-label="Mit Partnern und Speakern von">
       <div className="wrap">
-        <p>Unterstützt von</p>
+        <p>Mit Partnern und Speakern von</p>
         <div className="row">
           {partners.map((partner) => (
             <img key={partner.name} src={partner.logo} alt={partner.name} />
@@ -231,39 +294,55 @@ const SupplyChainConference: React.FC = () => (
     <section className="band" id="lineup">
       <div className="wrap">
         <div className="head">
+          <p className="eyebrow-sc">Aus Industrie und Beratung</p>
           <h2 className="h2">Speaker</h2>
         </div>
         <ul className="lineup">
           {speakers.map((speaker) => (
-            <li className="speaker" key={speaker.name}>
-              <img
-                src={`${ASSET}/speakers/${speaker.photo}.webp`}
-                alt={speaker.name}
-                loading="lazy"
-              />
-              <h3>{speaker.name}</h3>
-              <p>{speaker.role}</p>
+            <li className="spk" key={speaker.name}>
+              <div className="ph">
+                <img
+                  src={`${ASSET}/speakers/${speaker.photo}.webp`}
+                  alt={speaker.name}
+                  loading="lazy"
+                />
+              </div>
+              <div className="tx">
+                <h3>
+                  <SplitName name={speaker.name} />
+                </h3>
+                <p className="role">{speaker.role}</p>
+                {speaker.talk && <p className="talk">{speaker.talk}</p>}
+              </div>
             </li>
           ))}
         </ul>
       </div>
     </section>
 
-    <section className="band" id="publikum">
+    <section className="band bloom bloom-right" id="publikum">
       <div className="wrap">
         <div className="head">
+          <p className="eyebrow-sc">125 Gäste · 100 Führungskräfte</p>
           <h2 className="h2">Zusammensetzung des Publikums</h2>
           <p className="intro">
             125 Teilnehmer, davon 100 Führungskräfte von der Teamleitung bis zum
             C-Level, überwiegend aus Konzernen dieser vier Branchen.
           </p>
         </div>
-        <ul className="sectors">
+        <ul className="bars">
           {sectors.map((sector) => (
-            <li key={sector.name}>
+            <li className="bar" key={sector.name}>
               <span className="pct">{sector.pct}</span>
-              <span className="name">{sector.name}</span>
-              <span className="ex">{sector.ex}</span>
+              <span className="track" aria-hidden="true">
+                <span
+                  className="fill"
+                  style={{ display: "block", width: `${sector.share}%` }}
+                />
+              </span>
+              <span className="lab">
+                <b>{sector.name}</b> · {sector.ex}
+              </span>
             </li>
           ))}
         </ul>
@@ -274,19 +353,24 @@ const SupplyChainConference: React.FC = () => (
       </div>
     </section>
 
-    <section className="band" id="fokus">
+    <section className="band ice" id="fokus">
       <div className="wrap">
         <div className="head">
+          <p className="eyebrow-sc">Zwei Schwerpunkte</p>
           <h2 className="h2">Fokus</h2>
         </div>
-        <div className="topics">
+        <div className="timeline">
           {topics.map((topic) => (
-            <div className="topic" key={topic.n}>
-              <span className="n">{topic.n}</span>
-              <h3>{topic.title}</h3>
+            <div className="tl" key={topic.n}>
+              <h3>
+                <small>{topic.n}</small>
+                {topic.title}
+              </h3>
               <ul>
                 {topic.points.map((point) => (
-                  <li key={point}>{point}</li>
+                  <li key={String(point)}>
+                    <Point point={point} />
+                  </li>
                 ))}
               </ul>
             </div>
@@ -295,9 +379,10 @@ const SupplyChainConference: React.FC = () => (
       </div>
     </section>
 
-    <section className="band" id="teilnahme">
+    <section className="band bloom bloom-left" id="teilnahme">
       <div className="wrap join">
         <div className="join-text">
+          <p className="eyebrow-sc">Anmeldung über Luma</p>
           <h2 className="h2">Teilnahme</h2>
           <p>
             Die Plätze werden nach Profil, Motivation und fachlichem Bezug zum
@@ -313,17 +398,17 @@ const SupplyChainConference: React.FC = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            Zur Anmeldung auf Luma
+            Zur Anmeldung auf Luma <span aria-hidden="true">→</span>
           </a>
         </div>
-        <dl className="terms">
+        <dl className="facts-list">
           <div>
             <dt>Datum</dt>
             <dd>8. Dezember 2026, ganztägig</dd>
           </div>
           <div>
             <dt>Ort</dt>
-            <dd>München</dd>
+            <dd>{VENUE}</dd>
           </div>
           <div>
             <dt>Sprache</dt>
@@ -355,6 +440,7 @@ const SupplyChainConference: React.FC = () => (
     <section className="band" id="organisation">
       <div className="wrap org">
         <div className="org-text">
+          <p className="eyebrow-sc">Young Business Leadership Academy</p>
           <h2 className="h2">Organisation</h2>
           <p>
             Organisiert wird die Konferenz von Corbinian Massinger und Leonard
@@ -373,7 +459,11 @@ const SupplyChainConference: React.FC = () => (
         </div>
         <div className="contacts">
           {organisers.map((person) => (
-            <ContactCard key={person.email} person={person} />
+            <ContactCard
+              key={person.email}
+              person={person}
+              heading={<SplitName name={person.name} />}
+            />
           ))}
         </div>
       </div>
@@ -387,7 +477,7 @@ const SupplyChainConference: React.FC = () => (
       </div>
     </section>
 
-    <section className="band" id="bisher">
+    <section className="band house" id="bisher">
       <div className="wrap">
         <div className="head">
           <h2 className="h2">Zuletzt veranstaltet</h2>
@@ -418,7 +508,7 @@ const SupplyChainConference: React.FC = () => (
       </div>
     </section>
 
-    <section className="band" id="ueber">
+    <section className="band house" id="ueber">
       <div className="wrap">
         <TegFounders />
       </div>

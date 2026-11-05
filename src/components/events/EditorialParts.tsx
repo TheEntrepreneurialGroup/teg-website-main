@@ -108,12 +108,14 @@ export interface ContactPerson {
   linkedin?: string;
 }
 
-export const ContactCard: React.FC<{ person: ContactPerson }> = ({
-  person,
-}) => (
+export const ContactCard: React.FC<{
+  person: ContactPerson;
+  /** Optional styled name (e.g. split first/last name); defaults to the name. */
+  heading?: React.ReactNode;
+}> = ({ person, heading }) => (
   <article className="contact">
     <img src={person.photo} alt={person.name} loading="lazy" />
-    <h3>{person.name}</h3>
+    <h3>{heading ?? person.name}</h3>
     <p className="role">{person.role}</p>
     <div className="line">
       <a href={`mailto:${person.email}`}>{person.email}</a>
