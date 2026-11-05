@@ -9,6 +9,15 @@
  * house style.
  */
 import React from "react";
+import {
+  CalendarDays,
+  Languages,
+  MapPin,
+  Presentation,
+  Ticket,
+  UtensilsCrossed,
+  type LucideIcon,
+} from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "./editorial.css";
@@ -207,6 +216,21 @@ const Point: React.FC<{ point: string | string[] }> = ({ point }) =>
     </>
   );
 
+/** One Teilnahme fact: icon, label and value. */
+const Fact: React.FC<{
+  icon: LucideIcon;
+  label: string;
+  children: React.ReactNode;
+}> = ({ icon: Icon, label, children }) => (
+  <div>
+    <span className="fi" aria-hidden="true">
+      <Icon size={18} strokeWidth={1.75} />
+    </span>
+    <dt>{label}</dt>
+    <dd>{children}</dd>
+  </div>
+);
+
 const mailto = (subject: string) =>
   `mailto:leonard.beckmann@teg-ev.de?subject=${encodeURIComponent(
     `${subject} ${MAIL_SUBJECT}`,
@@ -402,37 +426,27 @@ const SupplyChainConference: React.FC = () => (
           </a>
         </div>
         <dl className="facts-list">
-          <div>
-            <dt>Datum</dt>
-            <dd>8. Dezember 2026, ganztägig</dd>
-          </div>
-          <div>
-            <dt>Ort</dt>
-            <dd>{VENUE}</dd>
-          </div>
-          <div>
-            <dt>Sprache</dt>
-            <dd>Deutsch</dd>
-          </div>
-          <div>
-            <dt>Format</dt>
-            <dd>
-              Panels und Einzelvorträge
-              <span>
-                Dazu Workshops in kleinen Gruppen mit begrenzter Platzzahl
-              </span>
-            </dd>
-          </div>
-          <div>
-            <dt>Verpflegung</dt>
-            <dd>Mittagessen, Snacks und Getränke inbegriffen</dd>
-          </div>
-          <div>
-            <dt>Ticket</dt>
-            <dd>
-              rund 100 €<span>Kategorien und Preise auf Luma</span>
-            </dd>
-          </div>
+          <Fact icon={CalendarDays} label="Datum">
+            8. Dezember 2026, ganztägig
+          </Fact>
+          <Fact icon={MapPin} label="Ort">
+            {VENUE}
+          </Fact>
+          <Fact icon={Languages} label="Sprache">
+            Deutsch
+          </Fact>
+          <Fact icon={Presentation} label="Format">
+            Panels und Einzelvorträge
+            <span>
+              Dazu Workshops in kleinen Gruppen mit begrenzter Platzzahl
+            </span>
+          </Fact>
+          <Fact icon={UtensilsCrossed} label="Verpflegung">
+            Mittagessen, Snacks und Getränke inbegriffen
+          </Fact>
+          <Fact icon={Ticket} label="Ticket">
+            rund 100 €<span>Kategorien und Preise auf Luma</span>
+          </Fact>
         </dl>
       </div>
     </section>
