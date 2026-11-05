@@ -282,17 +282,6 @@
   text-transform: uppercase;
   color: var(--slate);
 }
-.ev.scmc .partners img {
-  filter: grayscale(1);
-  opacity: 0.7;
-  transition:
-    filter 0.2s,
-    opacity 0.2s;
-}
-.ev.scmc .partners img:hover {
-  filter: none;
-  opacity: 1;
-}
 
 /* Fokus timeline: 3px navy rail with 21px dots. */
 .ev.scmc .timeline {
@@ -556,8 +545,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ev.scmc .btn,
-  .ev.scmc .partners img {
+  .ev.scmc .btn {
     transition: none;
   }
 }
