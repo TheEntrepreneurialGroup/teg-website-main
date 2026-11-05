@@ -1,0 +1,547 @@
+/*
+ * Supply Chain Management Conference sub-brand.
+ * Implements the "SCMC 2026 Page Style Guide": the poster system (Montserrat
+ * display type, navy-to-teal gradient, ice washes, corner blooms) carried onto
+ * this one page. Everything is scoped under .ev.scmc, so the TEG header,
+ * footer, /events and the other conference pages keep the house style.
+ * Body copy stays in Libre Franklin to tie the page to the rest of teg-ev.de.
+ */
+.ev.scmc {
+  --navy: #0b1f7a;
+  --blue: #1450a3;
+  --teal: #0a8db3;
+  --teal-text: #0b7499;
+  --sc-ink: #0a0f2c;
+  --slate: #545b70;
+  --sc-line: #dce3ec;
+  --ice: #eaf5f8;
+  --mist: #79bdd0;
+  --peri: #6f96c1;
+  --grad: linear-gradient(
+    90deg,
+    var(--navy) 0%,
+    var(--blue) 55%,
+    var(--teal) 100%
+  );
+  --f-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --section: 96px;
+
+  /* Re-point the shared editorial tokens so inherited parts follow along. */
+  --ink: var(--sc-ink);
+  --ink-muted: var(--slate);
+  --line: var(--sc-line);
+  --accent: var(--navy);
+  --max: 1200px;
+}
+.ev.scmc a {
+  color: var(--blue);
+}
+.ev.scmc a:hover {
+  color: var(--navy);
+}
+.ev.scmc :focus-visible {
+  outline-color: var(--teal);
+}
+.ev.scmc .grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Sections: 96px rhythm, hairline separators in the cooler line colour. */
+.ev.scmc .band > .wrap {
+  padding-block: var(--section);
+}
+.ev.scmc .band.ice {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    var(--ice) 18%,
+    var(--ice) 100%
+  );
+}
+.ev.scmc .band.ice::before,
+.ev.scmc .band.ice + .band::before {
+  display: none;
+}
+@media (max-width: 720px) {
+  .ev.scmc {
+    --section: 64px;
+  }
+}
+
+/* Headings in Montserrat. House sections (.house) keep Libre Franklin. */
+.ev.scmc .band:not(.house) .h2 {
+  font: 700 clamp(28px, 4vw, 40px) / 1.1 var(--f-display);
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+.ev.scmc .eyebrow-sc {
+  margin: 0;
+  font: 700 13px/1.3 var(--f-display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-text);
+}
+.ev.scmc .head {
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+/* Buttons: navy primary, outlined secondary, text link with teal rule. */
+.ev.scmc .btn {
+  gap: 10px;
+  font: 700 14px/1 var(--f-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 15px 22px;
+  border: 1.5px solid var(--navy);
+  border-radius: 2px;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s;
+}
+.ev.scmc .btn.primary {
+  background: var(--navy);
+  color: #ffffff;
+}
+.ev.scmc .btn.primary:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  filter: none;
+}
+.ev.scmc .btn.ghost {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+.ev.scmc .btn.ghost:hover {
+  background: var(--ice);
+}
+.ev.scmc .more a {
+  color: var(--navy);
+  font: 700 13px/1.4 var(--f-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid var(--teal);
+}
+.ev.scmc .more a:hover {
+  color: var(--blue);
+}
+
+/* Corner blooms: hero and the Teilnahme band only. */
+.ev.scmc .bloom {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.ev.scmc .bloom::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(121, 189, 208, 0.55) 0,
+      rgba(121, 189, 208, 0) 380px
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(111, 150, 193, 0.45) 0,
+      rgba(111, 150, 193, 0) 300px
+    );
+}
+
+/* Hero */
+.ev.scmc .hero {
+  border-bottom: 1px solid var(--line);
+}
+.ev.scmc .hero .wrap {
+  padding-block: 64px 72px;
+  gap: 40px;
+}
+.ev.scmc .meta-block {
+  margin: 0;
+  font: 400 14px/1.4 var(--f-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sc-ink);
+}
+.ev.scmc .meta-block b {
+  display: block;
+  font-weight: 700;
+  font-size: 17px;
+}
+.ev.scmc .hero-mark {
+  width: min(760px, 100%);
+  gap: 32px;
+}
+.ev.scmc .wordmark {
+  margin: 0;
+  display: grid;
+  line-height: 0.95;
+  font-family: var(--f-display);
+}
+.ev.scmc .wordmark .wm-bold {
+  font-weight: 800;
+  font-size: clamp(40px, 8vw, 92px);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.06em;
+}
+.ev.scmc .wordmark .wm-light {
+  font-weight: 300;
+  font-size: clamp(32px, 7.2vw, 84px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sc-ink);
+}
+.ev.scmc .hero-mark .lede {
+  width: auto;
+  max-width: 62ch;
+}
+
+/* Key facts: navy 800 figures on a 2px navy rule, no boxes. */
+.ev.scmc .facts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 2px solid var(--navy);
+  padding-top: 0;
+  max-width: 900px;
+}
+.ev.scmc .facts div {
+  padding: 20px 20px 4px 0;
+  margin: 0;
+  border-right: 0;
+}
+.ev.scmc .facts dt {
+  font: 800 clamp(36px, 5vw, 56px) / 1 var(--f-display);
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.ev.scmc .facts .u {
+  display: block;
+  margin-top: 10px;
+  font: 700 13px/1.3 var(--f-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sc-ink);
+}
+.ev.scmc .facts dd {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--slate);
+}
+
+/* Partner strip: greyscale logos between hairlines. */
+.ev.scmc .partners p {
+  font: 700 12px/1.3 var(--f-display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+.ev.scmc .partners img {
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition:
+    filter 0.2s,
+    opacity 0.2s;
+}
+.ev.scmc .partners img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+/* Fokus timeline: 3px navy rail with 21px dots. */
+.ev.scmc .timeline {
+  position: relative;
+  display: grid;
+  gap: 48px;
+  padding-left: 48px;
+  max-width: 860px;
+}
+.ev.scmc .timeline::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  background: var(--navy);
+}
+.ev.scmc .tl {
+  position: relative;
+  display: grid;
+  gap: 14px;
+}
+.ev.scmc .tl::before {
+  content: "";
+  position: absolute;
+  left: -48px;
+  top: 0.35em;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: var(--navy);
+}
+.ev.scmc .tl h3 {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  align-items: baseline;
+  font: 800 clamp(26px, 4.5vw, 44px) / 1.05 var(--f-display);
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.ev.scmc .tl h3 small {
+  font-size: 0.6em;
+  font-weight: 800;
+}
+.ev.scmc .tl ul {
+  margin: 0;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 8px;
+  font-size: 17px;
+}
+.ev.scmc .tl li strong {
+  font-weight: 600;
+}
+
+/* Speaker cards */
+.ev.scmc .lineup {
+  gap: 20px;
+}
+.ev.scmc .spk {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #ffffff;
+  min-width: 0;
+}
+.ev.scmc .spk .ph {
+  padding: 18px 18px 0;
+  background:
+    radial-gradient(120% 80% at 100% 100%, #d8eef3 0%, transparent 60%),
+    radial-gradient(90% 70% at 0% 40%, #dce5f2 0%, transparent 55%), #ffffff;
+}
+.ev.scmc .spk .ph img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--line);
+}
+.ev.scmc .spk .tx {
+  padding: 16px 16px 18px;
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+.ev.scmc .spk h3 {
+  margin: 0;
+  font: 800 18px/1.15 var(--f-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.ev.scmc .spk h3 .first {
+  color: var(--navy);
+}
+.ev.scmc .spk h3 .last {
+  display: inline-block;
+}
+.ev.scmc .spk .role {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--slate);
+}
+.ev.scmc .spk .talk {
+  margin: 6px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font: 600 12.5px/1.4 var(--f-display);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--sc-ink);
+}
+@media (max-width: 720px) {
+  .ev.scmc .lineup {
+    gap: 14px;
+  }
+  .ev.scmc .spk .ph {
+    padding: 12px 12px 0;
+  }
+  .ev.scmc .spk .tx {
+    padding: 12px 12px 14px;
+  }
+  .ev.scmc .spk h3 {
+    font-size: 15px;
+  }
+  .ev.scmc .spk .role {
+    font-size: 12.5px;
+  }
+  .ev.scmc .spk .talk {
+    font-size: 11px;
+  }
+}
+
+/* Audience composition: bars on one shared 0–100 % scale. */
+.ev.scmc .bars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+  max-width: 900px;
+}
+.ev.scmc .bar {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 6px 16px;
+  align-items: center;
+}
+.ev.scmc .bar .pct {
+  font: 800 24px/1 var(--f-display);
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.ev.scmc .bar .track {
+  height: 10px;
+  background: #ffffff;
+  border-radius: 1px;
+  overflow: hidden;
+}
+.ev.scmc .bar .fill {
+  height: 100%;
+  background: var(--grad);
+}
+.ev.scmc .bar .lab {
+  grid-column: 2;
+  font-size: 14px;
+  color: var(--slate);
+}
+.ev.scmc .bar .lab b {
+  color: var(--sc-ink);
+  font-weight: 600;
+}
+.ev.scmc .footnote {
+  margin-top: 32px;
+}
+@media (max-width: 560px) {
+  .ev.scmc .bar {
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+  .ev.scmc .bar .pct {
+    font-size: 20px;
+  }
+}
+
+/* Teilnahme facts list */
+.ev.scmc .join-text .h2 {
+  margin-bottom: 4px;
+}
+.ev.scmc .facts-list {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+}
+.ev.scmc .facts-list div {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 2px;
+  align-content: start;
+}
+.ev.scmc .facts-list dt {
+  font: 700 11.5px/1.4 var(--f-display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+.ev.scmc .facts-list dd {
+  margin: 0;
+  font-size: 16px;
+}
+.ev.scmc .facts-list dd span {
+  display: block;
+  font-size: 14px;
+  color: var(--slate);
+}
+@media (max-width: 560px) {
+  .ev.scmc .facts-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Organisation: split-gradient names on the contact cards. */
+.ev.scmc .contact h3 {
+  font: 800 18px/1.15 var(--f-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.ev.scmc .contact h3 .first {
+  color: var(--navy);
+}
+.ev.scmc .contact h3 .last {
+  display: inline-block;
+}
+.ev.scmc .booking h3 {
+  font: 700 22px/1.2 var(--f-display);
+  color: var(--navy);
+  border-top-color: var(--navy);
+}
+
+/* Closing house sections keep TEG's house type. */
+.ev.scmc .band.house {
+  --ink: #17191c;
+  --ink-muted: #5a5e66;
+  --line: #d9d9d6;
+  --accent: #7a2331;
+}
+.ev.scmc .band.house a {
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ev.scmc .btn,
+  .ev.scmc .partners img {
+    transition: none;
+  }
+}
+
+/* Phones: three figures stay in one row. */
+@media (max-width: 720px) {
+  .ev.scmc .facts {
+    gap: 0 12px;
+  }
+  .ev.scmc .facts div {
+    padding: 14px 0 0;
+  }
+  .ev.scmc .facts dt {
+    font-size: clamp(24px, 7.4vw, 34px);
+    white-space: nowrap;
+  }
+  .ev.scmc .facts .u {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    margin-top: 8px;
+  }
+  .ev.scmc .facts dd {
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  .ev.scmc .tl ul {
+    font-size: 15px;
+  }
+}
