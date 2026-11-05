@@ -488,14 +488,10 @@ const en = {
   "seo.privacy.title": "Privacy Policy | TEG",
   "seo.privacy.description":
     "Information about how The Entrepreneurial Group e. V. processes personal data on this website.",
-  "seo.requestDemo.title":
-    "Location Host | German Supply Chain Conference 2026 | TEG",
-  "seo.requestDemo.description":
-    "Host the German Supply Chain Conference 2026 in Munich. Positive PR and recruiting access for logistics location partners — book an informal meeting with TEG.",
   "seo.supplyChainConference.title":
     "Supply Chain Management Conference 2026 | TEG",
   "seo.supplyChainConference.description":
-    "8 December 2026 in Munich: a conference day on automation and geopolitics in the supply chain, with 125 participants, 100 of them executives.",
+    "8 December 2026 in Munich: a conference day on automation and geopolitics in the supply chain, with 100 participants, 70 of them executives.",
   "seo.aviationConference.title": "Aviation Management Conference 2027 | TEG",
   "seo.aviationConference.description":
     "TEG Aviation Management Conference on 19 May 2027. Programme, speakers and registration will be announced soon.",

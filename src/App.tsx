@@ -9,7 +9,6 @@ import SupplyChainConference from "./pages/SupplyChainConference";
 import AviationConference from "./pages/AviationConference";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Imprint from "./pages/Imprint";
-import RequestDemo from "./pages/RequestDemo";
 import { IntlProvider, useIntl } from "react-intl";
 import en from "./locales/en";
 import de from "./locales/de";
@@ -143,10 +142,25 @@ function App() {
         </Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/imprint" element={<Imprint />} />
-        {/* Supply Chain Conference location-host LP (production path) */}
-        <Route path="/supplychain" element={<RequestDemo />} />
-        {/* Dev / legacy alias — same page as /supplychain */}
-        <Route path="/request-demo" element={<RequestDemo />} />
+        {/* Retired location-host page; netlify redirects these with a 301. */}
+        <Route
+          path="/supplychain"
+          element={
+            <Navigate
+              to="/conferences/supplychain-management-conference"
+              replace
+            />
+          }
+        />
+        <Route
+          path="/request-demo"
+          element={
+            <Navigate
+              to="/conferences/supplychain-management-conference"
+              replace
+            />
+          }
+        />
       </Routes>
     </IntlProvider>
   );

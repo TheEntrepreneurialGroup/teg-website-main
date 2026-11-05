@@ -1,0 +1,351 @@
+/*
+ * Supply Chain Management Conference: the conference's own wordmark (live
+ * text in place of the raster image) and navy as the page's one accent.
+ * Everything else stays in the shared editorial style.
+ */
+.ev.scmc {
+  --accent: #0b1f7a;
+}
+
+/* Wordmark: three lines on one right edge, sized to the container so the
+   proportions of the original artwork hold at every width. */
+.ev.scmc .wordmark {
+  container-type: inline-size;
+  display: grid;
+  justify-items: end;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ev.scmc .wordmark span {
+  display: block;
+  white-space: nowrap;
+  font-weight: 300;
+  font-size: 12.14cqi;
+  line-height: 1;
+  letter-spacing: 0.024em;
+  margin-right: -0.024em;
+}
+.ev.scmc .wordmark .wm-bold {
+  font-weight: 800;
+  letter-spacing: 0.033em;
+  margin-right: -0.033em;
+  background: linear-gradient(90deg, #001486 0%, #004f9d 50%, #008bb5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* "Conference" is tracked wider so all three lines share both edges' rhythm. */
+.ev.scmc .wordmark span:last-child {
+  letter-spacing: 0.044em;
+  margin-right: -0.044em;
+}
+
+/* Section headings one step below the house size. */
+.ev.scmc .h2 {
+  font-size: clamp(30px, 4vw, 44px);
+}
+@media (max-width: 720px) {
+  .ev.scmc .h2 {
+    font-size: clamp(24px, 6.6vw, 30px);
+  }
+}
+
+/* Audience: the shares take the hero figures' face and navy, and each
+   column shares row tracks so sector names and examples line up even when
+   a name wraps. */
+.ev.scmc .sectors {
+  row-gap: 6px;
+}
+.ev.scmc .sectors li {
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  gap: 0;
+}
+/* Two or more rows: space between them, cancelled after the last row. */
+@media (max-width: 900px) {
+  .ev.scmc .sectors {
+    margin-bottom: -26px;
+  }
+  .ev.scmc .sectors li {
+    margin-bottom: 26px;
+  }
+}
+.ev.scmc .sectors .pct {
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+@media (max-width: 720px) {
+  .ev.scmc .sectors {
+    row-gap: 2px;
+  }
+  .ev.scmc .sectors {
+    margin-bottom: -20px;
+  }
+  .ev.scmc .sectors li {
+    margin-bottom: 20px;
+  }
+}
+
+/* Publikum reads as a short addendum to the speakers rather than a band of
+   its own: no rule between them, a smaller step down from the line-up, a
+   small heading and the hero's light figure row. */
+.ev.scmc #lineup > .wrap {
+  padding-bottom: 84px;
+}
+.ev.scmc #publikum::before {
+  display: none;
+}
+.ev.scmc #publikum > .wrap {
+  padding-top: 0;
+}
+.ev.scmc #publikum .head {
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.ev.scmc #publikum .h2 {
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.ev.scmc #publikum .intro {
+  font-size: 15px;
+}
+.ev.scmc #publikum .sectors {
+  border-top: 0;
+  padding-top: 8px;
+}
+.ev.scmc #publikum .sectors .pct {
+  font-size: 22px;
+}
+.ev.scmc #publikum .sectors .name {
+  font-size: 15px;
+}
+.ev.scmc #publikum .sectors .ex {
+  font-size: 13px;
+}
+.ev.scmc #publikum .footnote {
+  margin-top: 24px;
+  font-size: 13px;
+}
+@media (max-width: 720px) {
+  .ev.scmc #lineup > .wrap {
+    padding-bottom: 52px;
+  }
+  .ev.scmc #publikum .h2 {
+    font-size: 20px;
+  }
+  .ev.scmc #publikum .intro {
+    font-size: 14px;
+  }
+  .ev.scmc #publikum .sectors {
+    padding-top: 4px;
+  }
+  .ev.scmc #publikum .sectors .pct {
+    font-size: 19px;
+  }
+  .ev.scmc #publikum .sectors .name {
+    font-size: 14px;
+  }
+  .ev.scmc #publikum .sectors .ex {
+    font-size: 12.5px;
+  }
+  .ev.scmc #publikum .footnote {
+    margin-top: 20px;
+    font-size: 12.5px;
+  }
+}
+
+/* Fokus: the topics hang off one navy rail, a dot at each heading. */
+.ev.scmc .topics {
+  position: relative;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 56px;
+  max-width: 860px;
+  padding-left: 48px;
+}
+.ev.scmc .topics::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 10px;
+  bottom: 14px;
+  width: 3px;
+  background: var(--accent);
+}
+.ev.scmc .topic {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 14px;
+  border-top: 0;
+  padding-top: 0;
+}
+.ev.scmc .topic::before {
+  content: "";
+  position: absolute;
+  left: -48px;
+  top: 7px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.ev.scmc .topic .n {
+  color: var(--accent);
+  font-weight: 600;
+}
+.ev.scmc .topic h3 {
+  margin: 0;
+}
+.ev.scmc .topic ul {
+  grid-column: 1 / -1;
+}
+@media (max-width: 720px) {
+  .ev.scmc .topics {
+    gap: 40px;
+    padding-left: 34px;
+  }
+  .ev.scmc .topics::before {
+    left: 5px;
+  }
+  .ev.scmc .topic::before {
+    left: -34px;
+    width: 13px;
+    height: 13px;
+  }
+}
+
+/* Hero: key figures in the wordmark's face and navy, kept small and light. */
+.ev.scmc .facts dt {
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+@media (max-width: 720px) {
+  .ev.scmc .facts dt {
+    font-size: 19px;
+  }
+}
+/* Columns separated by space alone, no vertical rules. */
+.ev.scmc .facts div {
+  border-right: 0;
+  margin-right: 0;
+  padding-right: 72px;
+}
+.ev.scmc .facts div:last-child {
+  padding-right: 0;
+}
+@media (max-width: 720px) {
+  .ev.scmc .facts div {
+    padding-right: 0;
+  }
+}
+
+/* Secondary hero links: navy, underlined in the wordmark's teal. */
+.ev.scmc .more a {
+  color: var(--accent);
+  text-decoration-color: #0a8db3;
+  text-decoration-thickness: 1px;
+}
+.ev.scmc .more a:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* Hero rhythm. Without a lede the shared 40px gap reads unevenly, so each
+   step is set on its own: the date line binds to the wordmark, the CTAs sit
+   one step below it, and the key figures open a new block under the rule. */
+.ev.scmc .hero .wrap {
+  gap: 0;
+  padding-bottom: 48px;
+}
+/* The partner strip continues the hero instead of opening a new band, so
+   figures and logos read as one block with a single rule underneath. */
+.ev.scmc .hero {
+  border-bottom: 0;
+}
+.ev.scmc .partners .wrap {
+  padding-top: 0;
+}
+.ev.scmc .hero-mark {
+  margin-top: 16px;
+}
+.ev.scmc .hero .cta {
+  margin-top: 48px;
+}
+.ev.scmc .hero .facts {
+  margin-top: 56px;
+  padding-top: 20px;
+}
+@media (max-width: 720px) {
+  .ev.scmc .hero .wrap {
+    padding-bottom: 32px;
+  }
+  .ev.scmc .hero-mark {
+    margin-top: 16px;
+  }
+  .ev.scmc .hero .cta {
+    margin-top: 32px;
+  }
+  .ev.scmc .hero .facts {
+    margin-top: 36px;
+    padding-top: 16px;
+  }
+}
+
+/* Primary hero CTA carries a thin arrow. */
+.ev.scmc .hero .btn.primary {
+  gap: 10px;
+}
+@media (max-width: 720px) {
+  /* Keeps both hero buttons on one row at phone width despite the arrow. */
+  .ev.scmc .hero .btn {
+    padding-inline: 20px;
+  }
+}
+
+/* Desktop: one faint mist bloom in the hero's top right corner, fading out
+   well inside the hero so it never reaches the content or the next band. */
+@media (min-width: 1024px) {
+  .ev.scmc .hero {
+    background:
+      radial-gradient(
+        ellipse 520px 300px at calc(100% + 80px) 200px,
+        rgba(121, 189, 208, 0.3),
+        transparent 100%
+      ),
+      var(--paper);
+  }
+}
+
+/* One line weight below the hero: lists rely on spacing, and the rules that
+   remain are the light 1px kind. */
+.ev.scmc .topic li {
+  border-bottom: 0;
+  padding: 7px 0;
+}
+.ev.scmc .booking h3 {
+  border-top: 1px solid var(--line);
+}
+.ev.scmc .founders li {
+  border-bottom: 0;
+  padding: 4px 0;
+}
+.ev.scmc .alumni {
+  border-top: 1px solid var(--line);
+}
+.ev.scmc .terms {
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 720px) {
+  .ev.scmc .topic li {
+    padding: 5px 0;
+  }
+  .ev.scmc .founders li {
+    padding: 2px 0;
+  }
+}

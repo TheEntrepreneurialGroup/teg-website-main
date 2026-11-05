@@ -16,4 +16,10 @@
 /conferences/scm      /conferences/supplychain-management-conference/    301
 /conferences/scm/     /conferences/supplychain-management-conference/    301
 
+# Retired location-host page (the venue is settled) → the conference page
+/supplychain          /conferences/supplychain-management-conference/    301
+/supplychain/         /conferences/supplychain-management-conference/    301
+/request-demo         /conferences/supplychain-management-conference/    301
+/request-demo/        /conferences/supplychain-management-conference/    301
+
 /*    /index.html   200

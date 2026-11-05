@@ -9,9 +9,7 @@ export type AppRoutePath =
   | "/conferences/supplychain-management-conference"
   | "/conferences/aviation-management-conference"
   | "/imprint"
-  | "/privacy-policy"
-  | "/supplychain"
-  | "/request-demo";
+  | "/privacy-policy";
 
 export interface RouteSeoEntry {
   path: AppRoutePath;

@@ -1,11 +1,14 @@
 /**
  * Supply Chain Management Conference 2026 — participant sub-page of /events.
  * Ported from the Claude Design artifact "TEG Management Conferences".
- * The location-host landing page stays at /supplychain (RequestDemo).
+ * scmc.css adds the conference's own wordmark and navy accent.
  */
 import React from "react";
+import { Helmet } from "react-helmet-async";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./editorial.css";
+import "./scmc.css";
 import {
   CalendlyInline,
   ContactCard,
@@ -16,6 +19,9 @@ import {
 
 const ASSET = "/events/supply-chain";
 const LUMA_URL = "https://luma.com/scmconference";
+/** Montserrat 800 is not in the site-wide font request; subset to the wordmark. */
+const WORDMARK_FONT_URL =
+  "https://fonts.googleapis.com/css2?family=Montserrat:wght@800&text=SUPLYCHAIN%20&display=swap";
 const MAIL_SUBJECT = "Supply Chain Management Conference";
 /** Same 30-minute slot with Corbinian as on the location-host page. */
 const CALENDLY_URL =
@@ -45,7 +51,7 @@ const speakers = [
     photo: "kroeber",
   },
   {
-    name: "Stephan Lustig",
+    name: "Dr. Stephan Lustig",
     role: "Geschäftsführer Supply Chain Paulaner Brauerei (2010–2018)",
     photo: "lustig",
   },
@@ -73,24 +79,24 @@ const speakers = [
 
 const sectors = [
   {
-    pct: "30 %",
+    pct: "30 %",
     name: "Logistikdienstleister",
-    ex: "DHL, Kühne+Nagel, DB Schenker, Dachser",
+    ex: "DHL, Kühne+Nagel, DB Schenker, Dachser",
   },
   {
-    pct: "26 %",
+    pct: "26 %",
     name: "Maschinen- und Anlagenbau",
     ex: "Siemens, Krones, Trumpf, GEA",
   },
   {
-    pct: "24 %",
+    pct: "24 %",
     name: "Halbleiterindustrie",
     ex: "Infineon, Intel, Bosch, TSMC",
   },
   {
-    pct: "20 %",
+    pct: "20 %",
     name: "Getränkeindustrie",
-    ex: "Paulaner, AB InBev, Coca-Cola, Krombacher",
+    ex: "Paulaner, AB InBev, Coca‑Cola, Krombacher",
   },
 ];
 
@@ -162,36 +168,43 @@ const mailto = (subject: string) =>
   )}`;
 
 const SupplyChainConference: React.FC = () => (
-  <div className="ev" lang="de">
+  <div className="ev scmc" lang="de">
+    <Helmet>
+      <link rel="stylesheet" href={WORDMARK_FONT_URL} />
+    </Helmet>
     <section className="hero">
       <div className="wrap">
         <p className="when">
           <span>8. Dezember 2026</span>
-          <span>München</span>
-          <span>ganztägig</span>
+          <span>9–18 Uhr</span>
+          <span>MaibornWolff Kraftwerk, München</span>
         </p>
         <div className="hero-mark">
-          <h1>
-            <img
-              src={`${ASSET}/wordmark.webp`}
-              alt="Supply Chain Management Conference"
-              width={2275}
-              height={754}
-            />
+          <h1
+            className="wordmark"
+            aria-label="Supply Chain Management Conference"
+          >
+            <span className="wm-bold">Supply Chain</span>
+            <span>Management</span>
+            <span>Conference</span>
           </h1>
           <p className="lede">
-            Ein Tag zu zwei Fragen, die in vielen Konzernen offen sind: Wer
-            verantwortet Fehlentscheidungen autonomer Systeme in der
-            Lieferkette? Und ab wann rechnet sich Second Sourcing gegenüber der
-            Abhängigkeit von China?
+            Zwei offene Fragen: Wer verantwortet Fehlentscheidungen autonomer
+            Systeme, und wann rechnet sich Second Sourcing gegenüber China?
           </p>
         </div>
         <div className="cta">
           <div className="actions">
-            <a className="btn primary" href="#teilnahme">
+            <a
+              className="btn primary"
+              href={LUMA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Anmelden
+              <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
             </a>
-            <a className="btn ghost" href="#fokus">
+            <a className="btn ghost" href="#lineup">
               Programm ansehen
             </a>
           </div>
@@ -202,8 +215,8 @@ const SupplyChainConference: React.FC = () => (
         </div>
         <dl className="facts">
           <div>
-            <dt>125</dt>
-            <dd>Teilnehmer, davon 100 Führungskräfte</dd>
+            <dt>100</dt>
+            <dd>Teilnehmer, davon&nbsp;70 Führungskräfte</dd>
           </div>
           <div>
             <dt>über 20</dt>
@@ -254,7 +267,7 @@ const SupplyChainConference: React.FC = () => (
         <div className="head">
           <h2 className="h2">Zusammensetzung des Publikums</h2>
           <p className="intro">
-            125 Teilnehmer, davon 100 Führungskräfte von der Teamleitung bis zum
+            100 Teilnehmer, davon 70 Führungskräfte von der Teamleitung bis zum
             C-Level, überwiegend aus Konzernen dieser vier Branchen.
           </p>
         </div>
@@ -319,11 +332,14 @@ const SupplyChainConference: React.FC = () => (
         <dl className="terms">
           <div>
             <dt>Datum</dt>
-            <dd>8. Dezember 2026, ganztägig</dd>
+            <dd>8. Dezember 2026, 9–18 Uhr</dd>
           </div>
           <div>
             <dt>Ort</dt>
-            <dd>München</dd>
+            <dd>
+              MaibornWolff Kraftwerk
+              <span>Drygalski-Allee 25, München</span>
+            </dd>
           </div>
           <div>
             <dt>Sprache</dt>
@@ -345,7 +361,7 @@ const SupplyChainConference: React.FC = () => (
           <div>
             <dt>Ticket</dt>
             <dd>
-              rund 100 €<span>Kategorien und Preise auf Luma</span>
+              60&nbsp;€<span>Kategorien und Preise auf Luma</span>
             </dd>
           </div>
         </dl>
