@@ -438,9 +438,12 @@
 }
 .ev.scmc .bar .track {
   height: 10px;
-  background: #ffffff;
+  background: var(--ice);
   border-radius: 1px;
   overflow: hidden;
+}
+.ev.scmc .ice .bar .track {
+  background: #ffffff;
 }
 .ev.scmc .bar .fill {
   height: 100%;

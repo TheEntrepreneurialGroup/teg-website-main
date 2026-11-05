@@ -291,32 +291,6 @@ const SupplyChainConference: React.FC = () => (
       </div>
     </section>
 
-    <section className="band ice" id="fokus">
-      <div className="wrap">
-        <div className="head">
-          <p className="eyebrow-sc">Zwei Schwerpunkte</p>
-          <h2 className="h2">Fokus</h2>
-        </div>
-        <div className="timeline">
-          {topics.map((topic) => (
-            <div className="tl" key={topic.n}>
-              <h3>
-                <small>{topic.n}</small>
-                {topic.title}
-              </h3>
-              <ul>
-                {topic.points.map((point) => (
-                  <li key={String(point)}>
-                    <Point point={point} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <section className="band" id="lineup">
       <div className="wrap">
         <div className="head">
@@ -346,7 +320,7 @@ const SupplyChainConference: React.FC = () => (
       </div>
     </section>
 
-    <section className="band ice" id="publikum">
+    <section className="band" id="publikum">
       <div className="wrap">
         <div className="head">
           <p className="eyebrow-sc">125 Gäste · 100 Führungskräfte</p>
@@ -376,6 +350,32 @@ const SupplyChainConference: React.FC = () => (
           Hinzu kommen Teilnehmer unserer <YblaTerm />, die 10 bis 20 % des
           Publikums ausmachen.
         </p>
+      </div>
+    </section>
+
+    <section className="band ice" id="fokus">
+      <div className="wrap">
+        <div className="head">
+          <p className="eyebrow-sc">Zwei Schwerpunkte</p>
+          <h2 className="h2">Fokus</h2>
+        </div>
+        <div className="timeline">
+          {topics.map((topic) => (
+            <div className="tl" key={topic.n}>
+              <h3>
+                <small>{topic.n}</small>
+                {topic.title}
+              </h3>
+              <ul>
+                {topic.points.map((point) => (
+                  <li key={String(point)}>
+                    <Point point={point} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
