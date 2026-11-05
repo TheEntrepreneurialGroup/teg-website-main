@@ -57,8 +57,9 @@
   background: linear-gradient(
     180deg,
     #ffffff 0%,
-    var(--ice) 18%,
-    var(--ice) 100%
+    var(--ice) 160px,
+    var(--ice) calc(100% - 160px),
+    #ffffff 100%
   );
 }
 .ev.scmc .band.ice::before,
@@ -132,29 +133,47 @@
   color: var(--blue);
 }
 
-/* Corner blooms: hero and the Teilnahme band only. */
+/* Corner blooms: hero and the Teilnahme band only. Each bloom is an
+   ellipse that fades to transparent inside its own section, so nothing is
+   cut off where the next section starts. They sit in open space beside the
+   content rather than behind it. */
 .ev.scmc .bloom {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
+  --bloom-mist: rgba(121, 189, 208, 0.42);
+  --bloom-peri: rgba(111, 150, 193, 0.3);
 }
-.ev.scmc .bloom::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  pointer-events: none;
+.ev.scmc .hero.bloom {
   background:
     radial-gradient(
-      circle at 100% 0%,
-      rgba(121, 189, 208, 0.55) 0,
-      rgba(121, 189, 208, 0) 380px
+      ellipse min(560px, 70vw) 320px at calc(100% + 60px) 300px,
+      var(--bloom-mist),
+      transparent 100%
     ),
     radial-gradient(
-      circle at 0% 100%,
-      rgba(111, 150, 193, 0.45) 0,
-      rgba(111, 150, 193, 0) 300px
-    );
+      ellipse min(380px, 60vw) 220px at -80px calc(100% - 260px),
+      var(--bloom-peri),
+      transparent 100%
+    ),
+    #ffffff;
+}
+.ev.scmc .band.bloom {
+  background:
+    radial-gradient(
+      ellipse min(420px, 60vw) 240px at calc(100% + 80px) 50%,
+      var(--bloom-mist),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse min(360px, 55vw) 200px at -60px calc(100% - 220px),
+      var(--bloom-peri),
+      transparent 100%
+    ),
+    #ffffff;
+}
+@media (max-width: 720px) {
+  .ev.scmc .bloom {
+    --bloom-mist: rgba(121, 189, 208, 0.32);
+    --bloom-peri: rgba(111, 150, 193, 0.22);
+  }
 }
 
 /* Hero */
