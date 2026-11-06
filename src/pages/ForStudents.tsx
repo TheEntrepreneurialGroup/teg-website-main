@@ -1384,8 +1384,10 @@ const ProgramTimeline = () => {
               {programSteps.map((step, i) => (
                 <div key={step.label} className="relative">
                   <div data-timeline-dot className={`${dotClass(i)} top-8`} />
-                  <div className="bg-white/[0.03] border border-white/10 overflow-hidden">
-                    <div className="aspect-[21/9] w-full overflow-hidden">
+                  {/* From laptop width photo and text sit side by side, so
+                      a card never grows taller than the screen. */}
+                  <div className="bg-white/[0.03] border border-white/10 overflow-hidden lg:grid lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:grid-rows-[auto_1fr]">
+                    <div className="aspect-[3/1] md:aspect-[21/9] w-full overflow-hidden lg:aspect-auto lg:row-span-2 lg:min-h-[380px]">
                       <img
                         src={programImages[i]}
                         alt={step.title}
@@ -1393,20 +1395,24 @@ const ProgramTimeline = () => {
                         className="w-full h-full object-cover opacity-90"
                       />
                     </div>
-                    <div className="p-5 md:p-8">
+                    <div className="px-4 py-5 md:p-8">
                       <span className="text-[#B7860B] font-black uppercase tracking-widest text-[10px] block mb-1">
                         {step.label}
                       </span>
                       <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight leading-none text-white">
                         {step.title}
                       </h3>
-                      <p className="text-slate-300 text-sm md:text-base mt-2">
+                      {/* On phones the module list below says the same. */}
+                      <p className="hidden md:block text-slate-300 text-sm md:text-base mt-2">
                         {step.subtitle}
                       </p>
                     </div>
-                    <ul className="px-5 md:px-8 pb-6 md:pb-8 space-y-4 border-t border-white/10 pt-6">
+                    <ul className="px-4 md:px-8 pb-4 md:pb-8 space-y-3 md:space-y-4 border-t border-white/10 pt-4 md:pt-6">
                       {step.modules.map((m) => (
-                        <li key={m.name} className="flex items-start gap-3">
+                        <li
+                          key={m.name}
+                          className="flex items-start gap-2.5 md:gap-3"
+                        >
                           <CheckCircle2
                             size={18}
                             className="text-[#B7860B] shrink-0 mt-1"
