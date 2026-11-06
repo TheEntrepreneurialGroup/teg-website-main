@@ -1,6 +1,6 @@
 import { routeSeoEntries as sharedRouteSeoEntries } from "./routeSeoEntries.mjs";
 
-export type AppRoutePath =
+type GermanRoutePath =
   | "/"
   | "/about"
   | "/for-students"
@@ -12,6 +12,8 @@ export type AppRoutePath =
   | "/imprint"
   | "/privacy-policy";
 
+export type AppRoutePath = GermanRoutePath | "/en" | `/en${GermanRoutePath}`;
+
 export interface RouteSeoEntry {
   path: AppRoutePath;
   titleMessageId: string;
@@ -20,10 +22,16 @@ export interface RouteSeoEntry {
   openGraphImagePath?: string;
   priority: number;
   changeFrequency: "weekly" | "monthly" | "yearly";
+  /** Set on pages with an English edition: the path of each language. */
+  alternates?: Record<"de" | "en", AppRoutePath>;
 }
 
 export const routeSeoEntries = sharedRouteSeoEntries as RouteSeoEntry[];
 
 export function getRouteSeoEntry(pathname: string) {
-  return routeSeoEntries.find((entry) => entry.path === pathname);
+  const path =
+    pathname.length > 1 && pathname.endsWith("/")
+      ? pathname.slice(0, -1)
+      : pathname;
+  return routeSeoEntries.find((entry) => entry.path === path);
 }

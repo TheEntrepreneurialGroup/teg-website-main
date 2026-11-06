@@ -9,6 +9,7 @@ import {
 import App from "./App";
 import "./index.css";
 import { PRERENDER_ROUTES } from "./seo/prerenderRoutes.mjs";
+import { getPathLang } from "./i18n/pageLang";
 
 function Root() {
   return (
@@ -93,7 +94,7 @@ export async function prerender(data: { url: string }) {
     links,
     head: helmet
       ? {
-          lang: "de",
+          lang: getPathLang(data.url),
           title: extractTitle(helmet),
           elements: extractHeadElements(helmet),
         }

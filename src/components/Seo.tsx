@@ -8,6 +8,7 @@ interface SeoProps {
   indexable: boolean;
   pathname: string;
   openGraphImagePath?: string;
+  alternates?: Record<"de" | "en", string>;
 }
 
 function normalizeCanonicalPath(pathname: string) {
@@ -25,6 +26,7 @@ export default function Seo({
   indexable,
   pathname,
   openGraphImagePath,
+  alternates,
 }: SeoProps) {
   const canonicalUrl = siteConfig.buildAbsoluteUrl(
     normalizeCanonicalPath(pathname),
@@ -38,6 +40,26 @@ export default function Seo({
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
+      {alternates &&
+        (["de", "en"] as const).map((language) => (
+          <link
+            key={language}
+            rel="alternate"
+            hrefLang={language}
+            href={siteConfig.buildAbsoluteUrl(
+              normalizeCanonicalPath(alternates[language]),
+            )}
+          />
+        ))}
+      {alternates && (
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={siteConfig.buildAbsoluteUrl(
+            normalizeCanonicalPath(alternates.de),
+          )}
+        />
+      )}
       <meta
         name="robots"
         content={indexable ? "index,follow" : "noindex,nofollow"}

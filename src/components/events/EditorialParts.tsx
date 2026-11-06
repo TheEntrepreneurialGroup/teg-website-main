@@ -1,7 +1,10 @@
 import React, { useEffect, useId, useRef, useState } from "react";
+import { PageLang, usePageLang } from "../../i18n/pageLang";
 
-const YBLA_TIP =
-  "18-monatiges Entwicklungsprogramm der TEG für Nachwuchsführungskräfte. Dazu gehören Workshops mit erfahrenen Führungskräften und die Projektleitung eines Formats der TEG, für das die Teilnehmer Speaker, Partner und Gäste selbst gewinnen. Über 300 Absolventen, darunter 41 in Top-Level-Führungspositionen in Konzernen.";
+const YBLA_TIP: Record<PageLang, string> = {
+  de: "18-monatiges Entwicklungsprogramm der TEG für Nachwuchsführungskräfte. Dazu gehören Workshops mit erfahrenen Führungskräften und die Projektleitung eines Formats der TEG, für das die Teilnehmer Speaker, Partner und Gäste selbst gewinnen. Über 300 Absolventen, darunter 41 in Top-Level-Führungspositionen in Konzernen.",
+  en: "TEG's 18-month development programme for future leaders. It combines workshops with experienced executives and the project lead of a TEG format, for which participants win speakers, partners and guests themselves. Over 300 graduates, 41 of them now in top-level leadership positions in large corporations.",
+};
 
 /** Inline term with a tooltip; keyboard reachable. */
 export const Term: React.FC<{ children: React.ReactNode; tip: string }> = ({
@@ -20,19 +23,28 @@ export const Term: React.FC<{ children: React.ReactNode; tip: string }> = ({
 };
 
 export const YblaTerm: React.FC = () => (
-  <Term tip={YBLA_TIP}>Young Business Leadership Academy</Term>
+  <Term tip={YBLA_TIP[usePageLang()]}>Young Business Leadership Academy</Term>
 );
 
+const COPY_LABELS: Record<
+  PageLang,
+  { idle: string; done: string; failed: string }
+> = {
+  de: { idle: "Kopieren", done: "Kopiert", failed: "Nicht kopiert" },
+  en: { idle: "Copy", done: "Copied", failed: "Not copied" },
+};
+
 const CopyButton: React.FC<{ value: string }> = ({ value }) => {
-  const [label, setLabel] = useState("Kopieren");
+  const labels = COPY_LABELS[usePageLang()];
+  const [label, setLabel] = useState(labels.idle);
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(value);
-      setLabel("Kopiert");
+      setLabel(labels.done);
     } catch {
-      setLabel("Nicht kopiert");
+      setLabel(labels.failed);
     }
-    window.setTimeout(() => setLabel("Kopieren"), 1600);
+    window.setTimeout(() => setLabel(labels.idle), 1600);
   };
   return (
     <button className="copy" type="button" onClick={copy}>
@@ -109,9 +121,9 @@ export interface ContactPerson {
   linkedin?: string;
 }
 
-export const ContactCard: React.FC<{ person: ContactPerson }> = ({
-  person,
-}) => (
+export const ContactCard: React.FC<{
+  person: ContactPerson;
+}> = ({ person }) => (
   <article className="contact">
     {person.photo && (
       <img src={person.photo} alt={person.name} loading="lazy" />
@@ -138,54 +150,84 @@ export const ContactCard: React.FC<{ person: ContactPerson }> = ({
   </article>
 );
 
-export const TegFounders: React.FC = () => (
-  <div className="about">
-    <h2 className="h2">Über die TEG</h2>
-    <div>
-      <p>
-        Die TEG wurde 1986 in München gegründet und entstand aus einer
-        Initiative rund um Dr. Helmuth Buddenberg, damals Vorstandsvorsitzender
-        der Deutschen BP. Ziel war, früh eine neue Generation unternehmerisch
-        denkender Führungskräfte auszubilden. Bis 1988 entstand ein Kuratorium
-        aus Vorständen von elf Unternehmen, darunter Franz Köhne
-        (Personalvorstand BMW), Hans H. Schlitzberger (Siemens) und Roland
-        Berger. Im Kuratorium vertreten waren:
-      </p>
-      <ul className="founders">
-        {[
-          "Deutsche BP",
-          "BMW",
-          "Siemens",
-          "MBB (heute Airbus)",
-          "Bayerische Hypotheken- und Wechsel-Bank",
-          "Roland Berger",
-          "Boston Consulting Group",
-          "KPMG",
-          "Ruhrgas (heute E.ON)",
-          "Infratest",
-          "Personalmagazin",
-        ].map((name) => (
-          <li key={name}>{name}</li>
-        ))}
-      </ul>
-      <dl className="alumni">
-        <div>
-          <dt>über 300</dt>
-          <dd>Absolventen der Young Business Leadership Academy</dd>
-        </div>
-        <div>
-          <dt>41</dt>
-          <dd>heute in Top-Level-Führungspositionen in Konzernen</dd>
-        </div>
-        <div>
-          <dt>40</dt>
-          <dd>in Führungspositionen im Mittelstand</dd>
-        </div>
-        <div>
-          <dt>15</dt>
-          <dd>Unternehmensgründer</dd>
-        </div>
-      </dl>
+const FOUNDERS_COPY: Record<
+  PageLang,
+  {
+    heading: string;
+    text: string;
+    companies: string[];
+    alumni: [string, string][];
+  }
+> = {
+  de: {
+    heading: "Über die TEG",
+    text: "Die TEG wurde 1986 in München gegründet und entstand aus einer Initiative rund um Dr. Hellmuth Buddenberg, damals Vorstandsvorsitzender der Deutschen BP. Ziel war, früh eine neue Generation unternehmerisch denkender Führungskräfte auszubilden. Bis 1988 entstand ein Kuratorium aus Vorständen von elf Unternehmen, darunter Franz Köhne (Personalvorstand BMW), Hans H. Schlitzberger (Siemens) und Roland Berger. Im Kuratorium vertreten waren:",
+    companies: [
+      "Deutsche BP",
+      "BMW",
+      "Siemens",
+      "MBB (heute Airbus)",
+      "Bayerische Hypotheken- und Wechsel-Bank",
+      "Roland Berger",
+      "Boston Consulting Group",
+      "KPMG",
+      "Ruhrgas (heute E.ON)",
+      "Infratest",
+      "Personalmagazin",
+    ],
+    alumni: [
+      ["über 300", "Absolventen der Young Business Leadership Academy"],
+      ["41", "heute in Top-Level-Führungspositionen in Konzernen"],
+      ["40", "in Führungspositionen im Mittelstand"],
+      ["15", "Unternehmensgründer"],
+    ],
+  },
+  en: {
+    heading: "About TEG",
+    text: "TEG was founded in Munich in 1986, on an initiative led by Dr. Hellmuth Buddenberg, then Chairman of the Board of Deutsche BP. Its aim was to develop a new generation of entrepreneurially minded leaders early on. By 1988 a Kuratorium had formed from the executive boards of eleven companies, among them Franz Köhne (Board Member for Human Resources, BMW), Hans H. Schlitzberger (Siemens) and Roland Berger. Represented on the Kuratorium were:",
+    companies: [
+      "Deutsche BP",
+      "BMW",
+      "Siemens",
+      "MBB (now Airbus)",
+      "Bayerische Hypotheken- und Wechsel-Bank",
+      "Roland Berger",
+      "Boston Consulting Group",
+      "KPMG",
+      "Ruhrgas (now E.ON)",
+      "Infratest",
+      "Personalmagazin",
+    ],
+    alumni: [
+      ["over 300", "graduates of the Young Business Leadership Academy"],
+      ["41", "now in top-level leadership positions in large corporations"],
+      ["40", "in leadership positions in mid-sized companies"],
+      ["15", "company founders"],
+    ],
+  },
+};
+
+export const TegFounders: React.FC = () => {
+  const copy = FOUNDERS_COPY[usePageLang()];
+  return (
+    <div className="about">
+      <h2 className="h2">{copy.heading}</h2>
+      <div>
+        <p>{copy.text}</p>
+        <ul className="founders">
+          {copy.companies.map((name) => (
+            <li key={name}>{name}</li>
+          ))}
+        </ul>
+        <dl className="alumni">
+          {copy.alumni.map(([figure, label]) => (
+            <div key={label}>
+              <dt>{figure}</dt>
+              <dd>{label}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
     </div>
-  </div>
-);
+  );
+};

@@ -148,7 +148,7 @@ const en = {
     "Get to know TEG at a relaxed brunch and meet members and alumni.",
   "student.events.list.brunch.linkLabel": "Open event page",
   "student.events.list.talk.title":
-    "TEG Management Series April 2026 | 24.04. | 18:30 - 22:00",
+    "TEG Management Talk April 2026 | 24.04. | 18:30 - 22:00",
   "student.events.list.talk.description":
     "Featuring speakers such as the Microsoft CTO, Siemens' Strategy Director, and the founder of the world's first company for trading electronic components, plus two additional industry perspectives.",
   "student.events.list.talk.linkLabel": "Open event page",
@@ -390,7 +390,7 @@ const en = {
   "about.inAction.scene1.title": "AI Consulting Conference",
   "about.inAction.scene1.desc":
     "TEG members plan, promote and host public conferences with external speakers. 150+ attendees. Fully in members' hands.",
-  "about.inAction.scene2.title": "TEG Management Series",
+  "about.inAction.scene2.title": "TEG Management Talk",
   "about.inAction.scene2.desc":
     "Regular speaker format with executives and founders from the German economy. Invitation, briefing, moderation, follow-up: all done internally.",
   "about.inAction.scene3.title": "Workshops & Career Contexts",
@@ -404,7 +404,7 @@ const en = {
     "TEG was founded in Munich in 1986 — by 11 leading German companies and four students. What began as an institutional initiative became one of the longest-running student-led organizations in the German-speaking world.",
   "about.history.phase1.title": "1986 — Founding in Munich",
   "about.history.phase1.desc":
-    "Eleven companies — including BMW, BCG, Roland Berger, KPMG and Siemens — co-founded TEG in Munich with four students. The supervisory board was registered in January 1988.",
+    "Eleven companies — including BMW, BCG, Roland Berger, KPMG and Siemens — co-founded TEG in Munich with four students. The Kuratorium was registered in January 1988.",
   "about.history.phase2.title": "1988 to 2015 — Expansion",
   "about.history.phase2.desc":
     "TEG expands to Berlin and Dresden. In Munich, Startup Weekend Munich is created as a TEG satellite. The organization evolves through different programmatic phases.",
@@ -466,7 +466,7 @@ const en = {
   "seo.about.title":
     "About TEG | We shape the next generation of leaders for the German economy",
   "seo.about.description":
-    "Since 1986, TEG is a student-led organization where responsibility, execution and economic reality are not simulated but lived.",
+    "Since 1986, TEG has been a student-led organisation in which responsibility, execution and economic reality are lived rather than simulated.",
 
   "seo.home.title": "TEG | Leadership development for students and companies",
   "seo.home.description":
@@ -474,14 +474,14 @@ const en = {
   "seo.students.title":
     "TEG for Students | Responsibility, network, and leadership development",
   "seo.students.description":
-    "Join TEG and build leadership skills through real responsibility, mentoring, events, and access to a strong alumni network.",
+    "Leadership development through real responsibility, mentoring, events and a strong alumni network. Taught in German; German at C1 level is required.",
   "seo.companies.title":
     "TEG for Executives | Events and Young Business Leadership Academy",
   "seo.companies.description":
     "Talks, panels and conferences with executives from corporations and SMEs, organised by participants of the Young Business Leadership Academy. In Munich since 1986.",
   "seo.events.title": "TEG Events: Conferences and Evening Events",
   "seo.events.description":
-    "Conferences and evening events by TEG in Munich: the TEG Management Series, industry panels and conference days with executives from corporations, Mittelstand and academia.",
+    "Conferences and evening events by TEG in Munich: the TEG Management Talk, industry panels and conference days with executives from corporations, Mittelstand and academia. Held in German.",
   "seo.imprint.title": "Imprint | TEG",
   "seo.imprint.description":
     "Imprint and legal information for The Entrepreneurial Group e. V.",
@@ -491,14 +491,14 @@ const en = {
   "seo.supplyChainConference.title":
     "Supply Chain Management Conference 2026 | TEG",
   "seo.supplyChainConference.description":
-    "8 December 2026 in Munich: a conference day on automation and geopolitics in the supply chain, with 100 participants, 70 of them executives.",
+    "8 December 2026 in Munich: a conference day on automation and geopolitics in the supply chain, with 100 participants, 70 of them executives. Held in German.",
   "seo.aviationConference.title": "Aviation Management Conference 2027 | TEG",
   "seo.aviationConference.description":
-    "TEG Aviation Management Conference on 19 May 2027. Programme, speakers and registration will be announced soon.",
+    "TEG Aviation Management Conference on 3 June 2027 in Munich. Held in German; programme, speakers and registration will be announced soon.",
   "seo.enterpriseSalesSummit.title":
     "Enterprise Sales Summit 2027 in Munich | TEG",
   "seo.enterpriseSalesSummit.description":
-    "Four talks on enterprise sales, signal-based outbound, buying committees and pipeline management. 19 January 2027 in Munich.",
+    "Four talks on enterprise sales, signal-based outbound, buying committees and pipeline management. 19 January 2027 in Munich, held in German.",
 };
 
 export default en;

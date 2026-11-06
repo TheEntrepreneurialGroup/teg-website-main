@@ -3,13 +3,16 @@
  * events pages and adds its own art direction in about.css: split cover,
  * chapters in a black/white/stone rhythm, facts and names instead of
  * claims, no scroll animations.
+ *
+ * Rendered in German at / and in English at /en. Both are prerendered, so
+ * every word below ships as static HTML.
  */
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { useIntl } from "react-intl";
 import { ArrowRight } from "lucide-react";
 import "./editorial.css";
 import "./landing.css";
+import { PageLang, useLocalizePath, usePageLang } from "../i18n/pageLang";
 
 // Companies and institutions that sent speakers, hosts or partners to TEG
 // events (site data and the TEG Luma calendar, 2025 to 2026).
@@ -78,351 +81,354 @@ const alumni = [
 
 type Level = (typeof alumni)[number]["level"];
 
-const de = {
-  hero: {
-    when: ["Über die TEG", "München, seit 1986"],
-    title: "Verantwortung für die deutsche Wirtschaft seit 1986.",
-    lede: "Seit 1986 verfolgt die TEG zwei Ziele: Führungskräfte aus Konzernen und Mittelstand branchenübergreifend miteinander ins Gespräch zu bringen und die nächste Generation auf die Führung deutscher Unternehmen vorzubereiten.",
-    links: [
-      { to: "/events", label: "Konferenzen & Events" },
-      { to: "/for-companies", label: "Für Führungskräfte" },
-      { to: "/for-students", label: "Für Studierende" },
+const copy = {
+  de: {
+    hero: {
+      when: ["Über die TEG", "München, seit 1986"],
+      title: "Verantwortung für die deutsche Wirtschaft seit 1986.",
+      lede: "Seit 1986 verfolgt die TEG zwei Ziele: Führungskräfte aus Konzernen und Mittelstand branchenübergreifend miteinander ins Gespräch zu bringen und die nächste Generation auf die Führung deutscher Unternehmen vorzubereiten.",
+      links: [
+        { to: "/events", label: "Konferenzen & Events" },
+        { to: "/for-companies", label: "Für Führungskräfte" },
+        { to: "/for-students", label: "Für Studierende" },
+      ],
+      photoAlt: "Mitglieder der TEG",
+    },
+    facts: [
+      ["1986", "gegründet von Vorständen elf deutscher Unternehmen"],
+      ["über 300", "Absolventen der Young Business Leadership Academy"],
+      ["41", "Absolventen heute im Top-Management von Konzernen"],
+      ["2 bis 4", "Konferenzen im Jahr, dazu Abendveranstaltungen"],
     ],
-    photoAlt: "Mitglieder der TEG",
-  },
-  facts: [
-    ["1986", "gegründet von Vorständen elf deutscher Unternehmen"],
-    ["über 300", "Absolventen der Young Business Leadership Academy"],
-    ["41", "Absolventen heute im Top-Management von Konzernen"],
-    ["2 bis 4", "Konferenzen im Jahr, dazu Abendveranstaltungen"],
-  ],
-  partnersLabel: "Partner und Speaker",
-  mission: {
-    pillars: [
-      {
-        title: "Austausch unter Führungskräften",
-        text: "Mehrmals im Jahr laden wir Führungskräfte aus Konzernen und Mittelstand nach München ein, zu Konferenzen, Panels und der TEG Management Series. Einige sprechen, die meisten kommen zum Zuhören und für die Gespräche danach.",
-        link: "Zu den Formaten",
-        href: "#formate",
-      },
-      {
-        title: "Ausbildung der nächsten Generation",
-        text: "In der Young Business Leadership Academy bereiten wir Studierende und Berufseinsteiger über 18 Monate auf Führungsverantwortung vor: mit Workshops bei erfahrenen Führungskräften, in festen Teams und mit einem eigenen Projekt.",
-        link: "Zur Academy",
-        href: "#ybla",
-      },
-    ],
-    bridge:
-      "Beides greift ineinander: Vorbereitet und geleitet werden unsere Veranstaltungen von den Teilnehmern der Academy als Lern-Projekt. Speaker, Partner und Gäste gewinnen sie selbst.",
-  },
-  heritage: {
-    title: "Gegründet von Vorständen elf deutscher Top-Unternehmen.",
-    intro:
-      "Die TEG entstand 1986 in München aus einer Initiative rund um Dr. Helmuth Buddenberg, damals Vorstandsvorsitzender der Deutschen BP. Ziel war, früh eine neue Generation unternehmerisch denkender Führungskräfte auszubilden. Bis 1988 entstand ein Kuratorium aus Vorständen von elf Unternehmen. Heute ist die TEG ein gemeinnütziger Verein der Erwachsenenbildung.",
-    foundersLabel: "Aus dem Gründungskuratorium",
-    founders: [
-      {
-        name: "Dr. Helmuth Buddenberg",
-        role: "Vorstandsvorsitzender, Deutsche BP",
-      },
-      { name: "Franz Köhne", role: "Personalvorstand, BMW" },
-      { name: "Hans H. Schlitzberger", role: "Siemens" },
-      { name: "Roland Berger", role: "Gründer, Roland Berger + Partner" },
-    ],
-    companiesLabel: "Im Kuratorium vertreten",
-    today: "heute",
-    articleAlt: "Historischer Zeitungsartikel zur Gründung des TEG-Kuratoriums",
-    articleCaption: "Donaukurier, zur Gründung des Kuratoriums",
-  },
-  formats: {
-    title: "Unsere Formate",
-    intro:
-      "Jedes Format bringt Führungskräfte zusammen, die etwas verbindet: eine Branche, eine Funktion oder eine übergreifende Frage. Massenevents veranstalten wir nicht, die Gästeliste stellen wir selbst zusammen.",
-    link: "Kommende Termine",
-    items: [
-      {
-        name: "Industrie-Panel",
-        img: "/about/formats/industry-panel.webp",
-        alt: "Branchen-Panel mit fünf Führungskräften im Gespräch auf der Bühne",
-        lede: "Eine kleine Runde mit inhaltlich branchenbezogener Tiefe. Verantwortungsträger mit gemeinsamen Interessen und Kompetenzen lernen sich kennen.",
-        traits: [
-          ["Gäste", "bis 50, ohne Mikrofon"],
-          ["Fokus", "eine Industrie, etwa Automotive, Aerospace oder Health"],
-          ["Speaker", "Führungskräfte, C-Level, Gründer und Professoren"],
-        ],
-      },
-      {
-        name: "Summit",
-        img: "/about/formats/summit.webp",
-        alt: "Vortragender präsentiert vor der Folie Multi Stakeholder Management",
-        lede: "Eine Handvoll Präsentationen von Entscheidern der gleichen beruflichen Funktion. Wer kommt, sitzt unter Gleichgestellten.",
-        traits: [
-          ["Gäste", "bis 80, ohne Mikrofon"],
-          ["Fokus", "eine Funktion, etwa Sales oder Marketing"],
-          [
-            "Speaker",
-            "Senior Experts, Consultants, Verbandsvorsitzende, Gründer, Team- und Abteilungsleitungen",
+    partnersLabel: "Partner und Speaker",
+    mission: {
+      pillars: [
+        {
+          title: "Austausch unter Führungskräften",
+          text: "Mehrmals im Jahr laden wir Führungskräfte aus Konzernen und Mittelstand nach München ein, zu Konferenzen, Panels und dem TEG Management Talk. Einige sprechen, die meisten kommen zum Zuhören und für die Gespräche danach.",
+          link: "Zu den Formaten",
+          href: "#formate",
+        },
+        {
+          title: "Ausbildung der nächsten Generation",
+          text: "In der Young Business Leadership Academy bereiten wir Studierende und Berufseinsteiger über 18 Monate auf Führungsverantwortung vor: mit Workshops bei erfahrenen Führungskräften, in festen Teams und mit einem eigenen Projekt.",
+          link: "Zur Academy",
+          href: "#ybla",
+        },
+      ],
+      bridge:
+        "Beides greift ineinander: Vorbereitet und geleitet werden unsere Veranstaltungen von den Teilnehmern der Academy als Lern-Projekt. Speaker, Partner und Gäste gewinnen sie selbst.",
+    },
+    heritage: {
+      title: "Gegründet von Vorständen elf deutscher Top-Unternehmen.",
+      intro:
+        "Die TEG entstand 1986 in München aus einer Initiative rund um Dr. Hellmuth Buddenberg, damals Vorstandsvorsitzender der Deutschen BP. Ziel war, früh eine neue Generation unternehmerisch denkender Führungskräfte auszubilden. Bis 1988 entstand ein Kuratorium aus Vorständen von elf Unternehmen. Heute ist die TEG ein gemeinnütziger Verein der Erwachsenenbildung.",
+      foundersLabel: "Aus dem Gründungskuratorium",
+      founders: [
+        {
+          name: "Dr. Hellmuth Buddenberg",
+          role: "Vorstandsvorsitzender, Deutsche BP",
+        },
+        { name: "Franz Köhne", role: "Personalvorstand, BMW" },
+        { name: "Hans H. Schlitzberger", role: "Siemens" },
+        { name: "Roland Berger", role: "Gründer, Roland Berger + Partner" },
+      ],
+      companiesLabel: "Im Kuratorium vertreten",
+      today: "heute",
+      articleAlt:
+        "Historischer Zeitungsartikel zur Gründung des TEG-Kuratoriums",
+      articleCaption: "Donaukurier, zur Gründung des Kuratoriums",
+    },
+    formats: {
+      title: "Unsere Formate",
+      intro:
+        "Jedes Format bringt Führungskräfte zusammen, die etwas verbindet: eine Branche, eine Funktion oder eine übergreifende Frage. Massenevents veranstalten wir nicht, die Gästeliste stellen wir selbst zusammen.",
+      link: "Kommende Termine",
+      items: [
+        {
+          name: "Industrie-Panel",
+          img: "/about/formats/industry-panel.webp",
+          alt: "Branchen-Panel mit fünf Führungskräften im Gespräch auf der Bühne",
+          lede: "Eine kleine Runde mit inhaltlich branchenbezogener Tiefe. Verantwortungsträger mit gemeinsamen Interessen und Kompetenzen lernen sich kennen.",
+          traits: [
+            ["Gäste", "bis 50, ohne Mikrofon"],
+            ["Fokus", "eine Industrie, etwa Automotive, Aerospace oder Health"],
+            ["Speaker", "Führungskräfte, C-Level, Gründer und Professoren"],
           ],
-        ],
-      },
-      {
-        name: "Konferenz",
-        img: "/about/formats/konferenz.webp",
-        alt: "Konferenzsaal mit Publikum und Sprecher vor der Leinwand",
-        lede: "Präsentationen und Panels über einen ganzen Tag. Ein Deep Dive über die Grenzen der Industrien hinweg.",
-        traits: [
-          ["Gäste", "bis 150, mit Mikrofon"],
-          [
-            "Fokus",
-            "mehrere Industrien, etwa Software und Management Consulting oder Robotics, Quantum und Aerospace",
+        },
+        {
+          name: "Summit",
+          img: "/about/formats/summit.webp",
+          alt: "Vortragender präsentiert vor der Folie Multi Stakeholder Management",
+          lede: "Eine Handvoll Präsentationen von Entscheidern der gleichen beruflichen Funktion. Wer kommt, sitzt unter Gleichgestellten.",
+          traits: [
+            ["Gäste", "bis 80, ohne Mikrofon"],
+            ["Fokus", "eine Funktion, etwa Sales oder Marketing"],
+            [
+              "Speaker",
+              "Senior Experts, Consultants, Verbandsvorsitzende, Gründer, Team- und Abteilungsleitungen",
+            ],
           ],
-        ],
-      },
-    ],
-  },
-  ybla: {
-    title: "Young Business Leadership Academy",
-    intro:
-      "Unser Programm für Studierende und Berufseinsteiger, die Führungsverantwortung übernehmen wollen. Über 18 Monate, parallel zu Studium oder Beruf, besuchen die Teilnehmer Workshops mit erfahrenen Führungskräften, arbeiten in festen Teams und leiten am Ende ein eigenes Projekt, zum Beispiel eine unserer Veranstaltungen.",
-    link: "Für Studierende",
-    terms: [
-      ["Dauer", "18 Monate", "parallel zu Studium oder Beruf"],
-      [
-        "Aufwand",
-        "10 bis 18 Stunden pro Woche",
-        "außerhalb der Prüfungsphasen",
-      ],
-      [
-        "Inhalt",
-        "Workshops, Teamarbeit, eigenes Projekt",
-        "Workshops mit erfahrenen Führungskräften",
-      ],
-      [
-        "Kohorten",
-        "Start alle sechs Monate",
-        "8 bis 15 Teilnehmer aus über hundert Bewerbungen",
-      ],
-    ],
-  },
-  alumni: {
-    title: "Ein kleiner Ausschnitt unserer Absolventen",
-    intro:
-      "Das Programm gibt es seit 1986. Von gut 300 Absolventen sind heute 41 im Top-Management großer Konzerne und 40 in der Geschäftsführung mittelständischer Unternehmen.",
-    stats: [
-      ["über 300", "Absolventen"],
-      ["30 %", "der Absolventen im Top-Management"],
-      ["41", "Top-Level-Führungskräfte in Konzernen"],
-      ["40", "Top-Level-Führungskräfte im Mittelstand"],
-      ["15", "Unternehmensgründer"],
-    ],
-    levels: {
-      top: "Top-Management",
-      middle: "Mittleres Management",
-      interim: "Interim Management",
-      sme: "Geschäftsführung Mittelstand",
-      founder: "Gründer",
-    } satisfies Record<Level, string>,
-  },
-  selection: {
-    title: "Wer bei TEG mitmacht, wird ausgewählt.",
-    text: "Alle sechs Monate wählen wir aus über hundert Bewerbungen 8 bis 15 Teilnehmer für die Academy aus. Jeder Bewerber durchläuft dasselbe Verfahren, unabhängig von Herkunft oder Netzwerk. Bewertet werden analytisches Denken, Leistungsbereitschaft und Führungscharakter: die Fähigkeit, Initiative zu ergreifen, zu führen und geführt zu werden.",
-    photoAlt: "Teilnehmer der TEG bei einer Veranstaltung",
-    link: "Zur Bewerbung",
-  },
-  video: {
-    label: "Im Video:",
-    name: "Thomas Uchtmann",
-    role: "Geschäftsführer Vertrieb bei HORBACH",
-  },
-  join: {
-    title: "Wie Sie Teil der TEG werden",
-    paths: [
-      {
-        who: "Für Führungskräfte",
-        text: "Halten Sie einen Workshop in der Academy, sprechen Sie auf einer unserer Veranstaltungen, begleiten Sie einen Teilnehmer als Mentor oder seien Sie Gastgeber eines Abends.",
-        link: "Mitwirken als Führungskraft",
-        to: "/for-companies",
-      },
-      {
-        who: "Für Studierende und Berufseinsteiger",
-        text: "Bewerbungen für die Young Business Leadership Academy sind zweimal im Jahr möglich, im April und im Oktober.",
-        link: "Zur Bewerbung",
-        to: "/for-students",
-      },
-    ],
-  },
-};
-
-type Copy = typeof de;
-
-const en: Copy = {
-  hero: {
-    when: ["About TEG", "Munich, since 1986"],
-    title: "Responsibility for the German economy since 1986.",
-    lede: "Since 1986, TEG has pursued two goals: bringing executives from corporations and SMEs into conversation across industries, and preparing the next generation to lead German companies.",
-    links: [
-      { to: "/events", label: "Conferences & Events" },
-      { to: "/for-companies", label: "For Executives" },
-      { to: "/for-students", label: "For Students" },
-    ],
-    photoAlt: "Members of TEG",
-  },
-  facts: [
-    ["1986", "founded by board members of eleven German companies"],
-    ["300+", "graduates of the Young Business Leadership Academy"],
-    ["41", "graduates in top management of corporations today"],
-    ["2 to 4", "conferences a year, plus evening events"],
-  ],
-  partnersLabel: "Partners and speakers",
-  mission: {
-    pillars: [
-      {
-        title: "Exchange among executives",
-        text: "Several times a year we invite executives from corporations and SMEs to Munich for conferences, panels and the TEG Management Series. Some speak, most come to listen and for the conversations afterwards.",
-        link: "Our formats",
-        href: "#formate",
-      },
-      {
-        title: "Training the next generation",
-        text: "In the Young Business Leadership Academy we prepare students and young professionals for leadership over 18 months: with workshops led by experienced executives, in fixed teams and with a project of their own.",
-        link: "The Academy",
-        href: "#ybla",
-      },
-    ],
-    bridge:
-      "The two are linked: our events are prepared and run by the participants of the Academy as a learning project. They win speakers, partners and guests themselves.",
-  },
-  heritage: {
-    title: "Founded by board members of eleven leading German companies.",
-    intro:
-      "TEG was founded in Munich in 1986 from an initiative around Dr. Helmuth Buddenberg, then chairman of Deutsche BP. The aim was to train a new generation of entrepreneurially minded executives early on. By 1988 a board of directors from eleven companies had formed. Today TEG is a non-profit association for adult education.",
-    foundersLabel: "From the founding board",
-    founders: [
-      { name: "Dr. Helmuth Buddenberg", role: "Chairman, Deutsche BP" },
-      { name: "Franz Köhne", role: "Board member for HR, BMW" },
-      { name: "Hans H. Schlitzberger", role: "Siemens" },
-      { name: "Roland Berger", role: "Founder, Roland Berger + Partner" },
-    ],
-    companiesLabel: "Represented on the board",
-    today: "today",
-    articleAlt:
-      "Historic newspaper article about the founding of the TEG board",
-    articleCaption: "Donaukurier, on the founding of the board",
-  },
-  formats: {
-    title: "Our formats",
-    intro:
-      "Each format brings together executives who share something: an industry, a function or a common question. We do not host mass events; we put the guest list together ourselves.",
-    link: "Upcoming dates",
-    items: [
-      {
-        name: "Industry Panel",
-        img: "/about/formats/industry-panel.webp",
-        alt: "Industry panel with five executives in conversation on stage",
-        lede: "An intimate circle with genuine sector-specific depth. Decision-makers who share interests and competencies get to know each other.",
-        traits: [
-          ["Guests", "up to 50, without microphone"],
-          ["Focus", "one industry, such as Automotive, Aerospace or Health"],
-          ["Speakers", "executives, C-level, founders and professors"],
-        ],
-      },
-      {
-        name: "Summit",
-        img: "/about/formats/summit.webp",
-        alt: "Speaker presenting in front of a Multi Stakeholder Management slide",
-        lede: "A handful of presentations from decision-makers in the same professional function. Those who attend sit among their peers.",
-        traits: [
-          ["Guests", "up to 80, without microphone"],
-          ["Focus", "one function, such as Sales or Marketing"],
-          [
-            "Speakers",
-            "senior experts, consultants, association chairs, founders, team and department leads",
+        },
+        {
+          name: "Konferenz",
+          img: "/about/formats/konferenz.webp",
+          alt: "Konferenzsaal mit Publikum und Sprecher vor der Leinwand",
+          lede: "Präsentationen und Panels über einen ganzen Tag. Ein Deep Dive über die Grenzen der Industrien hinweg.",
+          traits: [
+            ["Gäste", "bis 150, mit Mikrofon"],
+            [
+              "Fokus",
+              "mehrere Industrien, etwa Software und Management Consulting oder Robotics, Quantum und Aerospace",
+            ],
           ],
-        ],
-      },
-      {
-        name: "Conference",
-        img: "/about/formats/konferenz.webp",
-        alt: "Conference hall with audience and speaker in front of the screen",
-        lede: "Presentations and panels across a full day. A deep dive that reaches beyond the boundaries of industries.",
-        traits: [
-          ["Guests", "up to 150, with microphone"],
-          [
-            "Focus",
-            "several industries, such as Software and Management Consulting or Robotics, Quantum and Aerospace",
-          ],
-        ],
-      },
-    ],
-  },
-  ybla: {
-    title: "Young Business Leadership Academy",
-    intro:
-      "Our programme for students and young professionals who want to take on leadership. Over 18 months, alongside studies or work, participants attend workshops with experienced executives, work in fixed teams and finally lead a project of their own, such as one of our events.",
-    link: "For students",
-    terms: [
-      ["Duration", "18 months", "alongside studies or work"],
-      ["Workload", "10 to 18 hours per week", "outside exam periods"],
-      [
-        "Content",
-        "workshops, teamwork, own project",
-        "workshops with experienced executives",
+        },
       ],
-      [
-        "Cohorts",
-        "a new start every six months",
-        "8 to 15 participants from over a hundred applications",
+    },
+    ybla: {
+      title: "Young Business Leadership Academy",
+      intro:
+        "Unser Programm für Studierende und Berufseinsteiger, die Führungsverantwortung übernehmen wollen. Über 18 Monate, parallel zu Studium oder Beruf, besuchen die Teilnehmer Workshops mit erfahrenen Führungskräften, arbeiten in festen Teams und leiten am Ende ein eigenes Projekt, zum Beispiel eine unserer Veranstaltungen.",
+      link: "Für Studierende",
+      terms: [
+        ["Dauer", "18 Monate", "parallel zu Studium oder Beruf"],
+        [
+          "Aufwand",
+          "10 bis 18 Stunden pro Woche",
+          "außerhalb der Prüfungsphasen",
+        ],
+        [
+          "Inhalt",
+          "Workshops, Teamarbeit, eigenes Projekt",
+          "Workshops mit erfahrenen Führungskräften",
+        ],
+        [
+          "Kohorten",
+          "Start alle sechs Monate",
+          "8 bis 15 Teilnehmer aus über hundert Bewerbungen",
+        ],
       ],
-    ],
-  },
-  alumni: {
-    title: "A small selection of our graduates",
-    intro:
-      "The programme has existed since 1986. Of some 300 graduates, 41 are now in top management of large corporations and 40 lead SMEs as managing directors.",
-    stats: [
-      ["300+", "graduates"],
-      ["30 %", "of graduates in top management"],
-      ["41", "top-level executives in corporations"],
-      ["40", "top-level executives in SMEs"],
-      ["15", "company founders"],
-    ],
-    levels: {
-      top: "Top management",
-      middle: "Middle management",
-      interim: "Interim management",
-      sme: "Managing director, SME",
-      founder: "Founder",
+    },
+    alumni: {
+      title: "Ein kleiner Ausschnitt unserer Absolventen",
+      intro:
+        "Das Programm gibt es seit 1986. Von gut 300 Absolventen sind heute 41 im Top-Management großer Konzerne und 40 in der Geschäftsführung mittelständischer Unternehmen.",
+      stats: [
+        ["über 300", "Absolventen"],
+        ["30 %", "der Absolventen im Top-Management"],
+        ["41", "Top-Level-Führungskräfte in Konzernen"],
+        ["40", "Top-Level-Führungskräfte im Mittelstand"],
+        ["15", "Unternehmensgründer"],
+      ],
+      levels: {
+        top: "Top-Management",
+        middle: "Mittleres Management",
+        interim: "Interim Management",
+        sme: "Geschäftsführung Mittelstand",
+        founder: "Gründer",
+      } satisfies Record<Level, string>,
+    },
+    selection: {
+      title: "Wer bei TEG mitmacht, wird ausgewählt.",
+      text: "Alle sechs Monate wählen wir aus über hundert Bewerbungen 8 bis 15 Teilnehmer für die Academy aus. Jeder Bewerber durchläuft dasselbe Verfahren, unabhängig von Herkunft oder Netzwerk. Bewertet werden analytisches Denken, Leistungsbereitschaft und Führungscharakter: die Fähigkeit, Initiative zu ergreifen, zu führen und geführt zu werden.",
+      photoAlt: "Teilnehmer der TEG bei einer Veranstaltung",
+      link: "Zur Bewerbung",
+    },
+    video: {
+      label: "Im Video:",
+      name: "Thomas Uchtmann",
+      role: "Geschäftsführer Vertrieb bei HORBACH",
+    },
+    join: {
+      title: "Wie Sie Teil der TEG werden",
+      paths: [
+        {
+          who: "Für Führungskräfte",
+          text: "Halten Sie einen Workshop in der Academy, sprechen Sie auf einer unserer Veranstaltungen, begleiten Sie einen Teilnehmer als Mentor oder seien Sie Gastgeber eines Abends.",
+          link: "Mitwirken als Führungskraft",
+          to: "/for-companies",
+        },
+        {
+          who: "Für Studierende und Berufseinsteiger",
+          text: "Bewerbungen für die Young Business Leadership Academy sind zweimal im Jahr möglich, im April und im Oktober.",
+          link: "Zur Bewerbung",
+          to: "/for-students",
+        },
+      ],
     },
   },
-  selection: {
-    title: "Membership at TEG is earned.",
-    text: "Every six months we select 8 to 15 participants for the Academy from over a hundred applications. Every applicant goes through the same process, regardless of background or network. We assess analytical thinking, drive and leadership character: the ability to take initiative, to lead and to be led.",
-    photoAlt: "TEG members at an event",
-    link: "How to apply",
-  },
-  video: {
-    label: "In the video:",
-    name: "Thomas Uchtmann",
-    role: "Managing Director Sales at HORBACH",
-  },
-  join: {
-    title: "How to become part of TEG",
-    paths: [
-      {
-        who: "For executives",
-        text: "Lead a workshop in the Academy, speak at one of our events, mentor a participant or host an evening.",
-        link: "Get involved as an executive",
-        to: "/for-companies",
-      },
-      {
-        who: "For students and young professionals",
-        text: "Applications for the Young Business Leadership Academy open twice a year, in April and in October.",
-        link: "Apply",
-        to: "/for-students",
-      },
+  en: {
+    hero: {
+      when: ["About TEG", "Munich, since 1986"],
+      title: "Responsibility for German business since 1986.",
+      lede: "Since 1986, TEG has pursued two aims: to bring executives from large corporations and mid-sized companies into conversation across industries, and to prepare the next generation for the leadership of German companies.",
+      links: [
+        { to: "/events", label: "Conferences & Events" },
+        { to: "/for-companies", label: "For Executives" },
+        { to: "/for-students", label: "For Students" },
+      ],
+      photoAlt: "Members of TEG",
+    },
+    facts: [
+      ["1986", "founded by board members of eleven German companies"],
+      ["over 300", "graduates of the Young Business Leadership Academy"],
+      ["41", "graduates now in the top management of corporations"],
+      ["2 to 4", "conferences a year, alongside evening events"],
     ],
+    partnersLabel: "Partners and speakers",
+    mission: {
+      pillars: [
+        {
+          title: "Exchange among executives",
+          text: "Several times a year we invite executives from large corporations and mid-sized companies to Munich, to conferences, panels and the TEG Management Talk. A few speak; most come to listen, and for the conversations afterwards.",
+          link: "Our formats",
+          href: "#formate",
+        },
+        {
+          title: "Educating the next generation",
+          text: "In the Young Business Leadership Academy, we prepare students and young professionals for leadership responsibility over 18 months: through workshops with experienced executives, in permanent teams and with a project of their own.",
+          link: "The Academy",
+          href: "#ybla",
+        },
+      ],
+      bridge:
+        "The two are intertwined: our events are prepared and led by participants of the Academy as a learning project. They secure the speakers, partners and guests themselves.",
+    },
+    heritage: {
+      title: "Founded by board members of eleven leading German companies.",
+      intro:
+        "TEG was founded in Munich in 1986 on an initiative led by Dr. Hellmuth Buddenberg, then Chairman of the Board of Deutsche BP. The aim was to form, early on, a new generation of executives who think as entrepreneurs. By 1988, board members of eleven companies had come together as the Kuratorium. Today TEG is a non-profit association dedicated to adult education.",
+      foundersLabel: "From the founding Kuratorium",
+      founders: [
+        {
+          name: "Dr. Hellmuth Buddenberg",
+          role: "Chairman of the Board, Deutsche BP",
+        },
+        { name: "Franz Köhne", role: "Board Member for Human Resources, BMW" },
+        { name: "Hans H. Schlitzberger", role: "Siemens" },
+        { name: "Roland Berger", role: "Founder, Roland Berger + Partner" },
+      ],
+      companiesLabel: "Represented on the Kuratorium",
+      today: "now",
+      articleAlt:
+        "Historic newspaper article on the founding of the TEG Kuratorium",
+      articleCaption: "Donaukurier, on the founding of the Kuratorium",
+    },
+    formats: {
+      title: "Our formats",
+      intro:
+        "Each format brings together executives who share something: an industry, a function or an overarching question. We do not hold mass events; we compile the guest list ourselves.",
+      link: "Upcoming dates",
+      items: [
+        {
+          name: "Industry Panel",
+          img: "/about/formats/industry-panel.webp",
+          alt: "Industry panel with five executives in conversation on stage",
+          lede: "A small circle with real depth in a single industry. People in positions of responsibility who share interests and expertise come to know one another.",
+          traits: [
+            ["Guests", "up to 50, without microphones"],
+            ["Focus", "one industry, such as automotive, aerospace or health"],
+            ["Speakers", "executives, C-level, founders and professors"],
+          ],
+        },
+        {
+          name: "Summit",
+          img: "/about/formats/summit.webp",
+          alt: "Speaker presenting in front of a slide on multi-stakeholder management",
+          lede: "A handful of presentations by decision-makers from the same professional function. Those who attend sit among peers.",
+          traits: [
+            ["Guests", "up to 80, without microphones"],
+            ["Focus", "one function, such as sales or marketing"],
+            [
+              "Speakers",
+              "senior experts, consultants, chairs of industry associations, founders, team and department heads",
+            ],
+          ],
+        },
+        {
+          name: "Conference",
+          img: "/about/formats/konferenz.webp",
+          alt: "Conference hall with an audience and a speaker before the screen",
+          lede: "Presentations and panels over a full day. A deep dive across the boundaries between industries.",
+          traits: [
+            ["Guests", "up to 150, with microphones"],
+            [
+              "Focus",
+              "several industries, such as software and management consulting, or robotics, quantum and aerospace",
+            ],
+          ],
+        },
+      ],
+    },
+    ybla: {
+      title: "Young Business Leadership Academy",
+      intro:
+        "Our programme for students and young professionals who intend to take on leadership responsibility. Over 18 months, alongside their studies or work, participants attend workshops with experienced executives, work in permanent teams and finally lead a project of their own, for instance one of our events.",
+      link: "For students",
+      terms: [
+        ["Duration", "18 months", "alongside studies or work"],
+        ["Commitment", "10 to 18 hours a week", "outside examination periods"],
+        [
+          "Content",
+          "Workshops, teamwork, a project of one’s own",
+          "Workshops with experienced executives",
+        ],
+        [
+          "Cohorts",
+          "A new intake every six months",
+          "8 to 15 participants from over a hundred applications",
+        ],
+      ],
+    },
+    alumni: {
+      title: "A small selection of our graduates",
+      intro:
+        "The programme has existed since 1986. Of some 300 graduates, 41 now hold top-management positions in large corporations and 40 serve as managing directors of mid-sized companies.",
+      stats: [
+        ["over 300", "graduates"],
+        ["30%", "of graduates in top management"],
+        ["41", "top-level executives in corporations"],
+        ["40", "top-level executives in mid-sized companies"],
+        ["15", "company founders"],
+      ],
+      levels: {
+        top: "Top management",
+        middle: "Middle management",
+        interim: "Interim management",
+        sme: "Managing Director, mid-sized company",
+        founder: "Founder",
+      } satisfies Record<Level, string>,
+    },
+    selection: {
+      title: "Participation at TEG is by selection.",
+      text: "Every six months we select 8 to 15 participants for the Academy from more than a hundred applications. Every applicant goes through the same process, regardless of background or connections. We assess analytical thinking, drive and leadership character: the ability to take the initiative, to lead and to be led.",
+      photoAlt: "TEG participants at an event",
+      link: "How to apply",
+    },
+    video: {
+      label: "In the video:",
+      name: "Thomas Uchtmann",
+      role: "Managing Director Sales at HORBACH",
+    },
+    join: {
+      title: "How to become part of TEG",
+      paths: [
+        {
+          who: "For executives",
+          text: "Lead a workshop in the Academy, speak at one of our events, accompany a participant as a mentor, or host an evening.",
+          link: "Get involved as an executive",
+          to: "/for-companies",
+        },
+        {
+          who: "For students and young professionals",
+          text: "Applications to the Young Business Leadership Academy are accepted twice a year, in April and in October.",
+          link: "How to apply",
+          to: "/for-students",
+        },
+      ],
+    },
   },
-};
+} satisfies Record<PageLang, unknown>;
 
 // "today" only where the company has a different name now.
 const heritageCompanies: {
@@ -486,13 +492,14 @@ const delay = (i: number, step = 70): React.CSSProperties => ({
 });
 
 const About: React.FC = () => {
-  const isDe = useIntl().locale.startsWith("de");
-  const t = isDe ? de : en;
+  const lang = usePageLang();
+  const localize = useLocalizePath();
+  const t = copy[lang];
   const rootRef = useRef<HTMLDivElement>(null);
   useReveal(rootRef);
 
   return (
-    <div className="ev landing" lang={isDe ? "de" : "en"} ref={rootRef}>
+    <div className="ev landing" lang={lang} ref={rootRef}>
       <section className="dark">
         <div className="cover">
           <div className="cover-text">
@@ -505,7 +512,7 @@ const About: React.FC = () => {
             <p className="lede">{t.hero.lede}</p>
             <p className="more">
               {t.hero.links.map((link) => (
-                <Link key={link.to} to={link.to}>
+                <Link key={link.to} to={localize(link.to)}>
                   {link.label}
                 </Link>
               ))}
@@ -601,7 +608,7 @@ const About: React.FC = () => {
             ))}
           </div>
           <p className="format-more">
-            <Link className="text-link" to="/events">
+            <Link className="text-link" to={localize("/events")}>
               {t.formats.link} <ArrowRight size={15} />
             </Link>
           </p>
@@ -613,7 +620,7 @@ const About: React.FC = () => {
           <div className="academy-panel">
             <h2 className="section-title">{t.ybla.title}</h2>
             <p className="section-intro">{t.ybla.intro}</p>
-            <Link className="text-link" to="/for-students">
+            <Link className="text-link" to={localize("/for-students")}>
               {t.ybla.link} <ArrowRight size={15} />
             </Link>
           </div>
@@ -665,7 +672,7 @@ const About: React.FC = () => {
           <div className="selection-panel">
             <h2 className="section-title">{t.selection.title}</h2>
             <p>{t.selection.text}</p>
-            <Link className="text-link" to="/for-students">
+            <Link className="text-link" to={localize("/for-students")}>
               {t.selection.link} <ArrowRight size={15} />
             </Link>
           </div>
@@ -732,9 +739,7 @@ const About: React.FC = () => {
             {heritageCompanies
               .map((company) =>
                 company.today
-                  ? `${company.name} (${t.heritage.today} ${
-                      isDe ? company.today.de : company.today.en
-                    })`
+                  ? `${company.name} (${t.heritage.today} ${company.today[lang]})`
                   : company.name,
               )
               .join("  ·  ")}
@@ -750,7 +755,7 @@ const About: React.FC = () => {
               <article key={path.to} data-reveal style={delay(i, 120)}>
                 <h3>{path.who}</h3>
                 <p>{path.text}</p>
-                <Link className="text-link" to={path.to}>
+                <Link className="text-link" to={localize(path.to)}>
                   {path.link} <ArrowRight size={15} />
                 </Link>
               </article>

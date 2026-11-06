@@ -1,5 +1,11 @@
-import { useState, useEffect } from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import Layout from "./components/Layout";
 import ForStudents from "./pages/ForStudents";
 import ForCompanies from "./pages/ForCompanies";
@@ -17,6 +23,7 @@ import ScrollRestoration from "./components/ScrollRestoration";
 import Seo from "./components/Seo";
 import { trackLanguageSwitch, assignSessionId } from "./utils/analytics";
 import { getRouteSeoEntry } from "./seo/routes";
+import { getBasePath, getPathLang, localizePath } from "./i18n/pageLang";
 import { siteConfig } from "./seo/siteConfig";
 
 const messages: Record<string, Record<string, string>> = { en, de };
@@ -53,13 +60,17 @@ function RouteSeo({
       indexable={routeSeoEntry.indexable}
       pathname={routeSeoEntry.path}
       openGraphImagePath={routeSeoEntry.openGraphImagePath}
+      alternates={routeSeoEntry.alternates}
     />
   );
 }
 
 function App() {
-  const [locale, setLocale] = useState<"en" | "de">("de");
   const location = useLocation();
+  const navigate = useNavigate();
+  // The language comes from the URL (/en/… is English), so each language is
+  // prerendered as its own static page.
+  const locale = getPathLang(location.pathname);
 
   useEffect(() => {
     assignSessionId();
@@ -93,9 +104,33 @@ function App() {
   }, [location]);
 
   const switchLanguage = (lang: "en" | "de") => {
-    setLocale(lang);
     trackLanguageSwitch(lang, "Navbar");
+    const target = localizePath(getBasePath(location.pathname), lang);
+    if (target !== location.pathname) {
+      navigate(target + location.hash);
+    }
   };
+
+  // Every page with an English edition is mounted at /… and at /en/….
+  const pageRoutes = (
+    <>
+      <Route path="for-students" element={<ForStudents />} />
+      <Route path="for-companies" element={<ForCompanies />} />
+      <Route path="events" element={<Events />} />
+      <Route
+        path="conferences/supplychain-management-conference"
+        element={<SupplyChainConference />}
+      />
+      <Route
+        path="conferences/aviation-management-conference"
+        element={<AviationConference />}
+      />
+      <Route
+        path="conferences/enterprise-sales-summit"
+        element={<EnterpriseSalesSummit />}
+      />
+    </>
+  );
 
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
@@ -104,21 +139,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout switchLanguage={switchLanguage} />}>
           <Route index element={<About />} />
-          <Route path="for-students" element={<ForStudents />} />
-          <Route path="for-companies" element={<ForCompanies />} />
-          <Route path="events" element={<Events />} />
-          <Route
-            path="conferences/supplychain-management-conference"
-            element={<SupplyChainConference />}
-          />
-          <Route
-            path="conferences/aviation-management-conference"
-            element={<AviationConference />}
-          />
-          <Route
-            path="conferences/enterprise-sales-summit"
-            element={<EnterpriseSalesSummit />}
-          />
+          {pageRoutes}
+          <Route path="en">
+            <Route index element={<About />} />
+            {pageRoutes}
+          </Route>
           {/* Earlier URLs of the conference pages, already shared. */}
           <Route
             path="events/supply-chain"

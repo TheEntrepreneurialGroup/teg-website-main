@@ -1,3 +1,5 @@
+import { LOCALIZED_PATHS, toEnglishPath } from "./localizedPaths.mjs";
+
 /** Routes emitted as prebuilt static HTML during production builds. */
 export const PRERENDER_ROUTES = [
   "/",
@@ -10,4 +12,6 @@ export const PRERENDER_ROUTES = [
   "/privacy-policy",
   "/imprint",
   "/about",
+  // English editions
+  ...LOCALIZED_PATHS.map(toEnglishPath),
 ];

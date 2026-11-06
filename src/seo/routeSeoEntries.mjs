@@ -1,4 +1,6 @@
-export const routeSeoEntries = [
+import { LOCALIZED_PATHS, toEnglishPath } from "./localizedPaths.mjs";
+
+const germanRouteSeoEntries = [
   {
     path: "/",
     titleMessageId: "seo.about.title",
@@ -89,4 +91,29 @@ export const routeSeoEntries = [
     priority: 0.2,
     changeFrequency: "yearly",
   },
+];
+
+/**
+ * German pages with an English edition get `alternates` (hreflang), and each
+ * English edition its own entry at /en/…; its title and description resolve
+ * from en.ts because /en/ routes render in English.
+ */
+const withAlternates = germanRouteSeoEntries.map((entry) =>
+  LOCALIZED_PATHS.includes(entry.path)
+    ? {
+        ...entry,
+        alternates: { de: entry.path, en: toEnglishPath(entry.path) },
+      }
+    : entry,
+);
+
+export const routeSeoEntries = [
+  ...withAlternates,
+  ...withAlternates
+    .filter((entry) => entry.alternates)
+    .map((entry) => ({
+      ...entry,
+      path: entry.alternates.en,
+      priority: Math.max(0.1, Math.round((entry.priority - 0.1) * 10) / 10),
+    })),
 ];

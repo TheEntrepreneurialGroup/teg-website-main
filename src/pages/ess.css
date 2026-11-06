@@ -12,6 +12,13 @@
   --on-navy-muted: #b9c8e2;
 }
 
+/* English edition: the language notice as a pale band under the navbar;
+   the navy accent alone would vanish into the hero gradient. */
+.ev.ess .lang-notice {
+  --notice-bg: #e6eefb;
+  --notice-fg: var(--navy);
+}
+
 /* Hero: the navy of the event artwork, brightening towards the top right. */
 .ev.ess .hero {
   background:

@@ -61,12 +61,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   min-height: min(92vh, 900px);
-  padding-top: 80px;
-}
-@media (min-width: 1280px) {
-  .ev.landing .cover {
-    padding-top: 96px;
-  }
+  padding-top: var(--site-nav-h);
 }
 .ev.landing .cover-text {
   display: grid;

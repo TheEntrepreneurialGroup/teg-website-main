@@ -156,7 +156,7 @@ const de = {
     "Lerne TEG bei einem entspannten Brunch kennen und komm mit Mitgliedern und Alumni ins Gespräch.",
   "student.events.list.brunch.linkLabel": "Jetzt anmelden",
   "student.events.list.talk.title":
-    "TEG Management Series April 2026 | 24.04. | 18:30 - 22:00 Uhr",
+    "TEG Management Talk April 2026 | 24.04. | 18:30 - 22:00 Uhr",
   "student.events.list.talk.description":
     "Mit Speakern wie dem Microsoft CTO, dem Strategy Director von Siemens und der Gründerin des weltweit ersten Unternehmens für den Handel mit Elektronik-Bauteilen. Dazu kommen zwei weitere Perspektiven aus der Praxis.",
   "student.events.list.talk.linkLabel": "Jetzt anmelden",
@@ -254,7 +254,7 @@ const de = {
   "navbar.about": "Über uns",
   "navbar.forCompanies": "Für Unternehmen",
   "navbar.forStudents": "Für Studierende",
-  "navbar.aboutPage.about": "Über Uns",
+  "navbar.aboutPage.about": "Über uns",
   "navbar.aboutPage.events": "Konferenzen & Events",
   "navbar.aboutPage.executives": "Für Führungskräfte",
   "navbar.aboutPage.students": "Für Studierende",
@@ -394,7 +394,7 @@ const de = {
   "about.inAction.scene1.title": "AI Consulting Conference",
   "about.inAction.scene1.desc":
     "TEG-Mitglieder planen, bewerben und hosten öffentliche Konferenzen mit externen Speakern. 150+ Teilnehmer. Vollständig in Mitgliederhand.",
-  "about.inAction.scene2.title": "TEG Management Series",
+  "about.inAction.scene2.title": "TEG Management Talk",
   "about.inAction.scene2.desc":
     "Regelmäßiges Speaker-Format mit Führungskräften und Gründern aus der deutschen Wirtschaft. Einladung, Briefing, Moderation, Nachbereitung: alles intern.",
   "about.inAction.scene3.title": "Workshops & Karrierekontexte",
@@ -485,7 +485,7 @@ const de = {
     "Talks, Panels und Konferenzen mit Führungskräften aus Konzernen und Mittelstand, organisiert von den Teilnehmern der Young Business Leadership Academy. Seit 1986 in München.",
   "seo.events.title": "TEG Events: Konferenzen und Abendveranstaltungen",
   "seo.events.description":
-    "Konferenzen und Abendveranstaltungen der TEG in München: die TEG Management Series, Industry Panels und Konferenztage mit Führungskräften aus Konzernen, Mittelstand und Wissenschaft.",
+    "Konferenzen und Abendveranstaltungen der TEG in München: der TEG Management Talk, Industry Panels und Konferenztage mit Führungskräften aus Konzernen, Mittelstand und Wissenschaft.",
   "seo.imprint.title": "Impressum | TEG",
   "seo.imprint.description":
     "Impressum und rechtliche Angaben von The Entrepreneurial Group e. V.",
@@ -498,7 +498,7 @@ const de = {
     "8. Dezember 2026 in München: ein Konferenztag zu Automatisierung und Geopolitik in der Lieferkette, mit 100 Teilnehmern, davon 70 Führungskräfte.",
   "seo.aviationConference.title": "Aviation Management Conference 2027 | TEG",
   "seo.aviationConference.description":
-    "Aviation Management Conference der TEG am 19. Mai 2027. Programm, Speaker und Anmeldung folgen in Kürze.",
+    "Aviation Management Conference der TEG am 3. Juni 2027 in München. Programm, Speaker und Anmeldung folgen in Kürze.",
   "seo.enterpriseSalesSummit.title":
     "Enterprise Sales Summit 2027 in München | TEG",
   "seo.enterpriseSalesSummit.description":

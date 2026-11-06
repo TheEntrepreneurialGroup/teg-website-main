@@ -28,6 +28,15 @@
   --ring: 217 71% 20%; /* #0f2b57 */
 
   --radius: 0.5rem;
+
+  /* Height of the fixed site navbar; pages offset their first section by it. */
+  --site-nav-h: 60px;
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --site-nav-h: 72px;
+  }
 }
 
 @layer base {
@@ -86,8 +95,9 @@
     @apply bg-accent text-white hover:bg-accent-light active:bg-accent-dark hover:text-white;
   }
 
+  /* Same column as the editorial pages (.ev .wrap) and the navbar. */
   .container-custom {
-    @apply container mx-auto px-4 md:px-8 max-w-full;
+    @apply mx-auto w-full max-w-[1296px] px-[max(16px,min(48px,4vw))];
   }
 
   .section {
@@ -155,5 +165,57 @@
     .logo-marquee-scroll {
       animation: scroll 200s linear infinite;
     }
+  }
+}
+
+/* English editions: notice that the offer itself is held in German
+   (components/LanguageNotice). A band directly under the navbar, aligned to
+   the editorial column; pages tint it with their own accent. */
+.lang-notice {
+  background: var(--notice-bg, #17191c);
+  color: var(--notice-fg, #ffffff);
+  font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.lang-notice-inner {
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 14px max(16px, min(48px, 4vw));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 32px;
+}
+.lang-notice p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 90ch;
+}
+.lang-notice strong {
+  font-weight: 600;
+}
+.lang-notice a,
+.lang-notice a:hover {
+  color: inherit;
+  font-size: 15px;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: currentColor;
+}
+@media (max-width: 720px) {
+  .lang-notice p,
+  .lang-notice a {
+    font-size: 14px;
+  }
+}
+
+/* For-students hero captions: only where the photo shows the whole group
+   (desktop, landscape) and the captions stay legible. */
+@media (min-width: 1024px) and (min-aspect-ratio: 4/3) {
+  .hero-annotations {
+    display: block;
   }
 }

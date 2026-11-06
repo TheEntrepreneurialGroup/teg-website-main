@@ -4,7 +4,8 @@
  * Conference is upcoming, every upcoming conference links to a routed and
  * prerendered sub-page (its only link on /events),
  * Biotech stays a past evening event, no prior event got lost, every
- * referenced image exists, and copy uses no em or en dash as a separator.
+ * referenced image exists, every title and date has German and English copy,
+ * and copy uses no em or en dash as a separator in either language.
  */
 import { readFile, access } from "node:fs/promises";
 import path from "node:path";
@@ -74,6 +75,18 @@ function topLevelObjects(arraySource) {
 
 const field = (obj, name) =>
   obj.match(new RegExp(`\\b${name}:\\s*"((?:\\\\.|[^"\\\\])*)"`))?.[1] ?? "";
+
+/**
+ * Copy of a text field in every language: a plain string reads the same in
+ * German and English; a `{ de, en }` pair must carry both.
+ */
+function texts(obj, name) {
+  const plain = field(obj, name);
+  if (plain) return { de: plain, en: plain };
+  const pair = obj.match(new RegExp(`\\b${name}:\\s*\\{([^{}]*)\\}`))?.[1];
+  if (!pair) return null;
+  return { de: field(pair, "de"), en: field(pair, "en") };
+}
 
 async function exists(publicPath) {
   try {
@@ -151,14 +164,23 @@ if (new Set(allIds).size !== allIds.length) fail("Duplicate event ids");
 for (const [name, objs] of Object.entries(lists)) {
   for (const obj of objs) {
     const id = field(obj, "id");
-    if (!field(obj, "title")) fail(`${name}/${id}: title is empty`);
-    if (!field(obj, "date")) fail(`${name}/${id}: date is empty`);
+    for (const key of ["title", "date"]) {
+      const value = texts(obj, key);
+      if (!value?.de) fail(`${name}/${id}: ${key} is empty`);
+      if (!value?.en) fail(`${name}/${id}: ${key} has no English copy`);
+    }
     for (const [, img] of obj.matchAll(/\b(?:image|src):\s*"([^"]+)"/g)) {
       if (!(await exists(img))) fail(`${name}/${id}: missing asset ${img}`);
     }
     for (const key of ["description", "lede", "note"]) {
-      if (/[—–]/.test(field(obj, key))) {
-        fail(`${name}/${id}: ${key} contains an em or en dash`);
+      const value = texts(obj, key);
+      if (value && (!value.de || !value.en)) {
+        fail(`${name}/${id}: ${key} lacks German or English copy`);
+      }
+      for (const [lang, text] of Object.entries(value ?? {})) {
+        if (/[—–]/.test(text)) {
+          fail(`${name}/${id}: ${key} (${lang}) contains an em or en dash`);
+        }
       }
     }
   }

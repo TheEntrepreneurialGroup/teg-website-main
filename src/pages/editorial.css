@@ -62,7 +62,7 @@
 }
 .ev .band {
   background: var(--paper);
-  scroll-margin-top: 80px;
+  scroll-margin-top: var(--site-nav-h);
 }
 .ev .band > .wrap {
   padding-block: 120px;
@@ -82,11 +82,11 @@
 }
 /* First band of a page without hero: clears the fixed site navbar. */
 .ev .band.page-top > .wrap {
-  padding-top: calc(80px + 56px);
+  padding-top: calc(var(--site-nav-h) + 56px);
 }
 @media (min-width: 1280px) {
   .ev .band.page-top > .wrap {
-    padding-top: calc(96px + 64px);
+    padding-top: calc(var(--site-nav-h) + 64px);
   }
 }
 .ev .band.stone {
@@ -180,12 +180,7 @@
 .ev .hero {
   background: var(--paper);
   border-bottom: 1px solid var(--line);
-  padding-top: 80px;
-}
-@media (min-width: 1280px) {
-  .ev .hero {
-    padding-top: 96px;
-  }
+  padding-top: var(--site-nav-h);
 }
 .ev .hero .wrap {
   padding-block: 72px 80px;
@@ -497,6 +492,24 @@
   }
 }
 
+/* The events overview carries no accent colour: each conference brings its
+   own, and the TEG accent is pending the rebrand. */
+.ev.overview {
+  --accent: var(--ink);
+}
+.ev.overview .band.stage {
+  --accent: var(--on-stage);
+}
+/* Without a link colour, contact links need the underline to read as links. */
+.ev.overview .contact a {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-decoration-thickness: 1px;
+}
+.ev.overview .contact a:hover {
+  text-decoration-color: currentColor;
+}
+
 /* Upcoming conferences on /events: a dark "stage" band that continues the
    navbar, with one agenda row per conference. The whole row is one link. */
 .ev .band.stage {
@@ -511,7 +524,37 @@
   display: none;
 }
 .ev .band.stage > .wrap {
-  padding-bottom: 104px;
+  padding-bottom: 88px;
+}
+/* The overview's three groups share one screen, so it starts closer to the
+   navbar than other pages. */
+.ev.overview .band.page-top > .wrap {
+  padding-top: calc(var(--site-nav-h) + 48px);
+}
+/* Laptop screens (about 800px tall) get a tighter rhythm so the third group
+   still fits above the fold. */
+@media (min-width: 861px) and (max-height: 860px) {
+  .ev.overview .band.page-top > .wrap {
+    padding-top: calc(var(--site-nav-h) + 32px);
+  }
+  .ev.overview .lead h2 {
+    font-size: 52px;
+  }
+  .ev.overview .lead-theme {
+    margin-top: 16px;
+  }
+  .ev.overview .lead-cta {
+    margin-top: 24px;
+  }
+  .ev.overview a.lead {
+    margin-bottom: 44px;
+  }
+  .ev.overview .agenda + .agenda-label {
+    margin-top: 40px;
+  }
+  .ev.overview .agenda-row {
+    padding: 20px 0;
+  }
 }
 .ev .sr-only {
   position: absolute;
@@ -528,14 +571,12 @@
   gap: 0;
   color: var(--ink);
   text-decoration: none;
-  padding-bottom: 72px;
-  margin-bottom: 72px;
-  border-bottom: 1px solid var(--line);
+  margin-bottom: 64px;
 }
 .ev .lead-eyebrow {
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   font: 600 15px/1.3 var(--font);
-  color: #d07a87;
+  color: var(--ink-muted);
   letter-spacing: 0.01em;
 }
 .ev .lead h2 {
@@ -558,31 +599,30 @@
   font-variant-numeric: tabular-nums;
 }
 .ev .lead-cta {
-  margin-top: 36px;
+  margin-top: 32px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font: 600 15px/1 var(--font);
   padding: 16px 24px;
   border-radius: 2px;
-  background: var(--accent);
-  color: #ffffff;
-  transition: filter 0.15s;
+  background: var(--on-stage);
+  color: var(--stage);
+  transition: background-color 0.15s;
 }
 .ev .lead-cta svg {
   transition: transform 0.15s;
 }
 .ev a.lead:hover .lead-cta,
 .ev a.lead:focus-visible .lead-cta {
-  filter: brightness(1.15);
+  background: #ffffff;
 }
 .ev a.lead:hover .lead-cta svg {
   transform: translateX(3px);
 }
 @media (max-width: 720px) {
   .ev a.lead {
-    padding-bottom: 56px;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
   }
 }
 .ev .agenda.minor .what h3 {
@@ -593,11 +633,11 @@
 .ev .agenda-label {
   font: 500 15px/1.4 var(--font);
   color: var(--ink-muted);
-  margin: 0 0 18px;
+  margin: 0 0 14px;
   letter-spacing: 0.01em;
 }
 .ev .agenda + .agenda-label {
-  margin-top: 88px;
+  margin-top: 56px;
 }
 .ev .agenda {
   list-style: none;
@@ -610,7 +650,7 @@
   grid-template-columns: 200px minmax(0, 1fr) auto;
   gap: 40px;
   align-items: baseline;
-  padding: 30px 0;
+  padding: 24px 0;
   border-bottom: 1px solid var(--line);
   color: var(--ink);
   text-decoration: none;
@@ -697,7 +737,7 @@
     margin-top: 6px;
   }
   .ev .agenda + .agenda-label {
-    margin-top: 64px;
+    margin-top: 48px;
   }
 }
 .ev .subhead.first {
@@ -1081,7 +1121,7 @@
 .ev .band > .wrap.booking {
   padding-top: 0;
   margin-top: -40px;
-  scroll-margin-top: 96px;
+  scroll-margin-top: calc(var(--site-nav-h) + 24px);
 }
 .ev .booking h3 {
   font: 600 24px/1.2 var(--font);
@@ -1407,7 +1447,6 @@
 
   /* Events: lead and evening rows a little tighter. */
   .ev a.lead {
-    padding-bottom: 40px;
     margin-bottom: 40px;
   }
   .ev .lead-cta {
@@ -1420,4 +1459,25 @@
     gap: 6px;
     font-size: 13px;
   }
+}
+
+/* Language notice on English editions: tinted with the page accent. In a
+   page-top band the band clears the navbar so the notice sits right under it. */
+.ev .lang-notice {
+  --notice-bg: var(--accent);
+}
+.ev .band.page-top:has(> .lang-notice) {
+  padding-top: var(--site-nav-h);
+}
+.ev .band.page-top:has(> .lang-notice) > .wrap {
+  padding-top: 32px;
+}
+/* The overview keeps its three groups above the fold with the notice too. */
+.ev.overview .band.page-top:has(> .lang-notice) a.lead {
+  margin-bottom: 48px;
+}
+.ev.overview .band.stage .lang-notice {
+  --notice-bg: transparent;
+  --notice-fg: var(--on-stage);
+  border-bottom: 1px solid var(--line);
 }
