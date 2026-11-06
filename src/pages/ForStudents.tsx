@@ -409,11 +409,11 @@ const copy = {
     hero: {
       alt: "TEG group photo from the founding years with Dr Hellmuth Buddenberg, Ulrich Beck and Volker Maiborn",
       annotations: {
-        beck: "Ulrich Beck, as a student: TEG, then: Global Vice President Finance, Airbus Group, and CFO of Airbus joint ventures (2011–2023), supervisory board, Rovsing",
+        beck: "Ulrich Beck, as a student: TEG, today: Global Vice President Finance, Airbus Group, and CFO of Airbus joint ventures (2011–2023), supervisory board, Rovsing",
         buddenberg:
           "Dr Hellmuth Buddenberg, Chairman of Deutsche BP (today Aral and Castrol), mentor, initiator and founding chairman of the TEG Kuratorium",
         maiborn:
-          "Volker Maiborn, as a student: TEG, then: supervisory board, MaibornWolff, CEO Ojemba",
+          "Volker Maiborn, as a student: TEG, today: supervisory board, MaibornWolff, CEO Ojemba",
       },
       title: (
         <>
