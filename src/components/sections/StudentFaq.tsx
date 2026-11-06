@@ -220,7 +220,7 @@ export default function StudentFaq() {
                     className="mt-1 shrink-0 text-[#B7860B] transition-transform group-open:rotate-90"
                   />
                 </summary>
-                <div className="space-y-4 px-5 pb-7 md:px-8 text-base md:text-lg text-slate-600 leading-relaxed">
+                <div className="space-y-4 px-5 pb-7 md:px-8 text-base text-slate-600 leading-relaxed">
                   {faq.answer.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}

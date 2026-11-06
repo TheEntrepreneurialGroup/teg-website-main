@@ -747,10 +747,10 @@ const ForStudents: React.FC = () => {
               <h2 className="text-2xl md:text-4xl font-bold uppercase tracking-tighter mb-6 leading-[1.1] text-[#0F2B57]">
                 {t.intro.title}
               </h2>
-              <p className="text-slate-500 text-lg leading-relaxed">
+              <p className="text-slate-500 text-base leading-relaxed">
                 {t.intro.text}
               </p>
-              <ul className="mt-8 md:mt-auto md:pt-8 space-y-4 text-lg text-slate-600">
+              <ul className="mt-8 md:mt-auto md:pt-8 space-y-4 text-base text-slate-600">
                 <li className="flex items-start gap-3">
                   <span className="h-7 flex items-center shrink-0">
                     <Calendar size={20} className="text-[#B7860B]" />
@@ -837,7 +837,7 @@ const ForStudents: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] from-30% via-[#0A1628]/75 via-55% to-[#0A1628]/10" />
                 <div className="relative p-8 md:p-10">
-                  <p className="text-white text-lg md:text-xl leading-snug font-medium max-w-md">
+                  <p className="text-white text-base md:text-lg leading-snug font-medium max-w-md">
                     {t.intro.eventsText}
                   </p>
                   <div className="mt-6 inline-flex items-center gap-2 text-[#B7860B] text-xs font-bold uppercase tracking-[0.2em] group-hover:text-white transition-colors">
@@ -885,14 +885,14 @@ const ForStudents: React.FC = () => {
               <h3 className="text-2xl font-bold text-[#0F2B57] mb-6 uppercase tracking-tight">
                 {t.ybla.question}
               </h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="text-base text-slate-600 leading-relaxed">
                 {t.ybla.text}
               </p>
-              <p className="mt-8 text-lg leading-relaxed font-bold text-[#0F2B57]">
+              <p className="mt-8 text-base leading-relaxed font-bold text-[#0F2B57]">
                 {t.ybla.graduation}
               </p>
             </div>
-            <div className="md:col-span-6 text-lg text-slate-600 leading-relaxed">
+            <div className="md:col-span-6 text-base text-slate-600 leading-relaxed">
               <ul className="space-y-4">
                 {t.ybla.benefits.map((benefit) => (
                   <li key={benefit.title} className="flex items-start gap-3">
@@ -966,7 +966,7 @@ const ForStudents: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 leading-none text-[#B7860B] text-left text-left">
                 {t.careers.title}
               </h2>
-              <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-md text-left">
+              <p className="text-slate-300 text-base leading-relaxed mb-8 max-w-md text-left">
                 {t.careers.text}
               </p>
 
