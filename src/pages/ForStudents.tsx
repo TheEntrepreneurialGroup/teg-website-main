@@ -704,20 +704,29 @@ const ForStudents: React.FC = () => {
       {/* SEKTION 1: HERO */}
       <section className="relative min-h-[100vh] w-full overflow-hidden bg-slate-900 flex flex-col text-left">
         {/* Nur in der englischen Fassung: Hinweis unter der Navbar. Das Foto
-            beginnt darunter, damit der Hinweis keine Beschriftung verdeckt. */}
+            liegt darunter, ab 1280 px aber so weit nach oben versetzt, dass
+            die Gesichter fast wie in der deutschen Fassung sitzen und Becks
+            Beschriftung gerade unter dem Hinweis bleibt (Navbar 72 px +
+            Hinweis 74 px + 6 px Luft − Beschriftung bei 62/1080 der Breite). */}
         <LanguageNotice
           kind="academy"
           className="relative z-20 mt-[var(--site-nav-h)] [--notice-bg:#0F2B57]"
         />
 
         <div className="relative flex flex-1 flex-col justify-end">
-          <img
-            src="/for-students/commitment/ancient-group.avif"
-            alt={t.hero.alt}
-            className="absolute inset-0 h-full w-full object-cover object-top opacity-60"
-          />
+          <div
+            className={`absolute inset-x-0 bottom-0 top-0 ${
+              lang === "en" ? "xl:top-[calc(max(0px,152px-5.74vw)-146px)]" : ""
+            }`}
+          >
+            <img
+              src="/for-students/commitment/ancient-group.avif"
+              alt={t.hero.alt}
+              className="absolute inset-0 h-full w-full object-cover object-top opacity-60"
+            />
+            <HeroAnnotations />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent" />
-          <HeroAnnotations />
 
           <div className="relative z-10 container-custom pb-20">
             <h1 className="text-4xl sm:text-5xl md:text-[min(6.25rem,11vh)] font-black uppercase tracking-tighter leading-[0.92] sm:leading-[0.92] text-white -ml-1">
