@@ -12,10 +12,17 @@ export function getPathLang(pathname: string): PageLang {
   return pathname === "/en" || pathname.startsWith("/en/") ? "en" : "de";
 }
 
-/** The German path behind a pathname of either language. */
+/**
+ * The German path behind a pathname of either language. A trailing slash is
+ * dropped: Netlify serves the prerendered pages at "/path/", while the
+ * localized path list and all internal links use "/path".
+ */
 export function getBasePath(pathname: string): string {
-  if (getPathLang(pathname) === "de") return pathname;
-  return pathname.slice("/en".length) || "/";
+  const base =
+    getPathLang(pathname) === "de"
+      ? pathname
+      : pathname.slice("/en".length) || "/";
+  return base.length > 1 ? base.replace(/\/+$/, "") : base;
 }
 
 /**

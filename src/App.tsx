@@ -105,10 +105,10 @@ function App() {
 
   const switchLanguage = (lang: "en" | "de") => {
     trackLanguageSwitch(lang, "Navbar");
-    const target = localizePath(getBasePath(location.pathname), lang);
-    if (target !== location.pathname) {
-      navigate(target + location.hash);
-    }
+    if (lang === getPathLang(location.pathname)) return;
+    navigate(
+      localizePath(getBasePath(location.pathname), lang) + location.hash,
+    );
   };
 
   // Every page with an English edition is mounted at /… and at /en/….
