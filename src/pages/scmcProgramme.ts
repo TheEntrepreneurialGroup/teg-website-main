@@ -175,8 +175,8 @@ export const programme: ProgrammeItem[] = [
     time: "12:15–13:30",
     kind: { de: "Mittagessen", en: "Lunch" },
     title: {
-      de: "Lunch und Networking · Recruiting-Booths",
-      en: "Lunch and networking · recruiting booths",
+      de: "Lunch und Networking",
+      en: "Lunch and networking",
     },
     quiet: true,
   },
