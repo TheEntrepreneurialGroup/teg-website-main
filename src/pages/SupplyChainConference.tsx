@@ -110,7 +110,7 @@ const speakers = [
 const copy = {
   de: {
     when: ["8. Dezember 2026", "9–18 Uhr", "MaibornWolff Kraftwerk, München"],
-    lede: "Zwei offene Fragen: Wer verantwortet Fehlentscheidungen autonomer Systeme, und wann rechnet sich Second Sourcing gegenüber China?",
+    lede: "Die Supply Chain Management Conference bringt am 8. Dezember 2026 in München Führungskräfte aus Logistik, Industrie, Tech, Beratung und Wissenschaft zusammen. Ganztägig, mit Panels, Einzelvorträgen und Workshops in kleinen Gruppen.",
     register: "Anmelden",
     viewProgramme: "Programm ansehen",
     proposeTopic: "Thema einreichen",
@@ -236,7 +236,7 @@ const copy = {
   },
   en: {
     when: ["8 December 2026", "9 am – 6 pm", "MaibornWolff Kraftwerk, Munich"],
-    lede: "Two open questions: who is accountable when autonomous systems get it wrong, and when does second sourcing pay off against China?",
+    lede: "On 8 December 2026 in Munich, the Supply Chain Management Conference brings together executives from logistics, industry, tech, consulting and academia. A full day of panels, keynotes and workshops in small groups.",
     register: "Register",
     viewProgramme: "View programme",
     proposeTopic: "Propose a topic",
