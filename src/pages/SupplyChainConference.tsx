@@ -100,8 +100,8 @@ const speakers = [
   {
     name: "Manuela Kirner",
     role: {
-      de: "Senior Director Customs & Supply Chain Infineon (2016–2025)",
-      en: "Senior Director Customs & Supply Chain Infineon (2016–2025)",
+      de: "Senior Director Customs, Infineon (bis 2025)",
+      en: "Senior Director Customs, Infineon (until 2025)",
     },
     photo: "kirner",
   },

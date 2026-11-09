@@ -41,8 +41,8 @@ const TEAM: L = { de: "Conference Team der TEG", en: "TEG conference team" };
 const kirner: ProgrammeSpeaker = {
   name: "Manuela Kirner",
   role: {
-    de: "CFO, C4C Consulting for Cleanrooms; Senior Director Customs, Infineon (1999–2025)",
-    en: "CFO, C4C Consulting for Cleanrooms; Senior Director Customs, Infineon (1999–2025)",
+    de: "CFO, C4C Consulting for Cleanrooms; Senior Director Customs, Infineon (bis 2025)",
+    en: "CFO, C4C Consulting for Cleanrooms; Senior Director Customs, Infineon (until 2025)",
   },
 };
 
