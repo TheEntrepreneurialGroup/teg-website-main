@@ -20,6 +20,7 @@ import {
   YblaTerm,
 } from "../components/events/EditorialParts";
 import LanguageNotice from "../components/LanguageNotice";
+import { programme } from "./scmcProgramme";
 import { PageLang, useLocalizePath, usePageLang } from "../i18n/pageLang";
 
 const ASSET = "/events/supply-chain";
@@ -173,6 +174,10 @@ const copy = {
         ],
       },
     ],
+    programmeHeading: "Programm",
+    openSlot: "Offen",
+    programmeIntro:
+      "Dienstag, 8. Dezember 2026. Einlass ab 9 Uhr, Beginn um 9:30 Uhr.",
     joinHeading: "Teilnahme",
     joinText: [
       "Die Plätze werden nach Profil, Motivation und fachlichem Bezug zum Thema vergeben.",
@@ -295,6 +300,10 @@ const copy = {
         ],
       },
     ],
+    programmeHeading: "Programme",
+    openSlot: "Open",
+    programmeIntro:
+      "Tuesday, 8 December 2026. Doors open at 9:00, sessions begin at 9:30.",
     joinHeading: "Attendance",
     joinText: [
       "Places are allocated by profile, motivation and professional connection to the topic.",
@@ -422,7 +431,7 @@ const SupplyChainConference: React.FC = () => {
                 {t.register}
                 <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
               </a>
-              <a className="btn ghost" href="#lineup">
+              <a className="btn ghost" href="#programm">
                 {t.viewProgramme}
               </a>
             </div>
@@ -515,6 +524,85 @@ const SupplyChainConference: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="band" id="programm">
+        <div className="wrap">
+          <div className="head">
+            <h2 className="h2">{t.programmeHeading}</h2>
+            <p className="intro">{t.programmeIntro}</p>
+          </div>
+          <ol className="programme">
+            {programme.map((item) => (
+              <li
+                key={item.time}
+                className={
+                  item.quiet
+                    ? "slot quiet"
+                    : item.briefings
+                      ? "slot briefing-block"
+                      : "slot"
+                }
+              >
+                <p className="slot-meta">
+                  <time>{item.time}</time>
+                  <span className="kind">{item.kind[lang]}</span>
+                </p>
+                <div className="slot-body">
+                  <h3>{item.title[lang]}</h3>
+                  {item.host && <p className="host">{item.host[lang]}</p>}
+                  {item.speakers && (
+                    <ul className="slot-speakers">
+                      {item.speakers.map((speaker) => (
+                        <li key={speaker.name}>
+                          <span className="name">{speaker.name}</span>
+                          <span className="role">{speaker.role[lang]}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.abstract && (
+                    <p className="abstract">{item.abstract[lang]}</p>
+                  )}
+                  {item.briefings && (
+                    <ul className="briefings">
+                      {item.briefings.map((briefing, index) =>
+                        briefing ? (
+                          <li key={briefing.speaker?.name ?? briefing.company}>
+                            <span className="industry">
+                              {briefing.industry[lang]}
+                            </span>
+                            <span
+                              className={
+                                briefing.speaker || briefing.company
+                                  ? "name"
+                                  : "name tbd"
+                              }
+                            >
+                              {briefing.speaker?.name ??
+                                briefing.company ??
+                                t.openSlot}
+                            </span>
+                            {briefing.speaker && (
+                              <span className="role">
+                                {briefing.speaker.role[lang]}
+                              </span>
+                            )}
+                          </li>
+                        ) : (
+                          <li key={`open-${index}`} className="open">
+                            <span className="industry">{t.openSlot}</span>
+                            <span className="name tbd">{t.openSlot}</span>
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
