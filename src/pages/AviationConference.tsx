@@ -15,6 +15,7 @@ import {
 } from "../components/events/EditorialParts";
 import LanguageNotice from "../components/LanguageNotice";
 import { PageLang, usePageLang } from "../i18n/pageLang";
+import EventSchema from "../seo/EventSchema";
 
 const copy = {
   de: {
@@ -46,6 +47,7 @@ const AviationConference: React.FC = () => {
   const t = copy[lang];
   return (
     <div className="ev" lang={lang}>
+      <EventSchema ids={["aviation-management-conference-2027"]} lang={lang} />
       <section className="hero">
         <LanguageNotice kind="conference" />
         <div className="wrap">

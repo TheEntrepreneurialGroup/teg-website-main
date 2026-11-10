@@ -592,6 +592,11 @@
   line-height: 1.45;
   max-width: 48ch;
 }
+.ev .lead-about {
+  margin: 14px 0 0;
+  max-width: 62ch;
+  color: var(--ink-muted);
+}
 .ev .lead-meta {
   margin: 14px 0 0;
   font-size: 15px;
@@ -676,6 +681,13 @@
   margin: 8px 0 0;
   font-size: 16px;
   line-height: 1.5;
+  color: var(--ink-muted);
+}
+.ev .agenda .summary {
+  margin: 8px 0 0;
+  max-width: 62ch;
+  font-size: 15px;
+  line-height: 1.55;
   color: var(--ink-muted);
 }
 .ev .agenda .details {

@@ -56,6 +56,57 @@
   transform: translateX(3px);
 }
 
+/* Slim banner under the navbar pointing to the next conference. The whole
+   strip is one link. */
+.ev.landing .next-banner {
+  display: flex;
+  align-items: baseline;
+  gap: 8px 20px;
+  margin-top: var(--site-nav-h);
+  padding: 13px var(--edge);
+  /* The navy of the Supply Chain Management Conference page. */
+  background: #0b1f7a;
+  font: 400 15px/1.4 var(--font);
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+}
+.ev.landing .next-banner .name {
+  font-weight: 600;
+  color: #fff;
+}
+.ev.landing .next-banner .meta {
+  font-variant-numeric: tabular-nums;
+}
+.ev.landing .next-banner .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
+}
+.ev.landing .next-banner .go svg {
+  transition: transform 0.15s;
+}
+.ev.landing .next-banner:hover .go svg {
+  transform: translateX(3px);
+}
+.ev.landing .next-banner + .cover {
+  padding-top: 0;
+}
+@media (max-width: 960px) {
+  .ev.landing .next-banner {
+    flex-wrap: wrap;
+    padding: 11px var(--gutter);
+    font-size: 14px;
+  }
+  .ev.landing .next-banner .label,
+  .ev.landing .next-banner .go span {
+    display: none;
+  }
+}
+
 /* 1. Cover: text on black, photo running to the right edge. */
 .ev.landing .cover {
   display: grid;

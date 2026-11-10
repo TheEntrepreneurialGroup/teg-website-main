@@ -12,7 +12,7 @@ export const siteConfig = {
     email: "info+website@teg-ev.de",
     logoPath: "/shared/brand/teg-favicon.avif",
     sameAs: [
-      "https://www.linkedin.com/company/teg-ev/posts/?feedView=all",
+      "https://www.linkedin.com/company/teg-ev/",
       "https://www.facebook.com/TheEntrepreneurialGroup",
       "https://www.instagram.com/tegmunich/",
     ],

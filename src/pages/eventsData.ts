@@ -27,6 +27,11 @@ export interface UpcomingConference {
   location?: Text;
   /** One line on what the day is about; omitted until the programme stands. */
   theme?: Text;
+  /**
+   * One or two full sentences naming date, place and audience. Shown on
+   * /events and reused as the event's description for search engines.
+   */
+  description?: Text;
   /** Short facts after the theme, e.g. place, length, audience. */
   details?: Text[];
   /** Internal sub-page; the row's only link. */
@@ -75,13 +80,11 @@ export const upcomingConferences: UpcomingConference[] = [
       de: "München",
       en: "Munich",
     },
-    details: [
-      { de: "9–18 Uhr", en: "9 am – 6 pm" },
-      {
-        de: "100 Teilnehmer, davon 70 Führungskräfte",
-        en: "100 participants, 70 of them executives",
-      },
-    ],
+    description: {
+      de: "Die Supply Chain Management Conference bringt am 8. Dezember 2026 im MaibornWolff Kraftwerk in München 100 Teilnehmer zusammen, davon 70 Führungskräfte aus Logistik, Industrie, Tech, Beratung und Wissenschaft. Ein Tag mit Panels, Einzelvorträgen und Workshops in kleinen Gruppen.",
+      en: "On 8 December 2026, the Supply Chain Management Conference brings 100 participants to the MaibornWolff Kraftwerk in Munich, 70 of them executives from logistics, industry, tech, consulting and academia. A day of panels, keynotes and workshops in small groups.",
+    },
+    details: [{ de: "9–18 Uhr", en: "9 am – 6 pm" }],
     page: "/conferences/supplychain-management-conference",
   },
   {
@@ -182,6 +185,10 @@ export const upcomingEveningEvents: EveningEvent[] = [
     topic: {
       de: "Rethinking the Sales Funnel: was heute wirklich Kunden bringt",
       en: "Rethinking the Sales Funnel: what truly wins customers today",
+    },
+    description: {
+      de: "Abendveranstaltung am 19. Januar 2027 in München: vier Fachvorträge zu Enterprise Sales, Signal-Based Outbound, Buying Committees und Pipeline Management, dazu Austausch mit anderen Enterprise Sales Professionals.",
+      en: "An evening event on 19 January 2027 in Munich: four talks on enterprise sales, signal-based outbound, buying committees and pipeline management, and time to talk with other enterprise sales professionals.",
     },
     page: "/conferences/enterprise-sales-summit",
   },

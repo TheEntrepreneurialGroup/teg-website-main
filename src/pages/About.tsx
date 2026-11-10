@@ -13,6 +13,8 @@ import { ArrowRight } from "lucide-react";
 import "./editorial.css";
 import "./landing.css";
 import { PageLang, useLocalizePath, usePageLang } from "../i18n/pageLang";
+import { OrganisationSchema } from "../seo/EventSchema";
+import { localize as localizeText, upcomingConferences } from "./eventsData";
 
 // Companies and institutions that sent speakers, hosts or partners to TEG
 // events (site data and the TEG Luma calendar, 2025 to 2026).
@@ -83,6 +85,7 @@ type Level = (typeof alumni)[number]["level"];
 
 const copy = {
   de: {
+    banner: { label: "Nächste Konferenz", cta: "Programm ansehen" },
     hero: {
       when: ["Über die TEG", "München, seit 1986"],
       title: "Verantwortung für die deutsche Wirtschaft seit 1986.",
@@ -258,6 +261,7 @@ const copy = {
     },
   },
   en: {
+    banner: { label: "Next conference", cta: "View programme" },
     hero: {
       when: ["About TEG", "Munich, since 1986"],
       title: "Responsibility for German business since 1986.",
@@ -497,10 +501,31 @@ const About: React.FC = () => {
   const t = copy[lang];
   const rootRef = useRef<HTMLDivElement>(null);
   useReveal(rootRef);
+  // The first upcoming conference in eventsData.ts; the banner goes away on
+  // its own once that list is empty.
+  const nextConference = upcomingConferences[0];
 
   return (
     <div className="ev landing" lang={lang} ref={rootRef}>
+      <OrganisationSchema lang={lang} />
       <section className="dark">
+        {nextConference && (
+          <Link className="next-banner" to={localize(nextConference.page)}>
+            <span className="label">{t.banner.label}</span>
+            <span className="name">
+              {localizeText(nextConference.title, lang)}
+            </span>
+            <span className="meta">
+              {[nextConference.date, nextConference.location]
+                .filter((part) => part !== undefined)
+                .map((part) => localizeText(part, lang))
+                .join(" · ")}
+            </span>
+            <span className="go">
+              <span>{t.banner.cta}</span> <ArrowRight size={15} />
+            </span>
+          </Link>
+        )}
         <div className="cover">
           <div className="cover-text">
             <p className="when">

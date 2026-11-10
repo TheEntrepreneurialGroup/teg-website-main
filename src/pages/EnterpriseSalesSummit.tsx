@@ -15,6 +15,7 @@ import {
 } from "../components/events/EditorialParts";
 import LanguageNotice from "../components/LanguageNotice";
 import { PageLang, usePageLang } from "../i18n/pageLang";
+import EventSchema from "../seo/EventSchema";
 
 const ASSET = "/events/enterprise-sales";
 const LUMA_URL = "https://luma.com/teg-4sug";
@@ -318,6 +319,7 @@ const EnterpriseSalesSummit: React.FC = () => {
   const t = copy[lang];
   return (
     <div className="ev ess" lang={lang}>
+      <EventSchema ids={["enterprise-sales-summit-2027"]} lang={lang} />
       <Helmet>
         <link rel="stylesheet" href={HERO_FONT_URL[lang]} />
         <link rel="stylesheet" href={WORDMARK_FONT_URL} />
@@ -332,7 +334,7 @@ const EnterpriseSalesSummit: React.FC = () => {
           </p>
           <div className="hero-mark">
             <h1 className="wordmark" aria-label="Enterprise Sales Summit 2027">
-              <span className="wm-bold">Enterprise Sales</span>
+              <span className="wm-bold">Enterprise Sales</span>{" "}
               <span>
                 Summit <span className="year">2027</span>
               </span>

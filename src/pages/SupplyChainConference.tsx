@@ -22,6 +22,7 @@ import {
 import LanguageNotice from "../components/LanguageNotice";
 import { programme } from "./scmcProgramme";
 import { PageLang, useLocalizePath, usePageLang } from "../i18n/pageLang";
+import EventSchema from "../seo/EventSchema";
 
 const ASSET = "/events/supply-chain";
 const LUMA_URL = "https://luma.com/scmconference";
@@ -415,6 +416,7 @@ const SupplyChainConference: React.FC = () => {
       <Helmet>
         <link rel="stylesheet" href={WORDMARK_FONT_URL} />
       </Helmet>
+      <EventSchema ids={["supplychainconference2026"]} lang={lang} />
       <section className="hero">
         <LanguageNotice kind="conference" />
         <div className="wrap">
@@ -428,9 +430,10 @@ const SupplyChainConference: React.FC = () => {
               className="wordmark"
               aria-label="Supply Chain Management Conference"
             >
-              <span className="wm-bold">Supply Chain</span>
-              <span>Management</span>
-              <span>Conference</span>
+              {/* The spaces keep the words apart for anything that reads the
+                  heading as text; each span is its own line on screen. */}
+              <span className="wm-bold">Supply Chain</span>{" "}
+              <span>Management</span> <span>Conference</span>
             </h1>
             <p className="lede">{t.lede}</p>
           </div>

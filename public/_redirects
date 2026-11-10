@@ -22,4 +22,6 @@
 /request-demo         /conferences/supplychain-management-conference/    301
 /request-demo/        /conferences/supplychain-management-conference/    301
 
-/*    /index.html   200
+# Every page is prerendered to its own file, so an address that matches
+# nothing above is unknown: answer it with a real 404 instead of the start page.
+/*    /404.html   404

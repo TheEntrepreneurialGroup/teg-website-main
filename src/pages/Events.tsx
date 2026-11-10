@@ -14,6 +14,7 @@ import {
 } from "../components/events/EditorialParts";
 import LanguageNotice from "../components/LanguageNotice";
 import { PageLang, useLocalizePath, usePageLang } from "../i18n/pageLang";
+import EventSchema, { upcomingEventIds } from "../seo/EventSchema";
 import {
   EveningEvent,
   LUMA_CALENDAR_URL,
@@ -146,6 +147,8 @@ interface AgendaItem {
   location?: string;
   title: string;
   theme: string;
+  /** Full sentences below the theme. */
+  description?: string;
   details?: string[];
   /** Internal page; when set, the whole row links there. */
   page?: string;
@@ -161,6 +164,7 @@ const AgendaRow: React.FC<{ item: AgendaItem; t: Copy }> = ({ item, t }) => {
       <div className="what">
         <h3>{item.title}</h3>
         <p className="theme">{item.theme}</p>
+        {item.description && <p className="summary">{item.description}</p>}
         {item.details && item.details.length > 0 && (
           <p className="details">{item.details.join(" · ")}</p>
         )}
@@ -194,6 +198,7 @@ const Events: React.FC = () => {
   const text = (value: Text) => localize(value, lang);
   return (
     <div className="ev overview" lang={lang}>
+      <EventSchema ids={upcomingEventIds} lang={lang} />
       <section className="band stage page-top" id="kommend">
         <LanguageNotice kind="events" />
         <div className="wrap">
@@ -205,6 +210,9 @@ const Events: React.FC = () => {
               <h2>{text(leadConference.title)}</h2>
               {leadConference.theme && (
                 <p className="lead-theme">{text(leadConference.theme)}</p>
+              )}
+              {leadConference.description && (
+                <p className="lead-about">{text(leadConference.description)}</p>
               )}
               <p className="lead-meta">
                 {[
@@ -239,6 +247,7 @@ const Events: React.FC = () => {
                       theme: conf.theme
                         ? text(conf.theme)
                         : t.conferencePending,
+                      description: conf.description && text(conf.description),
                       details: conf.details?.map(text),
                       page: localizePath(conf.page),
                     }}
@@ -263,6 +272,10 @@ const Events: React.FC = () => {
                     theme: text(
                       event.topic ?? event.description ?? t.eveningPending,
                     ),
+                    description:
+                      event.topic && event.description
+                        ? text(event.description)
+                        : undefined,
                     page: event.page && localizePath(event.page),
                   }}
                 />
