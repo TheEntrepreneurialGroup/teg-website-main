@@ -22,6 +22,15 @@
 /request-demo         /conferences/supplychain-management-conference/    301
 /request-demo/        /conferences/supplychain-management-conference/    301
 
+# Earlier URLs of the conference pages (already shared), exact paths only so
+# the image folder /events/supply-chain/... keeps working. They live here and
+# not in netlify.toml because toml rules run after this file, behind the 404
+# catch-all below.
+/events/supply-chain     /conferences/supplychain-management-conference/    301
+/events/supply-chain/    /conferences/supplychain-management-conference/    301
+/events/aviation         /conferences/aviation-management-conference/       301
+/events/aviation/        /conferences/aviation-management-conference/       301
+
 # Every page is prerendered to its own file, so an address that matches
 # nothing above is unknown: answer it with a real 404 instead of the start page.
 /*    /404.html   404
