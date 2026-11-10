@@ -155,9 +155,10 @@ const copy = {
     ],
     audienceOutro:
       "Wer komplexe B2B-Deals steuert, weiß: Gute Gespräche allein reichen nicht. Es geht um den richtigen Zugang zum Account, belastbare Kundenbeziehungen und einen Verkaufsprozess, der auch dann funktioniert, wenn viele Stakeholder mitreden.",
+    audienceYbla: ["Hinzu kommen Teilnehmer unserer ", "."],
     joinHeading: "Teilnahme",
     joinText:
-      "Die Anmeldung erfolgt über die Eventseite auf Luma. Teilnahmebedingungen und aktuelle Ticketinformationen finden Sie dort.",
+      "Die Plätze werden nach Profil, Motivation und fachlichem Bezug zum Thema vergeben. Jede Anmeldung wird von uns bestätigt. Empfehlungen aus dem eigenen Sales-Netzwerk sind willkommen: Auch empfohlene Gäste melden sich über Luma an.",
     register: "Zur Anmeldung",
     terms: [
       ["Datum", "19. Januar 2027, abends"],
@@ -168,18 +169,17 @@ const copy = {
         "und Austausch mit anderen Enterprise Sales Professionals",
       ],
       ["Sprache", "Deutsch"],
-      [
-        "Anmeldung",
-        "Über Luma",
-        "Teilnahmebedingungen und Ticketinformationen dort",
-      ],
+      ["Anmeldung", "Über Luma", "Jede Anmeldung wird von uns bestätigt"],
     ],
     orgHeading: "Organisation",
     orgText: [
       "Der Enterprise Sales Summit wird von der TEG im Rahmen ihrer ",
       " organisiert. In dem 18-monatigen Programm übernehmen die Teilnehmer Verantwortung für eigene Veranstaltungsformate und bringen erfahrene Fach- und Führungskräfte miteinander ins Gespräch.",
     ],
-    organiserRole: "Organisation, Programm sowie Speaker- und Partneranfragen",
+    organiserRoles: [
+      "Organisation, Programm sowie Speaker- und Partneranfragen",
+      "Co-Organisation sowie Speaker- und Partneranfragen",
+    ],
     aboutHeading: "Über die TEG",
     about:
       "Die TEG bringt seit 1986 Führungskräfte aus Konzernen und Mittelstand zusammen und veranstaltet Konferenzen sowie Fachformate in München. Bei bisherigen Veranstaltungen waren unter anderem Microsoft, Google, IBM, Siemens, BMW, McKinsey & Company, BCG, Roland Berger, Accenture und PwC als Partner- oder Speaker-Unternehmen vertreten. Ziel ist der fachliche Austausch zwischen Menschen, die in ihren Unternehmen Verantwortung tragen.",
@@ -255,9 +255,10 @@ const copy = {
     ],
     audienceOutro:
       "Anyone who steers complex B2B deals knows that good conversations alone are not enough. What counts is the right access to the account, durable customer relationships and a sales process that holds up even when many stakeholders have a say.",
+    audienceYbla: ["They are joined by participants of our ", "."],
     joinHeading: "Attendance",
     joinText:
-      "Registration is via the event page on Luma, where you will also find the terms of attendance and current ticket information.",
+      "Places are allocated by profile, motivation and professional connection to the topic. We confirm every registration individually. Referrals from your own sales network are welcome: referred guests also register via Luma.",
     register: "Register",
     terms: [
       ["Date", "19 January 2027, evening"],
@@ -268,25 +269,37 @@ const copy = {
         "and conversation with fellow enterprise sales professionals",
       ],
       ["Language", "German"],
-      ["Registration", "Via Luma", "Terms and ticket information there"],
+      ["Registration", "Via Luma", "We confirm every registration"],
     ],
     orgHeading: "Organisation",
     orgText: [
       "The Enterprise Sales Summit is organised by TEG as part of its ",
       ". In the 18-month programme, participants take responsibility for their own event formats and bring experienced professionals and executives into conversation with one another.",
     ],
-    organiserRole: "Organisation, programme, speaker and partner enquiries",
+    organiserRoles: [
+      "Organisation, programme, speaker and partner enquiries",
+      "Co-organisation, speaker and partner enquiries",
+    ],
     aboutHeading: "About TEG",
     about:
       "Since 1986, TEG has brought together executives from large corporations and the Mittelstand, and holds conferences and specialist formats in Munich. Past events have included Microsoft, Google, IBM, Siemens, BMW, McKinsey & Company, BCG, Roland Berger, Accenture and PwC as partner or speaker companies. The aim is a professional exchange between people who carry responsibility in their organisations.",
   },
 } satisfies Record<PageLang, unknown>;
 
-const organiser: Omit<ContactPerson, "role"> = {
-  name: "Markus Ramsauer",
-  email: "markus.ramsauer@teg-ev.de",
-  linkedin: "https://www.linkedin.com/in/markus-ramsauer-0488763a5/",
-};
+/** Same order as `organiserRoles` in `copy`. */
+const organisers: Omit<ContactPerson, "role">[] = [
+  {
+    name: "Markus Ramsauer",
+    photo: `${ASSET}/team/ramsauer.webp`,
+    email: "markus.ramsauer@teg-ev.de",
+    linkedin: "https://www.linkedin.com/in/markus-ramsauer-0488763a5/",
+  },
+  {
+    name: "Abdul Aljubahji",
+    photo: `${ASSET}/team/aljubahji.webp`,
+    email: "abdul.aljubahji@teg-ev.de",
+  },
+];
 
 const RegisterButton: React.FC<{ label: string }> = ({ label }) => (
   <a
@@ -429,6 +442,11 @@ const EnterpriseSalesSummit: React.FC = () => {
               ))}
             </ul>
             <p>{t.audienceOutro}</p>
+            <p>
+              {t.audienceYbla[0]}
+              <YblaTerm />
+              {t.audienceYbla[1]}
+            </p>
           </div>
         </div>
       </section>
@@ -464,8 +482,13 @@ const EnterpriseSalesSummit: React.FC = () => {
               {t.orgText[1]}
             </p>
           </div>
-          <div className="contacts single">
-            <ContactCard person={{ ...organiser, role: t.organiserRole }} />
+          <div className="contacts">
+            {organisers.map((person, i) => (
+              <ContactCard
+                key={person.name}
+                person={{ ...person, role: t.organiserRoles[i] }}
+              />
+            ))}
           </div>
         </div>
       </section>
