@@ -25,6 +25,11 @@ import { PageLang, useLocalizePath, usePageLang } from "../i18n/pageLang";
 
 const ASSET = "/events/supply-chain";
 const LUMA_URL = "https://luma.com/scmconference";
+/* Speaker film, published as a post on the TEG LinkedIn page. */
+const LINKEDIN_POST_URL =
+  "https://www.linkedin.com/posts/teg-management-conferences_am-8-dezember-2026-bringt-die-supply-chain-activity-7525829439415316480-cvy8";
+const LINKEDIN_EMBED_URL =
+  "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7525829367709573121?collapsed=1";
 /** Montserrat 800 is not in the site-wide font request; subset to the wordmark. */
 const WORDMARK_FONT_URL =
   "https://fonts.googleapis.com/css2?family=Montserrat:wght@800&text=SUPLYCHAIN%20&display=swap";
@@ -124,6 +129,12 @@ const copy = {
     ],
     supportedBy: "Unterstützt von",
     speakersHeading: "Speaker",
+    filmHeading: "Vier Speaker im Video",
+    filmText:
+      "Hansjoerg Briegel, Rainer Baumann, Manuela Kirner und Jochen Kröber über ihre Erwartungen an den 8. Dezember.",
+    filmLink: "Beitrag auf LinkedIn ansehen",
+    filmTitle:
+      "LinkedIn-Beitrag: Speaker über die Supply Chain Management Conference",
     audienceHeading: "Zusammensetzung des Publikums",
     audienceIntro:
       "100 Teilnehmer, davon 70 Führungskräfte von der Teamleitung bis zum C-Level, überwiegend aus Konzernen dieser vier Branchen.",
@@ -250,6 +261,12 @@ const copy = {
     ],
     supportedBy: "Supported by",
     speakersHeading: "Speakers",
+    filmHeading: "Four speakers on film",
+    filmText:
+      "Hansjoerg Briegel, Rainer Baumann, Manuela Kirner and Jochen Kröber on what they expect from 8 December.",
+    filmLink: "View the post on LinkedIn",
+    filmTitle:
+      "LinkedIn post: speakers on the Supply Chain Management Conference",
     audienceHeading: "Who attends",
     audienceIntro:
       "100 participants, 70 of them executives from team lead to C-level, mostly from large corporations in these four industries.",
@@ -480,6 +497,32 @@ const SupplyChainConference: React.FC = () => {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="band" id="video">
+        <div className="wrap film">
+          <div className="film-text">
+            <h2 className="h2">{t.filmHeading}</h2>
+            <p>{t.filmText}</p>
+            <p className="more">
+              <a
+                href={LINKEDIN_POST_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.filmLink}
+              </a>
+            </p>
+          </div>
+          <div className="film-frame">
+            <iframe
+              src={LINKEDIN_EMBED_URL}
+              title={t.filmTitle}
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
         </div>
       </section>
 

@@ -562,3 +562,48 @@
   font-weight: 400;
   color: var(--ink-muted);
 }
+
+/* Speaker film: the LinkedIn post embedded beside a short note. The post's
+   video is 4:5, so the frame's height follows its width plus LinkedIn's own
+   header, caption and footer. */
+.ev.scmc .film {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 504px);
+  gap: 64px;
+  align-items: start;
+}
+.ev.scmc .film-text {
+  display: grid;
+  gap: 16px;
+}
+.ev.scmc .film-text .h2 {
+  margin-bottom: 8px;
+}
+.ev.scmc .film-text p {
+  margin: 0;
+  max-width: 44ch;
+}
+.ev.scmc .film-frame {
+  container-type: inline-size;
+  width: 100%;
+  max-width: 504px;
+}
+.ev.scmc .film-frame iframe {
+  display: block;
+  width: 100%;
+  height: calc(125cqw + 250px);
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+@media (max-width: 960px) {
+  .ev.scmc .film {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+@media (max-width: 720px) {
+  /* The post's header wraps onto a second line on phones. */
+  .ev.scmc .film-frame iframe {
+    height: calc(125cqw + 270px);
+  }
+}
