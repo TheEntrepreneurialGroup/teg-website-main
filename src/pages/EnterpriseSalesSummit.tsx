@@ -60,7 +60,7 @@ const speakers: {
     ],
   },
   {
-    name: "Rainer Hoesl",
+    name: "Rainer Hösl",
     photo: "rainer_hoesl",
     affiliations: [
       {
@@ -96,48 +96,47 @@ const copy = {
     viewSpeakers: "Speaker ansehen",
     whyHeading: "Warum dieser Summit?",
     whyLead:
-      "Der Funnel verändert sich. Die Herausforderungen dahinter kennen wir alle.",
+      "Wie baut man heute eine Enterprise-Pipeline auf? Und wie kommt man auf die Shortlist, wenn Einkaufsteams schon vor dem ersten Vertriebsgespräch KI zur Recherche nutzen?",
     why: [
-      "Ein Account zeigt Interesse, aber niemand kennt den tatsächlichen Entscheidungsprozess. Der Champion ist überzeugt, doch der Economic Buyer bleibt unerreichbar. Die Pipeline sieht gut aus, bis Deals wieder und wieder ins nächste Quartal rutschen. Und parallel wird es schwieriger, mit klassischem Outbound überhaupt noch ein relevantes Erstgespräch zu eröffnen.",
-      "Der Enterprise Sales Summit setzt genau dort an. Wir sprechen darüber, wie Unternehmen heute auf Shortlists kommen, wie Signal-Based Outbound wirklich eingesetzt wird und wie man komplexe Kaufentscheidungen von innen heraus voranbringt. Dabei treffen die Erfahrung aus gewachsenen Vertriebsorganisationen und die Möglichkeiten moderner GTM-Infrastruktur aufeinander.",
-      "Nicht als Sammlung von Sales-Buzzwords, sondern als Austausch darüber, was sich im Alltag bewährt, wo Methoden an Grenzen stoßen und was neu gedacht werden muss.",
+      "Viele Kaufentscheidungen nehmen früh Gestalt an. Einkaufsteams nutzen ChatGPT, Gemini, Claude, Copilot oder Perplexity, um Anbieter zu finden und zu vergleichen. Wer in diesen Antworten fehlt, kann bei der Vorauswahl übergangen werden, ohne es zu erfahren.",
+      "Vier Speaker zeigen aus ihrer Vertriebspraxis, wie Teams passende Accounts identifizieren, Kaufsignale für die Ansprache nutzen und komplexe Deals voranbringen. An Beispielen aus dem industriellen Mittelstand geht es auch darum, wie KI-Modelle Anbieter darstellen und was Vertriebsteams für ihre Sichtbarkeit tun können.",
     ],
     topicsHeading: "Die Themen",
     topics: [
       {
         n: "01",
-        title: "Auf die Shortlist kommen, bevor der erste Call stattfindet",
-        text: "Viele Kunden recherchieren, vergleichen und bilden Präferenzen, bevor Sales überhaupt involviert ist. Wie wird man bei den richtigen Accounts früh relevant? Und welche Rolle spielen Vertrauen, Beziehungen und eine abgestimmte Customer Journey, bevor eine Opportunity im CRM auftaucht?",
+        title: "Die moderne Sales Pipeline · Accounts und Kaufsignale",
+        text: "Wie findet man passende Accounts und die richtigen Ansprechpartner? Wir zeigen, wie Lead Research, saubere Daten und Kaufsignale jenseits von Stellenanzeigen zusammenwirken und wie sich mit Clay und Claude Code eine KI-gestützte GTM-Infrastruktur aufbauen lässt.",
       },
       {
         n: "02",
-        title: "Signal-Based Outbound statt noch einer Sequenz",
-        text: "Mehr Touchpoints allein machen keine bessere Pipeline. Entscheidend ist, ob die Ansprache zum Account, zum Anlass und zum Zeitpunkt passt. Wir schauen auf Buying Signals, Account Research und die technische Seite moderner GTM-Prozesse – von der Datengrundlage bis zu Workflows mit Tools wie Clay.",
+        title: "Die moderne Sales Pipeline · Vom Erstkontakt zum Deal",
+        text: "Welches Kundenproblem löst das Angebot und wodurch hebt es sich vom Wettbewerb ab? Es geht um die passende Ansprache für jede Rolle im Buying Center und darum, wie Vertriebsteams mehrere Stakeholder einbinden und Vertrauen aufbauen.",
       },
       {
         n: "03",
-        title: "Der Champion sagt Ja. Das Buying Committee noch lange nicht.",
-        text: "Große Deals scheitern selten an einer einzigen guten Präsentation. Wie baut man Zugang zu mehreren Stakeholdern auf? Wie kommt man an den Economic Buyer, ohne den Champion zu übergehen? Und wie entsteht aus individueller Begeisterung eine tragfähige Entscheidung im Unternehmen?",
+        title: "Die KI-Shortlist · Wie Einkaufsteams Anbieter auswählen",
+        text: "Heinz-Georg Geissler zeigt anhand anonymisierter Messungen aus dem industriellen Mittelstand, wie unterschiedlich KI-Modelle Anbieter darstellen und welche Quellen sie heranziehen. Dabei geht es auch darum, wie Einkaufsteams heute ihre Lieferanten vorauswählen.",
       },
       {
         n: "04",
-        title: "Pipeline ist noch kein Umsatz",
-        text: "Eine Opportunity kann im Forecast stehen, ohne dass der Kunde eine echte Kaufentscheidung vorbereitet. Woran erkennt man Fortschritt? Welche Fragen legen Risiken offen? Und wie helfen klare Qualifizierung, MEDDPICC und ein gemeinsamer Entscheidungsplan, die richtigen Deals voranzubringen?",
+        title: "Die KI-Shortlist · Die eigene Sichtbarkeit prüfen",
+        text: "Empfehlungen, Netzwerke und Fachbeiträge beeinflussen, was Menschen und KI-Modelle über Anbieter erfahren. Wir besprechen drei Hebel, mit denen Vertriebsteams ihre Sichtbarkeit verbessern können. Mit einem kurzen Selbstcheck können Teilnehmende prüfen, wie ihr Unternehmen in KI-Antworten erscheint.",
       },
     ],
     speakersHeading: "Die Speaker",
     speakers: [
       {
         role: "Internationaler B2B-Vertrieb · Bundesverband der Vertriebsmanager · WelikeU",
-        bio: "Über 25 Jahre Vertriebs- und Führungserfahrung in technischen B2B-Märkten, unter anderem bei Schott, Jenoptik und AFAG. Als Präsidiumsmitglied im Bundesverband der Vertriebsmanager und Mitgründer von WelikeU beschäftigt er sich damit, wie Unternehmen Vertrieb, Marketing und Technologie entlang der tatsächlichen Customer Journey zusammendenken – mit Erfahrung aus etablierten Industrieunternehmen ebenso wie aus neuen Geschäftsmodellen.",
+        bio: "Heinz-Georg Geissler verantwortet seit über 25 Jahren internationalen Vertrieb und Führung in der Industrie. Als Mitgründer der WelikeU GmbH begleitet er Geschäftsführende im Mittelstand nach dem Grundsatz „Erst die Grundlage. Dann die KI.“ Parallel baut er als Geschäftsführer und CSO der Compact Motion GmbH ein Industrie-Startup für Linearmotoren auf. Im Präsidium des Bundesverbands der Vertriebsmanager verantwortet er Partner und Inhalte. Für das Springer-Buch „Der Wandel im Vertrieb“ schrieb er das Kapitel zur kundenzentrierten B2B Customer Journey. 2006 brachte er eine Glaslaserschneidtechnik in die iPhone-Fertigung.",
       },
       {
         role: "Enterprise Sales Manager, Ariadne · zuvor Staffbase und Bilendo · Beyond Quota",
-        bio: "Christopher Stützel kennt Enterprise Sales aus beiden Perspektiven: als Large Enterprise Account Executive beim deutschen Tech-Unicorn Staffbase und aus mehr als sechs Jahren Vertriebsführung bei Bilendo. Als Co-Host des Sales-Podcasts „Beyond Quota“ beschäftigt er sich mit modernen Sales-Methoden und den Fragen, die im Vertriebsalltag tatsächlich den Unterschied machen.",
+        bio: "Christopher Stützel ist Enterprise Sales Manager bei Ariadne. Zuvor war er Large Enterprise Account Executive beim deutschen Tech-Unicorn Staffbase und über sechs Jahre in leitenden Vertriebspositionen bei Bilendo tätig. Als Co-Host des Sales-Podcasts „Beyond Quota“ verbindet er seine Enterprise-Sales-Erfahrung mit neuen Ansätzen im B2B-Vertrieb.",
       },
       {
         role: "Sales Leader & Go-to-Market-Architekt · zuvor Salesforce · MEDDPICC",
-        bio: "Rainer Hoesl war über fünf Jahre im Enterprise-Vertrieb bei Salesforce tätig und bringt zusätzliche Erfahrung aus Accenture und BearingPoint mit. Heute liegt sein Schwerpunkt auf dem Aufbau skalierbarer Vertriebsorganisationen: Wie entwickelt sich Founder-led Sales zu einem belastbaren Go-to-Market-Modell, und welche Prozesse sorgen dafür, dass Pipeline nicht vom Zufall abhängt?",
+        bio: "Rainer Hösl war langjähriger Enterprise Account Executive bei Salesforce und bringt Erfahrung von Accenture und BearingPoint mit. Als Sales Leader und Go-to-Market-Architekt ist er auf skalierbare Vertriebsorganisationen, MEDDPICC und den Übergang von Founder-led Sales zu planbarem Enterprise-Wachstum spezialisiert.",
       },
       {
         role: "Co-Founder, GTMengineer.dev · Signal-Based Outbound & GTM Engineering",
@@ -197,48 +196,47 @@ const copy = {
     viewSpeakers: "View the speakers",
     whyHeading: "Why this summit?",
     whyLead:
-      "The funnel is changing. The challenges behind it are familiar to all of us.",
+      "How do you build an enterprise pipeline today? And how do you make the shortlist when buying teams use AI to research vendors before the first sales conversation?",
     why: [
-      "An account shows interest, yet no one knows how the decision will actually be made. The champion is convinced, but the economic buyer remains out of reach. The pipeline looks healthy until deals slip into the next quarter, again and again. And all the while it grows harder to open a relevant first conversation with classic outbound at all.",
-      "The Enterprise Sales Summit starts precisely there. We discuss how companies make it onto shortlists today, how signal-based outbound is really put to work, and how complex purchasing decisions are moved forward from within. Experience from established sales organisations meets the possibilities of modern GTM infrastructure.",
-      "Not as a collection of sales buzzwords, but as an exchange on what holds up in daily practice, where methods reach their limits and what needs to be rethought.",
+      "Many purchasing decisions begin to take shape early. Buying teams use ChatGPT, Gemini, Claude, Copilot or Perplexity to find and compare vendors. If a vendor is missing from those answers, it can be passed over without ever knowing.",
+      "Four speakers draw on their sales experience to show how teams identify suitable accounts, use buying signals in outreach and move complex deals forward. Examples from mid-sized industrial companies show how AI models present vendors and what sales teams can do to improve their visibility.",
     ],
     topicsHeading: "The topics",
     topics: [
       {
         n: "01",
-        title: "Making the shortlist before the first call",
-        text: "Many customers research, compare and form preferences before sales is involved at all. How do you become relevant early with the right accounts? And what part do trust, relationships and a coordinated customer journey play before an opportunity ever appears in the CRM?",
+        title: "The modern sales pipeline · Accounts and buying signals",
+        text: "How do you find suitable accounts and the right contacts? We look at how lead research, clean data and buying signals beyond job postings work together, and how tools such as Clay and Claude Code can support an AI-powered go-to-market operation.",
       },
       {
         n: "02",
-        title: "Signal-based outbound instead of yet another sequence",
-        text: "More touchpoints alone do not make a better pipeline. What matters is whether the outreach fits the account, the occasion and the moment. We look at buying signals, account research and the technical side of modern GTM processes – from the underlying data to workflows built with tools such as Clay.",
+        title: "The modern sales pipeline · From first contact to deal",
+        text: "Which customer problem does your offer solve, and what sets it apart from the competition? We cover how to tailor outreach to each role in the buying group, engage several stakeholders and build trust.",
       },
       {
         n: "03",
-        title: "The champion says yes. The buying committee is another matter.",
-        text: "Large deals rarely fail for want of one good presentation. How do you build access to several stakeholders? How do you reach the economic buyer without going around the champion? And how does individual enthusiasm become a decision the whole organisation will stand behind?",
+        title: "The AI shortlist · How buying teams select vendors",
+        text: "Using anonymised measurements from mid-sized industrial companies, Heinz-Georg Geissler shows how differently AI models present vendors and which sources they draw on. He also explores how buying teams choose which suppliers to consider.",
       },
       {
         n: "04",
-        title: "Pipeline is not yet revenue",
-        text: "An opportunity can sit in the forecast while the customer is not preparing a real purchasing decision at all. How do you recognise progress? Which questions bring risks to light? And how do clear qualification, MEDDPICC and a mutual action plan help move the right deals forward?",
+        title: "The AI shortlist · Checking your visibility",
+        text: "Referrals, networks and industry publications shape what people and AI models learn about vendors. We discuss three ways sales teams can improve their visibility. A short self-assessment lets participants see how their own company appears in AI answers.",
       },
     ],
     speakersHeading: "The speakers",
     speakers: [
       {
         role: "International B2B sales · Bundesverband der Vertriebsmanager · WelikeU",
-        bio: "More than 25 years of sales and leadership experience in technical B2B markets, including at Schott, Jenoptik and AFAG. As a member of the executive board of the Bundesverband der Vertriebsmanager, the German association of sales managers, and co-founder of WelikeU, he examines how companies can think sales, marketing and technology together along the actual customer journey – drawing on experience from established industrial companies as well as from new business models.",
+        bio: "Heinz-Georg Geissler has led international sales and managed teams in industry for over 25 years. He co-founded WelikeU GmbH to advise leaders of mid-sized companies on getting the fundamentals in place before adopting AI. As managing director and CSO of Compact Motion GmbH, he is also building an industrial start-up for linear motors. He oversees partnerships and content on the executive board of the Bundesverband der Vertriebsmanager. He wrote the chapter on the customer-centric B2B customer journey for Springer's “Der Wandel im Vertrieb”. In 2006, he introduced a laser glass-cutting technique into iPhone manufacturing.",
       },
       {
         role: "Enterprise Sales Manager, Ariadne · formerly Staffbase and Bilendo · Beyond Quota",
-        bio: "Christopher Stützel knows enterprise sales from both sides: as a Large Enterprise Account Executive at the German tech unicorn Staffbase, and from more than six years of sales leadership at Bilendo. As co-host of the sales podcast “Beyond Quota”, he explores modern sales methods and the questions that genuinely make the difference in everyday selling.",
+        bio: "Christopher Stützel is Enterprise Sales Manager at Ariadne. He previously served as a Large Enterprise Account Executive at German tech unicorn Staffbase and spent more than six years in sales leadership roles at Bilendo. As co-host of the “Beyond Quota” sales podcast, he brings his enterprise sales experience to conversations about new approaches to B2B sales.",
       },
       {
         role: "Sales Leader & Go-to-Market Architect · formerly Salesforce · MEDDPICC",
-        bio: "Rainer Hoesl spent more than five years in enterprise sales at Salesforce and brings further experience from Accenture and BearingPoint. Today his focus is on building scalable sales organisations: how does founder-led sales mature into a resilient go-to-market model, and which processes ensure that pipeline is not left to chance?",
+        bio: "Rainer Hösl spent several years as an Enterprise Account Executive at Salesforce and also brings experience from Accenture and BearingPoint. As a sales leader and go-to-market architect, he specialises in building scalable sales organisations, applying MEDDPICC and moving from founder-led sales to predictable enterprise growth.",
       },
       {
         role: "Co-Founder, GTMengineer.dev · Signal-Based Outbound & GTM Engineering",
