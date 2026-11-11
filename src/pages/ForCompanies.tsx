@@ -253,14 +253,14 @@ const copy = {
         },
         {
           q: "How do we become host or patron of an event?",
-          a: "Write to Jonathan Babelotzky, Head of Strategy and Partnerships. In a short conversation we work out which event suits your company.",
+          a: "Write to Jonathan Babelotzky, Strategy and Partnerships Lead. In a short conversation we work out which event suits your company.",
         },
       ],
     },
     contact: {
       quote:
         "Write me two lines. I will reply personally, and in a short conversation we settle topic and date.",
-      role: "Head of Strategy and Partnerships",
+      role: "Strategy and Partnerships Lead",
       link: "Write an e-mail",
       mail: {
         subject: "Contributing at TEG",
