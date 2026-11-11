@@ -342,8 +342,6 @@ const de = {
   // About Us Page
   "about.hero.title": "Verantwortung lernt man nicht im Seminar.",
   "about.hero.mobileTitle": "Verantwortung lernt man nicht im Seminar.",
-  "about.hero.subtitle":
-    "TEG ist die einzige studentisch geführte Organisation in München mit eigenem Büro am Englischen Garten — kein Planspiel, sondern echte Rollen, eigenes Budget und reale Verantwortung seit 1986.",
   "about.hero.buttonText1": "TEG für Studierende",
   "about.hero.buttonText2": "TEG für Unternehmen",
   "about.hero.chip1": "Seit 1986 in München",
@@ -404,8 +402,6 @@ const de = {
   "about.testimonials.title": "Was andere über TEG sagen",
 
   "about.history.title": "Seit 1986",
-  "about.history.intro":
-    "TEG wurde 1986 in München gegründet — von 11 führenden deutschen Unternehmen und vier Studierenden. Was als institutionelle Initiative begann, entwickelte sich zu einer der langlebigsten studentisch geführten Organisationen im deutschsprachigen Raum.",
   "about.history.phase1.title": "1986 — Gründung in München",
   "about.history.phase1.desc":
     "Elf Unternehmen — darunter BMW, BCG, Roland Berger, KPMG und Siemens — gründen gemeinsam mit vier Studierenden TEG. Das Kuratorium wird im Januar 1988 eingetragen.",
@@ -467,9 +463,9 @@ const de = {
   "about.cta.companiesButton": "Partner werden",
 
   "seo.about.title":
-    "Über TEG | Wir formen die neue Generation von Führungskräften für die Deutsche Wirtschaft",
+    "TEG München: Führungsausbildung und Management-Konferenzen seit 1986",
   "seo.about.description":
-    "TEG ist seit 1986 eine studentisch geführte Organisation, in der Verantwortung, Umsetzung und wirtschaftliche Realität nicht simuliert, sondern gelebt werden.",
+    "Die TEG bringt seit 1986 in München Führungskräfte aus Konzernen und Mittelstand zusammen und bildet in der Young Business Leadership Academy die nächste Führungsgeneration aus.",
 
   "seo.home.title":
     "TEG | Führungskräfteentwicklung für Studierende und Unternehmen",

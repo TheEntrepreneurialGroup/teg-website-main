@@ -44,8 +44,6 @@ const en = {
 
   "company.cards.studentRun.title":
     "1. We run TEG like a company and learn how to lead one",
-  "company.cards.studentRun.description":
-    "TEG is the only student-run organization in Munich with its own office at the English Garden. This includes real fixed costs, a real budget, and real responsibility. Our members independently generate the necessary funds and acquire exactly the business skills they need later in practice.",
   "company.cards.futureLeaders.title": "2. How do you get to know our members?",
   "company.cards.futureLeaders.description":
     "Easily through targeted events like company visits, panel discussions, or networking sessions. This allows you to connect with our talents without a formal partnership, understand their mindset, and identify early on who fits your company. Many of these events are created in collaboration with companies that take responsibility with us at minimal organizational effort.",
@@ -74,8 +72,6 @@ const en = {
   "student.hero.buttonLink": "#application-closed",
 
   "student.maps.title": "This is where we belong",
-  "student.maps.description":
-    "TEG is the only student-run organisation in Munich with its own office in the English Garden, including fixed costs, budget responsibility and genuine ownership.",
 
   "student.commitment.imageAlt": "TEG Founder working",
   "student.commitment.title":
@@ -338,8 +334,6 @@ const en = {
   // About Us Page
   "about.hero.title": "Leadership is not learned in a seminar.",
   "about.hero.mobileTitle": "Leadership is not learned in a seminar.",
-  "about.hero.subtitle":
-    "TEG is the only student-run organization in Munich with its own office at the English Garden — not a simulation, but real roles, real budget, and real accountability since 1986.",
   "about.hero.buttonText1": "TEG for Students",
   "about.hero.buttonText2": "TEG for Companies",
   "about.hero.chip1": "Since 1986 in Munich",
@@ -352,8 +346,6 @@ const en = {
   "about.differentiator.intro":
     "What sets TEG apart from other student organizations is not the claim — it is the structure. TEG runs itself like a company: with its own office, its own budget, real fixed costs and clear accountability.",
   "about.differentiator.card1.title": "Office at the English Garden",
-  "about.differentiator.card1.desc":
-    "TEG is the only student-run organization in Munich with its own office. Not a seminar room on demand — a real operation with fixed costs and a budget.",
   "about.differentiator.card1.benefit": "Real infrastructure",
   "about.differentiator.card2.title": "Own budget",
   "about.differentiator.card2.desc":
@@ -400,8 +392,6 @@ const en = {
   "about.testimonials.title": "What others say about TEG",
 
   "about.history.title": "Since 1986",
-  "about.history.intro":
-    "TEG was founded in Munich in 1986 — by 11 leading German companies and four students. What began as an institutional initiative became one of the longest-running student-led organizations in the German-speaking world.",
   "about.history.phase1.title": "1986 — Founding in Munich",
   "about.history.phase1.desc":
     "Eleven companies — including BMW, BCG, Roland Berger, KPMG and Siemens — co-founded TEG in Munich with four students. The Kuratorium was registered in January 1988.",
@@ -464,9 +454,9 @@ const en = {
   "about.cta.companiesButton": "Become a partner",
 
   "seo.about.title":
-    "About TEG | We shape the next generation of leaders for the German economy",
+    "TEG Munich: Leadership Training and Management Conferences since 1986",
   "seo.about.description":
-    "Since 1986, TEG has been a student-led organisation in which responsibility, execution and economic reality are lived rather than simulated.",
+    "Since 1986, TEG has brought together executives from large corporations and mid-sized companies in Munich and trains the next generation of leaders in the Young Business Leadership Academy.",
 
   "seo.home.title": "TEG | Leadership development for students and companies",
   "seo.home.description":
