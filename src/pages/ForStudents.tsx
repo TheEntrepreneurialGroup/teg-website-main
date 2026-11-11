@@ -546,7 +546,7 @@ const copy = {
     logosTitle: "Our founding companies",
     contact: {
       quote: "“If you have any questions, do send me a message.”",
-      role: "Head of People & Operations",
+      role: "People & Operations Lead",
     },
     program: {
       title: "YBLA Programme Structure",
