@@ -130,7 +130,7 @@ const copy = {
     speakersHeading: "Speaker",
     filmHeading: "Vier Speaker im Video",
     filmText:
-      "Hansjoerg Briegel, Rainer Baumann, Manuela Kirner und Jochen Kröber über ihre Erwartungen an den 8. Dezember.",
+      "Jochen Kröber, Peter Dressler, Rainer Baumann und Hansjörg Briegel über ihre Erwartungen an den 8. Dezember.",
     filmLink: "Beitrag auf LinkedIn ansehen",
     filmTitle:
       "Video: vier Speaker über die Supply Chain Management Conference",
@@ -262,7 +262,7 @@ const copy = {
     speakersHeading: "Speakers",
     filmHeading: "Four speakers on film",
     filmText:
-      "Hansjoerg Briegel, Rainer Baumann, Manuela Kirner and Jochen Kröber on what they expect from 8 December.",
+      "Jochen Kröber, Peter Dressler, Rainer Baumann and Hansjörg Briegel on what they expect from 8 December.",
     filmLink: "View the post on LinkedIn",
     filmTitle: "Video: four speakers on the Supply Chain Management Conference",
     audienceHeading: "Who attends",
