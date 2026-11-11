@@ -476,18 +476,17 @@ const en = {
   "seo.students.description":
     "Leadership development through real responsibility, mentoring, events and a strong alumni network. Taught in German; German at C1 level is required.",
   "seo.companies.title":
-    "TEG for Executives | Events and Young Business Leadership Academy",
+    "Train the next generation of leaders: workshop, talk, mentoring | TEG",
   "seo.companies.description":
-    "Talks, panels and conferences with executives from corporations and SMEs, organised by participants of the Young Business Leadership Academy. In Munich since 1986.",
+    "At TEG in Munich, executives from corporations and mid-sized companies train selected students and young professionals: with a workshop, a talk or as a mentor. Since 1986.",
   "seo.events.title": "TEG Events: Conferences and Evening Events",
   "seo.events.description":
     "Conferences and evening events by TEG in Munich: the TEG Management Talk, industry panels and conference days with executives from corporations, Mittelstand and academia. Held in German.",
   "seo.imprint.title": "Imprint | TEG",
-  "seo.imprint.description":
-    "Imprint and legal information for The Entrepreneurial Group e. V.",
+  "seo.imprint.description": "Imprint and legal information for TEG.",
   "seo.privacy.title": "Privacy Policy | TEG",
   "seo.privacy.description":
-    "Information about how The Entrepreneurial Group e. V. processes personal data on this website.",
+    "Information about how TEG processes personal data on this website.",
   "seo.supplyChainConference.title":
     "Supply Chain Management Conference 2026 | TEG",
   "seo.supplyChainConference.description":

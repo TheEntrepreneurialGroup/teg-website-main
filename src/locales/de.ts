@@ -480,18 +480,17 @@ const de = {
   "seo.students.description":
     "Werde Teil von TEG und entwickle Führungskompetenz durch echte Verantwortung, Mentoring, Events und Zugang zu einem starken Alumni-Netzwerk.",
   "seo.companies.title":
-    "TEG für Führungskräfte | Veranstaltungen und Young Business Leadership Academy",
+    "Nachwuchsführungskräfte ausbilden: Workshop, Vortrag, Mentoring | TEG",
   "seo.companies.description":
-    "Talks, Panels und Konferenzen mit Führungskräften aus Konzernen und Mittelstand, organisiert von den Teilnehmern der Young Business Leadership Academy. Seit 1986 in München.",
+    "Führungskräfte aus Konzernen und Mittelstand bilden bei der TEG in München ausgewählte Studierende und Berufseinsteiger aus: mit einem Workshop, einem Vortrag oder als Mentor. Seit 1986.",
   "seo.events.title": "TEG Events: Konferenzen und Abendveranstaltungen",
   "seo.events.description":
     "Konferenzen und Abendveranstaltungen der TEG in München: der TEG Management Talk, Industry Panels und Konferenztage mit Führungskräften aus Konzernen, Mittelstand und Wissenschaft.",
   "seo.imprint.title": "Impressum | TEG",
-  "seo.imprint.description":
-    "Impressum und rechtliche Angaben von The Entrepreneurial Group e. V.",
+  "seo.imprint.description": "Impressum und rechtliche Angaben der TEG.",
   "seo.privacy.title": "Datenschutzerklärung | TEG",
   "seo.privacy.description":
-    "Informationen zur Verarbeitung personenbezogener Daten auf der Website von The Entrepreneurial Group e. V.",
+    "Informationen zur Verarbeitung personenbezogener Daten auf der Website der TEG.",
   "seo.supplyChainConference.title":
     "Supply Chain Management Conference 2026 | TEG",
   "seo.supplyChainConference.description":

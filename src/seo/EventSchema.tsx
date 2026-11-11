@@ -15,8 +15,6 @@ import {
 } from "../pages/eventsData";
 import { siteConfig } from "./siteConfig";
 
-const ORGANISATION_NAME = "TEG Management Conferences";
-
 interface EventFacts {
   /** ISO 8601; date only until the times are announced. */
   startDate: string;
@@ -57,7 +55,7 @@ const facts: Record<string, EventFacts> = {
 
 const organiser = {
   "@type": "Organization",
-  name: ORGANISATION_NAME,
+  name: siteConfig.organization.name,
   url: siteConfig.buildAbsoluteUrl("/"),
 };
 
@@ -144,8 +142,7 @@ export const OrganisationSchema: React.FC<{ lang: PageLang }> = ({ lang }) => (
     data={{
       "@context": "https://schema.org",
       "@type": "NGO",
-      name: ORGANISATION_NAME,
-      legalName: siteConfig.organization.name,
+      name: siteConfig.organization.name,
       alternateName: ["TEG", "TEG München"],
       url: siteConfig.buildAbsoluteUrl("/"),
       logo: siteConfig.buildAbsoluteUrl(siteConfig.organization.logoPath),
@@ -154,6 +151,23 @@ export const OrganisationSchema: React.FC<{ lang: PageLang }> = ({ lang }) => (
       email: siteConfig.organization.email,
       address: { "@type": "PostalAddress", ...siteConfig.organization.address },
       sameAs: siteConfig.organization.sameAs,
+    }}
+  />
+);
+
+/** Questions and answers as shown on a page, for search engines. */
+export const FaqSchema: React.FC<{ items: { q: string; a: string }[] }> = ({
+  items,
+}) => (
+  <JsonLd
+    data={{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: items.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
     }}
   />
 );
