@@ -33,7 +33,7 @@
 }
 .ev.ess .hero .wrap {
   gap: 0;
-  padding-block: 72px 96px;
+  padding-block: 72px 56px;
 }
 .ev.ess .hero .when {
   color: var(--on-navy);
@@ -101,15 +101,6 @@
   color: var(--on-navy-muted);
 }
 
-.ev.ess .lede-block {
-  margin-top: 40px;
-  display: grid;
-  gap: 16px;
-  max-width: 64ch;
-}
-.ev.ess .hero .lede {
-  color: var(--on-navy);
-}
 .ev.ess .hero .actions {
   margin-top: 40px;
 }
@@ -157,14 +148,6 @@
   .ev.ess .promise {
     font-size: 17px;
   }
-  .ev.ess .lede-block {
-    margin-top: 18px;
-    gap: 10px;
-  }
-  .ev.ess .hero .lede {
-    font-size: 14px;
-    line-height: 1.5;
-  }
   .ev.ess .hero .actions {
     margin-top: 22px;
     gap: 8px;
@@ -210,13 +193,12 @@
 }
 .ev.ess .audience {
   list-style: none;
-  margin: 0;
+  margin: 8px 0;
   padding: 0;
-  border-top: 2px solid var(--ink);
+  display: grid;
+  gap: 10px;
 }
 .ev.ess .audience li {
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
   font-weight: 600;
 }
 @media (max-width: 860px) {
@@ -233,38 +215,151 @@
   .ev.ess .why-lead {
     font-size: 19px;
   }
-  .ev.ess .audience li {
-    padding: 9px 0;
-  }
 }
 
-/* Topics: four numbered blocks, the number in navy. */
-.ev.ess .topic .n {
-  color: var(--accent);
-  font-weight: 600;
-}
-.ev.ess .topic h3 {
-  font-size: 24px;
-  line-height: 1.25;
-}
-.ev.ess .topic p {
-  margin: 14px 0 0;
-  color: var(--ink-muted);
-  max-width: 58ch;
+/* Warum leads straight into Themen: one gap between them, not two. */
+.ev.ess #warum > .wrap {
+  padding-block: 96px 0;
 }
 @media (max-width: 720px) {
-  .ev.ess .topics {
-    gap: 36px;
+  .ev.ess #warum > .wrap {
+    padding-top: 56px;
   }
-  .ev.ess .topic {
-    padding-top: 18px;
+}
+.ev.ess .part + .part {
+  margin-top: 120px;
+}
+.ev.ess .part-head {
+  margin-bottom: 40px;
+}
+.ev.ess .part-head h3 {
+  margin: 0;
+  font:
+    800 clamp(28px, 3.6vw, 44px) / 1.1 "Manrope",
+    var(--font);
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+}
+.ev.ess .part-head p {
+  margin: 14px 0 0;
+  font-size: 18px;
+  color: var(--ink-muted);
+}
+.ev.ess .part-head p span {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Teil 1: six numbered items, three per row, held together by whitespace
+   alone. */
+.ev.ess .cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 56px 48px;
+}
+.ev.ess .focus-item {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+.ev.ess .card-n {
+  font:
+    800 14px/1 "Manrope",
+    var(--font);
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.ev.ess .focus-item h4 {
+  margin: 6px 0 0;
+  font:
+    700 21px/1.25 "Manrope",
+    var(--font);
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.ev.ess .focus-item p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+/* Teil 2: the key statement beside the points of the talk. */
+.ev.ess .shortlist {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 64px;
+  align-items: start;
+}
+.ev.ess .statement-block {
+  display: grid;
+  gap: 20px;
+}
+.ev.ess .statement {
+  margin: 0;
+  font:
+    700 clamp(21px, 2.1vw, 26px) / 1.35 "Manrope",
+    var(--font);
+  color: var(--ink);
+}
+.ev.ess .statement-note {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+.ev.ess .points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 24px;
+}
+.ev.ess .points li {
+  line-height: 1.5;
+}
+
+@media (max-width: 1040px) {
+  .ev.ess .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .ev.ess .topic h3 {
+}
+@media (max-width: 860px) {
+  .ev.ess .shortlist {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+@media (max-width: 720px) {
+  .ev.ess .part + .part {
+    margin-top: 72px;
+  }
+  .ev.ess .part-head {
+    margin-bottom: 28px;
+  }
+  .ev.ess .part-head p {
+    font-size: 16px;
+  }
+  .ev.ess .cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .ev.ess .focus-item h4 {
     font-size: 19px;
   }
-  .ev.ess .topic p {
+  .ev.ess .focus-item p,
+  .ev.ess .statement-note,
+  .ev.ess .points li {
     font-size: 15px;
-    margin-top: 10px;
+  }
+  .ev.ess .statement {
+    font-size: 20px;
+  }
+  .ev.ess .points {
+    gap: 18px;
   }
 }
 

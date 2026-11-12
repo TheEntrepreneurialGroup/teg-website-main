@@ -19,11 +19,10 @@ import EventSchema from "../seo/EventSchema";
 
 const ASSET = "/events/enterprise-sales";
 const LUMA_URL = "https://luma.com/teg-4sug";
-/** Manrope is not in the site-wide font request; subset to the hero claim. */
-const HERO_FONT_URL: Record<PageLang, string> = {
-  de: "https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&text=RSFWKethinkgsaludcbw.%20&display=swap",
-  en: "https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&text=RSFWethinkgalsucyomrd.%20&display=swap",
-};
+/** Manrope is not in the site-wide font request. It sets the hero claim and,
+ *  as on the event slides, the headings of the topics band. */
+const MANROPE_FONT_URL =
+  "https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap";
 /** Montserrat 800 is not in the site-wide font request; subset to the wordmark. */
 const WORDMARK_FONT_URL =
   "https://fonts.googleapis.com/css2?family=Montserrat:wght@800&text=ENTRPISAL%20&display=swap";
@@ -86,50 +85,71 @@ const speakers: {
 
 const copy = {
   de: {
-    when: ["19. Januar 2027", "München", "Abendveranstaltung"],
+    when: [
+      "19. Januar 2027",
+      "München",
+      "Abendveranstaltung",
+      "Einlass ab 17 Uhr",
+    ],
     tagline: "Rethinking the Sales Funnel.",
     promise: "Was heute wirklich Kunden bringt.",
-    lede: [
-      "Wie gewinnt man Enterprise-Kunden, wenn sich die Entscheidung für einen Anbieter oft schon vor dem ersten Sales-Gespräch anbahnt? Und wie wird aus Interesse ein Abschluss, wenn Buying Committees, Budgetfreigaben und interne Prioritäten mitentscheiden?",
-      "Vier Vorträge. Perspektiven aus langjähriger Enterprise-Sales-Praxis und modernem Go-to-Market. Ein Abend unter Menschen, die komplexe B2B-Deals nicht nur aus Präsentationen kennen.",
-    ],
     registerLuma: "Zur Anmeldung auf Luma",
     viewSpeakers: "Speaker ansehen",
     whyHeading: "Warum dieser Summit?",
     whyLead:
-      "Wie baut man heute eine Enterprise-Pipeline auf? Und wie kommt man auf die Shortlist, wenn Einkaufsteams schon vor dem ersten Vertriebsgespräch KI zur Recherche nutzen?",
-    why: [
-      "Viele Kaufentscheidungen nehmen früh Gestalt an. Einkaufsteams nutzen ChatGPT, Gemini, Claude, Copilot oder Perplexity, um Anbieter zu finden und zu vergleichen. Wer in diesen Antworten fehlt, kann bei der Vorauswahl übergangen werden, ohne es zu erfahren.",
-      "Vier Speaker zeigen aus ihrer Vertriebspraxis, wie Teams passende Accounts identifizieren, Kaufsignale für die Ansprache nutzen und komplexe Deals voranbringen. An Beispielen aus dem industriellen Mittelstand geht es auch darum, wie KI-Modelle Anbieter darstellen und was Vertriebsteams für ihre Sichtbarkeit tun können.",
-    ],
+      "Enterprise-Kunden kaufen heute anders ein als noch vor wenigen Jahren. Viele Vertriebsprozesse sind darauf noch nicht eingestellt.",
+    why: "Die Speaker zeigen, mit welchen Methoden, Daten und Werkzeugen sie selbst arbeiten. Allgemeine Sales-Grundlagen sind nicht Teil des Programms.",
     topicsHeading: "Die Themen",
-    topics: [
-      {
-        n: "01",
-        title: "Die moderne Sales Pipeline · Accounts und Kaufsignale",
-        text: "Wie findet man passende Accounts und die richtigen Ansprechpartner? Wir zeigen, wie Lead Research, saubere Daten und Kaufsignale jenseits von Stellenanzeigen zusammenwirken und wie sich mit Clay und Claude Code eine KI-gestützte GTM-Infrastruktur aufbauen lässt.",
-      },
-      {
-        n: "02",
-        title: "Die moderne Sales Pipeline · Vom Erstkontakt zum Deal",
-        text: "Welches Kundenproblem löst das Angebot und wodurch hebt es sich vom Wettbewerb ab? Es geht um die passende Ansprache für jede Rolle im Buying Center und darum, wie Vertriebsteams mehrere Stakeholder einbinden und Vertrauen aufbauen.",
-      },
-      {
-        n: "03",
-        title: "Die KI-Shortlist · Wie Einkaufsteams Anbieter auswählen",
-        text: "Heinz-Georg Geissler zeigt anhand anonymisierter Messungen aus dem industriellen Mittelstand, wie unterschiedlich KI-Modelle Anbieter darstellen und welche Quellen sie heranziehen. Dabei geht es auch darum, wie Einkaufsteams heute ihre Lieferanten vorauswählen.",
-      },
-      {
-        n: "04",
-        title: "Die KI-Shortlist · Die eigene Sichtbarkeit prüfen",
-        text: "Empfehlungen, Netzwerke und Fachbeiträge beeinflussen, was Menschen und KI-Modelle über Anbieter erfahren. Wir besprechen drei Hebel, mit denen Vertriebsteams ihre Sichtbarkeit verbessern können. Mit einem kurzen Selbstcheck können Teilnehmende prüfen, wie ihr Unternehmen in KI-Antworten erscheint.",
-      },
-    ],
+    pipeline: {
+      title: "Die moderne Sales Pipeline",
+      label: "Fokus Teil 1:",
+      sub: "vom ersten Signal bis zum Enterprise Deal.",
+      items: [
+        {
+          title: "Lead Research & List Building",
+          text: "Wie baue ich eine richtig gute Liste: passende Accounts, richtige Ansprechpartner, saubere Daten?",
+        },
+        {
+          title: "GTM-Infrastruktur & Tooling",
+          text: "Wie baue ich eine moderne, KI-native GTM Engine zusammen (Clay, Claude Code & Co.)?",
+        },
+        {
+          title: "Intent- & Signal-based Outbound",
+          text: "Welche Signale jenseits der üblichen Datenbanken zeigen Bedarf, und wie nutze ich sie für den ersten Kontakt?",
+        },
+        {
+          title: "Value Proposition & USP",
+          text: "Welches Kundenproblem wird gelöst und warum sind wir besser als der Wettbewerb?",
+        },
+        {
+          title: "Messaging für SDR",
+          text: "Welche Message für welche Rolle im Buying Center?",
+        },
+        {
+          title: "Multithreading im Enterprise Deal",
+          text: "Mehrere Stakeholder einbinden und Vertrauen aufbauen.",
+        },
+      ],
+    },
+    shortlist: {
+      title: "Die Shortlist schreibt heute die KI",
+      label: "Fokus Teil 2:",
+      sub: "wie Anbieter auf die Vorauswahl kommen, bevor der erste Vertriebskontakt stattfindet.",
+      statement:
+        "Wer in den Antworten von ChatGPT, Gemini, Claude, Copilot oder Perplexity nicht vorkommt, steht nicht auf der Shortlist und erfährt nie, dass er aussortiert wurde.",
+      statementNote:
+        "Heinz-Georg Geissler zeigt echte, anonymisierte Messungen aus dem industriellen Mittelstand. Die Teilnehmenden bekommen eine kurze Selbstprüfung mit, um die eigene Sichtbarkeit zu testen.",
+      items: [
+        "Wie unterschiedlich die KI-Modelle Anbieter darstellen und auf welche Quellen sie sich stützen.",
+        "Warum Empfehlungen, Netzwerke und Fachbeiträge heute doppelt zählen: beim Menschen und bei der Maschine.",
+        "Die drei Hebel, die am schnellsten wirken, und was das für die Arbeit von Vertriebsteams bedeutet.",
+      ],
+    },
     speakersHeading: "Die Speaker",
     speakers: [
       {
         role: "Internationaler B2B-Vertrieb · Bundesverband der Vertriebsmanager · WelikeU",
-        bio: "Heinz-Georg Geissler verantwortet seit über 25 Jahren internationalen Vertrieb und Führung in der Industrie. Als Mitgründer der WelikeU GmbH begleitet er Geschäftsführende im Mittelstand nach dem Grundsatz „Erst die Grundlage. Dann die KI.“ Parallel baut er als Geschäftsführer und CSO der Compact Motion GmbH ein Industrie-Startup für Linearmotoren auf. Im Präsidium des Bundesverbands der Vertriebsmanager verantwortet er Partner und Inhalte. Für das Springer-Buch „Der Wandel im Vertrieb“ schrieb er das Kapitel zur kundenzentrierten B2B Customer Journey. 2006 brachte er eine Glaslaserschneidtechnik in die iPhone-Fertigung.",
+        bio: "Heinz-Georg Geissler verantwortet seit über 25 Jahren internationalen Vertrieb und Führung in der Industrie. Als Mitgründer der WelikeU GmbH begleitet er Geschäftsführende im Mittelstand nach dem Grundsatz „Erst die Grundlage. Dann die KI.“ Parallel baut er als Geschäftsführer und CSO der Compact Motion GmbH ein Industrie-Startup für Linearmotoren auf. Im Präsidium des Bundesverbands der Vertriebsmanager verantwortet er Partner und Inhalte. Für das Springer-Buch „Der Wandel im Vertrieb“ schrieb er das Kapitel zur kundenzentrierten B2B Customer Journey.",
       },
       {
         role: "Enterprise Sales Manager, Ariadne · zuvor Staffbase und Bilendo · Beyond Quota",
@@ -154,15 +174,13 @@ const copy = {
       "Heads of Sales und VP Sales",
       "Business Development und Revenue Professionals",
     ],
-    audienceOutro:
-      "Wer komplexe B2B-Deals steuert, weiß: Gute Gespräche allein reichen nicht. Es geht um den richtigen Zugang zum Account, belastbare Kundenbeziehungen und einen Verkaufsprozess, der auch dann funktioniert, wenn viele Stakeholder mitreden.",
     audienceYbla: ["Hinzu kommen Teilnehmer unserer ", "."],
     joinHeading: "Teilnahme",
     joinText:
       "Die Plätze werden nach Profil, Motivation und fachlichem Bezug zum Thema vergeben. Jede Anmeldung wird von uns bestätigt. Empfehlungen aus dem eigenen Sales-Netzwerk sind willkommen: Auch empfohlene Gäste melden sich über Luma an.",
     register: "Zur Anmeldung",
     terms: [
-      ["Datum", "19. Januar 2027, abends"],
+      ["Datum", "19. Januar 2027", "Einlass ab 17 Uhr"],
       ["Ort", "München"],
       [
         "Format",
@@ -170,7 +188,7 @@ const copy = {
         "und Austausch mit anderen Enterprise Sales Professionals",
       ],
       ["Sprache", "Deutsch"],
-      ["Anmeldung", "Über Luma", "Jede Anmeldung wird von uns bestätigt"],
+      ["Anmeldung", "Über Luma"],
     ],
     orgHeading: "Organisation",
     orgText: [
@@ -186,50 +204,66 @@ const copy = {
       "Die TEG bringt seit 1986 Führungskräfte aus Konzernen und Mittelstand zusammen und veranstaltet Konferenzen sowie Fachformate in München. Bei bisherigen Veranstaltungen waren unter anderem Microsoft, Google, IBM, Siemens, BMW, McKinsey & Company, BCG, Roland Berger, Accenture und PwC als Partner- oder Speaker-Unternehmen vertreten. Ziel ist der fachliche Austausch zwischen Menschen, die in ihren Unternehmen Verantwortung tragen.",
   },
   en: {
-    when: ["19 January 2027", "Munich", "Evening event"],
+    when: ["19 January 2027", "Munich", "Evening event", "Doors open 5 pm"],
     tagline: "Rethinking the Sales Funnel.",
     promise: "What actually wins customers today.",
-    lede: [
-      "How do you win enterprise customers when the choice of vendor often begins to take shape before the first sales conversation? And how does interest become a signed deal when buying committees, budget approvals and internal priorities all have a say?",
-      "Four talks. Perspectives drawn from long enterprise sales practice and from modern go-to-market. An evening among people who know complex B2B deals from more than slide decks.",
-    ],
     registerLuma: "Register on Luma",
     viewSpeakers: "View the speakers",
     whyHeading: "Why this summit?",
     whyLead:
-      "How do you build an enterprise pipeline today? And how do you make the shortlist when buying teams use AI to research vendors before the first sales conversation?",
-    why: [
-      "Many purchasing decisions begin to take shape early. Buying teams use ChatGPT, Gemini, Claude, Copilot or Perplexity to find and compare vendors. If a vendor is missing from those answers, it can be passed over without ever knowing.",
-      "Four speakers draw on their sales experience to show how teams identify suitable accounts, use buying signals in outreach and move complex deals forward. Examples from mid-sized industrial companies show how AI models present vendors and what sales teams can do to improve their visibility.",
-    ],
+      "Enterprise customers buy differently than they did a few years ago. Many sales processes have not caught up.",
+    why: "The speakers show the methods, data and tools they use in their own work. Sales fundamentals are not on the programme.",
     topicsHeading: "The topics",
-    topics: [
-      {
-        n: "01",
-        title: "The modern sales pipeline · Accounts and buying signals",
-        text: "How do you find suitable accounts and the right contacts? We look at how lead research, clean data and buying signals beyond job postings work together, and how tools such as Clay and Claude Code can support an AI-powered go-to-market operation.",
-      },
-      {
-        n: "02",
-        title: "The modern sales pipeline · From first contact to deal",
-        text: "Which customer problem does your offer solve, and what sets it apart from the competition? We cover how to tailor outreach to each role in the buying group, engage several stakeholders and build trust.",
-      },
-      {
-        n: "03",
-        title: "The AI shortlist · How buying teams select vendors",
-        text: "Using anonymised measurements from mid-sized industrial companies, Heinz-Georg Geissler shows how differently AI models present vendors and which sources they draw on. He also explores how buying teams choose which suppliers to consider.",
-      },
-      {
-        n: "04",
-        title: "The AI shortlist · Checking your visibility",
-        text: "Referrals, networks and industry publications shape what people and AI models learn about vendors. We discuss three ways sales teams can improve their visibility. A short self-assessment lets participants see how their own company appears in AI answers.",
-      },
-    ],
+    pipeline: {
+      title: "The modern sales pipeline",
+      label: "Focus part 1:",
+      sub: "from the first signal to the enterprise deal.",
+      items: [
+        {
+          title: "Lead research & list building",
+          text: "How do I build a genuinely good list: the right accounts, the right contacts, clean data?",
+        },
+        {
+          title: "GTM infrastructure & tooling",
+          text: "How do I assemble a modern, AI-native GTM engine (Clay, Claude Code & co.)?",
+        },
+        {
+          title: "Intent & signal-based outbound",
+          text: "Which signals beyond the usual databases reveal demand, and how do I use them for first contact?",
+        },
+        {
+          title: "Value proposition & USP",
+          text: "Which customer problem do we solve, and why are we better than the competition?",
+        },
+        {
+          title: "Messaging for SDRs",
+          text: "Which message for which role in the buying centre?",
+        },
+        {
+          title: "Multithreading in the enterprise deal",
+          text: "Engaging several stakeholders and building trust.",
+        },
+      ],
+    },
+    shortlist: {
+      title: "AI now writes the shortlist",
+      label: "Focus part 2:",
+      sub: "how vendors make the shortlist before the first sales contact takes place.",
+      statement:
+        "Vendors that do not appear in the answers of ChatGPT, Gemini, Claude, Copilot or Perplexity do not make the shortlist, and never learn that they were ruled out.",
+      statementNote:
+        "Heinz-Georg Geissler presents real, anonymised measurements from mid-sized industrial companies. Participants take home a short self-assessment to test their own visibility.",
+      items: [
+        "How differently AI models present vendors, and which sources they rely on.",
+        "Why referrals, networks and industry articles now count twice: with people and with machines.",
+        "The three levers that work fastest, and what they mean for the work of sales teams.",
+      ],
+    },
     speakersHeading: "The speakers",
     speakers: [
       {
         role: "International B2B sales · Bundesverband der Vertriebsmanager · WelikeU",
-        bio: "Heinz-Georg Geissler has led international sales and managed teams in industry for over 25 years. He co-founded WelikeU GmbH to advise leaders of mid-sized companies on getting the fundamentals in place before adopting AI. As managing director and CSO of Compact Motion GmbH, he is also building an industrial start-up for linear motors. He oversees partnerships and content on the executive board of the Bundesverband der Vertriebsmanager. He wrote the chapter on the customer-centric B2B customer journey for Springer's “Der Wandel im Vertrieb”. In 2006, he introduced a laser glass-cutting technique into iPhone manufacturing.",
+        bio: "Heinz-Georg Geissler has led international sales and managed teams in industry for over 25 years. He co-founded WelikeU GmbH to advise leaders of mid-sized companies on getting the fundamentals in place before adopting AI. As managing director and CSO of Compact Motion GmbH, he is also building an industrial start-up for linear motors. He oversees partnerships and content on the executive board of the Bundesverband der Vertriebsmanager. He wrote the chapter on the customer-centric B2B customer journey for Springer's “Der Wandel im Vertrieb”.",
       },
       {
         role: "Enterprise Sales Manager, Ariadne · formerly Staffbase and Bilendo · Beyond Quota",
@@ -254,15 +288,13 @@ const copy = {
       "Heads of Sales and VPs of Sales",
       "Business Development and Revenue Professionals",
     ],
-    audienceOutro:
-      "Anyone who steers complex B2B deals knows that good conversations alone are not enough. What counts is the right access to the account, durable customer relationships and a sales process that holds up even when many stakeholders have a say.",
     audienceYbla: ["They are joined by participants of our ", "."],
     joinHeading: "Attendance",
     joinText:
       "Places are allocated by profile, motivation and professional connection to the topic. We confirm every registration individually. Referrals from your own sales network are welcome: referred guests also register via Luma.",
     register: "Register",
     terms: [
-      ["Date", "19 January 2027, evening"],
+      ["Date", "19 January 2027", "Doors open at 5 pm"],
       ["Location", "Munich"],
       [
         "Format",
@@ -270,7 +302,7 @@ const copy = {
         "and conversation with fellow enterprise sales professionals",
       ],
       ["Language", "German"],
-      ["Registration", "Via Luma", "We confirm every registration"],
+      ["Registration", "Via Luma"],
     ],
     orgHeading: "Organisation",
     orgText: [
@@ -302,6 +334,21 @@ const organisers: Omit<ContactPerson, "role">[] = [
   },
 ];
 
+/** 0 → "01", as on the event slides. */
+const num = (i: number) => String(i + 1).padStart(2, "0");
+
+/** Slide-style part heading in bold capitals, with its "Fokus" line. */
+const PartHeading: React.FC<{
+  part: { title: string; label: string; sub: string };
+}> = ({ part }) => (
+  <div className="part-head">
+    <h3>{part.title}</h3>
+    <p>
+      <span>{part.label}</span> {part.sub}
+    </p>
+  </div>
+);
+
 const RegisterButton: React.FC<{ label: string }> = ({ label }) => (
   <a
     className="btn primary"
@@ -321,7 +368,7 @@ const EnterpriseSalesSummit: React.FC = () => {
     <div className="ev ess" lang={lang}>
       <EventSchema ids={["enterprise-sales-summit-2027"]} lang={lang} />
       <Helmet>
-        <link rel="stylesheet" href={HERO_FONT_URL[lang]} />
+        <link rel="stylesheet" href={MANROPE_FONT_URL} />
         <link rel="stylesheet" href={WORDMARK_FONT_URL} />
       </Helmet>
       <section className="hero">
@@ -344,13 +391,6 @@ const EnterpriseSalesSummit: React.FC = () => {
             <p className="tagline">{t.tagline}</p>
             <p className="promise">{t.promise}</p>
           </div>
-          <div className="lede-block">
-            {t.lede.map((text) => (
-              <p className="lede" key={text}>
-                {text}
-              </p>
-            ))}
-          </div>
           <div className="actions">
             <RegisterButton label={t.registerLuma} />
             <a className="btn ghost" href="#speaker">
@@ -365,26 +405,43 @@ const EnterpriseSalesSummit: React.FC = () => {
           <h2 className="h2">{t.whyHeading}</h2>
           <div className="why-text">
             <p className="why-lead">{t.whyLead}</p>
-            {t.why.map((text) => (
-              <p key={text}>{text}</p>
-            ))}
+            <p>{t.why}</p>
           </div>
         </div>
       </section>
 
-      <section className="band" id="themen">
+      <section className="band flush" id="themen">
         <div className="wrap">
           <div className="head">
             <h2 className="h2">{t.topicsHeading}</h2>
           </div>
-          <div className="topics">
-            {t.topics.map((topic) => (
-              <div className="topic" key={topic.n}>
-                <span className="n">{topic.n}</span>
-                <h3>{topic.title}</h3>
-                <p>{topic.text}</p>
+
+          <div className="part" id="teil-1">
+            <PartHeading part={t.pipeline} />
+            <ol className="cards">
+              {t.pipeline.items.map((item, i) => (
+                <li className="focus-item" key={item.title}>
+                  <span className="card-n">{num(i)}</span>
+                  <h4>{item.title}</h4>
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="part" id="teil-2">
+            <PartHeading part={t.shortlist} />
+            <div className="shortlist">
+              <div className="statement-block">
+                <p className="statement">{t.shortlist.statement}</p>
+                <p className="statement-note">{t.shortlist.statementNote}</p>
               </div>
-            ))}
+              <ul className="points">
+                {t.shortlist.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -443,7 +500,6 @@ const EnterpriseSalesSummit: React.FC = () => {
                 <li key={group}>{group}</li>
               ))}
             </ul>
-            <p>{t.audienceOutro}</p>
             <p>
               {t.audienceYbla[0]}
               <YblaTerm />

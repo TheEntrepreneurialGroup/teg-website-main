@@ -46,7 +46,7 @@ const facts: Record<string, EventFacts> = {
     startDate: "2027-06-03",
   },
   "enterprise-sales-summit-2027": {
-    startDate: "2027-01-19",
+    startDate: "2027-01-19T17:00:00+01:00",
     inLanguage: "de",
     image: "/events/enterprise-sales/og-cover.jpg",
     registrationUrl: "https://luma.com/teg-4sug",
