@@ -10,7 +10,7 @@ import { getBasePath, usePageLang } from "../i18n/pageLang";
 const NOTICES = {
   conference: {
     lead: "This conference is held in German.",
-    detail: "All talks, panels and workshops are in German.",
+    detail: "Live subtitles in English are available.",
   },
   event: {
     lead: "This event is held in German.",
