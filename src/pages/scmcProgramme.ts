@@ -65,7 +65,7 @@ const schneider: ProgrammeSpeaker = {
 };
 
 const lustig: ProgrammeSpeaker = {
-  name: "Stefan Lustig",
+  name: "Dr. Stefan Lustig",
   role: {
     de: "Founder Brewery2030+; ehem. Geschäftsführer Supply Chain, Paulaner",
     en: "Founder Brewery2030+; former Managing Director Supply Chain, Paulaner",

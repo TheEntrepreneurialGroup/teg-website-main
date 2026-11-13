@@ -89,7 +89,7 @@ const speakers = [
     photo: "kroeber",
   },
   {
-    name: "Dr. Stephan Lustig",
+    name: "Dr. Stefan Lustig",
     role: {
       de: "Geschäftsführer Supply Chain Paulaner Brauerei (2010–2018)",
       en: "Managing Director Supply Chain, Paulaner Brewery (2010–2018)",
