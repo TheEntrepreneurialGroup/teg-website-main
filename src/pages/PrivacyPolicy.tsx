@@ -26,8 +26,8 @@ const PrivacyPolicy: React.FC = () => {
               Deutschland
             </p>
             <p>
-              Vertretungsberechtigter Vorstand: Jonathan Babelotzky, Finn
-              Heinemann, Yassin Aboushelib, Ahmed Kaddour
+              Vertretungsberechtigter Vorstand: Jonathan Babelotzky, Lucas
+              Zierenberg, Yassin Aboushelib, Ahmed Kaddour
             </p>
             <p>
               E-Mail:{" "}

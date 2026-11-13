@@ -45,7 +45,7 @@ const Imprint: React.FC = () => {
                 Board of Directors authorized to represent:
               </h3>
               <p className="mb-1">
-                Jonathan Babelotzky, Finn Heinemann, Yassin Aboushelib, Ahmed
+                Jonathan Babelotzky, Lucas Zierenberg, Yassin Aboushelib, Ahmed
                 Kaddour
               </p>
             </div>
