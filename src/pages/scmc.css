@@ -271,6 +271,53 @@
 .ev.scmc .partners .wrap {
   padding-top: 0;
 }
+/* Companies and associations: each label stays with its logos. */
+.ev.scmc .partner-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 48px;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+/* The label lines up with the logos, not with logo plus name. */
+.ev.scmc .partner-group.associations {
+  align-items: flex-start;
+}
+.ev.scmc .partner-group.associations > p {
+  line-height: 44px;
+}
+/* Association: logo with its name underneath, the whole block links out. */
+.ev.scmc .association {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+.ev.scmc .association .logo {
+  display: flex;
+  align-items: center;
+  height: 44px;
+}
+.ev.scmc .partners .association img {
+  width: auto;
+}
+.ev.scmc .association .name {
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+}
+.ev.scmc .association:hover .name {
+  color: var(--ink);
+  text-decoration-color: currentColor;
+}
+@media (max-width: 720px) {
+  .ev.scmc .partner-group.associations .row {
+    column-gap: 24px;
+  }
+}
 .ev.scmc .hero-mark {
   margin-top: 16px;
 }

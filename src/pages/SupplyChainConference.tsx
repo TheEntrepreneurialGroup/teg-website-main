@@ -44,6 +44,25 @@ const partners = [
   { name: "MHP – A Porsche Company", logo: `${ASSET}/partners/mhp.webp` },
 ];
 
+/**
+ * Associations, listed after the companies. Few guests know them, so each
+ * logo carries its name and a link. Heights even out the two logo shapes.
+ */
+const associations = [
+  {
+    name: "Open Industry 4.0 Alliance",
+    url: "https://openindustry4.com/",
+    logo: `${ASSET}/partners/open-industry-4.webp`,
+    height: 44,
+  },
+  {
+    name: "Chinaforum Bayern",
+    url: "https://www.chinaforumbayern.de/",
+    logo: `${ASSET}/partners/chinaforum-bayern.webp`,
+    height: 26,
+  },
+];
+
 const speakers = [
   {
     name: "Hansjörg Briegel",
@@ -94,20 +113,44 @@ const speakers = [
     photo: "popp",
   },
   {
-    name: "Prof. Dr. Lisandra Flach",
-    role: {
-      de: "Expertin für globalen Handel, LMU / ifo Institut",
-      en: "Expert in global trade, LMU / ifo Institute",
-    },
-    photo: "flach",
-  },
-  {
     name: "Manuela Kirner",
     role: {
       de: "Senior Director Customs, Infineon (bis 2025)",
       en: "Senior Director Customs, Infineon (until 2025)",
     },
     photo: "kirner",
+  },
+  {
+    name: "Klaus Buchwald",
+    role: {
+      de: "COO Siltronic; Executive VP Operations, Infineon (1998–2024)",
+      en: "COO Siltronic; Executive VP Operations, Infineon (1998–2024)",
+    },
+    photo: "buchwald",
+  },
+  {
+    name: "Dr. Stefan Kluge",
+    role: {
+      de: "VP Operations, ams Osram",
+      en: "VP Operations, ams Osram",
+    },
+    photo: "kluge",
+  },
+  {
+    name: "Anke Schnitzer",
+    role: {
+      de: "Leitung IT, CompuSafe Data Systems",
+      en: "Head of IT, CompuSafe Data Systems",
+    },
+    photo: "schnitzer",
+  },
+  {
+    name: "Oskar Schneider",
+    role: {
+      de: "Senior AI Expert, Data Science, Horváth",
+      en: "Senior AI Expert, Data Science, Horváth",
+    },
+    photo: "schneider",
   },
 ];
 
@@ -127,6 +170,7 @@ const copy = {
       ["1 Tag", "Panels, Einzelvorträge und Workshops in kleinen Gruppen"],
     ],
     supportedBy: "Unterstützt von",
+    associations: "Verbände",
     speakersHeading: "Speaker",
     filmHeading: "Vier Speaker im Video",
     filmText:
@@ -259,6 +303,7 @@ const copy = {
       ["1 day", "Panels, keynotes and workshops in small groups"],
     ],
     supportedBy: "Supported by",
+    associations: "Industry associations",
     speakersHeading: "Speakers",
     filmHeading: "Four speakers on film",
     filmText:
@@ -470,11 +515,36 @@ const SupplyChainConference: React.FC = () => {
 
       <section className="partners" aria-label={t.supportedBy}>
         <div className="wrap">
-          <p>{t.supportedBy}</p>
-          <div className="row">
-            {partners.map((partner) => (
-              <img key={partner.name} src={partner.logo} alt={partner.name} />
-            ))}
+          <div className="partner-group">
+            <p>{t.supportedBy}</p>
+            <div className="row">
+              {partners.map((partner) => (
+                <img key={partner.name} src={partner.logo} alt={partner.name} />
+              ))}
+            </div>
+          </div>
+          <div className="partner-group associations">
+            <p>{t.associations}</p>
+            <div className="row">
+              {associations.map((association) => (
+                <a
+                  key={association.name}
+                  className="association"
+                  href={association.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="logo">
+                    <img
+                      src={association.logo}
+                      alt=""
+                      style={{ height: association.height }}
+                    />
+                  </span>
+                  <span className="name">{association.name}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
