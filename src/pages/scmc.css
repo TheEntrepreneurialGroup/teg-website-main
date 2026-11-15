@@ -51,112 +51,6 @@
   }
 }
 
-/* Audience: the shares take the hero figures' face and navy, and each
-   column shares row tracks so sector names and examples line up even when
-   a name wraps. */
-.ev.scmc .sectors {
-  row-gap: 6px;
-}
-.ev.scmc .sectors li {
-  grid-row: span 3;
-  grid-template-rows: subgrid;
-  gap: 0;
-}
-/* Two or more rows: space between them, cancelled after the last row. */
-@media (max-width: 900px) {
-  .ev.scmc .sectors {
-    margin-bottom: -26px;
-  }
-  .ev.scmc .sectors li {
-    margin-bottom: 26px;
-  }
-}
-.ev.scmc .sectors .pct {
-  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-  letter-spacing: 0;
-  color: var(--accent);
-}
-@media (max-width: 720px) {
-  .ev.scmc .sectors {
-    row-gap: 2px;
-  }
-  .ev.scmc .sectors {
-    margin-bottom: -20px;
-  }
-  .ev.scmc .sectors li {
-    margin-bottom: 20px;
-  }
-}
-
-/* Publikum reads as a short addendum to the speakers rather than a band of
-   its own: no rule between them, a smaller step down from the line-up, a
-   small heading and the hero's light figure row. */
-.ev.scmc #lineup > .wrap {
-  padding-bottom: 84px;
-}
-.ev.scmc #publikum::before {
-  display: none;
-}
-.ev.scmc #publikum > .wrap {
-  padding-top: 0;
-}
-.ev.scmc #publikum .head {
-  gap: 8px;
-  margin-bottom: 24px;
-}
-.ev.scmc #publikum .h2 {
-  font-size: 24px;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-}
-.ev.scmc #publikum .intro {
-  font-size: 15px;
-}
-.ev.scmc #publikum .sectors {
-  border-top: 0;
-  padding-top: 8px;
-}
-.ev.scmc #publikum .sectors .pct {
-  font-size: 22px;
-}
-.ev.scmc #publikum .sectors .name {
-  font-size: 15px;
-}
-.ev.scmc #publikum .sectors .ex {
-  font-size: 13px;
-}
-.ev.scmc #publikum .footnote {
-  margin-top: 24px;
-  font-size: 13px;
-}
-@media (max-width: 720px) {
-  .ev.scmc #lineup > .wrap {
-    padding-bottom: 52px;
-  }
-  .ev.scmc #publikum .h2 {
-    font-size: 20px;
-  }
-  .ev.scmc #publikum .intro {
-    font-size: 14px;
-  }
-  .ev.scmc #publikum .sectors {
-    padding-top: 4px;
-  }
-  .ev.scmc #publikum .sectors .pct {
-    font-size: 19px;
-  }
-  .ev.scmc #publikum .sectors .name {
-    font-size: 14px;
-  }
-  .ev.scmc #publikum .sectors .ex {
-    font-size: 12.5px;
-  }
-  .ev.scmc #publikum .footnote {
-    margin-top: 20px;
-    font-size: 12.5px;
-  }
-}
-
 /* Fokus: the topics hang off one navy rail, a dot at each heading. */
 .ev.scmc .topics {
   position: relative;
@@ -610,12 +504,21 @@
   color: var(--ink-muted);
 }
 
-/* Speaker film: a 4:5 portrait video beside a short note. */
+/* Speaker film: a 4:5 portrait video beside a short note, on a stone band
+   between the line-up and Fokus. The note sits level with the middle of
+   the film, so the column beside it does not read as empty space; the
+   surface change replaces the rule to the next chapter. */
+.ev.scmc #video > .wrap {
+  padding-block: 96px;
+}
+.ev.scmc #video + .band::before {
+  display: none;
+}
 .ev.scmc .film {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
   gap: 64px;
-  align-items: start;
+  align-items: center;
 }
 .ev.scmc .film-text {
   display: grid;
@@ -642,5 +545,10 @@
   .ev.scmc .film {
     grid-template-columns: minmax(0, 1fr);
     gap: 32px;
+  }
+}
+@media (max-width: 720px) {
+  .ev.scmc #video > .wrap {
+    padding-block: 56px;
   }
 }

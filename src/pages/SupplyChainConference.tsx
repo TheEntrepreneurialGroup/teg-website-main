@@ -178,35 +178,6 @@ const copy = {
     filmLink: "Beitrag auf LinkedIn ansehen",
     filmTitle:
       "Video: vier Speaker über die Supply Chain Management Conference",
-    audienceHeading: "Zusammensetzung des Publikums",
-    audienceIntro:
-      "100 Teilnehmer, davon 70 Führungskräfte von der Teamleitung bis zum C-Level, überwiegend aus Konzernen dieser vier Branchen.",
-    sectors: [
-      {
-        pct: "30 %",
-        name: "Logistikdienstleister",
-        ex: "DHL, Kühne+Nagel, DB Schenker, Dachser",
-      },
-      {
-        pct: "26 %",
-        name: "Maschinen- und Anlagenbau",
-        ex: "Siemens, Krones, Trumpf, GEA",
-      },
-      {
-        pct: "24 %",
-        name: "Halbleiterindustrie",
-        ex: "Infineon, Intel, Bosch, TSMC",
-      },
-      {
-        pct: "20 %",
-        name: "Getränkeindustrie",
-        ex: "Paulaner, AB InBev, Coca‑Cola, Krombacher",
-      },
-    ],
-    audienceFootnote: [
-      "Hinzu kommen Teilnehmer unserer ",
-      ", die 10 bis 20 % des Publikums ausmachen.",
-    ],
     focusHeading: "Fokus",
     topics: [
       {
@@ -310,35 +281,6 @@ const copy = {
       "Jochen Kröber, Peter Dressler, Rainer Baumann and Hansjörg Briegel on what they expect from 8 December.",
     filmLink: "View the post on LinkedIn",
     filmTitle: "Video: four speakers on the Supply Chain Management Conference",
-    audienceHeading: "Who attends",
-    audienceIntro:
-      "100 participants, 70 of them executives from team lead to C-level, mostly from large corporations in these four industries.",
-    sectors: [
-      {
-        pct: "30 %",
-        name: "Logistics service providers",
-        ex: "DHL, Kühne+Nagel, DB Schenker, Dachser",
-      },
-      {
-        pct: "26 %",
-        name: "Machinery and plant engineering",
-        ex: "Siemens, Krones, Trumpf, GEA",
-      },
-      {
-        pct: "24 %",
-        name: "Semiconductors",
-        ex: "Infineon, Intel, Bosch, TSMC",
-      },
-      {
-        pct: "20 %",
-        name: "Beverages",
-        ex: "Paulaner, AB InBev, Coca‑Cola, Krombacher",
-      },
-    ],
-    audienceFootnote: [
-      "They are joined by participants of our ",
-      ", who make up 10 to 20 % of the audience.",
-    ],
     focusHeading: "Focus",
     topics: [
       {
@@ -570,7 +512,7 @@ const SupplyChainConference: React.FC = () => {
         </div>
       </section>
 
-      <section className="band" id="video">
+      <section className="band stone" id="video">
         <div className="wrap film">
           <div className="film-text">
             <h2 className="h2">{t.filmHeading}</h2>
@@ -596,29 +538,6 @@ const SupplyChainConference: React.FC = () => {
               <source src={`${ASSET}/speaker-film.mp4`} type="video/mp4" />
             </video>
           </div>
-        </div>
-      </section>
-
-      <section className="band" id="publikum">
-        <div className="wrap">
-          <div className="head">
-            <h2 className="h2">{t.audienceHeading}</h2>
-            <p className="intro">{t.audienceIntro}</p>
-          </div>
-          <ul className="sectors">
-            {t.sectors.map((sector) => (
-              <li key={sector.name}>
-                <span className="pct">{sector.pct}</span>
-                <span className="name">{sector.name}</span>
-                <span className="ex">{sector.ex}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="footnote">
-            {t.audienceFootnote[0]}
-            <YblaTerm />
-            {t.audienceFootnote[1]}
-          </p>
         </div>
       </section>
 

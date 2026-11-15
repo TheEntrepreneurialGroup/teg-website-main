@@ -506,7 +506,7 @@ const About: React.FC = () => {
   const nextConference = upcomingConferences[0];
 
   return (
-    <div className="ev landing" lang={lang} ref={rootRef}>
+    <div className="ev landing about" lang={lang} ref={rootRef}>
       <OrganisationSchema lang={lang} />
       <section className="dark">
         {nextConference && (

@@ -510,6 +510,76 @@
   text-decoration-color: currentColor;
 }
 
+/* Desktop: the three groups (next conference, further conferences, next
+   evening) share one screen. The conference name runs on one line. */
+@media (min-width: 861px) {
+  .ev.overview .band.page-top > .wrap {
+    padding-top: calc(var(--site-nav-h) + 40px);
+  }
+  .ev.overview .lead h2 {
+    max-width: none;
+  }
+  .ev.overview .lead-cta {
+    margin-top: 24px;
+  }
+  .ev.overview a.lead {
+    margin-bottom: 48px;
+  }
+  .ev.overview .agenda + .agenda-label {
+    margin-top: 40px;
+  }
+  .ev.overview .agenda-row {
+    padding: 18px 0;
+  }
+  /* Longer lines, fewer of them. */
+  .ev.overview .lead-about {
+    max-width: 88ch;
+  }
+  .ev.overview .agenda .summary {
+    max-width: 88ch;
+  }
+}
+
+/* The overview separates by space and surface, not by rules: no hairline
+   between bands (contact sits on stone instead), no rules between rows. The
+   underline under "Programm" stays, it marks the link. */
+.ev.overview .band::before {
+  display: none;
+}
+.ev.overview #kontakt {
+  background: var(--stone);
+}
+.ev.overview .agenda,
+.ev.overview .evenings {
+  border-top: 0;
+}
+.ev.overview .agenda-row {
+  border-bottom: 0;
+}
+.ev.overview .agenda li + li .agenda-row {
+  margin-top: 8px;
+}
+.ev.overview .agenda-empty {
+  padding: 0;
+  border: 0;
+}
+.ev.overview .evening {
+  padding: 28px 0 44px;
+  border-bottom: 0;
+}
+.ev.overview .evening:first-child {
+  padding-top: 8px;
+}
+.ev.overview .founders li {
+  border-bottom: 0;
+  padding: 4px 0;
+}
+.ev.overview .alumni {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 48px;
+}
+
 /* Upcoming conferences on /events: a dark "stage" band that continues the
    navbar, with one agenda row per conference. The whole row is one link. */
 .ev .band.stage {
@@ -553,7 +623,31 @@
     margin-top: 40px;
   }
   .ev.overview .agenda-row {
-    padding: 20px 0;
+    padding: 16px 0;
+  }
+  /* Date line and button share one row; the button sits on the right edge
+     like the "Programm" links of the rows below. */
+  .ev.overview a.lead {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .ev.overview a.lead > * {
+    flex: 0 0 100%;
+  }
+  .ev.overview a.lead > .lead-meta {
+    flex: 1 1 auto;
+  }
+  .ev.overview a.lead > .lead-cta {
+    flex: 0 0 auto;
+    margin-top: 14px;
+  }
+  .ev.overview .lead h2 {
+    font-size: 48px;
+  }
+  /* The evening row keeps title and topic; date and place stand left. */
+  .ev.overview .agenda.minor .summary {
+    display: none;
   }
 }
 .ev .sr-only {

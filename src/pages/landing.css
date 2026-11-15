@@ -2,14 +2,24 @@
  * Landing pages (About, For executives). Builds on editorial.css (tokens, .wrap, .band,
  * .terms) and adds the art direction a landing page needs:
  * a split cover, chapters in a black/white/stone rhythm, large
- * photography and one bordeaux display figure. No gradients; motion is slow
- * and optional.
+ * photography and large display figures (bordeaux only on For executives).
+ * No gradients; motion is slow and optional.
  */
 .ev.landing {
   --gutter: max(16px, min(48px, 4vw));
   /* Left edge of .wrap content, so full-bleed layouts still align to it. */
   --edge: max(var(--gutter), calc((100vw - var(--max)) / 2));
   --accent-on-dark: #d07a87;
+}
+
+/* About carries no accent colour, like the events overview: the bordeaux
+   did not sit with the black/white/stone palette, and the TEG accent is
+   pending the rebrand. Display figures and links take the ink colour. */
+.ev.landing.about {
+  --accent: var(--ink);
+}
+.ev.landing.about .dark {
+  --accent: var(--on-stage);
 }
 
 /* Black sections share the stage tokens. */
@@ -179,23 +189,14 @@
   }
 }
 
-/* 2. Facts strip directly under the cover. */
-.ev.landing .facts-strip {
-  border-top: 1px solid var(--line);
-}
+/* 2. Facts strip directly under the cover. The figures carry the row on
+   their own: size and spacing separate them, no dividers. */
 .ev.landing .facts-strip dl {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 48px;
   margin: 0;
-  padding-block: 48px 56px;
-}
-.ev.landing .facts-strip div {
-  padding: 0 32px;
-  border-left: 1px solid var(--line);
-}
-.ev.landing .facts-strip div:first-child {
-  padding-left: 0;
-  border-left: 0;
+  padding-block: 56px 64px;
 }
 .ev.landing .facts-strip dt {
   font: 500 clamp(36px, 4vw, 52px) / 1 var(--font);
@@ -212,15 +213,8 @@
 @media (max-width: 860px) {
   .ev.landing .facts-strip dl {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 32px;
+    gap: 32px 24px;
     padding-block: 40px 48px;
-  }
-  .ev.landing .facts-strip div {
-    padding: 0 0 0 20px;
-  }
-  .ev.landing .facts-strip div:nth-child(3) {
-    padding-left: 0;
-    border-left: 0;
   }
   .ev.landing .facts-strip dt {
     font-size: 30px;
@@ -235,7 +229,7 @@
 /* 3. Partners and speakers: one long line that drifts slowly to the left;
    without motion it wraps as a static list. */
 .ev.landing .network {
-  border-bottom: 1px solid var(--line);
+  background: var(--stone);
   padding-block: 40px 44px;
   overflow: hidden;
 }
@@ -297,18 +291,13 @@
 .ev.landing .pillars {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 2px solid var(--ink);
+  column-gap: 96px;
 }
 .ev.landing .pillars article {
   display: grid;
   align-content: start;
   justify-items: start;
   gap: 16px;
-  padding: 40px 56px 0 0;
-}
-.ev.landing .pillars article + article {
-  padding: 40px 0 0 56px;
-  border-left: 1px solid var(--line);
 }
 .ev.landing .pillar-n {
   font: 500 clamp(56px, 6vw, 88px) / 0.85 var(--font);
@@ -329,12 +318,11 @@
   max-width: 52ch;
 }
 .ev.landing .bridge {
-  margin: 88px 0 0;
-  padding-left: 28px;
-  border-left: 3px solid var(--accent);
-  font: 500 clamp(22px, 2.2vw, 30px) / 1.35 var(--font);
-  letter-spacing: -0.01em;
-  max-width: 44ch;
+  margin: 120px 0 0;
+  font: 500 clamp(26px, 3vw, 40px) / 1.25 var(--font);
+  letter-spacing: -0.02em;
+  max-width: 34ch;
+  text-wrap: balance;
 }
 @media (max-width: 860px) {
   .ev.landing .mission > .wrap {
@@ -342,17 +330,10 @@
   }
   .ev.landing .pillars {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .ev.landing .pillars article,
-  .ev.landing .pillars article + article {
-    padding: 32px 0 40px;
-    border-left: 0;
-  }
-  .ev.landing .pillars article + article {
-    border-top: 1px solid var(--line);
+    row-gap: 56px;
   }
   .ev.landing .bridge {
-    margin-top: 40px;
+    margin-top: 64px;
   }
 }
 
@@ -363,20 +344,14 @@
 .ev.landing .paths {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0;
-  margin-top: 56px;
-  border-top: 1px solid var(--line);
+  column-gap: 96px;
+  margin-top: 64px;
 }
 .ev.landing .paths article {
   display: grid;
   align-content: start;
   justify-items: start;
   gap: 14px;
-  padding: 36px 56px 0 0;
-}
-.ev.landing .paths article + article {
-  padding: 36px 0 0 56px;
-  border-left: 1px solid var(--line);
 }
 .ev.landing .paths h3 {
   margin: 0;
@@ -396,14 +371,8 @@
   }
   .ev.landing .paths {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .ev.landing .paths article,
-  .ev.landing .paths article + article {
-    padding: 32px 0;
-    border-left: 0;
-  }
-  .ev.landing .paths article + article {
-    border-top: 1px solid var(--line);
+    row-gap: 48px;
+    margin-top: 48px;
   }
 }
 
@@ -492,8 +461,6 @@
 .ev.landing .founders-named li {
   display: grid;
   gap: 2px;
-  padding-left: 16px;
-  border-left: 2px solid var(--accent);
 }
 .ev.landing .founders-named b {
   font-weight: 600;
@@ -503,9 +470,7 @@
   color: var(--ink-muted);
 }
 .ev.landing .board-line {
-  margin: 40px 0 0;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
+  margin: 48px 0 0;
   font-size: 14px;
   line-height: 1.75;
   color: var(--ink-muted);
@@ -587,9 +552,8 @@
 }
 .ev.landing .format-panel ul {
   list-style: none;
-  margin: 20px 0 0;
-  padding: 16px 0 0;
-  border-top: 1px solid var(--line);
+  margin: 24px 0 0;
+  padding: 0;
   display: grid;
   gap: 8px;
   font-size: 14px;
@@ -649,17 +613,8 @@
 .ev.landing .fact-row {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 48px;
   margin: 80px 0 0;
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
-}
-.ev.landing .fact-row div {
-  padding: 0 28px;
-  border-left: 1px solid var(--line);
-}
-.ev.landing .fact-row div:first-child {
-  padding-left: 0;
-  border-left: 0;
 }
 .ev.landing .fact-row dt {
   font-size: 14px;
@@ -687,30 +642,18 @@
   }
   .ev.landing .fact-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 28px;
-  }
-  .ev.landing .fact-row div:nth-child(3) {
-    padding-left: 0;
-    border-left: 0;
+    gap: 28px 24px;
   }
 }
 
 /* 7. Graduates: large figures, then a uniform portrait wall. */
-/* Key figures as in an annual report: each figure has its own short rule
-   above it, separated by the column gap, instead of one long rule crossed
-   by dividers. The share in top management carries the accent. */
+/* Key figures as in an annual report, set by size alone. The share in top
+   management carries the accent. */
 .ev.landing .grad-stats {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   column-gap: 28px;
   margin: 64px 0 72px;
-}
-.ev.landing .grad-stats div {
-  padding-top: 20px;
-  border-top: 2px solid var(--ink);
-}
-.ev.landing .grad-stats div:nth-child(2) {
-  border-top-color: var(--accent);
 }
 .ev.landing .grad-stats dt {
   font: 500 clamp(32px, 3.4vw, 44px) / 1 var(--font);
@@ -719,6 +662,15 @@
 }
 .ev.landing .grad-stats div:nth-child(2) dt {
   color: var(--accent);
+}
+/* On About the one coloured figure takes the navy of the Supply Chain page
+   and the weight; the other figures stay regular so it leads. */
+.ev.landing.about .grad-stats dt {
+  font-weight: 400;
+}
+.ev.landing.about .grad-stats div:nth-child(2) dt {
+  color: #0b1f7a;
+  font-weight: 600;
 }
 .ev.landing .grad-stats dd {
   margin: 10px 0 0;
@@ -1808,5 +1760,197 @@
   }
   .ev.landing .exec-mentoring p {
     font-size: 15px;
+  }
+}
+
+/* ---------------------------------------------------------------------
+ * About: type scale
+ * Six sizes, each with one job, instead of a size per element:
+ *   meta   14   labels, captions, roles, links
+ *   body   17   running text
+ *   lead   20   intros under a title, key facts
+ *   h3     28   subheads, the partner line, the bridge statement
+ *   h2     48   section titles and key figures
+ *   h1     64   cover
+ * plus one display figure, the 1986 of the founding chapter.
+ * ------------------------------------------------------------------- */
+.ev.landing.about {
+  --t-meta: 14px;
+  --t-body: 17px;
+  --t-lead: clamp(18px, 1.5vw, 20px);
+  --t-h3: clamp(22px, 2.2vw, 28px);
+  --t-h2: clamp(32px, 4vw, 48px);
+}
+
+/* Phones keep their own, smaller sizes (each section fits one screen),
+   so the scale applies from tablet width up. */
+@media (min-width: 721px) {
+  /* meta */
+  .ev.landing.about .next-banner,
+  .ev.landing.about .cover .when,
+  .ev.landing.about .cover .more a,
+  .ev.landing.about .text-link,
+  .ev.landing.about .network-title,
+  .ev.landing.about .facts-strip dd,
+  .ev.landing.about .format-index,
+  .ev.landing.about .format-panel ul,
+  .ev.landing.about .film-caption,
+  .ev.landing.about .fact-row dt,
+  .ev.landing.about .fact-row dd span,
+  .ev.landing.about .grad-stats dd,
+  .ev.landing.about .portraits b,
+  .ev.landing.about .portraits span,
+  .ev.landing.about .founding-article figcaption,
+  .ev.landing.about .founders-named span,
+  .ev.landing.about .board-line {
+    font-size: var(--t-meta);
+  }
+
+  /* body */
+  .ev.landing.about .pillars p,
+  .ev.landing.about .format-panel p,
+  .ev.landing.about .selection-panel p,
+  .ev.landing.about .paths p,
+  .ev.landing.about .founders-named li {
+    font-size: var(--t-body);
+    line-height: 1.6;
+  }
+
+  /* lead */
+  .ev.landing.about .cover .lede,
+  .ev.landing.about .section-intro,
+  .ev.landing.about .fact-row dd {
+    font-size: var(--t-lead);
+  }
+  .ev.landing.about .cover .lede,
+  .ev.landing.about .section-intro {
+    line-height: 1.55;
+  }
+
+  /* h3 */
+  .ev.landing.about .ticker li,
+  .ev.landing.about .pillars h2,
+  .ev.landing.about .format-panel h3,
+  .ev.landing.about .paths h3,
+  .ev.landing.about .bridge {
+    font-size: var(--t-h3);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+
+  /* h2: titles and the figures that stand for them */
+  .ev.landing.about .section-title,
+  .ev.landing.about .split-title,
+  .ev.landing.about .facts-strip dt,
+  .ev.landing.about .grad-stats dt,
+  .ev.landing.about .pillar-n {
+    font-size: var(--t-h2);
+  }
+  .ev.landing.about .facts-strip dt,
+  .ev.landing.about .grad-stats dt,
+  .ev.landing.about .pillar-n {
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Founding fits one screen on desktop: the year a little smaller, the title
+   wider so it breaks into fewer lines, the long paragraph set as body text. */
+@media (min-width: 961px) {
+  .ev.landing.about .founding {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  }
+  .ev.landing.about .founding-text {
+    padding: 56px var(--edge) 56px 64px;
+    align-self: center;
+  }
+  .ev.landing.about .year {
+    margin-bottom: 16px;
+    font-size: clamp(72px, 6.5vw, 108px);
+  }
+  .ev.landing.about .split-title {
+    max-width: 22ch;
+  }
+  .ev.landing.about .founding-text .section-intro {
+    margin-top: 20px;
+    font-size: var(--t-body);
+    line-height: 1.6;
+    max-width: 64ch;
+  }
+  .ev.landing.about .founders-named {
+    margin-top: 32px;
+    gap: 16px 32px;
+  }
+  .ev.landing.about .board-line {
+    margin-top: 32px;
+    line-height: 1.6;
+  }
+}
+/* Laptop screens (about 800px tall). */
+@media (min-width: 961px) and (max-height: 860px) {
+  .ev.landing.about .founding-text {
+    padding-block: 40px;
+  }
+  .ev.landing.about .year {
+    margin-bottom: 12px;
+    font-size: 64px;
+  }
+  .ev.landing.about .split-title {
+    font-size: 36px;
+  }
+  .ev.landing.about .founding-text .section-intro {
+    margin-top: 16px;
+    font-size: 16px;
+  }
+  .ev.landing.about .founders-named,
+  .ev.landing.about .board-line {
+    margin-top: 24px;
+  }
+  .ev.landing.about .founders-named {
+    gap: 12px 32px;
+  }
+  .ev.landing.about .board-line {
+    font-size: 13px;
+  }
+}
+
+/* Graduates fit one screen on desktop: head, figures and both rows of
+   portraits. Portraits are square and sized from the screen height (the
+   rest of the section takes about 560px), between 110 and 160px; the
+   columns spread across the content width. */
+@media (min-width: 1041px) {
+  .ev.landing.about #absolventen {
+    --portrait: clamp(110px, calc((100svh - 560px) / 2), 160px);
+  }
+  .ev.landing.about #absolventen .grad-stats {
+    margin: 48px 0 56px;
+  }
+  .ev.landing.about #absolventen .portraits {
+    grid-template-columns: repeat(6, var(--portrait));
+    justify-content: space-between;
+    gap: 28px 0;
+  }
+  .ev.landing.about #absolventen .portraits img {
+    aspect-ratio: 1;
+    margin-bottom: 10px;
+  }
+}
+/* Laptop screens (about 800px tall): title and figures one step smaller,
+   so the portraits keep their size. */
+@media (min-width: 1041px) and (max-height: 860px) {
+  .ev.landing.about #absolventen {
+    --portrait: clamp(120px, calc((100svh - 520px) / 2), 160px);
+  }
+  .ev.landing.about #absolventen .section-title {
+    font-size: 36px;
+  }
+  .ev.landing.about #absolventen .section-intro {
+    font-size: 16px;
+  }
+  .ev.landing.about #absolventen .grad-stats {
+    margin: 32px 0 40px;
+  }
+  .ev.landing.about #absolventen .grad-stats dt {
+    font-size: 36px;
   }
 }
