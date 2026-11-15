@@ -252,8 +252,9 @@ const copy = {
         "Wer sich frühzeitig bewirbt, wird schon vor Semesterstart zum Interview eingeladen. Alle weiteren Bewerbungen für ein Semester sichten wir zum Semesterstart.",
       interviewsTitle: "Interviews",
       interviewsText:
-        "Auswahlinterviews in unserem eigenen TEG Office sowie eine Eignungsdiagnostik (Persönlichkeits- und Logiktest), ob du dich für Personalverantwortung eignest. Jedes Semester folgt dem gleichen Ablauf: Die letzten Interviews finden zwei Wochen nach Semesterstart statt.",
-      interviewsBadge: "Interviewwoche: 26.04. – 02.05.2027",
+        "Auswahlinterviews in unserem eigenen TEG Office sowie eine Eignungsdiagnostik (Persönlichkeits- und Logiktest), ob du dich für Personalverantwortung eignest.",
+      interviewsBadge:
+        "Letzte Interviewwoche für den Start zum Sommersemester 2027: 26.04. – 02.05.2027",
       kickoffBadge: "Kick-Off Event",
       kickoffTitle: "Start des Programms",
       kickoffText:
@@ -534,8 +535,9 @@ const copy = {
         "Those who apply early are invited to interview before the semester begins. All further applications for a semester are reviewed at the start of that semester.",
       interviewsTitle: "Interviews",
       interviewsText:
-        "Selection interviews at our own TEG office, together with an aptitude assessment (personality and logic test) of whether you are suited to leading people. Every semester follows the same schedule: the last interviews take place two weeks after the semester begins.",
-      interviewsBadge: "Interview week: 26 Apr – 2 May 2027",
+        "Selection interviews at our own TEG office, together with an aptitude assessment (personality and logic test) of whether you are suited to leading people.",
+      interviewsBadge:
+        "Final interview week for a start in the summer semester 2027: 26 Apr – 2 May 2027",
       kickoffBadge: "Kick-off event",
       kickoffTitle: "Programme start",
       kickoffText:
