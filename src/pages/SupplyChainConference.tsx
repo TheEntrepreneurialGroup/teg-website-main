@@ -165,7 +165,7 @@ const copy = {
     sponsor: "Sponsor werden",
     sponsorSubject: "Sponsoring",
     facts: [
-      ["100", "Plätze, Teilnehmerzahl limitiert"],
+      ["80", "Plätze, Teilnehmerzahl limitiert"],
       ["über 20", "Speaker"],
       ["1 Tag", "Panels, Einzelvorträge und Workshops in kleinen Gruppen"],
     ],
@@ -269,7 +269,7 @@ const copy = {
     sponsor: "Become a sponsor",
     sponsorSubject: "Sponsorship",
     facts: [
-      ["100", "seats, attendance limited"],
+      ["80", "seats, attendance limited"],
       ["over 20", "speakers"],
       ["1 day", "Panels, keynotes and workshops in small groups"],
     ],

@@ -490,7 +490,7 @@ const de = {
   "seo.supplyChainConference.title":
     "Supply Chain Management Conference 2026 | TEG",
   "seo.supplyChainConference.description":
-    "8. Dezember 2026 in München: ein Konferenztag zu Automatisierung und Geopolitik in der Lieferkette, mit 100 Teilnehmern.",
+    "8. Dezember 2026 in München: ein Konferenztag zu Automatisierung und Geopolitik in der Lieferkette, mit 80 Teilnehmern.",
   "seo.aviationConference.title": "Aviation Management Conference 2027 | TEG",
   "seo.aviationConference.description":
     "Aviation Management Conference der TEG am 3. Juni 2027 in München. Programm, Speaker und Anmeldung folgen in Kürze.",
