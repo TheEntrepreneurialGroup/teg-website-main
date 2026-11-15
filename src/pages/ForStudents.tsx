@@ -153,8 +153,9 @@ const copy = {
       ),
       application: (
         <>
-          Bewerbung zur kommenden YBLA offen bis{" "}
-          <strong className="text-[#0F2B57]">24. Oktober</strong>
+          Bewerbung zur YBLA{" "}
+          <strong className="text-[#0F2B57]">jederzeit offen</strong>, für den
+          Start in einem der drei kommenden Semester
         </>
       ),
       applicationLink: "Zur Bewerbung",
@@ -241,22 +242,22 @@ const copy = {
           Termine & <span className="text-[#B7860B]">Roadmap</span>
         </>
       ),
-      earlyTitle: "Vorab-Bewerbung",
+      earlyTitle: "Bewerbung",
       earlyText:
-        "Du kannst dich jederzeit vorab bewerben. Am 01.10. erhältst du eine Mail zur Bestätigung der Gültigkeit.",
-      earlyBadge: "Jetzt möglich",
-      mainBadge: "01. - 24. Oktober",
-      mainTitle: "Haupt-Bewerbungsphase",
+        "Die Bewerbung ist jederzeit offen. Du wählst selbst, in welchem der drei kommenden Semester du starten möchtest. Zusagen geben wir bis zu ein Jahr im Voraus.",
+      earlyBadge: "Jederzeit offen",
+      mainBadge: "Laufend",
+      mainTitle: "Auswahl",
       mainText:
-        "Unser offizielles Zeitfenster zur Bewerbung für neue Talente. Am 25. & 26.10. findet die Auswahl statt.",
+        "Wer sich frühzeitig bewirbt, wird schon vor Semesterstart zum Interview eingeladen. Alle weiteren Bewerbungen für ein Semester sichten wir zum Semesterstart.",
       interviewsTitle: "Interviews",
       interviewsText:
-        "Auswahlinterviews in unserem eigenen TEG Office sowie eine Eignungsdiagnostik (Persönlichkeits- und Logiktest), ob du dich für Personalverantwortung eignest.",
-      interviewsBadge: "28.10. - 03.11.",
+        "Auswahlinterviews in unserem eigenen TEG Office sowie eine Eignungsdiagnostik (Persönlichkeits- und Logiktest), ob du dich für Personalverantwortung eignest. Jedes Semester folgt dem gleichen Ablauf: Die letzten Interviews finden zwei Wochen nach Semesterstart statt.",
+      interviewsBadge: "Interviewwoche: 26.04. – 02.05.2027",
       kickoffBadge: "Kick-Off Event",
       kickoffTitle: "Start des Programms",
       kickoffText:
-        "06.11. (Abends) & 07.11. (Ganztags). Die Teilnahme ist verpflichtend für alle neuen Member.",
+        "In der Woche nach den Interviews, Freitagabend und Samstag ganztags. Nächster Termin: 07. & 08.05.2027. Die Teilnahme ist verpflichtend für alle neuen Member.",
     },
     cta: {
       title: "Bewirb dich jetzt, und werde Teil von TEG!",
@@ -436,8 +437,9 @@ const copy = {
       ),
       application: (
         <>
-          Applications for the next YBLA are open until{" "}
-          <strong className="text-[#0F2B57]">24 October</strong>
+          Applications for the YBLA are{" "}
+          <strong className="text-[#0F2B57]">open at any time</strong>, for a
+          start in any of the next three semesters
         </>
       ),
       applicationLink: "Apply",
@@ -522,22 +524,22 @@ const copy = {
           Dates & <span className="text-[#B7860B]">Roadmap</span>
         </>
       ),
-      earlyTitle: "Early application",
+      earlyTitle: "Application",
       earlyText:
-        "You may apply early at any time. On 1 October you will receive an email confirming that your application stands.",
-      earlyBadge: "Open now",
-      mainBadge: "1–24 October",
-      mainTitle: "Main application period",
+        "Applications are open at any time. You choose in which of the next three semesters you would like to start. We confirm places up to a year in advance.",
+      earlyBadge: "Open at any time",
+      mainBadge: "Ongoing",
+      mainTitle: "Selection",
       mainText:
-        "Our official window for new applicants. Selection takes place on 25 and 26 October.",
+        "Those who apply early are invited to interview before the semester begins. All further applications for a semester are reviewed at the start of that semester.",
       interviewsTitle: "Interviews",
       interviewsText:
-        "Selection interviews at our own TEG office, together with an aptitude assessment (personality and logic test) of whether you are suited to leading people.",
-      interviewsBadge: "28 Oct – 3 Nov",
+        "Selection interviews at our own TEG office, together with an aptitude assessment (personality and logic test) of whether you are suited to leading people. Every semester follows the same schedule: the last interviews take place two weeks after the semester begins.",
+      interviewsBadge: "Interview week: 26 Apr – 2 May 2027",
       kickoffBadge: "Kick-off event",
       kickoffTitle: "Programme start",
       kickoffText:
-        "6 November (evening) & 7 November (full day). Attendance is mandatory for all new members.",
+        "In the week after the interviews, Friday evening and all day Saturday. Next dates: 7 & 8 May 2027. Attendance is mandatory for all new members.",
     },
     cta: {
       title: "Apply now and become part of TEG.",
