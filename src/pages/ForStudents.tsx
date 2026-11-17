@@ -1016,9 +1016,9 @@ const ForStudents: React.FC = () => {
               <div className="relative flex flex-col md:flex-row md:justify-center items-start md:items-center pl-12 md:pl-0 text-left">
                 <div className="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#B7860B] md:-translate-x-1/2 z-20 shadow-lg text-left" />
                 <div className="md:w-1/2 md:pr-20 md:text-right mb-4 md:mb-0 text-left md:text-right">
-                  <h4 className="text-xl font-bold text-[#0F2B57] uppercase tracking-tight text-left md:text-right">
+                  <h3 className="text-xl font-bold text-[#0F2B57] uppercase tracking-tight text-left md:text-right">
                     {t.roadmap.earlyTitle}
-                  </h4>
+                  </h3>
                   <p className="text-slate-500 mt-2 max-w-sm md:ml-auto text-left md:text-right text-left">
                     {t.roadmap.earlyText}
                   </p>
@@ -1039,9 +1039,9 @@ const ForStudents: React.FC = () => {
                   </div>
                 </div>
                 <div className="md:w-1/2 md:pl-20 text-left">
-                  <h4 className="text-xl font-bold text-[#0F2B57] uppercase tracking-tight text-left">
+                  <h3 className="text-xl font-bold text-[#0F2B57] uppercase tracking-tight text-left">
                     {t.roadmap.mainTitle}
-                  </h4>
+                  </h3>
                   <p className="text-slate-500 mt-2 max-w-sm text-left">
                     {t.roadmap.mainText}
                   </p>
@@ -1050,9 +1050,9 @@ const ForStudents: React.FC = () => {
               <div className="relative flex flex-col md:flex-row md:justify-center items-start md:items-center pl-12 md:pl-0 text-left text-left">
                 <div className="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#0F2B57] md:-translate-x-1/2 z-20 shadow-lg text-left" />
                 <div className="md:w-1/2 md:pr-20 md:text-right mb-4 md:mb-0 text-left md:text-right text-left text-left text-left">
-                  <h4 className="text-xl font-bold text-[#0F2B57] uppercase tracking-tight text-left md:text-right">
+                  <h3 className="text-xl font-bold text-[#0F2B57] uppercase tracking-tight text-left md:text-right">
                     {t.roadmap.interviewsTitle}
-                  </h4>
+                  </h3>
                   <p className="text-slate-500 mt-2 max-w-sm md:ml-auto text-left md:text-right text-left">
                     {t.roadmap.interviewsText}
                   </p>
@@ -1074,9 +1074,9 @@ const ForStudents: React.FC = () => {
                   </div>
                 </div>
                 <div className="md:w-1/2 md:pl-20 text-left text-left">
-                  <h4 className="text-xl font-bold text-[#0F2B57] uppercase tracking-tight text-left">
+                  <h3 className="text-xl font-bold text-[#0F2B57] uppercase tracking-tight text-left">
                     {t.roadmap.kickoffTitle}
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 mt-2 max-w-sm font-medium text-left">
                     {t.roadmap.kickoffText}
                   </p>
@@ -1561,9 +1561,9 @@ const CareerPathDetail = ({
         <div className="w-10 h-10 shrink-0 rounded-md border border-[#B7860B]/40 bg-[#B7860B]/10 flex items-center justify-center">
           <Icon size={20} className="text-[#B7860B]" />
         </div>
-        <h4 className="text-lg font-bold text-white leading-tight">
+        <h3 className="text-lg font-bold text-white leading-tight">
           {path.title}
-        </h4>
+        </h3>
       </div>
       <p className="text-slate-300 text-sm leading-relaxed">{path.desc}</p>
       <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 mt-4 text-xs">
@@ -1754,9 +1754,9 @@ const CareerCard = ({
       className={`flex items-center gap-3 ${side === "right" ? "flex-row-reverse text-right" : "flex-row text-left"}`}
     >
       <div className="w-2 h-2 bg-[#B7860B] rounded-full shadow-[0_0_8px_#B7860B]" />
-      <h4 className="text-[10px] font-black uppercase tracking-[0.15em] text-white leading-tight">
+      <h3 className="text-[10px] font-black uppercase tracking-[0.15em] text-white leading-tight">
         {name}
-      </h4>
+      </h3>
     </div>
   </button>
 );

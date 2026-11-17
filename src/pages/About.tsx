@@ -768,8 +768,7 @@ const About: React.FC = () => {
         </figure>
         <div className="founding-text" data-reveal>
           <h2 className="split-title">
-            <span className="year">1986</span>
-            {t.heritage.title}
+            <span className="year">1986</span> {t.heritage.title}
           </h2>
           <p className="section-intro">{t.heritage.intro}</p>
           <ul className="founders-named" aria-label={t.heritage.foundersLabel}>

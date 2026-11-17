@@ -466,7 +466,7 @@ const de = {
   "seo.about.title":
     "TEG München: Führungsausbildung und Management-Konferenzen seit 1986",
   "seo.about.description":
-    "Die TEG bringt seit 1986 in München Führungskräfte aus Konzernen und Mittelstand zusammen und bildet in der Young Business Leadership Academy die nächste Führungsgeneration aus.",
+    "Seit 1986 bringt die TEG in München Führungskräfte zusammen und bildet in der Young Business Leadership Academy die nächste Führungsgeneration aus.",
 
   "seo.home.title":
     "TEG | Führungskräfteentwicklung für Studierende und Unternehmen",
@@ -479,14 +479,14 @@ const de = {
   "seo.companies.title":
     "Nachwuchsführungskräfte ausbilden: Workshop, Vortrag, Mentoring | TEG",
   "seo.companies.description":
-    "Führungskräfte aus Konzernen und Mittelstand bilden bei der TEG in München ausgewählte Studierende und Berufseinsteiger aus: mit einem Workshop, einem Vortrag oder als Mentor. Seit 1986.",
+    "Führungskräfte bilden bei der TEG in München ausgewählte Studierende und Berufseinsteiger aus: mit Workshop, Vortrag oder als Mentor. Seit 1986.",
   "seo.phds.title":
     "PhD Business Leadership Academy für Promovierende und Postdocs | TEG",
   "seo.phds.description":
-    "In der PhD Business Leadership Academy der TEG lernen Promovierende und Promovierte von erfahrenen Führungskräften aus Konzernen und Mittelstand. Die erste Kohorte ist in Vorbereitung, die Warteliste ist offen.",
+    "PhD Business Leadership Academy der TEG: Promovierende und Promovierte lernen von erfahrenen Führungskräften. Erste Kohorte in Vorbereitung, Warteliste offen.",
   "seo.events.title": "TEG Events: Konferenzen und Abendveranstaltungen",
   "seo.events.description":
-    "Konferenzen und Abendveranstaltungen der TEG in München: der TEG Management Talk, Industry Panels und Konferenztage mit Führungskräften aus Konzernen, Mittelstand und Wissenschaft.",
+    "Konferenzen und Abendveranstaltungen der TEG in München: TEG Management Talk, Industry Panels und Konferenztage mit Führungskräften und Wissenschaft.",
   "seo.imprint.title": "Impressum | TEG",
   "seo.imprint.description": "Impressum und rechtliche Angaben der TEG.",
   "seo.privacy.title": "Datenschutzerklärung | TEG",

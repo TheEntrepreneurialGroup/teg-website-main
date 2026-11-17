@@ -155,6 +155,36 @@ export const OrganisationSchema: React.FC<{ lang: PageLang }> = ({ lang }) => (
   />
 );
 
+/**
+ * An education programme TEG offers, described only by what its page says.
+ * Carries no dates or duration, so it also fits a programme in preparation.
+ */
+export const ProgramSchema: React.FC<{
+  name: string;
+  description: string;
+  /** German path of the programme's page, e.g. "/for-phds". */
+  path: string;
+  audience: string;
+  lang: PageLang;
+}> = ({ name, description, path, audience, lang }) => (
+  <JsonLd
+    data={{
+      "@context": "https://schema.org",
+      "@type": "EducationalOccupationalProgram",
+      name,
+      description,
+      url: siteConfig.buildAbsoluteUrl(`${localizePath(path, lang)}/`),
+      inLanguage: lang,
+      provider: {
+        "@type": "NGO",
+        name: siteConfig.organization.name,
+        url: siteConfig.buildAbsoluteUrl("/"),
+      },
+      audience: { "@type": "Audience", audienceType: audience },
+    }}
+  />
+);
+
 /** Questions and answers as shown on a page, for search engines. */
 export const FaqSchema: React.FC<{ items: { q: string; a: string }[] }> = ({
   items,

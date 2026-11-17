@@ -7,6 +7,10 @@
 # Force-download the marketing PDF (must stay above the SPA catch-all)
 /marketing     /Pitch.pdf    200!
 
+# Former duplicate of the home page → the home page
+/about         /    301
+/about/        /    301
+
 # Retired hosts/sponsors cases page → company partnerships
 /cases         /for-companies    301
 /cases/        /for-companies    301

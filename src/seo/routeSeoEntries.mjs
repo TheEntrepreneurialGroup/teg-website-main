@@ -11,15 +11,6 @@ const germanRouteSeoEntries = [
     changeFrequency: "weekly",
   },
   {
-    path: "/about",
-    titleMessageId: "seo.about.title",
-    descriptionMessageId: "seo.about.description",
-    indexable: true,
-    openGraphImagePath: "/shared/heroes/hero-subpage.avif",
-    priority: 0.8,
-    changeFrequency: "monthly",
-  },
-  {
     path: "/for-students",
     titleMessageId: "seo.students.title",
     descriptionMessageId: "seo.students.description",

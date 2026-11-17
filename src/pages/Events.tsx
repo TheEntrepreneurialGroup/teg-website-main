@@ -34,8 +34,7 @@ const copy = {
     programme: "Programm",
     moreConferences: "Weitere Konferenzen",
     conferencePending: "Programm und Speaker folgen in Kürze",
-    eveningHeading:
-      "Du bekommst von uns nicht genug? Unsere nächsten Abendveranstaltungen:",
+    eveningHeading: "Unsere nächsten Abendveranstaltungen",
     eveningPending: "Speaker und Ort folgen in Kürze",
     eveningEmptyBefore: "Der nächste Abend wird in Kürze im",
     eveningEmptyLink: "Kalender der TEG auf Luma",

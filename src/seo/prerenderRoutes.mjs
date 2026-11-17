@@ -12,7 +12,6 @@ export const PRERENDER_ROUTES = [
   "/conferences/enterprise-sales-summit",
   "/privacy-policy",
   "/imprint",
-  "/about",
   // English editions
   ...LOCALIZED_PATHS.map(toEnglishPath),
 ];

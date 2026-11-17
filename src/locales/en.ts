@@ -457,7 +457,7 @@ const en = {
   "seo.about.title":
     "TEG Munich: Leadership Training and Management Conferences since 1986",
   "seo.about.description":
-    "Since 1986, TEG has brought together executives from large corporations and mid-sized companies in Munich and trains the next generation of leaders in the Young Business Leadership Academy.",
+    "Since 1986, TEG has brought executives together in Munich and trains the next generation of leaders in the Young Business Leadership Academy.",
 
   "seo.home.title": "TEG | Leadership development for students and companies",
   "seo.home.description":
@@ -469,14 +469,14 @@ const en = {
   "seo.companies.title":
     "Train the next generation of leaders: workshop, talk, mentoring | TEG",
   "seo.companies.description":
-    "At TEG in Munich, executives from corporations and mid-sized companies train selected students and young professionals: with a workshop, a talk or as a mentor. Since 1986.",
+    "At TEG in Munich, executives train selected students and young professionals: with a workshop, a talk or as a mentor. Since 1986.",
   "seo.phds.title":
     "PhD Business Leadership Academy for PhD candidates and postdocs | TEG",
   "seo.phds.description":
-    "In TEG's PhD Business Leadership Academy, doctoral candidates and postdocs learn from experienced executives from corporations and mid-sized companies. The first cohort is in preparation; the waiting list is open.",
+    "PhD Business Leadership Academy at TEG: PhD candidates and postdocs learn from experienced executives. First cohort in preparation, waiting list open.",
   "seo.events.title": "TEG Events: Conferences and Evening Events",
   "seo.events.description":
-    "Conferences and evening events by TEG in Munich: the TEG Management Talk, industry panels and conference days with executives from corporations, Mittelstand and academia. Held in German.",
+    "TEG conferences and evening events in Munich: the TEG Management Talk, industry panels and conference days with executives. Held in German.",
   "seo.imprint.title": "Imprint | TEG",
   "seo.imprint.description": "Imprint and legal information for TEG.",
   "seo.privacy.title": "Privacy Policy | TEG",

@@ -20,6 +20,7 @@ import { ArrowRight } from "lucide-react";
 import "./editorial.css";
 import "./landing.css";
 import { PageLang, useLocalizePath, usePageLang } from "../i18n/pageLang";
+import { ProgramSchema } from "../seo/EventSchema";
 import { pastSpeakers } from "./pastSpeakers";
 
 const MAIL = "jonathan.babelotzky@teg-ev.de";
@@ -34,6 +35,7 @@ const copy = {
     quoteClose: "“",
     cover: {
       audience: "Für Promovierende und Postdocs",
+      audienceType: "Promovierende und Postdocs",
       name: "PhD Business Leadership Academy",
       title: "Aus der Forschung in die Führung.",
       lede: "In der PhD Business Leadership Academy lernen Promovierende und Promovierte von erfahrenen Führungskräften aus Konzernen und Mittelstand, wie Unternehmen geführt werden. Im persönlichen Austausch und neben der Forschung.",
@@ -109,6 +111,7 @@ const copy = {
     quoteClose: "”",
     cover: {
       audience: "For PhD candidates and postdocs",
+      audienceType: "PhD candidates and postdocs",
       name: "PhD Business Leadership Academy",
       title: "From research to leadership.",
       lede: "In the PhD Business Leadership Academy, doctoral candidates and postdocs learn from experienced executives of large corporations and mid-sized companies how companies are led. In personal exchange and alongside their research.",
@@ -185,6 +188,13 @@ const ForPhds: React.FC = () => {
 
   return (
     <div className="ev landing about phd" lang={lang}>
+      <ProgramSchema
+        name={t.cover.name}
+        description={t.cover.lede}
+        path="/for-phds"
+        audience={t.cover.audienceType}
+        lang={lang}
+      />
       <section className="dark">
         <div className="cover">
           <div className="cover-text">

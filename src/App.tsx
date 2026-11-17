@@ -166,12 +166,8 @@ function App() {
             }
           />
         </Route>
-        <Route
-          path="/about"
-          element={<Layout switchLanguage={switchLanguage} />}
-        >
-          <Route index element={<About />} />
-        </Route>
+        {/* Former duplicate of the home page; netlify redirects it with a 301. */}
+        <Route path="/about" element={<Navigate to="/" replace />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/imprint" element={<Imprint />} />
         {/* Retired location-host page; netlify redirects these with a 301. */}

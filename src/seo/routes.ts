@@ -2,7 +2,6 @@ import { routeSeoEntries as sharedRouteSeoEntries } from "./routeSeoEntries.mjs"
 
 type GermanRoutePath =
   | "/"
-  | "/about"
   | "/for-students"
   | "/for-companies"
   | "/for-phds"
