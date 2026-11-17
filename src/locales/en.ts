@@ -251,6 +251,7 @@ const en = {
   "navbar.aboutPage.events": "Conferences & Events",
   "navbar.aboutPage.executives": "For Executives",
   "navbar.aboutPage.students": "For Students",
+  "navbar.aboutPage.phds": "For PhDs",
 
   // For Companies Page
   "company.problemHero.title":
@@ -469,6 +470,10 @@ const en = {
     "Train the next generation of leaders: workshop, talk, mentoring | TEG",
   "seo.companies.description":
     "At TEG in Munich, executives from corporations and mid-sized companies train selected students and young professionals: with a workshop, a talk or as a mentor. Since 1986.",
+  "seo.phds.title":
+    "PhD Business Leadership Academy for PhD candidates and postdocs | TEG",
+  "seo.phds.description":
+    "In TEG's PhD Business Leadership Academy, doctoral candidates and postdocs learn from experienced executives from corporations and mid-sized companies. The first cohort is in preparation; the waiting list is open.",
   "seo.events.title": "TEG Events: Conferences and Evening Events",
   "seo.events.description":
     "Conferences and evening events by TEG in Munich: the TEG Management Talk, industry panels and conference days with executives from corporations, Mittelstand and academia. Held in German.",

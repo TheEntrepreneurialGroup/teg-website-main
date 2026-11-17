@@ -49,6 +49,12 @@ const Navbar: React.FC<NavbarProps> = ({ switchLanguage }) => {
       trackingLabel: "TEG for Students",
       studentFacing: true,
     },
+    {
+      to: "/for-phds",
+      label: intl.formatMessage({ id: "navbar.aboutPage.phds" }),
+      trackingLabel: "TEG for PhDs",
+      studentFacing: true,
+    },
   ];
   // Conference tickets are for executives only, so the student offer stays
   // off the conference pages' menu; every other page still lists it.

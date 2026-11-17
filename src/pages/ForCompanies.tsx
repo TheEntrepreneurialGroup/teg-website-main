@@ -20,24 +20,7 @@ import "./editorial.css";
 import "./landing.css";
 import { PageLang, useLocalizePath, usePageLang } from "../i18n/pageLang";
 import { FaqSchema } from "../seo/EventSchema";
-
-/** Roles are given in their original English in both editions. */
-const pastSpeakers = [
-  { name: "Florian Bauer", role: "Senior Partner, McKinsey & Company" },
-  { name: "Marcus Hartmann", role: "Senior Partner, Roland Berger" },
-  { name: "Jennifer Treiber-Ruckenbrod", role: "Global CMO, MINI" },
-  { name: "Andrea Martin", role: "CTO DACH, IBM" },
-  { name: "Georg Doll", role: "CTO Automotive & Mobility, Microsoft" },
-  {
-    name: "Hansjörg Briegel",
-    role: "Vice President Ecosystem Development, Intel",
-  },
-  {
-    name: "Jan Goetz",
-    role: "Co-Founder & Managing Director, IQM Quantum Computers",
-  },
-  { name: "Osman Agirbas", role: "Managing Director, Interhyp Group" },
-];
+import { pastSpeakers } from "./pastSpeakers";
 
 const MAIL = "jonathan.babelotzky@teg-ev.de";
 

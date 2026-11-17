@@ -9,6 +9,7 @@ import {
 import Layout from "./components/Layout";
 import ForStudents from "./pages/ForStudents";
 import ForCompanies from "./pages/ForCompanies";
+import ForPhds from "./pages/ForPhds";
 import About from "./pages/About";
 import Events from "./pages/Events";
 import SupplyChainConference from "./pages/SupplyChainConference";
@@ -116,6 +117,7 @@ function App() {
     <>
       <Route path="for-students" element={<ForStudents />} />
       <Route path="for-companies" element={<ForCompanies />} />
+      <Route path="for-phds" element={<ForPhds />} />
       <Route path="events" element={<Events />} />
       <Route
         path="conferences/supplychain-management-conference"

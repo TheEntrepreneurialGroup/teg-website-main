@@ -38,6 +38,15 @@ const germanRouteSeoEntries = [
     changeFrequency: "weekly",
   },
   {
+    path: "/for-phds",
+    titleMessageId: "seo.phds.title",
+    descriptionMessageId: "seo.phds.description",
+    indexable: true,
+    openGraphImagePath: "/shared/heroes/hero-subpage.avif",
+    priority: 0.7,
+    changeFrequency: "monthly",
+  },
+  {
     path: "/events",
     titleMessageId: "seo.events.title",
     descriptionMessageId: "seo.events.description",

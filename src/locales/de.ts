@@ -258,6 +258,7 @@ const de = {
   "navbar.aboutPage.events": "Konferenzen & Events",
   "navbar.aboutPage.executives": "Für Führungskräfte",
   "navbar.aboutPage.students": "Für Studierende",
+  "navbar.aboutPage.phds": "Für Promovierende",
 
   // For Companies Page
   "company.problemHero.title":
@@ -479,6 +480,10 @@ const de = {
     "Nachwuchsführungskräfte ausbilden: Workshop, Vortrag, Mentoring | TEG",
   "seo.companies.description":
     "Führungskräfte aus Konzernen und Mittelstand bilden bei der TEG in München ausgewählte Studierende und Berufseinsteiger aus: mit einem Workshop, einem Vortrag oder als Mentor. Seit 1986.",
+  "seo.phds.title":
+    "PhD Business Leadership Academy für Promovierende und Postdocs | TEG",
+  "seo.phds.description":
+    "In der PhD Business Leadership Academy der TEG lernen Promovierende und Promovierte von erfahrenen Führungskräften aus Konzernen und Mittelstand. Die erste Kohorte ist in Vorbereitung, die Warteliste ist offen.",
   "seo.events.title": "TEG Events: Konferenzen und Abendveranstaltungen",
   "seo.events.description":
     "Konferenzen und Abendveranstaltungen der TEG in München: der TEG Management Talk, Industry Panels und Konferenztage mit Führungskräften aus Konzernen, Mittelstand und Wissenschaft.",

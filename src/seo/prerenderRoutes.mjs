@@ -5,6 +5,7 @@ export const PRERENDER_ROUTES = [
   "/",
   "/for-students",
   "/for-companies",
+  "/for-phds",
   "/events",
   "/conferences/supplychain-management-conference",
   "/conferences/aviation-management-conference",

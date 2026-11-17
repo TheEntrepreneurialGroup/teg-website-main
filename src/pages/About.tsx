@@ -94,6 +94,7 @@ const copy = {
         { to: "/events", label: "Konferenzen & Events" },
         { to: "/for-companies", label: "Für Führungskräfte" },
         { to: "/for-students", label: "Für Studierende" },
+        { to: "/for-phds", label: "Für Promovierende" },
       ],
       photoAlt: "Mitglieder der TEG",
     },
@@ -193,6 +194,7 @@ const copy = {
       intro:
         "Unser Programm für Studierende und Berufseinsteiger, die Führungsverantwortung übernehmen wollen. Über 18 Monate, parallel zu Studium oder Beruf, besuchen die Teilnehmer Workshops mit erfahrenen Führungskräften, arbeiten in festen Teams und leiten am Ende ein eigenes Projekt, zum Beispiel eine unserer Veranstaltungen.",
       link: "Für Studierende",
+      phdLink: "Für Promovierende: PhD Business Leadership Academy",
       terms: [
         ["Dauer", "18 Monate", "parallel zu Studium oder Beruf"],
         [
@@ -257,6 +259,12 @@ const copy = {
           link: "Zur Bewerbung",
           to: "/for-students",
         },
+        {
+          who: "Für Promovierende und Postdocs",
+          text: "In der PhD Business Leadership Academy lernen Promovierende und Promovierte von erfahrenen Führungskräften, wie Unternehmen geführt werden. Die erste Kohorte ist in Vorbereitung, die Warteliste ist offen.",
+          link: "Zur PhD Business Leadership Academy",
+          to: "/for-phds",
+        },
       ],
     },
   },
@@ -270,6 +278,7 @@ const copy = {
         { to: "/events", label: "Conferences & Events" },
         { to: "/for-companies", label: "For Executives" },
         { to: "/for-students", label: "For Students" },
+        { to: "/for-phds", label: "For PhDs" },
       ],
       photoAlt: "Members of TEG",
     },
@@ -369,6 +378,7 @@ const copy = {
       intro:
         "Our programme for students and young professionals who intend to take on leadership responsibility. Over 18 months, alongside their studies or work, participants attend workshops with experienced executives, work in permanent teams and finally lead a project of their own, for instance one of our events.",
       link: "For students",
+      phdLink: "For PhDs: PhD Business Leadership Academy",
       terms: [
         ["Duration", "18 months", "alongside studies or work"],
         ["Commitment", "10 to 18 hours a week", "outside examination periods"],
@@ -428,6 +438,12 @@ const copy = {
           text: "Applications to the Young Business Leadership Academy are accepted twice a year, in April and in October.",
           link: "How to apply",
           to: "/for-students",
+        },
+        {
+          who: "For PhD candidates and postdocs",
+          text: "In the PhD Business Leadership Academy, doctoral candidates and postdocs learn from experienced executives how companies are led. The first cohort is in preparation, and the waiting list is open.",
+          link: "To the PhD Business Leadership Academy",
+          to: "/for-phds",
         },
       ],
     },
@@ -645,9 +661,14 @@ const About: React.FC = () => {
           <div className="academy-panel">
             <h2 className="section-title">{t.ybla.title}</h2>
             <p className="section-intro">{t.ybla.intro}</p>
-            <Link className="text-link" to={localize("/for-students")}>
-              {t.ybla.link} <ArrowRight size={15} />
-            </Link>
+            <p className="academy-links">
+              <Link className="text-link" to={localize("/for-students")}>
+                {t.ybla.link} <ArrowRight size={15} />
+              </Link>
+              <Link className="text-link" to={localize("/for-phds")}>
+                {t.ybla.phdLink} <ArrowRight size={15} />
+              </Link>
+            </p>
           </div>
         </div>
         <div className="academy-film">

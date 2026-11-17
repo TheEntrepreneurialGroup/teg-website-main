@@ -343,8 +343,8 @@
 }
 .ev.landing .paths {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 96px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 64px;
   margin-top: 64px;
 }
 .ev.landing .paths article {
@@ -1953,4 +1953,142 @@
   .ev.landing.about #absolventen .grad-stats dt {
     font-size: 36px;
   }
+}
+
+/* ---------------------------------------------------------------------
+ * PhD Business Leadership Academy (.phd): cover, what participants take
+ * away in three points, who teaches at TEG (figures and names), contact.
+ * ------------------------------------------------------------------- */
+.ev.landing.phd .cover-photo img {
+  object-position: 50% 60%;
+}
+.ev.landing .phd-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 64px;
+  margin-top: 88px;
+}
+.ev.landing .phd-points article {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+.ev.landing .phd-points h3 {
+  margin: 0;
+  font: 500 var(--t-h3, 24px) / 1.2 var(--font);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.ev.landing .phd-points p {
+  margin: 0;
+  font-size: var(--t-body, 17px);
+  line-height: 1.6;
+  color: var(--ink-muted);
+  max-width: 48ch;
+}
+.ev.landing .phd-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 64px;
+  margin: 88px 0 0;
+}
+.ev.landing .phd-facts dt {
+  font: 500 var(--t-h2, 44px) / 1 var(--font);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.ev.landing .phd-facts dd {
+  margin: 12px 0 0;
+  font-size: var(--t-meta, 14px);
+  line-height: 1.5;
+  color: var(--ink-muted);
+  max-width: 28ch;
+}
+.ev.landing .phd-speakers-label {
+  margin: 88px 0 0;
+  font: 500 var(--t-meta, 14px) / 1.4 var(--font);
+  color: var(--ink-muted);
+}
+.ev.landing .phd-speakers-label + .exec-speakers {
+  margin-top: 24px;
+}
+@media (max-width: 860px) {
+  .ev.landing .phd-points {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 40px;
+    margin-top: 48px;
+  }
+  .ev.landing .phd-facts {
+    column-gap: 24px;
+    margin-top: 48px;
+  }
+  .ev.landing .phd-speakers-label {
+    margin-top: 48px;
+  }
+}
+@media (max-width: 720px) {
+  .ev.landing .phd-points {
+    row-gap: 28px;
+    margin-top: 32px;
+  }
+  .ev.landing .phd-points h3 {
+    font-size: 20px;
+  }
+  .ev.landing .phd-points p {
+    font-size: 15px;
+  }
+  .ev.landing .phd-facts {
+    column-gap: 16px;
+    margin-top: 28px;
+  }
+  .ev.landing .phd-facts dt {
+    font-size: 23px;
+    white-space: nowrap;
+  }
+  .ev.landing .phd-facts dd {
+    font-size: 12px;
+  }
+  .ev.landing .phd-speakers-label {
+    margin-top: 32px;
+  }
+  .ev.landing .phd-speakers-label + .exec-speakers {
+    margin-top: 16px;
+  }
+}
+/* Intro directly under the title, so the reading order is title, intro,
+   points. */
+.ev.landing.phd .chapter-head {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+/* What PhDs can do at TEG today, closing the gains. */
+.ev.landing .phd-today {
+  margin: 72px 0 0;
+  font-size: var(--t-lead, 18px);
+  line-height: 1.55;
+  color: var(--ink-muted);
+  max-width: 68ch;
+}
+.ev.landing .phd-today a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--ink-muted);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.ev.landing .phd-today a:hover {
+  text-decoration-color: var(--ink);
+}
+@media (max-width: 720px) {
+  .ev.landing .phd-today {
+    margin-top: 32px;
+    font-size: 15px;
+  }
+}
+/* Academy panel on the home page: students and PhDs side by side. */
+.ev.landing .academy-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+  margin: 0;
 }

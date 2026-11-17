@@ -5,6 +5,7 @@ type GermanRoutePath =
   | "/about"
   | "/for-students"
   | "/for-companies"
+  | "/for-phds"
   | "/events"
   | "/conferences/supplychain-management-conference"
   | "/conferences/aviation-management-conference"
