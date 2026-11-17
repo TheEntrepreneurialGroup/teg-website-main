@@ -152,6 +152,14 @@ const speakers = [
     },
     photo: "schneider",
   },
+  {
+    name: "Katharina Schüller",
+    role: {
+      de: "Geschäftsführerin STAT-UP Statistical Consulting & Data Science",
+      en: "Managing Director, STAT-UP Statistical Consulting & Data Science",
+    },
+    photo: "schueller",
+  },
 ];
 
 const copy = {
@@ -619,9 +627,10 @@ const SupplyChainConference: React.FC = () => {
                                 briefing.company ??
                                 t.openSlot}
                             </span>
-                            {briefing.speaker && (
+                            {(briefing.speaker || briefing.note) && (
                               <span className="role">
-                                {briefing.speaker.role[lang]}
+                                {briefing.speaker?.role[lang] ??
+                                  briefing.note?.[lang]}
                               </span>
                             )}
                           </li>

@@ -24,11 +24,13 @@ export type ProgrammeItem = {
 };
 
 /** A briefing names its speaker, or only the company while the speaker is
- *  not yet known. With neither, the industry is set and the slot is open. */
+ *  not yet known; a note then says where the speaker will come from, in the
+ *  place of the role. With neither, the industry is set and the slot is open. */
 export type Briefing = {
   industry: L;
   speaker?: ProgrammeSpeaker;
   company?: string;
+  note?: L;
 };
 
 const same = (text: string): L => ({ de: text, en: text });
@@ -69,6 +71,14 @@ const lustig: ProgrammeSpeaker = {
   role: {
     de: "Founder Brewery2030+; ehem. Geschäftsführer Supply Chain, Paulaner",
     en: "Founder Brewery2030+; former Managing Director Supply Chain, Paulaner",
+  },
+};
+
+const schueller: ProgrammeSpeaker = {
+  name: "Katharina Schüller",
+  role: {
+    de: "Geschäftsführerin, STAT-UP Statistical Consulting & Data Science",
+    en: "Managing Director, STAT-UP Statistical Consulting & Data Science",
   },
 };
 
@@ -198,8 +208,16 @@ export const programme: ProgrammeItem[] = [
         industry: { de: "Halbleiter", en: "Semiconductors" },
         speaker: briegel,
       },
-      // Swiss Re expected, not yet confirmed.
-      { industry: { de: "Versicherung", en: "Insurance" } },
+      // Speaker from Neil Aellen's team, person not yet fixed.
+      {
+        industry: { de: "Versicherung", en: "Insurance" },
+        company: "Swiss Re",
+        note: {
+          de: "Aus dem Team von Neil Aellen, Research Lead",
+          en: "From the team of Neil Aellen, Research Lead",
+        },
+      },
+      { industry: { de: "Zoll", en: "Customs" }, speaker: schueller },
       // GFT Technologies expected, not yet confirmed.
       null,
     ],
