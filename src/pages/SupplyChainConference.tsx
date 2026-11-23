@@ -49,6 +49,8 @@ const partners = [
  * companies and associations. Names follow the page language; the logos
  * already carry the original names. The official domain shows under the
  * name, so the government address is visible without hovering.
+ * Taipeh Vertretung München (logo: partners/taipeh-vertretung-muenchen.webp,
+ * https://www.roc-taiwan.org/demuc_de/) follows once it is announced.
  */
 const internationalPartners = [
   {
@@ -59,15 +61,6 @@ const internationalPartners = [
     url: "https://www.paih.gov.pl/",
     logo: `${ASSET}/partners/paih.webp`,
     height: 44,
-  },
-  {
-    name: {
-      de: "Taipeh Vertretung, Büro München",
-      en: "Taipei Representative Office, Munich",
-    },
-    url: "https://www.roc-taiwan.org/demuc_de/",
-    logo: `${ASSET}/partners/taipeh-vertretung-muenchen.webp`,
-    height: 30,
   },
 ];
 
