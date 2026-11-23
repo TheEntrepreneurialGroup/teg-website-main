@@ -203,6 +203,13 @@
   text-underline-offset: 3px;
   text-decoration-color: var(--line);
 }
+/* Official domain of a state partner, quieter than the name above it. */
+.ev.scmc .association .domain {
+  margin-top: -4px;
+  font-size: 12px;
+  color: var(--ink-muted);
+  opacity: 0.8;
+}
 .ev.scmc .association:hover .name {
   color: var(--ink);
   text-decoration-color: currentColor;

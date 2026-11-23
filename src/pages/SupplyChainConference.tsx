@@ -45,6 +45,33 @@ const partners = [
 ];
 
 /**
+ * State agencies with a stand and a talk at the conference, listed between
+ * companies and associations. Names follow the page language; the logos
+ * already carry the original names. The official domain shows under the
+ * name, so the government address is visible without hovering.
+ */
+const internationalPartners = [
+  {
+    name: {
+      de: "Polnische Investitions- und Handelsagentur",
+      en: "Polish Investment & Trade Agency",
+    },
+    url: "https://www.paih.gov.pl/",
+    logo: `${ASSET}/partners/paih.webp`,
+    height: 44,
+  },
+  {
+    name: {
+      de: "Taipeh Vertretung, Büro München",
+      en: "Taipei Representative Office, Munich",
+    },
+    url: "https://www.roc-taiwan.org/demuc_de/",
+    logo: `${ASSET}/partners/taipeh-vertretung-muenchen.webp`,
+    height: 30,
+  },
+];
+
+/**
  * Associations, listed after the companies. Few guests know them, so each
  * logo carries its name and a link. Heights even out the two logo shapes.
  */
@@ -178,6 +205,7 @@ const copy = {
       ["1 Tag", "Panels, Einzelvorträge und Workshops in kleinen Gruppen"],
     ],
     supportedBy: "Unterstützt von",
+    internationalPartners: "Internationale Partner",
     associations: "Verbände",
     speakersHeading: "Speaker",
     filmHeading: "Vier Speaker im Video",
@@ -282,6 +310,7 @@ const copy = {
       ["1 day", "Panels, keynotes and workshops in small groups"],
     ],
     supportedBy: "Supported by",
+    internationalPartners: "International partners",
     associations: "Industry associations",
     speakersHeading: "Speakers",
     filmHeading: "Four speakers on film",
@@ -473,29 +502,47 @@ const SupplyChainConference: React.FC = () => {
               ))}
             </div>
           </div>
-          <div className="partner-group associations">
-            <p>{t.associations}</p>
-            <div className="row">
-              {associations.map((association) => (
-                <a
-                  key={association.name}
-                  className="association"
-                  href={association.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="logo">
-                    <img
-                      src={association.logo}
-                      alt=""
-                      style={{ height: association.height }}
-                    />
-                  </span>
-                  <span className="name">{association.name}</span>
-                </a>
-              ))}
+          {[
+            {
+              label: t.internationalPartners,
+              items: internationalPartners.map((p) => ({
+                ...p,
+                name: p.name[lang],
+                domain: new URL(p.url).hostname.replace(/^www\./, ""),
+              })),
+            },
+            {
+              label: t.associations,
+              items: associations.map((a) => ({ ...a, domain: undefined })),
+            },
+          ].map((group) => (
+            <div className="partner-group associations" key={group.label}>
+              <p>{group.label}</p>
+              <div className="row">
+                {group.items.map((item) => (
+                  <a
+                    key={item.name}
+                    className="association"
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="logo">
+                      <img
+                        src={item.logo}
+                        alt=""
+                        style={{ height: item.height }}
+                      />
+                    </span>
+                    <span className="name">{item.name}</span>
+                    {item.domain && (
+                      <span className="domain">{item.domain}</span>
+                    )}
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
