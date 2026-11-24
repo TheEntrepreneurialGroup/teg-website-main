@@ -24,23 +24,47 @@ const copy = {
     contactHeading: "Kontakt",
     contactText:
       "Für Partnerschaften und Speaker-Anfragen zu dieser Konferenz.",
-    contactRole: "Partnerschaften und Speaker-Anfragen",
+    partner: "Partner",
+    contactRoles: [
+      "Organisation und Programm",
+      "Partnerschaften und Speaker-Anfragen",
+    ],
   },
   en: {
     when: ["3 June 2027", "Munich"],
     lede: "Programme, speakers and registration will be announced here shortly.",
     contactHeading: "Contact",
     contactText: "For partnerships and speaker enquiries for this conference.",
-    contactRole: "Partnerships and speakers",
+    partner: "Partner",
+    contactRoles: ["Organisation and programme", "Partnerships and speakers"],
   },
 } satisfies Record<PageLang, unknown>;
 
-const contact: Omit<ContactPerson, "role"> = {
-  name: "Jonathan Babelotzky",
-  photo: "/for-companies/contact/jonathan.avif",
-  email: "jonathan.babelotzky@teg-ev.de",
-  linkedin: "https://www.linkedin.com/in/jonathan-babelotzky/",
+/**
+ * Official partner of the conference. The logo carries the full name in
+ * small type, so it runs taller than the default 40px to stay legible.
+ */
+const partner = {
+  name: "Deutsche Gesellschaft für Luft- und Raumfahrt – Lilienthal-Oberth e.V. (DGLR)",
+  url: "https://www.dglr.de/",
+  logo: "/events/aviation/partners/dglr.webp",
 };
+
+/** Same order as `contactRoles` in `copy`. */
+const contacts: Omit<ContactPerson, "role">[] = [
+  {
+    name: "Markus Ramsauer",
+    photo: "/events/enterprise-sales/team/ramsauer.webp",
+    email: "markus.ramsauer@teg-ev.de",
+    linkedin: "https://www.linkedin.com/in/markus-ramsauer-0488763a5/",
+  },
+  {
+    name: "Jonathan Babelotzky",
+    photo: "/for-companies/contact/jonathan.avif",
+    email: "jonathan.babelotzky@teg-ev.de",
+    linkedin: "https://www.linkedin.com/in/jonathan-babelotzky/",
+  },
+];
 
 const AviationConference: React.FC = () => {
   const lang = usePageLang();
@@ -61,14 +85,34 @@ const AviationConference: React.FC = () => {
         </div>
       </section>
 
+      <section className="partners" aria-label={t.partner}>
+        <div className="wrap">
+          <p>{t.partner}</p>
+          <div className="row">
+            <a href={partner.url} target="_blank" rel="noopener noreferrer">
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                style={{ height: 56 }}
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="band flush" id="kontakt">
         <div className="wrap org">
           <div className="org-text">
             <h2 className="h2">{t.contactHeading}</h2>
             <p>{t.contactText}</p>
           </div>
-          <div className="contacts single">
-            <ContactCard person={{ ...contact, role: t.contactRole }} />
+          <div className="contacts">
+            {contacts.map((person, index) => (
+              <ContactCard
+                key={person.email}
+                person={{ ...person, role: t.contactRoles[index] }}
+              />
+            ))}
           </div>
         </div>
       </section>
