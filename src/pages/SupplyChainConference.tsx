@@ -66,7 +66,7 @@ const internationalPartners = [
 
 /**
  * Associations, listed after the companies. Few guests know them, so each
- * logo carries its name and a link. Heights even out the two logo shapes.
+ * logo carries its name and a link. Heights even out the logo shapes.
  */
 const associations = [
   {
@@ -80,6 +80,18 @@ const associations = [
     url: "https://www.chinaforumbayern.de/",
     logo: `${ASSET}/partners/chinaforum-bayern.webp`,
     height: 26,
+  },
+  {
+    name: "RMA Risk Management & Rating Association",
+    url: "https://rma-ev.org/",
+    logo: `${ASSET}/partners/rma.webp`,
+    height: 34,
+  },
+  {
+    name: "GPM Deutsche Gesellschaft für Projektmanagement",
+    url: "https://www.gpm-ipma.de/",
+    logo: `${ASSET}/partners/gpm.webp`,
+    height: 44,
   },
 ];
 
