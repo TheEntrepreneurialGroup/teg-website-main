@@ -164,8 +164,11 @@
 }
 .ev.scmc .partners .wrap {
   padding-top: 0;
+  flex-direction: column;
+  align-items: flex-start;
 }
-/* Companies and associations: each label stays with its logos. */
+/* Sponsors, international partners and associations: one row each, every
+   label stays with its logos. */
 .ev.scmc .partner-group {
   display: flex;
   flex-wrap: wrap;
