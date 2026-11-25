@@ -1,5 +1,5 @@
 /**
- * For executives (route "/for-companies"). Two kinds of reader arrive here:
+ * For executives (route "/for-executives"). Two kinds of reader arrive here:
  * executives who came from a conference page and want to attend, and
  * executives who might contribute. The page serves them in that order:
  *
@@ -11,7 +11,7 @@
  *  4. Contact, then a few questions (kept for search and AI answers).
  *
  * Same art direction as the About page (landing.css). Rendered in German at
- * /for-companies and in English at /en/for-companies; both are prerendered.
+ * /for-executives and in English at /en/for-executives; both are prerendered.
  */
 import React from "react";
 import { Link } from "react-router-dom";
@@ -253,7 +253,7 @@ const copy = {
   },
 } satisfies Record<PageLang, unknown>;
 
-const ForCompanies: React.FC = () => {
+const ForExecutives: React.FC = () => {
   const lang = usePageLang();
   const localize = useLocalizePath();
   const t = copy[lang];
@@ -437,4 +437,4 @@ const ForCompanies: React.FC = () => {
   );
 };
 
-export default ForCompanies;
+export default ForExecutives;

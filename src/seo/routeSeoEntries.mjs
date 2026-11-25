@@ -20,7 +20,7 @@ const germanRouteSeoEntries = [
     changeFrequency: "weekly",
   },
   {
-    path: "/for-companies",
+    path: "/for-executives",
     titleMessageId: "seo.companies.title",
     descriptionMessageId: "seo.companies.description",
     indexable: true,

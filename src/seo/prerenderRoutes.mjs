@@ -4,7 +4,7 @@ import { LOCALIZED_PATHS, toEnglishPath } from "./localizedPaths.mjs";
 export const PRERENDER_ROUTES = [
   "/",
   "/for-students",
-  "/for-companies",
+  "/for-executives",
   "/for-phds",
   "/events",
   "/conferences/supplychain-management-conference",

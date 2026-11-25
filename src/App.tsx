@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Layout from "./components/Layout";
 import ForStudents from "./pages/ForStudents";
-import ForCompanies from "./pages/ForCompanies";
+import ForExecutives from "./pages/ForExecutives";
 import ForPhds from "./pages/ForPhds";
 import About from "./pages/About";
 import Events from "./pages/Events";
@@ -116,7 +116,7 @@ function App() {
   const pageRoutes = (
     <>
       <Route path="for-students" element={<ForStudents />} />
-      <Route path="for-companies" element={<ForCompanies />} />
+      <Route path="for-executives" element={<ForExecutives />} />
       <Route path="for-phds" element={<ForPhds />} />
       <Route path="events" element={<Events />} />
       <Route

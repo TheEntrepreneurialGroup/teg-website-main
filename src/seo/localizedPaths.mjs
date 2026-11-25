@@ -6,7 +6,7 @@
 export const LOCALIZED_PATHS = [
   "/",
   "/for-students",
-  "/for-companies",
+  "/for-executives",
   "/for-phds",
   "/events",
   "/conferences/supplychain-management-conference",

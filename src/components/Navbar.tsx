@@ -39,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ switchLanguage }) => {
       trackingLabel: "Events",
     },
     {
-      to: "/for-companies",
+      to: "/for-executives",
       label: intl.formatMessage({ id: "navbar.aboutPage.executives" }),
       trackingLabel: "TEG for Companies",
     },

@@ -6,7 +6,7 @@ import jsonc from "eslint-plugin-jsonc";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  { ignores: ["dist", "**/*.css"] },
+  { ignores: ["dist", ".claude", "**/*.css"] },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: { js },

@@ -12,8 +12,14 @@
 /about/        /    301
 
 # Retired hosts/sponsors cases page → company partnerships
-/cases         /for-companies    301
-/cases/        /for-companies    301
+/cases         /for-executives/    301
+/cases/        /for-executives/    301
+
+# Former address of the executives page (already shared)
+/for-companies        /for-executives/       301
+/for-companies/       /for-executives/       301
+/en/for-companies     /en/for-executives/    301
+/en/for-companies/    /en/for-executives/    301
 
 # Short LinkedIn alias. 301 so SEO and analytics stay on the canonical page.
 # Must stay above the SPA catch-all; netlify.toml rules run after this file.

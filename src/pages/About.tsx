@@ -92,7 +92,7 @@ const copy = {
       lede: "Seit 1986 verfolgt die TEG zwei Ziele: Führungskräfte aus Konzernen und Mittelstand branchenübergreifend miteinander ins Gespräch zu bringen und die nächste Generation auf die Führung deutscher Unternehmen vorzubereiten.",
       links: [
         { to: "/events", label: "Konferenzen & Events" },
-        { to: "/for-companies", label: "Für Führungskräfte" },
+        { to: "/for-executives", label: "Für Führungskräfte" },
         { to: "/for-students", label: "Für Studierende" },
         { to: "/for-phds", label: "Für Promovierende" },
       ],
@@ -251,7 +251,7 @@ const copy = {
           who: "Für Führungskräfte",
           text: "Halten Sie einen Workshop in der Academy, sprechen Sie auf einer unserer Veranstaltungen, begleiten Sie einen Teilnehmer als Mentor oder seien Sie Gastgeber eines Abends.",
           link: "Mitwirken als Führungskraft",
-          to: "/for-companies",
+          to: "/for-executives",
         },
         {
           who: "Für Studierende und Berufseinsteiger",
@@ -276,7 +276,7 @@ const copy = {
       lede: "Since 1986, TEG has pursued two aims: to bring executives from large corporations and mid-sized companies into conversation across industries, and to prepare the next generation for the leadership of German companies.",
       links: [
         { to: "/events", label: "Conferences & Events" },
-        { to: "/for-companies", label: "For Executives" },
+        { to: "/for-executives", label: "For Executives" },
         { to: "/for-students", label: "For Students" },
         { to: "/for-phds", label: "For PhDs" },
       ],
@@ -431,7 +431,7 @@ const copy = {
           who: "For executives",
           text: "Lead a workshop in the Academy, speak at one of our events, accompany a participant as a mentor, or host an evening.",
           link: "Get involved as an executive",
-          to: "/for-companies",
+          to: "/for-executives",
         },
         {
           who: "For students and young professionals",
