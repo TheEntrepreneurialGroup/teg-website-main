@@ -192,11 +192,23 @@ const speakers = [
     },
     photo: "schueller",
   },
+  {
+    name: "Dr. Benedikt Mester",
+    role: {
+      de: "Lead Climate Risk Solutions, Swiss Re",
+      en: "Lead Climate Risk Solutions, Swiss Re",
+    },
+    photo: "mester",
+  },
 ];
 
 const copy = {
   de: {
-    when: ["8. Dezember 2026", "9–18 Uhr", "MaibornWolff Kraftwerk, München"],
+    when: [
+      "8. Dezember 2026",
+      "9–18:30 Uhr",
+      "MaibornWolff Kraftwerk, München",
+    ],
     lede: "Die Supply Chain Management Conference bringt am 8. Dezember 2026 in München Führungskräfte aus Logistik, Industrie, Tech, Beratung und Wissenschaft sowie Regierungs- und Handelsvertreter zusammen. Ganztägig, mit Panels, Einzelvorträgen und Workshops in kleinen Gruppen.",
     register: "Anmelden",
     viewProgramme: "Programm ansehen",
@@ -251,7 +263,7 @@ const copy = {
     ],
     joinCta: "Zur Anmeldung auf Luma",
     terms: [
-      ["Datum", "8. Dezember 2026, 9–18 Uhr"],
+      ["Datum", "8. Dezember 2026, 9–18:30 Uhr"],
       ["Ort", "MaibornWolff Kraftwerk", "Drygalski-Allee 25, München"],
       ["Sprache", "Deutsch"],
       [
@@ -301,7 +313,11 @@ const copy = {
     ],
   },
   en: {
-    when: ["8 December 2026", "9 am – 6 pm", "MaibornWolff Kraftwerk, Munich"],
+    when: [
+      "8 December 2026",
+      "9 am – 6:30 pm",
+      "MaibornWolff Kraftwerk, Munich",
+    ],
     lede: "On 8 December 2026 in Munich, the Supply Chain Management Conference brings together executives from logistics, industry, tech, consulting and academia with government and trade representatives. A full day of panels, keynotes and workshops in small groups.",
     register: "Register",
     viewProgramme: "View programme",
@@ -355,7 +371,7 @@ const copy = {
     ],
     joinCta: "Register on Luma",
     terms: [
-      ["Date", "8 December 2026, 9 am – 6 pm"],
+      ["Date", "8 December 2026, 9 am – 6:30 pm"],
       ["Venue", "MaibornWolff Kraftwerk", "Drygalski-Allee 25, Munich"],
       ["Language", "German"],
       [
@@ -655,6 +671,15 @@ const SupplyChainConference: React.FC = () => {
                           <span className="role">{speaker.role[lang]}</span>
                         </li>
                       ))}
+                      {item.moderator && (
+                        <li className="moderator">
+                          <span className="name">{item.moderator.name}</span>
+                          <span className="role">
+                            {lang === "de" ? "Moderation" : "Moderator"},{" "}
+                            {item.moderator.role[lang]}
+                          </span>
+                        </li>
+                      )}
                     </ul>
                   )}
                   {item.abstract && (
@@ -664,7 +689,12 @@ const SupplyChainConference: React.FC = () => {
                     <ul className="briefings">
                       {item.briefings.map((briefing, index) =>
                         briefing ? (
-                          <li key={briefing.speaker?.name ?? briefing.company}>
+                          <li
+                            key={briefing.industry.de}
+                            className={
+                              briefing.startsGroup ? "group-start" : undefined
+                            }
+                          >
                             <span className="industry">
                               {briefing.industry[lang]}
                             </span>

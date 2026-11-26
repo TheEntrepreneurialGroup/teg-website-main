@@ -84,7 +84,7 @@ export const upcomingConferences: UpcomingConference[] = [
       de: "Die Supply Chain Management Conference bringt am 8. Dezember 2026 im MaibornWolff Kraftwerk in München 80 Teilnehmer aus Logistik, Industrie, Tech, Beratung und Wissenschaft sowie Regierungs- und Handelsvertreter zusammen. Ein Tag mit Panels, Einzelvorträgen und Workshops in kleinen Gruppen.",
       en: "On 8 December 2026, the Supply Chain Management Conference brings 80 participants from logistics, industry, tech, consulting and academia, along with government and trade representatives, to the MaibornWolff Kraftwerk in Munich. A day of panels, keynotes and workshops in small groups.",
     },
-    details: [{ de: "9–18 Uhr", en: "9 am – 6 pm" }],
+    details: [{ de: "9–18:30 Uhr", en: "9 am – 6:30 pm" }],
     page: "/conferences/supplychain-management-conference",
   },
   {

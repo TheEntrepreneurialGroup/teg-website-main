@@ -32,7 +32,7 @@ interface EventFacts {
 const facts: Record<string, EventFacts> = {
   supplychainconference2026: {
     startDate: "2026-12-08T09:00:00+01:00",
-    endDate: "2026-12-08T18:00:00+01:00",
+    endDate: "2026-12-08T18:30:00+01:00",
     venue: {
       name: "MaibornWolff Kraftwerk",
       streetAddress: "Drygalski-Allee 25",

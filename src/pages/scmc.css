@@ -477,6 +477,12 @@
   font-size: 15px;
   line-height: 1.45;
 }
+/* The country-and-trade group sets off from the industries with a gap and
+   a full rule, no label. */
+.ev.scmc .briefings li.group-start {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
 .ev.scmc .briefings .industry {
   grid-row: span 2;
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
