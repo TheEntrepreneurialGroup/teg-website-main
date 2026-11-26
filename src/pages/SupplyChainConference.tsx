@@ -121,6 +121,14 @@ const speakers = [
     photo: "kroeber",
   },
   {
+    name: "Dorota Kafara",
+    role: {
+      de: "Head, German Office, Polish Investment & Trade Agency",
+      en: "Head, German Office, Polish Investment & Trade Agency",
+    },
+    photo: "kafara",
+  },
+  {
     name: "Dr. Stefan Lustig",
     role: {
       de: "Geschäftsführer Supply Chain Paulaner Brauerei (2010–2018)",
@@ -199,14 +207,6 @@ const speakers = [
       en: "Lead Climate Risk Solutions, Swiss Re",
     },
     photo: "mester",
-  },
-  {
-    name: "Dorota Kafara",
-    role: {
-      de: "Head, German Office, Polish Investment & Trade Agency",
-      en: "Head, German Office, Polish Investment & Trade Agency",
-    },
-    photo: "kafara",
   },
 ];
 
