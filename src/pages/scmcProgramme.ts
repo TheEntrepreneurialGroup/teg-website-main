@@ -232,8 +232,7 @@ export const programme: ProgrammeItem[] = [
           en: "Chinese export controls",
         },
         speaker: {
-          // Family name first and in capitals, as he writes it.
-          name: "LIAO Yuhui",
+          name: "Yuhui Liao",
           role: { de: "Rechtsanwalt", en: "Lawyer" },
         },
       },
