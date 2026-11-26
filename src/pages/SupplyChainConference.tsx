@@ -177,6 +177,14 @@ const speakers = [
     photo: "kluge",
   },
   {
+    name: "Katharina Schüller",
+    role: {
+      de: "Geschäftsführerin STAT-UP Statistical Consulting & Data Science",
+      en: "Managing Director, STAT-UP Statistical Consulting & Data Science",
+    },
+    photo: "schueller",
+  },
+  {
     name: "Anke Schnitzer",
     role: {
       de: "Leitung IT Workforce Transformation, CompuSafe Data Systems",
@@ -191,14 +199,6 @@ const speakers = [
       en: "Senior AI Expert, Data Science, Horváth",
     },
     photo: "schneider",
-  },
-  {
-    name: "Katharina Schüller",
-    role: {
-      de: "Geschäftsführerin STAT-UP Statistical Consulting & Data Science",
-      en: "Managing Director, STAT-UP Statistical Consulting & Data Science",
-    },
-    photo: "schueller",
   },
   {
     name: "Dr. Benedikt Mester",
