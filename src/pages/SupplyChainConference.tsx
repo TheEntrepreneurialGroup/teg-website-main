@@ -131,8 +131,8 @@ const speakers = [
   {
     name: "Dr. Stefan Lustig",
     role: {
-      de: "Geschäftsführer Supply Chain Paulaner Brauerei (2010–2018)",
-      en: "Managing Director Supply Chain, Paulaner Brewery (2010–2018)",
+      de: "Geschäftsführer Supply Chain Paulaner Brauerei (2010–2018); Inhaber Lustig Beverage Consulting; Mitgründer Brewery2030+",
+      en: "Managing Director Supply Chain, Paulaner Brewery (2010–2018); Owner, Lustig Beverage Consulting; Co-founder, Brewery2030+",
     },
     photo: "lustig",
   },
@@ -155,8 +155,8 @@ const speakers = [
   {
     name: "Manuela Kirner",
     role: {
-      de: "Senior Director Customs, Infineon (bis 2025)",
-      en: "Senior Director Customs, Infineon (until 2025)",
+      de: "Senior Director Customs, Infineon (bis 2025); CFO, C4C Consulting for Cleanrooms",
+      en: "Senior Director Customs, Infineon (until 2025); CFO, C4C Consulting for Cleanrooms",
     },
     photo: "kirner",
   },
@@ -179,8 +179,8 @@ const speakers = [
   {
     name: "Anke Schnitzer",
     role: {
-      de: "Leitung IT, CompuSafe Data Systems",
-      en: "Head of IT, CompuSafe Data Systems",
+      de: "Leitung IT Workforce Transformation, CompuSafe Data Systems",
+      en: "Head of IT Workforce Transformation, CompuSafe Data Systems",
     },
     photo: "schnitzer",
   },

@@ -50,8 +50,8 @@ const TEAM: L = { de: "Conference Team der TEG", en: "TEG conference team" };
 const kirner: ProgrammeSpeaker = {
   name: "Manuela Kirner",
   role: {
-    de: "CFO, C4C Consulting for Cleanrooms; Senior Director Customs, Infineon (bis 2025)",
-    en: "CFO, C4C Consulting for Cleanrooms; Senior Director Customs, Infineon (until 2025)",
+    de: "Senior Director Customs, Infineon (bis 2025); CFO, C4C Consulting for Cleanrooms",
+    en: "Senior Director Customs, Infineon (until 2025); CFO, C4C Consulting for Cleanrooms",
   },
 };
 
@@ -76,8 +76,8 @@ const schneider: ProgrammeSpeaker = {
 const lustig: ProgrammeSpeaker = {
   name: "Dr. Stefan Lustig",
   role: {
-    de: "Founder Brewery2030+; ehem. Geschäftsführer Supply Chain, Paulaner",
-    en: "Founder Brewery2030+; former Managing Director Supply Chain, Paulaner",
+    de: "Ehem. Geschäftsführer Supply Chain, Paulaner; Inhaber Lustig Beverage Consulting; Mitgründer Brewery2030+",
+    en: "Former Managing Director Supply Chain, Paulaner; Owner, Lustig Beverage Consulting; Co-founder, Brewery2030+",
   },
 };
 
@@ -165,8 +165,8 @@ export const programme: ProgrammeItem[] = [
       {
         name: "Anke Schnitzer",
         role: {
-          de: "Leitung IT, CompuSafe Data Systems",
-          en: "Head of IT, CompuSafe Data Systems",
+          de: "Leitung IT Workforce Transformation, CompuSafe Data Systems",
+          en: "Head of IT Workforce Transformation, CompuSafe Data Systems",
         },
       },
       { name: "Dr. Stefan Kluge", role: same("VP Operations, ams Osram") },
