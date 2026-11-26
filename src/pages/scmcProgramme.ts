@@ -232,7 +232,8 @@ export const programme: ProgrammeItem[] = [
           en: "Chinese export controls",
         },
         speaker: {
-          name: "Yuhui Lao",
+          // Family name first and in capitals, as he writes it.
+          name: "LIAO Yuhui",
           role: { de: "Rechtsanwalt", en: "Lawyer" },
         },
       },
@@ -341,7 +342,10 @@ export const programme: ProgrammeItem[] = [
       kirner,
       {
         name: "Joseph Ian-Tsing Dieu",
-        role: { de: "Rechtsanwalt", en: "Lawyer" },
+        role: {
+          de: "Generaldirektor, Taipeh-Vertretung in München",
+          en: "Director General, Taipei Representative Office in Munich",
+        },
       },
     ],
     abstract: {
