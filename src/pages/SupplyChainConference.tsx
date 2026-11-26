@@ -200,6 +200,14 @@ const speakers = [
     },
     photo: "mester",
   },
+  {
+    name: "Dorota Kafara",
+    role: {
+      de: "Head, German Office, Polish Investment & Trade Agency",
+      en: "Head, German Office, Polish Investment & Trade Agency",
+    },
+    photo: "kafara",
+  },
 ];
 
 const copy = {
